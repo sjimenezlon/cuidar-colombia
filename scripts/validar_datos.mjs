@@ -20,6 +20,18 @@ function urlValida(valor, permiteTel = false) {
 function revisarUrl(url, contexto, permiteTel = false) {
   exigir(urlValida(url, permiteTel), `${contexto}: URL no permitida (${url || 'vacía'})`);
 }
+function revisarCitasAdicionales(item, contexto) {
+  if (item?.fuente_adicional_url) {
+    revisarUrl(item.fuente_adicional_url, `${contexto}.fuente_adicional_url`);
+    exigir(Boolean(item.fuente_adicional_titulo), `${contexto}.fuente_adicional_titulo debe explicar la corroboración`);
+  }
+  for (const [i, cita] of (item?.fuentes_adicionales || []).entries()) {
+    exigir(Boolean(cita.titulo && cita.alcance), `${contexto}.fuentes_adicionales[${i}] requiere título y alcance`);
+    revisarUrl(cita.url, `${contexto}.fuentes_adicionales[${i}].url`);
+    exigir(!cita.nivel_fuente || ['fuente_oficial', 'fuente_secundaria'].includes(cita.nivel_fuente),
+      `${contexto}.fuentes_adicionales[${i}].nivel_fuente inválido`);
+  }
+}
 function fechaCortaEs(iso) {
   const meses = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
   const fecha = new Date(`${iso}T12:00:00Z`);
@@ -57,6 +69,15 @@ if (meta) {
 
 if (ayuda) {
   exigir(ayuda.evento_id === meta?.evento_id, 'ayuda.evento_id no coincide con meta.evento_id');
+  for (const [entidad, citas] of Object.entries(ayuda.citas_compartidas || {})) {
+    exigir(Boolean(entidad && Array.isArray(citas) && citas.length), `ayuda.citas_compartidas.${entidad}: debe tener citas`);
+    for (const [i, cita] of (citas || []).entries()) {
+      exigir(Boolean(cita.titulo && cita.alcance), `ayuda.citas_compartidas.${entidad}[${i}]: requiere título y alcance`);
+      revisarUrl(cita.url, `ayuda.citas_compartidas.${entidad}[${i}].url`);
+      exigir(['fuente_oficial', 'fuente_secundaria'].includes(cita.nivel_fuente),
+        `ayuda.citas_compartidas.${entidad}[${i}].nivel_fuente inválido`);
+    }
+  }
   exigir(Array.isArray(ayuda.canales) && ayuda.canales.length > 0, 'ayuda.canales debe tener elementos');
   const entidades = new Set();
   for (const [i, canal] of (ayuda.canales || []).entries()) {
@@ -77,7 +98,7 @@ if (ayuda) {
   for (const [tipo, lista] of [['acopios', ayuda.acopios], ['sangre', ayuda.sangre]]) {
     for (const [i, item] of (lista || []).entries()) {
       revisarUrl(item.fuente_url, `ayuda.${tipo}[${i}].fuente_url`);
-      if (item.fuente_adicional_url) revisarUrl(item.fuente_adicional_url, `ayuda.${tipo}[${i}].fuente_adicional_url`);
+      revisarCitasAdicionales(item, `ayuda.${tipo}[${i}]`);
       exigir(['fuente_oficial', 'fuente_secundaria'].includes(item.nivel_fuente), `ayuda.${tipo}[${i}].nivel_fuente ausente o inválido`);
       if (tipo === 'sangre') revisarFechaRevision(item, `ayuda.${tipo}[${i}]`, fechaCorte);
       if (tipo === 'acopios') {
@@ -104,6 +125,7 @@ if (ayuda) {
     exigir(Boolean(item.mecanismo && item.entidad), `${ctx}: mecanismo o entidad ausente`);
     if (item.url) revisarUrl(item.url, `${ctx}.url`);
     revisarUrl(item.fuente_url, `${ctx}.fuente_url`);
+    revisarCitasAdicionales(item, ctx);
     exigir(['fuente_oficial', 'fuente_secundaria'].includes(item.nivel_fuente), `${ctx}.nivel_fuente ausente o inválido`);
     exigir(['institucional', 'complementario'].includes(item.tipo_canal), `${ctx}.tipo_canal ausente o inválido`);
     revisarFechaRevision(item, ctx, fechaCorte);

@@ -1,5 +1,23 @@
 {
   "evento_id": "co-sismo-2026-08-10",
+  "citas_compartidas": {
+    "S.C.A.R.E. — jornada «Juntos somos Colombia»": [
+      {
+        "titulo": "S.C.A.R.E. — directorio oficial de oficinas",
+        "url": "https://scare.org.co/nuestras-oficinas/",
+        "alcance": "Corrobora la red de sedes y sus horarios; la activación para este terremoto se prueba con el anuncio de campaña.",
+        "nivel_fuente": "fuente_oficial"
+      }
+    ],
+    "LAIKA — acopio para personas y animales": [
+      {
+        "titulo": "LAIKA — directorio oficial de tiendas",
+        "url": "https://laika.com.co/tiendas",
+        "alcance": "Corrobora las tiendas físicas; la recepción de ayudas se prueba con la publicación de campaña.",
+        "nivel_fuente": "fuente_oficial"
+      }
+    ]
+  },
   "canales": [
     {
       "entidad": "Cruz Roja Colombiana",
@@ -2282,6 +2300,9 @@
       ],
       "fuente_titulo": "Pulzo / El Tiempo",
       "fuente_url": "https://www.pulzo.com/nacion/bogota/donacion-de-sangre-en-bogota-llamado-urgente-a-o-y-o-tras-sismo-como-ayudar-PP5270589A",
+      "fuente_adicional_titulo": "IDCBIS — Banco Distrital de Sangre",
+      "fuente_adicional_url": "https://idcbis.org.co/banco-distrital-de-sangre/",
+      "fuente_adicional_alcance": "Corrobora la dirección, el horario ordinario y la entidad responsable; el llamado urgente se atribuye al reporte de prensa.",
       "nivel_fuente": "fuente_secundaria",
       "fecha_revision": "12 ago 2026",
       "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
@@ -2293,6 +2314,7 @@
       "tipos_urgentes": [],
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "fuente_adicional_titulo": "El Colombiano — llamado nacional tras el terremoto",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
       "nivel_fuente": "fuente_oficial",
       "fecha_revision": "12 ago 2026",
@@ -2305,7 +2327,9 @@
       "tipos_urgentes": [],
       "fuente_titulo": "El Espectador",
       "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
-      "fuente_adicional_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "fuente_adicional_titulo": "Cruz Roja Antioquia — puntos fijos y contacto",
+      "fuente_adicional_url": "https://donarsangre.crantioquia.org.co/visitanos/",
+      "fuente_adicional_alcance": "Corrobora la sede de Guayabal, el horario ordinario y los teléfonos; la ampliación especial se atribuye al reporte de prensa.",
       "nivel_fuente": "fuente_secundaria",
       "fecha_revision": "12 ago 2026",
       "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
@@ -2342,6 +2366,7 @@
       "tipos_urgentes": [],
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "fuente_adicional_titulo": "El Colombiano — llamado nacional tras el terremoto",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
       "nivel_fuente": "fuente_oficial",
       "fecha_revision": "12 ago 2026",
@@ -2354,6 +2379,7 @@
       "tipos_urgentes": [],
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "fuente_adicional_titulo": "El Colombiano — llamado nacional tras el terremoto",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
       "nivel_fuente": "fuente_oficial",
       "fecha_revision": "12 ago 2026",
@@ -2377,6 +2403,7 @@
       "tipos_urgentes": [],
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "fuente_adicional_titulo": "El Colombiano — llamado nacional tras el terremoto",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
       "nivel_fuente": "fuente_oficial",
       "fecha_revision": "12 ago 2026",
@@ -2455,6 +2482,9 @@
       "como_usar": "Para atención inmediata, reportar personas atrapadas y registrar información de desaparecidos.",
       "url": null,
       "fuente_url": "https://www.eltiempo.com/colombia/terremoto-de-7-4-en-colombia-estas-son-las-lineas-de-atencion-para-reportar-emergencias-3577351",
+      "fuente_adicional_titulo": "Policía Nacional — línea de emergencias 123",
+      "fuente_adicional_url": "https://oas.policia.gov.co/inicio",
+      "fuente_adicional_alcance": "Corrobora que el 123 es la línea institucional de atención y emergencias.",
       "nivel_fuente": "fuente_secundaria",
       "tipo_canal": "institucional",
       "fecha_revision": "12 ago 2026",

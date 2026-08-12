@@ -185,6 +185,10 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' ‚
   color: var(--tinta-suave); font-size: .78rem; font-weight: 650; line-height: 1.25; cursor: pointer;
 }
 .filtro-check input { width: 20px; height: 20px; flex: 0 0 auto; accent-color: var(--azul); }
+.nota-citas {
+  max-width: 820px; margin: 4px 0 26px; padding: 11px 14px; border-left: 3px solid var(--oro);
+  border-radius: 0 9px 9px 0; background: #FFF9ED; color: var(--tinta-suave); font-size: .82rem;
+}
 
 .tarjetas-canales { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
 .tarjeta-canal {
@@ -285,6 +289,27 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' ‚
 .enlace-accion:hover { background: var(--azul-oscuro); border-color: var(--azul-oscuro); }
 .enlace-accion-secundaria { background: #fff; color: var(--azul); }
 .enlace-accion-secundaria:hover { background: #E1ECF5; color: var(--azul-oscuro); }
+.citas-registro {
+  margin-top: 10px; border: 1px solid var(--borde); border-radius: 10px; background: var(--papel);
+}
+.citas-registro summary {
+  min-height: 44px; display: flex; align-items: center; padding: 8px 12px; cursor: pointer;
+  color: var(--azul-oscuro); font-size: .76rem; font-weight: 750;
+}
+.citas-registro[open] summary { border-bottom: 1px solid var(--borde); }
+.citas-registro ol { list-style: none; margin: 0; padding: 8px 12px 10px; }
+.citas-registro li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 7px; padding: 7px 0; }
+.citas-registro li + li { border-top: 1px solid var(--borde); }
+.cita-numero {
+  display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px;
+  border-radius: 50%; background: #E1ECF5; color: var(--azul-oscuro); font-size: .7rem; font-weight: 800;
+}
+.cita-alcance { display: block; color: var(--tinta-suave); font-size: .7rem; line-height: 1.35; }
+.enlace-cita { display: inline; color: var(--azul); font-size: .76rem; font-weight: 700; overflow-wrap: anywhere; }
+.cita-tipo {
+  display: inline-flex; margin-left: 6px; padding: 2px 6px; border-radius: 100px;
+  background: #E4F3EA; color: var(--verde-ok); font-size: .6rem; font-weight: 800; text-transform: uppercase;
+}
 
 /* Sangre / b√∫squeda */
 .tarjetas-sangre, .tarjetas-busqueda { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }

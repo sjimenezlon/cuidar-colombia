@@ -54,6 +54,64 @@
     return enlaceExterno(url, titulo || 'fuente', 'enlace-fuente');
   }
 
+  var citasCompartidas = {};
+  function citasDeRegistro(registro, alcancePrincipal) {
+    registro = registro || {};
+    var citas = [];
+    function agregar(cita) {
+      var segura = urlSegura(cita && cita.url, false);
+      if (!segura || citas.some(function (actual) { return actual.url === segura; })) return;
+      citas.push({
+        url: segura,
+        titulo: cita.titulo || 'Fuente consultada',
+        alcance: cita.alcance || 'Evidencia complementaria',
+        nivel: cita.nivel_fuente || ''
+      });
+    }
+    agregar({
+      url: registro.fuente_url,
+      titulo: registro.fuente_titulo || 'Fuente principal',
+      alcance: registro.fuente_alcance || alcancePrincipal || 'Anuncio o evidencia principal',
+      nivel_fuente: registro.nivel_fuente
+    });
+    agregar({
+      url: registro.fuente_adicional_url,
+      titulo: registro.fuente_adicional_titulo || 'Corroboración adicional',
+      alcance: registro.fuente_adicional_alcance || 'Corrobora parte de los datos publicados',
+      nivel_fuente: registro.fuente_adicional_nivel || ''
+    });
+    (registro.fuentes_adicionales || []).forEach(agregar);
+    (citasCompartidas[registro.entidad] || []).forEach(agregar);
+    return citas;
+  }
+
+  function renderCitas(citas, contexto) {
+    if (!citas || !citas.length) return '';
+    return '<details class="citas-registro"><summary>' + citas.length + ' cita' + (citas.length === 1 ? '' : 's') +
+      ' para comprobar este dato</summary><ol>' + citas.map(function (cita, i) {
+        var tipo = cita.nivel === 'fuente_oficial' ? '<span class="cita-tipo">Fuente oficial</span>' : '';
+        return '<li><span class="cita-numero">' + (i + 1) + '</span><div><span class="cita-alcance">' + esc(cita.alcance) +
+          '</span>' + enlaceExterno(cita.url, cita.titulo, 'enlace-cita', 'Consultar cita de ' + (contexto || 'este registro')) + tipo + '</div></li>';
+      }).join('') + '</ol></details>';
+  }
+
+  function renderCitasRegistro(registro, alcancePrincipal) {
+    return renderCitas(citasDeRegistro(registro, alcancePrincipal), registro && (registro.entidad || registro.mecanismo));
+  }
+
+  function renderCitasCanal(canal) {
+    var citas = [];
+    function agregar(url, titulo, alcance, nivel) {
+      var segura = urlSegura(url, false);
+      if (!segura || citas.some(function (actual) { return actual.url === segura; })) return;
+      citas.push({ url: segura, titulo: titulo, alcance: alcance, nivel: nivel });
+    }
+    agregar(canal.url_oficial, canal.entidad + ' — canal publicado', 'Destino enlazado para realizar o consultar la donación', canal.verificacion && canal.verificacion.nivel);
+    agregar(canal.verificacion && canal.verificacion.evidencia_url, canal.verificado_en || 'Evidencia consultada',
+      'Evidencia usada para comprobar la campaña y su relación con esta emergencia', canal.verificacion && canal.verificacion.nivel);
+    return renderCitas(citas, canal.entidad);
+  }
+
   function enlaceMapaDireccion(punto, ciudad) {
     if (!punto || !punto.direccion) return '';
     var consulta = [punto.nombre, punto.direccion, ciudad, 'Colombia'].filter(Boolean).join(', ');
@@ -432,7 +490,7 @@
           (oficial ? 'Abrir canal oficial' : 'Ver evidencia y confirmar') + ' <span aria-hidden="true">↗</span></a>' : '') +
         '<span class="canal-meta">Comprobado en ' + esc(c.verificado_en || '') + '<br>' + selloFecha(isoRevision, c.fecha_verificacion) +
         (evidencia && evidencia !== destino ? ' · <a href="' + esc(evidencia) + '" target="_blank" rel="noopener noreferrer">ver evidencia</a>' : '') + '</span>' +
-        '</div><div class="tarjeta-acciones-secundarias">' + enlaceReporte(c.entidad, 'Donar dinero') + '</div></article>';
+        '</div>' + renderCitasCanal(c) + '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(c.entidad, 'Donar dinero') + '</div></article>';
     }).join('');
   }
 
@@ -534,8 +592,8 @@
         (no ? '<div style="margin-top:10px"><strong style="font-size:.82rem">Qué no llevar:</strong><div class="etiquetas-donar">' + no + '</div></div>' : '') +
         (a.fuente_url ? '<div class="acopio-fuente"><span>Evidencia: ' + esc(a.fuente_titulo || 'fuente consultada') + '</span>' +
           (a.fecha ? selloFecha(isoDesdeFechaCorta(a.fecha), a.fecha) : '') + '</div>' +
-          '<div class="acciones-enlaces">' + enlaceExterno(a.fuente_url, 'Ver fuente', 'enlace-accion', 'Ver fuente: ' + (a.fuente_titulo || a.entidad)) +
-          (a.fuente_adicional_url ? enlaceExterno(a.fuente_adicional_url, 'Fuente adicional', 'enlace-accion enlace-accion-secundaria', 'Ver fuente adicional: ' + (a.fuente_adicional_titulo || a.entidad)) : '') + '</div>' : '') +
+          '<div class="acciones-enlaces">' + enlaceExterno(a.fuente_url, 'Ver evidencia principal', 'enlace-accion', 'Ver fuente: ' + (a.fuente_titulo || a.entidad)) + '</div>' : '') +
+        renderCitasRegistro(a, 'Anuncio de campaña, vigencia o punto de recepción') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') + '</div>' +
         '</article>';
     }).join('') || '<div class="estado-datos">No hay puntos de acopio que coincidan con estos filtros.</div>';
@@ -571,7 +629,8 @@
         '<div class="simple-sub">' + esc(s.entidad) + '</div>' +
         '<p>' + esc(s.donde || '') + '</p>' +
         (s.tipos_urgentes && s.tipos_urgentes.length ? '<p style="margin-top:8px"><strong>Se necesita con urgencia:</strong> ' + esc(s.tipos_urgentes.join(', ')) + '</p>' : '') +
-        (s.fuente_url ? '<div class="acciones-enlaces">' + enlaceExterno(s.fuente_url, 'Ver evidencia', 'enlace-accion', 'Ver evidencia de ' + s.entidad + ' en ' + s.ciudad) + '</div>' : '') +
+        (s.fuente_url ? '<div class="acciones-enlaces">' + enlaceExterno(s.fuente_url, 'Ver evidencia principal', 'enlace-accion', 'Ver evidencia de ' + s.entidad + ' en ' + s.ciudad) + '</div>' : '') +
+        renderCitasRegistro(s, 'Anuncio de jornada, banco o necesidad de sangre') +
         (s.fecha_revision ? '<div class="simple-pie">Revisado: ' + selloFecha(String(s.fecha_revision_iso || '').slice(0, 10), s.fecha_revision) + '</div>' : '') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') + '</div>' +
         '</article>';
@@ -605,7 +664,7 @@
         (b.linea ? '<div class="destacado-linea">' + esc(b.linea) + '</div>' : '') +
         '<p>' + esc(b.como_usar || '') + '</p>' +
         (b.url ? '<p style="margin-top:8px">' + enlaceExterno(b.url, 'Abrir canal', 'boton boton-secundario', 'Abrir ' + b.mecanismo) + '</p>' : '') +
-        (b.fuente_url ? '<div class="simple-pie">Fuente: ' + enlaceFuente(b.fuente_url, 'ver anuncio') + '</div>' : '') +
+        renderCitasRegistro(b, 'Anuncio del mecanismo o línea de atención') +
         (b.fecha_revision ? '<div class="simple-pie">Revisado: ' + selloFecha(String(b.fecha_revision_iso || '').slice(0, 10), b.fecha_revision) + '</div>' : '') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(b.mecanismo, 'Búsqueda de personas') + '</div>' +
         '</article>';
@@ -1398,6 +1457,7 @@
     pintarBalance(balance);
     pintarLineas(ayuda);
     pintarCanales(ayuda);
+    citasCompartidas = ayuda && ayuda.citas_compartidas || {};
     if (ayuda && ayuda.acopios) { acopiosDatos = ayuda.acopios; pintarSelectorCiudades(); }
     pintarSangre(ayuda);
     pintarBusqueda(ayuda);
