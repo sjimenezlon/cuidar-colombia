@@ -477,6 +477,75 @@
       "fecha": "12 ago 2026"
     },
     {
+      "ciudad": "Medellín",
+      "entidad": "Compás Urbano — directorio comunitario",
+      "puntos": [
+        {
+          "nombre": "UdeA — Oficina AfroUdeA, Bloque 9",
+          "direccion": null,
+          "horario": "lunes a viernes, 9:00 a. m.–5:00 p. m.; contacto 311 450 5940"
+        },
+        {
+          "nombre": "Simón Coffee",
+          "direccion": "Carrera 37 #10-54",
+          "horario": "confirmar antes de ir"
+        },
+        {
+          "nombre": "Restaurante Belisario — sede Provenza",
+          "direccion": null,
+          "horario": "confirmar dirección y horario antes de ir"
+        },
+        {
+          "nombre": "Restaurante Belisario — sede C.C. El Tesoro",
+          "direccion": "Centro Comercial El Tesoro",
+          "horario": "confirmar local y horario antes de ir"
+        },
+        {
+          "nombre": "Restaurante Belisario — oficina",
+          "direccion": "Calle 7 #35-44",
+          "horario": "confirmar antes de ir"
+        },
+        {
+          "nombre": "Remanence",
+          "direccion": "Calle 10B #35-27",
+          "horario": "lunes a domingo, 11:00 a. m.–5:30 p. m."
+        },
+        {
+          "nombre": "Bodega Guayaquiliando",
+          "direccion": "Avenida 80 #52-88",
+          "horario": "confirmar antes de ir"
+        },
+        {
+          "nombre": "Librería Rodante Delfos",
+          "direccion": "Laureles, 79 #52A-23",
+          "horario": "confirmar antes de ir"
+        },
+        {
+          "nombre": "Fundación El Arte de los Sueños",
+          "direccion": "Carrera 48 #35-47, Perpetuo Socorro",
+          "horario": "lunes, miércoles y viernes, 8:30 a. m.–12:00 m.; martes y jueves, 8:30 a. m.–4:00 p. m."
+        },
+        {
+          "nombre": "La Razón",
+          "direccion": "Calle 44 #42-70",
+          "horario": "confirmar antes de ir"
+        },
+        {
+          "nombre": "Batallón Girardot",
+          "direccion": "Calle 66E #39-84",
+          "horario": "confirmar antes de ir"
+        }
+      ],
+      "que_donar": [
+        "confirmar directamente qué elementos recibe cada punto"
+      ],
+      "que_no_donar": [],
+      "fuente_titulo": "Compás Urbano — Instagram",
+      "fuente_url": "https://www.instagram.com/p/Db535pIFSbb/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
       "ciudad": "Cali",
       "entidad": "Alcaldía de Cali y Gobernación del Valle",
       "puntos": [
@@ -862,6 +931,25 @@
       "fuente_titulo": "Colombia.com citando el anuncio",
       "fuente_url": "https://www.colombia.com/actualidad/noticias/centros-de-acopio-y-ayudas-humanitarias-habilitadas-en-colombia-tras-temblor-10-de-agosto-595512",
       "fecha": "12 ago 2026"
+    },
+    {
+      "ciudad": "Envigado",
+      "entidad": "Casa Eterna — listado por Compás Urbano",
+      "puntos": [
+        {
+          "nombre": "Casa Eterna",
+          "direccion": "Calle 23 Sur #3-133, La Explanada, vía Las Palmas",
+          "horario": "lunes a domingo, 2:00–6:00 p. m."
+        }
+      ],
+      "que_donar": [
+        "confirmar directamente qué elementos recibe"
+      ],
+      "que_no_donar": [],
+      "fuente_titulo": "Compás Urbano — Instagram",
+      "fuente_url": "https://www.instagram.com/p/Db535pIFSbb/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
     },
     {
       "ciudad": "Bogotá",

@@ -197,7 +197,7 @@
     'manizales': 'Caldas', 'armenia': 'Quindío', 'quibdo': 'Chocó', 'barranquilla': 'Atlántico',
     'bucaramanga': 'Santander', 'cartagena': 'Bolívar', 'ibague': 'Tolima', 'santa marta': 'Magdalena',
     'monteria': 'Córdoba', 'villavicencio': 'Meta', 'buenaventura': 'Valle del Cauca',
-    'cota': 'Cundinamarca', 'tunja': 'Boyacá', 'itagui': 'Antioquia', 'la estrella': 'Antioquia'
+    'cota': 'Cundinamarca', 'tunja': 'Boyacá', 'itagui': 'Antioquia', 'envigado': 'Antioquia', 'la estrella': 'Antioquia'
   };
   var filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', busqueda: '', soloOficial: false };
   var conteosAyuda = { dinero: 0, especie: 0, sangre: 0, personas: 0 };
