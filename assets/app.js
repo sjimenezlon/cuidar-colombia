@@ -187,6 +187,87 @@
     }).join('');
   }
 
+  /* ---------- Filtros globales de ayuda ---------- */
+  var CIUDAD_DEPARTAMENTO = {
+    'bogota': 'Bogotá D.C.', 'medellin': 'Antioquia', 'cali': 'Valle del Cauca', 'pereira': 'Risaralda',
+    'manizales': 'Caldas', 'armenia': 'Quindío', 'quibdo': 'Chocó', 'barranquilla': 'Atlántico',
+    'bucaramanga': 'Santander', 'cartagena': 'Bolívar', 'ibague': 'Tolima', 'santa marta': 'Magdalena',
+    'monteria': 'Córdoba', 'villavicencio': 'Meta', 'buenaventura': 'Valle del Cauca'
+  };
+  var filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', busqueda: '', soloOficial: false };
+  var conteosAyuda = { dinero: 0, especie: 0, sangre: 0, personas: 0 };
+
+  function departamentoCiudad(ciudad) { return CIUDAD_DEPARTAMENTO[normalizar(ciudad)] || ''; }
+
+  function coincideUbicacion(ciudad, cobertura) {
+    if (filtrosAyuda.ubicacion === 'todas') return true;
+    if (normalizar(cobertura) === 'nacional') return true;
+    var partes = filtrosAyuda.ubicacion.split(':');
+    var valor = partes.slice(1).join(':');
+    if (partes[0] === 'ciudad') return normalizar(ciudad) === valor || normalizar(cobertura) === valor;
+    return normalizar(departamentoCiudad(ciudad)) === valor || normalizar(cobertura) === valor;
+  }
+
+  function coincideBusqueda(campos) {
+    var q = normalizar(filtrosAyuda.busqueda);
+    return !q || normalizar(campos.join(' ')).indexOf(q) !== -1;
+  }
+
+  function actualizarConteoAyuda() {
+    var total = 0;
+    Object.keys(conteosAyuda).forEach(function (k) {
+      if (filtrosAyuda.tipo === 'todos' || filtrosAyuda.tipo === k) total += conteosAyuda[k] || 0;
+    });
+    var el = document.getElementById('conteo-ayuda');
+    if (el) el.textContent = total + ' registro' + (total === 1 ? '' : 's') + ' visible' + (total === 1 ? '' : 's');
+  }
+
+  function aplicarFiltrosAyuda() {
+    [['donar-dinero', 'dinero'], ['acopios', 'especie'], ['sangre', 'sangre'], ['buscar', 'personas']].forEach(function (par) {
+      var bloque = document.getElementById(par[0]);
+      if (bloque) bloque.hidden = filtrosAyuda.tipo !== 'todos' && filtrosAyuda.tipo !== par[1];
+    });
+    pintarTarjetasCanales();
+    pintarAcopiosCiudad(ciudadAcopioActiva);
+    pintarTarjetasSangre();
+    pintarTarjetasBusqueda();
+    actualizarConteoAyuda();
+  }
+
+  function inicializarFiltrosAyuda(ayuda) {
+    var selUbicacion = document.getElementById('filtro-ayuda-ubicacion');
+    if (!selUbicacion || selUbicacion.dataset.preparado) return;
+    selUbicacion.dataset.preparado = 'true';
+    var ciudades = [], departamentos = [];
+    ((ayuda && ayuda.acopios) || []).concat((ayuda && ayuda.sangre) || []).forEach(function (x) {
+      if (x.ciudad && ciudades.indexOf(x.ciudad) === -1) ciudades.push(x.ciudad);
+      var depto = departamentoCiudad(x.ciudad);
+      if (depto && departamentos.indexOf(depto) === -1) departamentos.push(depto);
+    });
+    ciudades.sort(function (a, b) { return a.localeCompare(b, 'es'); });
+    departamentos.sort(function (a, b) { return a.localeCompare(b, 'es'); });
+    selUbicacion.innerHTML = '<option value="todas">Todas las ubicaciones</option><optgroup label="Departamentos">' +
+      departamentos.map(function (d) { return '<option value="departamento:' + esc(normalizar(d)) + '">' + esc(d) + '</option>'; }).join('') +
+      '</optgroup><optgroup label="Ciudades">' + ciudades.map(function (c) {
+        return '<option value="ciudad:' + esc(normalizar(c)) + '">' + esc(c) + '</option>';
+      }).join('') + '</optgroup>';
+    document.getElementById('filtro-ayuda-tipo').addEventListener('change', function (e) { filtrosAyuda.tipo = e.target.value; aplicarFiltrosAyuda(); });
+    selUbicacion.addEventListener('change', function (e) { filtrosAyuda.ubicacion = e.target.value; aplicarFiltrosAyuda(); });
+    document.getElementById('filtro-ayuda-busqueda').addEventListener('input', function (e) { filtrosAyuda.busqueda = e.target.value; aplicarFiltrosAyuda(); });
+    document.getElementById('filtro-ayuda-oficial').addEventListener('change', function (e) { filtrosAyuda.soloOficial = e.target.checked; aplicarFiltrosAyuda(); });
+    document.getElementById('limpiar-filtros-ayuda').addEventListener('click', function () {
+      filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', busqueda: '', soloOficial: false };
+      filtrosCanales = { cobertura: 'todas', evidencia: 'todas' };
+      ciudadAcopioActiva = 'todas';
+      document.getElementById('filtro-ayuda-tipo').value = 'todos'; selUbicacion.value = 'todas';
+      document.getElementById('filtro-ayuda-busqueda').value = ''; document.getElementById('filtro-ayuda-oficial').checked = false;
+      if (document.getElementById('filtro-cobertura')) document.getElementById('filtro-cobertura').value = 'todas';
+      if (document.getElementById('filtro-evidencia')) document.getElementById('filtro-evidencia').value = 'todas';
+      document.querySelectorAll('#selector-ciudades .pastilla-ciudad').forEach(function (b) { b.classList.toggle('activa', b.dataset.ciudad === 'todas'); });
+      aplicarFiltrosAyuda();
+    });
+  }
+
   /* ---------- Canales financieros: cobertura + nivel de evidencia ---------- */
   var canalesTodos = [];
   var filtrosCanales = { cobertura: 'todas', evidencia: 'todas' };
@@ -210,10 +291,10 @@
       '<option value="fuente_secundaria">Confirmación secundaria</option></select></label>' +
       '<span class="conteo-resultados" id="conteo-canales" role="status"></span>';
     document.getElementById('filtro-cobertura').addEventListener('change', function (e) {
-      filtrosCanales.cobertura = e.target.value; pintarTarjetasCanales();
+      filtrosCanales.cobertura = e.target.value; aplicarFiltrosAyuda();
     });
     document.getElementById('filtro-evidencia').addEventListener('change', function (e) {
-      filtrosCanales.evidencia = e.target.value; pintarTarjetasCanales();
+      filtrosCanales.evidencia = e.target.value; aplicarFiltrosAyuda();
     });
     pintarTarjetasCanales();
     var tarjetas = document.getElementById('canales-financieros');
@@ -237,8 +318,12 @@
   function pintarTarjetasCanales() {
     var lista = canalesTodos.filter(function (c) {
       return (filtrosCanales.cobertura === 'todas' || c.cobertura === filtrosCanales.cobertura) &&
-        (filtrosCanales.evidencia === 'todas' || nivelCanal(c) === filtrosCanales.evidencia);
+        (filtrosCanales.evidencia === 'todas' || nivelCanal(c) === filtrosCanales.evidencia) &&
+        (!filtrosAyuda.soloOficial || nivelCanal(c) === 'fuente_oficial') &&
+        coincideUbicacion('', c.cobertura) &&
+        coincideBusqueda([c.entidad, c.cobertura, c.como_donar, c.campana, c.detalle_cuenta]);
     });
+    conteosAyuda.dinero = lista.length;
     var conteo = document.getElementById('conteo-canales');
     if (conteo) conteo.textContent = lista.length + ' canal' + (lista.length === 1 ? '' : 'es');
     var cont = document.getElementById('canales-financieros');
@@ -255,7 +340,8 @@
       var evidencia = c.verificacion && urlSegura(c.verificacion.evidencia_url, false);
       var destino = oficial ? canalOficial : (evidencia || canalOficial);
       var isoRevision = c.verificacion && c.verificacion.fecha_iso;
-      return '<article class="tarjeta-canal">' +
+      return '<article class="tarjeta-canal" data-ayuda-tipo="dinero" data-evidencia="' + esc(nivelCanal(c)) +
+        '" data-ubicacion="' + esc(normalizar(c.cobertura)) + '">' +
         '<div class="canal-cabecera"><h4>' + esc(c.entidad) + '</h4>' + chip + '</div>' +
         (c.cobertura ? '<span class="chip chip-ambito">' + esc(c.cobertura) + '</span>' : '') +
         '<div class="canal-detalle">' + esc(c.como_donar || c.campana || '') + '</div>' +
@@ -310,26 +396,33 @@
   }
 
   /* ---------- Acopios ---------- */
-  var acopiosDatos = [];
+  var acopiosDatos = [], ciudadAcopioActiva = 'todas';
   function pintarSelectorCiudades() {
     var sel = document.getElementById('selector-ciudades');
     var ciudades = [];
     acopiosDatos.forEach(function (a) { if (ciudades.indexOf(a.ciudad) === -1) ciudades.push(a.ciudad); });
-    sel.innerHTML = ciudades.map(function (c, i) {
-      return '<button class="pastilla-ciudad' + (i === 0 ? ' activa' : '') + '" data-ciudad="' + esc(c) + '">' + esc(c) + '</button>';
+    sel.innerHTML = '<button type="button" class="pastilla-ciudad activa" data-ciudad="todas">Todas</button>' + ciudades.map(function (c) {
+      return '<button type="button" class="pastilla-ciudad" data-ciudad="' + esc(c) + '">' + esc(c) + '</button>';
     }).join('');
     sel.addEventListener('click', function (e) {
       var b = e.target.closest('.pastilla-ciudad');
       if (!b) return;
       sel.querySelectorAll('.pastilla-ciudad').forEach(function (x) { x.classList.remove('activa'); });
       b.classList.add('activa');
-      pintarAcopiosCiudad(b.dataset.ciudad);
+      ciudadAcopioActiva = b.dataset.ciudad;
+      pintarAcopiosCiudad(ciudadAcopioActiva);
+      actualizarConteoAyuda();
     });
-    if (ciudades.length) pintarAcopiosCiudad(ciudades[0]);
+    pintarAcopiosCiudad('todas');
   }
 
   function pintarAcopiosCiudad(ciudad) {
-    var lista = acopiosDatos.filter(function (a) { return a.ciudad === ciudad; });
+    ciudad = ciudad || 'todas';
+    var lista = acopiosDatos.filter(function (a) {
+      return (ciudad === 'todas' || a.ciudad === ciudad) && coincideUbicacion(a.ciudad, '') &&
+        coincideBusqueda([a.ciudad, departamentoCiudad(a.ciudad), a.entidad, a.que_donar, a.que_no_donar].concat((a.puntos || []).map(function (p) { return [p.nombre, p.direccion, p.horario].join(' '); })));
+    });
+    conteosAyuda.especie = lista.length;
     document.getElementById('acopios-detalle').innerHTML = lista.map(function (a) {
       var puntos = (a.puntos || []).map(function (p) {
         return '<li><strong>' + esc(p.nombre) + '</strong>' +
@@ -338,7 +431,8 @@
       }).join('');
       var si = (a.que_donar || []).map(function (q) { return '<span class="etiqueta-si">' + esc(q) + '</span>'; }).join('');
       var no = (a.que_no_donar || []).map(function (q) { return '<span class="etiqueta-no">' + esc(q) + '</span>'; }).join('');
-      return '<div class="tarjeta-acopio">' +
+      return '<article class="tarjeta-acopio" data-ayuda-tipo="especie" data-ciudad="' + esc(normalizar(a.ciudad)) +
+        '" data-departamento="' + esc(normalizar(departamentoCiudad(a.ciudad))) + '">' +
         '<h4>' + esc(a.ciudad) + '</h4>' +
         '<div class="acopio-entidad">Habilitado por: ' + esc(a.entidad) + '</div>' +
         (puntos ? '<ul class="lista-puntos">' + puntos + '</ul>' : '') +
@@ -347,23 +441,16 @@
         (a.fuente_url ? '<div class="acopio-fuente">Fuente: ' + enlaceFuente(a.fuente_url, a.fuente_titulo || a.fuente_url) +
           (a.fecha ? ' · ' + selloFecha(isoDesdeFechaCorta(a.fecha), a.fecha) : '') + '</div>' : '') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') + '</div>' +
-        '</div>';
-    }).join('') || '<p class="nota-corte">Aún no hay puntos verificados en esta ciudad. Revisa los canales oficiales de tu alcaldía.</p>';
+        '</article>';
+    }).join('') || '<div class="estado-datos">No hay puntos de acopio que coincidan con estos filtros.</div>';
   }
 
   /* ---------- Sangre ---------- */
+  var sangreDatos = [];
   function pintarSangre(ayuda) {
     if (!ayuda || !ayuda.sangre) return;
-    document.getElementById('sangre-lista').innerHTML = ayuda.sangre.map(function (s) {
-      return '<div class="tarjeta-simple">' +
-        '<h4>' + esc(s.ciudad) + '</h4>' +
-        '<div class="simple-sub">' + esc(s.entidad) + '</div>' +
-        '<p>' + esc(s.donde || '') + '</p>' +
-        (s.tipos_urgentes && s.tipos_urgentes.length ? '<p style="margin-top:8px"><strong>Se necesita con urgencia:</strong> ' + esc(s.tipos_urgentes.join(', ')) + '</p>' : '') +
-        (s.fuente_url ? '<div class="simple-pie">Fuente: ' + enlaceFuente(s.fuente_url, s.fuente_titulo || 'fuente') + '</div>' : '') +
-        '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') + '</div>' +
-        '</div>';
-    }).join('');
+    sangreDatos = ayuda.sangre;
+    pintarTarjetasSangre();
     if (ayuda.sangre_requisitos && ayuda.sangre_requisitos.length) {
       document.getElementById('sangre-requisitos').innerHTML =
         '<h5>Requisitos generales para donar</h5><ul>' +
@@ -371,11 +458,39 @@
     }
   }
 
+  function pintarTarjetasSangre() {
+    var lista = sangreDatos.filter(function (s) {
+      return coincideUbicacion(s.ciudad, '') && coincideBusqueda([s.ciudad, departamentoCiudad(s.ciudad), s.entidad, s.donde, s.tipos_urgentes]);
+    });
+    conteosAyuda.sangre = lista.length;
+    document.getElementById('sangre-lista').innerHTML = lista.map(function (s) {
+      return '<article class="tarjeta-simple" data-ayuda-tipo="sangre" data-ciudad="' + esc(normalizar(s.ciudad)) +
+        '" data-departamento="' + esc(normalizar(departamentoCiudad(s.ciudad))) + '">' +
+        '<h4>' + esc(s.ciudad) + '</h4>' +
+        '<div class="simple-sub">' + esc(s.entidad) + '</div>' +
+        '<p>' + esc(s.donde || '') + '</p>' +
+        (s.tipos_urgentes && s.tipos_urgentes.length ? '<p style="margin-top:8px"><strong>Se necesita con urgencia:</strong> ' + esc(s.tipos_urgentes.join(', ')) + '</p>' : '') +
+        (s.fuente_url ? '<div class="simple-pie">Fuente: ' + enlaceFuente(s.fuente_url, s.fuente_titulo || 'fuente') + '</div>' : '') +
+        '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') + '</div>' +
+        '</article>';
+    }).join('') || '<div class="estado-datos">No hay puntos de donación de sangre que coincidan con estos filtros.</div>';
+  }
+
   /* ---------- Búsqueda de personas ---------- */
+  var busquedaDatos = [];
   function pintarBusqueda(ayuda) {
     if (!ayuda || !ayuda.busqueda) return;
-    document.getElementById('busqueda-lista').innerHTML = ayuda.busqueda.map(function (b) {
-      return '<div class="tarjeta-simple">' +
+    busquedaDatos = ayuda.busqueda;
+    pintarTarjetasBusqueda();
+  }
+
+  function pintarTarjetasBusqueda() {
+    var lista = busquedaDatos.filter(function (b) {
+      return coincideBusqueda([b.mecanismo, b.entidad, b.linea, b.como_usar]);
+    });
+    conteosAyuda.personas = lista.length;
+    document.getElementById('busqueda-lista').innerHTML = lista.map(function (b) {
+      return '<article class="tarjeta-simple" data-ayuda-tipo="personas">' +
         '<h4>' + esc(b.mecanismo) + '</h4>' +
         '<div class="simple-sub">' + esc(b.entidad || '') + '</div>' +
         (b.linea ? '<div class="destacado-linea">' + esc(b.linea) + '</div>' : '') +
@@ -383,8 +498,8 @@
         (b.url ? '<p style="margin-top:8px"><a class="boton boton-secundario" style="font-size:.8rem;padding:7px 14px" href="' + esc(b.url) + '" target="_blank" rel="noopener">Abrir canal</a></p>' : '') +
         (b.fuente_url ? '<div class="simple-pie">Fuente: ' + enlaceFuente(b.fuente_url, 'ver anuncio') + '</div>' : '') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(b.mecanismo, 'Búsqueda de personas') + '</div>' +
-        '</div>';
-    }).join('');
+        '</article>';
+    }).join('') || '<div class="estado-datos">No hay mecanismos de búsqueda que coincidan con estos filtros.</div>';
   }
 
   /* ---------- Pedagogía ---------- */
@@ -874,6 +989,8 @@
     if (ayuda && ayuda.acopios) { acopiosDatos = ayuda.acopios; pintarSelectorCiudades(); }
     pintarSangre(ayuda);
     pintarBusqueda(ayuda);
+    inicializarFiltrosAyuda(ayuda);
+    aplicarFiltrosAyuda();
     pintarPedagogia(pedagogia);
     pintarCadenas(verificacion);
     pintarZonas(zonas);
