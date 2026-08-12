@@ -14,8 +14,8 @@
       "pais_desastre": "Turquía · terremotos",
       "ano": "2023",
       "que_hacia": "Mapa colaborativo construido en horas por miles de desarrolladores voluntarios coordinados en Discord. Usaba inteligencia artificial para convertir los pedidos de auxilio publicados en redes sociales en datos estructurados y georreferenciados para los equipos de rescate. Código abierto.",
-      "url": "https://afetharita.com",
-      "estado": "activa",
+      "url": "https://huggingface.co/blog/using-ml-for-disasters",
+      "estado": "histórica",
       "leccion": "El mayor valor no es capturar reportes sino estructurarlos: convertir el ruido de las redes en datos limpios que cualquier respondedor pueda usar."
     },
     {
