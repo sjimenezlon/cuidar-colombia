@@ -30,21 +30,16 @@
       [Object.keys(dominios).length, 'fuentes consultadas'],
       [(zonas.municipios || []).length, 'municipios monitoreados']
     ];
-    cont.innerHTML = objetivos.map(function (o, i) {
-      return '<span class="contador-item"><strong id="contx-' + i + '">0</strong> ' + o[1] + '</span>';
-    }).join('<span class="contador-sep" aria-hidden="true">·</span>');
-    objetivos.forEach(function (o, i) {
-      var el = document.getElementById('contx-' + i), inicio = null;
-      function paso(t) {
-        if (!inicio) inicio = t;
-        var p = Math.min(1, (t - inicio) / 1400);
-        el.textContent = Math.round(o[0] * (1 - Math.pow(1 - p, 3)));
-        if (p < 1) requestAnimationFrame(paso);
-      }
-      requestAnimationFrame(paso);
-      // Seguro: si la pestaña pierde frames (ventana oculta), fijar el valor final
-      setTimeout(function () { el.textContent = o[0]; }, 2200);
-    });
+    if (!document.getElementById('contx-0')) {
+      cont.innerHTML = objetivos.map(function (o, i) {
+        return '<span class="contador-item"><strong id="contx-' + i + '">' + o[0] + '</strong> ' + o[1] + '</span>';
+      }).join('<span class="contador-sep" aria-hidden="true">·</span>');
+    } else {
+      objetivos.forEach(function (o, i) {
+        var valor = document.getElementById('contx-' + i);
+        if (valor && valor.textContent !== String(o[0])) valor.textContent = o[0];
+      });
+    }
   });
 
   /* ---------- Espera de los datos del mapa ---------- */
@@ -63,10 +58,16 @@
 
     var fila = document.createElement('div');
     fila.className = 'mapa-extras';
-    fila.innerHTML = '<button type="button" class="chip-capa chip-ubicacion" id="boton-cerca">📍 Mostrar puntos cerca de mí</button>';
+    var datosListos = Boolean(window.__cuidar.datos && window.__cuidar.datos.geo);
+    fila.innerHTML = '<button type="button" class="chip-capa chip-ubicacion" id="boton-cerca"' +
+      (datosListos ? '' : ' disabled') + '>' + (datosListos ? '📍 Mostrar puntos cerca de mí' : 'Cargando ubicaciones…') + '</button>';
     filtros.parentNode.insertBefore(fila, filtros.nextSibling);
 
-    document.getElementById('boton-cerca').addEventListener('click', cercaDeMi);
+    var boton = document.getElementById('boton-cerca');
+    boton.addEventListener('click', cercaDeMi);
+    window.addEventListener('cuidar:mapa-datos-listos', function () {
+      boton.disabled = false; boton.textContent = '📍 Mostrar puntos cerca de mí';
+    }, { once: true });
   }
 
   /* ---------- 2. Cerca de mí ---------- */

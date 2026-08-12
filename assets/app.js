@@ -126,22 +126,26 @@
   function pintarMeta(meta) {
     if (!meta) return;
     var f = meta.ultima_actualizacion || '—';
-    document.getElementById('fecha-actualizacion').textContent = f;
-    document.getElementById('pie-actualizacion').textContent = 'Última actualización: ' + f;
+    var fechaActualizacion = document.getElementById('fecha-actualizacion');
+    var pieActualizacion = document.getElementById('pie-actualizacion');
+    if (fechaActualizacion.textContent !== f) fechaActualizacion.textContent = f;
+    if (pieActualizacion.textContent !== 'Última actualización: ' + f) pieActualizacion.textContent = 'Última actualización: ' + f;
     var aviso = document.getElementById('aviso-vigencia');
     var fecha = new Date(meta.iso);
     if (!aviso || isNaN(fecha.getTime())) return;
     var horas = Math.max(0, (Date.now() - fecha.getTime()) / 36e5);
     var limite = Number(meta.vigencia_horas) || 24;
-    aviso.hidden = false;
+    var clase, contenido;
     if (horas > limite) {
-      aviso.className = 'aviso-vigencia aviso-vigencia-alerta';
-      aviso.innerHTML = '<strong>Esta información necesita una nueva revisión.</strong> Confirma siempre en la fuente antes de actuar.';
+      clase = 'aviso-vigencia aviso-vigencia-alerta';
+      contenido = '<strong>Esta información necesita una nueva revisión.</strong> Confirma siempre en la fuente antes de actuar.';
     } else {
-      aviso.className = 'aviso-vigencia aviso-vigencia-ok';
-      aviso.innerHTML = '<strong>Datos dentro de la ventana de revisión.</strong>' +
+      clase = 'aviso-vigencia aviso-vigencia-ok';
+      contenido = '<strong>Datos dentro de la ventana de revisión.</strong>' +
         (meta.proxima_revision ? ' Próxima revisión prevista: ' + esc(meta.proxima_revision) : '');
     }
+    if (aviso.className !== clase) aviso.className = clase;
+    if (aviso.innerHTML !== contenido) aviso.innerHTML = contenido;
   }
 
   /* ---------- Sismo + balance ---------- */
@@ -609,7 +613,7 @@
     if (!bm || !bm.items) return;
     document.getElementById('benchmarks-lista').innerHTML = bm.items.map(function (b) {
       return '<div class="tarjeta-mundo">' +
-        '<div class="mundo-cabecera"><h4>' + esc(b.nombre) + '</h4>' +
+        '<div class="mundo-cabecera"><h3>' + esc(b.nombre) + '</h3>' +
         '<span class="mundo-contexto">' + esc(b.pais_desastre || '') + (b.ano ? ' · ' + esc(b.ano) : '') + '</span></div>' +
         '<p>' + esc(b.que_hacia) + '</p>' +
         '<div class="mundo-leccion"><strong>La lección</strong>' + esc(b.leccion) + '</div>' +
@@ -636,6 +640,7 @@
      llegue o no el mapa base. */
   var mapa = null, mapaListo = false, mapaEventosConectados = false, epicentroAnadido = false;
   var datosMapa = { municipios: null, zonas: null, ayuda: null, sismo: null, geo: null };
+  var cargaMapaIniciada = false;
 
   function cambiarEstadoMapa(texto, tipo) {
     var el = document.getElementById('mapa-estado');
@@ -643,6 +648,57 @@
     el.textContent = texto || '';
     el.className = 'mapa-estado' + (tipo ? ' mapa-estado-' + tipo : '');
     el.hidden = !texto;
+  }
+
+  function cargarMapLibre() {
+    if (typeof maplibregl !== 'undefined') return Promise.resolve();
+    if (!document.querySelector('link[data-maplibre]')) {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet'; css.dataset.maplibre = 'true';
+      css.href = 'https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css';
+      css.onerror = function () { css.href = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css'; };
+      document.head.appendChild(css);
+    }
+    return new Promise(function (resolver, rechazar) {
+      function intentar(src, alterna) {
+        var script = document.createElement('script');
+        script.src = src; script.async = true;
+        script.onload = function () { typeof maplibregl !== 'undefined' ? resolver() : rechazar(new Error('MapLibre no disponible')); };
+        script.onerror = function () {
+          script.remove();
+          if (alterna) intentar(alterna, ''); else rechazar(new Error('No se pudo descargar MapLibre'));
+        };
+        document.head.appendChild(script);
+      }
+      intentar('https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js',
+        'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js');
+    });
+  }
+
+  function cargarMapaDiferido() {
+    if (cargaMapaIniciada) return;
+    cargaMapaIniciada = true;
+    cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
+    Promise.all([fetchJSON('data/municipios.geojson'), fetchJSON('data/geo_puntos.json'), cargarMapLibre()])
+      .then(function (r) {
+        datosMapa.municipios = r[0]; datosMapa.geo = r[1];
+        if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
+        prepararDatosMapa(); pintarFiltrosMapa(); aplicarFiltrosMapa(false); iniciarMapa();
+        window.dispatchEvent(new CustomEvent('cuidar:mapa-datos-listos'));
+      }).catch(function () {
+        cambiarEstadoMapa('No se pudo cargar el mapa visual. La información y los canales de ayuda siguen disponibles en las listas.', 'error');
+        renderResultadosMapa();
+      });
+  }
+
+  function observarMapa() {
+    var seccion = document.getElementById('mapa-seccion');
+    if (!seccion || !('IntersectionObserver' in window)) { cargarMapaDiferido(); return; }
+    var observador = new IntersectionObserver(function (entradas) {
+      if (!entradas.some(function (e) { return e.isIntersecting; })) return;
+      observador.disconnect(); cargarMapaDiferido();
+    }, { rootMargin: '500px 0px' });
+    observador.observe(seccion);
   }
 
   function iniciarMapa() {
@@ -973,13 +1029,10 @@
     fetchJSON('data/pedagogia.json'),
     fetchJSON('data/benchmarks.json'),
     fetchJSON('data/fuentes.json'),
-    fetchJSON('data/municipios.geojson'),
-    fetchJSON('data/geo_puntos.json'),
     fetchJSON('data/verificacion.json')
   ]).then(function (r) {
     var meta = r[0], sismo = r[1], balance = r[2], zonas = r[3], ayuda = r[4],
-        pedagogia = r[5], benchmarks = r[6], fuentes = r[7], municipios = r[8],
-        geo = r[9], verificacion = r[10];
+        pedagogia = r[5], benchmarks = r[6], fuentes = r[7], verificacion = r[8];
 
     pintarMeta(meta);
     pintarSismo(sismo);
@@ -997,18 +1050,13 @@
     pintarBenchmarks(benchmarks);
     pintarFuentes(fuentes);
 
-    if (zonas || geo) {
-      datosMapa.municipios = municipios || null;
+    if (zonas) {
       datosMapa.zonas = zonas || { municipios: [] };
       datosMapa.ayuda = ayuda;
       datosMapa.sismo = sismo;
-      datosMapa.geo = geo;
-      prepararDatosMapa();
-      pintarFiltrosMapa();
-      aplicarFiltrosMapa(false);
-      iniciarMapa();
+      observarMapa();
     } else {
-      cambiarEstadoMapa('No se pudieron cargar los datos geográficos. Usa las listas de información.', 'error');
+      cambiarEstadoMapa('No se pudieron cargar los datos de zonas. Usa las listas de información.', 'error');
       renderResultadosMapa();
     }
     // Gancho de solo lectura para la función opcional «Cerca de mí».
