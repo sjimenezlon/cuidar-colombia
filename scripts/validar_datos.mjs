@@ -25,6 +25,10 @@ function fechaCortaEs(iso) {
   const fecha = new Date(`${iso}T12:00:00Z`);
   return Number.isNaN(fecha.getTime()) ? null : `${fecha.getUTCDate()} ${meses[fecha.getUTCMonth()]} ${fecha.getUTCFullYear()}`;
 }
+function normalizar(valor) {
+  return String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ').trim();
+}
 
 const [meta, ayuda, zonas, geo, verificacion, fuentes, sismo, balance] = await Promise.all([
   json('data/meta.json'), json('data/ayuda.json'), json('data/zonas.json'), json('data/geo_puntos.json'),
@@ -97,6 +101,15 @@ if (geo && ayuda) {
     coordenadas.set(claveCoordenada, p.nombre);
     const ciudades = p.tipo === 'acopio' ? ciudadesAcopio : ciudadesSangre;
     exigir(ciudades.has(p.ciudad), `${ctx}: la ciudad no existe en ayuda.${p.tipo === 'acopio' ? 'acopios' : 'sangre'}`);
+    if (p.tipo === 'acopio') {
+      const registro = (ayuda.acopios || []).find(x => x.ciudad === p.ciudad &&
+        (x.puntos || []).some(q => normalizar(q.nombre) === normalizar(p.nombre)));
+      exigir(Boolean(registro), `${ctx}: no coincide exactamente con un punto de acopio y podría enlazar evidencia incorrecta`);
+    } else {
+      exigir(Boolean(p.registro_entidad), `${ctx}: falta registro_entidad para enlazar su evidencia sin ambigüedad`);
+      const registro = (ayuda.sangre || []).find(x => x.ciudad === p.ciudad && normalizar(x.entidad) === normalizar(p.registro_entidad));
+      exigir(Boolean(registro), `${ctx}: registro_entidad no coincide con una campaña de sangre de la misma ciudad`);
+    }
   }
 }
 

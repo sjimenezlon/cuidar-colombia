@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const raiz = resolve(import.meta.dirname, '..');
-const archivos = ['ayuda.json', 'balance.json', 'benchmarks.json', 'fuentes.json', 'pedagogia.json', 'sismo.json', 'verificacion.json', 'zonas.json'];
+const archivos = ['ayuda.json', 'balance.json', 'benchmarks.json', 'fuentes.json', 'geo_puntos.json', 'pedagogia.json', 'sismo.json', 'verificacion.json', 'zonas.json'];
 const urls = new Set();
 
 function visitar(valor) {
@@ -14,6 +14,8 @@ function visitar(valor) {
   }
 }
 for (const archivo of archivos) visitar(JSON.parse(await readFile(resolve(raiz, 'data', archivo), 'utf8')));
+const html = await readFile(resolve(raiz, 'index.html'), 'utf8');
+for (const coincidencia of html.matchAll(/href=["'](https:\/\/[^"']+)["']/g)) urls.add(coincidencia[1].replace(/&amp;/g, '&'));
 
 const lista = [...urls];
 const resultados = [];

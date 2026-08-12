@@ -108,7 +108,8 @@
         var el = document.createElement('div');
         el.style.cssText = 'width:16px;height:16px;border-radius:50%;background:#C8862A;border:3px solid #fff;box-shadow:0 0 0 5px rgba(200,134,42,.3);';
         marcadorUsuario = new maplibregl.Marker({ element: el }).setLngLat([lon, lat]).addTo(mapa);
-        mapa.flyTo({ center: [lon, lat], zoom: puntos.length && puntos[0].d < 30 ? 11.5 : 7.5, essential: true });
+        var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        mapa.flyTo({ center: [lon, lat], zoom: puntos.length && puntos[0].d < 30 ? 11.5 : 7.5, duration: reducir ? 0 : 500, essential: false });
       }
       if (!puntos.length) { res.textContent = 'No hay puntos georreferenciados todavía.'; return; }
       res.innerHTML = '<strong>Lo más cercano a ti:</strong><ul class="lista-cercanos">' + puntos.map(function (c) {
@@ -116,7 +117,7 @@
           esc(c.p.ciudad) + (c.p.direccion ? ', ' + esc(c.p.direccion) : '') +
           ' · a ~' + (c.d < 10 ? c.d.toFixed(1) : Math.round(c.d)) + ' km · ' +
           '<a href="https://www.google.com/maps/dir/?api=1&destination=' + c.p.lat + ',' + c.p.lon +
-          '" target="_blank" rel="noopener noreferrer">Cómo llegar →</a></li>';
+          '" target="_blank" rel="noopener noreferrer" aria-label="Cómo llegar a ' + esc(c.p.nombre) + ' (se abre en una pestaña nueva)">Cómo llegar ↗</a></li>';
       }).join('') + '</ul><p class="nota-corte">Distancias en línea recta; el pin es aproximado, guíate por la dirección publicada.</p>';
     }, function () {
       res.textContent = 'No pudimos obtener tu ubicación: revisa el permiso de ubicación del navegador.';

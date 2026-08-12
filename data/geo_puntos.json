@@ -262,6 +262,7 @@
   {
    "tipo": "sangre",
    "ciudad": "Bogotá",
+   "registro_entidad": "IDCBIS y Red Distrital de Sangre",
    "nombre": "IDCBIS — Banco Distrital de Sangre",
    "direccion": "Carrera 32 #12-81",
    "lat": 4.62925,
@@ -270,6 +271,7 @@
   {
    "tipo": "sangre",
    "ciudad": "Medellín",
+   "registro_entidad": "Cruz Roja Colombiana",
    "nombre": "Cruz Roja — donación de sangre",
    "direccion": "Carrera 52 #25-310",
    "lat": 6.25015,
@@ -278,6 +280,7 @@
   {
    "tipo": "sangre",
    "ciudad": "Cali",
+   "registro_entidad": "Secretaría de Salud, Cruz Roja Valle y bancos de sangre",
    "nombre": "Banco Regional Cruz Roja",
    "direccion": "Cra. 38 Bis #5-91, San Fernando",
    "lat": 3.42359,
@@ -286,6 +289,7 @@
   {
    "tipo": "sangre",
    "ciudad": "Cali",
+   "registro_entidad": "Secretaría de Salud, Cruz Roja Valle y bancos de sangre",
    "nombre": "Hospital Universitario del Valle",
    "direccion": "Calle 5 #36-08",
    "lat": 3.43018,
@@ -294,6 +298,7 @@
   {
    "tipo": "sangre",
    "ciudad": "Cali",
+   "registro_entidad": "Secretaría de Salud, Cruz Roja Valle y bancos de sangre",
    "nombre": "Fundación Valle del Lili",
    "direccion": "Torre 2, piso 4",
    "lat": 3.35024,
@@ -302,6 +307,7 @@
   {
    "tipo": "sangre",
    "ciudad": "Manizales",
+   "registro_entidad": "Cruz Roja y Hemocentro del Café",
    "nombre": "Jornada Palogrande (Cruz Roja)",
    "direccion": "Cancha auxiliar de Palogrande",
    "lat": 5.05701,
@@ -310,6 +316,7 @@
   {
    "tipo": "sangre",
    "ciudad": "Villavicencio",
+   "registro_entidad": "Cruz Roja Colombiana",
    "nombre": "Cruz Roja — donación de sangre",
    "direccion": "Carrera 30 #39-30",
    "lat": 4.11775,
@@ -326,6 +333,7 @@
   {
    "tipo": "sangre",
    "ciudad": "Medellín",
+   "registro_entidad": "Cruz Roja Antioquia — jornadas móviles",
    "nombre": "Jornada Cruz Roja — Parque Explora (14 ago)",
    "direccion": "Carrera 52 #73-75",
    "lat": 6.27062,
