@@ -9,7 +9,7 @@
       "fuente_url": "https://www.semana.com/tecnologia/articulo/mensaje-que-circula-por-whatsapp-genera-panico-tras-fuerte-terremoto-en-colombia-ideam-aclara-informacion-sobre-posibles-replicas/202628/",
       "remitir_nombre": "SGC — Sismos en tiempo real",
       "remitir_url": "https://www.sgc.gov.co/sismos",
-      "verificado_iso": "2026-08-11"
+      "verificado_iso": "2026-08-12"
     },
     {
       "afirmacion": "«Viene un segundo terremoto más fuerte: hay un patrón sísmico que lo anuncia»",
@@ -75,7 +75,7 @@
       "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/enganoso/este-video-muestra-un-colegio-durante-el-terremoto-de-filipinas-no-de-colombia/",
       "remitir_nombre": "La Silla Vacía — Detector de Mentiras",
       "remitir_url": "https://www.lasillavacia.com/detector-de-mentiras/",
-      "verificado_iso": "2026-08-11"
+      "verificado_iso": "2026-08-12"
     },
     {
       "afirmacion": "«El proyecto HAARP provocó el terremoto de 7,4»",
@@ -86,7 +86,7 @@
       "fuente_url": "https://chequeado.com/ultimas-noticias/es-falso-que-haarp-haya-provocado-el-terremoto-de-magnitud-7-4-en-colombia/",
       "remitir_nombre": "SGC — Servicio Geológico Colombiano",
       "remitir_url": "https://www.sgc.gov.co/sismos",
-      "verificado_iso": "2026-08-11"
+      "verificado_iso": "2026-08-12"
     },
     {
       "afirmacion": "«El volcán Puracé entró en erupción por el terremoto»",
@@ -109,7 +109,8 @@
     {"nombre": "IDEAM", "para": "No emite alertas sísmicas: cualquier «alerta de réplica» a su nombre es falsa.", "url": "https://www.ideam.gov.co"},
     {"nombre": "Colombiacheck", "para": "Verificador colombiano: chequeos de imágenes con IA y virales del terremoto.", "url": "https://colombiacheck.com/tags/terremotos"},
     {"nombre": "La Silla Vacía — Detector", "para": "Desmentidos de réplicas «programadas», HAARP y videos de otros países.", "url": "https://www.lasillavacia.com/detector-de-mentiras/"},
-    {"nombre": "Alcaldía de Cali — Emergencia", "para": "Canal local oficial: WhatsApp de reportes 310 229 9708 y líneas de atención.", "url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/"}
+    {"nombre": "Alcaldía de Cali — Emergencia", "para": "Canal local oficial: WhatsApp de reportes 310 229 9708 y líneas de atención.", "url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/"},
+    {"nombre": "Asocapitales — Búsqueda de desaparecidos", "para": "Herramienta oficial de la Asociación Colombiana de Ciudades Capitales para reportar o buscar personas desaparecidas por nombre o código, con línea de atención 300 761 6647.", "url": "https://www.asocapitales.co/terremoto-colombia.html"}
   ],
   "metodologia": {
     "principios": [
