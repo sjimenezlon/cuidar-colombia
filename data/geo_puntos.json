@@ -224,6 +224,22 @@
    "direccion": "Carrera 30 #39-30",
    "lat": 4.11775,
    "lon": -73.62637
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Itagüí",
+   "nombre": "Parque Principal de Itagüí",
+   "direccion": "Centro de Itagüí",
+   "lat": 6.17239,
+   "lon": -75.60942
+  },
+  {
+   "tipo": "sangre",
+   "ciudad": "Medellín",
+   "nombre": "Jornada Cruz Roja — Parque Explora (14 ago)",
+   "direccion": "Carrera 52 #73-75",
+   "lat": 6.27062,
+   "lon": -75.56558
   }
  ]
 }

@@ -428,6 +428,11 @@
           "nombre": "Parques Biblioteca Belén, San Javier, G. García Márquez y León de Greiff",
           "direccion": null,
           "horario": null
+        },
+        {
+          "nombre": "Biblioteca Pública El Poblado",
+          "direccion": null,
+          "horario": "8:00 a. m.–5:00 p. m."
         }
       ],
       "que_donar": [
@@ -444,7 +449,7 @@
       ],
       "fuente_titulo": "El Colombiano",
       "fuente_url": "https://www.elcolombiano.com/antioquia/damnificados-sismo-puntos-acopio-medellin-donaciones-que-donar-CF39784677",
-      "fecha": "11 ago 2026"
+      "fecha": "12 ago 2026"
     },
     {
       "ciudad": "Cali",
@@ -807,6 +812,31 @@
       "fuente_titulo": "Alerta Caribe",
       "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
       "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Itagüí",
+      "entidad": "Consejo Municipal de Juventudes de Itagüí",
+      "puntos": [
+        {
+          "nombre": "Parque Principal de Itagüí",
+          "direccion": "Centro de Itagüí",
+          "horario": "solo 11 y 12 de agosto, 10:00 a. m.–5:00 p. m."
+        }
+      ],
+      "que_donar": [
+        "agua",
+        "alimentos no perecederos",
+        "cobijas",
+        "primeros auxilios",
+        "artículos de higiene"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "Colombia.com citando el anuncio",
+      "fuente_url": "https://www.colombia.com/actualidad/noticias/centros-de-acopio-y-ayudas-humanitarias-habilitadas-en-colombia-tras-temblor-10-de-agosto-595512",
+      "fecha": "12 ago 2026"
     }
   ],
   "ciudades_acopio": [
@@ -874,6 +904,11 @@
       "ciudad": "Montería",
       "lat": 8.748,
       "lon": -75.881
+    },
+    {
+      "ciudad": "Itagüí",
+      "lat": 6.1846,
+      "lon": -75.5991
     }
   ],
   "sangre": [
@@ -899,10 +934,10 @@
     {
       "ciudad": "Medellín",
       "entidad": "Cruz Roja Colombiana",
-      "donde": "Carrera 52 #25-310. Teléfono 310 701 6237.",
+      "donde": "Carrera 52 #25-310 (sede Guayabal) — jornada ampliada 11 y 12 de agosto, 7:00 a. m.–7:00 p. m. Tel. 301 701 6237; agenda tu cita en donarsangre.crantioquia.org.co",
       "tipos_urgentes": [],
-      "fuente_titulo": "El Colombiano",
-      "fuente_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382"
+      "fuente_titulo": "El Espectador",
+      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/"
     },
     {
       "ciudad": "Cali",
@@ -954,6 +989,22 @@
       "tipos_urgentes": [],
       "fuente_titulo": "El Colombiano",
       "fuente_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382"
+    },
+    {
+      "ciudad": "La Estrella",
+      "entidad": "Cruz Roja Antioquia — jornada móvil",
+      "donde": "HOY miércoles 12 de agosto: estación La Estrella del Metro, 10:00 a. m.–4:30 p. m. Llama antes: 301 701 6237.",
+      "tipos_urgentes": [],
+      "fuente_titulo": "El Espectador",
+      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/"
+    },
+    {
+      "ciudad": "Medellín",
+      "entidad": "Cruz Roja Antioquia — jornadas móviles",
+      "donde": "Parque Explora: viernes 14 de agosto, 10:00 a. m.–4:00 p. m. · San Antonio de Prado: sábado 15, 9:00 a. m.–7:00 p. m.",
+      "tipos_urgentes": [],
+      "fuente_titulo": "El Espectador",
+      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/"
     }
   ],
   "sangre_requisitos": [
