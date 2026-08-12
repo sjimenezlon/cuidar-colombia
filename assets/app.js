@@ -81,7 +81,7 @@
     } else {
       aviso.className = 'aviso-vigencia aviso-vigencia-ok';
       aviso.innerHTML = '<strong>Datos dentro de la ventana de revisión.</strong>' +
-        (meta.proxima_revision ? ' Próxima revisión prevista: ' + esc(meta.proxima_revision) + '.' : '');
+        (meta.proxima_revision ? ' Próxima revisión prevista: ' + esc(meta.proxima_revision) : '');
     }
   }
 
@@ -333,7 +333,7 @@
     if (!zonasDatos) return [];
     var q = normalizar(filtrosMapa.busqueda);
     return (zonasDatos.municipios || []).filter(function (m) {
-      var coincideTexto = !q || normalizar([m.municipio, m.departamento, m.afectacion].join(' ')).indexOf(q) !== -1;
+      var coincideTexto = !q || normalizar([m.municipio, m.departamento].join(' ')).indexOf(q) !== -1;
       return filtrosMapa.gravedades[m.gravedad] &&
         (filtrosMapa.departamento === 'todos' || m.departamento === filtrosMapa.departamento) && coincideTexto;
     });
@@ -460,10 +460,8 @@
       conectarClicsMapa();
       mapa.on('style.load', function () {
         mapaListo = true;
-        construirCapas();
-        aplicarFiltrosMapa(false);
+        reconstruirCapasPropias();
         anadirMarcadores();
-        cambiarEstadoMapa('', '');
       });
       mapa.once('load', function () {
         encuadrarMapa();
@@ -482,8 +480,28 @@
     }
   }
 
+  function reconstruirCapasPropias() {
+    if (!mapa) return;
+    var completas = construirCapas();
+    aplicarFiltrosMapa(false);
+    if (completas) {
+      cambiarEstadoMapa('', '');
+      return;
+    }
+    // Algunos estilos externos emiten style.load antes de terminar sprites y
+    // fuentes. Reintentar en idle evita dejar el mapa base sin nuestros datos.
+    mapa.once('idle', function () {
+      if (construirCapas()) {
+        aplicarFiltrosMapa(false);
+        cambiarEstadoMapa('', '');
+      } else {
+        cambiarEstadoMapa('No pudimos dibujar las capas del mapa. Usa la lista de resultados que aparece debajo.', 'error');
+      }
+    });
+  }
+
   function construirCapas() {
-    if (!mapa || !mapa.isStyleLoaded()) return;
+    if (!mapa) return false;
     try {
       if (datosMapa.municipios && datosMapa.zonas && !mapa.getSource('municipios')) {
         mapa.addSource('municipios', { type: 'geojson', data: datosMapa.municipios });
@@ -518,7 +536,13 @@
           paint: { 'circle-color': COLOR_SANGRE, 'circle-radius': 6.5, 'circle-stroke-color': '#fff', 'circle-stroke-width': 2 }
         });
       }
-    } catch (e) { console.warn('[mapa]', e.message); }
+      return (!datosMapa.municipios || !!mapa.getLayer('afectados-relleno')) &&
+        (!datosMapa._fcAcopios || !!mapa.getLayer('capa-acopios')) &&
+        (!datosMapa._fcSangre || !!mapa.getLayer('capa-sangre'));
+    } catch (e) {
+      console.warn('[mapa]', e.message);
+      return false;
+    }
   }
 
   /* ---------- Filtros de capas del mapa ---------- */
@@ -663,8 +687,8 @@
         '<strong>' + esc(p.nombre) + '</strong><small>' + esc(p.ciudad) + (p.direccion ? ' · ' + esc(p.direccion) : '') + '</small>' +
         '<button type="button" data-enfocar data-lat="' + p.lat + '" data-lon="' + p.lon + '">Ubicar</button></li>';
     }));
-    cont.innerHTML = '<details' + (!mapaListo ? ' open' : '') + '><summary><strong>' + total + ' resultado' + (total === 1 ? '' : 's') + '</strong> · ' +
-      municipios.length + ' municipios y ' + puntos.length + ' puntos de ayuda</summary>' +
+    cont.innerHTML = '<details' + (!mapaListo || !total ? ' open' : '') + '><summary><strong>' + total + ' resultado' + (total === 1 ? '' : 's') + '</strong> · ' +
+      municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' y ' + puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda</summary>' +
       (items.length ? '<ul class="lista-resultados-mapa">' + items.join('') + '</ul>' : '<div class="estado-datos">No hay resultados. Ajusta o restablece los filtros.</div>') + '</details>';
   }
 

@@ -41,7 +41,7 @@
       "fuente_nombre": "Policía Nacional y Gestión del Riesgo",
       "fuente_url": "https://www.colombia.com/actualidad/noticias/cuales-son-los-requisitos-y-como-acceder-al-subsidio-de-arriendo-de-emergencia-tras-el-terremoto-en-colombia-595675",
       "remitir_nombre": "UNGRD — Gestión del Riesgo",
-      "remitir_url": "https://portal.gestiondelriesgo.gov.co/",
+      "remitir_url": "https://gestiondelriesgo.gov.co",
       "verificado_iso": "2026-08-11"
     },
     {
@@ -102,7 +102,7 @@
   ],
   "fuentes_para_verificar": [
     {"nombre": "SGC — Sismos", "para": "La única autoridad sísmica: réplicas en tiempo real y reporte de sismos sentidos.", "url": "https://www.sgc.gov.co/sismos"},
-    {"nombre": "UNGRD", "para": "Coordinación oficial de la emergencia, balances y ayudas legítimas del Gobierno.", "url": "https://portal.gestiondelriesgo.gov.co/"},
+    {"nombre": "UNGRD", "para": "Coordinación oficial de la emergencia, balances y ayudas legítimas del Gobierno.", "url": "https://gestiondelriesgo.gov.co"},
     {"nombre": "CAI Virtual — Policía", "para": "Reportar enlaces con virus, cuentas clonadas y phishing de la emergencia.", "url": "https://caivirtual.policia.gov.co"},
     {"nombre": "¡ADenunciar!", "para": "Denuncia formal de estafas y fraudes con donaciones (Policía y Fiscalía).", "url": "https://adenunciar.policia.gov.co/adenunciar"},
     {"nombre": "Cruz Roja Colombiana", "para": "Canales publicados por la entidad para donación y búsqueda de familiares.", "url": "https://ayuda.cruzrojacolombiana.org/"},

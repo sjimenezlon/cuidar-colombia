@@ -20,6 +20,11 @@ function urlValida(valor, permiteTel = false) {
 function revisarUrl(url, contexto, permiteTel = false) {
   exigir(urlValida(url, permiteTel), `${contexto}: URL no permitida (${url || 'vacía'})`);
 }
+function fechaCortaEs(iso) {
+  const meses = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  const fecha = new Date(`${iso}T12:00:00Z`);
+  return Number.isNaN(fecha.getTime()) ? null : `${fecha.getUTCDate()} ${meses[fecha.getUTCMonth()]} ${fecha.getUTCFullYear()}`;
+}
 
 const [meta, ayuda, zonas, geo, verificacion, fuentes, sismo, balance] = await Promise.all([
   json('data/meta.json'), json('data/ayuda.json'), json('data/zonas.json'), json('data/geo_puntos.json'),
@@ -46,6 +51,7 @@ if (ayuda) {
     exigir(['verificado', 'confirmacion_secundaria'].includes(canal.verificacion?.estado), `${ctx}: estado de verificación inválido`);
     exigir(!Number.isNaN(Date.parse(canal.verificacion?.fecha_iso)), `${ctx}: fecha_iso inválida`);
     exigir(!fechaCorte || canal.verificacion?.fecha_iso <= fechaCorte, `${ctx}: fecha_iso no puede ser posterior al corte ${fechaCorte}`);
+    exigir(canal.fecha_verificacion === fechaCortaEs(canal.verificacion?.fecha_iso), `${ctx}: fecha_verificacion no coincide con fecha_iso`);
     revisarUrl(canal.verificacion?.evidencia_url, `${ctx}.evidencia_url`);
     if (canal.verificacion?.nivel === 'fuente_secundaria' && canal.detalle_cuenta) {
       errores.push(`${ctx}: no se permite publicar una cuenta respaldada solo por fuente secundaria`);
