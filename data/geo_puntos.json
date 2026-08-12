@@ -77,9 +77,27 @@
    "tipo": "acopio",
    "ciudad": "Cali",
    "nombre": "Unidad Deportiva Alberto Galindo",
-   "direccion": "Ciudadela Petronio",
+   "direccion": "Carrera 52 entre calles 2 y 3 — Ciudadela Petronio",
    "lat": 3.41308,
    "lon": -76.55142
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Cali",
+   "nombre": "Escuela Nacional del Deporte",
+   "direccion": "Calle 9 #34-01",
+   "lat": 3.4263251,
+   "lon": -76.5370157,
+   "coordenadas_fuente": "https://terremoto.com.co/collection-points/4bc9a31b-6704-47f7-846e-7447294242da"
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Cali",
+   "nombre": "Antigua Licorera del Valle — campaña «Todos Somos Valle»",
+   "direccion": "Carrera 1 #26-85, bodega 3",
+   "lat": 3.4610172,
+   "lon": -76.5198802,
+   "coordenadas_fuente": "https://terremoto.com.co/collection-points/105d4616-5605-44c3-a1b2-de2f7433a112"
   },
   {
    "tipo": "acopio",
@@ -168,6 +186,78 @@
    "direccion": null,
    "lat": 8.74725,
    "lon": -75.88165
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Cruz Roja — SAMU Sur",
+   "direccion": "Avenida Carrera 68 #31-41 Sur",
+   "lat": 4.6072495,
+   "lon": -74.1312629,
+   "coordenadas_fuente": "https://terremoto.com.co/collection-points/5fafc448-c3ed-4943-9631-9c589a6ff05c"
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Cruz Roja — SAMU Norte",
+   "direccion": "Carrera 7B Bis #132-31, acceso por calle 134",
+   "lat": 4.7109011,
+   "lon": -74.0302357,
+   "coordenadas_fuente": "https://terremoto.com.co/collection-points/ac3f0763-277a-477d-af15-38d55a171d28"
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Cruz Roja — Centro de Salvamento Acuático",
+   "direccion": "Avenida La Esmeralda #63-81",
+   "lat": 4.66615,
+   "lon": -74.0860427,
+   "coordenadas_fuente": "https://terremoto.com.co/collection-points/2c6b13d3-acc9-42c2-aee7-b442d7b4ccc0"
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Cruz Roja — bodega",
+   "direccion": "Diagonal 79B #62-53",
+   "lat": 4.6796948,
+   "lon": -74.0773444,
+   "coordenadas_fuente": "https://terremoto.com.co/collection-points/8a26ca98-8ca2-41ee-b8cd-6d16d355b26e"
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Palacio de los Deportes",
+   "direccion": "Calle 63 #59A-06",
+   "lat": 4.6554178,
+   "lon": -74.0841157,
+   "coordenadas_fuente": "https://terremoto.com.co/collection-points/b29fb2a1-dc4e-47aa-9857-e747eec4ddf6"
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Casa del Valle del Cauca en Bogotá",
+   "direccion": "Calle 34 #5-50, barrio La Merced",
+   "lat": 4.6205568,
+   "lon": -74.0654572,
+   "coordenadas_fuente": "https://terremoto.com.co/collection-points/f318d583-44ad-4ab3-9c95-d10d21d44687"
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Gobernación de Cundinamarca",
+   "direccion": "Calle 26 #51-53",
+   "lat": 4.6414736,
+   "lon": -74.0974309,
+   "coordenadas_fuente": "https://www.openstreetmap.org/?mlat=4.6414736&mlon=-74.0974309#map=18/4.6414736/-74.0974309"
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Tunja",
+   "nombre": "Carpa frente al Palacio de la Torre",
+   "direccion": "Calle 20 #9-90, Plaza de Bolívar",
+   "lat": 5.533333,
+   "lon": -73.366667,
+   "coordenadas_fuente": "https://www.boyaca.gov.co/ubicacion/"
   },
   {
    "tipo": "sangre",

@@ -374,6 +374,31 @@
           "horario": "24 horas"
         },
         {
+          "nombre": "Cruz Roja — SAMU Sur",
+          "direccion": "Avenida Carrera 68 #31-41 Sur",
+          "horario": null
+        },
+        {
+          "nombre": "Cruz Roja — SAMU Norte",
+          "direccion": "Carrera 7B Bis #132-31, acceso por calle 134",
+          "horario": "confirmar antes de ir; hay reportes comunitarios contradictorios"
+        },
+        {
+          "nombre": "Cruz Roja — Centro de Salvamento Acuático",
+          "direccion": "Avenida La Esmeralda #63-81",
+          "horario": null
+        },
+        {
+          "nombre": "Cruz Roja — bodega",
+          "direccion": "Diagonal 79B #62-53",
+          "horario": null
+        },
+        {
+          "nombre": "Palacio de los Deportes",
+          "direccion": "Calle 63 #59A-06",
+          "horario": null
+        },
+        {
           "nombre": "Pabellón Vive Claro — acopio nacional del Gobierno",
           "direccion": null,
           "horario": "hasta el 31 de agosto"
@@ -457,17 +482,17 @@
       "puntos": [
         {
           "nombre": "Plazoleta Jairo Varela",
-          "direccion": null,
+          "direccion": "Avenida 2 Norte con calle 10 Norte, frente al CAM",
           "horario": null
         },
         {
           "nombre": "Escuela Nacional del Deporte",
-          "direccion": null,
+          "direccion": "Calle 9 #34-01",
           "horario": null
         },
         {
           "nombre": "Ciudadela Petronio — Unidad Deportiva Alberto Galindo",
-          "direccion": null,
+          "direccion": "Carrera 52 entre calles 2 y 3",
           "horario": null
         },
         {
@@ -482,7 +507,7 @@
         },
         {
           "nombre": "Antigua Licorera del Valle — campaña «Todos Somos Valle»",
-          "direccion": null,
+          "direccion": "Carrera 1 #26-85, bodega 3",
           "horario": null
         }
       ],
@@ -836,6 +861,108 @@
       ],
       "fuente_titulo": "Colombia.com citando el anuncio",
       "fuente_url": "https://www.colombia.com/actualidad/noticias/centros-de-acopio-y-ayudas-humanitarias-habilitadas-en-colombia-tras-temblor-10-de-agosto-595512",
+      "fecha": "12 ago 2026"
+    },
+    {
+      "ciudad": "Bogotá",
+      "entidad": "Gobernación del Valle del Cauca y Alcaldía de Cali",
+      "puntos": [
+        {
+          "nombre": "Casa del Valle del Cauca en Bogotá",
+          "direccion": "Calle 34 #5-50, barrio La Merced",
+          "horario": "consultar vigencia en la fuente"
+        }
+      ],
+      "que_donar": [
+        "agua",
+        "cobijas y mantas",
+        "colchonetas",
+        "alimentos no perecederos",
+        "artículos de higiene",
+        "primeros auxilios"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "Gobernación del Valle del Cauca — X oficial",
+      "fuente_url": "https://x.com/GobValle/status/2086936778468893171",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "12 ago 2026"
+    },
+    {
+      "ciudad": "Bogotá",
+      "entidad": "Gobernación de Cundinamarca y Ministerio del Interior",
+      "puntos": [
+        {
+          "nombre": "Gobernación de Cundinamarca",
+          "direccion": "Calle 26 #51-53",
+          "horario": "consultar vigencia en la fuente"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "kits de aseo",
+        "cobijas y colchonetas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "EL PAÍS — contraste directo de fuentes",
+      "fuente_url": "https://elpais.com/america-colombia/2026-08-12/la-columna-mas-aburrida-del-mundo.html",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "12 ago 2026"
+    },
+    {
+      "ciudad": "Cota",
+      "entidad": "Gobernación de Cundinamarca y Ministerio del Interior",
+      "puntos": [
+        {
+          "nombre": "Empresa de Licores de Cundinamarca",
+          "direccion": "Autopista Medellín km 3,8, vía Bogotá–Siberia",
+          "horario": "consultar vigencia en la fuente"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "kits de aseo",
+        "cobijas y colchonetas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "EL PAÍS — contraste directo de fuentes",
+      "fuente_url": "https://elpais.com/america-colombia/2026-08-12/la-columna-mas-aburrida-del-mundo.html",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "12 ago 2026"
+    },
+    {
+      "ciudad": "Tunja",
+      "entidad": "Gobernación de Boyacá",
+      "puntos": [
+        {
+          "nombre": "Carpa frente al Palacio de la Torre",
+          "direccion": "Calle 20 #9-90, Plaza de Bolívar",
+          "horario": "hasta el 14 de agosto"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "elementos de aseo",
+        "artículos de primera necesidad"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "EL PAÍS — contraste directo de fuentes",
+      "fuente_url": "https://elpais.com/america-colombia/2026-08-12/la-columna-mas-aburrida-del-mundo.html",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "12 ago 2026"
     }
   ],

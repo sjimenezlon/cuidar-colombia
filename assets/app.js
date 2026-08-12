@@ -196,7 +196,8 @@
     'bogota': 'Bogotá D.C.', 'medellin': 'Antioquia', 'cali': 'Valle del Cauca', 'pereira': 'Risaralda',
     'manizales': 'Caldas', 'armenia': 'Quindío', 'quibdo': 'Chocó', 'barranquilla': 'Atlántico',
     'bucaramanga': 'Santander', 'cartagena': 'Bolívar', 'ibague': 'Tolima', 'santa marta': 'Magdalena',
-    'monteria': 'Córdoba', 'villavicencio': 'Meta', 'buenaventura': 'Valle del Cauca'
+    'monteria': 'Córdoba', 'villavicencio': 'Meta', 'buenaventura': 'Valle del Cauca',
+    'cota': 'Cundinamarca', 'tunja': 'Boyacá', 'itagui': 'Antioquia', 'la estrella': 'Antioquia'
   };
   var filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', busqueda: '', soloOficial: false };
   var conteosAyuda = { dinero: 0, especie: 0, sangre: 0, personas: 0 };
@@ -401,6 +402,11 @@
 
   /* ---------- Acopios ---------- */
   var acopiosDatos = [], ciudadAcopioActiva = 'todas';
+  function nivelRegistroAyuda(registro) {
+    if (registro && registro.nivel_fuente === 'fuente_oficial') return 'fuente_oficial';
+    try { if (/\.gov\.co$/i.test(new URL(registro.fuente_url).hostname)) return 'fuente_oficial'; } catch (e) { /* URL validada al publicar */ }
+    return 'fuente_secundaria';
+  }
   function pintarSelectorCiudades() {
     var sel = document.getElementById('selector-ciudades');
     var ciudades = [];
@@ -424,6 +430,7 @@
     ciudad = ciudad || 'todas';
     var lista = acopiosDatos.filter(function (a) {
       return (ciudad === 'todas' || a.ciudad === ciudad) && coincideUbicacion(a.ciudad, '') &&
+        (!filtrosAyuda.soloOficial || nivelRegistroAyuda(a) === 'fuente_oficial') &&
         coincideBusqueda([a.ciudad, departamentoCiudad(a.ciudad), a.entidad, a.que_donar, a.que_no_donar].concat((a.puntos || []).map(function (p) { return [p.nombre, p.direccion, p.horario].join(' '); })));
     });
     conteosAyuda.especie = lista.length;
@@ -435,9 +442,13 @@
       }).join('');
       var si = (a.que_donar || []).map(function (q) { return '<span class="etiqueta-si">' + esc(q) + '</span>'; }).join('');
       var no = (a.que_no_donar || []).map(function (q) { return '<span class="etiqueta-no">' + esc(q) + '</span>'; }).join('');
+      var fuenteOficial = nivelRegistroAyuda(a) === 'fuente_oficial';
+      var chipFuente = fuenteOficial
+        ? '<span class="chip chip-verificado">✓ Fuente oficial</span>'
+        : '<span class="chip chip-verificado-prensa">◉ Confirmación secundaria</span>';
       return '<article class="tarjeta-acopio" data-ayuda-tipo="especie" data-ciudad="' + esc(normalizar(a.ciudad)) +
         '" data-departamento="' + esc(normalizar(departamentoCiudad(a.ciudad))) + '">' +
-        '<h4>' + esc(a.ciudad) + '</h4>' +
+        '<div class="canal-cabecera"><h4>' + esc(a.ciudad) + '</h4>' + chipFuente + '</div>' +
         '<div class="acopio-entidad">Habilitado por: ' + esc(a.entidad) + '</div>' +
         (puntos ? '<ul class="lista-puntos">' + puntos + '</ul>' : '') +
         (si ? '<div><strong style="font-size:.82rem">Qué llevar:</strong><div class="etiquetas-donar">' + si + '</div></div>' : '') +
@@ -464,13 +475,18 @@
 
   function pintarTarjetasSangre() {
     var lista = sangreDatos.filter(function (s) {
-      return coincideUbicacion(s.ciudad, '') && coincideBusqueda([s.ciudad, departamentoCiudad(s.ciudad), s.entidad, s.donde, s.tipos_urgentes]);
+      return coincideUbicacion(s.ciudad, '') &&
+        (!filtrosAyuda.soloOficial || nivelRegistroAyuda(s) === 'fuente_oficial') &&
+        coincideBusqueda([s.ciudad, departamentoCiudad(s.ciudad), s.entidad, s.donde, s.tipos_urgentes]);
     });
     conteosAyuda.sangre = lista.length;
     document.getElementById('sangre-lista').innerHTML = lista.map(function (s) {
       return '<article class="tarjeta-simple" data-ayuda-tipo="sangre" data-ciudad="' + esc(normalizar(s.ciudad)) +
         '" data-departamento="' + esc(normalizar(departamentoCiudad(s.ciudad))) + '">' +
-        '<h4>' + esc(s.ciudad) + '</h4>' +
+        '<div class="canal-cabecera"><h4>' + esc(s.ciudad) + '</h4>' +
+        (nivelRegistroAyuda(s) === 'fuente_oficial'
+          ? '<span class="chip chip-verificado">✓ Fuente oficial</span>'
+          : '<span class="chip chip-verificado-prensa">◉ Confirmación secundaria</span>') + '</div>' +
         '<div class="simple-sub">' + esc(s.entidad) + '</div>' +
         '<p>' + esc(s.donde || '') + '</p>' +
         (s.tipos_urgentes && s.tipos_urgentes.length ? '<p style="margin-top:8px"><strong>Se necesita con urgencia:</strong> ' + esc(s.tipos_urgentes.join(', ')) + '</p>' : '') +
@@ -889,7 +905,9 @@
     });
     function fuentePunto(p) {
       var lista = p.tipo === 'acopio' ? ((datosMapa.ayuda && datosMapa.ayuda.acopios) || []) : ((datosMapa.ayuda && datosMapa.ayuda.sangre) || []);
-      var coincidencia = lista.filter(function (x) { return x.ciudad === p.ciudad; })[0];
+      var coincidencia = lista.filter(function (x) {
+        return x.ciudad === p.ciudad && (x.puntos || []).some(function (q) { return normalizar(q.nombre) === normalizar(p.nombre); });
+      })[0] || lista.filter(function (x) { return x.ciudad === p.ciudad; })[0];
       return coincidencia && coincidencia.fuente_url || '';
     }
     function aFC(lista) {
