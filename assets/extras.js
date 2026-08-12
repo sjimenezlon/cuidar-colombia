@@ -100,7 +100,8 @@
       var mapa = window.__cuidar.obtenerMapa();
       var datos = window.__cuidar.datos || {};
       var lat = pos.coords.latitude, lon = pos.coords.longitude;
-      var puntos = ((datos.geo && datos.geo.puntos) || []).map(function (p) {
+      var visibles = window.__cuidar.obtenerPuntosVisibles ? window.__cuidar.obtenerPuntosVisibles() : ((datos.geo && datos.geo.puntos) || []);
+      var puntos = visibles.map(function (p) {
         return { p: p, d: distanciaKm(lat, lon, p.lat, p.lon) };
       }).sort(function (a, b) { return a.d - b.d; }).slice(0, 5);
       if (mapa) {

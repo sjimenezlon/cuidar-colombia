@@ -25,6 +25,11 @@ function fechaCortaEs(iso) {
   const fecha = new Date(`${iso}T12:00:00Z`);
   return Number.isNaN(fecha.getTime()) ? null : `${fecha.getUTCDate()} ${meses[fecha.getUTCMonth()]} ${fecha.getUTCFullYear()}`;
 }
+function isoDeFechaCortaEs(texto) {
+  const meses = { ene: '01', feb: '02', mar: '03', abr: '04', may: '05', jun: '06', jul: '07', ago: '08', sep: '09', oct: '10', nov: '11', dic: '12' };
+  const partes = String(texto || '').toLowerCase().match(/^(\d{1,2})\s+([a-záéíóú]{3})\s+(\d{4})$/);
+  return partes && meses[partes[2]] ? `${partes[3]}-${meses[partes[2]]}-${String(partes[1]).padStart(2, '0')}` : null;
+}
 function normalizar(valor) {
   return String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
     .replace(/[^a-z0-9]+/g, ' ').trim();
@@ -38,12 +43,14 @@ const municipios = await json('data/municipios.geojson');
 const fechaCorte = typeof meta?.iso === 'string' ? meta.iso.slice(0, 10) : null;
 
 if (meta) {
+  exigir(meta.evento_id === 'co-sismo-2026-08-10', 'meta.evento_id debe identificar este evento para evitar mezclar campañas');
   exigir(!Number.isNaN(Date.parse(meta.iso)), 'meta.iso debe ser una fecha ISO válida');
   exigir(Number(meta.vigencia_horas) > 0, 'meta.vigencia_horas debe ser mayor que cero');
   exigir(Boolean(meta.proceso), 'meta.proceso debe explicar brevemente la revisión');
 }
 
 if (ayuda) {
+  exigir(ayuda.evento_id === meta?.evento_id, 'ayuda.evento_id no coincide con meta.evento_id');
   exigir(Array.isArray(ayuda.canales) && ayuda.canales.length > 0, 'ayuda.canales debe tener elementos');
   const entidades = new Set();
   for (const [i, canal] of (ayuda.canales || []).entries()) {
@@ -65,7 +72,24 @@ if (ayuda) {
     for (const [i, item] of (lista || []).entries()) {
       revisarUrl(item.fuente_url, `ayuda.${tipo}[${i}].fuente_url`);
       if (item.fuente_adicional_url) revisarUrl(item.fuente_adicional_url, `ayuda.${tipo}[${i}].fuente_adicional_url`);
-      if (item.nivel_fuente) exigir(['fuente_oficial', 'fuente_secundaria'].includes(item.nivel_fuente), `ayuda.${tipo}[${i}].nivel_fuente inválido`);
+      exigir(['fuente_oficial', 'fuente_secundaria'].includes(item.nivel_fuente), `ayuda.${tipo}[${i}].nivel_fuente ausente o inválido`);
+      if (tipo === 'acopios') {
+        const fechaItem = isoDeFechaCortaEs(item.fecha);
+        exigir(Boolean(fechaItem), `ayuda.${tipo}[${i}].fecha ausente o inválida`);
+        exigir(!fechaCorte || !fechaItem || fechaItem <= fechaCorte, `ayuda.${tipo}[${i}].fecha posterior al corte ${fechaCorte}`);
+        const nombresPunto = new Set();
+        for (const [j, punto] of (item.puntos || []).entries()) {
+          exigir(punto.nombre && !nombresPunto.has(normalizar(punto.nombre)), `ayuda.${tipo}[${i}].puntos[${j}]: nombre ausente o duplicado`);
+          nombresPunto.add(normalizar(punto.nombre));
+          if (punto.fuente_url) {
+            revisarUrl(punto.fuente_url, `ayuda.${tipo}[${i}].puntos[${j}].fuente_url`);
+            exigir(['fuente_oficial', 'fuente_secundaria'].includes(punto.nivel_fuente), `ayuda.${tipo}[${i}].puntos[${j}].nivel_fuente ausente o inválido`);
+            const fechaPunto = isoDeFechaCortaEs(punto.fecha);
+            exigir(Boolean(fechaPunto), `ayuda.${tipo}[${i}].puntos[${j}].fecha ausente o inválida`);
+            exigir(!fechaCorte || !fechaPunto || fechaPunto <= fechaCorte, `ayuda.${tipo}[${i}].puntos[${j}].fecha posterior al corte ${fechaCorte}`);
+          }
+        }
+      }
     }
   }
 }
@@ -85,6 +109,7 @@ if (zonas) {
 }
 
 if (geo && ayuda) {
+  exigir(geo.evento_id === ayuda.evento_id, 'geo_puntos.evento_id no coincide con ayuda.evento_id');
   const ciudadesAcopio = new Set((ayuda.acopios || []).map(x => x.ciudad));
   const ciudadesSangre = new Set((ayuda.sangre || []).map(x => x.ciudad));
   const puntos = new Set();

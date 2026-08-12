@@ -9,9 +9,10 @@
   var NOMBRES_GRAVEDAD = { critica: 'Crítica', alta: 'Alta', media: 'Media' };
   var COLOR_ACOPIO = '#1D5A8A', COLOR_SANGRE = '#C62828';
   var filtrosMapa = {
+    modo: 'ayuda',
     gravedades: { critica: true, alta: true, media: true },
     puntos: { acopio: true, sangre: true },
-    departamento: 'todos', ciudad: 'todas', busqueda: ''
+    departamento: 'todos', ciudad: 'todas', operacion: 'todas', busqueda: ''
   };
   function esc(t) {
     if (t == null) return '';
@@ -254,7 +255,8 @@
     'cota': 'Cundinamarca', 'tunja': 'Boyacá', 'itagui': 'Antioquia', 'envigado': 'Antioquia', 'la estrella': 'Antioquia',
     'pasto': 'Nariño', 'chia': 'Cundinamarca', 'caqueza': 'Cundinamarca', 'sincelejo': 'Sucre',
     'acacias': 'Meta', 'florencia': 'Caquetá', 'popayan': 'Cauca', 'valledupar': 'Cesar',
-    'riohacha': 'La Guajira', 'neiva': 'Huila', 'cucuta': 'Norte de Santander', 'floridablanca': 'Santander'
+    'riohacha': 'La Guajira', 'neiva': 'Huila', 'cucuta': 'Norte de Santander', 'floridablanca': 'Santander',
+    'rionegro': 'Antioquia'
   };
   var filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', busqueda: '', soloOficial: false };
   var conteosAyuda = { dinero: 0, especie: 0, sangre: 0, personas: 0 };
@@ -730,8 +732,9 @@
      traer el mapa base después con reintentos, y reconstruir las capas propias
      en styledata porque setStyle las borra. Los datos propios se pintan SIEMPRE,
      llegue o no el mapa base. */
-  var mapa = null, mapaListo = false, mapaEventosConectados = false, epicentroAnadido = false, marcadoresAyuda = [];
-  var datosMapa = { municipios: null, zonas: null, ayuda: null, sismo: null, geo: null };
+  var mapa = null, mapaListo = false, mapaEventosConectados = false, marcadorEpicentro = null, marcadoresAyuda = [];
+  var puntoMapaActivoId = '', popupPuntoActivo = null, fichaPuntoConectada = false;
+  var datosMapa = { municipios: null, zonas: null, ayuda: null, sismo: null, geo: null, meta: null };
   var cargaMapaIniciada = false;
 
   function cambiarEstadoMapa(texto, tipo) {
@@ -823,12 +826,12 @@
       mapa.once('load', function () {
         mapaListo = true;
         reconstruirCapasPropias(simplificado ? 'Mapa base simplificado. Los datos verificados siguen visibles.' : '');
-        anadirMarcadores();
+        actualizarEpicentro();
         encuadrarMapa();
       });
       mapa.on('zoomend', function () {
         if (!mapaListo) return;
-        renderizarMarcadoresAyuda(puntosFiltrados());
+        renderizarMarcadoresAyuda(filtrosMapa.modo === 'ayuda' ? puntosFiltrados() : []);
       });
       mapa.on('error', function (evento) {
         var nodoMapa = document.getElementById('mapa');
@@ -923,26 +926,42 @@
     var puntosFiltro = datosMapa._puntos || [];
     var panelAnterior = cont.querySelector('.panel-filtros-mapa');
     var panelAbierto = panelAnterior ? panelAnterior.open : !(window.matchMedia && window.matchMedia('(max-width: 700px)').matches);
-    cont.innerHTML = '<details class="panel-filtros-mapa"' + (panelAbierto ? ' open' : '') + '><summary>Filtrar mapa <span id="resumen-filtros-mapa">' +
-      puntosFiltro.length + ' puntos · ' + municipiosFiltro.length + ' municipios</span></summary><div class="mapa-filtros-contenido">' +
-      '<fieldset class="grupo-filtros"><legend>Afectación</legend>' +
-      chip('gravedad', 'critica', COLORES_GRAVEDAD.critica, 'Crítica', filtrosMapa.gravedades.critica, municipiosFiltro.filter(function (m) { return m.gravedad === 'critica'; }).length) +
-      chip('gravedad', 'alta', COLORES_GRAVEDAD.alta, 'Alta', filtrosMapa.gravedades.alta, municipiosFiltro.filter(function (m) { return m.gravedad === 'alta'; }).length) +
-      chip('gravedad', 'media', COLORES_GRAVEDAD.media, 'Media', filtrosMapa.gravedades.media, municipiosFiltro.filter(function (m) { return m.gravedad === 'media'; }).length) + '</fieldset>' +
-      '<fieldset class="grupo-filtros"><legend>Puntos de ayuda</legend>' +
-      chip('punto', 'acopio', COLOR_ACOPIO, 'Acopios', filtrosMapa.puntos.acopio, puntosFiltro.filter(function (p) { return p.tipo === 'acopio'; }).length) +
-      chip('punto', 'sangre', COLOR_SANGRE, 'Sangre', filtrosMapa.puntos.sangre, puntosFiltro.filter(function (p) { return p.tipo === 'sangre'; }).length) + '</fieldset>' +
-      '<label class="control-filtro"><span>Departamento afectado</span><select id="filtro-departamento"><option value="todos">Todos</option>' +
-      deptos.map(function (d) { return '<option value="' + esc(d) + '"' + (filtrosMapa.departamento === d ? ' selected' : '') + '>' + esc(d) + '</option>'; }).join('') + '</select></label>' +
-      '<label class="control-filtro"><span>Ciudad del punto</span><select id="filtro-ciudad-mapa"><option value="todas">Todas</option>' +
-      ciudades.map(function (c) { return '<option value="' + esc(c) + '"' + (filtrosMapa.ciudad === c ? ' selected' : '') + '>' + esc(c) + '</option>'; }).join('') + '</select></label>' +
-      '<label class="control-filtro control-busqueda"><span>Buscar municipio o punto</span><input id="filtro-busqueda-mapa" type="search" value="' + esc(filtrosMapa.busqueda) + '" placeholder="Ej. Quibdó o banco de sangre"></label>' +
+    var resumenInicial = filtrosMapa.modo === 'ayuda'
+      ? puntosFiltro.length + ' puntos de ayuda'
+      : municipiosFiltro.length + ' municipios con reporte';
+    var controlesModo = filtrosMapa.modo === 'ayuda'
+      ? '<fieldset class="grupo-filtros"><legend>Tipo de ayuda</legend>' +
+        chip('punto', 'acopio', COLOR_ACOPIO, 'Acopios', filtrosMapa.puntos.acopio, puntosFiltro.filter(function (p) { return p.tipo === 'acopio'; }).length) +
+        chip('punto', 'sangre', COLOR_SANGRE, 'Sangre', filtrosMapa.puntos.sangre, puntosFiltro.filter(function (p) { return p.tipo === 'sangre'; }).length) + '</fieldset>' +
+        '<label class="control-filtro"><span>Ciudad</span><select id="filtro-ciudad-mapa"><option value="todas">Todas</option>' +
+        ciudades.map(function (c) { return '<option value="' + esc(c) + '"' + (filtrosMapa.ciudad === c ? ' selected' : '') + '>' + esc(c) + '</option>'; }).join('') + '</select></label>' +
+        '<label class="control-filtro"><span>Antes de ir</span><select id="filtro-operacion-mapa"><option value="todas">Todos</option>' +
+        '<option value="informacion_publicada"' + (filtrosMapa.operacion === 'informacion_publicada' ? ' selected' : '') + '>Información publicada</option>' +
+        '<option value="confirmar"' + (filtrosMapa.operacion === 'confirmar' ? ' selected' : '') + '>Confirmar antes de ir</option></select></label>'
+      : '<fieldset class="grupo-filtros"><legend>Nivel de afectación</legend>' +
+        chip('gravedad', 'critica', COLORES_GRAVEDAD.critica, 'Crítica', filtrosMapa.gravedades.critica, municipiosFiltro.filter(function (m) { return m.gravedad === 'critica'; }).length) +
+        chip('gravedad', 'alta', COLORES_GRAVEDAD.alta, 'Alta', filtrosMapa.gravedades.alta, municipiosFiltro.filter(function (m) { return m.gravedad === 'alta'; }).length) +
+        chip('gravedad', 'media', COLORES_GRAVEDAD.media, 'Media', filtrosMapa.gravedades.media, municipiosFiltro.filter(function (m) { return m.gravedad === 'media'; }).length) + '</fieldset>' +
+        '<label class="control-filtro"><span>Departamento afectado</span><select id="filtro-departamento"><option value="todos">Todos</option>' +
+        deptos.map(function (d) { return '<option value="' + esc(d) + '"' + (filtrosMapa.departamento === d ? ' selected' : '') + '>' + esc(d) + '</option>'; }).join('') + '</select></label>';
+    cont.innerHTML = '<div class="selector-modo-mapa" role="group" aria-label="Qué quieres consultar">' +
+      chip('modo', 'ayuda', COLOR_ACOPIO, 'Dónde ayudar', filtrosMapa.modo === 'ayuda', puntosFiltro.length) +
+      chip('modo', 'impacto', COLORES_GRAVEDAD.critica, 'Impacto reportado', filtrosMapa.modo === 'impacto', municipiosFiltro.length) + '</div>' +
+      '<details class="panel-filtros-mapa"' + (panelAbierto ? ' open' : '') + '><summary>Filtrar esta vista <span id="resumen-filtros-mapa">' +
+      resumenInicial + '</span></summary><div class="mapa-filtros-contenido">' + controlesModo +
+      '<label class="control-filtro control-busqueda"><span>Buscar</span><input id="filtro-busqueda-mapa" type="search" value="' + esc(filtrosMapa.busqueda) + '" placeholder="Ej. Quibdó o banco de sangre"></label>' +
       '<button class="boton-limpiar" id="limpiar-filtros-mapa" type="button">Restablecer</button></div></details>';
     if (!cont.dataset.conectado) {
       cont.dataset.conectado = 'true';
       cont.addEventListener('click', function (e) {
         var b = e.target.closest('.chip-capa');
         if (!b) return;
+        if (b.dataset.tipo === 'modo') {
+          filtrosMapa.modo = b.dataset.clave;
+          cerrarFichaPunto();
+          pintarFiltrosMapa(); aplicarFiltrosMapa(true);
+          return;
+        }
         var grupo = b.dataset.tipo === 'gravedad' ? filtrosMapa.gravedades : filtrosMapa.puntos;
         grupo[b.dataset.clave] = !grupo[b.dataset.clave];
         b.classList.toggle('activa', grupo[b.dataset.clave]);
@@ -950,11 +969,16 @@
         aplicarFiltrosMapa(true);
       });
     }
-    document.getElementById('filtro-departamento').addEventListener('change', function (e) { filtrosMapa.departamento = e.target.value; aplicarFiltrosMapa(true); });
-    document.getElementById('filtro-ciudad-mapa').addEventListener('change', function (e) { filtrosMapa.ciudad = e.target.value; aplicarFiltrosMapa(true); });
+    var filtroDepartamento = document.getElementById('filtro-departamento');
+    var filtroCiudad = document.getElementById('filtro-ciudad-mapa');
+    var filtroOperacion = document.getElementById('filtro-operacion-mapa');
+    if (filtroDepartamento) filtroDepartamento.addEventListener('change', function (e) { filtrosMapa.departamento = e.target.value; aplicarFiltrosMapa(true); });
+    if (filtroCiudad) filtroCiudad.addEventListener('change', function (e) { filtrosMapa.ciudad = e.target.value; aplicarFiltrosMapa(true); });
+    if (filtroOperacion) filtroOperacion.addEventListener('change', function (e) { filtrosMapa.operacion = e.target.value; aplicarFiltrosMapa(true); });
     document.getElementById('filtro-busqueda-mapa').addEventListener('input', function (e) { filtrosMapa.busqueda = e.target.value; aplicarFiltrosMapa(true); });
     document.getElementById('limpiar-filtros-mapa').addEventListener('click', function () {
-      filtrosMapa = { gravedades: { critica: true, alta: true, media: true }, puntos: { acopio: true, sangre: true }, departamento: 'todos', ciudad: 'todas', busqueda: '' };
+      filtrosMapa = { modo: filtrosMapa.modo, gravedades: { critica: true, alta: true, media: true }, puntos: { acopio: true, sangre: true }, departamento: 'todos', ciudad: 'todas', operacion: 'todas', busqueda: '' };
+      cerrarFichaPunto();
       pintarFiltrosMapa(); aplicarFiltrosMapa(true);
     });
     var resultados = document.getElementById('mapa-resultados');
@@ -966,7 +990,7 @@
         mapa.flyTo({ center: [+b.dataset.lon, +b.dataset.lat], zoom: 11, duration: duracionMapa(), essential: false });
         document.getElementById('mapa-seccion').scrollIntoView({ behavior: duracionMapa() ? 'smooth' : 'auto' });
         var punto = (datosMapa._puntos || []).filter(function (p) { return p._id === b.dataset.id; })[0];
-        if (punto) abrirPopupPunto(punto);
+        if (punto) seleccionarPunto(punto);
         var municipio = b.dataset.mpio && datosMapa._porCodigo[b.dataset.mpio];
         if (municipio) new maplibregl.Popup({ offset: 8, maxWidth: '320px' }).setLngLat([+b.dataset.lon, +b.dataset.lat]).setHTML(popupMunicipio(municipio)).addTo(mapa);
       });
@@ -1003,21 +1027,49 @@
     var geo = ((datosMapa.geo && datosMapa.geo.puntos) || []).filter(function (p) {
       return Number.isFinite(+p.lat) && Number.isFinite(+p.lon) && (p.tipo === 'acopio' || p.tipo === 'sangre');
     });
-    function fuentePunto(p) {
+    function operacionDesdeDetalle(detalle) {
+      var texto = normalizar(detalle);
+      if (!texto || /(confirmar|consultar|contradictori|llama antes)/.test(texto)) return 'confirmar';
+      return 'informacion_publicada';
+    }
+    function metadatosPunto(p) {
       var lista = p.tipo === 'acopio' ? ((datosMapa.ayuda && datosMapa.ayuda.acopios) || []) : ((datosMapa.ayuda && datosMapa.ayuda.sangre) || []);
       var coincidencia = lista.filter(function (x) {
         if (x.ciudad !== p.ciudad) return false;
         if (p.tipo === 'sangre') return p.registro_entidad && normalizar(x.entidad) === normalizar(p.registro_entidad);
         return (x.puntos || []).some(function (q) { return normalizar(q.nombre) === normalizar(p.nombre); });
       })[0];
-      return coincidencia && coincidencia.fuente_url || '';
+      var subpunto = coincidencia && p.tipo === 'acopio' && (coincidencia.puntos || []).filter(function (q) {
+        return normalizar(q.nombre) === normalizar(p.nombre);
+      })[0];
+      var fuenteDatos = subpunto && subpunto.fuente_url ? subpunto : coincidencia;
+      var detalle = subpunto && subpunto.horario || (p.tipo === 'sangre' && coincidencia && coincidencia.donde) || '';
+      return {
+        fuente_url: fuenteDatos && fuenteDatos.fuente_url || '',
+        fuente_titulo: fuenteDatos && fuenteDatos.fuente_titulo || '',
+        fuente_adicional_url: fuenteDatos && fuenteDatos.fuente_adicional_url || coincidencia && coincidencia.fuente_adicional_url || '',
+        nivel_fuente: fuenteDatos ? nivelRegistroAyuda(fuenteDatos) : 'fuente_secundaria',
+        fecha: fuenteDatos && fuenteDatos.fecha || coincidencia && coincidencia.fecha || '',
+        fecha_iso: isoDesdeFechaCorta(fuenteDatos && fuenteDatos.fecha || coincidencia && coincidencia.fecha),
+        detalle_operativo: detalle,
+        operacion: operacionDesdeDetalle(detalle),
+        precision_ubicacion: p.coordenadas_fuente ? 'ubicacion_contrastada' : 'direccion_geocodificada'
+      };
     }
     datosMapa._puntos = geo.map(function (p, i) {
-      return Object.assign({}, p, { _id: p.tipo + '-' + i, fuente_url: fuentePunto(p) });
+      return Object.assign({}, p, metadatosPunto(p), {
+        _id: p.tipo + '|' + normalizar(p.ciudad) + '|' + normalizar(p.nombre)
+      });
     });
     datosMapa._fcPuntos = coleccionPuntos(datosMapa._puntos);
     datosMapa._fcAcopios = coleccionPuntos(datosMapa._puntos.filter(function (p) { return p.tipo === 'acopio'; }));
     datosMapa._fcSangre = coleccionPuntos(datosMapa._puntos.filter(function (p) { return p.tipo === 'sangre'; }));
+    var totalAcopios = ((datosMapa.ayuda && datosMapa.ayuda.acopios) || []).reduce(function (n, a) { return n + ((a.puntos || []).length); }, 0);
+    var pinesAcopio = datosMapa._puntos.filter(function (p) { return p.tipo === 'acopio'; }).length;
+    var notaCobertura = document.getElementById('nota-cobertura-mapa');
+    if (notaCobertura) notaCobertura.textContent = pinesAcopio + ' de ' + totalAcopios + ' lugares de acopio tienen ubicación suficientemente precisa para el mapa; los otros ' +
+      Math.max(0, totalAcopios - pinesAcopio) + ' siguen en la lista, sin inventar un pin.';
+    conectarFichaPunto();
   }
 
   function coleccionPuntos(lista) {
@@ -1091,9 +1143,13 @@
         });
       } else {
         etiquetaMarcador = (p.tipo === 'sangre' ? 'Donación de sangre: ' : 'Punto de acopio: ') + p.nombre;
+        el.dataset.puntoId = p._id;
+        el.classList.toggle('seleccionado', p._id === puntoMapaActivoId);
+        el.addEventListener('click', function (evento) {
+          evento.stopPropagation(); seleccionarPunto(p);
+        });
       }
       var marcador = new maplibregl.Marker({ element: el }).setLngLat(feature.geometry.coordinates);
-      if (!esGrupo) marcador.setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '320px' }).setHTML(htmlPopupPunto(p)));
       marcador.addTo(mapa);
       el.setAttribute('aria-label', etiquetaMarcador);
       el.title = etiquetaMarcador;
@@ -1106,32 +1162,37 @@
     var q = normalizar(filtrosMapa.busqueda);
     return (datosMapa._puntos || []).filter(function (p) {
       return filtrosMapa.puntos[p.tipo] && (filtrosMapa.ciudad === 'todas' || p.ciudad === filtrosMapa.ciudad) &&
-        (!q || normalizar([p.nombre, p.ciudad, p.direccion].join(' ')).indexOf(q) !== -1);
+        (filtrosMapa.operacion === 'todas' || p.operacion === filtrosMapa.operacion) &&
+        (!q || normalizar([p.nombre, p.ciudad, p.direccion, p.detalle_operativo, p.fuente_titulo].join(' ')).indexOf(q) !== -1);
     });
   }
 
   function aplicarFiltrosMapa(encuadrar) {
-    var municipios = filtrosMapa.ciudad === 'todas' ? municipiosFiltrados() : [];
-    var puntos = puntosFiltrados();
+    var municipios = filtrosMapa.modo === 'impacto' ? municipiosFiltrados() : [];
+    var puntos = filtrosMapa.modo === 'ayuda' ? puntosFiltrados() : [];
+    if (puntoMapaActivoId && !puntos.some(function (p) { return p._id === puntoMapaActivoId; })) cerrarFichaPunto();
     var codigos = municipios.map(function (m) { return m._mpio; }).filter(Boolean);
     if (mapa && mapaListo) {
       ['afectados-relleno', 'afectados-borde'].forEach(function (id) {
         if (mapa.getLayer(id)) mapa.setFilter(id, ['in', ['get', 'mpio'], ['literal', codigos]]);
       });
       renderizarMarcadoresAyuda(puntos);
+      actualizarEpicentro();
       if (encuadrar) encuadrarMapa(municipios, puntos);
     }
+    var envoltura = document.querySelector('.mapa-envoltura');
+    if (envoltura) envoltura.dataset.modo = filtrosMapa.modo;
     var resumenFiltros = document.getElementById('resumen-filtros-mapa');
-    if (resumenFiltros) resumenFiltros.textContent = puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') +
-      (filtrosMapa.ciudad !== 'todas'
-        ? ' · ' + filtrosMapa.ciudad
-        : ' · ' + municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's'));
+    if (resumenFiltros) resumenFiltros.textContent = filtrosMapa.modo === 'ayuda'
+      ? puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + (filtrosMapa.ciudad !== 'todas' ? ' · ' + filtrosMapa.ciudad : '')
+      : municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' con reporte';
     renderResultadosMapa(municipios, puntos);
-    renderZonasFiltradas();
+    if (filtrosMapa.modo === 'impacto') renderZonasFiltradas();
   }
 
   function renderResultadosMapa(municipios, puntos) {
-    municipios = municipios || (filtrosMapa.ciudad === 'todas' ? municipiosFiltrados() : []); puntos = puntos || puntosFiltrados();
+    municipios = municipios || (filtrosMapa.modo === 'impacto' ? municipiosFiltrados() : []);
+    puntos = puntos || (filtrosMapa.modo === 'ayuda' ? puntosFiltrados() : []);
     var total = municipios.length + puntos.length;
     var cont = document.getElementById('mapa-resultados');
     if (!cont) return;
@@ -1140,33 +1201,39 @@
         '<div class="resultado-info"><strong>' + esc(m.municipio) + ', ' + esc(m.departamento) + '</strong></div>' +
         '<div class="resultado-acciones"><button type="button" data-enfocar data-mpio="' + esc(m._mpio || '') + '" data-lat="' + m.lat + '" data-lon="' + m.lon + '">Ubicar en mapa</button></div></li>';
     }).concat(puntos.map(function (p) {
-      return '<li><span class="resultado-tipo resultado-' + esc(p.tipo) + '">' + (p.tipo === 'acopio' ? 'Punto de acopio' : 'Donación de sangre') + '</span>' +
+      var seleccionado = p._id === puntoMapaActivoId;
+      return '<li data-resultado-id="' + esc(p._id) + '"' + (seleccionado ? ' class="seleccionado" aria-current="true"' : '') + '><span class="resultado-tipo resultado-' + esc(p.tipo) + '">' + (p.tipo === 'acopio' ? 'Punto de acopio' : 'Donación de sangre') + '</span>' +
         '<div class="resultado-info"><strong>' + esc(p.nombre) + '</strong><small>' + esc(p.ciudad) + (p.direccion ? ' · ' + esc(p.direccion) : '') + '</small></div>' +
         '<div class="resultado-acciones"><button type="button" data-enfocar data-id="' + esc(p._id) + '" data-lat="' + p.lat + '" data-lon="' + p.lon + '">Ubicar en mapa</button>' +
         enlaceRuta(p.lat, p.lon, p.nombre, 'enlace-ruta') + '</div></li>';
     }));
-    var detalleResumen = filtrosMapa.ciudad !== 'todas'
-      ? puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda en ' + filtrosMapa.ciudad
-      : municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' y ' + puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda';
+    var detalleResumen = filtrosMapa.modo === 'ayuda'
+      ? puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda' + (filtrosMapa.ciudad !== 'todas' ? ' en ' + filtrosMapa.ciudad : '')
+      : municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' con afectación reportada';
     var resumen = total + ' resultado' + (total === 1 ? '' : 's') + ': ' + detalleResumen;
     cont.innerHTML = '<span class="solo-lectores" role="status">' + esc(resumen) + '</span><details' + (!mapaListo || !total ? ' open' : '') + '><summary><strong>' + total + ' resultado' + (total === 1 ? '' : 's') + '</strong> · ' +
       esc(detalleResumen) + '</summary>' +
       (items.length ? '<ul class="lista-resultados-mapa">' + items.join('') + '</ul>' : '<div class="estado-datos">No hay resultados. Ajusta o restablece los filtros.</div>') + '</details>';
   }
 
-  function anadirMarcadores() {
-    if (!mapa || epicentroAnadido) return;
+  function actualizarEpicentro() {
+    if (!mapa) return;
+    if (filtrosMapa.modo !== 'impacto') {
+      if (marcadorEpicentro) marcadorEpicentro.remove();
+      marcadorEpicentro = null;
+      return;
+    }
+    if (marcadorEpicentro) return;
     var sismo = datosMapa.sismo;
     if (sismo && sismo.epicentro && sismo.epicentro.lat) {
       var el = document.createElement('button');
       el.type = 'button'; el.className = 'marcador-epicentro'; el.setAttribute('aria-label', 'Epicentro del sismo');
-      new maplibregl.Marker({ element: el })
+      marcadorEpicentro = new maplibregl.Marker({ element: el })
         .setLngLat([sismo.epicentro.lon, sismo.epicentro.lat])
         .setPopup(new maplibregl.Popup({ offset: 14 }).setHTML(
           '<h4>Epicentro</h4><p>' + esc(sismo.epicentro.municipio || '') + ', ' + esc(sismo.epicentro.departamento || '') +
           '</p><p>Magnitud ' + esc(sismo.magnitud) + ' · Profundidad ' + esc(sismo.profundidad_km) + ' km</p>'))
         .addTo(mapa);
-      epicentroAnadido = true;
     }
   }
 
@@ -1178,18 +1245,99 @@
       (m.fuentes && m.fuentes.length ? '<div class="pop-fuente">' + m.fuentes.map(function (f) { return enlaceFuente(f.url, f.titulo || 'fuente'); }).join(' · ') + '</div>' : '');
   }
 
-  function htmlPopupPunto(p) {
+  function htmlDetallePunto(p, incluirLista) {
     var esSangre = p.tipo === 'sangre';
-    return '<h4>' + (esSangre ? '🩸 ' : '📦 ') + esc(p.nombre) + '</h4>' +
+    var fuenteOficial = p.nivel_fuente === 'fuente_oficial';
+    var operacionTexto = p.operacion === 'informacion_publicada' ? 'Información publicada' : 'Confirmar antes de ir';
+    var ubicacionTexto = p.precision_ubicacion === 'ubicacion_contrastada' ? 'Pin contrastado' : 'Dirección georreferenciada';
+    return '<div class="detalle-punto"><h4 id="mapa-ficha-titulo">' + (esSangre ? '🩸 ' : '📦 ') + esc(p.nombre) + '</h4>' +
       '<p>' + esc(p.ciudad) + (p.direccion && p.direccion !== 'null' ? ' — ' + esc(p.direccion) : '') + '</p>' +
-      '<p class="pop-aviso">' + (esSangre ? 'Confirma horario y requisitos antes de salir.' : 'Confirma dirección, horario y vigencia antes de salir.') + '</p>' +
+      '<div class="certeza-punto" aria-label="Certeza de la información">' +
+      '<span class="certeza certeza-' + (fuenteOficial ? 'oficial' : 'secundaria') + '">' + (fuenteOficial ? '✓ Publicado por responsable' : '◉ Confirmación secundaria') + '</span>' +
+      '<span class="certeza certeza-' + (p.operacion === 'informacion_publicada' ? 'operativa' : 'confirmar') + '">' + esc(operacionTexto) + '</span>' +
+      '<span class="certeza certeza-ubicacion">' + esc(ubicacionTexto) + '</span></div>' +
       '<div class="pop-acciones">' + enlaceRuta(p.lat, p.lon, p.nombre, 'enlace-accion') +
-      enlaceFuente(p.fuente_url, 'Ver evidencia') + '</div>';
+      enlaceFuente(p.fuente_url, p.fuente_titulo ? 'Ver ' + p.fuente_titulo : 'Ver evidencia') +
+      (p.fuente_adicional_url ? enlaceFuente(p.fuente_adicional_url, 'Corroborar dirección y horarios') : '') +
+      (incluirLista ? '<button type="button" class="enlace-lista-punto" data-ver-lista="' + esc(p._id) + '">Ver en la lista</button>' : '') + '</div>' +
+      '<dl class="detalle-punto-datos"><div><dt>Antes de ir</dt><dd>' + esc(p.detalle_operativo || 'No hay horario publicado en este registro; confirma directamente con la entidad.') + '</dd></div>' +
+      (p.fecha ? '<div><dt>Fecha de la fuente</dt><dd>' + selloFecha(p.fecha_iso, p.fecha) + '</dd></div>' : '') +
+      (datosMapa.meta && datosMapa.meta.ultima_actualizacion ? '<div><dt>Corte del portal</dt><dd>' + esc(datosMapa.meta.ultima_actualizacion) + '</dd></div>' : '') + '</dl>' +
+      '<p class="pop-aviso">La ubicación no prueba que el punto siga recibiendo. Revisa la evidencia y confirma antes de desplazarte.</p>' +
+      '<div class="detalle-punto-reporte">' + enlaceReporte(p.nombre + ' — ' + p.ciudad, esSangre ? 'Mapa de sangre' : 'Mapa de acopios') + '</div></div>';
   }
 
-  function abrirPopupPunto(p) {
+  function esMapaMovil() {
+    return window.matchMedia && window.matchMedia('(max-width: 700px)').matches;
+  }
+
+  function quitarPopupPunto() {
+    var anterior = popupPuntoActivo;
+    popupPuntoActivo = null;
+    if (anterior) anterior.remove();
+  }
+
+  function sincronizarSeleccionPunto() {
+    document.querySelectorAll('[data-punto-id]').forEach(function (el) {
+      el.classList.toggle('seleccionado', el.dataset.puntoId === puntoMapaActivoId);
+    });
+    document.querySelectorAll('[data-resultado-id]').forEach(function (el) {
+      var activo = el.dataset.resultadoId === puntoMapaActivoId;
+      el.classList.toggle('seleccionado', activo);
+      if (activo) el.setAttribute('aria-current', 'true'); else el.removeAttribute('aria-current');
+    });
+  }
+
+  function cerrarFichaPunto() {
+    quitarPopupPunto();
+    puntoMapaActivoId = '';
+    var ficha = document.getElementById('mapa-ficha-punto');
+    var envoltura = document.querySelector('.mapa-envoltura');
+    if (ficha) ficha.hidden = true;
+    if (envoltura) envoltura.classList.remove('ficha-punto-abierta');
+    sincronizarSeleccionPunto();
+  }
+
+  function seleccionarPunto(p) {
     if (!mapa || !p) return;
-    new maplibregl.Popup({ offset: 8, maxWidth: '320px' }).setLngLat([+p.lon, +p.lat]).setHTML(htmlPopupPunto(p)).addTo(mapa);
+    quitarPopupPunto();
+    puntoMapaActivoId = p._id;
+    var ficha = document.getElementById('mapa-ficha-punto');
+    var contenido = document.getElementById('mapa-ficha-contenido');
+    var envoltura = document.querySelector('.mapa-envoltura');
+    if (esMapaMovil() && ficha && contenido) {
+      contenido.innerHTML = htmlDetallePunto(p, true);
+      ficha.hidden = false;
+      if (envoltura) envoltura.classList.add('ficha-punto-abierta');
+    } else {
+      if (ficha) ficha.hidden = true;
+      if (envoltura) envoltura.classList.remove('ficha-punto-abierta');
+      var popup = new maplibregl.Popup({ offset: 12, maxWidth: '360px' }).setLngLat([+p.lon, +p.lat]).setHTML(htmlDetallePunto(p, false)).addTo(mapa);
+      popupPuntoActivo = popup;
+      popup.on('close', function () {
+        if (popupPuntoActivo !== popup) return;
+        popupPuntoActivo = null; puntoMapaActivoId = ''; sincronizarSeleccionPunto();
+      });
+    }
+    sincronizarSeleccionPunto();
+  }
+
+  function conectarFichaPunto() {
+    if (fichaPuntoConectada) return;
+    var ficha = document.getElementById('mapa-ficha-punto');
+    var cerrar = document.getElementById('cerrar-ficha-punto');
+    if (!ficha || !cerrar) return;
+    fichaPuntoConectada = true;
+    cerrar.addEventListener('click', cerrarFichaPunto);
+    ficha.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-ver-lista]');
+      if (!b) return;
+      var resultado = document.querySelector('[data-resultado-id="' + CSS.escape(b.dataset.verLista) + '"]');
+      var detalles = document.querySelector('#mapa-resultados details');
+      if (detalles) detalles.open = true;
+      if (resultado) resultado.scrollIntoView({ behavior: duracionMapa() ? 'smooth' : 'auto', block: 'center' });
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && puntoMapaActivoId) cerrarFichaPunto(); });
   }
 
   function conectarClicsMapa() {
@@ -1262,12 +1410,17 @@
       datosMapa.zonas = zonas || { municipios: [] };
       datosMapa.ayuda = ayuda;
       datosMapa.sismo = sismo;
+      datosMapa.meta = meta;
       observarMapa();
     } else {
       cambiarEstadoMapa('No se pudieron cargar los datos de zonas. Usa las listas de información.', 'error');
       renderResultadosMapa();
     }
     // Gancho de solo lectura para la función opcional «Cerca de mí».
-    window.__cuidar = { obtenerMapa: function () { return mapa; }, datos: datosMapa };
+    window.__cuidar = {
+      obtenerMapa: function () { return mapa; },
+      obtenerPuntosVisibles: function () { return filtrosMapa.modo === 'ayuda' ? puntosFiltrados() : []; },
+      datos: datosMapa
+    };
   });
 })();

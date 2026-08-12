@@ -1,4 +1,5 @@
 {
+  "evento_id": "co-sismo-2026-08-10",
   "canales": [
     {
       "entidad": "Cruz Roja Colombiana",
@@ -418,6 +419,7 @@
       ],
       "fuente_titulo": "bogota.gov.co",
       "fuente_url": "https://bogota.gov.co/mi-ciudad/seguridad/puntos-de-donacion-en-bogota-para-damnificados-terremoto-en-colombia",
+      "nivel_fuente": "fuente_oficial",
       "fecha": "10 ago 2026"
     },
     {
@@ -484,6 +486,7 @@
       ],
       "fuente_titulo": "El Colombiano",
       "fuente_url": "https://www.elcolombiano.com/antioquia/damnificados-sismo-puntos-acopio-medellin-donaciones-que-donar-CF39784677",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "12 ago 2026"
     },
     {
@@ -587,7 +590,11 @@
         {
           "nombre": "Plazoleta Jairo Varela",
           "direccion": "Avenida 2 Norte con calle 10 Norte, frente al CAM",
-          "horario": null
+          "horario": "confirmar horario y capacidad antes de ir",
+          "fuente_titulo": "Alcaldía de Cali — publicación oficial",
+          "fuente_url": "https://www.instagram.com/p/Db3h2VxqY1A/",
+          "nivel_fuente": "fuente_oficial",
+          "fecha": "10 ago 2026"
         },
         {
           "nombre": "Escuela Nacional del Deporte",
@@ -612,7 +619,11 @@
         {
           "nombre": "Antigua Licorera del Valle — campaña «Todos Somos Valle»",
           "direccion": "Carrera 1 #26-85, bodega 3",
-          "horario": null
+          "horario": "7:00 a. m.–10:00 p. m.; no recibe medicamentos",
+          "fuente_titulo": "Gobernación del Valle del Cauca",
+          "fuente_url": "https://valledelcauca.gov.co/publicaciones/90177/todos-somos-valle-activado-centro-de-acopio-de-ayudas-en-la-licorera-para-los-damnificados-de-terremoto/",
+          "nivel_fuente": "fuente_oficial",
+          "fecha": "11 ago 2026"
         }
       ],
       "que_donar": [
@@ -628,6 +639,7 @@
       ],
       "fuente_titulo": "El País (Cali)",
       "fuente_url": "https://www.elpais.com.co/cali/alcaldia-habilita-nuevos-espacios-para-recibir-ayudas-y-atender-a-afectados-en-cali-1154.html",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -652,6 +664,7 @@
       ],
       "fuente_titulo": "El Tiempo",
       "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -682,6 +695,7 @@
       "fuente_url": "https://www.lapatria.com/manizales/en-vivo-asi-funciona-el-centro-de-acopio-en-el-coliseo-menor-de-manizales-ayudas-para",
       "fuente_adicional_titulo": "ABACO Colombia — publicación oficial de la red",
       "fuente_adicional_url": "https://www.instagram.com/p/Db3yn-LDvL-/",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -712,6 +726,7 @@
       "fuente_url": "https://www.semana.com/nacion/articulo/bancos-de-alimentos-activan-ayuda-para-damnificados-por-el-terremoto-en-colombia-asi-puede-donar/202641/",
       "fuente_adicional_titulo": "ABACO Colombia — publicación oficial de la red",
       "fuente_adicional_url": "https://www.instagram.com/p/Db3yn-LDvL-/",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -736,32 +751,7 @@
       ],
       "fuente_titulo": "Infobae",
       "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
-      "fecha": "11 ago 2026"
-    },
-    {
-      "ciudad": "Barranquilla",
-      "entidad": "Oficina Distrital de Gestión del Riesgo",
-      "puntos": [
-        {
-          "nombre": "Centro de acopio Barranquillita",
-          "direccion": "Carrera 43 #6-120",
-          "horario": "24 horas"
-        }
-      ],
-      "que_donar": [
-        "alimentos no perecederos",
-        "agua",
-        "insumos médicos",
-        "productos de aseo",
-        "artículos para bebés",
-        "colchonetas"
-      ],
-      "que_no_donar": [
-        "productos vencidos",
-        "perecederos"
-      ],
-      "fuente_titulo": "Alerta Caribe",
-      "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -821,6 +811,7 @@
       ],
       "fuente_titulo": "Vanguardia",
       "fuente_url": "https://www.vanguardia.com/area-metropolitana/bucaramanga/2026/08/11/terremoto-en-colombia-nueve-puntos-donde-puede-realizar-donaciones-en-bucaramanga/",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -862,6 +853,7 @@
       "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
       "fuente_adicional_titulo": "Banco de Alimentos de Cartagena — publicación oficial",
       "fuente_adicional_url": "https://www.instagram.com/p/Db4Jcc7FuRr/",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -906,6 +898,7 @@
       ],
       "fuente_titulo": "El Nuevo Día",
       "fuente_url": "https://www.elnuevodia.com.co/ibague/ibague-habilita-puntos-de-acopio-para-ayudar-pereira-538726",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -930,6 +923,7 @@
       ],
       "fuente_titulo": "Alerta Caribe",
       "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -961,6 +955,7 @@
       ],
       "fuente_titulo": "Alerta Caribe",
       "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
     },
     {
@@ -986,6 +981,7 @@
       ],
       "fuente_titulo": "Colombia.com citando el anuncio",
       "fuente_url": "https://www.colombia.com/actualidad/noticias/centros-de-acopio-y-ayudas-humanitarias-habilitadas-en-colombia-tras-temblor-10-de-agosto-595512",
+      "nivel_fuente": "fuente_secundaria",
       "fecha": "12 ago 2026"
     },
     {
@@ -1873,8 +1869,8 @@
       "puntos": [
         {
           "nombre": "Centro Chía — local 12",
-          "direccion": "Avenida Pradilla #9-00, local 12",
-          "horario": "recibe del 11 al 21 de agosto; confirmar horario del local antes de ir"
+          "direccion": "Avenida Pradilla #9-00 Este, local 12",
+          "horario": "domingo a domingo, 9:00 a. m.–6:00 p. m.; recibe del 11 al 21 de agosto"
         }
       ],
       "que_donar": [
@@ -1984,6 +1980,131 @@
       "fuente_url": "https://www.instagram.com/p/Db3_HLvN8U7/",
       "fuente_adicional_titulo": "ABACO Colombia — publicación oficial de la red",
       "fuente_adicional_url": "https://www.instagram.com/p/Db3yn-LDvL-/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Bogotá",
+      "entidad": "LAIKA — acopio para personas y animales",
+      "puntos": [
+        {
+          "nombre": "LAIKA — tienda 116",
+          "direccion": "Avenida Calle 116 #18B-43",
+          "horario": "tienda 8:00 a. m.–9:00 p. m., todos los días; confirma vigencia del acopio antes de ir"
+        },
+        {
+          "nombre": "LAIKA — tienda Chapinero",
+          "direccion": "Avenida Carrera 7 #59-34",
+          "horario": "tienda 8:00 a. m.–9:00 p. m., todos los días; confirma vigencia del acopio antes de ir"
+        },
+        {
+          "nombre": "LAIKA — tienda Modelia",
+          "direccion": "Avenida Calle 24 #74A-57",
+          "horario": "tienda 8:00 a. m.–9:00 p. m., todos los días; confirma vigencia del acopio antes de ir"
+        },
+        {
+          "nombre": "LAIKA — tienda La 94",
+          "direccion": "Calle 94 #13-73",
+          "horario": "tienda 8:00 a. m.–9:00 p. m., todos los días; confirma vigencia del acopio antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimento, guacales, snacks y comida húmeda para animales",
+        "medicamentos para animales",
+        "alimentos no perecederos para personas",
+        "medicamentos nuevos y sellados para personas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "LAIKA — publicación oficial",
+      "fuente_url": "https://www.instagram.com/p/Db3ZsFjEV_0/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Cali",
+      "entidad": "LAIKA — acopio para personas y animales",
+      "puntos": [
+        {
+          "nombre": "LAIKA — tienda Capry",
+          "direccion": "Calle 13 #75-110",
+          "horario": "tienda 8:00 a. m.–9:00 p. m., todos los días; confirma vigencia del acopio antes de ir"
+        },
+        {
+          "nombre": "LAIKA — tienda Pance",
+          "direccion": "Cl. 18 #1282, barrio Pance (nomenclatura literal publicada por LAIKA)",
+          "horario": "tienda 8:00 a. m.–9:00 p. m., todos los días; confirma la nomenclatura y vigencia del acopio antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimento, guacales, snacks y comida húmeda para animales",
+        "medicamentos para animales",
+        "alimentos no perecederos para personas",
+        "medicamentos nuevos y sellados para personas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "LAIKA — publicación oficial",
+      "fuente_url": "https://www.instagram.com/p/Db3ZsFjEV_0/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Medellín",
+      "entidad": "LAIKA — acopio para personas y animales",
+      "puntos": [
+        {
+          "nombre": "LAIKA — tienda Agua Bendita",
+          "direccion": "Calle 2 Sur #32-54",
+          "horario": "tienda 8:00 a. m.–9:00 p. m., todos los días; confirma vigencia del acopio antes de ir"
+        },
+        {
+          "nombre": "LAIKA — tienda Arkadia",
+          "direccion": "Carrera 70 #1-141",
+          "horario": "tienda 8:00 a. m.–9:00 p. m., todos los días; confirma vigencia del acopio antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimento, guacales, snacks y comida húmeda para animales",
+        "medicamentos para animales",
+        "alimentos no perecederos para personas",
+        "medicamentos nuevos y sellados para personas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "LAIKA — publicación oficial",
+      "fuente_url": "https://www.instagram.com/p/Db3ZsFjEV_0/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Rionegro",
+      "entidad": "LAIKA — acopio para personas y animales",
+      "puntos": [
+        {
+          "nombre": "LAIKA — tienda Llanogrande",
+          "direccion": "Vía Llanogrande–Ríogrande, km 7",
+          "horario": "tienda 8:00 a. m.–9:00 p. m., todos los días; confirma vigencia del acopio antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimento, guacales, snacks y comida húmeda para animales",
+        "medicamentos para animales",
+        "alimentos no perecederos para personas",
+        "medicamentos nuevos y sellados para personas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "LAIKA — publicación oficial",
+      "fuente_url": "https://www.instagram.com/p/Db3ZsFjEV_0/",
       "nivel_fuente": "fuente_oficial",
       "fecha": "10 ago 2026"
     }
@@ -2160,15 +2281,18 @@
         "O−"
       ],
       "fuente_titulo": "Pulzo / El Tiempo",
-      "fuente_url": "https://www.pulzo.com/nacion/bogota/donacion-de-sangre-en-bogota-llamado-urgente-a-o-y-o-tras-sismo-como-ayudar-PP5270589A"
+      "fuente_url": "https://www.pulzo.com/nacion/bogota/donacion-de-sangre-en-bogota-llamado-urgente-a-o-y-o-tras-sismo-como-ayudar-PP5270589A",
+      "nivel_fuente": "fuente_secundaria"
     },
     {
       "ciudad": "Bogotá",
-      "entidad": "Cruz Roja Colombiana",
-      "donde": "Avenida Carrera 68 #68B-31. Teléfono 310 217 2379 — llama antes para confirmar horario.",
+      "entidad": "Cruz Roja — Banco Nacional permanente",
+      "donde": "Avenida Carrera 68 #68B-31. Lunes a viernes, 8:00 a. m.–5:00 p. m.; sábados, 8:00 a. m.–4:00 p. m. Es un servicio permanente: confirma antes de salir.",
       "tipos_urgentes": [],
-      "fuente_titulo": "El Colombiano",
-      "fuente_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382"
+      "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
+      "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
+      "nivel_fuente": "fuente_oficial"
     },
     {
       "ciudad": "Medellín",
@@ -2176,7 +2300,9 @@
       "donde": "Carrera 52 #25-310 (sede Guayabal) — jornada ampliada 11 y 12 de agosto, 7:00 a. m.–7:00 p. m. Tel. 301 701 6237; agenda tu cita en donarsangre.crantioquia.org.co",
       "tipos_urgentes": [],
       "fuente_titulo": "El Espectador",
-      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/"
+      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
+      "fuente_adicional_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "nivel_fuente": "fuente_secundaria"
     },
     {
       "ciudad": "Cali",
@@ -2184,7 +2310,8 @@
       "donde": "Banco Regional Cruz Roja (Cra. 38 Bis #5-91, San Fernando, tel. 311 625 8815), Hospital Universitario del Valle (Calle 5 #36-08), Hemolife (Calle 38N #3N-21), Fundación Valle del Lili y Clínica Imbanaco, de 8:00 a. m. a 6:00 p. m.",
       "tipos_urgentes": [],
       "fuente_titulo": "El Tiempo",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631"
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631",
+      "nivel_fuente": "fuente_secundaria"
     },
     {
       "ciudad": "Manizales",
@@ -2195,23 +2322,28 @@
         "O−"
       ],
       "fuente_titulo": "Infobae",
-      "fuente_url": "https://www.infobae.com/colombia/2026/08/10/centros-de-acopio-habilitados-en-colombia-tras-el-terremoto-guia-por-ciudad-para-donar-y-ayudar-a-las-victimas/"
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/10/centros-de-acopio-habilitados-en-colombia-tras-el-terremoto-guia-por-ciudad-para-donar-y-ayudar-a-las-victimas/",
+      "nivel_fuente": "fuente_secundaria"
     },
     {
       "ciudad": "Armenia",
-      "entidad": "Cruz Roja — Banco Regional",
-      "donde": "Avenida Bolívar #23 Norte-60. Teléfono 316 478 1842.",
+      "entidad": "Cruz Roja — Banco Regional permanente",
+      "donde": "Avenida Bolívar #23 Norte-60. Lunes a viernes, 8:00 a. m.–6:00 p. m.; sábados, 8:00 a. m.–12:00 m. Es un servicio permanente: confirma antes de salir.",
       "tipos_urgentes": [],
-      "fuente_titulo": "El Colombiano",
-      "fuente_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382"
+      "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
+      "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
+      "nivel_fuente": "fuente_oficial"
     },
     {
       "ciudad": "Cartagena",
-      "entidad": "Cruz Roja Colombiana",
-      "donde": "Calle 30 #44D-71. Teléfono 310 627 6160.",
+      "entidad": "Cruz Roja — Banco Regional permanente",
+      "donde": "Calle 30 #44D-71, barrio España. Lunes a viernes, 8:00 a. m.–5:00 p. m.; sábados, 8:00 a. m.–12:00 m. Es un servicio permanente: confirma antes de salir.",
       "tipos_urgentes": [],
-      "fuente_titulo": "El Colombiano",
-      "fuente_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382"
+      "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
+      "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
+      "nivel_fuente": "fuente_oficial"
     },
     {
       "ciudad": "Barranquilla",
@@ -2219,15 +2351,18 @@
       "donde": "Institución Universitaria de Barranquilla (Cra. 45 #40-22, 12–14 ago) y primer piso de la Alcaldía, Paseo de Bolívar (12–13 ago), de 8:00 a. m. a 5:00 p. m.",
       "tipos_urgentes": [],
       "fuente_titulo": "El Heraldo",
-      "fuente_url": "https://www.elheraldo.co/atlantico/barranquilla/2026/08/11/barranquilla-habilita-nuevo-punto-de-donacion-de-sangre-para-apoyar-a-afectados-por-el-terremoto/"
+      "fuente_url": "https://www.elheraldo.co/atlantico/barranquilla/2026/08/11/barranquilla-habilita-nuevo-punto-de-donacion-de-sangre-para-apoyar-a-afectados-por-el-terremoto/",
+      "nivel_fuente": "fuente_secundaria"
     },
     {
       "ciudad": "Villavicencio",
-      "entidad": "Cruz Roja Colombiana",
-      "donde": "Carrera 30 #39-30. Teléfono 310 275 5012.",
+      "entidad": "Cruz Roja — Banco Regional permanente",
+      "donde": "Carrera 30 #39-30, piso 3. Lunes a viernes, 8:00 a. m.–5:00 p. m. Es un servicio permanente: confirma antes de salir.",
       "tipos_urgentes": [],
-      "fuente_titulo": "El Colombiano",
-      "fuente_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382"
+      "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
+      "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
+      "nivel_fuente": "fuente_oficial"
     },
     {
       "ciudad": "La Estrella",
@@ -2235,7 +2370,8 @@
       "donde": "HOY miércoles 12 de agosto: estación La Estrella del Metro, 10:00 a. m.–4:30 p. m. Llama antes: 301 701 6237.",
       "tipos_urgentes": [],
       "fuente_titulo": "El Espectador",
-      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/"
+      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
+      "nivel_fuente": "fuente_secundaria"
     },
     {
       "ciudad": "Medellín",
@@ -2243,7 +2379,26 @@
       "donde": "Parque Explora: viernes 14 de agosto, 10:00 a. m.–4:00 p. m. · San Antonio de Prado: sábado 15, 9:00 a. m.–7:00 p. m.",
       "tipos_urgentes": [],
       "fuente_titulo": "El Espectador",
-      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/"
+      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "ciudad": "Itagüí",
+      "entidad": "Cruz Roja — Banco Regional permanente",
+      "donde": "Centro Comercial Itagüí Plaza, Carrera 52 #52-63, local 131. Lunes a sábado, 9:30 a. m.–12:00 m. y 1:00–4:30 p. m. Es un servicio permanente: confirma antes de salir.",
+      "tipos_urgentes": [],
+      "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
+      "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "nivel_fuente": "fuente_oficial"
+    },
+    {
+      "ciudad": "Manizales",
+      "entidad": "Cruz Roja — Banco Regional permanente",
+      "donde": "Carrera 21 #70A-06, Edificio Hemocentro. Lunes a viernes, 8:00 a. m.–5:00 p. m.; sábados, 8:00 a. m.–12:00 m. Es un servicio permanente: confirma antes de salir.",
+      "tipos_urgentes": [],
+      "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
+      "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
+      "nivel_fuente": "fuente_oficial"
     }
   ],
   "sangre_requisitos": [

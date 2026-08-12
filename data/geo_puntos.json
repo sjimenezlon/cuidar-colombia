@@ -1,4 +1,5 @@
 {
+ "evento_id": "co-sismo-2026-08-10",
  "puntos": [
   {
    "tipo": "acopio",
@@ -122,14 +123,6 @@
    "direccion": "Calle 27A #23-44",
    "lat": 5.68873,
    "lon": -76.64391
-  },
-  {
-   "tipo": "acopio",
-   "ciudad": "Barranquilla",
-   "nombre": "Centro de acopio Barranquillita",
-   "direccion": "Carrera 43 #6-120",
-   "lat": 10.98648,
-   "lon": -74.7977
   },
   {
    "tipo": "acopio",
@@ -269,8 +262,8 @@
    "lon": -74.0812
   },
   {
-   "tipo": "sangre",
-   "ciudad": "Medellín",
+  "tipo": "sangre",
+  "ciudad": "Medellín",
    "registro_entidad": "Cruz Roja Colombiana",
    "nombre": "Cruz Roja — donación de sangre",
    "direccion": "Carrera 52 #25-310",
@@ -314,9 +307,9 @@
    "lon": -75.49069
   },
   {
-   "tipo": "sangre",
-   "ciudad": "Villavicencio",
-   "registro_entidad": "Cruz Roja Colombiana",
+  "tipo": "sangre",
+  "ciudad": "Villavicencio",
+   "registro_entidad": "Cruz Roja — Banco Regional permanente",
    "nombre": "Cruz Roja — donación de sangre",
    "direccion": "Carrera 30 #39-30",
    "lat": 4.11775,
@@ -568,16 +561,18 @@
       "ciudad": "Valledupar",
       "nombre": "Sede S.C.A.R.E. — Edificio SOA, oficinas 202–203",
       "direccion": "Calle 11 #8-79",
-      "lat": 10.48096802,
-      "lon": -73.25137994
+      "lat": 10.4819022,
+      "lon": -73.2498624,
+      "coordenadas_fuente": "https://scare.org.co/nuestras-oficinas/"
     },
     {
       "tipo": "acopio",
       "ciudad": "Montería",
       "nombre": "Sede S.C.A.R.E. — barrio La Castellana",
       "direccion": "Calle 62 #7-53",
-      "lat": 8.77202457,
-      "lon": -75.86554039
+      "lat": 8.7741782,
+      "lon": -75.8672323,
+      "coordenadas_fuente": "https://scare.org.co/nuestras-oficinas/"
     },
     {
       "tipo": "acopio",
@@ -634,6 +629,207 @@
       "direccion": "Carrera 4, vía Hurtado",
       "lat": 10.496697,
       "lon": -73.264647
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Tunja",
+      "nombre": "Sede S.C.A.R.E. — Centro Cívico y Comercial Plaza Real, local 117",
+      "direccion": "Calle 20 #12-84",
+      "lat": 5.5345923,
+      "lon": -73.3651172,
+      "coordenadas_fuente": "https://www.waze.com/es/live-map/directions/co/boyaca/tunja/centro-civico-y-comercial-plaza-real?to=place.ChIJcQf1Xit8ao4R4EdFX5O-XEA"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Villavicencio",
+      "nombre": "Sede S.C.A.R.E. — Centro Comercial Villacentro, locales 83–84",
+      "direccion": "Avenida 40 #16B-159",
+      "lat": 4.1333076,
+      "lon": -73.6377775,
+      "coordenadas_fuente": "https://www.openstreetmap.org/?mlat=4.1333076&mlon=-73.6377775#map=18/4.1333076/-73.6377775"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Sincelejo",
+      "nombre": "Sede S.C.A.R.E. — Parque Comercial Guacarí, Torre Médica, oficinas 3327–3328",
+      "direccion": "Calle 28, carrera 25-365",
+      "lat": 9.3018783,
+      "lon": -75.3826243,
+      "coordenadas_fuente": "https://scare.org.co/nuestras-oficinas/"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Chía",
+      "nombre": "Centro Chía — local 12",
+      "direccion": "Avenida Pradilla #9-00 Este, local 12",
+      "lat": 4.865189,
+      "lon": -74.037278,
+      "coordenadas_fuente": "https://www.centrochia.com.co/"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Bogotá",
+      "nombre": "LAIKA — tienda 116",
+      "direccion": "Avenida Calle 116 #18B-43",
+      "lat": 4.6981541,
+      "lon": -74.0488716,
+      "coordenadas_fuente": "https://laika.com.co/api/proxy/v1/warehouses/stores"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Bogotá",
+      "nombre": "LAIKA — tienda Chapinero",
+      "direccion": "Avenida Carrera 7 #59-34",
+      "lat": 4.6445481,
+      "lon": -74.0612879,
+      "coordenadas_fuente": "https://laika.com.co/api/proxy/v1/warehouses/stores"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Bogotá",
+      "nombre": "LAIKA — tienda Modelia",
+      "direccion": "Avenida Calle 24 #74A-57",
+      "lat": 4.6656789,
+      "lon": -74.1198392,
+      "coordenadas_fuente": "https://laika.com.co/api/proxy/v1/warehouses/stores"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Bogotá",
+      "nombre": "LAIKA — tienda La 94",
+      "direccion": "Calle 94 #13-73",
+      "lat": 4.6785833,
+      "lon": -74.0494399
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "LAIKA — tienda Agua Bendita",
+      "direccion": "Calle 2 Sur #32-54",
+      "lat": 6.1989006,
+      "lon": -75.5658359,
+      "coordenadas_fuente": "https://laika.com.co/api/proxy/v1/warehouses/stores"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "LAIKA — tienda Arkadia",
+      "direccion": "Carrera 70 #1-141",
+      "lat": 6.2120973,
+      "lon": -75.5946407,
+      "coordenadas_fuente": "https://laika.com.co/api/proxy/v1/warehouses/stores"
+    },
+    {
+      "tipo": "sangre",
+      "ciudad": "Cartagena",
+      "registro_entidad": "Cruz Roja — Banco Regional permanente",
+      "nombre": "Cruz Roja — Banco Regional de Sangre",
+      "direccion": "Calle 30 #44D-71, barrio España",
+      "lat": 10.405614,
+      "lon": -75.5101539
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Cartagena",
+      "nombre": "Sede S.C.A.R.E. — Edificio Portus, oficina 1202",
+      "direccion": "Manga, calle 28 #26-53",
+      "lat": 10.409222,
+      "lon": -75.532423,
+      "coordenadas_fuente": "https://scare.org.co/nuestras-oficinas/"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Popayán",
+      "nombre": "Sede S.C.A.R.E. — Edificio Terrazas del Norte, oficina 205",
+      "direccion": "Carrera 9 #18N-231",
+      "lat": 2.4569867,
+      "lon": -76.5957355,
+      "coordenadas_fuente": "https://scare.org.co/nuestras-oficinas/"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Santa Marta",
+      "nombre": "Sede S.C.A.R.E. — Edificio 424, oficina 1007",
+      "direccion": "Calle 24 #3-99",
+      "lat": 11.2388584,
+      "lon": -74.2127508,
+      "coordenadas_fuente": "https://scare.org.co/nuestras-oficinas/"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Cúcuta",
+      "nombre": "Sede S.C.A.R.E. — barrio La Rivera",
+      "direccion": "Calle 8A #5E-25",
+      "lat": 7.8907349,
+      "lon": -72.4927014,
+      "coordenadas_fuente": "https://scare.org.co/nuestras-oficinas/"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Cali",
+      "nombre": "LAIKA — tienda Capry",
+      "direccion": "Calle 13 #75-110",
+      "lat": 3.388852,
+      "lon": -76.538772,
+      "coordenadas_fuente": "https://laika.com.co/api/proxy/v1/warehouses/stores"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Cali",
+      "nombre": "LAIKA — tienda Pance",
+      "direccion": "Cl. 18 #1282, barrio Pance (nomenclatura literal publicada por LAIKA)",
+      "lat": 3.3310077,
+      "lon": -76.5331156,
+      "coordenadas_fuente": "https://laika.com.co/api/proxy/v1/warehouses/stores"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Rionegro",
+      "nombre": "LAIKA — tienda Llanogrande",
+      "direccion": "Vía Llanogrande–Ríogrande, km 7",
+      "lat": 6.1320978,
+      "lon": -75.4010077,
+      "coordenadas_fuente": "https://laika.com.co/api/proxy/v1/warehouses/stores"
+    },
+    {
+      "tipo": "sangre",
+      "ciudad": "Bogotá",
+      "registro_entidad": "Cruz Roja — Banco Nacional permanente",
+      "nombre": "Cruz Roja — Banco Nacional de Sangre",
+      "direccion": "Avenida Carrera 68 #68B-31",
+      "lat": 4.6731921,
+      "lon": -74.0894375,
+      "coordenadas_fuente": "https://www.cruzrojacolombiana.org/banco-de-sangre/"
+    },
+    {
+      "tipo": "sangre",
+      "ciudad": "Armenia",
+      "registro_entidad": "Cruz Roja — Banco Regional permanente",
+      "nombre": "Cruz Roja — Banco Regional de Sangre",
+      "direccion": "Avenida Bolívar #23 Norte-60",
+      "lat": 4.5608663,
+      "lon": -75.6545181,
+      "coordenadas_fuente": "https://www.cruzrojacolombiana.org/banco-de-sangre/"
+    },
+    {
+      "tipo": "sangre",
+      "ciudad": "Manizales",
+      "registro_entidad": "Cruz Roja — Banco Regional permanente",
+      "nombre": "Hemocentro del Café — banco permanente",
+      "direccion": "Carrera 21 #70A-06, Edificio Hemocentro",
+      "lat": 5.0515655,
+      "lon": -75.4822996,
+      "coordenadas_fuente": "https://www.cruzrojacolombiana.org/banco-de-sangre/"
+    },
+    {
+      "tipo": "sangre",
+      "ciudad": "Itagüí",
+      "registro_entidad": "Cruz Roja — Banco Regional permanente",
+      "nombre": "Cruz Roja — punto fijo Itagüí Plaza",
+      "direccion": "Carrera 52 #52-63, local 131",
+      "lat": 6.1735403,
+      "lon": -75.608265,
+      "coordenadas_fuente": "https://www.cruzrojacolombiana.org/banco-de-sangre/"
     }
  ]
 }
