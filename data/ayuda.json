@@ -645,7 +645,7 @@
         },
         {
           "nombre": "Banco de Alimentos de Manizales",
-          "direccion": null,
+          "direccion": "Calle 49 #27A-85",
           "horario": null
         }
       ],
@@ -660,6 +660,8 @@
       ],
       "fuente_titulo": "La Patria",
       "fuente_url": "https://www.lapatria.com/manizales/en-vivo-asi-funciona-el-centro-de-acopio-en-el-coliseo-menor-de-manizales-ayudas-para",
+      "fuente_adicional_titulo": "ABACO Colombia — publicación oficial de la red",
+      "fuente_adicional_url": "https://www.instagram.com/p/Db3yn-LDvL-/",
       "fecha": "11 ago 2026"
     },
     {
@@ -668,7 +670,7 @@
       "puntos": [
         {
           "nombre": "Banco de Alimentos Monseñor Roberto López Londoño",
-          "direccion": null,
+          "direccion": "Calle 21 #12-25",
           "horario": null
         },
         {
@@ -688,6 +690,8 @@
       ],
       "fuente_titulo": "Semana",
       "fuente_url": "https://www.semana.com/nacion/articulo/bancos-de-alimentos-activan-ayuda-para-damnificados-por-el-terremoto-en-colombia-asi-puede-donar/202641/",
+      "fuente_adicional_titulo": "ABACO Colombia — publicación oficial de la red",
+      "fuente_adicional_url": "https://www.instagram.com/p/Db3yn-LDvL-/",
       "fecha": "11 ago 2026"
     },
     {
@@ -810,17 +814,17 @@
         },
         {
           "nombre": "Parroquia Nuestra Señora del Perpetuo Socorro (Bocagrande)",
-          "direccion": null,
+          "direccion": "Carrera 6 #7-122",
           "horario": null
         },
         {
           "nombre": "Parroquia Cristo Rey (Crespo)",
-          "direccion": null,
+          "direccion": "Avenida 3 #70-32",
           "horario": null
         },
         {
-          "nombre": "Banco de Alimentos de Cartagena",
-          "direccion": null,
+          "nombre": "Capilla Nuestra Señora de Guadalupe — Banco de Alimentos",
+          "direccion": "Carrera 5 #34-55",
           "horario": null
         }
       ],
@@ -836,6 +840,8 @@
       ],
       "fuente_titulo": "Alerta Caribe",
       "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
+      "fuente_adicional_titulo": "Banco de Alimentos de Cartagena — publicación oficial",
+      "fuente_adicional_url": "https://www.instagram.com/p/Db4Jcc7FuRr/",
       "fecha": "11 ago 2026"
     },
     {
@@ -1809,6 +1815,157 @@
       "fuente_adicional_url": "https://santander.gov.co/directorio/20/directorio-de-oficinas/",
       "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Quibdó",
+      "entidad": "Gobernación del Chocó",
+      "puntos": [
+        {
+          "nombre": "Gobernación del Chocó — Edificio La Confianza",
+          "direccion": "Calle 31, Edificio La Confianza",
+          "horario": "confirmar horario antes de ir"
+        },
+        {
+          "nombre": "Centro Logístico Humanitario — antigua bodega Postobón",
+          "direccion": "Kilómetro 4, vía Quibdó–Yuto",
+          "horario": "confirmar horario antes de ir"
+        }
+      ],
+      "que_donar": [
+        "agua y alimentos no perecederos",
+        "kits de hábitat y elementos de aseo",
+        "insumos médicos nuevos y sellados",
+        "alimento para mascotas y enseres"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "Gobernación del Chocó — publicación oficial",
+      "fuente_url": "https://www.instagram.com/p/Db4gCbYt1qB/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Chía",
+      "entidad": "Centro Comercial Centro Chía",
+      "puntos": [
+        {
+          "nombre": "Centro Chía — local 12",
+          "direccion": "Avenida Pradilla #9-00, local 12",
+          "horario": "recibe del 11 al 21 de agosto; confirmar horario del local antes de ir"
+        }
+      ],
+      "que_donar": [
+        "agua y bebidas hidratantes",
+        "alimentos no perecederos",
+        "cobijas, mantas, almohadas y colchonetas",
+        "elementos de higiene y primeros auxilios",
+        "linternas, baterías y alimento para mascotas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "Centro Comercial Centro Chía — publicación directa",
+      "fuente_url": "https://www.instagram.com/p/Db5_99Exr4f/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Bogotá",
+      "entidad": "Banco de Alimentos de Bogotá — red ABACO",
+      "puntos": [
+        {
+          "nombre": "Banco de Alimentos de Bogotá",
+          "direccion": "Calle 19A #32-50",
+          "horario": "confirmar recepción antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "elementos de primera necesidad"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "ABACO Colombia — publicación oficial de la red",
+      "fuente_url": "https://www.instagram.com/p/Db3yn-LDvL-/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Buenaventura",
+      "entidad": "Banco de Alimentos de Buenaventura — red ABACO",
+      "puntos": [
+        {
+          "nombre": "Banco de Alimentos de Buenaventura",
+          "direccion": "Avenida Simón Bolívar #47C-70",
+          "horario": "confirmar recepción antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "elementos de primera necesidad"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "ABACO Colombia — publicación oficial de la red",
+      "fuente_url": "https://www.instagram.com/p/Db3yn-LDvL-/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Dosquebradas",
+      "entidad": "Banco de Alimentos de Pereira — red ABACO",
+      "puntos": [
+        {
+          "nombre": "Parroquia San Marcos Evangelista",
+          "direccion": "Barrio Santa Isabel, Dosquebradas",
+          "horario": "confirmar recepción antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "elementos de primera necesidad"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "ABACO Colombia — publicación oficial de la red",
+      "fuente_url": "https://www.instagram.com/p/Db3yn-LDvL-/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Villavicencio",
+      "entidad": "Banco de Alimentos Papa Francisco",
+      "puntos": [
+        {
+          "nombre": "Banco de Alimentos de la Arquidiócesis de Villavicencio",
+          "direccion": "Calle 23C #22-02",
+          "horario": "confirmar recepción antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "elementos de primera necesidad"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "Banco de Alimentos Papa Francisco — publicación oficial",
+      "fuente_url": "https://www.instagram.com/p/Db3_HLvN8U7/",
+      "fuente_adicional_titulo": "ABACO Colombia — publicación oficial de la red",
+      "fuente_adicional_url": "https://www.instagram.com/p/Db3yn-LDvL-/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
     }
   ],
   "ciudades_acopio": [
@@ -1961,6 +2118,16 @@
       "ciudad": "Villavicencio",
       "lat": 4.1442,
       "lon": -73.6345
+    },
+    {
+      "ciudad": "Buenaventura",
+      "lat": 3.8801,
+      "lon": -77.0312
+    },
+    {
+      "ciudad": "Dosquebradas",
+      "lat": 4.834,
+      "lon": -75.6809
     }
   ],
   "sangre": [
@@ -2091,6 +2258,14 @@
       "como_usar": "Publica foto, edad, lugar de desaparición y un contacto. No publiques documentos de identidad, direcciones exactas ni datos bancarios.",
       "url": "https://colombiatebusca.com",
       "fuente_url": "https://www.eltiempo.com/colombia/terremoto-de-7-4-en-colombia-estas-son-las-lineas-de-atencion-para-reportar-emergencias-3577351"
+    },
+    {
+      "mecanismo": "Encontremos",
+      "entidad": "Plataforma ciudadana complementaria (no reemplaza a Cruz Roja ni al 123)",
+      "linea": null,
+      "como_usar": "Comparte el enlace o una captura de una publicación de búsqueda para conectar señales entre fuentes. Protege la privacidad: no subas documentos de identidad, direcciones exactas ni datos bancarios.",
+      "url": "https://encontremos.co/",
+      "fuente_url": "https://encontremos.co/"
     },
     {
       "mecanismo": "Registro de búsquedas de El Espectador",

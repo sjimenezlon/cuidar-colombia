@@ -34,7 +34,7 @@
   }
 
   function fetchJSON(ruta) {
-    return fetch(ruta).then(function (r) {
+    return fetch(ruta, { cache: 'no-store' }).then(function (r) {
       if (!r.ok) throw new Error(ruta + ' → ' + r.status);
       return r.json();
     }).catch(function (e) { console.warn('[cuidar]', e.message); return null; });

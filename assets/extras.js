@@ -13,7 +13,7 @@
 
   /* ---------- 1. Contador de verificación ---------- */
   Promise.all(['data/ayuda.json', 'data/zonas.json', 'data/geo_puntos.json', 'data/verificacion.json'].map(function (r) {
-    return fetch(r).then(function (x) { return x.ok ? x.json() : null; }).catch(function () { return null; });
+    return fetch(r, { cache: 'no-store' }).then(function (x) { return x.ok ? x.json() : null; }).catch(function () { return null; });
   })).then(function (r) {
     var cont = document.getElementById('contador-verificacion');
     if (!cont) return;
