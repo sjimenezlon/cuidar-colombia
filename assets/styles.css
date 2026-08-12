@@ -220,13 +220,43 @@ h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; line-height: 1.15; }
   font-size: 0.82rem; background: var(--papel); border: 1px dashed var(--borde);
   border-radius: 8px; padding: 8px 12px; font-family: ui-monospace, monospace;
 }
+.dato-copiable { display: inline-flex; align-items: center; gap: 5px; margin: 2px 3px; }
+.dato-copiable > span { font-weight: 700; color: var(--tinta); overflow-wrap: anywhere; }
+.boton-copiar {
+  min-height: 36px; padding: 5px 9px; border: 1px solid #8DB5D3; border-radius: 7px;
+  background: #fff; color: #164E78; font: 700 .72rem 'Inter', sans-serif; cursor: pointer;
+}
+.boton-copiar:hover, .boton-copiar.copiado { background: #E1ECF5; border-color: var(--azul); }
 .tarjeta-canal .canal-pie { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 4px; }
 .tarjeta-canal .canal-meta { font-size: 0.7rem; color: var(--tinta-tenue); }
+.vigencia-dato {
+  display: inline-flex; align-items: center; gap: 5px; width: fit-content; margin-top: 3px;
+  padding: 3px 8px; border: 1px solid transparent; border-radius: 100px; font-weight: 700;
+}
+.vigencia-dato::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.vigencia-reciente { color: #245F3D; background: #E4F3EA; border-color: #B9DCC7; }
+.vigencia-atencion { color: #714A11; background: #FBF3E4; border-color: #E5C98E; }
+.vigencia-vencida { color: #7A1815; background: #F9E5E3; border-color: #E9BDB9; }
+.vigencia-sin-fecha { color: var(--tinta-suave); background: var(--papel); border-color: var(--borde); }
+.tarjeta-acciones-secundarias { margin-top: 4px; padding-top: 9px; border-top: 1px solid var(--papel); }
+.enlace-reporte {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 7px 4px;
+  color: #6B4A16; font-size: .75rem; font-weight: 650; text-underline-offset: 3px;
+}
+.enlace-reporte:hover { color: #4F350E; }
 .nota-verificacion {
   margin-top: 22px; font-size: 0.85rem; color: var(--tinta-suave);
   background: var(--blanco); border-left: 3px solid var(--verde-ok);
   padding: 12px 18px; border-radius: 0 10px 10px 0; max-width: 780px;
 }
+.leyenda-vigencia {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 7px 10px;
+  margin: -7px 0 18px; color: var(--tinta-suave); font-size: .75rem;
+}
+.leyenda-vigencia span { padding: 3px 8px; border: 1px solid transparent; border-radius: 100px; font-weight: 700; }
+.leyenda-vigencia .vigencia-reciente { border-color: #B9DCC7; }
+.leyenda-vigencia .vigencia-atencion { border-color: #E5C98E; }
+.leyenda-vigencia .vigencia-vencida { border-color: #E9BDB9; }
 
 /* Acopios */
 .selector-ciudades { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }

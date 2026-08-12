@@ -51,6 +51,65 @@
       .replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
   }
 
+  function enlaceReporte(nombre, seccion) {
+    var asunto = 'Dato desactualizado: ' + String(nombre || 'registro');
+    var cuerpo = 'Hola, quiero reportar un posible dato desactualizado.\n\n' +
+      'Registro: ' + String(nombre || '—') + '\nSección: ' + String(seccion || '—') + '\n' +
+      'Página: ' + window.location.origin + window.location.pathname + '\n\nDetalle del reporte:\n';
+    return '<a class="enlace-reporte" href="mailto:sjimenezlon@gmail.com?subject=' + encodeURIComponent(asunto) +
+      '&body=' + encodeURIComponent(cuerpo) + '" aria-label="Reportar dato desactualizado de ' + esc(nombre) + '">' +
+      '⚠ Reportar dato desactualizado</a>';
+  }
+
+  function estadoVigencia(iso) {
+    var fecha = new Date(String(iso || '') + 'T12:00:00-05:00');
+    if (isNaN(fecha.getTime())) return { clase: 'vigencia-sin-fecha', titulo: 'Fecha de revisión no disponible' };
+    var horas = Math.max(0, (Date.now() - fecha.getTime()) / 36e5);
+    if (horas < 24) return { clase: 'vigencia-reciente', titulo: 'Revisado hace menos de 24 horas' };
+    if (horas <= 72) return { clase: 'vigencia-atencion', titulo: 'Revisado hace entre 24 y 72 horas' };
+    return { clase: 'vigencia-vencida', titulo: 'Revisado hace más de 72 horas: confirma antes de actuar' };
+  }
+
+  function selloFecha(iso, texto) {
+    var estado = estadoVigencia(iso);
+    return '<time class="vigencia-dato ' + estado.clase + '" datetime="' + esc(iso || '') + '" title="' +
+      esc(estado.titulo) + '">' + esc(texto || iso || 'Sin fecha') + '</time>';
+  }
+
+  function isoDesdeFechaCorta(texto) {
+    var meses = { ene: '01', feb: '02', mar: '03', abr: '04', may: '05', jun: '06', jul: '07', ago: '08', sep: '09', oct: '10', nov: '11', dic: '12' };
+    var partes = String(texto || '').toLowerCase().match(/^(\d{1,2})\s+([a-záéíóú]{3})\s+(\d{4})$/);
+    if (!partes || !meses[partes[2]]) return '';
+    return partes[3] + '-' + meses[partes[2]] + '-' + String(partes[1]).padStart(2, '0');
+  }
+
+  function renderDatosCopiables(texto) {
+    var original = String(texto || '');
+    var regex = /\d[\d .-]{6,}\d/g;
+    var salida = '', ultimo = 0, coincidencia;
+    while ((coincidencia = regex.exec(original))) {
+      var digitos = coincidencia[0].replace(/\D/g, '');
+      if (digitos.length < 8) continue;
+      salida += esc(original.slice(ultimo, coincidencia.index)) + '<span class="dato-copiable"><span>' +
+        esc(coincidencia[0]) + '</span><button type="button" class="boton-copiar" data-copiar="' +
+        esc(coincidencia[0].replace(/[ .]/g, '')) + '" aria-label="Copiar ' + esc(coincidencia[0]) + '">Copiar</button></span>';
+      ultimo = coincidencia.index + coincidencia[0].length;
+    }
+    return salida + esc(original.slice(ultimo));
+  }
+
+  function copiarTexto(texto) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(texto);
+    return new Promise(function (resolver, rechazar) {
+      var campo = document.createElement('textarea');
+      campo.value = texto; campo.setAttribute('readonly', ''); campo.style.position = 'fixed'; campo.style.opacity = '0';
+      document.body.appendChild(campo); campo.select();
+      try { document.execCommand('copy') ? resolver() : rechazar(new Error('No se pudo copiar')); }
+      catch (e) { rechazar(e); }
+      campo.remove();
+    });
+  }
+
   /* ---------- Menú móvil ---------- */
   var botonMenu = document.getElementById('menu-movil');
   var nav = document.getElementById('navegacion');
@@ -118,7 +177,11 @@
       return;
     }
     document.getElementById('lineas-emergencia').innerHTML = ayuda.lineas.map(function (l) {
-      var num = l.numero ? '<a href="tel:' + esc(String(l.numero).replace(/[^0-9+#*]/g, '')) + '">' + esc(l.numero) + '</a>' : '';
+      var esWhatsapp = /whatsapp/i.test(l.nombre || '');
+      var numeroLimpio = String(l.numero || '').replace(/\D/g, '');
+      var hrefNumero = esWhatsapp ? 'https://wa.me/' + numeroLimpio : 'tel:' + String(l.numero || '').replace(/[^0-9+#*]/g, '');
+      var num = l.numero ? '<a href="' + esc(hrefNumero) + '"' +
+        (esWhatsapp ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + esc(l.numero) + '</a>' : '';
       if (!num && l.url) num = '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">ver canal</a>';
       return '<span>' + esc(l.nombre) + ' ' + num + '</span>';
     }).join('');
@@ -153,6 +216,22 @@
       filtrosCanales.evidencia = e.target.value; pintarTarjetasCanales();
     });
     pintarTarjetasCanales();
+    var tarjetas = document.getElementById('canales-financieros');
+    if (!tarjetas.dataset.copiarConectado) {
+      tarjetas.dataset.copiarConectado = 'true';
+      tarjetas.addEventListener('click', function (e) {
+        var boton = e.target.closest('.boton-copiar');
+        if (!boton) return;
+        var textoOriginal = boton.textContent;
+        copiarTexto(boton.dataset.copiar || '').then(function () {
+          boton.textContent = '✓ Copiado'; boton.classList.add('copiado');
+          setTimeout(function () { boton.textContent = textoOriginal; boton.classList.remove('copiado'); }, 1800);
+        }).catch(function () {
+          boton.textContent = 'No se pudo copiar';
+          setTimeout(function () { boton.textContent = textoOriginal; }, 2200);
+        });
+      });
+    }
   }
 
   function pintarTarjetasCanales() {
@@ -172,19 +251,22 @@
       var chip = oficial
         ? '<span class="chip chip-verificado">✓ Fuente oficial</span>'
         : '<span class="chip chip-verificado-prensa">◉ Confirmación secundaria</span>';
-      var destino = urlSegura(c.url_oficial, false);
+      var canalOficial = urlSegura(c.url_oficial, false);
       var evidencia = c.verificacion && urlSegura(c.verificacion.evidencia_url, false);
+      var destino = oficial ? canalOficial : (evidencia || canalOficial);
+      var isoRevision = c.verificacion && c.verificacion.fecha_iso;
       return '<article class="tarjeta-canal">' +
         '<div class="canal-cabecera"><h4>' + esc(c.entidad) + '</h4>' + chip + '</div>' +
         (c.cobertura ? '<span class="chip chip-ambito">' + esc(c.cobertura) + '</span>' : '') +
         '<div class="canal-detalle">' + esc(c.como_donar || c.campana || '') + '</div>' +
-        (c.detalle_cuenta ? '<div class="canal-cuenta">' + esc(c.detalle_cuenta) + '</div>' : '') +
+        (c.detalle_cuenta ? '<div class="canal-cuenta">' + renderDatosCopiables(c.detalle_cuenta) + '</div>' : '') +
         '<div class="canal-pie">' +
-        (destino ? '<a class="boton boton-secundario" href="' + esc(destino) + '" target="_blank" rel="noopener noreferrer">' +
+        (destino ? '<a class="boton boton-secundario" href="' + esc(destino) + '" target="_blank" rel="noopener noreferrer" aria-label="' +
+          (oficial ? 'Abrir canal oficial de ' : 'Ver evidencia y confirmar ') + esc(c.entidad) + '">' +
           (oficial ? 'Abrir canal oficial' : 'Ver evidencia y confirmar') + '</a>' : '') +
-        '<span class="canal-meta">Comprobado en ' + esc(c.verificado_en || '') + '<br>' + esc(c.fecha_verificacion || '') +
+        '<span class="canal-meta">Comprobado en ' + esc(c.verificado_en || '') + '<br>' + selloFecha(isoRevision, c.fecha_verificacion) +
         (evidencia && evidencia !== destino ? ' · <a href="' + esc(evidencia) + '" target="_blank" rel="noopener noreferrer">ver evidencia</a>' : '') + '</span>' +
-        '</div></article>';
+        '</div><div class="tarjeta-acciones-secundarias">' + enlaceReporte(c.entidad, 'Donar dinero') + '</div></article>';
     }).join('');
   }
 
@@ -262,7 +344,9 @@
         (puntos ? '<ul class="lista-puntos">' + puntos + '</ul>' : '') +
         (si ? '<div><strong style="font-size:.82rem">Qué llevar:</strong><div class="etiquetas-donar">' + si + '</div></div>' : '') +
         (no ? '<div style="margin-top:10px"><strong style="font-size:.82rem">Qué no llevar:</strong><div class="etiquetas-donar">' + no + '</div></div>' : '') +
-        (a.fuente_url ? '<div class="acopio-fuente">Fuente: ' + enlaceFuente(a.fuente_url, a.fuente_titulo || a.fuente_url) + (a.fecha ? ' · ' + esc(a.fecha) : '') + '</div>' : '') +
+        (a.fuente_url ? '<div class="acopio-fuente">Fuente: ' + enlaceFuente(a.fuente_url, a.fuente_titulo || a.fuente_url) +
+          (a.fecha ? ' · ' + selloFecha(isoDesdeFechaCorta(a.fecha), a.fecha) : '') + '</div>' : '') +
+        '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') + '</div>' +
         '</div>';
     }).join('') || '<p class="nota-corte">Aún no hay puntos verificados en esta ciudad. Revisa los canales oficiales de tu alcaldía.</p>';
   }
@@ -277,6 +361,7 @@
         '<p>' + esc(s.donde || '') + '</p>' +
         (s.tipos_urgentes && s.tipos_urgentes.length ? '<p style="margin-top:8px"><strong>Se necesita con urgencia:</strong> ' + esc(s.tipos_urgentes.join(', ')) + '</p>' : '') +
         (s.fuente_url ? '<div class="simple-pie">Fuente: ' + enlaceFuente(s.fuente_url, s.fuente_titulo || 'fuente') + '</div>' : '') +
+        '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') + '</div>' +
         '</div>';
     }).join('');
     if (ayuda.sangre_requisitos && ayuda.sangre_requisitos.length) {
@@ -297,6 +382,7 @@
         '<p>' + esc(b.como_usar || '') + '</p>' +
         (b.url ? '<p style="margin-top:8px"><a class="boton boton-secundario" style="font-size:.8rem;padding:7px 14px" href="' + esc(b.url) + '" target="_blank" rel="noopener">Abrir canal</a></p>' : '') +
         (b.fuente_url ? '<div class="simple-pie">Fuente: ' + enlaceFuente(b.fuente_url, 'ver anuncio') + '</div>' : '') +
+        '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(b.mecanismo, 'Búsqueda de personas') + '</div>' +
         '</div>';
     }).join('');
   }
@@ -368,6 +454,7 @@
             '<p>' + esc(m.afectacion || '') + '</p>' +
             (m.fuentes && m.fuentes.length ? '<div class="muni-fuente">' + m.fuentes.map(function (f) { return enlaceFuente(f.url, f.titulo || 'fuente'); }).join(' · ') + '</div>' : '') +
             (m.lat && m.lon ? '<button class="ver-mapa" type="button" data-lat="' + m.lat + '" data-lon="' + m.lon + '">Ver en el mapa 📍</button>' : '') +
+            '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(m.municipio + ', ' + m.departamento, 'Zonas afectadas') + '</div>' +
             '</article>';
         }).join('') + '</div></div>';
     }).join('');
