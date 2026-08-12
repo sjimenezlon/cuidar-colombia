@@ -199,7 +199,8 @@
     'monteria': 'Córdoba', 'villavicencio': 'Meta', 'buenaventura': 'Valle del Cauca',
     'cota': 'Cundinamarca', 'tunja': 'Boyacá', 'itagui': 'Antioquia', 'envigado': 'Antioquia', 'la estrella': 'Antioquia',
     'pasto': 'Nariño', 'chia': 'Cundinamarca', 'caqueza': 'Cundinamarca', 'sincelejo': 'Sucre',
-    'acacias': 'Meta', 'florencia': 'Caquetá'
+    'acacias': 'Meta', 'florencia': 'Caquetá', 'popayan': 'Cauca', 'valledupar': 'Cesar',
+    'riohacha': 'La Guajira', 'neiva': 'Huila', 'cucuta': 'Norte de Santander', 'floridablanca': 'Santander'
   };
   var filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', busqueda: '', soloOficial: false };
   var conteosAyuda = { dinero: 0, especie: 0, sangre: 0, personas: 0 };
@@ -456,6 +457,7 @@
         (si ? '<div><strong style="font-size:.82rem">Qué llevar:</strong><div class="etiquetas-donar">' + si + '</div></div>' : '') +
         (no ? '<div style="margin-top:10px"><strong style="font-size:.82rem">Qué no llevar:</strong><div class="etiquetas-donar">' + no + '</div></div>' : '') +
         (a.fuente_url ? '<div class="acopio-fuente">Fuente: ' + enlaceFuente(a.fuente_url, a.fuente_titulo || a.fuente_url) +
+          (a.fuente_adicional_url ? ' · ' + enlaceFuente(a.fuente_adicional_url, a.fuente_adicional_titulo || 'Fuente adicional') : '') +
           (a.fecha ? ' · ' + selloFecha(isoDesdeFechaCorta(a.fecha), a.fecha) : '') + '</div>' : '') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') + '</div>' +
         '</article>';

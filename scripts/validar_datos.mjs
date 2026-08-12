@@ -60,6 +60,7 @@ if (ayuda) {
   for (const [tipo, lista] of [['acopios', ayuda.acopios], ['sangre', ayuda.sangre]]) {
     for (const [i, item] of (lista || []).entries()) {
       revisarUrl(item.fuente_url, `ayuda.${tipo}[${i}].fuente_url`);
+      if (item.fuente_adicional_url) revisarUrl(item.fuente_adicional_url, `ayuda.${tipo}[${i}].fuente_adicional_url`);
       if (item.nivel_fuente) exigir(['fuente_oficial', 'fuente_secundaria'].includes(item.nivel_fuente), `ayuda.${tipo}[${i}].nivel_fuente inválido`);
     }
   }

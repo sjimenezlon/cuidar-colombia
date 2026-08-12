@@ -450,7 +450,22 @@
           "horario": null
         },
         {
-          "nombre": "Parques Biblioteca Belén, San Javier, G. García Márquez y León de Greiff",
+          "nombre": "Parque Biblioteca de Belén",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Parque Biblioteca San Javier",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Parque Biblioteca Gabriel García Márquez",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Parque Biblioteca León de Greiff — La Ladera",
           "direccion": null,
           "horario": null
         },
@@ -828,7 +843,22 @@
       "entidad": "Alcaldía de Ibagué y Banco de Alimentos",
       "puntos": [
         {
-          "nombre": "Centros comerciales La Estación, Multicentro y Acqua, y Castiagro",
+          "nombre": "Centro Comercial La Estación",
+          "direccion": null,
+          "horario": "consultar vigencia"
+        },
+        {
+          "nombre": "Centro Comercial Multicentro",
+          "direccion": null,
+          "horario": "consultar vigencia"
+        },
+        {
+          "nombre": "Centro Comercial Acqua",
+          "direccion": null,
+          "horario": "consultar vigencia"
+        },
+        {
+          "nombre": "Castiagro",
           "direccion": null,
           "horario": "consultar vigencia"
         },
@@ -1234,6 +1264,551 @@
       "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
       "nivel_fuente": "fuente_secundaria",
       "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Medellín",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Torre Sudameris, oficina 1004",
+          "direccion": "Carrera 43A #1 Sur-100",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 320 304 5462"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Barranquilla",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Prado Office Center, oficinas 216–222",
+          "direccion": "Carrera 54 #68-196, piso 2",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 313 420 7590"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Bogotá",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Edificio Concord Center",
+          "direccion": "Carrera 15A #120-74",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 312 397 9473"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Cartagena",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Edificio Portus, oficina 1202",
+          "direccion": "Manga, calle 28 #26-53",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 312 397 9636"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Tunja",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Centro Cívico y Comercial Plaza Real, local 117",
+          "direccion": "Calle 20 #12-84",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 311 208 4416"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Popayán",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Edificio Terrazas del Norte, oficina 205",
+          "direccion": "Carrera 9 #18N-231",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 320 477 0256"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Valledupar",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Edificio SOA, oficinas 202–203",
+          "direccion": "Calle 11 #8-79",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 312 397 9448"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Montería",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — barrio La Castellana",
+          "direccion": "Calle 62 #7-53",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 320 477 0259"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Riohacha",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Edificio Doña Cándida, oficina 8, piso 2",
+          "direccion": "Calle 7 #11-114",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 312 397 8206"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Neiva",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Centro Comercial Plaza Real, local 201",
+          "direccion": "Carrera 5 #10-49",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 312 397 9705"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Santa Marta",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Edificio 424, oficina 1007",
+          "direccion": "Calle 24 #3-99",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 311 208 4389"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Villavicencio",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Centro Comercial Villacentro, locales 83–84",
+          "direccion": "Avenida 40 #16B-159",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 312 458 9704"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Pasto",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Edificio Zaguán del Lago, oficina 201",
+          "direccion": "Carrera 25 #15-62",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 320 477 0257"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Cúcuta",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — barrio La Rivera",
+          "direccion": "Calle 8A #5E-25",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 312 397 0646"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Bucaramanga",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Edificio Verona Plaza",
+          "direccion": "Calle 45 #28-36",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 314 471 0821"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Sincelejo",
+      "entidad": "S.C.A.R.E. — jornada «Juntos somos Colombia»",
+      "puntos": [
+        {
+          "nombre": "Sede S.C.A.R.E. — Parque Comercial Guacarí, Torre Médica, oficinas 3327–3328",
+          "direccion": "Calle 28, carrera 25-365",
+          "horario": "lunes a jueves, 8:00 a. m.–12:30 p. m. y 2:00–5:00 p. m.; viernes hasta las 4:00 p. m.; contacto 311 208 4361"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "productos de higiene y primera necesidad",
+        "kits para personal de salud",
+        "insumos médicos nuevos, empacados y con al menos 1 año de vigencia"
+      ],
+      "que_no_donar": [
+        "productos vencidos o abiertos",
+        "insumos médicos usados",
+        "perecederos"
+      ],
+      "fuente_titulo": "S.C.A.R.E. — fuente oficial",
+      "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Cúcuta",
+      "entidad": "Banco de Alimentos de la Diócesis de Cúcuta",
+      "puntos": [
+        {
+          "nombre": "Banco de Alimentos — barrio Pescadero",
+          "direccion": "Calle 2AN #1-26, detrás del SENA",
+          "horario": "confirmar vigencia por WhatsApp: 310 543 4166"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "colchonetas, frazadas y sábanas",
+        "productos de higiene personal"
+      ],
+      "que_no_donar": [
+        "medicamentos",
+        "ropa",
+        "productos vencidos"
+      ],
+      "fuente_titulo": "Caracol Radio — entrevista directa con el Banco de Alimentos",
+      "fuente_url": "https://caracol.com.co/2026/08/11/banco-de-alimentos-de-cucuta-habilita-centro-de-acopio-para-recibir-ayudas-por-terremoto-en-colombia/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Bogotá",
+      "entidad": "Organización Nacional Indígena de Colombia (ONIC)",
+      "puntos": [
+        {
+          "nombre": "Sede ONIC — Auditorio Kimy Pernía",
+          "direccion": "Calle 12B #4-38",
+          "horario": "8:00 a. m.–5:00 p. m.; confirmar vigencia antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos y agua",
+        "elementos de aseo e higiene",
+        "ayudas para bebés y descanso",
+        "utensilios de cocina y primeros auxilios"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "Infobae — anuncio de la ONIC",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/12/sismo-en-colombia-la-onic-reporto-68583-indigenas-afectados-pidio-atencion-por-deslizamientos-y-habilito-centro-de-acopio-en-bogota/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "12 ago 2026"
+    },
+    {
+      "ciudad": "Valledupar",
+      "entidad": "Gobernación del Cesar",
+      "puntos": [
+        {
+          "nombre": "Plazoleta de Banderas — Gobernación del Cesar",
+          "direccion": "Calle 16 #12-120, Edificio Alfonso López Michelsen",
+          "horario": "jornada anunciada para 11 y 12 de agosto, desde las 8:00 a. m.; confirmar antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "elementos de aseo",
+        "suministros básicos"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "Radio Guatapurí — anuncio institucional",
+      "fuente_url": "https://radioguatapuri.com/noticias/gobernacion-cesar-lidera-centro-acopio",
+      "fuente_adicional_titulo": "Dirección oficial de la Gobernación",
+      "fuente_adicional_url": "https://cesar.gov.co/d/es/atencion-ciudadano/contactenos",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Valledupar",
+      "entidad": "Pastoral Social y Banco de Alimentos de Valledupar",
+      "puntos": [
+        {
+          "nombre": "Bodegas del Parque de la Leyenda Vallenata",
+          "direccion": "Carrera 4, vía Hurtado",
+          "horario": "8:00 a. m.–3:00 p. m., jornada continua; confirmar por WhatsApp: 322 730 7199"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "arroz y lentejas",
+        "kits de descanso"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "Radio Guatapurí — entrevista directa con Pastoral Social",
+      "fuente_url": "https://radioguatapuri.com/noticias/diocesis-ayudas-humanitarias-terremoto",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Floridablanca",
+      "entidad": "Oficina para la Gestión del Riesgo de Desastres de Santander",
+      "puntos": [
+        {
+          "nombre": "CEGIRD Oriente — Gestión del Riesgo",
+          "direccion": "Calle 5 #3-18",
+          "horario": "8:00 a. m.–5:00 p. m.; confirmar antes de ir: (607) 698 5868 ext. 2231"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "elementos de aseo",
+        "cobijas",
+        "medicamentos vigentes",
+        "agua y alimento para mascotas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "Vanguardia — directorio actualizado del área metropolitana",
+      "fuente_url": "https://www.vanguardia.com/area-metropolitana/bucaramanga/2026/08/11/terremoto-en-colombia-nueve-puntos-donde-puede-realizar-donaciones-en-bucaramanga/",
+      "fuente_adicional_titulo": "Dirección oficial en la Gobernación de Santander",
+      "fuente_adicional_url": "https://santander.gov.co/directorio/20/directorio-de-oficinas/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
     }
   ],
   "ciudades_acopio": [
@@ -1336,6 +1911,56 @@
       "ciudad": "Florencia",
       "lat": 1.61037,
       "lon": -75.60737
+    },
+    {
+      "ciudad": "Cota",
+      "lat": 4.8099,
+      "lon": -74.1014
+    },
+    {
+      "ciudad": "Envigado",
+      "lat": 6.171,
+      "lon": -75.587
+    },
+    {
+      "ciudad": "Tunja",
+      "lat": 5.5353,
+      "lon": -73.3678
+    },
+    {
+      "ciudad": "Cúcuta",
+      "lat": 7.8939,
+      "lon": -72.5078
+    },
+    {
+      "ciudad": "Floridablanca",
+      "lat": 7.0617,
+      "lon": -73.0895
+    },
+    {
+      "ciudad": "Neiva",
+      "lat": 2.9294,
+      "lon": -75.2899
+    },
+    {
+      "ciudad": "Popayán",
+      "lat": 2.4448,
+      "lon": -76.6147
+    },
+    {
+      "ciudad": "Riohacha",
+      "lat": 11.5444,
+      "lon": -72.9072
+    },
+    {
+      "ciudad": "Valledupar",
+      "lat": 10.4806,
+      "lon": -73.2506
+    },
+    {
+      "ciudad": "Villavicencio",
+      "lat": 4.1442,
+      "lon": -73.6345
     }
   ],
   "sangre": [

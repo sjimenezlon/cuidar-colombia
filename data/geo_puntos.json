@@ -44,7 +44,7 @@
   {
    "tipo": "acopio",
    "ciudad": "Medellín",
-   "nombre": "Alcaldía de Medellín",
+   "nombre": "Hall de la Alcaldía de Medellín",
    "direccion": "Hall principal",
    "lat": 6.2447,
    "lon": -75.57378
@@ -60,7 +60,7 @@
   {
    "tipo": "acopio",
    "ciudad": "Medellín",
-   "nombre": "Universidad EAFIT",
+   "nombre": "Universidad EAFIT (placa cubierta)",
    "direccion": "Placa cubierta",
    "lat": 6.2002,
    "lon": -75.57849
@@ -76,7 +76,7 @@
   {
    "tipo": "acopio",
    "ciudad": "Cali",
-   "nombre": "Unidad Deportiva Alberto Galindo",
+   "nombre": "Ciudadela Petronio — Unidad Deportiva Alberto Galindo",
    "direccion": "Carrera 52 entre calles 2 y 3 — Ciudadela Petronio",
    "lat": 3.41308,
    "lon": -76.55142
@@ -118,7 +118,7 @@
   {
    "tipo": "acopio",
    "ciudad": "Quibdó",
-   "nombre": "Acopio Los Ángeles — San Gabriel",
+   "nombre": "Punto de acopio barrio Los Ángeles, sector San Gabriel",
    "direccion": "Calle 27A #23-44",
    "lat": 5.68873,
    "lon": -76.64391
@@ -134,7 +134,7 @@
   {
    "tipo": "acopio",
    "ciudad": "Bucaramanga",
-   "nombre": "Alcaldía de Bucaramanga",
+   "nombre": "Alcaldía de Bucaramanga (primer piso)",
    "direccion": "Primer piso",
    "lat": 7.11772,
    "lon": -73.13004
@@ -174,7 +174,7 @@
   {
    "tipo": "acopio",
    "ciudad": "Santa Marta",
-   "nombre": "Sede Ogricc — El Cundí",
+   "nombre": "Sede Ogricc, barrio El Cundí (piso 2)",
    "direccion": "Calle 16 #14A-08",
    "lat": 11.18855,
    "lon": -74.21965
@@ -386,6 +386,246 @@
    "direccion": "Carrera 10A #7-04",
    "lat": 1.61037,
    "lon": -75.60737
-  }
+  },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Biblioteca Pública El Poblado",
+      "direccion": null,
+      "lat": 6.196601,
+      "lon": -75.561753,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Parque Biblioteca León de Greiff — La Ladera",
+      "direccion": null,
+      "lat": 6.250978,
+      "lon": -75.553763,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Parque Biblioteca Gabriel García Márquez",
+      "direccion": null,
+      "lat": 6.304049,
+      "lon": -75.577758,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Parque Biblioteca San Javier",
+      "direccion": null,
+      "lat": 6.254489,
+      "lon": -75.6134,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Parque Biblioteca de Belén",
+      "direccion": null,
+      "lat": 6.224279,
+      "lon": -75.598017,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "UdeA — Oficina AfroUdeA, Bloque 9",
+      "direccion": null,
+      "lat": 6.265729,
+      "lon": -75.569724,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Simón Coffee",
+      "direccion": "Carrera 37 #10-54",
+      "lat": 6.209586,
+      "lon": -75.566377,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Restaurante Belisario — sede Provenza",
+      "direccion": null,
+      "lat": 6.207177,
+      "lon": -75.565648,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Restaurante Belisario — sede C.C. El Tesoro",
+      "direccion": "Centro Comercial El Tesoro",
+      "lat": 6.196548,
+      "lon": -75.558908,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Restaurante Belisario — oficina",
+      "direccion": "Calle 7 #35-44",
+      "lat": 6.206436,
+      "lon": -75.565875,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Remanence",
+      "direccion": "Calle 10B #35-27",
+      "lat": 6.210096,
+      "lon": -75.565046,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Librería Rodante Delfos",
+      "direccion": "Laureles, 79 #52A-23",
+      "lat": 6.265608,
+      "lon": -75.594757,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Fundación El Arte de los Sueños",
+      "direccion": "Carrera 48 #35-47, Perpetuo Socorro",
+      "lat": 6.236355,
+      "lon": -75.572418,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "La Razón",
+      "direccion": "Calle 44 #42-70",
+      "lat": 6.242577,
+      "lon": -75.564559,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Batallón Girardot",
+      "direccion": "Calle 66E #39-84",
+      "lat": 6.262622,
+      "lon": -75.54441,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Envigado",
+      "nombre": "Casa Eterna",
+      "direccion": "Calle 23 Sur #3-133, La Explanada, vía Las Palmas",
+      "lat": 6.165688,
+      "lon": -75.501316,
+      "coordenadas_fuente": "https://www.google.com/maps/placelists/list/4aDloC6hk_EoMSXdimAU6g"
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Medellín",
+      "nombre": "Sede S.C.A.R.E. — Torre Sudameris, oficina 1004",
+      "direccion": "Carrera 43A #1 Sur-100",
+      "lat": 6.20266581,
+      "lon": -75.5717971
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Barranquilla",
+      "nombre": "Sede S.C.A.R.E. — Prado Office Center, oficinas 216–222",
+      "direccion": "Carrera 54 #68-196, piso 2",
+      "lat": 10.997969,
+      "lon": -74.7990899
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Bogotá",
+      "nombre": "Sede S.C.A.R.E. — Edificio Concord Center",
+      "direccion": "Carrera 15A #120-74",
+      "lat": 4.7000341,
+      "lon": -74.04361346
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Valledupar",
+      "nombre": "Sede S.C.A.R.E. — Edificio SOA, oficinas 202–203",
+      "direccion": "Calle 11 #8-79",
+      "lat": 10.48096802,
+      "lon": -73.25137994
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Montería",
+      "nombre": "Sede S.C.A.R.E. — barrio La Castellana",
+      "direccion": "Calle 62 #7-53",
+      "lat": 8.77202457,
+      "lon": -75.86554039
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Riohacha",
+      "nombre": "Sede S.C.A.R.E. — Edificio Doña Cándida, oficina 8, piso 2",
+      "direccion": "Calle 7 #11-114",
+      "lat": 11.54938348,
+      "lon": -72.91300846
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Neiva",
+      "nombre": "Sede S.C.A.R.E. — Centro Comercial Plaza Real, local 201",
+      "direccion": "Carrera 5 #10-49",
+      "lat": 2.9293931,
+      "lon": -75.28989046
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Pasto",
+      "nombre": "Sede S.C.A.R.E. — Edificio Zaguán del Lago, oficina 201",
+      "direccion": "Carrera 25 #15-62",
+      "lat": 1.21389798,
+      "lon": -77.28093287
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Bucaramanga",
+      "nombre": "Sede S.C.A.R.E. — Edificio Verona Plaza",
+      "direccion": "Calle 45 #28-36",
+      "lat": 7.11837528,
+      "lon": -73.11294469
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Floridablanca",
+      "nombre": "CEGIRD Oriente — Gestión del Riesgo",
+      "direccion": "Calle 5 #3-18",
+      "lat": 7.06169435,
+      "lon": -73.08945402
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Bogotá",
+      "nombre": "Sede ONIC — Auditorio Kimy Pernía",
+      "direccion": "Calle 12B #4-38",
+      "lat": 4.59847658,
+      "lon": -74.07195259
+    },
+    {
+      "tipo": "acopio",
+      "ciudad": "Valledupar",
+      "nombre": "Bodegas del Parque de la Leyenda Vallenata",
+      "direccion": "Carrera 4, vía Hurtado",
+      "lat": 10.496697,
+      "lon": -73.264647
+    }
  ]
 }
