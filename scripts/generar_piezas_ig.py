@@ -1,5 +1,5 @@
 # Piezas de Instagram (story 1080x1920 y post 1080x1350) para Cuidar a Colombia.
-# Texto 100 % controlado (nada generado): la marca es la verificación.
+# Texto 100 % controlado: la marca es la trazabilidad de cada registro.
 from PIL import Image, ImageDraw, ImageFont
 
 PAPEL, CREMA, TINTA, AZUL, AZUL_OSC, ORO = '#FAF7F2', '#F3EDE3', '#1F2933', '#1D5A8A', '#16324F', '#C8862A'
@@ -22,7 +22,7 @@ def corazon(d, cx, cy, r, color):
                (cx, cy + int(2.6 * r))], fill=color)
 
 FILAS = [
-    ('#1D5A8A', 'Canales oficiales de donación'),
+    ('#1D5A8A', 'Canales de donación con evidencia'),
     ('#2E7D4F', 'Puntos de acopio en tu ciudad'),
     ('#C62828', 'Dónde donar sangre'),
     ('#C8862A', 'Mapa de zonas afectadas'),
@@ -48,7 +48,7 @@ def pieza(ancho, alto, ruta):
     y += 30
 
     sub = fuente('sans', 44 if es_story else 40)
-    for linea in ['Una sola página, verificada,', 'para ayudar tras el terremoto.']:
+    for linea in ['Una sola página, trazable,', 'para ayudar tras el terremoto.']:
         w = d.textlength(linea, font=sub)
         d.text(((ancho - w) / 2, y), linea, font=sub, fill=SUAVE)
         y += (62 if es_story else 56)
@@ -73,8 +73,8 @@ def pieza(ancho, alto, ruta):
     y += 130
 
     pie = fuente('sans', 30 if es_story else 28)
-    for linea in ['Todo con fuente y fecha de verificación.',
-                  'No intermediamos ni recaudamos: cada enlace va al canal oficial.']:
+    for linea in ['Todo con evidencia y fecha de revisión.',
+                  'No intermediamos ni recaudamos: revisa el nivel de cada fuente.']:
         w = d.textlength(linea, font=pie)
         d.text(((ancho - w) / 2, y), linea, font=pie, fill=SUAVE)
         y += 42

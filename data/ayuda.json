@@ -2282,7 +2282,9 @@
       ],
       "fuente_titulo": "Pulzo / El Tiempo",
       "fuente_url": "https://www.pulzo.com/nacion/bogota/donacion-de-sangre-en-bogota-llamado-urgente-a-o-y-o-tras-sismo-como-ayudar-PP5270589A",
-      "nivel_fuente": "fuente_secundaria"
+      "nivel_fuente": "fuente_secundaria",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Bogotá",
@@ -2292,7 +2294,9 @@
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
-      "nivel_fuente": "fuente_oficial"
+      "nivel_fuente": "fuente_oficial",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Medellín",
@@ -2302,7 +2306,9 @@
       "fuente_titulo": "El Espectador",
       "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
       "fuente_adicional_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
-      "nivel_fuente": "fuente_secundaria"
+      "nivel_fuente": "fuente_secundaria",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Cali",
@@ -2311,7 +2317,9 @@
       "tipos_urgentes": [],
       "fuente_titulo": "El Tiempo",
       "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631",
-      "nivel_fuente": "fuente_secundaria"
+      "nivel_fuente": "fuente_secundaria",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Manizales",
@@ -2323,7 +2331,9 @@
       ],
       "fuente_titulo": "Infobae",
       "fuente_url": "https://www.infobae.com/colombia/2026/08/10/centros-de-acopio-habilitados-en-colombia-tras-el-terremoto-guia-por-ciudad-para-donar-y-ayudar-a-las-victimas/",
-      "nivel_fuente": "fuente_secundaria"
+      "nivel_fuente": "fuente_secundaria",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Armenia",
@@ -2333,7 +2343,9 @@
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
-      "nivel_fuente": "fuente_oficial"
+      "nivel_fuente": "fuente_oficial",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Cartagena",
@@ -2343,7 +2355,9 @@
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
-      "nivel_fuente": "fuente_oficial"
+      "nivel_fuente": "fuente_oficial",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Barranquilla",
@@ -2352,7 +2366,9 @@
       "tipos_urgentes": [],
       "fuente_titulo": "El Heraldo",
       "fuente_url": "https://www.elheraldo.co/atlantico/barranquilla/2026/08/11/barranquilla-habilita-nuevo-punto-de-donacion-de-sangre-para-apoyar-a-afectados-por-el-terremoto/",
-      "nivel_fuente": "fuente_secundaria"
+      "nivel_fuente": "fuente_secundaria",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Villavicencio",
@@ -2362,7 +2378,9 @@
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
-      "nivel_fuente": "fuente_oficial"
+      "nivel_fuente": "fuente_oficial",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "La Estrella",
@@ -2371,7 +2389,9 @@
       "tipos_urgentes": [],
       "fuente_titulo": "El Espectador",
       "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
-      "nivel_fuente": "fuente_secundaria"
+      "nivel_fuente": "fuente_secundaria",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Medellín",
@@ -2380,7 +2400,9 @@
       "tipos_urgentes": [],
       "fuente_titulo": "El Espectador",
       "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
-      "nivel_fuente": "fuente_secundaria"
+      "nivel_fuente": "fuente_secundaria",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Itagüí",
@@ -2389,7 +2411,9 @@
       "tipos_urgentes": [],
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
-      "nivel_fuente": "fuente_oficial"
+      "nivel_fuente": "fuente_oficial",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "ciudad": "Manizales",
@@ -2398,7 +2422,9 @@
       "tipos_urgentes": [],
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
-      "nivel_fuente": "fuente_oficial"
+      "nivel_fuente": "fuente_oficial",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     }
   ],
   "sangre_requisitos": [
@@ -2416,7 +2442,11 @@
       "linea": "WhatsApp +57 321 213 9525",
       "como_usar": "Escribe por WhatsApp o al correo rcf@cruzrojacolombiana.org con el máximo de datos de la persona: nombre completo, edad, último lugar conocido, teléfono y señas físicas.",
       "url": null,
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/cruz-roja-habilito-canales-oficiales-de-ayuda-para-contactar-a-familiares-desaparecidos-tras-terremoto-de-7-4-en-colombia-esto-debe-saber-3577533"
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/cruz-roja-habilito-canales-oficiales-de-ayuda-para-contactar-a-familiares-desaparecidos-tras-terremoto-de-7-4-en-colombia-esto-debe-saber-3577533",
+      "nivel_fuente": "fuente_secundaria",
+      "tipo_canal": "institucional",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "mecanismo": "Línea nacional de emergencias",
@@ -2424,7 +2454,11 @@
       "linea": "123",
       "como_usar": "Para atención inmediata, reportar personas atrapadas y registrar información de desaparecidos.",
       "url": null,
-      "fuente_url": "https://www.eltiempo.com/colombia/terremoto-de-7-4-en-colombia-estas-son-las-lineas-de-atencion-para-reportar-emergencias-3577351"
+      "fuente_url": "https://www.eltiempo.com/colombia/terremoto-de-7-4-en-colombia-estas-son-las-lineas-de-atencion-para-reportar-emergencias-3577351",
+      "nivel_fuente": "fuente_secundaria",
+      "tipo_canal": "institucional",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "mecanismo": "Colombia te busca",
@@ -2432,7 +2466,11 @@
       "linea": null,
       "como_usar": "Publica foto, edad, lugar de desaparición y un contacto. No publiques documentos de identidad, direcciones exactas ni datos bancarios.",
       "url": "https://colombiatebusca.com",
-      "fuente_url": "https://www.eltiempo.com/colombia/terremoto-de-7-4-en-colombia-estas-son-las-lineas-de-atencion-para-reportar-emergencias-3577351"
+      "fuente_url": "https://www.eltiempo.com/colombia/terremoto-de-7-4-en-colombia-estas-son-las-lineas-de-atencion-para-reportar-emergencias-3577351",
+      "nivel_fuente": "fuente_secundaria",
+      "tipo_canal": "complementario",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "mecanismo": "Encontremos",
@@ -2440,7 +2478,11 @@
       "linea": null,
       "como_usar": "Comparte el enlace o una captura de una publicación de búsqueda para conectar señales entre fuentes. Protege la privacidad: no subas documentos de identidad, direcciones exactas ni datos bancarios.",
       "url": "https://encontremos.co/",
-      "fuente_url": "https://encontremos.co/"
+      "fuente_url": "https://encontremos.co/",
+      "nivel_fuente": "fuente_oficial",
+      "tipo_canal": "complementario",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "mecanismo": "Registro de búsquedas de El Espectador",
@@ -2448,7 +2490,11 @@
       "linea": null,
       "como_usar": "Formulario del diario para registrar y difundir búsquedas de familiares tras el terremoto.",
       "url": "https://www.elespectador.com/desaparecidos/reporte-desaparecidos-terremoto-en-colombia-10-agosto-2026/",
-      "fuente_url": "https://www.elespectador.com/desaparecidos/reporte-desaparecidos-terremoto-en-colombia-10-agosto-2026/"
+      "fuente_url": "https://www.elespectador.com/desaparecidos/reporte-desaparecidos-terremoto-en-colombia-10-agosto-2026/",
+      "nivel_fuente": "fuente_oficial",
+      "tipo_canal": "complementario",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
       "mecanismo": "Línea de desaparecidos en Pereira",
@@ -2456,7 +2502,11 @@
       "linea": "+57 316 478 1821",
       "como_usar": "Para reportar personas no localizadas en Pereira y Risaralda tras el sismo.",
       "url": null,
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631"
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631",
+      "nivel_fuente": "fuente_secundaria",
+      "tipo_canal": "institucional",
+      "fecha_revision": "12 ago 2026",
+      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     }
   ],
   "lineas": [

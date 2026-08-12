@@ -601,6 +601,7 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 }
 .contador-sep { display: none; }
 .mapa-extras { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+.nota-privacidad-ubicacion { flex-basis: 100%; max-width: 620px; color: var(--tinta-tenue); font-size: .74rem; }
 .chip-ubicacion { border-color: var(--oro); color: var(--oro); font-weight: 700; }
 .chip-ubicacion:hover { background: var(--oro); color: #fff; border-color: var(--oro); }
 .chip-ubicacion:disabled { opacity: .65; cursor: progress; background: var(--blanco); color: var(--tinta-suave); border-color: var(--borde); }

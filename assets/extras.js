@@ -60,7 +60,8 @@
     fila.className = 'mapa-extras';
     var datosListos = Boolean(window.__cuidar.datos && window.__cuidar.datos.geo);
     fila.innerHTML = '<button type="button" class="chip-capa chip-ubicacion" id="boton-cerca"' +
-      (datosListos ? '' : ' disabled') + '>' + (datosListos ? '📍 Mostrar puntos cerca de mí' : 'Cargando ubicaciones…') + '</button>';
+      (datosListos ? '' : ' disabled') + '>' + (datosListos ? '📍 Mostrar puntos cerca de mí' : 'Cargando ubicaciones…') + '</button>' +
+      '<small class="nota-privacidad-ubicacion">Tu ubicación se procesa solo en este dispositivo; no la guardamos ni la enviamos.</small>';
     filtros.parentNode.insertBefore(fila, filtros.nextSibling);
 
     var boton = document.getElementById('boton-cerca');
@@ -71,8 +72,6 @@
   }
 
   /* ---------- 2. Cerca de mí ---------- */
-  var marcadorUsuario = null;
-
   function distanciaKm(a, b, c, d) {
     var rl = Math.PI / 180, x = Math.sin((c - a) * rl / 2), y = Math.sin((d - b) * rl / 2);
     var h = x * x + Math.cos(a * rl) * Math.cos(c * rl) * y * y;
@@ -97,21 +96,12 @@
     if (!navigator.geolocation) { res.textContent = 'Tu navegador no permite obtener la ubicación.'; return; }
     res.textContent = 'Buscando puntos de ayuda cerca de ti…';
     navigator.geolocation.getCurrentPosition(function (pos) {
-      var mapa = window.__cuidar.obtenerMapa();
       var datos = window.__cuidar.datos || {};
       var lat = pos.coords.latitude, lon = pos.coords.longitude;
       var visibles = window.__cuidar.obtenerPuntosVisibles ? window.__cuidar.obtenerPuntosVisibles() : ((datos.geo && datos.geo.puntos) || []);
       var puntos = visibles.map(function (p) {
         return { p: p, d: distanciaKm(lat, lon, p.lat, p.lon) };
       }).sort(function (a, b) { return a.d - b.d; }).slice(0, 5);
-      if (mapa) {
-        if (marcadorUsuario) marcadorUsuario.remove();
-        var el = document.createElement('div');
-        el.style.cssText = 'width:16px;height:16px;border-radius:50%;background:#C8862A;border:3px solid #fff;box-shadow:0 0 0 5px rgba(200,134,42,.3);';
-        marcadorUsuario = new maplibregl.Marker({ element: el }).setLngLat([lon, lat]).addTo(mapa);
-        var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        mapa.flyTo({ center: [lon, lat], zoom: puntos.length && puntos[0].d < 30 ? 11.5 : 7.5, duration: reducir ? 0 : 500, essential: false });
-      }
       if (!puntos.length) { res.textContent = 'No hay puntos georreferenciados todavía.'; return; }
       res.innerHTML = '<strong>Lo más cercano a ti:</strong><ul class="lista-cercanos">' + puntos.map(function (c) {
         return '<li>' + (c.p.tipo === 'sangre' ? '🩸' : '📦') + ' <strong>' + esc(c.p.nombre) + '</strong> — ' +
@@ -119,7 +109,7 @@
           ' · a ~' + (c.d < 10 ? c.d.toFixed(1) : Math.round(c.d)) + ' km · ' +
           '<a href="https://www.google.com/maps/dir/?api=1&destination=' + c.p.lat + ',' + c.p.lon +
           '" target="_blank" rel="noopener noreferrer" aria-label="Cómo llegar a ' + esc(c.p.nombre) + ' (se abre en una pestaña nueva)">Cómo llegar ↗</a></li>';
-      }).join('') + '</ul><p class="nota-corte">Distancias en línea recta; el pin es aproximado, guíate por la dirección publicada.</p>';
+      }).join('') + '</ul><p class="nota-corte">Cálculo local y en línea recta; no guardamos tu ubicación. El pin es aproximado: guíate por la dirección publicada.</p>';
     }, function () {
       res.textContent = 'No pudimos obtener tu ubicación: revisa el permiso de ubicación del navegador.';
     }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });

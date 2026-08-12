@@ -34,13 +34,13 @@ corazon(d, W // 2, 560, 60, AZUL)
 centrado(d, 'Cuidar a', fuente('serif-b', 130), 760, TINTA)
 centrado(d, 'Colombia', fuente('serif-b', 130), 910, AZUL)
 centrado(d, 'Tras el terremoto,', fuente('sans', 48), 1120, SUAVE)
-centrado(d, 'una sola página verificada', fuente('sans', 48), 1185, SUAVE)
+centrado(d, 'una sola página trazable', fuente('sans', 48), 1185, SUAVE)
 centrado(d, 'para ayudar.', fuente('sans', 48), 1250, SUAVE)
 img.save('difusion/f1.png')
 
 # Frames 2-4 — capturas reales con leyenda
 capturas = [
-    (sys.argv[1], 'Canales oficiales de donación,', 'verificados uno a uno.'),
+    (sys.argv[1], 'Canales de donación,', 'con evidencia y fecha.'),
     (sys.argv[2], 'Mapa en vivo: zonas afectadas,', 'acopios y sangre cerca de ti.'),
     (sys.argv[3], 'Verifica las cadenas falsas', 'antes de reenviarlas.'),
 ]
@@ -71,7 +71,7 @@ url = 'cuidarcolombia.vercel.app'
 w = d.textlength(url, font=f_url)
 d.rounded_rectangle([(W - w) / 2 - 50, 1030, (W + w) / 2 + 50, 1150], radius=60, fill=AZUL)
 centrado(d, url, f_url, 1055, '#FFFFFF')
-centrado(d, 'Todo verificado, con fuentes y fechas.', fuente('sans', 40), 1260, SUAVE)
+centrado(d, 'Todo trazable, con fuentes y fechas.', fuente('sans', 40), 1260, SUAVE)
 centrado(d, 'La solidaridad también se verifica.', fuente('sans', 40), 1320, SUAVE)
 centrado(d, 'Creada por el profesor Santiago Jiménez Londoño', fuente('sans', 30), 1760, '#7B8794')
 img.save('difusion/f5.png')

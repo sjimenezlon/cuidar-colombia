@@ -21,9 +21,9 @@ def centrado(texto, f, y, color):
 
 centrado('TERREMOTO EN COLOMBIA', fuente('sans-b', 27), 52, ORO)
 centrado('No dones a ciegas.', fuente('serif-b', 92), 100, PAPEL)
-centrado('Todo lo verificado para ayudar, en un solo lugar:', fuente('sans', 33), 232, '#C4D2DE')
+centrado('Información trazable para ayudar, en un solo lugar:', fuente('sans', 33), 232, '#C4D2DE')
 
-filas = [('$', 'Canales oficiales de donación'),
+filas = [('$', 'Canales de donación con evidencia'),
          ('A', 'Acopios en 13 ciudades'),
          ('S', 'Dónde donar sangre'),
          ('!', 'Cadenas falsas, desmentidas')]
@@ -38,7 +38,7 @@ for ini, texto in filas:
     d.text((caja_x0 + 94, y + 21), texto, font=fuente('sans-b', 37), fill=TINTA)
     y += 104
 
-centrado('97 datos verificados · 51 fuentes · con fecha de corte', fuente('sans', 29), y + 12, '#C4D2DE')
+centrado('97 registros trazables · 51 fuentes · con fecha de corte', fuente('sans', 29), y + 12, '#C4D2DE')
 
 f_url = fuente('sans-b', 52)
 url = 'cuidarcolombia.vercel.app'

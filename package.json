@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "npm run validate && node scripts/construir_estatico.mjs",
     "validate": "node scripts/validar_datos.mjs",
     "check:links": "node scripts/verificar_enlaces.mjs",
     "test": "npm run validate"

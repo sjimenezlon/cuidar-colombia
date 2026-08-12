@@ -20,7 +20,7 @@ d.text((70, 66), 'TECNOLOGÍA CÍVICA · TERREMOTO EN COLOMBIA', font=fuente('sa
 d.text((66, 122), 'La solidaridad', font=fuente('serif-b', 60), fill=PAPEL)
 d.text((66, 198), 'también se verifica.', font=fuente('serif-b', 60), fill=ORO)
 
-d.text((70, 316), '97 datos verificados · 51 fuentes ·', font=fuente('sans', 26), fill='#C4D2DE')
+d.text((70, 316), '97 registros trazables · 51 fuentes ·', font=fuente('sans', 26), fill='#C4D2DE')
 d.text((70, 354), 'georreferenciación y verificación diaria', font=fuente('sans', 26), fill='#C4D2DE')
 d.text((70, 392), 'asistida por IA. Sin recaudar un peso.', font=fuente('sans', 26), fill='#C4D2DE')
 

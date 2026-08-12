@@ -1,5 +1,7 @@
 {
-  "intro": "Este capítulo perfila, con reportes verificados, los lugares donde el sismo golpeó más fuerte. La gravedad es relativa y refleja los reportes disponibles al último corte: los municipios pequeños e incomunicados — como el propio epicentro — suelen tardar más en aparecer en las cifras, y eso también es información.",
+  "fecha_revision": "12 ago 2026",
+  "fecha_revision_iso": "2026-08-12T10:00:00-05:00",
+  "intro": "Este capítulo perfila, con reportes trazables, los lugares donde el sismo golpeó más fuerte. La gravedad es relativa y refleja los reportes disponibles al último corte: los municipios pequeños e incomunicados — como el propio epicentro — suelen tardar más en aparecer en las cifras, y eso también es información.",
   "municipios": [
     {
       "municipio": "San José del Palmar",

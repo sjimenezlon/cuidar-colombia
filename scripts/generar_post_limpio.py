@@ -45,7 +45,7 @@ acento = acento.rotate(-3, expand=True, resample=Image.BICUBIC)
 img.paste(acento, (W - acento.width - 122, 212), acento)
 d = ImageDraw.Draw(img)
 
-centrado('Acopios, sangre y canales oficiales — verificados y en el mapa:', F('avenir', 30), 388, CREMA)
+centrado('Acopios, sangre y canales — con evidencia y en el mapa:', F('avenir', 30), 388, CREMA)
 
 # ---- Mapa: pines al centro, etiquetas en columnas laterales ----
 MX0, MY0, MX1, MY1 = 330, 460, 750, 850
@@ -125,7 +125,7 @@ for ang in range(0, 360, 45):
     r = 13 if ang % 90 == 0 else 6
     d.line([(524, 898), (524 + r * math.cos(math.radians(ang)), 898 + r * math.sin(math.radians(ang)))], fill=CORAL, width=3)
 d.text((548, 886), 'epicentro', font=fley, fill=CREMA)
-d.text((706, 886), '· 30 puntos verificados', font=fley, fill='#9DB8AA')
+d.text((706, 886), '· 30 puntos trazables', font=fley, fill='#9DB8AA')
 
 # URL en píldora crema sólida
 f_url = F('avenir-b', 54)

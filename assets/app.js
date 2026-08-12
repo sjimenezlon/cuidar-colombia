@@ -482,6 +482,9 @@
     try { if (/\.gov\.co$/i.test(new URL(registro.fuente_url).hostname)) return 'fuente_oficial'; } catch (e) { /* URL validada al publicar */ }
     return 'fuente_secundaria';
   }
+  function esInstitucionalConFuenteOficial(registro) {
+    return nivelRegistroAyuda(registro) === 'fuente_oficial' && registro.tipo_canal !== 'complementario';
+  }
   function pintarSelectorCiudades() {
     var sel = document.getElementById('selector-ciudades');
     var ciudades = [];
@@ -554,7 +557,7 @@
   function pintarTarjetasSangre() {
     var lista = sangreDatos.filter(function (s) {
       return coincideUbicacion(s.ciudad, '') &&
-        (!filtrosAyuda.soloOficial || nivelRegistroAyuda(s) === 'fuente_oficial') &&
+        (!filtrosAyuda.soloOficial || esInstitucionalConFuenteOficial(s)) &&
         coincideBusqueda([s.ciudad, departamentoCiudad(s.ciudad), s.entidad, s.donde, s.tipos_urgentes]);
     });
     conteosAyuda.sangre = lista.length;
@@ -569,6 +572,7 @@
         '<p>' + esc(s.donde || '') + '</p>' +
         (s.tipos_urgentes && s.tipos_urgentes.length ? '<p style="margin-top:8px"><strong>Se necesita con urgencia:</strong> ' + esc(s.tipos_urgentes.join(', ')) + '</p>' : '') +
         (s.fuente_url ? '<div class="acciones-enlaces">' + enlaceExterno(s.fuente_url, 'Ver evidencia', 'enlace-accion', 'Ver evidencia de ' + s.entidad + ' en ' + s.ciudad) + '</div>' : '') +
+        (s.fecha_revision ? '<div class="simple-pie">Revisado: ' + selloFecha(String(s.fecha_revision_iso || '').slice(0, 10), s.fecha_revision) + '</div>' : '') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') + '</div>' +
         '</article>';
     }).join('') || '<div class="estado-datos">No hay puntos de donación de sangre que coincidan con estos filtros.</div>';
@@ -584,17 +588,25 @@
 
   function pintarTarjetasBusqueda() {
     var lista = busquedaDatos.filter(function (b) {
-      return coincideBusqueda([b.mecanismo, b.entidad, b.linea, b.como_usar]);
+      return (!filtrosAyuda.soloOficial || esInstitucionalConFuenteOficial(b)) &&
+        coincideBusqueda([b.mecanismo, b.entidad, b.linea, b.como_usar]);
     });
     conteosAyuda.personas = lista.length;
     document.getElementById('busqueda-lista').innerHTML = lista.map(function (b) {
+      var institucional = b.tipo_canal === 'institucional';
+      var primaria = nivelRegistroAyuda(b) === 'fuente_oficial';
+      var etiqueta = institucional
+        ? (primaria ? '✓ Canal institucional · fuente oficial' : '◉ Canal institucional · confirmación secundaria')
+        : (primaria ? '◉ Canal complementario · publicación directa' : '◉ Canal complementario · confirmación secundaria');
       return '<article class="tarjeta-simple" data-ayuda-tipo="personas">' +
-        '<h4>' + esc(b.mecanismo) + '</h4>' +
+        '<div class="canal-cabecera"><h4>' + esc(b.mecanismo) + '</h4><span class="chip ' +
+        (institucional && primaria ? 'chip-verificado' : 'chip-verificado-prensa') + '">' + esc(etiqueta) + '</span></div>' +
         '<div class="simple-sub">' + esc(b.entidad || '') + '</div>' +
         (b.linea ? '<div class="destacado-linea">' + esc(b.linea) + '</div>' : '') +
         '<p>' + esc(b.como_usar || '') + '</p>' +
         (b.url ? '<p style="margin-top:8px">' + enlaceExterno(b.url, 'Abrir canal', 'boton boton-secundario', 'Abrir ' + b.mecanismo) + '</p>' : '') +
         (b.fuente_url ? '<div class="simple-pie">Fuente: ' + enlaceFuente(b.fuente_url, 'ver anuncio') + '</div>' : '') +
+        (b.fecha_revision ? '<div class="simple-pie">Revisado: ' + selloFecha(String(b.fecha_revision_iso || '').slice(0, 10), b.fecha_revision) + '</div>' : '') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(b.mecanismo, 'Búsqueda de personas') + '</div>' +
         '</article>';
     }).join('') || '<div class="estado-datos">No hay mecanismos de búsqueda que coincidan con estos filtros.</div>';
@@ -676,7 +688,8 @@
   function pintarZonas(zonas) {
     if (!zonas) { pintarError('zonas-departamentos', 'Consulta los reportes situacionales oficiales.'); return; }
     zonasDatos = zonas;
-    if (zonas.intro) document.getElementById('zonas-intro').textContent = zonas.intro;
+    if (zonas.intro) document.getElementById('zonas-intro').textContent = zonas.intro +
+      (zonas.fecha_revision ? ' Revisión del capítulo: ' + zonas.fecha_revision + '.' : '');
     renderZonasFiltradas();
     var vias = document.getElementById('vias-lista');
     if (zonas.vias && zonas.vias.length) {
@@ -747,17 +760,21 @@
 
   function cargarMapLibre() {
     if (typeof maplibregl !== 'undefined') return Promise.resolve();
+    var integridadJS = 'sha384-SYKAG6cglRMN0RVvhNeBY0r3FYKNOJtznwA0v7B5Vp9tr31xAHsZC0DqkQ/pZDmj';
+    var integridadCSS = 'sha384-MinO0mNliZ3vwppuPOUnGa+iq619pfMhLVUXfC4LHwSCvF9H+6P/KO4Q7qBOYV5V';
     if (!document.querySelector('link[data-maplibre]')) {
       var css = document.createElement('link');
       css.rel = 'stylesheet'; css.dataset.maplibre = 'true';
+      css.integrity = integridadCSS; css.crossOrigin = 'anonymous';
       css.href = 'https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css';
-      css.onerror = function () { css.href = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css'; };
+      css.onerror = function () { css.onerror = null; css.href = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css'; };
       document.head.appendChild(css);
     }
     return new Promise(function (resolver, rechazar) {
       function intentar(src, alterna) {
         var script = document.createElement('script');
         script.src = src; script.async = true;
+        script.integrity = integridadJS; script.crossOrigin = 'anonymous';
         script.onload = function () { typeof maplibregl !== 'undefined' ? resolver() : rechazar(new Error('MapLibre no disponible')); };
         script.onerror = function () {
           script.remove();
@@ -825,7 +842,7 @@
       conectarClicsMapa();
       mapa.once('load', function () {
         mapaListo = true;
-        reconstruirCapasPropias(simplificado ? 'Mapa base simplificado. Los datos verificados siguen visibles.' : '');
+        reconstruirCapasPropias(simplificado ? 'Mapa base simplificado. Los puntos publicados siguen visibles.' : '');
         actualizarEpicentro();
         encuadrarMapa();
       });
@@ -1044,13 +1061,17 @@
       })[0];
       var fuenteDatos = subpunto && subpunto.fuente_url ? subpunto : coincidencia;
       var detalle = subpunto && subpunto.horario || (p.tipo === 'sangre' && coincidencia && coincidencia.donde) || '';
+      var fechaFuente = fuenteDatos && fuenteDatos.fecha || coincidencia && coincidencia.fecha || '';
+      var fechaRevision = fuenteDatos && fuenteDatos.fecha_revision || coincidencia && coincidencia.fecha_revision || '';
+      var fechaRevisionIso = fuenteDatos && fuenteDatos.fecha_revision_iso || coincidencia && coincidencia.fecha_revision_iso || '';
       return {
         fuente_url: fuenteDatos && fuenteDatos.fuente_url || '',
         fuente_titulo: fuenteDatos && fuenteDatos.fuente_titulo || '',
         fuente_adicional_url: fuenteDatos && fuenteDatos.fuente_adicional_url || coincidencia && coincidencia.fuente_adicional_url || '',
         nivel_fuente: fuenteDatos ? nivelRegistroAyuda(fuenteDatos) : 'fuente_secundaria',
-        fecha: fuenteDatos && fuenteDatos.fecha || coincidencia && coincidencia.fecha || '',
-        fecha_iso: isoDesdeFechaCorta(fuenteDatos && fuenteDatos.fecha || coincidencia && coincidencia.fecha),
+        fecha: fechaFuente || fechaRevision,
+        fecha_iso: fechaFuente ? isoDesdeFechaCorta(fechaFuente) : String(fechaRevisionIso).slice(0, 10),
+        etiqueta_fecha: fechaFuente ? 'Fecha de la fuente' : 'Revisado',
         detalle_operativo: detalle,
         operacion: operacionDesdeDetalle(detalle),
         precision_ubicacion: p.coordenadas_fuente ? 'ubicacion_contrastada' : 'direccion_geocodificada'
@@ -1261,7 +1282,7 @@
       (p.fuente_adicional_url ? enlaceFuente(p.fuente_adicional_url, 'Corroborar dirección y horarios') : '') +
       (incluirLista ? '<button type="button" class="enlace-lista-punto" data-ver-lista="' + esc(p._id) + '">Ver en la lista</button>' : '') + '</div>' +
       '<dl class="detalle-punto-datos"><div><dt>Antes de ir</dt><dd>' + esc(p.detalle_operativo || 'No hay horario publicado en este registro; confirma directamente con la entidad.') + '</dd></div>' +
-      (p.fecha ? '<div><dt>Fecha de la fuente</dt><dd>' + selloFecha(p.fecha_iso, p.fecha) + '</dd></div>' : '') +
+      (p.fecha ? '<div><dt>' + esc(p.etiqueta_fecha || 'Revisado') + '</dt><dd>' + selloFecha(p.fecha_iso, p.fecha) + '</dd></div>' : '') +
       (datosMapa.meta && datosMapa.meta.ultima_actualizacion ? '<div><dt>Corte del portal</dt><dd>' + esc(datosMapa.meta.ultima_actualizacion) + '</dd></div>' : '') + '</dl>' +
       '<p class="pop-aviso">La ubicación no prueba que el punto siga recibiendo. Revisa la evidencia y confirma antes de desplazarte.</p>' +
       '<div class="detalle-punto-reporte">' + enlaceReporte(p.nombre + ' — ' + p.ciudad, esSangre ? 'Mapa de sangre' : 'Mapa de acopios') + '</div></div>';

@@ -28,8 +28,8 @@ d.polygon([(cx - 2*r + 8, cy + r*0.55), (cx + 2*r - 8, cy + r*0.55), (cx, cy + 2
 d.text((300, 180), 'Cuidar a', font=f_titulo, fill='#1F2933')
 d.text((300, 285), 'Colombia', font=f_titulo, fill='#1D5A8A')
 
-d.text((150, 445), 'Información verificada para ayudar tras el terremoto', font=f_sub, fill='#52606D')
-d.text((150, 500), 'Canales oficiales de donación · acopios · sangre · mapa de zonas afectadas', font=f_mini, fill='#7B8794')
+d.text((150, 445), 'Información trazable para ayudar tras el terremoto', font=f_sub, fill='#52606D')
+d.text((150, 500), 'Donación · acopios · sangre · fuentes y fecha de revisión', font=f_mini, fill='#7B8794')
 d.text((150, 560), 'cuidarcolombia.vercel.app', font=f_mini, fill='#C8862A')
 
 img.save('assets/og.png', optimize=True)

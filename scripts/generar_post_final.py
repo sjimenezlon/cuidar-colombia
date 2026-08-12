@@ -44,7 +44,7 @@ acento = acento.rotate(-3, expand=True, resample=Image.BICUBIC)
 img.paste(acento, (W - acento.width - 118, 218), acento)
 d = ImageDraw.Draw(img)
 
-centrado('Acopios, sangre y canales oficiales, verificados y en el mapa:', F('avenir', 31), 398, TINTA)
+centrado('Acopios, sangre y canales, con evidencia y en el mapa:', F('avenir', 31), 398, TINTA)
 
 # ---- Mapa con los puntos reales ----
 MX0, MY0, MX1, MY1 = 170, 470, 910, 830

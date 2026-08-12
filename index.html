@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cuidar a Colombia — Información verificada para ayudar tras el terremoto</title>
-<meta name="description" content="Plataforma ciudadana que agrega y verifica información oficial para ayudar tras el terremoto del 10 de agosto de 2026 en Colombia: canales de donación verificados, puntos de acopio, donación de sangre, búsqueda de personas y zonas afectadas.">
+<title>Cuidar a Colombia — Información trazable para ayudar tras el terremoto</title>
+<meta name="description" content="Plataforma ciudadana que reúne información para ayudar tras el terremoto del 10 de agosto de 2026 en Colombia y la clasifica por fuente, evidencia y fecha de revisión.">
 <meta property="og:title" content="Cuidar a Colombia">
-<meta property="og:description" content="Canales oficiales de donación, puntos de acopio, donación de sangre y mapa de zonas afectadas por el terremoto — todo verificado, con fuentes y fechas.">
+<meta property="og:description" content="Canales de donación, acopios, sangre y zonas afectadas con fuentes, niveles de evidencia y fechas de revisión.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cuidarcolombia.vercel.app">
 <meta property="og:image" content="https://cuidarcolombia.vercel.app/assets/og.png">
@@ -21,10 +21,8 @@
 .fab-donar-movil{display:none}.fab-whatsapp{position:fixed;right:22px;bottom:22px;z-index:500;display:flex;align-items:center;gap:8px;background:#008938;color:#fff;text-decoration:none;padding:12px 20px;border-radius:100px;font-weight:700;font-size:.92rem;box-shadow:0 4px 18px rgba(0,137,56,.35)}
 @media(max-width:900px){body{padding-bottom:78px}.fab-donar-movil{position:fixed;left:12px;right:76px;bottom:12px;z-index:600;display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--azul);color:#fff;border-radius:100px;text-decoration:none;font-size:.94rem;font-weight:800;box-shadow:0 4px 18px rgba(29,90,138,.35)}.fab-whatsapp{right:12px;bottom:12px;width:52px;height:52px;padding:13px;justify-content:center;z-index:600}.fab-whatsapp span{display:none}}
 </style>
-<link rel="stylesheet" href="assets/styles.css?v=20260812m">
-<script>
-(function(){var cargado=false;function cargar(){if(cargado)return;cargado=true;var app=document.createElement('script');app.src='assets/app.js?v=20260812zf';app.onload=function(){var extras=document.createElement('script');extras.src='assets/extras.js?v=20260812f';document.body.appendChild(extras)};document.body.appendChild(app)}function preparar(){var leyenda=document.getElementById('mapa-leyenda');if(leyenda&&matchMedia('(max-width:700px)').matches)leyenda.removeAttribute('open');if(location.hash||scrollY>0)cargar();['pointerover','pointerdown','touchstart','keydown','wheel','focusin'].forEach(function(tipo){window.addEventListener(tipo,cargar,{once:true,passive:true})})}document.addEventListener('DOMContentLoaded',preparar)})();
-</script>
+<link rel="stylesheet" href="assets/styles.css?v=20260812n">
+<script src="assets/loader.js?v=20260812a"></script>
 </head>
 <body>
 
@@ -57,10 +55,10 @@
     <div class="contenedor">
       <p class="sello" id="sello-actualizacion">
         <span class="punto-vivo" aria-hidden="true"></span>
-        Información verificada · última actualización <strong id="fecha-actualizacion">12 de agosto de 2026, 10:00 a. m.</strong>
+        Información revisada y trazable · última actualización <strong id="fecha-actualizacion">12 de agosto de 2026, 10:00 a. m.</strong>
       </p>
       <div class="aviso-vigencia aviso-vigencia-ok" id="aviso-vigencia" role="status" aria-live="polite"><strong>Datos dentro de la ventana de revisión.</strong> Próxima revisión prevista: 13 de agosto de 2026, 10:00 a. m.</div>
-      <h1>Una sola página, verificada,<br>para ayudar a Colombia.</h1>
+      <h1>Una sola página, trazable,<br>para ayudar a Colombia.</h1>
       <div class="acciones-rapidas">
         <a class="accion" href="#donar-dinero">
           <span class="accion-icono">💳</span>
@@ -72,7 +70,7 @@
         </a>
         <a class="accion" href="#sangre">
           <span class="accion-icono">🩸</span>
-          <span class="accion-texto"><strong>Donar sangre</strong><small>Bancos y jornadas activas</small></span>
+          <span class="accion-texto"><strong>Donar sangre</strong><small>Bancos y jornadas publicadas</small></span>
         </a>
         <a class="accion" href="#buscar">
           <span class="accion-icono">🔎</span>
@@ -81,7 +79,7 @@
       </div>
       <p class="hero-sub">
         Encuentra canales de donación, puntos de acopio, sangre y búsqueda de personas con fuente y fecha de revisión.
-        <strong>No intermediamos ni recaudamos:</strong> te llevamos al canal publicado por cada entidad.
+        <strong>No intermediamos ni recaudamos:</strong> mostramos el enlace, la evidencia y su nivel de certeza.
       </p>
       <div class="contador-verificacion" id="contador-verificacion" aria-live="polite"><span class="contador-item"><strong id="contx-0">214</strong> registros trazables</span><span class="contador-sep" aria-hidden="true">·</span><span class="contador-item"><strong id="contx-1">71</strong> fuentes consultadas</span><span class="contador-sep" aria-hidden="true">·</span><span class="contador-item"><strong id="contx-2">13</strong> municipios monitoreados</span></div>
     </div>
@@ -184,14 +182,14 @@
           <label class="control-filtro control-busqueda"><span>Buscar</span>
             <input id="filtro-ayuda-busqueda" type="search" placeholder="Ej. Pereira, Cruz Roja o alimentos">
           </label>
-          <label class="filtro-check"><input id="filtro-ayuda-oficial" type="checkbox"> Mostrar solo fuentes oficiales</label>
+          <label class="filtro-check"><input id="filtro-ayuda-oficial" type="checkbox"> Solo canales institucionales con fuente oficial</label>
           <button class="boton-limpiar" id="limpiar-filtros-ayuda" type="button">Restablecer</button>
         </div>
       </div>
 
       <!-- Donar dinero -->
       <div class="bloque-ayuda" id="donar-dinero">
-        <h3><span class="numeral">1</span> Donar dinero por canales oficiales</h3>
+        <h3><span class="numeral">1</span> Donar dinero por canales con evidencia</h3>
         <p class="bloque-intro">El dinero llega más rápido que los objetos, no satura las vías y permite comprar
         exactamente lo que se necesita en cada zona. Cada tarjeta indica si la comprobación proviene del dominio
         de la entidad o de una publicación secundaria que todavía debes contrastar antes de transferir.</p>
@@ -322,12 +320,17 @@
       <p><strong>Cuidar a Colombia no intermedia, no recauda y no recibe donaciones.</strong>
       Es un ejercicio ciudadano de agregación: un rastreo de las fuentes oficiales y de la colectividad
       de buenas intenciones que se moviliza tras la emergencia, organizado en un solo lugar para que ayudar
-      sea más fácil y más seguro. Cada dato lleva su fuente y su fecha de verificación; las cifras de una
+      sea más fácil y más seguro. Cada registro de ayuda enlaza su evidencia y revisión; los balances y zonas
+      comparten una fecha de corte visible. Las cifras de una
       emergencia cambian rápido y pueden quedar desactualizadas entre cortes. Ante cualquier duda,
       la fuente oficial manda.</p>
       <p>La información se revisa y actualiza mediante un proceso asistido por inteligencia artificial
       que clasifica cada canal según su evidencia y conserva el enlace consultado — una muestra de cómo la
       tecnología puede ayudarnos a rastrear, organizar y cuidar.</p>
+      <p id="privacidad"><strong>Privacidad:</strong> no usamos analítica, cookies ni almacenamiento del navegador.
+      «Cerca de mí» calcula distancias dentro de tu dispositivo y no guarda ni envía tu coordenada. Los mapas y
+      enlaces externos pertenecen a terceros. Si decides escribirnos, tu proveedor de correo compartirá con el
+      responsable del proyecto la dirección y el contenido que envíes.</p>
     </div>
     <div class="pie-credito">
       <div>

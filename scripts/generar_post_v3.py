@@ -25,10 +25,10 @@ def centrado(texto, f, y, color):
 centrado('TERREMOTO EN COLOMBIA', fuente('sans-b', 30), 70, ORO)
 centrado('No dones', fuente('serif-b', 124), 130, PAPEL)
 centrado('a ciegas.', fuente('serif-b', 124), 280, ORO)
-centrado('Todo lo verificado para ayudar, en un solo lugar:', fuente('sans', 36), 460, '#C4D2DE')
+centrado('Información trazable para ayudar, en un solo lugar:', fuente('sans', 36), 460, '#C4D2DE')
 
 # Lista útil (blanca, de guardar)
-filas = [('💳', 'Canales oficiales de donación'),
+filas = [('💳', 'Canales de donación con evidencia'),
          ('📦', 'Acopios en 13 ciudades'),
          ('🩸', 'Dónde donar sangre'),
          ('🛑', 'Cadenas falsas, desmentidas')]
@@ -46,7 +46,7 @@ for icono, texto in filas:
     y += 116
 
 # Credibilidad
-centrado('97 datos verificados · 51 fuentes · con fecha de corte', fuente('sans', 32), y + 18, '#C4D2DE')
+centrado('97 registros trazables · 51 fuentes · con fecha de corte', fuente('sans', 32), y + 18, '#C4D2DE')
 
 # URL gigante
 f_url = fuente('sans-b', 56)

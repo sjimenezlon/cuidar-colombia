@@ -34,6 +34,12 @@ function normalizar(valor) {
   return String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
     .replace(/[^a-z0-9]+/g, ' ').trim();
 }
+function revisarFechaRevision(item, ctx, fechaCorte) {
+  exigir(!Number.isNaN(Date.parse(item?.fecha_revision_iso)), `${ctx}.fecha_revision_iso ausente o inválida`);
+  const fechaIso = String(item?.fecha_revision_iso || '').slice(0, 10);
+  exigir(item?.fecha_revision === fechaCortaEs(fechaIso), `${ctx}.fecha_revision no coincide con fecha_revision_iso`);
+  exigir(!fechaCorte || !fechaIso || fechaIso <= fechaCorte, `${ctx}.fecha_revision_iso posterior al corte ${fechaCorte}`);
+}
 
 const [meta, ayuda, zonas, geo, verificacion, fuentes, sismo, balance] = await Promise.all([
   json('data/meta.json'), json('data/ayuda.json'), json('data/zonas.json'), json('data/geo_puntos.json'),
@@ -73,6 +79,7 @@ if (ayuda) {
       revisarUrl(item.fuente_url, `ayuda.${tipo}[${i}].fuente_url`);
       if (item.fuente_adicional_url) revisarUrl(item.fuente_adicional_url, `ayuda.${tipo}[${i}].fuente_adicional_url`);
       exigir(['fuente_oficial', 'fuente_secundaria'].includes(item.nivel_fuente), `ayuda.${tipo}[${i}].nivel_fuente ausente o inválido`);
+      if (tipo === 'sangre') revisarFechaRevision(item, `ayuda.${tipo}[${i}]`, fechaCorte);
       if (tipo === 'acopios') {
         const fechaItem = isoDeFechaCortaEs(item.fecha);
         exigir(Boolean(fechaItem), `ayuda.${tipo}[${i}].fecha ausente o inválida`);
@@ -92,9 +99,19 @@ if (ayuda) {
       }
     }
   }
+  for (const [i, item] of (ayuda.busqueda || []).entries()) {
+    const ctx = `ayuda.busqueda[${i}] ${item.mecanismo || ''}`;
+    exigir(Boolean(item.mecanismo && item.entidad), `${ctx}: mecanismo o entidad ausente`);
+    if (item.url) revisarUrl(item.url, `${ctx}.url`);
+    revisarUrl(item.fuente_url, `${ctx}.fuente_url`);
+    exigir(['fuente_oficial', 'fuente_secundaria'].includes(item.nivel_fuente), `${ctx}.nivel_fuente ausente o inválido`);
+    exigir(['institucional', 'complementario'].includes(item.tipo_canal), `${ctx}.tipo_canal ausente o inválido`);
+    revisarFechaRevision(item, ctx, fechaCorte);
+  }
 }
 
 if (zonas) {
+  revisarFechaRevision(zonas, 'zonas', fechaCorte);
   const claves = new Set();
   for (const [i, m] of (zonas.municipios || []).entries()) {
     const ctx = `zonas.municipios[${i}] ${m.municipio || ''}`;

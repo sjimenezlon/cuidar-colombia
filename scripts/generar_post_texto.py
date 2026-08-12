@@ -54,7 +54,7 @@ for i in range(0, 361, 8):
 d.line(puntos, fill=ORO, width=5, joint='curve')
 
 # Lista con chulos dibujados
-lineas = ['Canales oficiales de donación',
+lineas = ['Canales de donación con evidencia',
           'Mapa interactivo de acopios',
           'Dónde donar sangre',
           'Fuentes confiables, verificadas']

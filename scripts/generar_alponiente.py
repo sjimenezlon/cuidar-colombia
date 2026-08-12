@@ -23,8 +23,8 @@ d.text((66, 155), '¿Cómo donar', font=fuente('serif-b', 76), fill=TINTA)
 d.text((66, 250), 'seguro?', font=fuente('serif-b', 76), fill=AZUL)
 d.rectangle([70, 390, 240, 396], fill=ORO)
 d.text((70, 424), 'Canales oficiales, acopios, sangre y', font=fuente('sans', 29), fill=SUAVE)
-d.text((70, 464), 'cadenas falsas: todo verificado,', font=fuente('sans', 29), fill=SUAVE)
-d.text((70, 504), 'con fuente y fecha.', font=fuente('sans', 29), fill=SUAVE)
+d.text((70, 464), 'cadenas falsas: todo trazable,', font=fuente('sans', 29), fill=SUAVE)
+d.text((70, 504), 'con evidencia y fecha de revisión.', font=fuente('sans', 29), fill=SUAVE)
 
 # Píldora con la URL
 f_url = fuente('sans-b', 34)

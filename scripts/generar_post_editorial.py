@@ -58,7 +58,7 @@ for i in range(0, 361, 8):
 d.line(puntos, fill=SELLO, width=5, joint='curve')
 
 # Lista tipográfica con chulos dibujados
-lineas = ['Canales oficiales de donación',
+lineas = ['Canales de donación con evidencia',
           'Acopios y sangre en 13 ciudades',
           'Mapa de las zonas afectadas',
           'Cadenas falsas, desmentidas']
