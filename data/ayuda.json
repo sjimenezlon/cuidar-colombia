@@ -422,16 +422,11 @@
     },
     {
       "ciudad": "Medellín",
-      "entidad": "Alcaldía de Medellín y bancos de alimentos",
+      "entidad": "Alcaldía de Medellín y Banco Arquidiocesano de Alimentos",
       "puntos": [
         {
           "nombre": "Banco Arquidiocesano de Alimentos",
           "direccion": "Carrera 52 #30A-97",
-          "horario": null
-        },
-        {
-          "nombre": "Fundación Saciar",
-          "direccion": "Carrera 50 #25-261",
           "horario": null
         },
         {
@@ -490,6 +485,31 @@
       "fuente_titulo": "El Colombiano",
       "fuente_url": "https://www.elcolombiano.com/antioquia/damnificados-sismo-puntos-acopio-medellin-donaciones-que-donar-CF39784677",
       "fecha": "12 ago 2026"
+    },
+    {
+      "ciudad": "Medellín",
+      "entidad": "Fundación SACIAR — Banco de Alimentos",
+      "puntos": [
+        {
+          "nombre": "Fundación SACIAR — Banco de Alimentos",
+          "direccion": "Carrera 50 #25-261",
+          "horario": "confirmar recepción antes de ir: (604) 235 1088"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "elementos de primera necesidad"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "Fundación SACIAR — publicación oficial",
+      "fuente_url": "https://www.instagram.com/p/Db4D9KLCaYA/",
+      "fuente_adicional_titulo": "Dirección y teléfono en el sitio oficial",
+      "fuente_adicional_url": "https://saciar.org.co/contactanos/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
     },
     {
       "ciudad": "Medellín",
