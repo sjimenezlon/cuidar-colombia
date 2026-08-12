@@ -11,24 +11,16 @@
     return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  /* ---------- 1. Contador de verificación ---------- */
-  Promise.all(['data/ayuda.json', 'data/zonas.json', 'data/geo_puntos.json', 'data/verificacion.json'].map(function (r) {
-    return fetch(r, { cache: 'no-store' }).then(function (x) { return x.ok ? x.json() : null; }).catch(function () { return null; });
-  })).then(function (r) {
+  /* ---------- 1. Contador de trazabilidad, calculado al construir ---------- */
+  function actualizarContador() {
     var cont = document.getElementById('contador-verificacion');
     if (!cont) return;
-    var ayuda = r[0] || {}, zonas = r[1] || {}, geo = r[2] || {}, veri = r[3] || {};
-    var dominios = {};
-    try {
-      JSON.stringify(r).replace(/https?:\\?\/\\?\/([^\/"\\]+)/g, function (t, d) { dominios[d] = true; return t; });
-    } catch (e) { /* sin dominios */ }
-    var datos = (ayuda.canales || []).length + (ayuda.acopios || []).length + (ayuda.sangre || []).length +
-      (ayuda.busqueda || []).length + (veri.afirmaciones || []).length + (zonas.municipios || []).length +
-      (geo.puntos || []).length;
+    var resumen = window.__cuidar && window.__cuidar.datos && window.__cuidar.datos.resumen;
+    if (!resumen) return;
     var objetivos = [
-      [datos, 'registros trazables'],
-      [Object.keys(dominios).length, 'fuentes consultadas'],
-      [(zonas.municipios || []).length, 'municipios monitoreados']
+      [resumen.registros, 'registros trazables'],
+      [resumen.fuentes, 'fuentes consultadas'],
+      [resumen.municipios, 'municipios monitoreados']
     ];
     if (!document.getElementById('contx-0')) {
       cont.innerHTML = objetivos.map(function (o, i) {
@@ -40,7 +32,7 @@
         if (valor && valor.textContent !== String(o[0])) valor.textContent = o[0];
       });
     }
-  });
+  }
 
   /* ---------- Espera de los datos del mapa ---------- */
   var intentos = 0;
@@ -48,6 +40,7 @@
     intentos++;
     if (window.__cuidar && window.__cuidar.datos) {
       clearInterval(espera);
+      actualizarContador();
       iniciarCercaDeMi();
     } else if (intentos > 80) { clearInterval(espera); }
   }, 250);

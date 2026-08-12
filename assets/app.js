@@ -35,7 +35,7 @@
   }
 
   function fetchJSON(ruta) {
-    return fetch(ruta, { cache: 'no-store' }).then(function (r) {
+    return fetch(ruta, { cache: 'default', credentials: 'omit', referrerPolicy: 'no-referrer' }).then(function (r) {
       if (!r.ok) throw new Error(ruta + ' → ' + r.status);
       return r.json();
     }).catch(function (e) { console.warn('[cuidar]', e.message); return null; });
@@ -747,7 +747,7 @@
      llegue o no el mapa base. */
   var mapa = null, mapaListo = false, mapaEventosConectados = false, marcadorEpicentro = null, marcadoresAyuda = [];
   var puntoMapaActivoId = '', popupPuntoActivo = null, fichaPuntoConectada = false;
-  var datosMapa = { municipios: null, zonas: null, ayuda: null, sismo: null, geo: null, meta: null };
+  var datosMapa = { municipios: null, zonas: null, ayuda: null, sismo: null, geo: null, meta: null, resumen: null };
   var cargaMapaIniciada = false;
 
   function cambiarEstadoMapa(texto, tipo) {
@@ -760,30 +760,18 @@
 
   function cargarMapLibre() {
     if (typeof maplibregl !== 'undefined') return Promise.resolve();
-    var integridadJS = 'sha384-SYKAG6cglRMN0RVvhNeBY0r3FYKNOJtznwA0v7B5Vp9tr31xAHsZC0DqkQ/pZDmj';
-    var integridadCSS = 'sha384-MinO0mNliZ3vwppuPOUnGa+iq619pfMhLVUXfC4LHwSCvF9H+6P/KO4Q7qBOYV5V';
     if (!document.querySelector('link[data-maplibre]')) {
       var css = document.createElement('link');
       css.rel = 'stylesheet'; css.dataset.maplibre = 'true';
-      css.integrity = integridadCSS; css.crossOrigin = 'anonymous';
-      css.href = 'https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css';
-      css.onerror = function () { css.onerror = null; css.href = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css'; };
+      css.href = 'assets/vendor/maplibre-gl.css?v=4.7.1';
       document.head.appendChild(css);
     }
     return new Promise(function (resolver, rechazar) {
-      function intentar(src, alterna) {
-        var script = document.createElement('script');
-        script.src = src; script.async = true;
-        script.integrity = integridadJS; script.crossOrigin = 'anonymous';
-        script.onload = function () { typeof maplibregl !== 'undefined' ? resolver() : rechazar(new Error('MapLibre no disponible')); };
-        script.onerror = function () {
-          script.remove();
-          if (alterna) intentar(alterna, ''); else rechazar(new Error('No se pudo descargar MapLibre'));
-        };
-        document.head.appendChild(script);
-      }
-      intentar('https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js',
-        'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js');
+      var script = document.createElement('script');
+      script.src = 'assets/vendor/maplibre-gl.js?v=4.7.1'; script.async = true;
+      script.onload = function () { typeof maplibregl !== 'undefined' ? resolver() : rechazar(new Error('MapLibre no disponible')); };
+      script.onerror = function () { script.remove(); rechazar(new Error('No se pudo cargar MapLibre local')); };
+      document.head.appendChild(script);
     });
   }
 
@@ -791,9 +779,9 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/municipios.geojson'), fetchJSON('data/geo_puntos.json'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json'), cargarMapLibre()])
       .then(function (r) {
-        datosMapa.municipios = r[0]; datosMapa.geo = r[1];
+        datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
         prepararDatosMapa(); pintarFiltrosMapa(); aplicarFiltrosMapa(false); iniciarMapa();
         window.dispatchEvent(new CustomEvent('cuidar:mapa-datos-listos'));
@@ -821,7 +809,9 @@
     }
     var controlador = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var temporizador = controlador ? setTimeout(function () { controlador.abort(); }, 4500) : null;
-    fetch('https://tiles.openfreemap.org/styles/positron', controlador ? { signal: controlador.signal } : {})
+    var opcionesEstilo = { credentials: 'omit', referrerPolicy: 'no-referrer' };
+    if (controlador) opcionesEstilo.signal = controlador.signal;
+    fetch('https://tiles.openfreemap.org/styles/positron', opcionesEstilo)
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (estilo) { if (temporizador) clearTimeout(temporizador); crearMapa(estilo, false); })
       .catch(function () {
@@ -836,7 +826,8 @@
         container: 'mapa',
         style: estilo,
         center: [-76.2, 4.9], zoom: 6.8, cooperativeGestures: true,
-        attributionControl: { compact: true }
+        attributionControl: { compact: true },
+        transformRequest: function (url) { return { url: url, referrerPolicy: 'no-referrer', cache: 'default' }; }
       });
       mapa.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
       conectarClicsMapa();
@@ -1397,19 +1388,10 @@
   }
 
   /* ============ Arranque ============ */
-  Promise.all([
-    fetchJSON('data/meta.json'),
-    fetchJSON('data/sismo.json'),
-    fetchJSON('data/balance.json'),
-    fetchJSON('data/zonas.json'),
-    fetchJSON('data/ayuda.json'),
-    fetchJSON('data/pedagogia.json'),
-    fetchJSON('data/benchmarks.json'),
-    fetchJSON('data/fuentes.json'),
-    fetchJSON('data/verificacion.json')
-  ]).then(function (r) {
-    var meta = r[0], sismo = r[1], balance = r[2], zonas = r[3], ayuda = r[4],
-        pedagogia = r[5], benchmarks = r[6], fuentes = r[7], verificacion = r[8];
+  fetchJSON('data/app.json').then(function (r) {
+    r = r || {};
+    var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
+        pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;
 
     pintarMeta(meta);
     pintarSismo(sismo);
@@ -1426,6 +1408,7 @@
     pintarZonas(zonas);
     pintarBenchmarks(benchmarks);
     pintarFuentes(fuentes);
+    datosMapa.resumen = r.resumen || null;
 
     if (zonas) {
       datosMapa.zonas = zonas || { municipios: [] };

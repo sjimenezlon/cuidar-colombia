@@ -6,6 +6,10 @@
     "build": "npm run validate && node scripts/construir_estatico.mjs",
     "validate": "node scripts/validar_datos.mjs",
     "check:links": "node scripts/verificar_enlaces.mjs",
-    "test": "npm run validate"
+    "check:security": "node scripts/verificar_seguridad.mjs",
+    "test": "npm run build && npm run check:security"
+  },
+  "dependencies": {
+    "maplibre-gl": "4.7.1"
   }
 }

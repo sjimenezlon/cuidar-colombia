@@ -1,27 +1,36 @@
-import { cpSync, mkdirSync, rmSync } from 'node:fs';
+import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 
 const raiz = resolve(import.meta.dirname, '..');
 const salida = join(raiz, 'public');
 const archivosPublicos = [
   'index.html',
+  'robots.txt',
+  '.well-known/security.txt',
   'assets/app.js',
   'assets/extras.js',
+  'assets/favicon.svg',
   'assets/loader.js',
   'assets/og.png',
-  'assets/styles.css',
-  'data/ayuda.json',
-  'data/balance.json',
-  'data/benchmarks.json',
-  'data/fuentes.json',
-  'data/geo_puntos.json',
-  'data/meta.json',
-  'data/municipios.geojson',
-  'data/pedagogia.json',
-  'data/sismo.json',
-  'data/verificacion.json',
-  'data/zonas.json'
+  'assets/styles.css'
 ];
+
+const archivosAplicacion = [
+  'meta', 'sismo', 'balance', 'zonas', 'ayuda', 'pedagogia', 'benchmarks', 'fuentes', 'verificacion'
+];
+
+function leerJson(ruta) {
+  return JSON.parse(readFileSync(join(raiz, ruta), 'utf8'));
+}
+
+function dominiosEn(valor, dominios) {
+  if (typeof valor === 'string' && /^https:\/\//.test(valor)) {
+    try { dominios.add(new URL(valor).hostname); } catch { /* URL validada antes de construir */ }
+    return;
+  }
+  if (Array.isArray(valor)) valor.forEach((item) => dominiosEn(item, dominios));
+  else if (valor && typeof valor === 'object') Object.values(valor).forEach((item) => dominiosEn(item, dominios));
+}
 
 rmSync(salida, { recursive: true, force: true });
 archivosPublicos.forEach((ruta) => {
@@ -30,4 +39,29 @@ archivosPublicos.forEach((ruta) => {
   cpSync(join(raiz, ruta), destino);
 });
 
-console.log(`Salida pública preparada: ${archivosPublicos.length} archivos permitidos.`);
+const aplicacion = Object.fromEntries(archivosAplicacion.map((nombre) => [nombre, leerJson(`data/${nombre}.json`)]));
+const mapa = {
+  municipios: leerJson('data/municipios.geojson'),
+  geo: leerJson('data/geo_puntos.json')
+};
+const dominios = new Set();
+dominiosEn(aplicacion, dominios);
+dominiosEn(mapa.geo, dominios);
+aplicacion.resumen = {
+  registros: (aplicacion.ayuda.canales || []).length + (aplicacion.ayuda.acopios || []).length +
+    (aplicacion.ayuda.sangre || []).length + (aplicacion.ayuda.busqueda || []).length +
+    (aplicacion.verificacion.afirmaciones || []).length + (aplicacion.zonas.municipios || []).length +
+    (mapa.geo.puntos || []).length,
+  fuentes: dominios.size,
+  municipios: (aplicacion.zonas.municipios || []).length
+};
+
+mkdirSync(join(salida, 'data'), { recursive: true });
+writeFileSync(join(salida, 'data/app.json'), JSON.stringify(aplicacion));
+writeFileSync(join(salida, 'data/mapa.json'), JSON.stringify(mapa));
+
+mkdirSync(join(salida, 'assets/vendor'), { recursive: true });
+cpSync(join(raiz, 'node_modules/maplibre-gl/dist/maplibre-gl.js'), join(salida, 'assets/vendor/maplibre-gl.js'));
+cpSync(join(raiz, 'node_modules/maplibre-gl/dist/maplibre-gl.css'), join(salida, 'assets/vendor/maplibre-gl.css'));
+
+console.log(`Salida pública preparada: ${archivosPublicos.length + 4} archivos permitidos; datos agrupados en 2 solicitudes.`);
