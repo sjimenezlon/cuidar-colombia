@@ -330,6 +330,62 @@
    "direccion": "Carrera 52 #73-75",
    "lat": 6.27062,
    "lon": -75.56558
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Pasto",
+   "nombre": "Antiguo Pre-ICFES Montilla",
+   "direccion": "Calle 17 #27-59, barrio Centro",
+   "lat": 1.21665,
+   "lon": -77.2807
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "122 Plaza Apartahotel",
+   "direccion": "Carrera 15A #122-27",
+   "lat": 4.70117,
+   "lon": -74.04385
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Chía",
+   "nombre": "Punto Chía — diagonal al CAM",
+   "direccion": "Carrera 9 #12-41",
+   "lat": 4.86153,
+   "lon": -74.05864
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Cáqueza",
+   "nombre": "Deportivos Willys",
+   "direccion": "Calle 4 #4-09",
+   "lat": 4.4053,
+   "lon": -73.94717
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Sincelejo",
+   "nombre": "Punto calle 7 de Agosto — frente a Droguería Maxi Económica",
+   "direccion": "Calle 19 #21-41",
+   "lat": 9.30454,
+   "lon": -75.39334
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Acacías",
+   "nombre": "Punto barrio Centro — frente al Banco de Occidente",
+   "direccion": "Calle 15 #16-43",
+   "lat": 3.98753,
+   "lon": -73.75986
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Florencia",
+   "nombre": "Punto barrio Avenidas",
+   "direccion": "Carrera 10A #7-04",
+   "lat": 1.61037,
+   "lon": -75.60737
   }
  ]
 }

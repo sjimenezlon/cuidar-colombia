@@ -834,8 +834,8 @@
         },
         {
           "nombre": "Banco Arquidiocesano de Alimentos de Ibagué (red ABACO)",
-          "direccion": null,
-          "horario": null
+          "direccion": "Carrera 4 Estadio #23-42",
+          "horario": "confirmar vigencia: 321 840 2089"
         }
       ],
       "que_donar": [
@@ -1052,6 +1052,188 @@
       "fuente_url": "https://elpais.com/america-colombia/2026-08-12/la-columna-mas-aburrida-del-mundo.html",
       "nivel_fuente": "fuente_secundaria",
       "fecha": "12 ago 2026"
+    },
+    {
+      "ciudad": "Pasto",
+      "entidad": "Campaña «Colombia, un solo corazón» con la UNGRD",
+      "puntos": [
+        {
+          "nombre": "Antiguo Pre-ICFES Montilla",
+          "direccion": "Calle 17 #27-59, barrio Centro",
+          "horario": "confirmar vigencia: 320 688 6196"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "medicamentos vigentes y sellados",
+        "alimento para perros y gatos",
+        "cobijas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "Infobae — campaña nacional difundida por la Vicepresidencia",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Bogotá",
+      "entidad": "Campaña «Colombia, un solo corazón» con la UNGRD",
+      "puntos": [
+        {
+          "nombre": "122 Plaza Apartahotel",
+          "direccion": "Carrera 15A #122-27",
+          "horario": "confirmar recepción antes de ir: 317 643 3651"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "medicamentos vigentes y sellados",
+        "alimento para perros y gatos",
+        "cobijas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "Infobae — campaña nacional difundida por la Vicepresidencia",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Chía",
+      "entidad": "Campaña «Colombia, un solo corazón» con la UNGRD",
+      "puntos": [
+        {
+          "nombre": "Punto Chía — diagonal al CAM",
+          "direccion": "Carrera 9 #12-41",
+          "horario": "confirmar vigencia: 311 255 5912"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "medicamentos vigentes y sellados",
+        "alimento para perros y gatos",
+        "cobijas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "Infobae — campaña nacional difundida por la Vicepresidencia",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Cáqueza",
+      "entidad": "Campaña «Colombia, un solo corazón» con la UNGRD",
+      "puntos": [
+        {
+          "nombre": "Deportivos Willys",
+          "direccion": "Calle 4 #4-09",
+          "horario": "confirmar vigencia: 314 308 7520 / 310 273 1133 / 310 321 3108"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "medicamentos vigentes y sellados",
+        "alimento para perros y gatos",
+        "cobijas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "Infobae — campaña nacional difundida por la Vicepresidencia",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Sincelejo",
+      "entidad": "Campaña «Colombia, un solo corazón» con la UNGRD",
+      "puntos": [
+        {
+          "nombre": "Punto calle 7 de Agosto — frente a Droguería Maxi Económica",
+          "direccion": "Calle 19 #21-41",
+          "horario": "confirmar vigencia: 311 478 8851 / 300 789 8726 / 300 490 6741"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "medicamentos vigentes y sellados",
+        "alimento para perros y gatos",
+        "cobijas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "Infobae — campaña nacional difundida por la Vicepresidencia",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Acacías",
+      "entidad": "Campaña «Colombia, un solo corazón» con la UNGRD",
+      "puntos": [
+        {
+          "nombre": "Punto barrio Centro — frente al Banco de Occidente",
+          "direccion": "Calle 15 #16-43",
+          "horario": "confirmar vigencia: 314 242 6083"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "medicamentos vigentes y sellados",
+        "alimento para perros y gatos",
+        "cobijas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "Infobae — campaña nacional difundida por la Vicepresidencia",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
+    },
+    {
+      "ciudad": "Florencia",
+      "entidad": "Campaña «Colombia, un solo corazón» con la UNGRD",
+      "puntos": [
+        {
+          "nombre": "Punto barrio Avenidas",
+          "direccion": "Carrera 10A #7-04",
+          "horario": "confirmar vigencia: 317 887 1620"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "medicamentos vigentes y sellados",
+        "alimento para perros y gatos",
+        "cobijas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos",
+        "medicamentos abiertos"
+      ],
+      "fuente_titulo": "Infobae — campaña nacional difundida por la Vicepresidencia",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha": "11 ago 2026"
     }
   ],
   "ciudades_acopio": [
@@ -1124,6 +1306,36 @@
       "ciudad": "Itagüí",
       "lat": 6.1846,
       "lon": -75.5991
+    },
+    {
+      "ciudad": "Pasto",
+      "lat": 1.21665,
+      "lon": -77.2807
+    },
+    {
+      "ciudad": "Chía",
+      "lat": 4.86153,
+      "lon": -74.05864
+    },
+    {
+      "ciudad": "Cáqueza",
+      "lat": 4.4053,
+      "lon": -73.94717
+    },
+    {
+      "ciudad": "Sincelejo",
+      "lat": 9.30454,
+      "lon": -75.39334
+    },
+    {
+      "ciudad": "Acacías",
+      "lat": 3.98753,
+      "lon": -73.75986
+    },
+    {
+      "ciudad": "Florencia",
+      "lat": 1.61037,
+      "lon": -75.60737
     }
   ],
   "sangre": [
