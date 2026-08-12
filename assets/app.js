@@ -57,7 +57,7 @@
     if (!punto || !punto.direccion) return '';
     var consulta = [punto.nombre, punto.direccion, ciudad, 'Colombia'].filter(Boolean).join(', ');
     var url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(consulta);
-    return enlaceExterno(url, 'Abrir en Maps', 'enlace-maps', 'Abrir en Maps ' + (punto.nombre || 'este punto'));
+    return enlaceExterno(url, 'Cómo llegar', 'enlace-maps', 'Cómo llegar a ' + (punto.nombre || 'este punto') + ' con Google Maps');
   }
 
   function enlaceRuta(lat, lon, nombre, clase) {
@@ -281,7 +281,15 @@
       if (filtrosAyuda.tipo === 'todos' || filtrosAyuda.tipo === k) total += conteosAyuda[k] || 0;
     });
     var el = document.getElementById('conteo-ayuda');
-    if (el) el.textContent = total + ' registro' + (total === 1 ? '' : 's') + ' visible' + (total === 1 ? '' : 's');
+    if (el) el.textContent = total + ' opci' + (total === 1 ? 'ón' : 'ones') + ' para esta búsqueda';
+    var activos = (filtrosAyuda.tipo !== 'todos' ? 1 : 0) + (filtrosAyuda.ubicacion !== 'todas' ? 1 : 0) +
+      (filtrosAyuda.busqueda.trim() ? 1 : 0) + (filtrosAyuda.soloOficial ? 1 : 0);
+    var alternar = document.getElementById('alternar-filtros-ayuda');
+    if (alternar) {
+      alternar.textContent = (document.getElementById('filtros-ayuda-global').classList.contains('abiertos') ? 'Ocultar filtros' : 'Mostrar filtros') +
+        (activos ? ' (' + activos + ')' : '');
+      alternar.classList.toggle('con-filtros', activos > 0);
+    }
   }
 
   function aplicarFiltrosAyuda() {
@@ -313,6 +321,14 @@
       '</optgroup><optgroup label="Ciudades">' + ciudades.map(function (c) {
         return '<option value="ciudad:' + esc(normalizar(c)) + '">' + esc(c) + '</option>';
       }).join('') + '</optgroup>';
+    var alternar = document.getElementById('alternar-filtros-ayuda');
+    var panelFiltros = document.getElementById('filtros-ayuda-global');
+    if (alternar && panelFiltros) alternar.addEventListener('click', function () {
+      var abierto = !panelFiltros.classList.contains('abiertos');
+      panelFiltros.classList.toggle('abiertos', abierto);
+      alternar.setAttribute('aria-expanded', String(abierto));
+      actualizarConteoAyuda();
+    });
     document.getElementById('filtro-ayuda-tipo').addEventListener('change', function (e) { filtrosAyuda.tipo = e.target.value; aplicarFiltrosAyuda(); });
     selUbicacion.addEventListener('change', function (e) { filtrosAyuda.ubicacion = e.target.value; aplicarFiltrosAyuda(); });
     document.getElementById('filtro-ayuda-busqueda').addEventListener('input', function (e) { filtrosAyuda.busqueda = e.target.value; aplicarFiltrosAyuda(); });
@@ -513,8 +529,8 @@
         (no ? '<div style="margin-top:10px"><strong style="font-size:.82rem">Qué no llevar:</strong><div class="etiquetas-donar">' + no + '</div></div>' : '') +
         (a.fuente_url ? '<div class="acopio-fuente"><span>Evidencia: ' + esc(a.fuente_titulo || 'fuente consultada') + '</span>' +
           (a.fecha ? selloFecha(isoDesdeFechaCorta(a.fecha), a.fecha) : '') + '</div>' +
-          '<div class="acciones-enlaces">' + enlaceExterno(a.fuente_url, 'Ver evidencia', 'enlace-accion', 'Ver evidencia de ' + a.entidad) +
-          (a.fuente_adicional_url ? enlaceExterno(a.fuente_adicional_url, 'Contrastar dirección', 'enlace-accion enlace-accion-secundaria', 'Contrastar dirección de ' + a.entidad) : '') + '</div>' : '') +
+          '<div class="acciones-enlaces">' + enlaceExterno(a.fuente_url, 'Ver fuente', 'enlace-accion', 'Ver fuente: ' + (a.fuente_titulo || a.entidad)) +
+          (a.fuente_adicional_url ? enlaceExterno(a.fuente_adicional_url, 'Fuente adicional', 'enlace-accion enlace-accion-secundaria', 'Ver fuente adicional: ' + (a.fuente_adicional_titulo || a.entidad)) : '') + '</div>' : '') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') + '</div>' +
         '</article>';
     }).join('') || '<div class="estado-datos">No hay puntos de acopio que coincidan con estos filtros.</div>';
@@ -907,7 +923,7 @@
     var puntosFiltro = datosMapa._puntos || [];
     var panelAnterior = cont.querySelector('.panel-filtros-mapa');
     var panelAbierto = panelAnterior ? panelAnterior.open : !(window.matchMedia && window.matchMedia('(max-width: 700px)').matches);
-    cont.innerHTML = '<details class="panel-filtros-mapa"' + (panelAbierto ? ' open' : '') + '><summary>Filtrar mapa <span>' +
+    cont.innerHTML = '<details class="panel-filtros-mapa"' + (panelAbierto ? ' open' : '') + '><summary>Filtrar mapa <span id="resumen-filtros-mapa">' +
       puntosFiltro.length + ' puntos · ' + municipiosFiltro.length + ' municipios</span></summary><div class="mapa-filtros-contenido">' +
       '<fieldset class="grupo-filtros"><legend>Afectación</legend>' +
       chip('gravedad', 'critica', COLORES_GRAVEDAD.critica, 'Crítica', filtrosMapa.gravedades.critica, municipiosFiltro.filter(function (m) { return m.gravedad === 'critica'; }).length) +
@@ -1105,6 +1121,11 @@
       renderizarMarcadoresAyuda(puntos);
       if (encuadrar) encuadrarMapa(municipios, puntos);
     }
+    var resumenFiltros = document.getElementById('resumen-filtros-mapa');
+    if (resumenFiltros) resumenFiltros.textContent = puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') +
+      (filtrosMapa.ciudad !== 'todas'
+        ? ' · ' + filtrosMapa.ciudad
+        : ' · ' + municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's'));
     renderResultadosMapa(municipios, puntos);
     renderZonasFiltradas();
   }
@@ -1124,9 +1145,12 @@
         '<div class="resultado-acciones"><button type="button" data-enfocar data-id="' + esc(p._id) + '" data-lat="' + p.lat + '" data-lon="' + p.lon + '">Ubicar en mapa</button>' +
         enlaceRuta(p.lat, p.lon, p.nombre, 'enlace-ruta') + '</div></li>';
     }));
-    var resumen = total + ' resultado' + (total === 1 ? '' : 's') + ': ' + municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' y ' + puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda';
+    var detalleResumen = filtrosMapa.ciudad !== 'todas'
+      ? puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda en ' + filtrosMapa.ciudad
+      : municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' y ' + puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda';
+    var resumen = total + ' resultado' + (total === 1 ? '' : 's') + ': ' + detalleResumen;
     cont.innerHTML = '<span class="solo-lectores" role="status">' + esc(resumen) + '</span><details' + (!mapaListo || !total ? ' open' : '') + '><summary><strong>' + total + ' resultado' + (total === 1 ? '' : 's') + '</strong> · ' +
-      municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' y ' + puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda</summary>' +
+      esc(detalleResumen) + '</summary>' +
       (items.length ? '<ul class="lista-resultados-mapa">' + items.join('') + '</ul>' : '<div class="estado-datos">No hay resultados. Ajusta o restablece los filtros.</div>') + '</details>';
   }
 

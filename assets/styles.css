@@ -61,9 +61,12 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' โ
 .mapa-estado-aviso { color: #714A11; border-color: #EBD9B4; }
 .mapa-estado[hidden] { display: none; }
 .marcador-epicentro {
-  z-index: 5;
-  width: 20px; height: 20px; border-radius: 50%; background: var(--azul-oscuro);
-  border: 3px solid #fff; box-shadow: 0 0 0 6px rgba(22,50,79,.28); cursor: pointer;
+  z-index: 5; width: 44px; height: 44px; padding: 0; border: 0; background: transparent;
+  display: grid; place-items: center; cursor: pointer;
+}
+.marcador-epicentro::before {
+  content: ''; width: 20px; height: 20px; border-radius: 50%; background: var(--azul-oscuro);
+  border: 3px solid #fff; box-shadow: 0 0 0 6px rgba(22,50,79,.28);
 }
 .marcador-ayuda {
   z-index: 2;
@@ -85,9 +88,13 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' โ
 .mapa-leyenda {
   position: absolute; bottom: 18px; left: 18px; z-index: 5;
   background: rgba(255,255,255,0.95); border: 1px solid var(--borde); border-radius: 10px;
-  padding: 12px 16px; font-size: 0.8rem; display: flex; flex-direction: column; gap: 6px;
+  padding: 6px 12px 10px; font-size: 0.8rem;
   box-shadow: var(--sombra);
 }
+.mapa-leyenda summary {
+  min-height: 44px; display: flex; align-items: center; cursor: pointer; color: var(--azul-oscuro); font-weight: 800;
+}
+.mapa-leyenda-contenido { display: flex; flex-direction: column; gap: 6px; padding: 2px 4px; }
 .leyenda-item { display: flex; align-items: center; gap: 8px; color: var(--tinta-suave); }
 .leyenda-item i { width: 16px; height: 16px; border-radius: 4px; display: inline-block; flex-shrink: 0; }
 .leyenda-epicentro {
@@ -115,7 +122,8 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' โ
 }
 .maplibregl-popup-content .pop-acciones .enlace-accion { color: #fff; border-color: var(--azul); }
 .maplibregl-popup-close-button { width: 44px; height: 44px; font-size: 20px; }
-.maplibregl-ctrl-group button { width: 44px; height: 44px; }
+#mapa .maplibregl-ctrl-group button { width: 44px !important; height: 44px !important; }
+#mapa .maplibregl-ctrl-attrib-button { width: 44px !important; height: 44px !important; }
 
 /* ---------- Cรณmo ayudar ---------- */
 .bloque-ayuda { margin-bottom: 64px; }
@@ -129,11 +137,20 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' โ
 .bloque-intro { max-width: 720px; color: var(--tinta-suave); margin-bottom: 24px; }
 .filtros-ayuda-global {
   position: sticky; top: 72px; z-index: 300;
-  display: flex; flex-wrap: wrap; align-items: end; gap: 10px 12px;
+  display: block;
   margin: 0 -12px 34px; padding: 14px 16px;
   background: rgba(250,247,242,.97); border: 1px solid var(--borde); border-radius: 12px;
   box-shadow: 0 6px 20px rgba(31,41,51,.09); backdrop-filter: blur(10px);
 }
+.filtros-ayuda-cabecera { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.filtros-ayuda-cabecera > strong { color: var(--azul-oscuro); font-size: .88rem; }
+.filtros-ayuda-cabecera .conteo-resultados { margin-left: auto; }
+.filtros-ayuda-controles { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 12px; }
+.alternar-filtros-ayuda {
+  display: none; min-height: 44px; padding: 8px 12px; border: 1.5px solid var(--azul); border-radius: 9px;
+  background: #fff; color: var(--azul); font: 750 .8rem Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer;
+}
+.alternar-filtros-ayuda.con-filtros { background: #E1ECF5; }
 .filtros-ayuda-global .control-filtro { min-width: 165px; flex: 1 1 170px; }
 .filtros-ayuda-global .control-busqueda { min-width: min(230px, 100%); flex-grow: 1.4; }
 .filtro-check {
@@ -148,10 +165,10 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' โ
   padding: 22px; display: flex; flex-direction: column; gap: 10px;
 }
 .tarjeta-canal .canal-cabecera { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
-.tarjeta-canal h4 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.08rem; }
+.tarjeta-canal h4 { min-width: 0; flex: 1 1 140px; overflow-wrap: anywhere; font-family: Georgia, 'Times New Roman', serif; font-size: 1.08rem; }
 .chip {
   font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-  padding: 4px 10px; border-radius: 100px; white-space: nowrap;
+  max-width: 100%; padding: 4px 10px; border-radius: 100px; white-space: normal; line-height: 1.25;
 }
 .chip-verificado { background: #E4F3EA; color: var(--verde-ok); }
 .chip-ambito { background: var(--crema); color: var(--tinta-suave); }
@@ -427,7 +444,7 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' โ
 }
 .tarjeta-cadena .cadena-pie a { color: var(--azul); }
 .boton-remision {
-  display: inline-block; background: var(--azul); color: #fff !important;
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; background: var(--azul); color: #fff !important;
   padding: 6px 14px; border-radius: 100px; font-weight: 600; font-size: 0.78rem;
   text-decoration: none;
 }
@@ -538,7 +555,7 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' โ
   font-family: Georgia, 'Times New Roman', serif; font-size: 1.5rem; color: var(--oro);
   font-weight: 700; margin-right: 2px;
 }
-.contador-sep { color: var(--borde); }
+.contador-sep { display: none; }
 .mapa-extras { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
 .chip-ubicacion { border-color: var(--oro); color: var(--oro); font-weight: 700; }
 .chip-ubicacion:hover { background: var(--oro); color: #fff; border-color: var(--oro); }
@@ -550,9 +567,9 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' โ
 .fab-whatsapp {
   position: fixed; right: 22px; bottom: 22px; z-index: 500;
   display: flex; align-items: center; gap: 8px;
-  background: #1FAF5A; color: #fff; text-decoration: none;
+  background: #008938; color: #fff; text-decoration: none;
   padding: 12px 20px; border-radius: 100px; font-weight: 700; font-size: 0.92rem;
-  box-shadow: 0 4px 18px rgba(31, 175, 90, 0.4); transition: transform 0.15s;
+  box-shadow: 0 4px 18px rgba(0, 137, 56, 0.35); transition: transform 0.15s;
 }
 .fab-whatsapp:hover { transform: translateY(-2px) scale(1.03); }
 .fab-donar-movil { display: none; }
@@ -569,12 +586,27 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' โ
 }
 
 @media (max-width: 700px) {
+  .tarjetas-canales, .tarjetas-sangre, .tarjetas-busqueda, .tarjetas-municipios, .tarjetas-mundo {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .filtros-ayuda-global {
-    top: 66px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
-    margin: 0 -12px 28px; padding: 10px 12px; max-height: 48vh; overflow: auto;
+    top: 66px; margin: 0 -12px 28px; padding: 8px 10px;
+  }
+  .filtros-ayuda-cabecera { min-height: 44px; margin: 0; }
+  .filtros-ayuda-cabecera > strong { display: none; }
+  .filtros-ayuda-cabecera .conteo-resultados { margin: 0; flex: 1; padding: 5px 2px; line-height: 1.25; }
+  .alternar-filtros-ayuda { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+  .filtros-ayuda-controles { display: none; }
+  .filtros-ayuda-global.abiertos .filtros-ayuda-controles {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-height: 56vh; overflow: auto;
+    margin: 8px -2px 0; padding: 10px 2px 2px; border-top: 1px solid var(--borde);
   }
   .filtros-ayuda-global .control-filtro { min-width: 0; width: 100%; }
   .filtros-ayuda-global .control-busqueda { grid-column: 1 / -1; }
   .filtros-ayuda-global .filtro-check { grid-column: 1 / -1; max-width: none; }
-  .filtros-ayuda-global .conteo-resultados { text-align: right; }
+  .selector-ciudades {
+    flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin;
+    margin-right: -24px; padding: 0 24px 10px 0; scroll-snap-type: x proximity;
+  }
+  .pastilla-ciudad { flex: 0 0 auto; scroll-snap-align: start; }
 }
