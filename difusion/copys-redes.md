@@ -47,3 +47,19 @@ El enlace está en el primer comentario. Entra, ayuda y comparte con alguien que
 ¿Qué más debería verificar la plataforma? Leo sugerencias. 👇
 
 **Primer comentario:** Aquí está la plataforma → https://cuidarcolombia.vercel.app · Creada sin ánimo de lucro; cada enlace lleva al canal oficial de cada entidad.
+
+## LinkedIn — versión sencilla
+
+¿Quieres ayudar tras el terremoto y no sabes por dónde empezar?
+
+Creé Cuidar a Colombia: una página que reúne, verificado y con fuentes, lo necesario para ayudar bien:
+
+✔ Canales oficiales de donación
+✔ Mapa interactivo de acopios y donación de sangre
+✔ Cadenas falsas, desmentidas una a una
+
+No recauda ni intermedia: cada enlace lleva al canal oficial.
+
+👉 https://cuidarcolombia.vercel.app
+
+Si la compartes, puede llegarle a alguien que hoy quiere ayudar y no sabe cómo.
