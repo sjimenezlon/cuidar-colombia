@@ -1,0 +1,8 @@
+# ¿Cómo donar seguro tras el terremoto? «Cuidar a Colombia» verifica cada peso, cada acopio y cada cadena de WhatsApp
+
+Tras el sismo de magnitud 7,4 del 10 de agosto, la solidaridad corre tan rápido como el fraude: la Policía ya alertó por falsas campañas de donación, la Cruz Roja denunció acopios que usan su nombre y el IDEAM desmintió cadenas que «anuncian» réplicas con hora exacta. Para que ayudar no termine alimentando la estafa nació **Cuidar a Colombia** (cuidarcolombia.vercel.app): una página que reúne, verifica y georreferencia — con fuente y fecha en cada dato — los canales oficiales de donación (Cruz Roja, UNICEF, la campaña «Colombia, un solo corazón», bancos como Bancolombia y Grupo Aval), los puntos de acopio y de donación de sangre en trece ciudades, el mapa de los municipios más golpeados y un consultorio de cadenas falsas que remite siempre a la fuente oficial.
+
+La plataforma no intermedia ni recauda un peso: cada enlace lleva directo al canal oficial de cada entidad, y hoy publica 97 datos verificados a partir de 51 fuentes, actualizados cada mañana mediante un proceso asistido por inteligencia artificial y revisión humana. La regla de la casa es simple: un número de cuenta solo se publica si aparece en el dominio oficial de la entidad; ante la duda, manda la fuente. Creada por el profesor Santiago Jiménez Londoño, la página tiene una convicción de fondo que hoy es urgente: **la solidaridad también se verifica**. Entre, ayude y comparta: [cuidarcolombia.vercel.app](https://cuidarcolombia.vercel.app).
+
+---
+*Imagen destacada: difusion/alponiente-portada.png (1200×675, horizontal 16:9)*
