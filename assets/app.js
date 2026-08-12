@@ -7,15 +7,12 @@
 
   var COLORES_GRAVEDAD = { critica: '#7A1815', alta: '#D25B33', media: '#F2B279' };
   var NOMBRES_GRAVEDAD = { critica: 'Crítica', alta: 'Alta', media: 'Media' };
-  var COLOR_ACOPIO = '#1D5A8A', COLOR_SANGRE = '#C62828', COLOR_REPLICA = '#5B6B7A';
+  var COLOR_ACOPIO = '#1D5A8A', COLOR_SANGRE = '#C62828';
   var filtrosMapa = {
     gravedades: { critica: true, alta: true, media: true },
     puntos: { acopio: true, sangre: true },
     departamento: 'todos', busqueda: ''
   };
-  // Estado de visibilidad de las capas del mapa (chips); espeja filtrosMapa.puntos
-  var capasEstado = { acopios: filtrosMapa.puntos.acopio, sangre: filtrosMapa.puntos.sangre, replicas: false };
-
   function esc(t) {
     if (t == null) return '';
     return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -428,42 +425,58 @@
      traer el mapa base después con reintentos, y reconstruir las capas propias
      en styledata porque setStyle las borra. Los datos propios se pintan SIEMPRE,
      llegue o no el mapa base. */
-  var mapa = null, datosMapa = { municipios: null, zonas: null, ayuda: null, sismo: null };
+  var mapa = null, mapaListo = false, mapaEventosConectados = false, epicentroAnadido = false;
+  var datosMapa = { municipios: null, zonas: null, ayuda: null, sismo: null, geo: null };
+
+  function cambiarEstadoMapa(texto, tipo) {
+    var el = document.getElementById('mapa-estado');
+    if (!el) return;
+    el.textContent = texto || '';
+    el.className = 'mapa-estado' + (tipo ? ' mapa-estado-' + tipo : '');
+    el.hidden = !texto;
+  }
 
   function iniciarMapa() {
-    if (typeof maplibregl === 'undefined') return;
-    mapa = new maplibregl.Map({
-      container: 'mapa',
-      style: {
-        version: 8,
-        sources: {},
-        layers: [{ id: 'fondo', type: 'background', paint: { 'background-color': '#DCE7ED' } }]
-      },
-      center: [-76.2, 4.9],
-      zoom: 7,
-      cooperativeGestures: true,
-      attributionControl: { compact: true }
-    });
-    mapa.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
-
-    var estadoMapa = document.getElementById('mapa-estado');
-    if (estadoMapa) mapa.on('styledata', function () { estadoMapa.hidden = true; });
-
-    construirCapas();
-    mapa.on('styledata', construirCapas);
-
-    var intentos = 0;
-    (function traerBase() {
-      intentos++;
-      fetch('https://tiles.openfreemap.org/styles/positron')
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function (estilo) { mapa.setStyle(estilo, { diff: false }); })
-        .catch(function () { if (intentos < 3) setTimeout(traerBase, 2500 * intentos); });
-    })();
+    if (typeof maplibregl === 'undefined') {
+      cambiarEstadoMapa('El mapa visual no está disponible. Usa la lista de resultados que aparece debajo.', 'error');
+      renderResultadosMapa();
+      return;
+    }
+    try {
+      mapa = new maplibregl.Map({
+        container: 'mapa',
+        style: { version: 8, sources: {}, layers: [{ id: 'fondo', type: 'background', paint: { 'background-color': '#DCE7ED' } }] },
+        center: [-76.2, 4.9], zoom: 6.8, cooperativeGestures: true,
+        attributionControl: { compact: true }
+      });
+      mapa.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+      conectarClicsMapa();
+      mapa.on('style.load', function () {
+        mapaListo = true;
+        construirCapas();
+        aplicarFiltrosMapa(false);
+        anadirMarcadores();
+        cambiarEstadoMapa('', '');
+      });
+      mapa.once('load', function () {
+        encuadrarMapa();
+        fetch('https://tiles.openfreemap.org/styles/positron')
+          .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+          .then(function (estilo) { mapa.setStyle(estilo, { diff: false }); })
+          .catch(function () { cambiarEstadoMapa('Mapa base simplificado. Los datos verificados siguen visibles.', 'aviso'); });
+      });
+      mapa.on('error', function () {
+        if (!mapaListo) cambiarEstadoMapa('No se pudo iniciar el mapa visual. Usa la lista accesible debajo.', 'error');
+      });
+    } catch (e) {
+      mapa = null;
+      cambiarEstadoMapa('No se pudo iniciar el mapa visual. Usa la lista accesible debajo.', 'error');
+      renderResultadosMapa();
+    }
   }
 
   function construirCapas() {
-    if (!mapa || !datosMapa.municipios || !datosMapa.zonas) return;
+    if (!mapa || !mapa.isStyleLoaded() || !datosMapa.municipios || !datosMapa.zonas) return;
     try {
       if (!mapa.getSource('municipios')) {
         mapa.addSource('municipios', { type: 'geojson', data: datosMapa.municipios });
@@ -485,31 +498,16 @@
           paint: { 'line-color': '#5A3A26', 'line-width': 0.8, 'line-opacity': 0.6 }
         });
       }
-      // Réplicas (si ya llegaron del USGS) — debajo de los puntos de ayuda
-      if (datosMapa.replicas && !mapa.getSource('replicas')) {
-        mapa.addSource('replicas', { type: 'geojson', data: datosMapa.replicas });
-        mapa.addLayer({
-          id: 'capa-replicas', type: 'circle', source: 'replicas',
-          layout: { visibility: capasEstado.replicas ? 'visible' : 'none' },
-          paint: {
-            'circle-color': COLOR_REPLICA, 'circle-opacity': 0.45,
-            'circle-radius': ['interpolate', ['linear'], ['coalesce', ['get', 'mag'], 2], 1.5, 3, 3, 6, 5, 13, 7.4, 22],
-            'circle-stroke-color': '#fff', 'circle-stroke-width': 1
-          }
-        }, mapa.getLayer('capa-acopios') ? 'capa-acopios' : undefined);
-      }
       // Puntos de acopio y sangre geocodificados
       if (datosMapa._fcAcopios && !mapa.getSource('acopios')) {
         mapa.addSource('acopios', { type: 'geojson', data: datosMapa._fcAcopios });
         mapa.addLayer({
           id: 'capa-acopios', type: 'circle', source: 'acopios',
-          layout: { visibility: capasEstado.acopios ? 'visible' : 'none' },
           paint: { 'circle-color': COLOR_ACOPIO, 'circle-radius': 6.5, 'circle-stroke-color': '#fff', 'circle-stroke-width': 2 }
         });
         mapa.addSource('sangre', { type: 'geojson', data: datosMapa._fcSangre });
         mapa.addLayer({
           id: 'capa-sangre', type: 'circle', source: 'sangre',
-          layout: { visibility: capasEstado.sangre ? 'visible' : 'none' },
           paint: { 'circle-color': COLOR_SANGRE, 'circle-radius': 6.5, 'circle-stroke-color': '#fff', 'circle-stroke-width': 2 }
         });
       }
@@ -520,64 +518,52 @@
   function pintarFiltrosMapa() {
     var cont = document.getElementById('mapa-filtros');
     if (!cont || !datosMapa._fcAcopios) return;
-    function chip(clave, color, texto, conteo) {
-      return '<button class="chip-capa' + (capasEstado[clave] ? ' activa' : '') + '" data-capa="' + clave + '">' +
-        '<span class="punto-capa" style="background:' + color + '"></span>' + texto +
-        (conteo != null ? ' <span class="conteo">(' + conteo + ')</span>' : ' <span class="conteo" id="conteo-replicas"></span>') +
-        '</button>';
+    var deptos = [];
+    (datosMapa.zonas.municipios || []).forEach(function (m) { if (deptos.indexOf(m.departamento) === -1) deptos.push(m.departamento); });
+    deptos.sort(function (a, b) { return a.localeCompare(b, 'es'); });
+    function chip(tipo, clave, color, texto, activo) {
+      return '<button type="button" class="chip-capa' + (activo ? ' activa' : '') + '" data-tipo="' + tipo + '" data-clave="' + clave + '" aria-pressed="' + activo + '">' +
+        '<span class="punto-capa" style="background:' + color + '"></span>' + texto + '</button>';
     }
-    cont.innerHTML = '<span class="filtro-etiqueta">Ver en el mapa:</span>' +
-      chip('acopios', COLOR_ACOPIO, '📦 Puntos de acopio', datosMapa._fcAcopios.features.length) +
-      chip('sangre', COLOR_SANGRE, '🩸 Donación de sangre', datosMapa._fcSangre.features.length) +
-      chip('replicas', COLOR_REPLICA, '🌀 Réplicas en vivo', null);
-    cont.addEventListener('click', function (e) {
-      var b = e.target.closest('.chip-capa');
-      if (!b || !mapa) return;
-      var clave = b.dataset.capa;
-      capasEstado[clave] = !capasEstado[clave];
-      b.classList.toggle('activa', capasEstado[clave]);
-      if (clave === 'replicas' && capasEstado.replicas && !datosMapa.replicas && !replicasPedidas) cargarReplicas();
-      aplicarVisibilidad();
-      resumenMapa();
-    });
-    resumenMapa();
-  }
-
-  function resumenMapa() {
-    var res = document.getElementById('mapa-resultados');
-    if (!res || !datosMapa._fcAcopios) return;
-    var partes = [(datosMapa.zonas.municipios || []).length + ' municipios con afectación'];
-    if (capasEstado.acopios) partes.push(datosMapa._fcAcopios.features.length + ' puntos de acopio');
-    if (capasEstado.sangre) partes.push(datosMapa._fcSangre.features.length + ' puntos de donación de sangre');
-    if (capasEstado.replicas && datosMapa.replicas) partes.push((datosMapa.replicas.features || []).length + ' réplicas según el USGS');
-    res.textContent = 'Mostrando en el mapa: ' + partes.join(' · ') + '.';
-  }
-
-  function aplicarVisibilidad() {
-    var pares = { 'capa-acopios': 'acopios', 'capa-sangre': 'sangre', 'capa-replicas': 'replicas' };
-    Object.keys(pares).forEach(function (id) {
-      if (mapa.getLayer(id)) mapa.setLayoutProperty(id, 'visibility', capasEstado[pares[id]] ? 'visible' : 'none');
-    });
-  }
-
-  var replicasPedidas = false;
-  function cargarReplicas() {
-    replicasPedidas = true;
-    var url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2026-08-10' +
-      '&latitude=4.8436&longitude=-76.2422&maxradiuskm=250&limit=300&orderby=time';
-    fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (gj) {
-        datosMapa.replicas = gj;
-        var c = document.getElementById('conteo-replicas');
-        if (c) c.textContent = '(' + (gj.features || []).length + ')';
-        construirCapas();
-        aplicarVisibilidad();
-      })
-      .catch(function () {
-        replicasPedidas = false;
-        var c = document.getElementById('conteo-replicas');
-        if (c) c.textContent = '(no disponible)';
+    cont.innerHTML = '<fieldset class="grupo-filtros"><legend>Afectación</legend>' +
+      chip('gravedad', 'critica', COLORES_GRAVEDAD.critica, 'Crítica', filtrosMapa.gravedades.critica) +
+      chip('gravedad', 'alta', COLORES_GRAVEDAD.alta, 'Alta', filtrosMapa.gravedades.alta) +
+      chip('gravedad', 'media', COLORES_GRAVEDAD.media, 'Media', filtrosMapa.gravedades.media) + '</fieldset>' +
+      '<fieldset class="grupo-filtros"><legend>Puntos de ayuda</legend>' +
+      chip('punto', 'acopio', COLOR_ACOPIO, 'Acopios', filtrosMapa.puntos.acopio) +
+      chip('punto', 'sangre', COLOR_SANGRE, 'Sangre', filtrosMapa.puntos.sangre) + '</fieldset>' +
+      '<label class="control-filtro"><span>Departamento afectado</span><select id="filtro-departamento"><option value="todos">Todos</option>' +
+      deptos.map(function (d) { return '<option value="' + esc(d) + '"' + (filtrosMapa.departamento === d ? ' selected' : '') + '>' + esc(d) + '</option>'; }).join('') + '</select></label>' +
+      '<label class="control-filtro control-busqueda"><span>Buscar municipio o punto</span><input id="filtro-busqueda-mapa" type="search" value="' + esc(filtrosMapa.busqueda) + '" placeholder="Ej. Quibdó o banco de sangre"></label>' +
+      '<button class="boton-limpiar" id="limpiar-filtros-mapa" type="button">Restablecer</button>';
+    if (!cont.dataset.conectado) {
+      cont.dataset.conectado = 'true';
+      cont.addEventListener('click', function (e) {
+        var b = e.target.closest('.chip-capa');
+        if (!b) return;
+        var grupo = b.dataset.tipo === 'gravedad' ? filtrosMapa.gravedades : filtrosMapa.puntos;
+        grupo[b.dataset.clave] = !grupo[b.dataset.clave];
+        b.classList.toggle('activa', grupo[b.dataset.clave]);
+        b.setAttribute('aria-pressed', String(grupo[b.dataset.clave]));
+        aplicarFiltrosMapa(true);
       });
+    }
+    document.getElementById('filtro-departamento').addEventListener('change', function (e) { filtrosMapa.departamento = e.target.value; aplicarFiltrosMapa(true); });
+    document.getElementById('filtro-busqueda-mapa').addEventListener('input', function (e) { filtrosMapa.busqueda = e.target.value; aplicarFiltrosMapa(true); });
+    document.getElementById('limpiar-filtros-mapa').addEventListener('click', function () {
+      filtrosMapa = { gravedades: { critica: true, alta: true, media: true }, puntos: { acopio: true, sangre: true }, departamento: 'todos', busqueda: '' };
+      pintarFiltrosMapa(); aplicarFiltrosMapa(true);
+    });
+    var resultados = document.getElementById('mapa-resultados');
+    if (!resultados.dataset.conectado) {
+      resultados.dataset.conectado = 'true';
+      resultados.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-enfocar]');
+        if (!b || !mapa) return;
+        mapa.flyTo({ center: [+b.dataset.lon, +b.dataset.lat], zoom: 10, essential: true });
+        document.getElementById('mapa-seccion').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
   }
 
   // Erratas conocidas del geojson (p. ej. «Itsmina»): alias explícito nombre|depto → código DANE
@@ -591,7 +577,7 @@
       indice[normalizar(p.nombre) + '|' + normalizar(p.depto)] = p.mpio;
       (porNombre[normalizar(p.nombre)] = porNombre[normalizar(p.nombre)] || []).push(p.mpio);
     });
-    var codigos = {}, sinPoligono = [];
+    var codigos = {};
     (datosMapa.zonas.municipios || []).forEach(function (m) {
       var clave = normalizar(m.municipio) + '|' + normalizar(m.departamento);
       var codigo = ALIAS_MPIO[clave] || indice[clave];
@@ -600,53 +586,93 @@
         if (candidatos && candidatos.length === 1) codigo = candidatos[0];
       }
       if (codigo) codigos[codigo] = m.gravedad || 'media';
-      else if (m.lat && m.lon) sinPoligono.push(m);
       if (codigo) m._mpio = codigo;
     });
     datosMapa._codigos = codigos;
-    datosMapa._sinPoligono = sinPoligono;
+    datosMapa._porCodigo = {};
+    (datosMapa.zonas.municipios || []).forEach(function (m) { if (m._mpio) datosMapa._porCodigo[m._mpio] = m; });
 
-    // Puntos de ayuda georreferenciados (+ ciudades sin punto exacto, a nivel de ciudad)
-    var geo = (datosMapa.geo && datosMapa.geo.puntos) || [];
+    // Solo se muestran puntos con coordenada concreta; los demás permanecen en la lista textual.
+    var geo = ((datosMapa.geo && datosMapa.geo.puntos) || []).filter(function (p) {
+      return Number.isFinite(+p.lat) && Number.isFinite(+p.lon) && (p.tipo === 'acopio' || p.tipo === 'sangre');
+    });
+    function fuentePunto(p) {
+      var lista = p.tipo === 'acopio' ? ((datosMapa.ayuda && datosMapa.ayuda.acopios) || []) : ((datosMapa.ayuda && datosMapa.ayuda.sangre) || []);
+      var coincidencia = lista.filter(function (x) { return x.ciudad === p.ciudad; })[0];
+      return coincidencia && coincidencia.fuente_url || '';
+    }
     function aFC(lista) {
-      return { type: 'FeatureCollection', features: lista.map(function (p) {
-        return { type: 'Feature', geometry: { type: 'Point', coordinates: [p.lon, p.lat] }, properties: p };
+      return { type: 'FeatureCollection', features: lista.map(function (p, i) {
+        var copia = Object.assign({}, p, { _id: p.tipo + '-' + i, fuente_url: fuentePunto(p) });
+        return { type: 'Feature', geometry: { type: 'Point', coordinates: [p.lon, p.lat] }, properties: copia };
       }) };
     }
-    var acopiosPts = geo.filter(function (p) { return p.tipo === 'acopio'; });
-    var ciudadesCubiertas = {};
-    acopiosPts.forEach(function (p) { ciudadesCubiertas[p.ciudad] = true; });
-    ((datosMapa.ayuda && datosMapa.ayuda.ciudades_acopio) || []).forEach(function (c) {
-      if (!ciudadesCubiertas[c.ciudad]) {
-        acopiosPts.push({ tipo: 'acopio', ciudad: c.ciudad, nombre: 'Puntos de acopio en ' + c.ciudad, direccion: null, lat: c.lat, lon: c.lon });
-      }
-    });
-    datosMapa._fcAcopios = aFC(acopiosPts);
+    datosMapa._puntos = geo;
+    datosMapa._fcAcopios = aFC(geo.filter(function (p) { return p.tipo === 'acopio'; }));
     datosMapa._fcSangre = aFC(geo.filter(function (p) { return p.tipo === 'sangre'; }));
   }
 
+  function puntosFiltrados() {
+    var q = normalizar(filtrosMapa.busqueda);
+    return (datosMapa._puntos || []).filter(function (p) {
+      return filtrosMapa.puntos[p.tipo] && (!q || normalizar([p.nombre, p.ciudad, p.direccion].join(' ')).indexOf(q) !== -1);
+    });
+  }
+
+  function aplicarFiltrosMapa(encuadrar) {
+    var municipios = municipiosFiltrados();
+    var puntos = puntosFiltrados();
+    var codigos = municipios.map(function (m) { return m._mpio; }).filter(Boolean);
+    if (mapa && mapaListo) {
+      ['afectados-relleno', 'afectados-borde'].forEach(function (id) {
+        if (mapa.getLayer(id)) mapa.setFilter(id, ['in', ['get', 'mpio'], ['literal', codigos]]);
+      });
+      ['acopio', 'sangre'].forEach(function (tipo) {
+        var visibles = puntos.filter(function (p) { return p.tipo === tipo; });
+        var todosTipo = (datosMapa._puntos || []).filter(function (p) { return p.tipo === tipo; });
+        var ids = visibles.map(function (p) { return tipo + '-' + todosTipo.indexOf(p); });
+        var capa = tipo === 'acopio' ? 'capa-acopios' : 'capa-sangre';
+        if (mapa.getLayer(capa)) mapa.setFilter(capa, ['in', ['get', '_id'], ['literal', ids]]);
+      });
+      if (encuadrar) encuadrarMapa(municipios, puntos);
+    }
+    renderResultadosMapa(municipios, puntos);
+    renderZonasFiltradas();
+  }
+
+  function renderResultadosMapa(municipios, puntos) {
+    municipios = municipios || municipiosFiltrados(); puntos = puntos || puntosFiltrados();
+    var total = municipios.length + puntos.length;
+    var cont = document.getElementById('mapa-resultados');
+    if (!cont) return;
+    var items = municipios.map(function (m) {
+      return '<li><span class="resultado-tipo resultado-' + esc(m.gravedad) + '">Afectación ' + esc(NOMBRES_GRAVEDAD[m.gravedad]) + '</span>' +
+        '<strong>' + esc(m.municipio) + ', ' + esc(m.departamento) + '</strong>' +
+        '<button type="button" data-enfocar data-lat="' + m.lat + '" data-lon="' + m.lon + '">Ubicar</button></li>';
+    }).concat(puntos.map(function (p) {
+      return '<li><span class="resultado-tipo resultado-' + esc(p.tipo) + '">' + (p.tipo === 'acopio' ? 'Punto de acopio' : 'Donación de sangre') + '</span>' +
+        '<strong>' + esc(p.nombre) + '</strong><small>' + esc(p.ciudad) + (p.direccion ? ' · ' + esc(p.direccion) : '') + '</small>' +
+        '<button type="button" data-enfocar data-lat="' + p.lat + '" data-lon="' + p.lon + '">Ubicar</button></li>';
+    }));
+    cont.innerHTML = '<details' + (!mapaListo ? ' open' : '') + '><summary><strong>' + total + ' resultado' + (total === 1 ? '' : 's') + '</strong> · ' +
+      municipios.length + ' municipios y ' + puntos.length + ' puntos de ayuda</summary>' +
+      (items.length ? '<ul class="lista-resultados-mapa">' + items.join('') + '</ul>' : '<div class="estado-datos">No hay resultados. Ajusta o restablece los filtros.</div>') + '</details>';
+  }
+
   function anadirMarcadores() {
-    if (!mapa) return;
+    if (!mapa || epicentroAnadido) return;
     var sismo = datosMapa.sismo;
     if (sismo && sismo.epicentro && sismo.epicentro.lat) {
-      var el = document.createElement('div');
-      el.style.cssText = 'width:20px;height:20px;border-radius:50%;background:#16324F;border:3px solid #fff;box-shadow:0 0 0 6px rgba(22,50,79,.28);';
+      var el = document.createElement('button');
+      el.type = 'button'; el.className = 'marcador-epicentro'; el.setAttribute('aria-label', 'Epicentro del sismo');
       new maplibregl.Marker({ element: el })
         .setLngLat([sismo.epicentro.lon, sismo.epicentro.lat])
         .setPopup(new maplibregl.Popup({ offset: 14 }).setHTML(
           '<h4>Epicentro</h4><p>' + esc(sismo.epicentro.municipio || '') + ', ' + esc(sismo.epicentro.departamento || '') +
           '</p><p>Magnitud ' + esc(sismo.magnitud) + ' · Profundidad ' + esc(sismo.profundidad_km) + ' km</p>'))
         .addTo(mapa);
+      epicentroAnadido = true;
     }
-    (datosMapa._sinPoligono || []).forEach(function (m) {
-      var el = document.createElement('div');
-      var color = COLORES_GRAVEDAD[m.gravedad] || '#F2B279';
-      el.style.cssText = 'width:14px;height:14px;border-radius:50%;background:' + color + ';border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3);cursor:pointer;';
-      new maplibregl.Marker({ element: el })
-        .setLngLat([m.lon, m.lat])
-        .setPopup(new maplibregl.Popup({ offset: 10 }).setHTML(popupMunicipio(m)))
-        .addTo(mapa);
-    });
   }
 
   function popupMunicipio(m) {
@@ -658,14 +684,13 @@
   }
 
   function conectarClicsMapa() {
-    if (!mapa) return;
-    var porCodigo = {};
-    (datosMapa.zonas.municipios || []).forEach(function (m) { if (m._mpio) porCodigo[m._mpio] = m; });
+    if (!mapa || mapaEventosConectados) return;
+    mapaEventosConectados = true;
     function capasVivas(lista) {
       return lista.filter(function (id) { return mapa.getLayer(id); });
     }
     mapa.on('click', function (e) {
-      var ids = capasVivas(['capa-acopios', 'capa-sangre', 'capa-replicas', 'afectados-relleno']);
+      var ids = capasVivas(['capa-acopios', 'capa-sangre', 'afectados-relleno']);
       if (!ids.length) return;
       var fts = mapa.queryRenderedFeatures(e.point, { layers: ids });
       if (!fts.length) return;
@@ -673,18 +698,13 @@
       if (f.layer.id === 'capa-acopios') {
         html = '<h4>📦 ' + esc(p.nombre) + '</h4>' +
           '<p>' + esc(p.ciudad) + (p.direccion && p.direccion !== 'null' ? ' — ' + esc(p.direccion) : '') + '</p>' +
-          '<p style="font-size:.72rem;color:#7B8794">Pin aproximado: guíate por la dirección publicada.</p>' +
-          '<p><a href="#acopios">Ver qué llevar y horarios →</a></p>';
+          '<p style="font-size:.72rem;color:#52606D">Ubicación aproximada: confirma dirección y horario antes de salir. ' + enlaceFuente(p.fuente_url, 'ver fuente') + '</p>';
       } else if (f.layer.id === 'capa-sangre') {
         html = '<h4>🩸 ' + esc(p.nombre) + '</h4>' +
           '<p>' + esc(p.ciudad) + (p.direccion && p.direccion !== 'null' ? ' — ' + esc(p.direccion) : '') + '</p>' +
-          '<p><a href="#sangre">Ver requisitos →</a></p>';
-      } else if (f.layer.id === 'capa-replicas') {
-        html = '<h4>🌀 Réplica M ' + esc(p.mag) + '</h4><p>' + esc(p.place || '') + '</p>' +
-          (p.time ? '<p>' + new Date(+p.time).toLocaleString('es-CO') + '</p>' : '') +
-          '<p style="font-size:.72rem;color:#7B8794">Fuente: USGS, en tiempo real</p>';
+          '<p style="font-size:.72rem;color:#52606D">Confirma horario y requisitos antes de salir. ' + enlaceFuente(p.fuente_url, 'ver fuente') + '</p>';
       } else {
-        var m = porCodigo[p.mpio];
+        var m = datosMapa._porCodigo[p.mpio];
         if (m) html = popupMunicipio(m);
       }
       if (html) new maplibregl.Popup({ offset: 6 }).setLngLat(e.lngLat).setHTML(html).addTo(mapa);
@@ -696,14 +716,16 @@
     });
   }
 
-  function encuadrarMapa() {
+  function encuadrarMapa(municipios, puntosAyuda) {
+    if (!mapa) return;
+    municipios = municipios || municipiosFiltrados(); puntosAyuda = puntosAyuda || puntosFiltrados();
     var puntos = [];
-    (datosMapa.zonas.municipios || []).forEach(function (m) { if (m.lat && m.lon) puntos.push([m.lon, m.lat]); });
-    var s = datosMapa.sismo;
-    if (s && s.epicentro && s.epicentro.lat) puntos.push([s.epicentro.lon, s.epicentro.lat]);
-    if (puntos.length < 2) return;
+    municipios.forEach(function (m) { if (m.lat && m.lon) puntos.push([m.lon, m.lat]); });
+    puntosAyuda.forEach(function (p) { puntos.push([p.lon, p.lat]); });
+    if (!puntos.length) return;
+    if (puntos.length === 1) { mapa.flyTo({ center: puntos[0], zoom: 9.5, essential: true }); return; }
     var limites = puntos.reduce(function (b, p) { return b.extend(p); }, new maplibregl.LngLatBounds(puntos[0], puntos[0]));
-    mapa.fitBounds(limites, { padding: 70, maxZoom: 9, duration: 0 });
+    mapa.fitBounds(limites, { padding: 60, maxZoom: 9, duration: 350 });
   }
 
   /* ============ Arranque ============ */
@@ -718,11 +740,11 @@
     fetchJSON('data/fuentes.json'),
     fetchJSON('data/municipios.geojson'),
     fetchJSON('data/geo_puntos.json'),
-    fetchJSON('data/cadenas.json')
+    fetchJSON('data/verificacion.json')
   ]).then(function (r) {
     var meta = r[0], sismo = r[1], balance = r[2], zonas = r[3], ayuda = r[4],
         pedagogia = r[5], benchmarks = r[6], fuentes = r[7], municipios = r[8],
-        geo = r[9], cadenas = r[10];
+        geo = r[9], verificacion = r[10];
 
     pintarMeta(meta);
     pintarSismo(sismo);
@@ -733,7 +755,7 @@
     pintarSangre(ayuda);
     pintarBusqueda(ayuda);
     pintarPedagogia(pedagogia);
-    pintarCadenas(cadenas);
+    pintarCadenas(verificacion);
     pintarZonas(zonas);
     pintarBenchmarks(benchmarks);
     pintarFuentes(fuentes);
@@ -746,11 +768,13 @@
       datosMapa.geo = geo;
       prepararDatosMapa();
       pintarFiltrosMapa();
+      aplicarFiltrosMapa(false);
       iniciarMapa();
-      construirCapas();
-      anadirMarcadores();
-      conectarClicsMapa();
-      encuadrarMapa();
+      // Gancho para módulos externos (extras.js): acceso de solo lectura al mapa y sus datos
+      window.__cuidar = { obtenerMapa: function () { return mapa; }, datos: datosMapa };
+    } else {
+      cambiarEstadoMapa('No se pudieron cargar los datos geográficos. Usa las listas de información.', 'error');
+      renderResultadosMapa();
     }
   });
 })();

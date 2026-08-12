@@ -1,65 +1,123 @@
 {
-  "metodologia": {
-    "version": "1.0",
-    "principios": [
-      "Priorizar el dominio oficial de la entidad que recibe la ayuda.",
-      "Distinguir una fuente oficial de una confirmación publicada por prensa.",
-      "Mostrar la fecha de comprobación y advertir cuando los datos necesitan revisión.",
-      "No publicar cuentas personales ni pedir datos privados a quienes buscan ayuda."
-    ]
-  },
   "afirmaciones": [
     {
-      "id": "replica-programada",
-      "afirmacion": "«Una autoridad confirmó la hora exacta de la próxima réplica».",
+      "afirmacion": "«El IDEAM alerta que hoy habrá una réplica a las 9:15 a. m.» (cadena de WhatsApp con hora exacta)",
       "veredicto": "Falso",
-      "realidad": "Los sismos y sus réplicas no pueden predecirse indicando fecha y hora. Consulta únicamente los reportes del Servicio Geológico Colombiano.",
+      "realidad": "El IDEAM no emitió ninguna alerta y no existe método científico para predecir un sismo, su hora ni su magnitud. Toda cadena que anuncie réplicas con horario exacto es falsa por definición.",
       "nivel_fuente": "fuente_oficial",
-      "fuente_nombre": "Servicio Geológico Colombiano",
-      "fuente_url": "https://www.sgc.gov.co/sismos",
-      "verificado_iso": "2026-08-11"
+      "fuente_nombre": "Aclaración del IDEAM (vía Semana)",
+      "fuente_url": "https://www.semana.com/tecnologia/articulo/mensaje-que-circula-por-whatsapp-genera-panico-tras-fuerte-terremoto-en-colombia-ideam-aclara-informacion-sobre-posibles-replicas/202628/",
+      "remitir_nombre": "SGC — Sismos en tiempo real",
+      "remitir_url": "https://www.sgc.gov.co/sismos",
+      "verificado_iso": "2026-08-12"
     },
     {
-      "id": "cuenta-personal",
-      "afirmacion": "«Consigna a esta cuenta personal y reenvía el comprobante por WhatsApp».",
-      "veredicto": "No verificado",
-      "realidad": "No transfieras hasta encontrar el mismo canal en el dominio oficial de la organización. La urgencia, las cuentas personales y la presión para reenviar son señales de riesgo.",
+      "afirmacion": "«Viene un segundo terremoto más fuerte: hay un patrón sísmico que lo anuncia»",
+      "veredicto": "Falso",
+      "realidad": "El SGC reitera que no puede predecirse un nuevo sismo ni su magnitud, y la Cruz Roja desmintió la supuesta réplica fuerte anunciada en redes. Los «patrones» que circulan no tienen base científica.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "SGC y Cruz Roja",
+      "fuente_url": "https://www.publimetro.co/noticias/2026/08/10/puede-venir-otro-temblor-fuerte-esto-es-lo-que-dice-el-sgc-tras-el-terremoto-de-74-en-colombia/",
+      "remitir_nombre": "SGC en X (@sgcol)",
+      "remitir_url": "https://x.com/sgcol",
+      "verificado_iso": "2026-08-12"
+    },
+    {
+      "afirmacion": "Enlaces con la «lista de víctimas» o el «video del rescate» del terremoto",
+      "veredicto": "Falso y peligroso",
+      "realidad": "Esos enlaces descargan virus que roban contraseñas y claves bancarias o clonan tu cuenta de WhatsApp. No existe ninguna «lista oficial de víctimas» circulando por cadenas.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "Policía Nacional — Centro Cibernético",
+      "fuente_url": "https://canaltrece.com.co/noticias/cuidado-autoridades-alertan-sobre-fraudes-y-robos-por-redes-tras-el-sismo/",
+      "remitir_nombre": "CAI Virtual — Policía Nacional",
+      "remitir_url": "https://caivirtual.policia.gov.co",
+      "verificado_iso": "2026-08-12"
+    },
+    {
+      "afirmacion": "«Reclama tu subsidio del Gobierno por el terremoto en este enlace»",
+      "veredicto": "Falso",
+      "realidad": "El Gobierno no pide transferencias ni datos bancarios por mensajes de texto. El subsidio de arriendo de emergencia es gratuito y se tramita únicamente con Gestión del Riesgo y las alcaldías.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "Policía Nacional y Gestión del Riesgo",
+      "fuente_url": "https://www.colombia.com/actualidad/noticias/cuales-son-los-requisitos-y-como-acceder-al-subsidio-de-arriendo-de-emergencia-tras-el-terremoto-en-colombia-595675",
+      "remitir_nombre": "UNGRD — Gestión del Riesgo",
+      "remitir_url": "https://portal.gestiondelriesgo.gov.co/",
+      "verificado_iso": "2026-08-12"
+    },
+    {
+      "afirmacion": "Centros de acopio y cuentas «de la Cruz Roja» que piden dinero o víveres",
+      "veredicto": "Fraude",
+      "realidad": "La Cruz Roja Colombiana solo tiene tres canales habilitados: su cuenta corriente Davivienda 0560455069996490, Daviplata y su sitio web oficial. Todo lo demás que use su nombre es fraude.",
       "nivel_fuente": "fuente_oficial",
       "fuente_nombre": "Cruz Roja Colombiana",
-      "fuente_url": "https://www.cruzrojacolombiana.org",
-      "verificado_iso": "2026-08-11"
+      "fuente_url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/",
+      "remitir_nombre": "Cruz Roja — Donaciones oficiales",
+      "remitir_url": "https://ayuda.cruzrojacolombiana.org/",
+      "verificado_iso": "2026-08-12"
     },
     {
-      "id": "datos-personales",
-      "afirmacion": "«Envía foto de tu cédula y dirección para acceder a una ayuda».",
-      "veredicto": "Alto riesgo",
-      "realidad": "No publiques documentos, direcciones exactas ni datos bancarios en cadenas o formularios no oficiales. Verifica primero la entidad y el dominio.",
+      "afirmacion": "Foto del Monumento a la Resistencia de Cali «destruido» por el temblor",
+      "veredicto": "Falso",
+      "realidad": "La imagen fue generada con inteligencia artificial: los detectores hallaron la marca de agua SynthID, y un video real grabado minutos después del sismo muestra el monumento intacto.",
       "nivel_fuente": "guia_publica",
-      "fuente_nombre": "FTC — prevención de estafas tras desastres",
-      "fuente_url": "https://consumer.ftc.gov/articles/how-avoid-scams-after-weather-emergencies-and-natural-disasters",
-      "verificado_iso": "2026-08-11"
+      "fuente_nombre": "Colombiacheck",
+      "fuente_url": "https://colombiacheck.com/chequeos/imagen-del-monumento-la-resistencia-destruido-por-el-temblor-en-cali-fue-hecha-con-ia",
+      "remitir_nombre": "Colombiacheck",
+      "remitir_url": "https://colombiacheck.com/tags/terremotos",
+      "verificado_iso": "2026-08-12"
+    },
+    {
+      "afirmacion": "Video de estudiantes evacuando un colegio «durante el terremoto de Colombia»",
+      "veredicto": "Engañoso",
+      "realidad": "El video es de una escuela en Malita, Filipinas, grabado durante el terremoto de junio de 2026 en ese país. Otro viral, el de obreros aferrados a un edificio, es de Guatemala, de julio.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "La Silla Vacía y Maldita.es",
+      "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/enganoso/este-video-muestra-un-colegio-durante-el-terremoto-de-filipinas-no-de-colombia/",
+      "remitir_nombre": "La Silla Vacía — Detector de Mentiras",
+      "remitir_url": "https://www.lasillavacia.com/detector-de-mentiras/",
+      "verificado_iso": "2026-08-12"
+    },
+    {
+      "afirmacion": "«El proyecto HAARP provocó el terremoto de 7,4»",
+      "veredicto": "Falso",
+      "realidad": "No existe mecanismo físico que pueda causar un sismo de 7,4 con ondas de radio. El SGC explicó que el terremoto se debe a la subducción de la placa de Nazca bajo la Suramericana.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "Chequeado",
+      "fuente_url": "https://chequeado.com/ultimas-noticias/es-falso-que-haarp-haya-provocado-el-terremoto-de-magnitud-7-4-en-colombia/",
+      "remitir_nombre": "SGC — Servicio Geológico Colombiano",
+      "remitir_url": "https://www.sgc.gov.co/sismos",
+      "verificado_iso": "2026-08-12"
+    },
+    {
+      "afirmacion": "«El volcán Puracé entró en erupción por el terremoto»",
+      "veredicto": "Engañoso",
+      "realidad": "El SGC aclaró que el sismo no tiene relación con la actividad del Puracé: el volcán está en alerta naranja desde el 1 de agosto, y varios videos virales son de días anteriores al terremoto.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "SGC (vía La Silla Vacía)",
+      "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/enganoso/volcan-purace-en-cauca-no-entro-en-actividad-luego-del-terremoto-del-10-de-agosto/",
+      "remitir_nombre": "SGC en X (@sgcol)",
+      "remitir_url": "https://x.com/sgcol",
+      "verificado_iso": "2026-08-12"
     }
   ],
   "fuentes_para_verificar": [
-    {
-      "nombre": "Servicio Geológico Colombiano",
-      "para": "Sismos, magnitud y réplicas",
-      "url": "https://www.sgc.gov.co/sismos"
-    },
-    {
-      "nombre": "UNGRD",
-      "para": "Balance y respuesta institucional",
-      "url": "https://gestiondelriesgo.gov.co"
-    },
-    {
-      "nombre": "Cruz Roja Colombiana",
-      "para": "Donaciones, sangre y vínculos familiares",
-      "url": "https://www.cruzrojacolombiana.org"
-    },
-    {
-      "nombre": "Línea única de emergencias",
-      "para": "Atención inmediata",
-      "url": "tel:123"
-    }
-  ]
+    {"nombre": "SGC — Sismos", "para": "La única autoridad sísmica: réplicas en tiempo real y reporte de sismos sentidos.", "url": "https://www.sgc.gov.co/sismos"},
+    {"nombre": "UNGRD", "para": "Coordinación oficial de la emergencia, balances y ayudas legítimas del Gobierno.", "url": "https://portal.gestiondelriesgo.gov.co/"},
+    {"nombre": "CAI Virtual — Policía", "para": "Reportar enlaces con virus, cuentas clonadas y phishing de la emergencia.", "url": "https://caivirtual.policia.gov.co"},
+    {"nombre": "¡ADenunciar!", "para": "Denuncia formal de estafas y fraudes con donaciones (Policía y Fiscalía).", "url": "https://adenunciar.policia.gov.co/adenunciar"},
+    {"nombre": "Cruz Roja Colombiana", "para": "Los únicos canales legítimos de donación y la búsqueda de familiares.", "url": "https://ayuda.cruzrojacolombiana.org/"},
+    {"nombre": "IDEAM", "para": "No emite alertas sísmicas: cualquier «alerta de réplica» a su nombre es falsa.", "url": "https://www.ideam.gov.co"},
+    {"nombre": "Colombiacheck", "para": "Verificador colombiano: chequeos de imágenes con IA y virales del terremoto.", "url": "https://colombiacheck.com/tags/terremotos"},
+    {"nombre": "La Silla Vacía — Detector", "para": "Desmentidos de réplicas «programadas», HAARP y videos de otros países.", "url": "https://www.lasillavacia.com/detector-de-mentiras/"},
+    {"nombre": "Alcaldía de Cali — Emergencia", "para": "Canal local oficial: WhatsApp de reportes 310 229 9708 y líneas de atención.", "url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/"}
+  ],
+  "metodologia": {
+    "principios": [
+      "Horario exacto = falso, siempre: ninguna autoridad puede anunciar la hora o el lugar de un sismo o réplica. Toda cadena con horario («hoy a las 9:15») es falsa por definición.",
+      "Desconfía del combo clásico: sin autor ni fuente, tono de urgencia, «reenvía a todos» y capturas sin fecha. Haz búsqueda inversa de fotos y videos — muchos son de otros años u otros países.",
+      "Aprende a ver la IA: manos deformes, textos ilegibles, sombras incoherentes, exceso de perfección. Revisa las imágenes antes de compartirlas.",
+      "Las ayudas del Gobierno no llegan por SMS: nunca se cobran ni se tramitan por enlaces de WhatsApp. Verifica cualquier subsidio directamente en sitios .gov.co o líneas oficiales.",
+      "Cada afirmación de esta sección fue contrastada con el desmentido de la autoridad competente o de un verificador establecido, con enlace a la evidencia y fecha de revisión."
+    ]
+  }
 }
