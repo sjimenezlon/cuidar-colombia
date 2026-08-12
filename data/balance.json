@@ -1,0 +1,49 @@
+{
+  "cifras": [
+    {
+      "clave": "magnitud",
+      "etiqueta": "Magnitud del sismo",
+      "valor": "7,4",
+      "fuente_titulo": "SGC",
+      "fuente_url": "https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx"
+    },
+    {
+      "clave": "muertos",
+      "etiqueta": "Personas fallecidas",
+      "valor": "182",
+      "fuente_titulo": "UNGRD, Reporte 011",
+      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+    },
+    {
+      "clave": "heridos",
+      "etiqueta": "Personas heridas",
+      "valor": "2.542",
+      "fuente_titulo": "UNGRD, Reporte 011",
+      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+    },
+    {
+      "clave": "desaparecidos",
+      "etiqueta": "Personas desaparecidas",
+      "valor": "189",
+      "fuente_titulo": "UNGRD, Reporte 011",
+      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+    },
+    {
+      "clave": "viviendas",
+      "etiqueta": "Viviendas afectadas",
+      "valor": "15.568",
+      "fuente_titulo": "UNGRD, Reporte 011",
+      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+    },
+    {
+      "clave": "vias",
+      "etiqueta": "Vías afectadas",
+      "valor": "77",
+      "fuente_titulo": "UNGRD, Reporte 011",
+      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+    }
+  ],
+  "fecha_corte": "11 de agosto de 2026, 12:00 m. (Reporte Situacional No. 011 de la UNGRD)",
+  "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012.",
+  "nota": "Cortes posteriores de prensa ya reportan cifras mayores; esta plataforma publica el último reporte situacional oficial de la UNGRD y se actualiza con cada nuevo corte."
+}

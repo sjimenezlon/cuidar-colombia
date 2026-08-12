@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuidar a Colombia — Información verificada para ayudar tras el terremoto</title>
+<meta name="description" content="Plataforma ciudadana que agrega y verifica información oficial para ayudar tras el terremoto del 10 de agosto de 2026 en Colombia: canales de donación verificados, puntos de acopio, donación de sangre, búsqueda de personas y zonas afectadas.">
+<meta property="og:title" content="Cuidar a Colombia">
+<meta property="og:description" content="Canales oficiales de donación, puntos de acopio, donación de sangre y mapa de zonas afectadas por el terremoto — todo verificado, con fuentes y fechas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cuidarcolombia.vercel.app">
+<meta property="og:image" content="https://cuidarcolombia.vercel.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <a class="marca" href="#inicio">
+    <svg class="marca-icono" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28s-11-7.2-11-15A6.5 6.5 0 0 1 16 8.6 6.5 6.5 0 0 1 27 13c0 7.8-11 15-11 15z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M8 17h4l2-4 3 7 2.5-5H24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Cuidar a <strong>Colombia</strong></span>
+  </a>
+  <nav class="navegacion" id="navegacion">
+    <a href="#que-paso">Qué pasó</a>
+    <a href="#mapa-seccion">Mapa</a>
+    <a href="#como-ayudar">Cómo ayudar</a>
+    <a href="#donar-bien">Donar bien</a>
+    <a href="#zonas">Zonas afectadas</a>
+    <a href="#mundo">Referentes</a>
+    <a href="#fuentes">Fuentes</a>
+  </nav>
+  <a class="boton boton-primario topbar-cta" href="#donar-dinero">Donar por canales oficiales</a>
+  <button class="menu-movil" id="menu-movil" aria-label="Abrir menú">☰</button>
+</header>
+
+<main id="inicio">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="contenedor">
+      <p class="sello" id="sello-actualizacion">
+        <span class="punto-vivo" aria-hidden="true"></span>
+        Información verificada · última actualización <strong id="fecha-actualizacion">—</strong>
+      </p>
+      <h1>Una sola página, verificada,<br>para ayudar a Colombia.</h1>
+      <p class="hero-sub">
+        Tras el terremoto del 10 de agosto de 2026, esta plataforma reúne y verifica la información
+        dispersa en fuentes oficiales: dónde donar, dónde llevar ayuda, dónde donar sangre, cómo buscar
+        a alguien y cuáles son las zonas que más lo necesitan. <strong>No intermediamos ni recaudamos:</strong>
+        cada enlace lleva directo al canal oficial, con su fuente y su fecha de verificación.
+      </p>
+      <div class="acciones-rapidas">
+        <a class="accion" href="#donar-dinero">
+          <span class="accion-icono">💳</span>
+          <span class="accion-texto"><strong>Donar dinero</strong><small>Canales oficiales verificados</small></span>
+        </a>
+        <a class="accion" href="#acopios">
+          <span class="accion-icono">📦</span>
+          <span class="accion-texto"><strong>Llevar ayuda</strong><small>Puntos de acopio por ciudad</small></span>
+        </a>
+        <a class="accion" href="#sangre">
+          <span class="accion-icono">🩸</span>
+          <span class="accion-texto"><strong>Donar sangre</strong><small>Bancos y jornadas activas</small></span>
+        </a>
+        <a class="accion" href="#buscar">
+          <span class="accion-icono">🔎</span>
+          <span class="accion-texto"><strong>Buscar a alguien</strong><small>Líneas y reunificación</small></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BANNER EMERGENCIA ============ -->
+  <div class="banner-emergencia" id="banner-emergencia">
+    <div class="contenedor banner-contenido" id="lineas-emergencia"><!-- JS --></div>
+  </div>
+
+  <!-- ============ QUÉ PASÓ ============ -->
+  <section class="seccion" id="que-paso">
+    <div class="contenedor">
+      <p class="antetitulo">El sismo</p>
+      <h2>Qué pasó</h2>
+      <p class="seccion-intro" id="sismo-descripcion"><!-- JS --></p>
+      <div class="fichas" id="fichas-balance"><!-- JS --></div>
+      <p class="nota-corte" id="nota-corte"><!-- JS --></p>
+    </div>
+  </section>
+
+  <!-- ============ MAPA ============ -->
+  <section class="seccion seccion-mapa" id="mapa-seccion">
+    <div class="contenedor">
+      <p class="antetitulo">Mapa interactivo</p>
+      <h2>Dónde golpeó más fuerte</h2>
+      <p class="seccion-intro">Municipios con afectación reportada por fuentes oficiales y prensa nacional.
+      Toca un municipio para ver el detalle y su fuente. La gravedad es relativa, según los reportes disponibles.</p>
+    </div>
+    <div class="mapa-envoltura">
+      <div id="mapa" style="position:absolute; inset:0;"></div>
+      <div class="mapa-leyenda" id="mapa-leyenda">
+        <strong>Gravedad reportada</strong>
+        <span class="leyenda-item"><i style="background:#7A1815"></i> Crítica</span>
+        <span class="leyenda-item"><i style="background:#D25B33"></i> Alta</span>
+        <span class="leyenda-item"><i style="background:#F2B279; outline:1px solid #b98c5a"></i> Media</span>
+        <span class="leyenda-item"><i class="leyenda-epicentro"></i> Epicentro</span>
+        <span class="leyenda-item"><i class="leyenda-acopio"></i> Ciudad con acopios</span>
+      </div>
+    </div>
+    <div class="contenedor">
+      <p class="nota-corte">El mapa se dibuja con los reportes disponibles al último corte; un municipio sin color no significa ausencia de daño, sino ausencia de reporte verificado.</p>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO AYUDAR ============ -->
+  <section class="seccion seccion-crema" id="como-ayudar">
+    <div class="contenedor">
+      <p class="antetitulo">Cómo ayudar</p>
+      <h2>Cuatro formas concretas de ayudar hoy</h2>
+
+      <!-- Donar dinero -->
+      <div class="bloque-ayuda" id="donar-dinero">
+        <h3><span class="numeral">1</span> Donar dinero por canales oficiales</h3>
+        <p class="bloque-intro">El dinero llega más rápido que los objetos, no satura las vías y permite comprar
+        exactamente lo que se necesita en cada zona. Estos canales fueron verificados en los sitios oficiales
+        de cada entidad — el botón lleva directo a la página oficial, nunca a un intermediario.</p>
+        <div class="tarjetas-canales" id="canales-financieros"><!-- JS --></div>
+        <p class="nota-verificacion">✅ <strong>Verificado</strong> significa: leímos el canal en el dominio oficial de la entidad
+        (o en un medio nacional citando el anuncio oficial) en la fecha indicada. Aún así, confirma siempre en la página
+        de destino antes de transferir.</p>
+      </div>
+
+      <!-- Acopios -->
+      <div class="bloque-ayuda" id="acopios">
+        <h3><span class="numeral">2</span> Llevar ayuda a un punto de acopio</h3>
+        <p class="bloque-intro">Elige tu ciudad para ver los puntos habilitados por entidades oficiales, qué están pidiendo y qué no llevar.</p>
+        <div class="selector-ciudades" id="selector-ciudades"><!-- JS --></div>
+        <div id="acopios-detalle"><!-- JS --></div>
+      </div>
+
+      <!-- Sangre -->
+      <div class="bloque-ayuda" id="sangre">
+        <h3><span class="numeral">3</span> Donar sangre</h3>
+        <p class="bloque-intro">Los bancos de sangre necesitan reservas sostenidas durante semanas, no solo el primer día.
+        Si no puedes donar hoy, agenda para los próximos días: la necesidad continúa.</p>
+        <div class="tarjetas-sangre" id="sangre-lista"><!-- JS --></div>
+        <div class="requisitos" id="sangre-requisitos"><!-- JS --></div>
+      </div>
+
+      <!-- Buscar personas -->
+      <div class="bloque-ayuda" id="buscar">
+        <h3><span class="numeral">4</span> Buscar o reportar a una persona</h3>
+        <p class="bloque-intro">Si no logras comunicarte con alguien en la zona afectada, estos son los mecanismos oficiales
+        de búsqueda y restablecimiento de contacto.</p>
+        <div class="tarjetas-busqueda" id="busqueda-lista"><!-- JS --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DONAR BIEN (PEDAGOGÍA) ============ -->
+  <section class="seccion" id="donar-bien">
+    <div class="contenedor">
+      <p class="antetitulo">Pedagogía de la donación</p>
+      <h2>Donar bien también se aprende</h2>
+      <p class="seccion-intro">En cada desastre, la solidaridad convive con la estafa y con la ayuda que estorba.
+      Estas guías vienen de organizaciones que llevan décadas respondiendo emergencias.</p>
+      <div class="dos-columnas">
+        <div class="columna-consejos">
+          <h3>✅ Cómo donar bien</h3>
+          <ol class="lista-consejos" id="consejos-lista"><!-- JS --></ol>
+        </div>
+        <div class="columna-fraude">
+          <h3>🚨 Señales de fraude</h3>
+          <ul class="lista-fraude" id="fraude-lista"><!-- JS --></ul>
+          <div id="alertas-actuales"><!-- JS --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ZONAS MÁS AFECTADAS ============ -->
+  <section class="seccion seccion-crema" id="zonas">
+    <div class="contenedor">
+      <p class="antetitulo">Capítulo especial</p>
+      <h2>Las zonas que más lo necesitan</h2>
+      <p class="seccion-intro" id="zonas-intro"><!-- JS --></p>
+      <div id="zonas-departamentos"><!-- JS --></div>
+      <div class="subbloque" id="vias-bloque">
+        <h3>🛣️ Vías y accesos</h3>
+        <ul class="lista-simple" id="vias-lista"><!-- JS --></ul>
+      </div>
+      <div class="subbloque" id="respuesta-bloque">
+        <h3>🚁 La respuesta en marcha</h3>
+        <ul class="lista-simple" id="respuesta-lista"><!-- JS --></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENCHMARKING ============ -->
+  <section class="seccion" id="mundo">
+    <div class="contenedor">
+      <p class="antetitulo">Referentes</p>
+      <h2>Lo que el mundo nos enseñó</h2>
+      <p class="seccion-intro">Esta plataforma no inventa nada: aprende de las herramientas cívicas y tecnológicas
+      que, en otros desastres, ayudaron a organizar la solidaridad. Cada una dejó una lección de diseño que intentamos honrar aquí.</p>
+      <div class="tarjetas-mundo" id="benchmarks-lista"><!-- JS --></div>
+    </div>
+  </section>
+
+  <!-- ============ FUENTES ============ -->
+  <section class="seccion seccion-crema" id="fuentes">
+    <div class="contenedor">
+      <p class="antetitulo">Transparencia</p>
+      <h2>Fuentes oficiales</h2>
+      <p class="seccion-intro">Toda la información de esta plataforma proviene de estas fuentes. Si detectas un error
+      o un canal que cambió, repórtalo y lo corregimos en la siguiente actualización.</p>
+      <div class="lista-fuentes" id="fuentes-lista"><!-- JS --></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER / DISCLAIMER ============ -->
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-disclaimer">
+      <h3>Lo que esta plataforma es — y lo que no es</h3>
+      <p><strong>Cuidar a Colombia no intermedia, no recauda y no recibe donaciones.</strong>
+      Es un ejercicio ciudadano de agregación: un rastreo de las fuentes oficiales y de la colectividad
+      de buenas intenciones que se moviliza tras la emergencia, organizado en un solo lugar para que ayudar
+      sea más fácil y más seguro. Cada dato lleva su fuente y su fecha de verificación; las cifras de una
+      emergencia cambian rápido y pueden quedar desactualizadas entre cortes. Ante cualquier duda,
+      la fuente oficial manda.</p>
+      <p>La información se revisa y actualiza mediante un proceso asistido por inteligencia artificial
+      que verifica cada canal contra su fuente oficial antes de publicarlo — una muestra de cómo la
+      tecnología puede ayudarnos a rastrear, organizar y cuidar.</p>
+    </div>
+    <div class="pie-credito">
+      <div>
+        <p>Creado por el profesor <strong>Santiago Jiménez Londoño</strong> · <a class="pie-enlace" href="https://www.sjimenezlon.co" target="_blank" rel="noopener">sjimenezlon.co</a></p>
+        <p class="pie-sugerencias">¿Quieres mejorar la plataforma o tienes una sugerencia?
+        <a class="pie-enlace" href="mailto:sjimenezlon@gmail.com?subject=Sugerencia%20para%20Cuidar%20a%20Colombia">Escríbeme a sjimenezlon@gmail.com</a></p>
+      </div>
+      <p class="pie-fecha" id="pie-actualizacion">Última actualización: —</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

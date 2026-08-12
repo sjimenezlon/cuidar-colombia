@@ -1,0 +1,101 @@
+{
+  "consejos": [
+    {
+      "consejo": "Dona dinero antes que objetos",
+      "explicacion": "Es la forma más rápida y eficaz de ayudar: da flexibilidad para comprar exactamente lo que falta, cuando falta, y comprarlo localmente reactiva la economía de la zona afectada.",
+      "fuente": "BBB Wise Giving Alliance — guía para el terremoto de Colombia",
+      "fuente_url": "https://give.org/news/colombia-earthquake-relief"
+    },
+    {
+      "consejo": "No envíes bienes que nadie pidió: el «segundo desastre»",
+      "explicacion": "Según investigadores humanitarios de Harvard, entre el 50 % y el 70 % de los objetos donados tras un desastre nunca debieron enviarse: taponan bodegas, vías y personal que se necesita para el rescate. Dona lo que los acopios oficiales están pidiendo, nada más.",
+      "fuente": "Harvard Humanitarian Initiative",
+      "fuente_url": "https://theconversation.com/why-giving-cash-not-clothing-is-usually-best-after-disasters-83405"
+    },
+    {
+      "consejo": "La ropa usada casi siempre estorba",
+      "explicacion": "Es voluminosa, exige clasificación y lavado y desplaza carga crítica. En esta emergencia, Medellín no la recibe y Manizales solo acepta prendas nuevas. Verifica qué pide cada punto antes de llevarla.",
+      "fuente": "IFRC — «Good intentions gone awry»",
+      "fuente_url": "https://disasterlaw.ifrc.org/node/45"
+    },
+    {
+      "consejo": "Verifica la organización antes de donar",
+      "explicacion": "Busca su nombre junto a palabras como «estafa» o «denuncia», confirma su personería y su sitio oficial, y entra al canal de donación escribiendo tú la dirección — no desde un enlace que te llegó por chat.",
+      "fuente": "FTC y Charity Navigator",
+      "fuente_url": "https://www.charitynavigator.org/donor-basics/protect-your-giving/avoid-charity-scams/"
+    },
+    {
+      "consejo": "Prefiere organizaciones con experiencia y presencia en la zona",
+      "explicacion": "Las que llevan años operando en el territorio saben qué se necesita y cómo llegar. Desconfía de grupos surgidos de la noche a la mañana, por bienintencionados que parezcan.",
+      "fuente": "BBB Wise Giving Alliance",
+      "fuente_url": "https://give.org/news/colombia-earthquake-relief"
+    },
+    {
+      "consejo": "Nunca dones por canales de pago irrastreables",
+      "explicacion": "Nadie legítimo exige donar únicamente en efectivo, giro, tarjeta de regalo o criptomonedas: así piden pagar los estafadores. Usa medios rastreables hacia la cuenta oficial publicada y guarda el comprobante.",
+      "fuente": "FTC — evitar estafas tras desastres",
+      "fuente_url": "https://consumer.ftc.gov/articles/how-avoid-scams-after-weather-emergencies-and-natural-disasters"
+    },
+    {
+      "consejo": "No cedas a la presión de donar «ya mismo»",
+      "explicacion": "La urgencia emocional artificial es táctica de estafador; las organizaciones reales no presionan. Tomarte unos minutos para verificar no le quita nada a los damnificados y evita financiar el fraude.",
+      "fuente": "BBB Wise Giving Alliance",
+      "fuente_url": "https://www.bbb.org/article/news-releases/24746-bbb-tip-charitable-giving-after-a-natural-disaster-or-tragedy"
+    },
+    {
+      "consejo": "Usa los canales oficiales y no satures las vías",
+      "explicacion": "Las autoridades pidieron canalizar la ayuda por los acopios y campañas habilitados, y no improvisar caravanas hacia la zona afectada: las vías se necesitan libres para el rescate y la ayuda humanitaria.",
+      "fuente": "Cruz Roja Colombiana",
+      "fuente_url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/"
+    }
+  ],
+  "senales": [
+    {
+      "senal": "Nombres que imitan a entidades conocidas",
+      "explicacion": "Estafadores usan nombres casi idénticos a los de organizaciones reputadas, o crean «fundaciones» de la noche a la mañana. Verifica el sitio oficial, el NIT y la ortografía exacta del nombre.",
+      "fuente_url": "https://www.bbb.org/article/news-releases/24746-bbb-tip-charitable-giving-after-a-natural-disaster-or-tragedy"
+    },
+    {
+      "senal": "Exigen efectivo, giros, tarjetas de regalo o cripto",
+      "explicacion": "Los métodos irrastreables e irreversibles son el medio preferido del fraude. También circulan transmisiones e imágenes generadas con IA que piden donaciones en criptomonedas.",
+      "fuente_url": "https://consumer.ftc.gov/articles/how-avoid-scams-after-weather-emergencies-and-natural-disasters"
+    },
+    {
+      "senal": "Enlaces no solicitados: «lista de víctimas», «video del rescate»",
+      "explicacion": "El Centro Cibernético de la Policía Nacional alertó que estos enlaces descargan programas que roban contraseñas y claves bancarias o clonan cuentas de WhatsApp.",
+      "fuente_url": "https://canaltrece.com.co/noticias/cuidado-autoridades-alertan-sobre-fraudes-y-robos-por-redes-tras-el-sismo/"
+    },
+    {
+      "senal": "Suplantación de entidades oficiales y falsos subsidios",
+      "explicacion": "Mensajes que ofrecen «ayudas del Gobierno» o piden transferencias suplantando a entidades estatales, bancos u organismos de socorro. El Gobierno no solicita transferencias por enlaces de texto.",
+      "fuente_url": "https://canaltrece.com.co/noticias/cuidado-autoridades-alertan-sobre-fraudes-y-robos-por-redes-tras-el-sismo/"
+    },
+    {
+      "senal": "Falsos centros de acopio con nombres de organismos de socorro",
+      "explicacion": "La Cruz Roja alertó sobre falsos acopios que usan su nombre para recaudar dinero y víveres. Solo valen los mecanismos listados en cruzrojacolombiana.org y en los canales oficiales de cada entidad.",
+      "fuente_url": "https://www.excelsior.com.mx/nacional/ojo-cruz-roja-alerta-por-falsos-centros-acopio-tras-sismo-colombia"
+    },
+    {
+      "senal": "Cadenas que «predicen» réplicas a horas exactas",
+      "explicacion": "No existe mecanismo científico para predecir sismos: el IDEAM y el SGC desmintieron las cadenas de WhatsApp que anuncian réplicas con hora. La única autoridad sísmica en Colombia es el SGC.",
+      "fuente_url": "https://www.infobae.com/tecno/2026/08/10/terremoto-en-colombia-genera-falsas-alertas-en-whatsapp-de-nuevos-sismos-es-imposible-predecirlos/"
+    }
+  ],
+  "alertas": [
+    {
+      "alerta": "La Policía Nacional alerta por aumento de ciberdelitos tras el terremoto: falsas campañas de donación, enlaces con malware y llamadas de extorsión sobre supuestos familiares atrapados.",
+      "fuente_url": "https://canaltrece.com.co/noticias/cuidado-autoridades-alertan-sobre-fraudes-y-robos-por-redes-tras-el-sismo/",
+      "fecha": "10 de agosto de 2026"
+    },
+    {
+      "alerta": "La Cruz Roja alerta por falsos centros de acopio que usan su nombre para recaudar dinero y víveres por este sismo.",
+      "fuente_url": "https://www.excelsior.com.mx/nacional/ojo-cruz-roja-alerta-por-falsos-centros-acopio-tras-sismo-colombia",
+      "fecha": "11 de agosto de 2026"
+    },
+    {
+      "alerta": "IDEAM y SGC desmienten las cadenas de WhatsApp que anuncian «réplicas programadas»: los sismos no se pueden predecir.",
+      "fuente_url": "https://www.noticiascaracol.com/colombia/los-sismos-no-se-pueden-predecir-ojo-con-falsa-informacion-en-redes-tras-terremoto-en-colombia-so35",
+      "fecha": "10 de agosto de 2026"
+    }
+  ]
+}

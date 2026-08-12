@@ -1,0 +1,196 @@
+{
+  "intro": "Este capítulo perfila, con reportes verificados, los lugares donde el sismo golpeó más fuerte. La gravedad es relativa y refleja los reportes disponibles al último corte: los municipios pequeños e incomunicados — como el propio epicentro — suelen tardar más en aparecer en las cifras, y eso también es información.",
+  "municipios": [
+    {
+      "municipio": "San José del Palmar",
+      "departamento": "Chocó",
+      "gravedad": "critica",
+      "lat": 4.897,
+      "lon": -76.234,
+      "afectacion": "Epicentro del sismo. Alrededor de 400 viviendas afectadas y unas 20 estructuras colapsadas según reportes preliminares. Quedó incomunicado durante horas; su única vía de acceso está comprometida y el alcalde pidió apoyo aéreo para evacuar heridos.",
+      "fuentes": [
+        {"url": "https://www.elcolombiano.com/colombia/san-jose-del-palmar-terremoto-7-4-colombia-AE39794554", "titulo": "El Colombiano"},
+        {"url": "https://www.lafm.com.co/actualidad/terremoto-colombia-74-san-jose-del-palmar-viviendas-destruidas-vias-bloqueadas-ayuda-humanitaria-alcalde-407360", "titulo": "La FM"}
+      ]
+    },
+    {
+      "municipio": "Cali",
+      "departamento": "Valle del Cauca",
+      "gravedad": "critica",
+      "lat": 3.452,
+      "lon": -76.532,
+      "afectacion": "La ciudad con más víctimas: 95 fallecidos, más de 949 heridos y 180 desaparecidos reportados. 56 estructuras colapsadas, 3 colapsos viales, 10 hospitales inhabilitados y daños en el transporte masivo. Hubo toque de queda; el aeropuerto fue suspendido y restablecido el mismo día.",
+      "fuentes": [
+        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae"}
+      ]
+    },
+    {
+      "municipio": "Pereira",
+      "departamento": "Risaralda",
+      "gravedad": "critica",
+      "lat": 4.813,
+      "lon": -75.696,
+      "afectacion": "Cerca de 70 fallecidos en el departamento, 278 heridos y 37 desaparecidos. 66 edificaciones destruidas y 26 con colapso parcial. Comunicaciones inoperantes en las primeras horas; el aeropuerto Matecaña opera solo vuelos humanitarios, médicos y de Estado. Toque de queda.",
+      "fuentes": [
+        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae"},
+        {"url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690", "titulo": "El Colombiano"}
+      ]
+    },
+    {
+      "municipio": "Buenaventura",
+      "departamento": "Valle del Cauca",
+      "gravedad": "critica",
+      "lat": 3.88,
+      "lon": -77.031,
+      "afectacion": "Incomunicada por tierra: unos 20 derrumbes en la vía a Cali y 3 fallecidos en los túneles del corredor. La Gobernación del Valle anunció abastecimiento por vía aérea. Deslizamientos, cortes de energía y fallas de comunicación; el aeropuerto opera solo vuelos humanitarios.",
+      "fuentes": [
+        {"url": "https://www.elpais.com.co/cali/terremoto-en-colombia-gobernadora-del-valle-confirma-que-no-hay-paso-en-la-via-entre-cali-y-buenaventura-por-varios-derrumbes-1025.html", "titulo": "El País (Cali)"},
+        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia"}
+      ]
+    },
+    {
+      "municipio": "Quibdó",
+      "departamento": "Chocó",
+      "gravedad": "alta",
+      "lat": 5.695,
+      "lon": -76.661,
+      "afectacion": "La Gobernación del Chocó reporta 14 fallecidos en el departamento, más de un centenar de heridos y 862 viviendas afectadas en la capital (23 colapsadas). Daños en edificios municipales, colegios, centros de salud y la universidad; cortes de energía y telecomunicaciones. El aeropuerto El Caraño ya fue reabierto.",
+      "fuentes": [
+        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia"},
+        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae"}
+      ]
+    },
+    {
+      "municipio": "Manizales",
+      "departamento": "Caldas",
+      "gravedad": "alta",
+      "lat": 5.07,
+      "lon": -75.514,
+      "afectacion": "5 fallecidos y alrededor de un centenar de heridos; unas 4.000 viviendas averiadas, 17 edificaciones destruidas y 19 con colapso parcial. Torre de la Catedral Basílica afectada y daños en la Universidad Nacional sede Manizales y en fachadas del centro histórico. El aeropuerto La Nubia opera con restricciones.",
+      "fuentes": [
+        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae"}
+      ]
+    },
+    {
+      "municipio": "Armenia",
+      "departamento": "Quindío",
+      "gravedad": "alta",
+      "lat": 4.534,
+      "lon": -75.681,
+      "afectacion": "174 personas heridas y 5 edificios colapsados. La torre de control y la pista del aeropuerto El Edén resultaron dañadas; la ministra de Transporte confirmó luego su reapertura. Daños en el acueducto.",
+      "fuentes": [
+        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae"}
+      ]
+    },
+    {
+      "municipio": "Nóvita",
+      "departamento": "Chocó",
+      "gravedad": "alta",
+      "lat": 4.955,
+      "lon": -76.605,
+      "afectacion": "Colapso de las dos cúpulas de su catedral. Allí se localizó la réplica mayor (magnitud 4,8) según el SGC. Zona con caída de comunicaciones y energía.",
+      "fuentes": [
+        {"url": "https://www.eltiempo.com/justicia/investigacion/el-terremoto-golpeo-con-fuerza-a-un-choco-incomunicado-entre-las-victimas-esta-el-hijo-del-alcalde-de-bahia-solano-3577455", "titulo": "El Tiempo"}
+      ]
+    },
+    {
+      "municipio": "Istmina",
+      "departamento": "Chocó",
+      "gravedad": "media",
+      "lat": 5.16,
+      "lon": -76.684,
+      "afectacion": "Grietas y daños en vías y estructuras; el corredor Quibdó–Istmina presenta tránsito dificultado y la vía Istmina–Condoto tiene grietas y deterioro de calzada.",
+      "fuentes": [
+        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia"}
+      ]
+    },
+    {
+      "municipio": "Condoto",
+      "departamento": "Chocó",
+      "gravedad": "media",
+      "lat": 5.091,
+      "lon": -76.65,
+      "afectacion": "La vía Istmina–Condoto presenta grietas y deterioro de calzada tras el sismo.",
+      "fuentes": [
+        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia"}
+      ]
+    },
+    {
+      "municipio": "Sipí",
+      "departamento": "Chocó",
+      "gravedad": "media",
+      "lat": 4.653,
+      "lon": -76.644,
+      "afectacion": "Dentro del área epicentral: allí se han localizado réplicas según el SGC. Comunicaciones precarias.",
+      "fuentes": [
+        {"url": "https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx", "titulo": "SGC"}
+      ]
+    },
+    {
+      "municipio": "Cartago",
+      "departamento": "Valle del Cauca",
+      "gravedad": "media",
+      "lat": 4.746,
+      "lon": -75.912,
+      "afectacion": "El aeropuerto Santa Ana quedó suspendido para vuelos comerciales (solo operaciones médicas, humanitarias y de Estado). Daños en corredores viales del norte del Valle hacia el Eje Cafetero.",
+      "fuentes": [
+        {"url": "https://www.infobae.com/colombia/2026/08/10/temblor-en-colombia-los-aeropuertos-de-pereira-manizales-quibdo-armenia-cartago-y-buenaventura-sufrieron-afectaciones-tras-el-sismo/", "titulo": "Infobae"}
+      ]
+    },
+    {
+      "municipio": "Popayán",
+      "departamento": "Cauca",
+      "gravedad": "media",
+      "lat": 2.445,
+      "lon": -76.615,
+      "afectacion": "Suspensión de energía e interrupciones de servicios públicos; evaluación de daños en curso.",
+      "fuentes": [
+        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae"}
+      ]
+    }
+  ],
+  "vias": [
+    {
+      "texto": "Vía Cali–Buenaventura: sin paso por cerca de 20 derrumbes, con cierre total del tramo Cali–Loboguerrero en el km 55. Buenaventura se abastece por aire mientras avanza la maquinaria.",
+      "fuente_url": "https://www.elpais.com.co/cali/terremoto-en-colombia-gobernadora-del-valle-confirma-que-no-hay-paso-en-la-via-entre-cali-y-buenaventura-por-varios-derrumbes-1025.html"
+    },
+    {
+      "texto": "INVÍAS reporta 13 puntos de la red vial nacional afectados, concentrados en Quindío, Caldas, Valle del Cauca y Risaralda; la UNGRD contabiliza 77 vías afectadas en total.",
+      "fuente_url": "https://www.semana.com/nacion/articulo/trece-carreteras-en-colombia-permanecen-afectadas-por-el-terremoto-segun-invias/202640/"
+    },
+    {
+      "texto": "Chocó: el corredor Quibdó–Istmina está con tránsito dificultado, la vía Istmina–Condoto agrietada y la vía única a San José del Palmar comprometida.",
+      "fuente_url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/"
+    },
+    {
+      "texto": "Aeropuertos: Cali, Quibdó y Armenia ya reabrieron; Pereira, Manizales, Cartago y Buenaventura operan solo vuelos médicos, humanitarios y de Estado. Hay puente aéreo humanitario desde CATAM (Bogotá).",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/suspendidos-vuelos-aereos-en-colombia-por-el-terremoto-estos-son-los-aeropuertos-que-siguen-cerrados-este-martes-11-de-agosto/"
+    }
+  ],
+  "respuesta": [
+    {
+      "texto": "Situación de desastre nacional declarada el 10 de agosto (Ley 1523 de 2012); Puesto de Mando Unificado nacional activado desde la UNGRD, con ministros y equipos desplazados a las zonas.",
+      "fuente_url": "https://www.eltiempo.com/politica/abelardo-de-la-espriella/presidente-abelardo-de-la-espriella-declara-el-desastre-de-caracter-nacional-tras-terremoto-de-magnitud-7-3577333"
+    },
+    {
+      "texto": "Ejército Nacional: 5 pelotones especializados con más de 180 rescatistas desde Bogotá y Tolemaida; más de mil soldados desplegados hacia Cali y puente aéreo de las Fuerzas Militares desde CATAM.",
+      "fuente_url": "https://www.semana.com/nacion/articulo/en-vivo-fuerte-temblor-sacude-a-colombia/202611/"
+    },
+    {
+      "texto": "Defensa Civil Colombiana: 300 operativos de búsqueda y rescate en curso, 5 equipos USAR desplegados y unidades de alojamiento y salud alistadas.",
+      "fuente_url": "https://www.semana.com/nacion/articulo/defensa-civil-mantiene-300-operativos-de-busqueda-y-rescate-tras-el-terremoto-en-colombia/202631/"
+    },
+    {
+      "texto": "Equipos USAR de Bogotá, Envigado, Yopal y Medellín desplegados; 65 rescatistas de Antioquia hacia Pereira y Bomberos Medellín con perros de búsqueda hacia el Chocó.",
+      "fuente_url": "https://es.wikipedia.org/wiki/Terremoto_de_Colombia_de_2026"
+    },
+    {
+      "texto": "35 personas han sido rescatadas con vida según el Reporte Situacional No. 011 de la UNGRD.",
+      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+    },
+    {
+      "texto": "Ayuda internacional: Estados Unidos anunció USD 15,5 millones; Ecuador ofreció un equipo de búsqueda de 47 personas, y más de una docena de países han ofrecido apoyo.",
+      "fuente_url": "https://en.wikipedia.org/wiki/2026_Colombia_earthquake"
+    }
+  ]
+}

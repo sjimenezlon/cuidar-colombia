@@ -1,0 +1,16 @@
+{
+  "items": [
+    {"nombre": "Servicio Geológico Colombiano", "url": "https://www.sgc.gov.co/sismos", "descripcion": "La autoridad sísmica del país: magnitudes, réplicas y reportes oficiales."},
+    {"nombre": "UNGRD", "url": "https://gestiondelriesgo.gov.co", "descripcion": "Unidad Nacional para la Gestión del Riesgo de Desastres: reportes situacionales y coordinación de la respuesta."},
+    {"nombre": "Cruz Roja Colombiana", "url": "https://www.cruzrojacolombiana.org", "descripcion": "Donaciones, sangre y restablecimiento de contactos familiares."},
+    {"nombre": "Defensa Civil Colombiana", "url": "https://www.defensacivil.gov.co", "descripcion": "Operativos de búsqueda y rescate, y voluntariado."},
+    {"nombre": "Bomberos de Colombia", "url": "https://www.bomberos.mininterior.gov.co", "descripcion": "Dirección Nacional de Bomberos: respuesta en campo."},
+    {"nombre": "INVÍAS", "url": "https://www.invias.gov.co", "descripcion": "Estado de las vías nacionales afectadas."},
+    {"nombre": "Aeronáutica Civil", "url": "https://www.aerocivil.gov.co", "descripcion": "Estado de los aeropuertos y restricciones de vuelos."},
+    {"nombre": "Alcaldía de Bogotá", "url": "https://bogota.gov.co", "descripcion": "Puntos de donación oficiales en la capital."},
+    {"nombre": "Gobernación del Valle del Cauca", "url": "https://www.valledelcauca.gov.co", "descripcion": "Campaña «Todos Somos Valle» y estado de la emergencia en el departamento."},
+    {"nombre": "ReliefWeb (OCHA)", "url": "https://reliefweb.int/country/col", "descripcion": "Reportes de situación humanitaria de la ONU sobre Colombia."},
+    {"nombre": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2", "descripcion": "Registro internacional del sismo (contraste técnico)."},
+    {"nombre": "IDCBIS", "url": "https://idcbis.org.co", "descripcion": "Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud: donación de sangre en Bogotá."}
+  ]
+}

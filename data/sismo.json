@@ -1,0 +1,26 @@
+{
+  "magnitud": "7,4",
+  "profundidad_km": "103",
+  "epicentro": {
+    "lat": 4.8436,
+    "lon": -76.2422,
+    "municipio": "San José del Palmar",
+    "departamento": "Chocó"
+  },
+  "fecha_hora_local": "10 de agosto de 2026, 7:34 a. m.",
+  "descripcion": "El 10 de agosto de 2026, a las 7:34 de la mañana, un sismo de magnitud 7,4 con epicentro en San José del Palmar (Chocó) y 103 km de profundidad sacudió el occidente de Colombia: según el Servicio Geológico Colombiano, es el de mayor magnitud registrado en el país en lo que va del siglo. El Gobierno Nacional declaró la situación de desastre nacional ese mismo día. Desde entonces se han registrado decenas de réplicas — la mayor, de magnitud 4,8, localizada en Nóvita (Chocó).",
+  "replicas": [
+    "SGC: 18 réplicas en las primeras horas, magnitudes entre 1,4 y 4,8, localizadas en San José del Palmar, Sipí y Nóvita (Chocó).",
+    "Al cierre del 11 de agosto los medios reportaban cerca de un centenar de réplicas registradas."
+  ],
+  "fuentes": [
+    {
+      "url": "https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx",
+      "titulo": "Servicio Geológico Colombiano"
+    },
+    {
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2",
+      "titulo": "USGS"
+    }
+  ]
+}

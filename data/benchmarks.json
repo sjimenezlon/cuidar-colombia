@@ -1,0 +1,94 @@
+{
+  "items": [
+    {
+      "nombre": "Verificado19S",
+      "pais_desastre": "México · sismo del 19S",
+      "ano": "2017",
+      "que_hacia": "Más de 500 voluntarios verificaron y organizaron la información del sismo de Ciudad de México: un mapa de crisis a las 2 horas del evento, más de 20.000 datos procesados en 10 días y una lista de organizaciones verificadas para donar. Cada reporte se corroboraba con al menos dos personas en sitio antes de publicarse.",
+      "url": "https://verificado19s.org",
+      "estado": "histórica",
+      "leccion": "El modelo de esta plataforma: agregar y verificar sin intermediar — publicar canales verificados en lugar de recibir dinero."
+    },
+    {
+      "nombre": "Afet Haritası",
+      "pais_desastre": "Turquía · terremotos",
+      "ano": "2023",
+      "que_hacia": "Mapa colaborativo construido en horas por miles de desarrolladores voluntarios coordinados en Discord. Usaba inteligencia artificial para convertir los pedidos de auxilio publicados en redes sociales en datos estructurados y georreferenciados para los equipos de rescate. Código abierto.",
+      "url": "https://afetharita.com",
+      "estado": "activa",
+      "leccion": "El mayor valor no es capturar reportes sino estructurarlos: convertir el ruido de las redes en datos limpios que cualquier respondedor pueda usar."
+    },
+    {
+      "nombre": "deprem.io",
+      "pais_desastre": "Turquía · terremotos",
+      "ano": "2023",
+      "que_hacia": "Una app creada por un diseñador en horas, con solo dos botones: «pido ayuda» y «ofrezco ayuda», y formularios mínimos. Generó 480.000 consultas de mapa en sus primeras 10 horas.",
+      "url": null,
+      "estado": "histórica",
+      "leccion": "En plena crisis la fricción mata: dos botones y campos mínimos superan a cualquier formulario exhaustivo."
+    },
+    {
+      "nombre": "ReliefWeb (OCHA)",
+      "pais_desastre": "Global · ONU",
+      "ano": "desde 1996",
+      "que_hacia": "El mayor agregador de información humanitaria del mundo: cura reportes de situación, mapas y evaluaciones de más de 2.000 fuentes. Ya publicó su primer informe sobre el terremoto de Colombia, con afectaciones en 16 departamentos.",
+      "url": "https://reliefweb.int",
+      "estado": "activa",
+      "leccion": "La agregación pura — sin operar en terreno ni manejar dinero — es en sí misma un servicio humanitario legítimo, si hay curaduría y atribución clara de cada fuente."
+    },
+    {
+      "nombre": "GlobalGiving",
+      "pais_desastre": "Global · fondos de emergencia",
+      "ano": "desde 2004",
+      "que_hacia": "Canaliza donaciones hacia organizaciones locales previamente verificadas en más de 175 países. Abrió un fondo específico para el terremoto de Colombia con dos fases: emergencia inmediata y recuperación de largo plazo liderada por organizaciones comunitarias.",
+      "url": "https://www.globalgiving.org/projects/colombia-earthquake-relief-fund/",
+      "estado": "activa",
+      "leccion": "La verificación previa de organizaciones locales es lo que permite reaccionar en horas con legitimidad."
+    },
+    {
+      "nombre": "Humanitarian OpenStreetMap",
+      "pais_desastre": "Haití 2010 · Nepal 2015",
+      "ano": "desde 2010",
+      "que_hacia": "Mapeo colaborativo rápido tras el desastre: en Nepal, más de 3.400 voluntarios remotos hicieron 4,5 millones de ediciones de mapa en 5 días para la logística humanitaria. Sus mapas los usan los equipos de búsqueda y rescate.",
+      "url": "https://www.hotosm.org",
+      "estado": "activa",
+      "leccion": "Miles de voluntarios remotos, con micro-tareas y validación, se convierten en capacidad útil en horas; los datos abiertos hacen que un esfuerzo sirva a todos a la vez."
+    },
+    {
+      "nombre": "Ushahidi",
+      "pais_desastre": "Kenia 2008 · Haití 2010",
+      "ano": "desde 2008",
+      "que_hacia": "Plataforma de código abierto para recolectar, verificar y mapear reportes ciudadanos por SMS, correo, redes y formularios, usada en 159 países. «Ushahidi» significa «testimonio» en suajili.",
+      "url": "https://www.ushahidi.com",
+      "estado": "activa",
+      "leccion": "El reporte multicanal maximiza cobertura, pero el reporte crudo no sirve sin una capa explícita de verificación antes de publicarlo en el mapa."
+    },
+    {
+      "nombre": "Google SOS Alerts",
+      "pais_desastre": "Global",
+      "ano": "desde 2017",
+      "que_hacia": "Cuando hay una crisis activa, destaca información autorizada — fuentes oficiales, mapas, teléfonos de emergencia — en la parte superior del buscador y de Google Maps para quien consulta desde la zona.",
+      "url": "https://support.google.com/sosalerts/",
+      "estado": "activa",
+      "leccion": "Llevar la información verificada adonde la gente ya está buscando, con jerarquía explícita de fuentes autorizadas."
+    },
+    {
+      "nombre": "Google Person Finder",
+      "pais_desastre": "Haití 2010 · Japón 2011 · Nepal 2015",
+      "ano": "2010–2019",
+      "que_hacia": "Registro abierto de personas desaparecidas y localizadas que Google activaba desastre por desastre, con un estándar abierto de datos. Al cerrar cada emergencia, borraba los datos personales por privacidad.",
+      "url": "https://support.google.com/personfinder/",
+      "estado": "histórica",
+      "leccion": "Los datos de crisis deben tener fecha de caducidad: borrar la información personal al cerrar la emergencia protege a las personas."
+    },
+    {
+      "nombre": "Ahbap",
+      "pais_desastre": "Turquía · terremotos",
+      "ano": "2023",
+      "que_hacia": "Canal cívico de donaciones que recaudó unos USD 150 millones tras los terremotos de 2023 y ejecutó ayuda más rápido que muchos canales estatales. En 2026, su fundador fue detenido y la asociación intervenida por presunto desvío de donaciones, en un caso políticamente disputado.",
+      "url": null,
+      "estado": "histórica",
+      "leccion": "La confianza sin gobernanza ni auditoría es frágil. Una plataforma que agrega información sin tocar dinero evita ese riesgo por diseño — por eso Cuidar a Colombia no recauda."
+    }
+  ]
+}
