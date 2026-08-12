@@ -20,6 +20,8 @@
 </head>
 <body>
 
+<a class="salto-contenido" href="#inicio">Saltar al contenido</a>
+
 <header class="topbar" id="topbar">
   <a class="marca" href="#inicio">
     <svg class="marca-icono" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28s-11-7.2-11-15A6.5 6.5 0 0 1 16 8.6 6.5 6.5 0 0 1 27 13c0 7.8-11 15-11 15z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M8 17h4l2-4 3 7 2.5-5H24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -29,13 +31,15 @@
     <a href="#que-paso">Qué pasó</a>
     <a href="#mapa-seccion">Mapa</a>
     <a href="#como-ayudar">Cómo ayudar</a>
+    <a href="#verifica">Verifica</a>
     <a href="#donar-bien">Donar bien</a>
     <a href="#zonas">Zonas afectadas</a>
     <a href="#mundo">Referentes</a>
     <a href="#fuentes">Fuentes</a>
   </nav>
   <a class="boton boton-primario topbar-cta" href="#donar-dinero">Donar por canales oficiales</a>
-  <button class="menu-movil" id="menu-movil" aria-label="Abrir menú">☰</button>
+  <button class="menu-movil" id="menu-movil" type="button" aria-label="Abrir menú"
+    aria-controls="navegacion" aria-expanded="false">☰</button>
 </header>
 
 <main id="inicio">
@@ -47,6 +51,7 @@
         <span class="punto-vivo" aria-hidden="true"></span>
         Información verificada · última actualización <strong id="fecha-actualizacion">—</strong>
       </p>
+      <div class="aviso-vigencia" id="aviso-vigencia" role="status" aria-live="polite" hidden></div>
       <h1>Una sola página, verificada,<br>para ayudar a Colombia.</h1>
       <p class="hero-sub">
         Tras el terremoto del 10 de agosto de 2026, esta plataforma reúne y verifica la información
@@ -80,6 +85,11 @@
     <div class="contenedor banner-contenido" id="lineas-emergencia"><!-- JS --></div>
   </div>
 
+  <div class="franja-verifica">
+    <div class="contenedor">🛑 ¿Te llegó una cadena de WhatsApp sobre el terremoto?
+    <a href="#verifica">Verifícala aquí antes de reenviarla →</a></div>
+  </div>
+
   <!-- ============ QUÉ PASÓ ============ -->
   <section class="seccion" id="que-paso">
     <div class="contenedor">
@@ -96,22 +106,27 @@
     <div class="contenedor">
       <p class="antetitulo">Mapa interactivo</p>
       <h2>Dónde golpeó más fuerte</h2>
-      <p class="seccion-intro">Municipios con afectación reportada por fuentes oficiales y prensa nacional.
-      Toca un municipio para ver el detalle y su fuente. La gravedad es relativa, según los reportes disponibles.</p>
+      <p class="seccion-intro">Municipios con afectación reportada por fuentes oficiales y prensa nacional,
+      y los puntos exactos donde puedes ayudar. Toca cualquier elemento para ver el detalle y su fuente.</p>
+      <div class="mapa-filtros" id="mapa-filtros" aria-label="Filtros del mapa"><!-- JS --></div>
     </div>
     <div class="mapa-envoltura">
-      <div id="mapa" style="position:absolute; inset:0;"></div>
+      <div id="mapa" role="application" aria-label="Mapa de afectación y puntos de ayuda"
+        style="position:absolute; inset:0;"></div>
+      <div class="mapa-estado" id="mapa-estado" role="status" aria-live="polite">Preparando el mapa…</div>
       <div class="mapa-leyenda" id="mapa-leyenda">
         <strong>Gravedad reportada</strong>
         <span class="leyenda-item"><i style="background:#7A1815"></i> Crítica</span>
         <span class="leyenda-item"><i style="background:#D25B33"></i> Alta</span>
         <span class="leyenda-item"><i style="background:#F2B279; outline:1px solid #b98c5a"></i> Media</span>
         <span class="leyenda-item"><i class="leyenda-epicentro"></i> Epicentro</span>
-        <span class="leyenda-item"><i class="leyenda-acopio"></i> Ciudad con acopios</span>
+        <span class="leyenda-item"><i class="leyenda-acopio"></i> Punto de acopio</span>
+        <span class="leyenda-item"><i style="background:#C62828; border-radius:50%; width:11px; height:11px;"></i> Donación de sangre</span>
       </div>
     </div>
     <div class="contenedor">
       <p class="nota-corte">El mapa se dibuja con los reportes disponibles al último corte; un municipio sin color no significa ausencia de daño, sino ausencia de reporte verificado.</p>
+      <div class="mapa-resultados" id="mapa-resultados" aria-live="polite"><!-- JS: alternativa accesible y resultados filtrados --></div>
     </div>
   </section>
 
@@ -127,10 +142,11 @@
         <p class="bloque-intro">El dinero llega más rápido que los objetos, no satura las vías y permite comprar
         exactamente lo que se necesita en cada zona. Estos canales fueron verificados en los sitios oficiales
         de cada entidad — el botón lleva directo a la página oficial, nunca a un intermediario.</p>
+        <div class="filtros-canales" id="filtros-canales" aria-label="Filtros de canales de donación"><!-- JS --></div>
         <div class="tarjetas-canales" id="canales-financieros"><!-- JS --></div>
-        <p class="nota-verificacion">✅ <strong>Verificado</strong> significa: leímos el canal en el dominio oficial de la entidad
-        (o en un medio nacional citando el anuncio oficial) en la fecha indicada. Aún así, confirma siempre en la página
-        de destino antes de transferir.</p>
+        <p class="nota-verificacion">✅ <strong>Fuente oficial</strong> significa que el canal se comprobó en el dominio
+        de la propia entidad. <strong>Confirmación secundaria</strong> significa que un medio nacional publicó el anuncio,
+        pero aún debes contrastarlo en la entidad antes de transferir.</p>
       </div>
 
       <!-- Acopios -->
@@ -160,8 +176,24 @@
     </div>
   </section>
 
+  <!-- ============ ANTES DE REENVIAR, VERIFICA ============ -->
+  <section class="seccion" id="verifica">
+    <div class="contenedor">
+      <p class="antetitulo">Contra la desinformación</p>
+      <h2>Antes de reenviar, verifica</h2>
+      <p class="seccion-intro">Tras un desastre, las cadenas falsas corren más rápido que la ayuda: réplicas
+      «programadas», enlaces con virus y cuentas inventadas. Aquí puedes revisar afirmaciones frecuentes,
+      qué sabemos realmente y a dónde acudir ante cualquier duda.</p>
+      <div id="cadenas-lista"><!-- JS --></div>
+      <h3>🧭 Ante la duda, la fuente oficial</h3>
+      <p class="seccion-intro" style="margin-bottom:10px">Guarda estos canales: son los únicos lugares donde verificar sismos, ayudas y donaciones.</p>
+      <div class="tarjetas-remision" id="remision-lista"><!-- JS --></div>
+      <div id="consejos-cadenas"><!-- JS --></div>
+    </div>
+  </section>
+
   <!-- ============ DONAR BIEN (PEDAGOGÍA) ============ -->
-  <section class="seccion" id="donar-bien">
+  <section class="seccion seccion-crema" id="donar-bien">
     <div class="contenedor">
       <p class="antetitulo">Pedagogía de la donación</p>
       <h2>Donar bien también se aprende</h2>
@@ -182,7 +214,7 @@
   </section>
 
   <!-- ============ ZONAS MÁS AFECTADAS ============ -->
-  <section class="seccion seccion-crema" id="zonas">
+  <section class="seccion" id="zonas">
     <div class="contenedor">
       <p class="antetitulo">Capítulo especial</p>
       <h2>Las zonas que más lo necesitan</h2>
@@ -200,7 +232,7 @@
   </section>
 
   <!-- ============ BENCHMARKING ============ -->
-  <section class="seccion" id="mundo">
+  <section class="seccion seccion-crema" id="mundo">
     <div class="contenedor">
       <p class="antetitulo">Referentes</p>
       <h2>Lo que el mundo nos enseñó</h2>
@@ -211,7 +243,7 @@
   </section>
 
   <!-- ============ FUENTES ============ -->
-  <section class="seccion seccion-crema" id="fuentes">
+  <section class="seccion" id="fuentes">
     <div class="contenedor">
       <p class="antetitulo">Transparencia</p>
       <h2>Fuentes oficiales</h2>
@@ -251,5 +283,6 @@
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="assets/app.js"></script>
+<noscript><div class="sin-js">Esta plataforma necesita JavaScript para cargar los datos interactivos. Las líneas de emergencia nacionales son 123, 132, 144 y 111.</div></noscript>
 </body>
 </html>

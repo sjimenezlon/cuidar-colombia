@@ -1,0 +1,236 @@
+{
+ "puntos": [
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Universidad Jorge Tadeo Lozano",
+   "direccion": "Carrera 4 #22-61",
+   "lat": 4.60708,
+   "lon": -74.06755
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Centro Comercial Unicentro",
+   "direccion": "Carrera 15 #124-30",
+   "lat": 4.70216,
+   "lon": -74.04128
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Estadio El Campín",
+   "direccion": "Av. NQS entre calles 53B Bis y 57",
+   "lat": 4.64595,
+   "lon": -74.07761
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bogotá",
+   "nombre": "Cruz Roja — sede administrativa",
+   "direccion": "Carrera 24 #73-38",
+   "lat": 4.61809,
+   "lon": -74.0813
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Medellín",
+   "nombre": "Banco Arquidiocesano de Alimentos",
+   "direccion": "Carrera 52 #30A-97",
+   "lat": 6.25015,
+   "lon": -75.56962
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Medellín",
+   "nombre": "Fundación Saciar",
+   "direccion": "Carrera 50 #25-261",
+   "lat": 6.22936,
+   "lon": -75.5765
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Medellín",
+   "nombre": "Alcaldía de Medellín",
+   "direccion": "Hall principal",
+   "lat": 6.2447,
+   "lon": -75.57378
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Medellín",
+   "nombre": "Terminal del Norte",
+   "direccion": "Local 9840",
+   "lat": 6.27924,
+   "lon": -75.57076
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Medellín",
+   "nombre": "Universidad EAFIT",
+   "direccion": "Placa cubierta",
+   "lat": 6.2002,
+   "lon": -75.57849
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Cali",
+   "nombre": "Plazoleta Jairo Varela",
+   "direccion": null,
+   "lat": 3.45502,
+   "lon": -76.5348
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Cali",
+   "nombre": "Unidad Deportiva Alberto Galindo",
+   "direccion": "Ciudadela Petronio",
+   "lat": 3.41308,
+   "lon": -76.55142
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Cali",
+   "nombre": "Banco de Alimentos de Cali",
+   "direccion": "Calle 24 #6-103",
+   "lat": 3.43197,
+   "lon": -76.51997
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Manizales",
+   "nombre": "Coliseo Menor de Manizales",
+   "direccion": null,
+   "lat": 5.05596,
+   "lon": -75.48862
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Quibdó",
+   "nombre": "Acopio Los Ángeles — San Gabriel",
+   "direccion": "Calle 27A #23-44",
+   "lat": 5.68873,
+   "lon": -76.64391
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Barranquilla",
+   "nombre": "Centro de acopio Barranquillita",
+   "direccion": "Carrera 43 #6-120",
+   "lat": 10.98648,
+   "lon": -74.7977
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bucaramanga",
+   "nombre": "Alcaldía de Bucaramanga",
+   "direccion": "Primer piso",
+   "lat": 7.11772,
+   "lon": -73.13004
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bucaramanga",
+   "nombre": "Lotería de Santander",
+   "direccion": "Calle 36 con carrera 21",
+   "lat": 7.0914,
+   "lon": -73.11524
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Bucaramanga",
+   "nombre": "Banco de Alimentos",
+   "direccion": "Carrera 20 #11-46, San Francisco",
+   "lat": 7.08217,
+   "lon": -73.1176
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Cartagena",
+   "nombre": "Coliseo Bernardo Caraballo",
+   "direccion": null,
+   "lat": 10.42524,
+   "lon": -75.53668
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Ibagué",
+   "nombre": "Centro Comercial Multicentro",
+   "direccion": null,
+   "lat": 4.43632,
+   "lon": -75.20157
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Santa Marta",
+   "nombre": "Sede Ogricc — El Cundí",
+   "direccion": "Calle 16 #14A-08",
+   "lat": 11.18855,
+   "lon": -74.21965
+  },
+  {
+   "tipo": "acopio",
+   "ciudad": "Montería",
+   "nombre": "Coliseo Miguel Happy Lora",
+   "direccion": null,
+   "lat": 8.74725,
+   "lon": -75.88165
+  },
+  {
+   "tipo": "sangre",
+   "ciudad": "Bogotá",
+   "nombre": "IDCBIS — Banco Distrital de Sangre",
+   "direccion": "Carrera 32 #12-81",
+   "lat": 4.62925,
+   "lon": -74.0812
+  },
+  {
+   "tipo": "sangre",
+   "ciudad": "Medellín",
+   "nombre": "Cruz Roja — donación de sangre",
+   "direccion": "Carrera 52 #25-310",
+   "lat": 6.25015,
+   "lon": -75.56962
+  },
+  {
+   "tipo": "sangre",
+   "ciudad": "Cali",
+   "nombre": "Banco Regional Cruz Roja",
+   "direccion": "Cra. 38 Bis #5-91, San Fernando",
+   "lat": 3.42359,
+   "lon": -76.54364
+  },
+  {
+   "tipo": "sangre",
+   "ciudad": "Cali",
+   "nombre": "Hospital Universitario del Valle",
+   "direccion": "Calle 5 #36-08",
+   "lat": 3.43018,
+   "lon": -76.54544
+  },
+  {
+   "tipo": "sangre",
+   "ciudad": "Cali",
+   "nombre": "Fundación Valle del Lili",
+   "direccion": "Torre 2, piso 4",
+   "lat": 3.35024,
+   "lon": -76.51512
+  },
+  {
+   "tipo": "sangre",
+   "ciudad": "Manizales",
+   "nombre": "Jornada Palogrande (Cruz Roja)",
+   "direccion": "Cancha auxiliar de Palogrande",
+   "lat": 5.05701,
+   "lon": -75.49069
+  },
+  {
+   "tipo": "sangre",
+   "ciudad": "Villavicencio",
+   "nombre": "Cruz Roja — donación de sangre",
+   "direccion": "Carrera 30 #39-30",
+   "lat": 4.11775,
+   "lon": -73.62637
+  }
+ ]
+}

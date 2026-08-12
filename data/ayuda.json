@@ -5,20 +5,36 @@
       "campana": "#TodosPorColombia",
       "como_donar": "Campaña oficial por el terremoto: donación en línea con tarjeta o PSE en la plataforma de la Cruz Roja. Es el organismo de socorro con mayor despliegue en la emergencia.",
       "url_oficial": "https://ayuda.cruzrojacolombiana.org/emergencia-colombia-terremoto",
-      "detalle_cuenta": null,
+      "detalle_cuenta": "Cuenta corriente Davivienda 0560455069996490 y Daviplata (publicados en el comunicado oficial de cruzrojacolombiana.org)",
       "cobertura": "Nacional",
       "verificado_en": "cruzrojacolombiana.org",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://ayuda.cruzrojacolombiana.org/emergencia-colombia-terremoto"
+      },
+      "grupo": "Gobierno y socorro",
+      "nivel": "oficial"
     },
     {
       "entidad": "«Colombia, un solo corazón» — Gobierno Nacional",
       "campana": "Campaña oficial de la Presidencia",
-      "como_donar": "Campaña anunciada desde el Puesto de Mando Unificado de la UNGRD. Recibe aportes económicos a través de tres entidades designadas (Fundación Colombia Luz y Sonrisas, Minuto de Dios y ABACO) y ayudas físicas en el acopio nacional del pabellón Vive Claro, en Bogotá, hasta el 31 de agosto.",
+      "como_donar": "Campaña anunciada por la Presidencia desde el PMU de la UNGRD. Recibe aportes por tres entidades designadas (Fundación Colombia Luz y Sonrisas, Minuto de Dios y ABACO) — las cuentas están en el anuncio oficial enlazado, cotejado dígito a dígito en dos medios nacionales; aún no aparecen en ningún dominio .gov.co, por eso aquí no las transcribimos. Las ayudas físicas se reciben en el acopio nacional del pabellón Vive Claro (Bogotá) hasta el 31 de agosto.",
       "url_oficial": "https://www.semana.com/confidenciales/articulo/asi-puede-donar-a-la-campana-colombia-un-solo-corazon-para-colaborar-con-las-victimas-del-terremoto-en-colombia/202627/",
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "prensa nacional citando el anuncio oficial",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "12 ago 2026",
+      "verificacion": {
+        "estado": "confirmacion_secundaria",
+        "nivel": "fuente_secundaria",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://www.semana.com/confidenciales/articulo/asi-puede-donar-a-la-campana-colombia-un-solo-corazon-para-colaborar-con-las-victimas-del-terremoto-en-colombia/202627/"
+      },
+      "grupo": "Gobierno y socorro",
+      "nivel": "prensa"
     },
     {
       "entidad": "ABACO — Bancos de Alimentos de Colombia",
@@ -28,7 +44,15 @@
       "detalle_cuenta": "Llave Bre-B: 0090989753 · NIT 900326456-1 (vistos en el dominio oficial de ABACO)",
       "cobertura": "Nacional",
       "verificado_en": "abaco.org.co",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://abaco.org.co/donar/"
+      },
+      "grupo": "ONGs y fundaciones",
+      "nivel": "oficial"
     },
     {
       "entidad": "UNICEF Colombia",
@@ -38,7 +62,15 @@
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "unicef.org.co",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://unicef.org.co/terremoto-colombia"
+      },
+      "grupo": "ONGs y fundaciones",
+      "nivel": "oficial"
     },
     {
       "entidad": "Fundación PLAN",
@@ -48,7 +80,15 @@
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "plan.org.co",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://plan.org.co/quiero-ayudar/terremoto-en-colombia/"
+      },
+      "grupo": "ONGs y fundaciones",
+      "nivel": "oficial"
     },
     {
       "entidad": "Corporación Presentes",
@@ -58,7 +98,15 @@
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "presentes.co",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://presentes.co/dona"
+      },
+      "grupo": "ONGs y fundaciones",
+      "nivel": "oficial"
     },
     {
       "entidad": "Fundación Bancolombia",
@@ -68,7 +116,15 @@
       "detalle_cuenta": "Cuenta de ahorros Bancolombia 24542391932 (según el anuncio oficial del banco citado por Portafolio — confirma en la app antes de transferir)",
       "cobertura": "Nacional",
       "verificado_en": "portafolio.co citando el comunicado oficial",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "confirmacion_secundaria",
+        "nivel": "fuente_secundaria",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://www.portafolio.co/negocios/empresas/bancolombia-habilita-cuenta-para-canalizar-donaciones-dirigidas-a-afectados-por-terremoto-en-colombia-500114"
+      },
+      "grupo": "Bancos",
+      "nivel": "prensa"
     },
     {
       "entidad": "Banco de Alimentos de Bogotá",
@@ -78,7 +134,15 @@
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "eltiempo.com citando la campaña",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "confirmacion_secundaria",
+        "nivel": "fuente_secundaria",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631"
+      },
+      "grupo": "ONGs y fundaciones",
+      "nivel": "prensa"
     },
     {
       "entidad": "Give To Colombia",
@@ -88,7 +152,15 @@
       "detalle_cuenta": null,
       "cobertura": "Desde el exterior",
       "verificado_en": "givetocolombia.org",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://givetocolombia.org/colombia-selevanta/"
+      },
+      "grupo": "Desde el exterior",
+      "nivel": "oficial"
     },
     {
       "entidad": "GlobalGiving",
@@ -98,7 +170,15 @@
       "detalle_cuenta": null,
       "cobertura": "Desde el exterior",
       "verificado_en": "globalgiving.org",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://www.globalgiving.org/projects/colombia-earthquake-relief-fund/"
+      },
+      "grupo": "Desde el exterior",
+      "nivel": "oficial"
     },
     {
       "entidad": "GoFundMe — hub oficial de crisis",
@@ -108,7 +188,159 @@
       "detalle_cuenta": null,
       "cobertura": "Desde el exterior",
       "verificado_en": "gofundme.com",
-      "fecha_verificacion": "11 ago 2026"
+      "fecha_verificacion": "11 ago 2026",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-11",
+        "evidencia_url": "https://www.gofundme.com/c/act/colombia-earthquake-relief"
+      },
+      "grupo": "Desde el exterior",
+      "nivel": "oficial"
+    },
+    {
+      "entidad": "Grupo Aval — cajeros y app dale!",
+      "campana": "Donación a la Cruz Roja",
+      "como_donar": "Más de 2.700 cajeros de Banco de Bogotá, Occidente, Popular y AV Villas reciben donaciones de clientes de cualquier banco, y la billetera dale! tiene botón de donación directa a la Cruz Roja.",
+      "url_oficial": "https://www.eltiempo.com/economia/sector-financiero/grupo-aval-habilita-mas-de-2-700-cajeros-y-la-app-dale-para-donar-a-la-cruz-roja-tras-el-terremoto-en-colombia-3577471",
+      "detalle_cuenta": null,
+      "cobertura": "Nacional",
+      "verificado_en": "El Tiempo y Portafolio citando el anuncio",
+      "fecha_verificacion": "12 ago 2026",
+      "grupo": "Bancos",
+      "nivel": "prensa",
+      "verificacion": {
+        "estado": "confirmacion_secundaria",
+        "nivel": "fuente_secundaria",
+        "fecha_iso": "2026-08-12",
+        "evidencia_url": "https://www.eltiempo.com/economia/sector-financiero/grupo-aval-habilita-mas-de-2-700-cajeros-y-la-app-dale-para-donar-a-la-cruz-roja-tras-el-terremoto-en-colombia-3577471"
+      }
+    },
+    {
+      "entidad": "Minuto de Dios",
+      "campana": "Emergencias y desastres",
+      "como_donar": "Una de las tres entidades designadas por la campaña oficial del Gobierno. Su canal permanente de emergencias recibe donaciones por PSE en su portal.",
+      "url_oficial": "https://minutodedios.org/emergencias",
+      "detalle_cuenta": "Davivienda ahorros 0040 0016 0590 · NIT 860.010.371-0 (canal general de emergencias, visto en minutodedios.org)",
+      "cobertura": "Nacional",
+      "verificado_en": "minutodedios.org",
+      "fecha_verificacion": "12 ago 2026",
+      "grupo": "ONGs y fundaciones",
+      "nivel": "oficial",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-12",
+        "evidencia_url": "https://minutodedios.org/emergencias"
+      }
+    },
+    {
+      "entidad": "Acción contra el Hambre",
+      "campana": "Emergencia: terremoto en Colombia",
+      "como_donar": "Con 15 profesionales desplegados en Chocó e integrada al Puesto de Mando Unificado. Donación en su portal oficial.",
+      "url_oficial": "https://accioncontraelhambre.co/",
+      "detalle_cuenta": null,
+      "cobertura": "Nacional",
+      "verificado_en": "accioncontraelhambre.co",
+      "fecha_verificacion": "12 ago 2026",
+      "grupo": "ONGs y fundaciones",
+      "nivel": "oficial",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-12",
+        "evidencia_url": "https://accioncontraelhambre.co/"
+      }
+    },
+    {
+      "entidad": "Pastoral Social — Cáritas Barranquilla",
+      "campana": "Ayuda a damnificados por el sismo",
+      "como_donar": "La Arquidiócesis de Barranquilla recauda para los damnificados y canaliza donaciones en especie a los bancos de alimentos de las zonas afectadas.",
+      "url_oficial": "https://www.elheraldo.co/sociedad/2026/08/11/arquidiocesis-de-barranquilla-activa-ayuda-para-damnificados-por-el-sismo/",
+      "detalle_cuenta": null,
+      "cobertura": "Atlántico",
+      "verificado_en": "El Heraldo citando el anuncio",
+      "fecha_verificacion": "12 ago 2026",
+      "grupo": "ONGs y fundaciones",
+      "nivel": "prensa",
+      "verificacion": {
+        "estado": "confirmacion_secundaria",
+        "nivel": "fuente_secundaria",
+        "fecha_iso": "2026-08-12",
+        "evidencia_url": "https://www.elheraldo.co/sociedad/2026/08/11/arquidiocesis-de-barranquilla-activa-ayuda-para-damnificados-por-el-sismo/"
+      }
+    },
+    {
+      "entidad": "IFRC — Federación Internacional de la Cruz Roja",
+      "campana": "Emergency Appeal · Colombia",
+      "como_donar": "El Movimiento de la Cruz Roja lanzó un llamamiento por 11,7 millones de francos suizos para la respuesta al terremoto. Donación internacional en el portal de la IFRC.",
+      "url_oficial": "https://www.ifrc.org/donate",
+      "detalle_cuenta": null,
+      "cobertura": "Desde el exterior",
+      "verificado_en": "ReliefWeb (OCHA)",
+      "fecha_verificacion": "12 ago 2026",
+      "grupo": "Desde el exterior",
+      "nivel": "prensa",
+      "verificacion": {
+        "estado": "confirmacion_secundaria",
+        "nivel": "fuente_secundaria",
+        "fecha_iso": "2026-08-12",
+        "evidencia_url": "https://reliefweb.int/report/colombia/earthquake-colombia-red-cross-and-red-crescent-movement-appeals-117-million-swiss"
+      }
+    },
+    {
+      "entidad": "British Red Cross",
+      "campana": "Disaster Fund",
+      "como_donar": "La Cruz Roja Británica destina su fondo de desastres a la respuesta del terremoto de Colombia. Donación en libras desde el Reino Unido.",
+      "url_oficial": "https://www.redcross.org.uk/stories/disasters-and-emergencies/world/what-is-happening-in-colombia",
+      "detalle_cuenta": null,
+      "cobertura": "Desde el exterior",
+      "verificado_en": "redcross.org.uk",
+      "fecha_verificacion": "12 ago 2026",
+      "grupo": "Desde el exterior",
+      "nivel": "oficial",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-12",
+        "evidencia_url": "https://www.redcross.org.uk/stories/disasters-and-emergencies/world/what-is-happening-in-colombia"
+      }
+    },
+    {
+      "entidad": "UNICEF UK",
+      "campana": "Colombia Earthquake Appeal",
+      "como_donar": "Campaña específica por el terremoto para donantes en el Reino Unido: en línea, por PayPal o por teléfono.",
+      "url_oficial": "https://www.unicef.org.uk/donate/colombia-and-worldwide-appeal/",
+      "detalle_cuenta": null,
+      "cobertura": "Desde el exterior",
+      "verificado_en": "unicef.org.uk",
+      "fecha_verificacion": "12 ago 2026",
+      "grupo": "Desde el exterior",
+      "nivel": "oficial",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-12",
+        "evidencia_url": "https://www.unicef.org.uk/donate/colombia-and-worldwide-appeal/"
+      }
+    },
+    {
+      "entidad": "Save the Children España",
+      "campana": "Terremoto en Colombia 2026",
+      "como_donar": "Fondo de Emergencias para la Infancia; desde España también por Bizum con el código 13132 (concepto «Terremoto Colombia»).",
+      "url_oficial": "https://www.savethechildren.es/donacion-ong/terremoto-en-colombia-2026",
+      "detalle_cuenta": null,
+      "cobertura": "Desde el exterior",
+      "verificado_en": "Europa Press citando la campaña",
+      "fecha_verificacion": "12 ago 2026",
+      "grupo": "Desde el exterior",
+      "nivel": "prensa",
+      "verificacion": {
+        "estado": "confirmacion_secundaria",
+        "nivel": "fuente_secundaria",
+        "fecha_iso": "2026-08-12",
+        "evidencia_url": "https://www.diariosigloxxi.com/texto-ep/mostrar/20260811145651/ong-activan-respuesta-humanitaria-terremoto-colombia-alertan-riesgo-extremo-infancia"
+      }
     }
   ],
   "acopios": [
@@ -116,15 +348,49 @@
       "ciudad": "Bogotá",
       "entidad": "Alcaldía de Bogotá y Cruz Roja",
       "puntos": [
-        {"nombre": "Universidad Jorge Tadeo Lozano", "direccion": "Carrera 4 #22-61", "horario": "8:00 a. m.–9:00 p. m."},
-        {"nombre": "Punto Usaquén", "direccion": "Calle 161A #7F-55", "horario": "8:00 a. m.–9:00 p. m."},
-        {"nombre": "Centro Comercial Unicentro", "direccion": "Carrera 15 #124-30", "horario": "8:00 a. m.–9:00 p. m."},
-        {"nombre": "Estadio El Campín", "direccion": "Av. NQS entre calles 53B Bis y 57", "horario": "8:00 a. m.–9:00 p. m."},
-        {"nombre": "Cruz Roja — sede administrativa", "direccion": "Carrera 24 #73-38", "horario": "24 horas"},
-        {"nombre": "Pabellón Vive Claro — acopio nacional del Gobierno", "direccion": null, "horario": "hasta el 31 de agosto"}
+        {
+          "nombre": "Universidad Jorge Tadeo Lozano",
+          "direccion": "Carrera 4 #22-61",
+          "horario": "8:00 a. m.–9:00 p. m."
+        },
+        {
+          "nombre": "Punto Usaquén",
+          "direccion": "Calle 161A #7F-55",
+          "horario": "8:00 a. m.–9:00 p. m."
+        },
+        {
+          "nombre": "Centro Comercial Unicentro",
+          "direccion": "Carrera 15 #124-30",
+          "horario": "8:00 a. m.–9:00 p. m."
+        },
+        {
+          "nombre": "Estadio El Campín",
+          "direccion": "Av. NQS entre calles 53B Bis y 57",
+          "horario": "8:00 a. m.–9:00 p. m."
+        },
+        {
+          "nombre": "Cruz Roja — sede administrativa",
+          "direccion": "Carrera 24 #73-38",
+          "horario": "24 horas"
+        },
+        {
+          "nombre": "Pabellón Vive Claro — acopio nacional del Gobierno",
+          "direccion": null,
+          "horario": "hasta el 31 de agosto"
+        }
       ],
-      "que_donar": ["agua embotellada", "alimentos no perecederos", "cobijas y colchonetas", "kits de aseo", "pañales", "primeros auxilios"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "agua embotellada",
+        "alimentos no perecederos",
+        "cobijas y colchonetas",
+        "kits de aseo",
+        "pañales",
+        "primeros auxilios"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "bogota.gov.co",
       "fuente_url": "https://bogota.gov.co/mi-ciudad/seguridad/puntos-de-donacion-en-bogota-para-damnificados-terremoto-en-colombia",
       "fecha": "10 ago 2026"
@@ -133,15 +399,49 @@
       "ciudad": "Medellín",
       "entidad": "Alcaldía de Medellín y bancos de alimentos",
       "puntos": [
-        {"nombre": "Banco Arquidiocesano de Alimentos", "direccion": "Carrera 52 #30A-97", "horario": null},
-        {"nombre": "Fundación Saciar", "direccion": "Carrera 50 #25-261", "horario": null},
-        {"nombre": "Hall de la Alcaldía de Medellín", "direccion": null, "horario": null},
-        {"nombre": "Terminal del Norte", "direccion": "Local 9840", "horario": null},
-        {"nombre": "Universidad EAFIT (placa cubierta)", "direccion": null, "horario": null},
-        {"nombre": "Parques Biblioteca Belén, San Javier, G. García Márquez y León de Greiff", "direccion": null, "horario": null}
+        {
+          "nombre": "Banco Arquidiocesano de Alimentos",
+          "direccion": "Carrera 52 #30A-97",
+          "horario": null
+        },
+        {
+          "nombre": "Fundación Saciar",
+          "direccion": "Carrera 50 #25-261",
+          "horario": null
+        },
+        {
+          "nombre": "Hall de la Alcaldía de Medellín",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Terminal del Norte",
+          "direccion": "Local 9840",
+          "horario": null
+        },
+        {
+          "nombre": "Universidad EAFIT (placa cubierta)",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Parques Biblioteca Belén, San Javier, G. García Márquez y León de Greiff",
+          "direccion": null,
+          "horario": null
+        }
       ],
-      "que_donar": ["agua", "arroz, aceite, pastas, enlatados", "panela, chocolate, avena, leche", "alimentos listos para consumir"],
-      "que_no_donar": ["medicamentos", "ropa", "productos vencidos", "perecederos"],
+      "que_donar": [
+        "agua",
+        "arroz, aceite, pastas, enlatados",
+        "panela, chocolate, avena, leche",
+        "alimentos listos para consumir"
+      ],
+      "que_no_donar": [
+        "medicamentos",
+        "ropa",
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "El Colombiano",
       "fuente_url": "https://www.elcolombiano.com/antioquia/damnificados-sismo-puntos-acopio-medellin-donaciones-que-donar-CF39784677",
       "fecha": "11 ago 2026"
@@ -150,15 +450,48 @@
       "ciudad": "Cali",
       "entidad": "Alcaldía de Cali y Gobernación del Valle",
       "puntos": [
-        {"nombre": "Plazoleta Jairo Varela", "direccion": null, "horario": null},
-        {"nombre": "Escuela Nacional del Deporte", "direccion": null, "horario": null},
-        {"nombre": "Ciudadela Petronio — Unidad Deportiva Alberto Galindo", "direccion": null, "horario": null},
-        {"nombre": "Coliseo de Hockey Miguel Calero (acopio y punto de salud)", "direccion": null, "horario": null},
-        {"nombre": "Banco de Alimentos de Cali", "direccion": "Calle 24 #6-103", "horario": null},
-        {"nombre": "Antigua Licorera del Valle — campaña «Todos Somos Valle»", "direccion": null, "horario": null}
+        {
+          "nombre": "Plazoleta Jairo Varela",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Escuela Nacional del Deporte",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Ciudadela Petronio — Unidad Deportiva Alberto Galindo",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Coliseo de Hockey Miguel Calero (acopio y punto de salud)",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Banco de Alimentos de Cali",
+          "direccion": "Calle 24 #6-103",
+          "horario": null
+        },
+        {
+          "nombre": "Antigua Licorera del Valle — campaña «Todos Somos Valle»",
+          "direccion": null,
+          "horario": null
+        }
       ],
-      "que_donar": ["colchonetas y frazadas", "agua", "alimentos no perecederos", "kits de aseo", "guantes, gafas y cascos de construcción"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "colchonetas y frazadas",
+        "agua",
+        "alimentos no perecederos",
+        "kits de aseo",
+        "guantes, gafas y cascos de construcción"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "El País (Cali)",
       "fuente_url": "https://www.elpais.com.co/cali/alcaldia-habilita-nuevos-espacios-para-recibir-ayudas-y-atender-a-afectados-en-cali-1154.html",
       "fecha": "11 ago 2026"
@@ -167,10 +500,22 @@
       "ciudad": "Pereira",
       "entidad": "Alcaldía de Pereira",
       "puntos": [
-        {"nombre": "Siete puntos de acopio en los Centros de Desarrollo Comunitario: Café Consota, Perla del Otún, El Remanso, Kennedy, Ormaza, San Nicolás y Comuna del Café", "direccion": null, "horario": "8:00 a. m.–5:00 p. m."}
+        {
+          "nombre": "Siete puntos de acopio en los Centros de Desarrollo Comunitario: Café Consota, Perla del Otún, El Remanso, Kennedy, Ormaza, San Nicolás y Comuna del Café",
+          "direccion": null,
+          "horario": "8:00 a. m.–5:00 p. m."
+        }
       ],
-      "que_donar": ["alimentos no perecederos", "agua", "colchonetas y cobijas", "kits de aseo"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "colchonetas y cobijas",
+        "kits de aseo"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "El Tiempo",
       "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631",
       "fecha": "11 ago 2026"
@@ -179,11 +524,26 @@
       "ciudad": "Manizales",
       "entidad": "Alcaldía de Manizales y Banco de Alimentos",
       "puntos": [
-        {"nombre": "Coliseo Menor de Manizales", "direccion": null, "horario": null},
-        {"nombre": "Banco de Alimentos de Manizales", "direccion": null, "horario": null}
+        {
+          "nombre": "Coliseo Menor de Manizales",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Banco de Alimentos de Manizales",
+          "direccion": null,
+          "horario": null
+        }
       ],
-      "que_donar": ["colchonetas, almohadas y frazadas NUEVAS", "alimentos no perecederos", "productos de aseo", "alimento para animales"],
-      "que_no_donar": ["ropa usada (solo prendas nuevas)"],
+      "que_donar": [
+        "colchonetas, almohadas y frazadas NUEVAS",
+        "alimentos no perecederos",
+        "productos de aseo",
+        "alimento para animales"
+      ],
+      "que_no_donar": [
+        "ropa usada (solo prendas nuevas)"
+      ],
       "fuente_titulo": "La Patria",
       "fuente_url": "https://www.lapatria.com/manizales/en-vivo-asi-funciona-el-centro-de-acopio-en-el-coliseo-menor-de-manizales-ayudas-para",
       "fecha": "11 ago 2026"
@@ -192,11 +552,26 @@
       "ciudad": "Armenia",
       "entidad": "Banco de Alimentos (red ABACO) y Gobernación del Quindío",
       "puntos": [
-        {"nombre": "Banco de Alimentos Monseñor Roberto López Londoño", "direccion": null, "horario": null},
-        {"nombre": "Centro de acopio departamental anunciado por la Gobernación (dirección pendiente de publicación)", "direccion": null, "horario": null}
+        {
+          "nombre": "Banco de Alimentos Monseñor Roberto López Londoño",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Centro de acopio departamental anunciado por la Gobernación (dirección pendiente de publicación)",
+          "direccion": null,
+          "horario": null
+        }
       ],
-      "que_donar": ["alimentos no perecederos", "agua", "productos de aseo"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "productos de aseo"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "Semana",
       "fuente_url": "https://www.semana.com/nacion/articulo/bancos-de-alimentos-activan-ayuda-para-damnificados-por-el-terremoto-en-colombia-asi-puede-donar/202641/",
       "fecha": "11 ago 2026"
@@ -205,10 +580,22 @@
       "ciudad": "Quibdó",
       "entidad": "Campaña «Colombia, un solo corazón» con la UNGRD",
       "puntos": [
-        {"nombre": "Punto de acopio barrio Los Ángeles, sector San Gabriel", "direccion": "Calle 27A #23-44", "horario": null}
+        {
+          "nombre": "Punto de acopio barrio Los Ángeles, sector San Gabriel",
+          "direccion": "Calle 27A #23-44",
+          "horario": null
+        }
       ],
-      "que_donar": ["alimentos no perecederos", "agua", "kits de aseo", "cobijas"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "kits de aseo",
+        "cobijas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "Infobae",
       "fuente_url": "https://www.infobae.com/colombia/2026/08/11/tras-el-fuerte-terremoto-en-colombia-la-primera-dama-ana-lucia-pineda-anuncio-puntos-de-acopio-de-ayudas-humanitarias-un-solo-corazon/",
       "fecha": "11 ago 2026"
@@ -217,10 +604,24 @@
       "ciudad": "Barranquilla",
       "entidad": "Oficina Distrital de Gestión del Riesgo",
       "puntos": [
-        {"nombre": "Centro de acopio Barranquillita", "direccion": "Carrera 43 #6-120", "horario": "24 horas"}
+        {
+          "nombre": "Centro de acopio Barranquillita",
+          "direccion": "Carrera 43 #6-120",
+          "horario": "24 horas"
+        }
       ],
-      "que_donar": ["alimentos no perecederos", "agua", "insumos médicos", "productos de aseo", "artículos para bebés", "colchonetas"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "insumos médicos",
+        "productos de aseo",
+        "artículos para bebés",
+        "colchonetas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "Alerta Caribe",
       "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
       "fecha": "11 ago 2026"
@@ -229,17 +630,57 @@
       "ciudad": "Bucaramanga",
       "entidad": "Alcaldía, Gobernación de Santander y aliados",
       "puntos": [
-        {"nombre": "Alcaldía de Bucaramanga (primer piso)", "direccion": null, "horario": "8:00 a. m.–5:00 p. m."},
-        {"nombre": "Gobernación de Santander", "direccion": null, "horario": null},
-        {"nombre": "Idesan", "direccion": "Calle 48 #27A-48, Sotomayor", "horario": "8:00 a. m.–5:00 p. m."},
-        {"nombre": "Lotería de Santander", "direccion": "Calle 36 con carrera 21", "horario": "8:00 a. m.–5:00 p. m."},
-        {"nombre": "Centroabastos", "direccion": "Vía Chimitá", "horario": "martes, jueves y sábado"},
-        {"nombre": "Centro Comercial Quinta Etapa (primer piso)", "direccion": null, "horario": "8:00 a. m.–5:00 p. m."},
-        {"nombre": "UIS — árbol de la Ceiba", "direccion": null, "horario": "8:00 a. m.–5:00 p. m."},
-        {"nombre": "Banco de Alimentos", "direccion": "Carrera 20 #11-46, San Francisco", "horario": "8:00 a. m.–5:00 p. m."}
+        {
+          "nombre": "Alcaldía de Bucaramanga (primer piso)",
+          "direccion": null,
+          "horario": "8:00 a. m.–5:00 p. m."
+        },
+        {
+          "nombre": "Gobernación de Santander",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Idesan",
+          "direccion": "Calle 48 #27A-48, Sotomayor",
+          "horario": "8:00 a. m.–5:00 p. m."
+        },
+        {
+          "nombre": "Lotería de Santander",
+          "direccion": "Calle 36 con carrera 21",
+          "horario": "8:00 a. m.–5:00 p. m."
+        },
+        {
+          "nombre": "Centroabastos",
+          "direccion": "Vía Chimitá",
+          "horario": "martes, jueves y sábado"
+        },
+        {
+          "nombre": "Centro Comercial Quinta Etapa (primer piso)",
+          "direccion": null,
+          "horario": "8:00 a. m.–5:00 p. m."
+        },
+        {
+          "nombre": "UIS — árbol de la Ceiba",
+          "direccion": null,
+          "horario": "8:00 a. m.–5:00 p. m."
+        },
+        {
+          "nombre": "Banco de Alimentos",
+          "direccion": "Carrera 20 #11-46, San Francisco",
+          "horario": "8:00 a. m.–5:00 p. m."
+        }
       ],
-      "que_donar": ["alimentos no perecederos", "productos de aseo", "pañales", "cobijas"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "alimentos no perecederos",
+        "productos de aseo",
+        "pañales",
+        "cobijas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "Vanguardia",
       "fuente_url": "https://www.vanguardia.com/area-metropolitana/bucaramanga/2026/08/11/terremoto-en-colombia-nueve-puntos-donde-puede-realizar-donaciones-en-bucaramanga/",
       "fecha": "11 ago 2026"
@@ -248,13 +689,37 @@
       "ciudad": "Cartagena",
       "entidad": "Distrito, Arquidiócesis y Banco de Alimentos",
       "puntos": [
-        {"nombre": "Coliseo Bernardo Caraballo", "direccion": null, "horario": "8:00 a. m.–5:00 p. m."},
-        {"nombre": "Parroquia Nuestra Señora del Perpetuo Socorro (Bocagrande)", "direccion": null, "horario": null},
-        {"nombre": "Parroquia Cristo Rey (Crespo)", "direccion": null, "horario": null},
-        {"nombre": "Banco de Alimentos de Cartagena", "direccion": null, "horario": null}
+        {
+          "nombre": "Coliseo Bernardo Caraballo",
+          "direccion": null,
+          "horario": "8:00 a. m.–5:00 p. m."
+        },
+        {
+          "nombre": "Parroquia Nuestra Señora del Perpetuo Socorro (Bocagrande)",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Parroquia Cristo Rey (Crespo)",
+          "direccion": null,
+          "horario": null
+        },
+        {
+          "nombre": "Banco de Alimentos de Cartagena",
+          "direccion": null,
+          "horario": null
+        }
       ],
-      "que_donar": ["agua", "alimentos no perecederos", "colchonetas y sábanas", "kits de aseo"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "agua",
+        "alimentos no perecederos",
+        "colchonetas y sábanas",
+        "kits de aseo"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "Alerta Caribe",
       "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
       "fecha": "11 ago 2026"
@@ -263,11 +728,27 @@
       "ciudad": "Ibagué",
       "entidad": "Alcaldía de Ibagué y Banco de Alimentos",
       "puntos": [
-        {"nombre": "Centros comerciales La Estación, Multicentro y Acqua, y Castiagro", "direccion": null, "horario": "consultar vigencia"},
-        {"nombre": "Banco Arquidiocesano de Alimentos de Ibagué (red ABACO)", "direccion": null, "horario": null}
+        {
+          "nombre": "Centros comerciales La Estación, Multicentro y Acqua, y Castiagro",
+          "direccion": null,
+          "horario": "consultar vigencia"
+        },
+        {
+          "nombre": "Banco Arquidiocesano de Alimentos de Ibagué (red ABACO)",
+          "direccion": null,
+          "horario": null
+        }
       ],
-      "que_donar": ["carpas", "colchonetas y cobijas", "elementos de aseo", "agua"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "carpas",
+        "colchonetas y cobijas",
+        "elementos de aseo",
+        "agua"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "El Nuevo Día",
       "fuente_url": "https://www.elnuevodia.com.co/ibague/ibague-habilita-puntos-de-acopio-para-ayudar-pereira-538726",
       "fecha": "11 ago 2026"
@@ -276,10 +757,22 @@
       "ciudad": "Santa Marta",
       "entidad": "Oficina para la Gestión del Riesgo (Ogricc)",
       "puntos": [
-        {"nombre": "Sede Ogricc, barrio El Cundí (piso 2)", "direccion": "Calle 16 #14A-08", "horario": "8:30 a. m.–5:30 p. m."}
+        {
+          "nombre": "Sede Ogricc, barrio El Cundí (piso 2)",
+          "direccion": "Calle 16 #14A-08",
+          "horario": "8:30 a. m.–5:30 p. m."
+        }
       ],
-      "que_donar": ["alimentos no perecederos", "agua", "colchonetas y cobijas", "productos de aseo"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "colchonetas y cobijas",
+        "productos de aseo"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "Alerta Caribe",
       "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
       "fecha": "11 ago 2026"
@@ -288,37 +781,110 @@
       "ciudad": "Montería",
       "entidad": "Gobernación de Córdoba",
       "puntos": [
-        {"nombre": "Coliseo Miguel «Happy» Lora", "direccion": null, "horario": "8:00 a. m.–12:30 p. m. y 2:00–7:00 p. m."},
-        {"nombre": "Estadio de Béisbol 18 de Junio (alterno)", "direccion": null, "horario": null}
+        {
+          "nombre": "Coliseo Miguel «Happy» Lora",
+          "direccion": null,
+          "horario": "8:00 a. m.–12:30 p. m. y 2:00–7:00 p. m."
+        },
+        {
+          "nombre": "Estadio de Béisbol 18 de Junio (alterno)",
+          "direccion": null,
+          "horario": null
+        }
       ],
-      "que_donar": ["alimentos no perecederos", "agua", "aseo", "artículos para bebés", "cobijas", "alimento para mascotas"],
-      "que_no_donar": ["productos vencidos", "perecederos"],
+      "que_donar": [
+        "alimentos no perecederos",
+        "agua",
+        "aseo",
+        "artículos para bebés",
+        "cobijas",
+        "alimento para mascotas"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
       "fuente_titulo": "Alerta Caribe",
       "fuente_url": "https://cartagena.alerta.com.co/servicios/terremoto-en-colombia-donde-donar-en-el-caribe-colombiano-248277",
       "fecha": "11 ago 2026"
     }
   ],
   "ciudades_acopio": [
-    {"ciudad": "Bogotá", "lat": 4.711, "lon": -74.072},
-    {"ciudad": "Medellín", "lat": 6.244, "lon": -75.581},
-    {"ciudad": "Cali", "lat": 3.452, "lon": -76.532},
-    {"ciudad": "Pereira", "lat": 4.813, "lon": -75.696},
-    {"ciudad": "Manizales", "lat": 5.07, "lon": -75.514},
-    {"ciudad": "Armenia", "lat": 4.534, "lon": -75.681},
-    {"ciudad": "Quibdó", "lat": 5.695, "lon": -76.661},
-    {"ciudad": "Barranquilla", "lat": 10.964, "lon": -74.797},
-    {"ciudad": "Bucaramanga", "lat": 7.119, "lon": -73.123},
-    {"ciudad": "Cartagena", "lat": 10.391, "lon": -75.479},
-    {"ciudad": "Ibagué", "lat": 4.439, "lon": -75.232},
-    {"ciudad": "Santa Marta", "lat": 11.24, "lon": -74.199},
-    {"ciudad": "Montería", "lat": 8.748, "lon": -75.881}
+    {
+      "ciudad": "Bogotá",
+      "lat": 4.711,
+      "lon": -74.072
+    },
+    {
+      "ciudad": "Medellín",
+      "lat": 6.244,
+      "lon": -75.581
+    },
+    {
+      "ciudad": "Cali",
+      "lat": 3.452,
+      "lon": -76.532
+    },
+    {
+      "ciudad": "Pereira",
+      "lat": 4.813,
+      "lon": -75.696
+    },
+    {
+      "ciudad": "Manizales",
+      "lat": 5.07,
+      "lon": -75.514
+    },
+    {
+      "ciudad": "Armenia",
+      "lat": 4.534,
+      "lon": -75.681
+    },
+    {
+      "ciudad": "Quibdó",
+      "lat": 5.695,
+      "lon": -76.661
+    },
+    {
+      "ciudad": "Barranquilla",
+      "lat": 10.964,
+      "lon": -74.797
+    },
+    {
+      "ciudad": "Bucaramanga",
+      "lat": 7.119,
+      "lon": -73.123
+    },
+    {
+      "ciudad": "Cartagena",
+      "lat": 10.391,
+      "lon": -75.479
+    },
+    {
+      "ciudad": "Ibagué",
+      "lat": 4.439,
+      "lon": -75.232
+    },
+    {
+      "ciudad": "Santa Marta",
+      "lat": 11.24,
+      "lon": -74.199
+    },
+    {
+      "ciudad": "Montería",
+      "lat": 8.748,
+      "lon": -75.881
+    }
   ],
   "sangre": [
     {
       "ciudad": "Bogotá",
       "entidad": "IDCBIS y Red Distrital de Sangre",
       "donde": "Sede IDCBIS (Carrera 32 #12-81) y unos 100 puntos de los 16 bancos de la Red Distrital, de 8:00 a. m. a 4:00 p. m. Información por WhatsApp: 324 502 7640. Bogotá ya envió 219 unidades a Chocó y Valle.",
-      "tipos_urgentes": ["O+", "O−"],
+      "tipos_urgentes": [
+        "O+",
+        "O−"
+      ],
       "fuente_titulo": "Pulzo / El Tiempo",
       "fuente_url": "https://www.pulzo.com/nacion/bogota/donacion-de-sangre-en-bogota-llamado-urgente-a-o-y-o-tras-sismo-como-ayudar-PP5270589A"
     },
@@ -350,7 +916,10 @@
       "ciudad": "Manizales",
       "entidad": "Cruz Roja y Hemocentro del Café",
       "donde": "Cancha auxiliar de Palogrande (junto a Bomberos), tel. 310 456 0822, y Hemocentro del Café.",
-      "tipos_urgentes": ["O+", "O−"],
+      "tipos_urgentes": [
+        "O+",
+        "O−"
+      ],
       "fuente_titulo": "Infobae",
       "fuente_url": "https://www.infobae.com/colombia/2026/08/10/centros-de-acopio-habilitados-en-colombia-tras-el-terremoto-guia-por-ciudad-para-donar-y-ayudar-a-las-victimas/"
     },
@@ -438,10 +1007,25 @@
     }
   ],
   "lineas": [
-    {"nombre": "Emergencias", "numero": "123"},
-    {"nombre": "Cruz Roja", "numero": "132"},
-    {"nombre": "Defensa Civil", "numero": "144"},
-    {"nombre": "Atención de desastres", "numero": "111"},
-    {"nombre": "Búsqueda de familiares (WhatsApp Cruz Roja)", "numero": "+57 321 213 9525"}
+    {
+      "nombre": "Emergencias",
+      "numero": "123"
+    },
+    {
+      "nombre": "Cruz Roja",
+      "numero": "132"
+    },
+    {
+      "nombre": "Defensa Civil",
+      "numero": "144"
+    },
+    {
+      "nombre": "Atención de desastres",
+      "numero": "111"
+    },
+    {
+      "nombre": "Búsqueda de familiares (WhatsApp Cruz Roja)",
+      "numero": "+57 321 213 9525"
+    }
   ]
 }

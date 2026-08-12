@@ -1,0 +1,65 @@
+{
+  "metodologia": {
+    "version": "1.0",
+    "principios": [
+      "Priorizar el dominio oficial de la entidad que recibe la ayuda.",
+      "Distinguir una fuente oficial de una confirmación publicada por prensa.",
+      "Mostrar la fecha de comprobación y advertir cuando los datos necesitan revisión.",
+      "No publicar cuentas personales ni pedir datos privados a quienes buscan ayuda."
+    ]
+  },
+  "afirmaciones": [
+    {
+      "id": "replica-programada",
+      "afirmacion": "«Una autoridad confirmó la hora exacta de la próxima réplica».",
+      "veredicto": "Falso",
+      "realidad": "Los sismos y sus réplicas no pueden predecirse indicando fecha y hora. Consulta únicamente los reportes del Servicio Geológico Colombiano.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "Servicio Geológico Colombiano",
+      "fuente_url": "https://www.sgc.gov.co/sismos",
+      "verificado_iso": "2026-08-11"
+    },
+    {
+      "id": "cuenta-personal",
+      "afirmacion": "«Consigna a esta cuenta personal y reenvía el comprobante por WhatsApp».",
+      "veredicto": "No verificado",
+      "realidad": "No transfieras hasta encontrar el mismo canal en el dominio oficial de la organización. La urgencia, las cuentas personales y la presión para reenviar son señales de riesgo.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "Cruz Roja Colombiana",
+      "fuente_url": "https://www.cruzrojacolombiana.org",
+      "verificado_iso": "2026-08-11"
+    },
+    {
+      "id": "datos-personales",
+      "afirmacion": "«Envía foto de tu cédula y dirección para acceder a una ayuda».",
+      "veredicto": "Alto riesgo",
+      "realidad": "No publiques documentos, direcciones exactas ni datos bancarios en cadenas o formularios no oficiales. Verifica primero la entidad y el dominio.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "FTC — prevención de estafas tras desastres",
+      "fuente_url": "https://consumer.ftc.gov/articles/how-avoid-scams-after-weather-emergencies-and-natural-disasters",
+      "verificado_iso": "2026-08-11"
+    }
+  ],
+  "fuentes_para_verificar": [
+    {
+      "nombre": "Servicio Geológico Colombiano",
+      "para": "Sismos, magnitud y réplicas",
+      "url": "https://www.sgc.gov.co/sismos"
+    },
+    {
+      "nombre": "UNGRD",
+      "para": "Balance y respuesta institucional",
+      "url": "https://gestiondelriesgo.gov.co"
+    },
+    {
+      "nombre": "Cruz Roja Colombiana",
+      "para": "Donaciones, sangre y vínculos familiares",
+      "url": "https://www.cruzrojacolombiana.org"
+    },
+    {
+      "nombre": "Línea única de emergencias",
+      "para": "Atención inmediata",
+      "url": "tel:123"
+    }
+  ]
+}
