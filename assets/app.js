@@ -1245,11 +1245,5 @@
     }
     // Gancho de solo lectura para la función opcional «Cerca de mí».
     window.__cuidar = { obtenerMapa: function () { return mapa; }, datos: datosMapa };
-    // El contenido anterior al mapa crece al recibir los JSON. Reencuadrar una
-    // ancla compartida evita que el navegador termine mostrando otra sección.
-    if (window.location.hash) requestAnimationFrame(function () {
-      var destino = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
-      if (destino) destino.scrollIntoView({ block: 'start' });
-    });
   });
 })();
