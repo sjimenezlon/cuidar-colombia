@@ -27,7 +27,7 @@ def centrado(texto, f, y, color):
 
 # Kicker con filetes
 fk = F('avenir-b', 26)
-tk = 'TERREMOTO EN COLOMBIA · AGOSTO 2026'
+tk = 'UNA GUÍA VERIFICADA PARA AYUDAR'
 wk = d.textlength(tk, font=fk)
 xk = (W - wk) / 2
 d.text((xk, 78), tk, font=fk, fill=ORO)
@@ -35,15 +35,15 @@ d.rectangle([xk - 140, 92, xk - 28, 95], fill=CORAL)
 d.rectangle([xk + wk + 28, 92, xk + wk + 140, 95], fill=CORAL)
 
 # Gancho
-centrado('No dones', F('bodoni-b', 170), 130, CREMA)
+centrado('¿Dónde donar?', F('bodoni-b', 148), 140, CREMA)
 
-acento = Image.new('RGBA', (780, 300), (0, 0, 0, 0))
+acento = Image.new('RGBA', (900, 260), (0, 0, 0, 0))
 da = ImageDraw.Draw(acento)
-fs = F('sign', 195)
-ws = da.textlength('a ciegas', font=fs)
-da.text(((780 - ws) / 2, 20), 'a ciegas', font=fs, fill=ORO)
-acento = acento.rotate(-3, expand=True, resample=Image.BICUBIC)
-img.paste(acento, ((W - acento.width) // 2, 300), acento)
+fs = F('sign', 130)
+ws = da.textlength('¿y cómo hacerlo bien?', font=fs)
+da.text(((900 - ws) / 2, 20), '¿y cómo hacerlo bien?', font=fs, fill=ORO)
+acento = acento.rotate(-2.5, expand=True, resample=Image.BICUBIC)
+img.paste(acento, ((W - acento.width) // 2, 330), acento)
 d = ImageDraw.Draw(img)
 
 # Subrayado a mano
@@ -55,9 +55,9 @@ d.line(puntos, fill=CORAL, width=5, joint='curve')
 
 # Lista con chulos dibujados
 lineas = ['Canales oficiales de donación',
-          'Acopios y sangre en tu ciudad',
-          'Cadenas falsas, desmentidas',
-          'Todo con fuente y fecha']
+          'Mapa interactivo de acopios',
+          'Dónde donar sangre',
+          'Fuentes confiables, verificadas']
 fl = F('avenir', 43)
 ancho_max = max(d.textlength(t, font=fl) for t in lineas)
 x_chulo = (W - ancho_max - 70) / 2
