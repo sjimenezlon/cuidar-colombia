@@ -63,3 +63,27 @@ No recauda ni intermedia: cada enlace lleva al canal oficial.
 👉 https://cuidarcolombia.vercel.app
 
 Si la compartes, puede llegarle a alguien que hoy quiere ayudar y no sabe cómo.
+
+## WhatsApp — cadena (la única verificable)
+
+🇨🇴 *¿Quieres ayudar por el terremoto sin caer en cuentas falsas?*
+
+Esta página reúne **todo lo verificado, con fuente y fecha**:
+
+💳 Canales oficiales para donar
+📦 Mapa de acopios en tu ciudad
+🩸 Dónde donar sangre
+🛑 Las cadenas falsas, desmentidas
+
+No recauda ni pide datos: te lleva al canal oficial de cada entidad.
+
+👉 cuidarcolombia.vercel.app
+
+A diferencia de otras cadenas, esta sí puedes verificarla: cada dato tiene su enlace a la fuente. Reenvíala a quien quiera ayudar hoy. 🤝
+
+## WhatsApp — versión corta (estados)
+
+¿Vas a donar por el terremoto? Verifica primero. 🇨🇴
+Canales oficiales, acopios y sangre — todo con fuente y fecha:
+👉 cuidarcolombia.vercel.app
+Reenvía: puede ayudar a alguien hoy. 🤝
