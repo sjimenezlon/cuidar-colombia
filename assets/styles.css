@@ -378,9 +378,15 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 
 /* ---------- Filtros del mapa ---------- */
 .mapa-filtros {
-  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  display: block;
   margin-bottom: 14px;
 }
+.panel-filtros-mapa { border: 1px solid var(--borde); border-radius: 11px; background: rgba(255,255,255,.55); }
+.panel-filtros-mapa > summary {
+  min-height: 44px; padding: 9px 13px; cursor: pointer; color: var(--azul-oscuro); font-size: .84rem; font-weight: 800;
+}
+.panel-filtros-mapa > summary span { color: var(--tinta-suave); font-weight: 500; margin-left: 6px; }
+.mapa-filtros-contenido { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 2px 12px 12px; }
 .mapa-filtros .filtro-etiqueta { font-size: 0.8rem; font-weight: 700; color: var(--tinta-suave); margin-right: 4px; }
 .chip-capa {
   display: inline-flex; align-items: center; gap: 7px;
@@ -506,7 +512,7 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 
 @media (max-width: 700px) {
   .aviso-vigencia { min-height: 70px; }
-  .mapa-filtros { align-items: stretch; }
+  .mapa-filtros-contenido { align-items: stretch; }
   .grupo-filtros, .control-filtro, .control-busqueda { width: 100%; }
   .grupo-filtros .chip-capa { flex: 1; justify-content: center; }
   .mapa-leyenda { max-width: calc(100% - 36px); }

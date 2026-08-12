@@ -905,7 +905,11 @@
     }
     var municipiosFiltro = (datosMapa.zonas && datosMapa.zonas.municipios) || [];
     var puntosFiltro = datosMapa._puntos || [];
-    cont.innerHTML = '<fieldset class="grupo-filtros"><legend>Afectación</legend>' +
+    var panelAnterior = cont.querySelector('.panel-filtros-mapa');
+    var panelAbierto = panelAnterior ? panelAnterior.open : !(window.matchMedia && window.matchMedia('(max-width: 700px)').matches);
+    cont.innerHTML = '<details class="panel-filtros-mapa"' + (panelAbierto ? ' open' : '') + '><summary>Filtrar mapa <span>' +
+      puntosFiltro.length + ' puntos · ' + municipiosFiltro.length + ' municipios</span></summary><div class="mapa-filtros-contenido">' +
+      '<fieldset class="grupo-filtros"><legend>Afectación</legend>' +
       chip('gravedad', 'critica', COLORES_GRAVEDAD.critica, 'Crítica', filtrosMapa.gravedades.critica, municipiosFiltro.filter(function (m) { return m.gravedad === 'critica'; }).length) +
       chip('gravedad', 'alta', COLORES_GRAVEDAD.alta, 'Alta', filtrosMapa.gravedades.alta, municipiosFiltro.filter(function (m) { return m.gravedad === 'alta'; }).length) +
       chip('gravedad', 'media', COLORES_GRAVEDAD.media, 'Media', filtrosMapa.gravedades.media, municipiosFiltro.filter(function (m) { return m.gravedad === 'media'; }).length) + '</fieldset>' +
@@ -917,7 +921,7 @@
       '<label class="control-filtro"><span>Ciudad del punto</span><select id="filtro-ciudad-mapa"><option value="todas">Todas</option>' +
       ciudades.map(function (c) { return '<option value="' + esc(c) + '"' + (filtrosMapa.ciudad === c ? ' selected' : '') + '>' + esc(c) + '</option>'; }).join('') + '</select></label>' +
       '<label class="control-filtro control-busqueda"><span>Buscar municipio o punto</span><input id="filtro-busqueda-mapa" type="search" value="' + esc(filtrosMapa.busqueda) + '" placeholder="Ej. Quibdó o banco de sangre"></label>' +
-      '<button class="boton-limpiar" id="limpiar-filtros-mapa" type="button">Restablecer</button>';
+      '<button class="boton-limpiar" id="limpiar-filtros-mapa" type="button">Restablecer</button></div></details>';
     if (!cont.dataset.conectado) {
       cont.dataset.conectado = 'true';
       cont.addEventListener('click', function (e) {
@@ -1241,5 +1245,11 @@
     }
     // Gancho de solo lectura para la función opcional «Cerca de mí».
     window.__cuidar = { obtenerMapa: function () { return mapa; }, datos: datosMapa };
+    // El contenido anterior al mapa crece al recibir los JSON. Reencuadrar una
+    // ancla compartida evita que el navegador termine mostrando otra sección.
+    if (window.location.hash) requestAnimationFrame(function () {
+      var destino = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+      if (destino) destino.scrollIntoView({ block: 'start' });
+    });
   });
 })();
