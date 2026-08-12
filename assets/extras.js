@@ -1,9 +1,7 @@
 /* ============ Cuidar a Colombia — extras.js ============
-   Módulo autocontenido (no toca app.js): factor de demostración tecnológica.
-   1. Contador animado de verificación en el hero (calculado de los JSON reales).
-   2. «Cerca de mí»: geolocalización → puntos de ayuda más próximos con distancia y ruta.
-   3. Capa de réplicas en vivo del USGS (se re-crea sola si el estilo del mapa cambia).
-   Se conecta por el gancho window.__cuidar que expone app.js al arrancar. */
+   Funciones progresivas: resumen de registros y puntos cercanos.
+   Las réplicas no se consultan en vivo: solo deben publicarse después de
+   pasar por el mismo proceso de validación y trazabilidad de los demás datos. */
 
 (function () {
   'use strict';
@@ -28,7 +26,7 @@
       (ayuda.busqueda || []).length + (veri.afirmaciones || []).length + (zonas.municipios || []).length +
       (geo.puntos || []).length;
     var objetivos = [
-      [datos, 'datos verificados'],
+      [datos, 'registros trazables'],
       [Object.keys(dominios).length, 'fuentes consultadas'],
       [(zonas.municipios || []).length, 'municipios monitoreados']
     ];
@@ -49,97 +47,26 @@
     });
   });
 
-  /* ---------- Espera del gancho del mapa ---------- */
+  /* ---------- Espera de los datos del mapa ---------- */
   var intentos = 0;
   var espera = setInterval(function () {
     intentos++;
-    if (window.__cuidar && window.__cuidar.obtenerMapa && window.__cuidar.obtenerMapa()) {
+    if (window.__cuidar && window.__cuidar.datos) {
       clearInterval(espera);
-      iniciarExtrasMapa();
+      iniciarCercaDeMi();
     } else if (intentos > 80) { clearInterval(espera); }
   }, 250);
 
-  function iniciarExtrasMapa() {
+  function iniciarCercaDeMi() {
     var filtros = document.getElementById('mapa-filtros');
     if (!filtros) return;
 
     var fila = document.createElement('div');
     fila.className = 'mapa-extras';
-    fila.innerHTML =
-      '<button type="button" class="chip-capa chip-replicas" id="chip-replicas" aria-pressed="false">' +
-      '<span class="punto-capa" style="background:#5B6B7A"></span>🌀 Réplicas en vivo (USGS) <span class="conteo" id="conteo-replicas"></span></button>' +
-      '<button type="button" class="chip-capa chip-ubicacion" id="boton-cerca">📍 Cerca de mí</button>';
+    fila.innerHTML = '<button type="button" class="chip-capa chip-ubicacion" id="boton-cerca">📍 Mostrar puntos cerca de mí</button>';
     filtros.parentNode.insertBefore(fila, filtros.nextSibling);
 
-    document.getElementById('chip-replicas').addEventListener('click', alternarReplicas);
     document.getElementById('boton-cerca').addEventListener('click', cercaDeMi);
-  }
-
-  /* ---------- 3. Réplicas en vivo (USGS) ---------- */
-  var replicasActivas = false, replicasDatos = null, replicasPedidas = false, clicReplicasListo = false;
-
-  function alternarReplicas() {
-    var b = document.getElementById('chip-replicas');
-    replicasActivas = !replicasActivas;
-    b.classList.toggle('activa', replicasActivas);
-    b.setAttribute('aria-pressed', String(replicasActivas));
-    if (replicasActivas && !replicasDatos && !replicasPedidas) { cargarReplicas(); return; }
-    dibujarReplicas();
-  }
-
-  function cargarReplicas() {
-    replicasPedidas = true;
-    var c = document.getElementById('conteo-replicas');
-    if (c) c.textContent = '…';
-    fetch('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2026-08-10&latitude=4.8436&longitude=-76.2422&maxradiuskm=250&limit=300&orderby=time')
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (gj) {
-        replicasDatos = gj;
-        if (c) c.textContent = '(' + (gj.features || []).length + ')';
-        dibujarReplicas();
-      })
-      .catch(function () {
-        replicasPedidas = false;
-        if (c) c.textContent = '(no disponible)';
-      });
-  }
-
-  function dibujarReplicas() {
-    var mapa = window.__cuidar.obtenerMapa();
-    if (!mapa || !replicasDatos) return;
-    function pintar() {
-      try {
-        if (!mapa.getSource('replicas-usgs')) {
-          mapa.addSource('replicas-usgs', { type: 'geojson', data: replicasDatos });
-        }
-        if (!mapa.getLayer('capa-replicas-usgs')) {
-          mapa.addLayer({
-            id: 'capa-replicas-usgs', type: 'circle', source: 'replicas-usgs',
-            paint: {
-              'circle-color': '#5B6B7A', 'circle-opacity': 0.45,
-              'circle-radius': ['interpolate', ['linear'], ['coalesce', ['get', 'mag'], 2], 1.5, 3, 3, 6, 5, 13, 7.4, 22],
-              'circle-stroke-color': '#fff', 'circle-stroke-width': 1
-            }
-          });
-        }
-        mapa.setLayoutProperty('capa-replicas-usgs', 'visibility', replicasActivas ? 'visible' : 'none');
-      } catch (e) { /* estilo aún montándose; styledata reintenta */ }
-    }
-    pintar();
-    if (!dibujarReplicas._enganchado) {
-      dibujarReplicas._enganchado = true;
-      mapa.on('styledata', pintar);
-      mapa.on('click', function (e) {
-        if (!replicasActivas || !mapa.getLayer('capa-replicas-usgs')) return;
-        var fts = mapa.queryRenderedFeatures(e.point, { layers: ['capa-replicas-usgs'] });
-        if (!fts.length) return;
-        var p = fts[0].properties || {};
-        new maplibregl.Popup({ offset: 6 }).setLngLat(e.lngLat).setHTML(
-          '<h4>🌀 Réplica M ' + esc(p.mag) + '</h4><p>' + esc(p.place || '') + '</p>' +
-          (p.time ? '<p>' + new Date(+p.time).toLocaleString('es-CO') + '</p>' : '') +
-          '<p style="font-size:.72rem;color:#7B8794">Fuente: USGS, consulta en tiempo real</p>').addTo(mapa);
-      });
-    }
   }
 
   /* ---------- 2. Cerca de mí ---------- */

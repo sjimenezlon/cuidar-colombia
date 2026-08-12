@@ -26,6 +26,7 @@ const [meta, ayuda, zonas, geo, verificacion, fuentes, sismo, balance] = await P
   json('data/verificacion.json'), json('data/fuentes.json'), json('data/sismo.json'), json('data/balance.json')
 ]);
 const municipios = await json('data/municipios.geojson');
+const fechaCorte = typeof meta?.iso === 'string' ? meta.iso.slice(0, 10) : null;
 
 if (meta) {
   exigir(!Number.isNaN(Date.parse(meta.iso)), 'meta.iso debe ser una fecha ISO válida');
@@ -44,6 +45,7 @@ if (ayuda) {
     exigir(['fuente_oficial', 'fuente_secundaria'].includes(canal.verificacion?.nivel), `${ctx}: nivel de verificación inválido`);
     exigir(['verificado', 'confirmacion_secundaria'].includes(canal.verificacion?.estado), `${ctx}: estado de verificación inválido`);
     exigir(!Number.isNaN(Date.parse(canal.verificacion?.fecha_iso)), `${ctx}: fecha_iso inválida`);
+    exigir(!fechaCorte || canal.verificacion?.fecha_iso <= fechaCorte, `${ctx}: fecha_iso no puede ser posterior al corte ${fechaCorte}`);
     revisarUrl(canal.verificacion?.evidencia_url, `${ctx}.evidencia_url`);
     if (canal.verificacion?.nivel === 'fuente_secundaria' && canal.detalle_cuenta) {
       errores.push(`${ctx}: no se permite publicar una cuenta respaldada solo por fuente secundaria`);
@@ -72,12 +74,17 @@ if (geo && ayuda) {
   const ciudadesAcopio = new Set((ayuda.acopios || []).map(x => x.ciudad));
   const ciudadesSangre = new Set((ayuda.sangre || []).map(x => x.ciudad));
   const puntos = new Set();
+  const coordenadas = new Map();
   for (const [i, p] of (geo.puntos || []).entries()) {
     const ctx = `geo_puntos.puntos[${i}] ${p.nombre || ''}`;
     const clave = `${p.tipo}|${p.ciudad}|${p.nombre}`;
     exigir(['acopio', 'sangre'].includes(p.tipo), `${ctx}: tipo inválido`);
     exigir(Number.isFinite(p.lat) && Number.isFinite(p.lon) && p.lat >= -90 && p.lat <= 90 && p.lon >= -180 && p.lon <= 180, `${ctx}: coordenadas inválidas`);
+    if (p.coordenadas_fuente) revisarUrl(p.coordenadas_fuente, `${ctx}.coordenadas_fuente`);
     exigir(!puntos.has(clave), `${ctx}: punto duplicado`); puntos.add(clave);
+    const claveCoordenada = `${p.lat.toFixed(5)}|${p.lon.toFixed(5)}`;
+    exigir(!coordenadas.has(claveCoordenada), `${ctx}: comparte coordenadas exactas con ${coordenadas.get(claveCoordenada) || 'otro punto'}; requiere revisión manual`);
+    coordenadas.set(claveCoordenada, p.nombre);
     const ciudades = p.tipo === 'acopio' ? ciudadesAcopio : ciudadesSangre;
     exigir(ciudades.has(p.ciudad), `${ctx}: la ciudad no existe en ayuda.${p.tipo === 'acopio' ? 'acopios' : 'sangre'}`);
   }
@@ -86,8 +93,13 @@ if (geo && ayuda) {
 if (verificacion) {
   exigir(Array.isArray(verificacion.metodologia?.principios) && verificacion.metodologia.principios.length >= 3, 'verificacion.metodologia debe publicar sus principios');
   for (const [i, a] of (verificacion.afirmaciones || []).entries()) {
-    exigir(a.afirmacion && a.veredicto && a.realidad, `verificacion.afirmaciones[${i}]: faltan campos`);
-    revisarUrl(a.fuente_url, `verificacion.afirmaciones[${i}].fuente_url`);
+    const ctx = `verificacion.afirmaciones[${i}]`;
+    exigir(a.afirmacion && a.veredicto && a.realidad, `${ctx}: faltan campos`);
+    exigir(['fuente_oficial', 'fuente_secundaria', 'guia_publica'].includes(a.nivel_fuente), `${ctx}: nivel_fuente inválido`);
+    exigir(!Number.isNaN(Date.parse(a.verificado_iso)), `${ctx}: verificado_iso inválida`);
+    exigir(!fechaCorte || a.verificado_iso <= fechaCorte, `${ctx}: verificado_iso no puede ser posterior al corte ${fechaCorte}`);
+    revisarUrl(a.fuente_url, `${ctx}.fuente_url`);
+    if (a.remitir_url) revisarUrl(a.remitir_url, `${ctx}.remitir_url`);
   }
   for (const [i, f] of (verificacion.fuentes_para_verificar || []).entries()) revisarUrl(f.url, `verificacion.fuentes_para_verificar[${i}].url`, true);
 }

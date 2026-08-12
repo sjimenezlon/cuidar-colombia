@@ -57,13 +57,13 @@
         Tras el terremoto del 10 de agosto de 2026, esta plataforma reúne y verifica la información
         dispersa en fuentes oficiales: dónde donar, dónde llevar ayuda, dónde donar sangre, cómo buscar
         a alguien y cuáles son las zonas que más lo necesitan. <strong>No intermediamos ni recaudamos:</strong>
-        cada enlace lleva directo al canal oficial, con su fuente y su fecha de verificación.
+        cada opción distingue si proviene de una fuente oficial o de una confirmación secundaria y muestra su fecha de revisión.
       </p>
       <div class="contador-verificacion" id="contador-verificacion" aria-live="polite"><!-- JS --></div>
       <div class="acciones-rapidas">
         <a class="accion" href="#donar-dinero">
           <span class="accion-icono">💳</span>
-          <span class="accion-texto"><strong>Donar dinero</strong><small>Canales oficiales verificados</small></span>
+          <span class="accion-texto"><strong>Donar dinero</strong><small>Canales con fuente y fecha</small></span>
         </a>
         <a class="accion" href="#acopios">
           <span class="accion-icono">📦</span>
@@ -108,7 +108,7 @@
       <p class="antetitulo">Mapa interactivo</p>
       <h2>Dónde golpeó más fuerte</h2>
       <p class="seccion-intro">Municipios con afectación reportada por fuentes oficiales y prensa nacional,
-      y los puntos exactos donde puedes ayudar. Toca cualquier elemento para ver el detalle y su fuente.</p>
+      y los puntos georreferenciados disponibles donde puedes ayudar. Toca cualquier elemento para ver el detalle y su fuente.</p>
       <div class="mapa-filtros" id="mapa-filtros" aria-label="Filtros del mapa"><!-- JS --></div>
     </div>
     <div class="mapa-envoltura">
@@ -141,8 +141,8 @@
       <div class="bloque-ayuda" id="donar-dinero">
         <h3><span class="numeral">1</span> Donar dinero por canales oficiales</h3>
         <p class="bloque-intro">El dinero llega más rápido que los objetos, no satura las vías y permite comprar
-        exactamente lo que se necesita en cada zona. Estos canales fueron verificados en los sitios oficiales
-        de cada entidad — el botón lleva directo a la página oficial, nunca a un intermediario.</p>
+        exactamente lo que se necesita en cada zona. Cada tarjeta indica si la comprobación proviene del dominio
+        de la entidad o de una publicación secundaria que todavía debes contrastar antes de transferir.</p>
         <div class="filtros-canales" id="filtros-canales" aria-label="Filtros de canales de donación"><!-- JS --></div>
         <div class="tarjetas-canales" id="canales-financieros"><!-- JS --></div>
         <p class="nota-verificacion">✅ <strong>Fuente oficial</strong> significa que el canal se comprobó en el dominio

@@ -26,19 +26,12 @@
   },
   {
    "tipo": "acopio",
-   "ciudad": "Bogotá",
-   "nombre": "Cruz Roja — sede administrativa",
-   "direccion": "Carrera 24 #73-38",
-   "lat": 4.61809,
-   "lon": -74.0813
-  },
-  {
-   "tipo": "acopio",
    "ciudad": "Medellín",
    "nombre": "Banco Arquidiocesano de Alimentos",
    "direccion": "Carrera 52 #30A-97",
-   "lat": 6.25015,
-   "lon": -75.56962
+   "lat": 6.2283,
+   "lon": -75.57713,
+   "coordenadas_fuente": "https://maps.app.goo.gl/TWybfCdMBJ8N8ysd7"
   },
   {
    "tipo": "acopio",

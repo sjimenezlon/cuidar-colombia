@@ -12,6 +12,17 @@ CENTROS = {
     "Montería": (8.748, -75.881), "Villavicencio": (4.142, -73.627),
 }
 
+# Overrides revisados manualmente. `None` excluye del mapa una dirección que
+# Nominatim ubica en una vía homónima pero que todavía no tiene un pin confirmado.
+COORDENADAS_REVISADAS = {
+    ("acopio", "Bogotá", "Cruz Roja — sede administrativa"): None,
+    ("sangre", "Medellín", "Cruz Roja — donación de sangre"): {
+        "lat": 6.22830,
+        "lon": -75.57713,
+        "coordenadas_fuente": "https://maps.app.goo.gl/TWybfCdMBJ8N8ysd7",
+    },
+}
+
 # (tipo, ciudad, nombre, consulta_nominatim, direccion_publicada)
 PUNTOS = [
     ("acopio", "Bogotá", "Universidad Jorge Tadeo Lozano", "Carrera 4 22-61, Bogotá", "Carrera 4 #22-61"),
@@ -59,6 +70,18 @@ def distancia_km(a, b):
 
 resultado, sin_geo = [], []
 for tipo, ciudad, nombre, consulta, direccion in PUNTOS:
+    clave = (tipo, ciudad, nombre)
+    if clave in COORDENADAS_REVISADAS:
+        coordenadas = COORDENADAS_REVISADAS[clave]
+        if coordenadas is None:
+            sin_geo.append(f"{ciudad} — {nombre}")
+            print(f"SIN   {ciudad:14} {nombre} (requiere revisión manual)")
+            continue
+        lat, lon = coordenadas["lat"], coordenadas["lon"]
+        resultado.append({"tipo": tipo, "ciudad": ciudad, "nombre": nombre, "direccion": direccion,
+                          "lat": lat, "lon": lon, "coordenadas_fuente": coordenadas["coordenadas_fuente"]})
+        print(f"OK*   {ciudad:14} {nombre[:44]:46} {lat:.4f},{lon:.4f}")
+        continue
     url = "https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode(
         {"q": consulta + ", Colombia", "format": "json", "limit": 1, "countrycodes": "co"})
     lat = lon = None

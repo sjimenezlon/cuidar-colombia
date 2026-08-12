@@ -26,7 +26,7 @@
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "prensa nacional citando el anuncio oficial",
-      "fecha_verificacion": "12 ago 2026",
+      "fecha_verificacion": "11 ago 2026",
       "verificacion": {
         "estado": "confirmacion_secundaria",
         "nivel": "fuente_secundaria",
@@ -206,13 +206,13 @@
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "El Tiempo y Portafolio citando el anuncio",
-      "fecha_verificacion": "12 ago 2026",
+      "fecha_verificacion": "11 ago 2026",
       "grupo": "Bancos",
       "nivel": "prensa",
       "verificacion": {
         "estado": "confirmacion_secundaria",
         "nivel": "fuente_secundaria",
-        "fecha_iso": "2026-08-12",
+        "fecha_iso": "2026-08-11",
         "evidencia_url": "https://www.eltiempo.com/economia/sector-financiero/grupo-aval-habilita-mas-de-2-700-cajeros-y-la-app-dale-para-donar-a-la-cruz-roja-tras-el-terremoto-en-colombia-3577471"
       }
     },
@@ -224,13 +224,13 @@
       "detalle_cuenta": "Davivienda ahorros 0040 0016 0590 · NIT 860.010.371-0 (canal general de emergencias, visto en minutodedios.org)",
       "cobertura": "Nacional",
       "verificado_en": "minutodedios.org",
-      "fecha_verificacion": "12 ago 2026",
+      "fecha_verificacion": "11 ago 2026",
       "grupo": "ONGs y fundaciones",
       "nivel": "oficial",
       "verificacion": {
         "estado": "verificado",
         "nivel": "fuente_oficial",
-        "fecha_iso": "2026-08-12",
+        "fecha_iso": "2026-08-11",
         "evidencia_url": "https://minutodedios.org/emergencias"
       }
     },
@@ -242,13 +242,13 @@
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "accioncontraelhambre.co",
-      "fecha_verificacion": "12 ago 2026",
+      "fecha_verificacion": "11 ago 2026",
       "grupo": "ONGs y fundaciones",
       "nivel": "oficial",
       "verificacion": {
         "estado": "verificado",
         "nivel": "fuente_oficial",
-        "fecha_iso": "2026-08-12",
+        "fecha_iso": "2026-08-11",
         "evidencia_url": "https://accioncontraelhambre.co/"
       }
     },
@@ -260,13 +260,13 @@
       "detalle_cuenta": null,
       "cobertura": "Atlántico",
       "verificado_en": "El Heraldo citando el anuncio",
-      "fecha_verificacion": "12 ago 2026",
+      "fecha_verificacion": "11 ago 2026",
       "grupo": "ONGs y fundaciones",
       "nivel": "prensa",
       "verificacion": {
         "estado": "confirmacion_secundaria",
         "nivel": "fuente_secundaria",
-        "fecha_iso": "2026-08-12",
+        "fecha_iso": "2026-08-11",
         "evidencia_url": "https://www.elheraldo.co/sociedad/2026/08/11/arquidiocesis-de-barranquilla-activa-ayuda-para-damnificados-por-el-sismo/"
       }
     },
@@ -278,13 +278,13 @@
       "detalle_cuenta": null,
       "cobertura": "Desde el exterior",
       "verificado_en": "ReliefWeb (OCHA)",
-      "fecha_verificacion": "12 ago 2026",
+      "fecha_verificacion": "11 ago 2026",
       "grupo": "Desde el exterior",
       "nivel": "prensa",
       "verificacion": {
         "estado": "confirmacion_secundaria",
         "nivel": "fuente_secundaria",
-        "fecha_iso": "2026-08-12",
+        "fecha_iso": "2026-08-11",
         "evidencia_url": "https://reliefweb.int/report/colombia/earthquake-colombia-red-cross-and-red-crescent-movement-appeals-117-million-swiss"
       }
     },
@@ -296,13 +296,13 @@
       "detalle_cuenta": null,
       "cobertura": "Desde el exterior",
       "verificado_en": "redcross.org.uk",
-      "fecha_verificacion": "12 ago 2026",
+      "fecha_verificacion": "11 ago 2026",
       "grupo": "Desde el exterior",
       "nivel": "oficial",
       "verificacion": {
         "estado": "verificado",
         "nivel": "fuente_oficial",
-        "fecha_iso": "2026-08-12",
+        "fecha_iso": "2026-08-11",
         "evidencia_url": "https://www.redcross.org.uk/stories/disasters-and-emergencies/world/what-is-happening-in-colombia"
       }
     },
@@ -314,13 +314,13 @@
       "detalle_cuenta": null,
       "cobertura": "Desde el exterior",
       "verificado_en": "unicef.org.uk",
-      "fecha_verificacion": "12 ago 2026",
+      "fecha_verificacion": "11 ago 2026",
       "grupo": "Desde el exterior",
       "nivel": "oficial",
       "verificacion": {
         "estado": "verificado",
         "nivel": "fuente_oficial",
-        "fecha_iso": "2026-08-12",
+        "fecha_iso": "2026-08-11",
         "evidencia_url": "https://www.unicef.org.uk/donate/colombia-and-worldwide-appeal/"
       }
     },
@@ -332,13 +332,13 @@
       "detalle_cuenta": null,
       "cobertura": "Desde el exterior",
       "verificado_en": "Europa Press citando la campaña",
-      "fecha_verificacion": "12 ago 2026",
+      "fecha_verificacion": "11 ago 2026",
       "grupo": "Desde el exterior",
       "nivel": "prensa",
       "verificacion": {
         "estado": "confirmacion_secundaria",
         "nivel": "fuente_secundaria",
-        "fecha_iso": "2026-08-12",
+        "fecha_iso": "2026-08-11",
         "evidencia_url": "https://www.diariosigloxxi.com/texto-ep/mostrar/20260811145651/ong-activan-respuesta-humanitaria-terremoto-colombia-alertan-riesgo-extremo-infancia"
       }
     }
