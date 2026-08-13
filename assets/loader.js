@@ -128,10 +128,10 @@
     if (cargado) return;
     cargado = true;
     var app = document.createElement('script');
-    app.src = 'assets/app.js?v=20260813i';
+    app.src = 'assets/app.js?v=20260813j';
     app.onload = function () {
       var extras = document.createElement('script');
-      extras.src = 'assets/extras.js?v=20260813i';
+      extras.src = 'assets/extras.js?v=20260813j';
       document.body.appendChild(extras);
     };
     document.body.appendChild(app);

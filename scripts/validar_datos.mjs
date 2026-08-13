@@ -59,6 +59,10 @@ function revisarEstadoOperacion(item, ctx, corteIso) {
   exigir(!corteIso || !item.estado_actualizado_iso || Date.parse(item.estado_actualizado_iso) <= Date.parse(corteIso),
     `${ctx}.estado_actualizado_iso no puede ser posterior al corte del portal`);
 }
+function revisarContactoMovilSecundario(texto, ctx, nivel) {
+  const contieneMovil = /(?:\+?57[ .-]?)?3\d{2}[ .-]?\d{3}[ .-]?\d{4}/.test(String(texto || ''));
+  exigir(nivel === 'fuente_oficial' || !contieneMovil, `${ctx}: no publicar teléfonos móviles desde una fuente secundaria`);
+}
 
 const [meta, ayuda, zonas, geo, verificacion, fuentes, sismo, balance] = await Promise.all([
   json('data/meta.json'), json('data/ayuda.json'), json('data/zonas.json'), json('data/geo_puntos.json'),
@@ -71,6 +75,7 @@ if (meta) {
   exigir(meta.evento_id === 'co-sismo-2026-08-10', 'meta.evento_id debe identificar este evento para evitar mezclar campañas');
   exigir(!Number.isNaN(Date.parse(meta.iso)), 'meta.iso debe ser una fecha ISO válida');
   exigir(Number(meta.vigencia_horas) > 0, 'meta.vigencia_horas debe ser mayor que cero');
+  exigir(/^\d{4}\.\d{2}\.\d{2}-\d{4}$/.test(meta.version_publica || ''), 'meta.version_publica debe identificar el corte publicado');
   exigir(Boolean(meta.proceso), 'meta.proceso debe explicar brevemente la revisión');
 }
 
@@ -109,6 +114,7 @@ if (ayuda) {
       revisarUrl(item.fuente_url, `ayuda.${tipo}[${i}].fuente_url`);
       revisarCitasAdicionales(item, `ayuda.${tipo}[${i}]`);
       exigir(['fuente_oficial', 'fuente_secundaria'].includes(item.nivel_fuente), `ayuda.${tipo}[${i}].nivel_fuente ausente o inválido`);
+      revisarContactoMovilSecundario(tipo === 'sangre' ? item.donde : '', `ayuda.${tipo}[${i}]`, item.nivel_fuente);
       if (tipo === 'sangre') revisarFechaRevision(item, `ayuda.${tipo}[${i}]`, fechaCorte);
       if (tipo === 'acopios') {
         const fechaItem = isoDeFechaCortaEs(item.fecha);
@@ -119,6 +125,7 @@ if (ayuda) {
           revisarEstadoOperacion(punto, `ayuda.${tipo}[${i}].puntos[${j}]`, meta?.iso);
           exigir(punto.nombre && !nombresPunto.has(normalizar(punto.nombre)), `ayuda.${tipo}[${i}].puntos[${j}]: nombre ausente o duplicado`);
           nombresPunto.add(normalizar(punto.nombre));
+          revisarContactoMovilSecundario(punto.horario, `ayuda.${tipo}[${i}].puntos[${j}]`, punto.nivel_fuente || item.nivel_fuente);
           exigir(!punto.direccion_mapa || Boolean(punto.direccion), `ayuda.${tipo}[${i}].puntos[${j}]: direccion_mapa exige una dirección visible`);
           if (punto.fuente_url) {
             revisarUrl(punto.fuente_url, `ayuda.${tipo}[${i}].puntos[${j}].fuente_url`);

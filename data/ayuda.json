@@ -612,7 +612,9 @@
       "fuente_titulo": "bogota.gov.co",
       "fuente_url": "https://bogota.gov.co/mi-ciudad/seguridad/puntos-de-donacion-en-bogota-para-damnificados-terremoto-en-colombia",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "13 ago 2026"
+      "fecha": "13 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:40:00-05:00"
     },
     {
       "ciudad": "Medellín",
@@ -713,7 +715,7 @@
         {
           "nombre": "UdeA — Oficina AfroUdeA, Bloque 9",
           "direccion": null,
-          "horario": "lunes a viernes, 9:00 a. m.–5:00 p. m.; contacto 311 450 5940"
+          "horario": "lunes a viernes, 9:00 a. m.–5:00 p. m.; confirma la vigencia en la fuente"
         },
         {
           "nombre": "Simón Coffee",
@@ -1084,7 +1086,7 @@
         {
           "nombre": "Banco Arquidiocesano de Alimentos de Ibagué (red ABACO)",
           "direccion": "Carrera 4 Estadio #23-42",
-          "horario": "confirmar vigencia: 321 840 2089"
+          "horario": "confirmar vigencia en la fuente institucional"
         }
       ],
       "que_donar": [
@@ -1287,7 +1289,7 @@
         {
           "nombre": "Antiguo Pre-ICFES Montilla",
           "direccion": "Calle 17 #27-59, barrio Centro",
-          "horario": "confirmar vigencia: 320 688 6196"
+          "horario": "confirmar vigencia en la fuente antes de desplazarte"
         }
       ],
       "que_donar": [
@@ -1313,7 +1315,7 @@
         {
           "nombre": "122 Plaza Apartahotel",
           "direccion": "Carrera 15A #122-27",
-          "horario": "confirmar recepción antes de ir: 317 643 3651"
+          "horario": "confirmar recepción en la fuente antes de ir"
         }
       ],
       "que_donar": [
@@ -1339,7 +1341,7 @@
         {
           "nombre": "Punto Chía — diagonal al CAM",
           "direccion": "Carrera 9 #12-41",
-          "horario": "confirmar vigencia: 311 255 5912"
+          "horario": "confirmar vigencia en la fuente antes de ir"
         }
       ],
       "que_donar": [
@@ -1365,7 +1367,7 @@
         {
           "nombre": "Deportivos Willys",
           "direccion": "Calle 4 #4-09",
-          "horario": "confirmar vigencia: 314 308 7520 / 310 273 1133 / 310 321 3108"
+          "horario": "confirmar vigencia en la fuente antes de ir"
         }
       ],
       "que_donar": [
@@ -1391,7 +1393,7 @@
         {
           "nombre": "Punto calle 7 de Agosto — frente a Droguería Maxi Económica",
           "direccion": "Calle 19 #21-41",
-          "horario": "confirmar vigencia: 311 478 8851 / 300 789 8726 / 300 490 6741"
+          "horario": "confirmar vigencia en la fuente antes de ir"
         }
       ],
       "que_donar": [
@@ -1417,7 +1419,7 @@
         {
           "nombre": "Punto barrio Centro — frente al Banco de Occidente",
           "direccion": "Calle 15 #16-43",
-          "horario": "confirmar vigencia: 314 242 6083"
+          "horario": "confirmar vigencia en la fuente antes de ir"
         }
       ],
       "que_donar": [
@@ -1443,7 +1445,7 @@
         {
           "nombre": "Punto barrio Avenidas",
           "direccion": "Carrera 10A #7-04",
-          "horario": "confirmar vigencia: 317 887 1620"
+          "horario": "confirmar vigencia en la fuente antes de ir"
         }
       ],
       "que_donar": [
@@ -1486,7 +1488,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Barranquilla",
@@ -1512,7 +1516,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Bogotá",
@@ -1538,7 +1544,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Cartagena",
@@ -1564,7 +1572,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Tunja",
@@ -1590,7 +1600,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Popayán",
@@ -1616,7 +1628,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Valledupar",
@@ -1642,7 +1656,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Montería",
@@ -1668,7 +1684,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Riohacha",
@@ -1694,7 +1712,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Neiva",
@@ -1720,7 +1740,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Santa Marta",
@@ -1746,7 +1768,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Villavicencio",
@@ -1772,7 +1796,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Pasto",
@@ -1798,7 +1824,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Cúcuta",
@@ -1824,7 +1852,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Bucaramanga",
@@ -1850,7 +1880,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Sincelejo",
@@ -1876,7 +1908,9 @@
       "fuente_titulo": "S.C.A.R.E. — fuente oficial",
       "fuente_url": "https://scare.org.co/noticias/juntos-somos-colombia-scare-fepasde/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
     },
     {
       "ciudad": "Cúcuta",
@@ -1885,7 +1919,7 @@
         {
           "nombre": "Banco de Alimentos — barrio Pescadero",
           "direccion": "Calle 2AN #1-26, detrás del SENA",
-          "horario": "confirmar vigencia por WhatsApp: 310 543 4166"
+          "horario": "confirmar vigencia en la fuente antes de desplazarte"
         }
       ],
       "que_donar": [
@@ -1935,7 +1969,7 @@
         {
           "nombre": "Bodegas del Parque de la Leyenda Vallenata",
           "direccion": "Carrera 4, vía Hurtado",
-          "horario": "8:00 a. m.–3:00 p. m., jornada continua; confirmar por WhatsApp: 322 730 7199"
+          "horario": "8:00 a. m.–3:00 p. m., jornada continua; confirmar vigencia en la fuente"
         }
       ],
       "que_donar": [
@@ -2481,7 +2515,7 @@
     {
       "ciudad": "Bogotá",
       "entidad": "IDCBIS y Red Distrital de Sangre",
-      "donde": "Sede IDCBIS (Carrera 32 #12-81) y unos 100 puntos de los 16 bancos de la Red Distrital. Sede IDCBIS: lunes a viernes, 8:00 a. m.–4:30 p. m.; sábados y domingos, 7:00 a. m.–12:00 m. Confirma por WhatsApp: 324 502 7640. Bogotá ya envió 219 unidades a Chocó y Valle.",
+      "donde": "Sede IDCBIS (Carrera 32 #12-81) y unos 100 puntos de los 16 bancos de la Red Distrital. Sede IDCBIS: lunes a viernes, 8:00 a. m.–4:30 p. m.; sábados y domingos, 7:00 a. m.–12:00 m. Confirma en el canal oficial. Bogotá ya envió 219 unidades a Chocó y Valle.",
       "tipos_urgentes": [
         "O+",
         "O−"
@@ -2505,8 +2539,10 @@
       "fuente_adicional_titulo": "El Colombiano — llamado nacional tras el terremoto",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
       "nivel_fuente": "fuente_oficial",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
+      "fecha_revision": "13 ago 2026",
+      "fecha_revision_iso": "2026-08-13T17:47:00-05:00",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:47:00-05:00"
     },
     {
       "ciudad": "Medellín",
@@ -2520,12 +2556,14 @@
       "fuente_adicional_alcance": "Documenta la activación y la ampliación especial ya finalizada; la fuente principal confirma el servicio permanente y su horario ordinario.",
       "nivel_fuente": "fuente_oficial",
       "fecha_revision": "13 ago 2026",
-      "fecha_revision_iso": "2026-08-13T08:12:00-05:00"
+      "fecha_revision_iso": "2026-08-13T17:46:00-05:00",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:46:00-05:00"
     },
     {
       "ciudad": "Cali",
       "entidad": "Secretaría de Salud, Cruz Roja Valle y bancos de sangre",
-      "donde": "Banco Regional Cruz Roja (Cra. 38 Bis #5-91, San Fernando, tel. 311 625 8815), Hospital Universitario del Valle (Calle 5 #36-08), Hemolife (Calle 38N #3N-21), Fundación Valle del Lili y Clínica Imbanaco, de 8:00 a. m. a 6:00 p. m.",
+      "donde": "Banco Regional Cruz Roja (Cra. 38 Bis #5-91, San Fernando), Hospital Universitario del Valle (Calle 5 #36-08), Hemolife (Calle 38N #3N-21), Fundación Valle del Lili y Clínica Imbanaco, de 8:00 a. m. a 6:00 p. m.; confirma en la fuente antes de ir.",
       "tipos_urgentes": [],
       "fuente_titulo": "El Tiempo",
       "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631",
@@ -2543,8 +2581,10 @@
       "fuente_adicional_titulo": "El Colombiano — llamado nacional tras el terremoto",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
       "nivel_fuente": "fuente_oficial",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
+      "fecha_revision": "13 ago 2026",
+      "fecha_revision_iso": "2026-08-13T17:47:00-05:00",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:47:00-05:00"
     },
     {
       "ciudad": "Cartagena",
@@ -2556,8 +2596,10 @@
       "fuente_adicional_titulo": "El Colombiano — llamado nacional tras el terremoto",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
       "nivel_fuente": "fuente_oficial",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
+      "fecha_revision": "13 ago 2026",
+      "fecha_revision_iso": "2026-08-13T17:47:00-05:00",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:47:00-05:00"
     },
     {
       "ciudad": "Barranquilla",
@@ -2580,8 +2622,10 @@
       "fuente_adicional_titulo": "El Colombiano — llamado nacional tras el terremoto",
       "fuente_adicional_url": "https://www.elcolombiano.com/colombia/cruz-roja-donar-sangre-terremoto-colombia-KD39813382",
       "nivel_fuente": "fuente_oficial",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
+      "fecha_revision": "13 ago 2026",
+      "fecha_revision_iso": "2026-08-13T17:47:00-05:00",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:47:00-05:00"
     },
     {
       "ciudad": "Medellín",
@@ -2591,8 +2635,10 @@
       "fuente_titulo": "El Espectador",
       "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
       "nivel_fuente": "fuente_secundaria",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
+      "fecha_revision": "13 ago 2026",
+      "fecha_revision_iso": "2026-08-13T17:50:00-05:00",
+      "estado_operacion": "programado",
+      "estado_actualizado_iso": "2026-08-13T17:50:00-05:00"
     },
     {
       "ciudad": "Manizales",
@@ -2602,8 +2648,10 @@
       "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
       "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
       "nivel_fuente": "fuente_oficial",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
+      "fecha_revision": "13 ago 2026",
+      "fecha_revision_iso": "2026-08-13T17:47:00-05:00",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-13T17:47:00-05:00"
     }
   ],
   "sangre_requisitos": [

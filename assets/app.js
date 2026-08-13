@@ -99,7 +99,7 @@
     return renderCitas(citasDeRegistro(registro, alcancePrincipal), registro && (registro.entidad || registro.mecanismo));
   }
 
-  function renderCitasCanal(canal) {
+  function citasCanal(canal) {
     var citas = [];
     function agregar(url, titulo, alcance, nivel) {
       var segura = urlSegura(url, false);
@@ -112,7 +112,11 @@
     (canal.fuentes_adicionales || []).forEach(function (cita) {
       agregar(cita.url, cita.titulo || 'Fuente adicional', cita.alcance || 'Corrobora parte de los datos publicados', cita.nivel_fuente || '');
     });
-    return renderCitas(citas, canal.entidad);
+    return citas;
+  }
+
+  function renderCitasCanal(canal) {
+    return renderCitas(citasCanal(canal), canal.entidad);
   }
 
   function enlaceMapaDireccion(punto, ciudad) {
@@ -204,6 +208,30 @@
     var titulo = estado.ayuda + (actualizado ? ' Estado revisado: ' + actualizado + '.' : '');
     return '<span class="estado-operacion estado-operacion-' + esc(estado.clase) + '" title="' + esc(titulo) + '">' +
       esc(estado.texto) + '</span>';
+  }
+
+  function renderPasaporteConfianza(registro, tipo) {
+    registro = registro || {};
+    var oficial = tipo === 'dinero' ? nivelCanal(registro) === 'fuente_oficial' : nivelRegistroAyuda(registro) === 'fuente_oficial';
+    var operacion = tipo === 'dinero' ? null : estadoOperacion(registro);
+    var resultado = tipo === 'dinero'
+      ? (oficial ? 'Canal institucional contrastado' : 'Revisa antes de transferir')
+      : operacion.texto;
+    var fecha = tipo === 'dinero'
+      ? registro.fecha_verificacion
+      : (registro.fecha_revision || registro.fecha || 'Sin fecha publicada');
+    var citas = tipo === 'dinero' ? citasCanal(registro).length : citasDeRegistro(registro).length;
+    return '<details class="pasaporte-confianza"><summary>' +
+      '<span class="pasaporte-simbolo" aria-hidden="true">◎</span><span class="pasaporte-titulo"><strong>Pasaporte de confianza</strong>' +
+      '<small>' + esc(resultado) + '</small></span><span class="pasaporte-nivel">' + (oficial ? 'Fuente oficial' : 'Fuente secundaria') + '</span>' +
+      '</summary><div class="pasaporte-cuerpo"><div class="pasaporte-grid">' +
+      '<span><i aria-hidden="true">1</i><strong>Origen</strong><small>' +
+      (oficial ? 'Publicado o corroborado por la entidad responsable.' : 'Confirmado por una fuente secundaria; contrástalo antes de actuar.') + '</small></span>' +
+      '<span><i aria-hidden="true">2</i><strong>Vigencia</strong><small>Revisión o fuente: ' + esc(fecha) + '.</small></span>' +
+      '<span><i aria-hidden="true">3</i><strong>' + (tipo === 'dinero' ? 'Evidencia' : 'Operación') + '</strong><small>' +
+      (tipo === 'dinero' ? citas + ' cita' + (citas === 1 ? '' : 's') + ' enlazada' + (citas === 1 ? '' : 's') + ' para comprobar el canal.' : esc(operacion.ayuda)) + '</small></span>' +
+      '<span><i aria-hidden="true">4</i><strong>Privacidad</strong><small>Solo datos operativos necesarios; se omiten contactos personales de fuentes secundarias.</small></span>' +
+      '</div><p>Este pasaporte explica la evidencia disponible; no es una garantía financiera ni sustituye confirmar con la entidad.</p></div></details>';
   }
 
   var CLAVE_CAMBIOS = 'cuidar-colombia:cambios:v1';
@@ -382,6 +410,42 @@
     }
     if (aviso.className !== clase) aviso.className = clase;
     if (aviso.innerHTML !== contenido) aviso.innerHTML = contenido;
+  }
+
+  function contarLugares(ayuda) {
+    return (ayuda && ayuda.acopios || []).reduce(function (total, registro) {
+      return total + (registro.puntos || []).length;
+    }, 0);
+  }
+
+  function pintarCentroConfianza(meta, ayuda, resumen) {
+    var resumenEl = document.getElementById('confianza-resumen');
+    var corteEl = document.getElementById('confianza-corte');
+    var indicadores = document.getElementById('confianza-indicadores');
+    var version = document.getElementById('confianza-version');
+    if (!resumenEl || !indicadores) return;
+    var lugares = contarLugares(ayuda);
+    var pines = resumen && resumen.pines_acopio || 0;
+    var fuentes = resumen && resumen.fuentes || 0;
+    var estados = { recibiendo: 0, programado: 0, confirmar: 0, finalizado: 0 };
+    (ayuda && ayuda.acopios || []).forEach(function (registro) {
+      (registro.puntos || []).forEach(function (punto) {
+        var codigo = estadoOperacion(punto, registro).codigo;
+        if (codigo === 'por_confirmar') codigo = 'confirmar';
+        estados[codigo] = (estados[codigo] || 0) + 1;
+      });
+    });
+    resumenEl.textContent = estados.recibiendo + ' lugares tienen recepción confirmada, ' + estados.programado +
+      (estados.programado === 1 ? ' está programado y ' : ' están programados y ') + estados.confirmar +
+      ' exigen confirmar antes de desplazarse. Ningún punto se marca abierto por inferir un horario.';
+    if (corteEl) corteEl.textContent = 'Verificación actual: ' + (meta && meta.ultima_actualizacion || 'sin fecha de corte');
+    indicadores.innerHTML =
+      '<div><strong>' + lugares + '</strong><span>lugares revisados</span></div>' +
+      '<div><strong>' + pines + '</strong><span>pines contrastados</span></div>' +
+      '<div><strong>' + fuentes + '</strong><span>fuentes trazables</span></div>' +
+      '<div><strong>0</strong><span>datos personales añadidos hoy</span></div>';
+    if (version) version.textContent = 'Versión pública ' + (meta && meta.version_publica || 'sin identificar') +
+      ' · validación automática de estructura, enlaces permitidos, coordenadas, fuentes y ausencia de secretos.';
   }
 
   /* ---------- Sismo + balance ---------- */
@@ -613,7 +677,7 @@
           (oficial ? 'Abrir canal oficial' : 'Ver evidencia y confirmar') + ' <span aria-hidden="true">↗</span></a>' : '') +
         '<span class="canal-meta">Comprobado en ' + esc(c.verificado_en || '') + '<br>' + selloFecha(isoRevision, c.fecha_verificacion) +
         (evidencia && evidencia !== destino ? ' · <a href="' + esc(evidencia) + '" target="_blank" rel="noopener noreferrer">ver evidencia</a>' : '') + '</span>' +
-        '</div>' + renderCitasCanal(c) + '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(c.entidad, 'Donar dinero') +
+        '</div>' + renderPasaporteConfianza(c, 'dinero') + renderCitasCanal(c) + '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(c.entidad, 'Donar dinero') +
         enlaceActualizarEntidad(c.entidad, 'Donar dinero') + '</div></article>';
     }).join('');
   }
@@ -718,7 +782,7 @@
         (a.fuente_url ? '<div class="acopio-fuente"><span>Evidencia: ' + esc(a.fuente_titulo || 'fuente consultada') + '</span>' +
           (a.fecha ? selloFecha(isoDesdeFechaCorta(a.fecha), a.fecha) : '') + '</div>' +
           '<div class="acciones-enlaces">' + enlaceExterno(a.fuente_url, 'Ver evidencia principal', 'enlace-accion', 'Ver fuente: ' + (a.fuente_titulo || a.entidad)) + '</div>' : '') +
-        renderCitasRegistro(a, 'Anuncio de campaña, vigencia o punto de recepción') +
+        renderPasaporteConfianza(a, 'acopio') + renderCitasRegistro(a, 'Anuncio de campaña, vigencia o punto de recepción') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') +
         enlaceActualizarEntidad(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') + '</div>' +
         '</article>';
@@ -757,7 +821,7 @@
         '<p>' + esc(s.donde || '') + '</p>' +
         (s.tipos_urgentes && s.tipos_urgentes.length ? '<p style="margin-top:8px"><strong>Se necesita con urgencia:</strong> ' + esc(s.tipos_urgentes.join(', ')) + '</p>' : '') +
         (s.fuente_url ? '<div class="acciones-enlaces">' + enlaceExterno(s.fuente_url, 'Ver evidencia principal', 'enlace-accion', 'Ver evidencia de ' + s.entidad + ' en ' + s.ciudad) + '</div>' : '') +
-        renderCitasRegistro(s, 'Anuncio de jornada, banco o necesidad de sangre') +
+        renderPasaporteConfianza(s, 'sangre') + renderCitasRegistro(s, 'Anuncio de jornada, banco o necesidad de sangre') +
         (s.fecha_revision ? '<div class="simple-pie">Revisado: ' + selloFecha(String(s.fecha_revision_iso || '').slice(0, 10), s.fecha_revision) + '</div>' : '') +
         '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') +
         enlaceActualizarEntidad(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') + '</div>' +
@@ -980,7 +1044,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260813i'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260813j'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1590,7 +1654,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260813i', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260813j', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;
@@ -1613,6 +1677,7 @@
     pintarBenchmarks(benchmarks);
     pintarFuentes(fuentes);
     datosMapa.resumen = r.resumen || null;
+    pintarCentroConfianza(meta, ayuda, r.resumen || null);
 
     if (zonas) {
       datosMapa.zonas = zonas || { municipios: [] };

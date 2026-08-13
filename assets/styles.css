@@ -324,6 +324,34 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .citas-registro {
   margin-top: 10px; border: 1px solid var(--borde); border-radius: 10px; background: var(--papel);
 }
+
+.pasaporte-confianza {
+  margin-top: 11px; border: 1px solid #AFC9DC; border-radius: 11px; background: linear-gradient(135deg,#F7FBFE,#EEF5FA);
+}
+.pasaporte-confianza summary {
+  display: grid; grid-template-columns: 30px minmax(0,1fr) auto; align-items: center; gap: 8px; min-height: 52px;
+  padding: 7px 11px; color: var(--azul-oscuro); cursor: pointer; list-style: none;
+}
+.pasaporte-confianza summary::-webkit-details-marker { display: none; }
+.pasaporte-simbolo {
+  display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--azul-oscuro); color: #fff; font-size: 1rem; font-weight: 900;
+}
+.pasaporte-titulo strong, .pasaporte-titulo small { display: block; }
+.pasaporte-titulo strong { font: 700 .8rem/1.2 Georgia, 'Times New Roman', serif; }
+.pasaporte-titulo small { margin-top: 2px; color: var(--tinta-suave); font-size: .63rem; }
+.pasaporte-nivel { padding: 3px 7px; border: 1px solid #8DB5D3; border-radius: 100px; color: #164E78; font-size: .6rem; font-weight: 800; }
+.pasaporte-confianza[open] summary { border-bottom: 1px solid #C8DCE9; }
+.pasaporte-cuerpo { padding: 11px; }
+.pasaporte-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.pasaporte-grid > span { display: grid; grid-template-columns: 22px minmax(0,1fr); column-gap: 6px; align-items: start; }
+.pasaporte-grid i {
+  grid-row: 1 / 3; display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
+  background: #DDECF6; color: #164E78; font-style: normal; font-size: .65rem; font-weight: 900;
+}
+.pasaporte-grid strong { color: var(--tinta); font-size: .68rem; }
+.pasaporte-grid small { color: var(--tinta-suave); font-size: .61rem; line-height: 1.35; }
+.pasaporte-cuerpo > p { margin-top: 10px; color: var(--tinta-tenue); font-size: .62rem; }
 .citas-registro summary {
   min-height: 44px; display: flex; align-items: center; padding: 8px 12px; cursor: pointer;
   color: var(--azul-oscuro); font-size: .76rem; font-weight: 750;
@@ -587,6 +615,37 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
   color: var(--azul); font-weight: 700;
 }
 
+/* ---------- Centro de confianza ---------- */
+.centro-confianza { padding: 28px 0; background: var(--azul-oscuro); color: #E7EFF5; }
+.centro-confianza-contenido {
+  display: grid; grid-template-columns: minmax(260px, .9fr) minmax(420px, 1.35fr); gap: 18px 28px; align-items: center;
+}
+.centro-confianza .antetitulo { color: #AFCDE3; }
+.centro-confianza h2 { margin: 2px 0 7px; color: #fff; font-size: clamp(1.35rem, 2.4vw, 1.85rem); }
+.confianza-presentacion > p:not(.antetitulo) { max-width: 570px; color: #D2E0EA; font-size: .86rem; }
+.confianza-corte { margin-top: 7px; color: #fff !important; font-size: .75rem !important; font-weight: 800; }
+.confianza-indicadores { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.confianza-indicadores div {
+  min-height: 92px; padding: 13px 10px; border: 1px solid rgba(255,255,255,.18); border-radius: 12px;
+  background: rgba(255,255,255,.075); text-align: center;
+}
+.confianza-indicadores strong { display: block; color: #fff; font: 700 1.65rem/1.1 Georgia, 'Times New Roman', serif; }
+.confianza-indicadores span { display: block; margin-top: 5px; color: #C4D4DF; font-size: .67rem; line-height: 1.3; }
+.confianza-detalle { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.16); }
+.confianza-detalle summary {
+  display: flex; align-items: center; width: fit-content; min-height: 44px; padding: 8px 0; color: #fff;
+  font-size: .8rem; font-weight: 800; cursor: pointer;
+}
+.confianza-controles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 2px 0 12px; }
+.confianza-controles > span { display: grid; grid-template-columns: 24px 1fr; column-gap: 7px; align-items: start; }
+.confianza-controles i {
+  grid-row: 1 / 3; display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+  background: #DDF1E4; color: #174E30; font-style: normal; font-weight: 900;
+}
+.confianza-controles strong { color: #fff; font-size: .75rem; }
+.confianza-controles small { color: #AFC2D0; font-size: .65rem; line-height: 1.35; }
+.confianza-version { padding-bottom: 5px; color: #9FB5C5; font-size: .67rem; }
+
 /* ---------- Cambios desde la Ãºltima visita ---------- */
 .panel-cambios { padding: 18px 0; background: #EEF5F9; border-bottom: 1px solid #C9DDEB; }
 .panel-cambios[hidden] { display: none; }
@@ -703,6 +762,15 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 }
 
 @media (max-width: 700px) {
+  .centro-confianza { padding: 23px 0; }
+  .centro-confianza-contenido { grid-template-columns: 1fr; gap: 14px; }
+  .confianza-indicadores { grid-template-columns: 1fr 1fr; }
+  .confianza-indicadores div { min-height: 80px; }
+  .confianza-detalle { grid-column: auto; }
+  .confianza-controles { grid-template-columns: 1fr; gap: 11px; }
+  .pasaporte-confianza summary { grid-template-columns: 30px minmax(0,1fr); }
+  .pasaporte-nivel { grid-column: 2; width: fit-content; }
+  .pasaporte-grid { grid-template-columns: 1fr; }
   .criterios-mapa { grid-template-columns: 1fr; gap: 7px; margin-top: -10px; }
   .criterios-mapa > span { min-height: 54px; }
   .practicas-adoptadas { grid-template-columns: 1fr 1fr; gap: 8px; }

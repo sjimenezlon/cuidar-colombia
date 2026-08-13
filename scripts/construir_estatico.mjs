@@ -53,7 +53,10 @@ aplicacion.resumen = {
     (aplicacion.verificacion.afirmaciones || []).length + (aplicacion.zonas.municipios || []).length +
     (mapa.geo.puntos || []).length,
   fuentes: dominios.size,
-  municipios: (aplicacion.zonas.municipios || []).length
+  municipios: (aplicacion.zonas.municipios || []).length,
+  lugares_acopio: (aplicacion.ayuda.acopios || []).reduce((total, registro) => total + (registro.puntos || []).length, 0),
+  pines_acopio: (mapa.geo.puntos || []).filter((punto) => punto.tipo === 'acopio').length,
+  pines_sangre: (mapa.geo.puntos || []).filter((punto) => punto.tipo === 'sangre').length
 };
 
 // El HTML es un respaldo funcional mientras carga JavaScript o si este falla.
