@@ -11,6 +11,7 @@
     {"nombre": "Gobernación del Valle del Cauca", "url": "https://www.valledelcauca.gov.co", "descripcion": "Campaña «Todos Somos Valle» y estado de la emergencia en el departamento."},
     {"nombre": "ReliefWeb (OCHA)", "url": "https://reliefweb.int/country/col", "descripcion": "Reportes de situación humanitaria de la ONU sobre Colombia."},
     {"nombre": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2", "descripcion": "Registro internacional del sismo (contraste técnico)."},
-    {"nombre": "IDCBIS", "url": "https://idcbis.org.co", "descripcion": "Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud: donación de sangre en Bogotá."}
+    {"nombre": "IDCBIS", "url": "https://idcbis.org.co", "descripcion": "Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud: donación de sangre en Bogotá."},
+    {"nombre": "ONE Inversión Social", "url": "https://somosone.com.co/una-noche-por-choco", "descripcion": "Campaña «Una noche por Chocó»: destino declarado, aliados y canales oficiales nacionales e internacionales."}
   ]
 }

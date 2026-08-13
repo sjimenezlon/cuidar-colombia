@@ -109,6 +109,9 @@
     agregar(canal.url_oficial, canal.entidad + ' — canal publicado', 'Destino enlazado para realizar o consultar la donación', canal.verificacion && canal.verificacion.nivel);
     agregar(canal.verificacion && canal.verificacion.evidencia_url, canal.verificado_en || 'Evidencia consultada',
       'Evidencia usada para comprobar la campaña y su relación con esta emergencia', canal.verificacion && canal.verificacion.nivel);
+    (canal.fuentes_adicionales || []).forEach(function (cita) {
+      agregar(cita.url, cita.titulo || 'Fuente adicional', cita.alcance || 'Corrobora parte de los datos publicados', cita.nivel_fuente || '');
+    });
     return renderCitas(citas, canal.entidad);
   }
 
@@ -194,14 +197,16 @@
 
   function renderDatosCopiables(texto) {
     var original = String(texto || '');
-    var regex = /\d[\d .-]{6,}\d/g;
+    var regex = /@[a-zA-Z0-9._-]{4,}|\d[\d .-]{6,}\d/g;
     var salida = '', ultimo = 0, coincidencia;
     while ((coincidencia = regex.exec(original))) {
+      var esLlave = coincidencia[0].charAt(0) === '@';
       var digitos = coincidencia[0].replace(/\D/g, '');
-      if (digitos.length < 8) continue;
+      if (!esLlave && digitos.length < 8) continue;
+      var copiable = esLlave ? coincidencia[0] : coincidencia[0].replace(/[ .]/g, '');
       salida += esc(original.slice(ultimo, coincidencia.index)) + '<span class="dato-copiable"><span>' +
         esc(coincidencia[0]) + '</span><button type="button" class="boton-copiar" data-copiar="' +
-        esc(coincidencia[0].replace(/[ .]/g, '')) + '" aria-label="Copiar ' + esc(coincidencia[0]) + '">Copiar</button></span>';
+        esc(copiable) + '" aria-label="Copiar ' + esc(coincidencia[0]) + '">Copiar</button></span>';
       ultimo = coincidencia.index + coincidencia[0].length;
     }
     return salida + esc(original.slice(ultimo));
@@ -455,7 +460,7 @@
         (filtrosCanales.evidencia === 'todas' || nivelCanal(c) === filtrosCanales.evidencia) &&
         (!filtrosAyuda.soloOficial || nivelCanal(c) === 'fuente_oficial') &&
         coincideUbicacion('', c.cobertura) &&
-        coincideBusqueda([c.entidad, c.cobertura, c.como_donar, c.campana, c.detalle_cuenta]);
+        coincideBusqueda([c.entidad, c.cobertura, c.como_donar, c.campana, c.detalle_cuenta, c.destino]);
     });
     conteosAyuda.dinero = lista.length;
     var conteo = document.getElementById('conteo-canales');
@@ -834,7 +839,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260813b'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1443,7 +1448,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json').then(function (r) {
+  fetchJSON('data/app.json?v=20260813b').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;

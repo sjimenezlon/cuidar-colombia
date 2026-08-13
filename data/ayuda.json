@@ -20,6 +20,51 @@
   },
   "canales": [
     {
+      "entidad": "ONE Inversión Social",
+      "campana": "«Una noche por Chocó»",
+      "como_donar": "Campaña específica para familias damnificadas del Chocó, articulada por ONE con Sankofa Danzafro, La Pascasia y Corporación Presentes. En Colombia recibe aportes desde $5.000 por su canal oficial; desde el exterior enlaza el recaudo de Caring for Colombia. La página anuncia además un encuentro solidario el 25 de agosto en La Pascasia. Para certificados, el sitio solo confirma expresamente el beneficio tributario a residentes fiscales en EE. UU.; consulta a la entidad antes de asumir otro alcance.",
+      "url_oficial": "https://somosone.com.co/una-noche-por-choco",
+      "detalle_cuenta": "Cuenta de ahorros Bancolombia 85004761966 · llave Bre-B @oneinversion · NIT 901177509-5 (publicados o corroborados en el dominio oficial de ONE)",
+      "cobertura": "Nacional",
+      "destino": "Familias damnificadas del Chocó; la campaña declara que canalizará donaciones para ayudar a reconstruir sus vidas.",
+      "verificado_en": "somosone.com.co",
+      "fecha_verificacion": "13 ago 2026",
+      "verificacion": {
+        "estado": "verificado",
+        "nivel": "fuente_oficial",
+        "fecha_iso": "2026-08-13",
+        "evidencia_url": "https://somosone.com.co/una-noche-por-choco"
+      },
+      "fuentes_adicionales": [
+        {
+          "titulo": "ONE — política de privacidad institucional",
+          "url": "https://somosone.com.co/privacidad",
+          "alcance": "Corrobora la constitución de la organización, su domicilio y el NIT 901177509-5.",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "titulo": "ONE — publicación institucional que vincula cuenta y NIT",
+          "url": "https://es.linkedin.com/pulse/solidaridad-al-alcance-de-todos-por-eso-yodonodosmilpor-8k0te",
+          "alcance": "Una publicación anterior de la cuenta institucional de ONE vincula el número de cuenta con la organización y el NIT 901177509.",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "titulo": "Caring for Colombia — recaudo internacional de ONE",
+          "url": "https://secure.givelively.org/donate/foundation-caring-for-colombia-ltd/one-inversion-social",
+          "alcance": "Es el canal exterior enlazado directamente por ONE; la certificación tributaria publicada se limita a residentes fiscales en EE. UU.",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "titulo": "DIAN — listado oficial de ESAL autorizadas",
+          "url": "https://www.dian.gov.co/impuestos/sociedades/Regimen-Tributario-Especial-RTE/Herramientas/Documents/ESAL-autorizadas-2021.pdf",
+          "alcance": "Corrobora el antecedente institucional del mismo NIT bajo su nombre anterior, Fundación Viva Air; no prueba por sí solo la vigencia de la campaña.",
+          "nivel_fuente": "fuente_oficial"
+        }
+      ],
+      "grupo": "ONGs y fundaciones",
+      "nivel": "oficial"
+    },
+    {
       "entidad": "Cruz Roja Colombiana",
       "campana": "#TodosPorColombia",
       "como_donar": "Campaña oficial por el terremoto: donación en línea con tarjeta o PSE en la plataforma de la Cruz Roja. Es el organismo de socorro con mayor despliegue en la emergencia.",

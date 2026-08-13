@@ -91,6 +91,7 @@ if (ayuda) {
     exigir(!fechaCorte || canal.verificacion?.fecha_iso <= fechaCorte, `${ctx}: fecha_iso no puede ser posterior al corte ${fechaCorte}`);
     exigir(canal.fecha_verificacion === fechaCortaEs(canal.verificacion?.fecha_iso), `${ctx}: fecha_verificacion no coincide con fecha_iso`);
     revisarUrl(canal.verificacion?.evidencia_url, `${ctx}.evidencia_url`);
+    revisarCitasAdicionales(canal, ctx);
     if (canal.verificacion?.nivel === 'fuente_secundaria' && canal.detalle_cuenta) {
       errores.push(`${ctx}: no se permite publicar una cuenta respaldada solo por fuente secundaria`);
     }
