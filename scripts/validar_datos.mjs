@@ -52,6 +52,13 @@ function revisarFechaRevision(item, ctx, fechaCorte) {
   exigir(item?.fecha_revision === fechaCortaEs(fechaIso), `${ctx}.fecha_revision no coincide con fecha_revision_iso`);
   exigir(!fechaCorte || !fechaIso || fechaIso <= fechaCorte, `${ctx}.fecha_revision_iso posterior al corte ${fechaCorte}`);
 }
+function revisarEstadoOperacion(item, ctx, corteIso) {
+  if (!item || !item.estado_operacion) return;
+  exigir(['recibiendo', 'programado', 'por_confirmar', 'finalizado'].includes(item.estado_operacion), `${ctx}.estado_operacion inválido`);
+  exigir(!Number.isNaN(Date.parse(item.estado_actualizado_iso)), `${ctx}.estado_actualizado_iso requerido y debe ser ISO válido`);
+  exigir(!corteIso || !item.estado_actualizado_iso || Date.parse(item.estado_actualizado_iso) <= Date.parse(corteIso),
+    `${ctx}.estado_actualizado_iso no puede ser posterior al corte del portal`);
+}
 
 const [meta, ayuda, zonas, geo, verificacion, fuentes, sismo, balance] = await Promise.all([
   json('data/meta.json'), json('data/ayuda.json'), json('data/zonas.json'), json('data/geo_puntos.json'),
@@ -98,6 +105,7 @@ if (ayuda) {
   }
   for (const [tipo, lista] of [['acopios', ayuda.acopios], ['sangre', ayuda.sangre]]) {
     for (const [i, item] of (lista || []).entries()) {
+      revisarEstadoOperacion(item, `ayuda.${tipo}[${i}]`, meta?.iso);
       revisarUrl(item.fuente_url, `ayuda.${tipo}[${i}].fuente_url`);
       revisarCitasAdicionales(item, `ayuda.${tipo}[${i}]`);
       exigir(['fuente_oficial', 'fuente_secundaria'].includes(item.nivel_fuente), `ayuda.${tipo}[${i}].nivel_fuente ausente o inválido`);
@@ -108,6 +116,7 @@ if (ayuda) {
         exigir(!fechaCorte || !fechaItem || fechaItem <= fechaCorte, `ayuda.${tipo}[${i}].fecha posterior al corte ${fechaCorte}`);
         const nombresPunto = new Set();
         for (const [j, punto] of (item.puntos || []).entries()) {
+          revisarEstadoOperacion(punto, `ayuda.${tipo}[${i}].puntos[${j}]`, meta?.iso);
           exigir(punto.nombre && !nombresPunto.has(normalizar(punto.nombre)), `ayuda.${tipo}[${i}].puntos[${j}]: nombre ausente o duplicado`);
           nombresPunto.add(normalizar(punto.nombre));
           exigir(!punto.direccion_mapa || Boolean(punto.direccion), `ayuda.${tipo}[${i}].puntos[${j}]: direccion_mapa exige una dirección visible`);

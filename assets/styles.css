@@ -152,8 +152,9 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' ‚
 .detalle-punto h4 { padding-right: 30px; }
 .certeza-punto { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0; }
 .certeza { display: inline-flex; align-items: center; min-height: 26px; padding: 3px 8px; border-radius: 100px; font-size: .68rem; font-weight: 800; }
-.certeza-oficial, .certeza-operativa { background: #E4F3EA; color: #245F3D; }
-.certeza-secundaria, .certeza-confirmar { background: #FBF3E4; color: #714A11; }
+.certeza-oficial, .certeza-operativa, .certeza-recibiendo { background: #E4F3EA; color: #245F3D; }
+.certeza-secundaria, .certeza-confirmar, .certeza-programado { background: #FBF3E4; color: #714A11; }
+.certeza-finalizado { background: #F2F3F4; color: #56616A; }
 .certeza-ubicacion { background: #E1ECF5; color: #164E78; }
 .detalle-punto-datos { display: grid; gap: 7px; margin: 10px 0; }
 .detalle-punto-datos > div { display: grid; grid-template-columns: 90px minmax(0,1fr); gap: 8px; }
@@ -241,13 +242,15 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' ‚
 .vigencia-atencion { color: #714A11; background: #FBF3E4; border-color: #E5C98E; }
 .vigencia-vencida { color: #7A1815; background: #F9E5E3; border-color: #E9BDB9; }
 .vigencia-sin-fecha { color: var(--tinta-suave); background: var(--papel); border-color: var(--borde); }
-.tarjeta-acciones-secundarias { margin-top: 4px; padding-top: 9px; border-top: 1px solid var(--papel); }
-.enlace-reporte {
+.tarjeta-acciones-secundarias { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 4px; padding-top: 9px; border-top: 1px solid var(--papel); }
+.enlace-reporte, .enlace-entidad {
   display: inline-flex; align-items: center; min-height: 44px; padding: 7px 4px; border: 0; background: none;
   color: #6B4A16; font-size: .75rem; font-weight: 650; text-underline-offset: 3px;
   text-decoration: underline; font-family: inherit; cursor: pointer;
 }
 .enlace-reporte:hover { color: #4F350E; }
+.enlace-entidad { color: #164E78; }
+.enlace-entidad:hover { color: var(--azul-oscuro); }
 .nota-verificacion {
   margin-top: 22px; font-size: 0.85rem; color: var(--tinta-suave);
   background: var(--blanco); border-left: 3px solid var(--verde-ok);
@@ -286,6 +289,18 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' ‚
 .lista-puntos li::before { content: 'üìç'; position: absolute; left: 0; font-size: 0.85rem; }
 .lista-puntos li small { color: var(--tinta-tenue); }
 .punto-contenido { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
+.estado-operacion {
+  display: inline-flex; align-items: center; width: fit-content; min-height: 24px; margin: 3px 0;
+  padding: 3px 8px; border: 1px solid transparent; border-radius: 100px; font-size: .69rem; font-weight: 800;
+}
+.estado-operacion-recibiendo { background: #E4F3EA; border-color: #B9DCC7; color: #245F3D; }
+.estado-operacion-programado { background: #FBF3E4; border-color: #E5C98E; color: #714A11; }
+.estado-operacion-confirmar { background: #F2F3F4; border-color: #D6DADD; color: #56616A; }
+.estado-operacion-finalizado { background: #F9E5E3; border-color: #E9BDB9; color: #7A1815; }
+.nota-estado-operativo {
+  max-width: 820px; margin: -7px 0 18px; padding: 10px 13px; border-left: 3px solid var(--oro);
+  border-radius: 0 9px 9px 0; background: #FBF3E4; color: var(--tinta-suave); font-size: .8rem;
+}
 .punto-direccion { color: var(--tinta-suave); font-size: .86rem; }
 .acciones-punto { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 4px; }
 .enlace-maps, .enlace-ruta, .enlace-llamar {
@@ -572,6 +587,21 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' ‚
   color: var(--azul); font-weight: 700;
 }
 
+/* ---------- Cambios desde la √∫ltima visita ---------- */
+.panel-cambios { padding: 18px 0; background: #EEF5F9; border-bottom: 1px solid #C9DDEB; }
+.panel-cambios[hidden] { display: none; }
+.panel-cambios-contenido {
+  display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 18px;
+}
+.panel-cambios .antetitulo { margin-bottom: 3px; color: #4B6F87; font-size: .68rem; }
+.panel-cambios h2 { margin: 0 0 3px; font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; }
+.panel-cambios #cambios-resumen { color: var(--tinta); font-size: .88rem; }
+.panel-cambios-privacidad { margin-top: 4px; color: var(--tinta-tenue); font-size: .72rem; }
+.panel-cambios-borrar {
+  min-height: 44px; padding: 8px 10px; border: 0; background: transparent; color: #164E78;
+  font: inherit; font-size: .76rem; font-weight: 750; text-decoration: underline; cursor: pointer;
+}
+
 /* ---------- Antes de reenviar, verifica ---------- */
 .tarjeta-cadena {
   background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio);
@@ -752,6 +782,8 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' ‚
 }
 
 @media (max-width: 700px) {
+  .panel-cambios-contenido { grid-template-columns: 1fr; gap: 4px; }
+  .panel-cambios-borrar { justify-self: start; padding-left: 0; }
   .contador-verificacion { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; align-items: start; }
   .contador-item { display: flex; min-width: 0; flex-direction: column; align-items: center; line-height: 1.25; }
   .tarjetas-canales, .tarjetas-sangre, .tarjetas-busqueda, .tarjetas-municipios, .tarjetas-mundo {

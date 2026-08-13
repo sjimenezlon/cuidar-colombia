@@ -10,9 +10,11 @@ function respuesta() {
   };
 }
 
+let intento = 1;
 async function ejecutar({ method = 'POST', headers = {}, body = {} } = {}) {
   const res = respuesta();
-  await sugerencias({ method, headers, body, socket: {} }, res);
+  const encabezados = { 'x-forwarded-for': `192.0.2.${intento++}`, ...headers };
+  await sugerencias({ method, headers: encabezados, body, socket: {} }, res);
   return res;
 }
 
@@ -30,6 +32,9 @@ assert.equal((await ejecutar({ headers: { 'content-type': 'application/json' }, 
 assert.equal((await ejecutar({ headers: { 'content-type': 'application/json' }, body: {
   mensaje: 'x'.repeat(13_000), inicio: Date.now() - 1000
 } })).estado, 413);
+assert.equal((await ejecutar({ headers: { 'content-type': 'application/json' }, body: {
+  tipo: 'entidad', mensaje: 'Solicitamos actualizar el registro oficial.', inicio: Date.now() - 1000
+} })).estado, 400);
 
 let llamado = false;
 const fetchReal = globalThis.fetch;
@@ -56,6 +61,14 @@ assert.equal(globalThis.__correoPrueba.to[0], 'privado@example.invalid');
 assert.ok(!globalThis.__correoPrueba.subject.includes('\n'));
 assert.ok(globalThis.__correoPrueba.html.includes('&lt;script&gt;'));
 assert.ok(!globalThis.__correoPrueba.html.includes('<script>'));
+
+const entidad = await ejecutar({ headers: { 'content-type': 'application/json' }, body: {
+  tipo: 'entidad', registro: 'Entidad de prueba', contacto: 'institucional@example.org',
+  mensaje: 'Actualizar el horario según https://example.org/anuncio', inicio: Date.now() - 1000
+} });
+assert.equal(entidad.estado, 200);
+assert.match(entidad.cuerpo.mensaje, /Nada se publicará automáticamente/);
+assert.match(globalThis.__correoPrueba.subject, /Solicitud de actualización de entidad/);
 
 globalThis.fetch = fetchReal;
 delete globalThis.__correoPrueba;

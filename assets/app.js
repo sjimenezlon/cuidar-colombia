@@ -185,10 +185,114 @@
       .replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
   }
 
+  var ESTADOS_OPERACION = {
+    recibiendo: { texto: 'Recepción confirmada', clase: 'recibiendo', ayuda: 'Una fuente publicó que este punto está recibiendo ayudas en el corte indicado.' },
+    programado: { texto: 'Jornada programada', clase: 'programado', ayuda: 'La fuente publicó una fecha o franja de recepción; compruébala antes de salir.' },
+    por_confirmar: { texto: 'Confirmar vigencia', clase: 'confirmar', ayuda: 'No hay un estado operativo estructurado y reciente. Confirma con la entidad antes de ir.' },
+    finalizado: { texto: 'Recepción finalizada', clase: 'finalizado', ayuda: 'La fuente o la revisión indica que esta recepción terminó.' }
+  };
+
+  function estadoOperacion(item, respaldo) {
+    var codigo = item && item.estado_operacion || respaldo && respaldo.estado_operacion || 'por_confirmar';
+    if (!ESTADOS_OPERACION[codigo]) codigo = 'por_confirmar';
+    return Object.assign({ codigo: codigo }, ESTADOS_OPERACION[codigo]);
+  }
+
+  function etiquetaOperacion(item, respaldo) {
+    var estado = estadoOperacion(item, respaldo);
+    var actualizado = item && item.estado_actualizado_iso || respaldo && respaldo.estado_actualizado_iso || '';
+    var titulo = estado.ayuda + (actualizado ? ' Estado revisado: ' + actualizado + '.' : '');
+    return '<span class="estado-operacion estado-operacion-' + esc(estado.clase) + '" title="' + esc(titulo) + '">' +
+      esc(estado.texto) + '</span>';
+  }
+
+  var CLAVE_CAMBIOS = 'cuidar-colombia:cambios:v1';
+  var cambiosBloqueadosSesion = false;
+  function firmaPublica(valor) {
+    var texto = String(valor || '');
+    var hash = 2166136261;
+    for (var i = 0; i < texto.length; i += 1) {
+      hash ^= texto.charCodeAt(i);
+      hash = Math.imul(hash, 16777619);
+    }
+    return ('00000000' + (hash >>> 0).toString(16)).slice(-8);
+  }
+
+  function snapshotPublico(ayuda, meta) {
+    var items = {};
+    function guardar(id, datos) { items[firmaPublica(id)] = firmaPublica(JSON.stringify(datos)); }
+    ((ayuda && ayuda.canales) || []).forEach(function (c) {
+      guardar('canal|' + normalizar(c.entidad), [c.entidad, c.cobertura, c.campana, c.destino, c.url_oficial,
+        c.verificacion && c.verificacion.estado, c.verificacion && c.verificacion.nivel,
+        c.verificacion && c.verificacion.fecha_iso, c.verificacion && c.verificacion.evidencia_url]);
+    });
+    ((ayuda && ayuda.acopios) || []).forEach(function (a) {
+      (a.puntos || []).forEach(function (p) {
+        guardar('acopio|' + normalizar(a.ciudad) + '|' + normalizar(a.entidad) + '|' + normalizar(p.nombre),
+          [a.ciudad, a.entidad, p.nombre, p.direccion, p.horario, p.estado_operacion || a.estado_operacion,
+            p.estado_actualizado_iso || a.estado_actualizado_iso, p.fuente_url || a.fuente_url, p.fecha || a.fecha]);
+      });
+    });
+    ((ayuda && ayuda.sangre) || []).forEach(function (s) {
+      guardar('sangre|' + normalizar(s.ciudad) + '|' + normalizar(s.entidad),
+        [s.ciudad, s.entidad, s.donde, s.tipos_urgentes, s.estado_operacion, s.estado_actualizado_iso,
+          s.fuente_url, s.fecha_revision_iso]);
+    });
+    return { version: 1, evento_id: meta && meta.evento_id || '', corte_iso: meta && meta.iso || '', guardado_iso: new Date().toISOString(), items: items };
+  }
+
+  function pintarCambiosDesdeVisita(ayuda, meta) {
+    var panel = document.getElementById('cambios-desde-visita');
+    var resumen = document.getElementById('cambios-resumen');
+    var borrar = document.getElementById('borrar-referencia-local');
+    var almacenamiento = null;
+    if (!panel || !resumen || cambiosBloqueadosSesion) return;
+    try { almacenamiento = window.localStorage; } catch (e) { return; }
+    if (!almacenamiento) return;
+    var actual = snapshotPublico(ayuda, meta);
+    var anterior = null;
+    try { anterior = JSON.parse(almacenamiento.getItem(CLAVE_CAMBIOS) || 'null'); } catch (e) { anterior = null; }
+    if (!anterior || anterior.version !== 1 || anterior.evento_id !== actual.evento_id || !anterior.items) {
+      resumen.textContent = 'Guardamos una referencia local mínima. Desde tu próxima visita podremos decirte si hay registros nuevos, actualizados o retirados.';
+    } else {
+      var nuevos = 0, actualizados = 0, retirados = 0;
+      Object.keys(actual.items).forEach(function (id) {
+        if (!Object.prototype.hasOwnProperty.call(anterior.items, id)) nuevos += 1;
+        else if (anterior.items[id] !== actual.items[id]) actualizados += 1;
+      });
+      Object.keys(anterior.items).forEach(function (id) {
+        if (!Object.prototype.hasOwnProperty.call(actual.items, id)) retirados += 1;
+      });
+      if (!nuevos && !actualizados && !retirados) {
+        resumen.textContent = 'No detectamos cambios en los canales, acopios o puntos de sangre desde la referencia guardada en este dispositivo.';
+      } else {
+        resumen.textContent = 'Desde tu última referencia: ' + nuevos + ' registro' + (nuevos === 1 ? '' : 's') + ' nuevo' + (nuevos === 1 ? '' : 's') +
+          ', ' + actualizados + ' actualizado' + (actualizados === 1 ? '' : 's') + ' y ' + retirados + ' retirado' + (retirados === 1 ? '' : 's') + '.';
+      }
+    }
+    try { almacenamiento.setItem(CLAVE_CAMBIOS, JSON.stringify(actual)); } catch (e) { return; }
+    panel.hidden = false;
+    if (borrar && !borrar.dataset.conectado) {
+      borrar.dataset.conectado = 'true';
+      borrar.addEventListener('click', function () {
+        try { almacenamiento.removeItem(CLAVE_CAMBIOS); } catch (e) { /* almacenamiento bloqueado */ }
+        cambiosBloqueadosSesion = true;
+        resumen.textContent = 'La referencia local fue borrada. No conservaremos otra durante esta visita.';
+        borrar.hidden = true;
+      });
+    }
+  }
+
   function enlaceReporte(nombre, seccion) {
     return '<button class="enlace-reporte abrir-sugerencias" type="button" data-tipo="dato" data-registro="' +
       esc(nombre) + '" data-seccion="' + esc(seccion) + '" aria-label="Reportar dato desactualizado de ' + esc(nombre) + '">' +
       '⚠ Reportar dato desactualizado</button>';
+  }
+
+  function enlaceActualizarEntidad(nombre, seccion) {
+    return '<button class="enlace-entidad abrir-sugerencias" type="button" data-tipo="entidad" data-registro="' +
+      esc(nombre) + '" data-seccion="' + esc(seccion) + '" aria-label="Solicitar actualización de ' + esc(nombre) + ' en representación de la entidad">' +
+      'Actualizar como entidad</button>';
   }
 
   function estadoVigencia(iso) {
@@ -509,7 +613,8 @@
           (oficial ? 'Abrir canal oficial' : 'Ver evidencia y confirmar') + ' <span aria-hidden="true">↗</span></a>' : '') +
         '<span class="canal-meta">Comprobado en ' + esc(c.verificado_en || '') + '<br>' + selloFecha(isoRevision, c.fecha_verificacion) +
         (evidencia && evidencia !== destino ? ' · <a href="' + esc(evidencia) + '" target="_blank" rel="noopener noreferrer">ver evidencia</a>' : '') + '</span>' +
-        '</div>' + renderCitasCanal(c) + '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(c.entidad, 'Donar dinero') + '</div></article>';
+        '</div>' + renderCitasCanal(c) + '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(c.entidad, 'Donar dinero') +
+        enlaceActualizarEntidad(c.entidad, 'Donar dinero') + '</div></article>';
     }).join('');
   }
 
@@ -592,7 +697,7 @@
     document.getElementById('acopios-detalle').innerHTML = lista.map(function (a) {
       var puntos = (a.puntos || []).map(function (p) {
         var accionesPunto = enlaceMapaDireccion(p, a.ciudad) + enlaceLlamarDesdeTexto(p.horario, p.nombre, 'enlace-llamar');
-        return '<li><div class="punto-contenido"><strong>' + esc(p.nombre) + '</strong>' +
+        return '<li><div class="punto-contenido"><strong>' + esc(p.nombre) + '</strong>' + etiquetaOperacion(p, a) +
           (p.direccion ? '<span class="punto-direccion">' + esc(p.direccion) + '</span>' : '') +
           (p.horario ? '<small>' + esc(p.horario) + '</small>' : '') + '</div>' +
           (accionesPunto ? '<div class="acciones-punto">' + accionesPunto + '</div>' : '') + '</li>';
@@ -614,7 +719,8 @@
           (a.fecha ? selloFecha(isoDesdeFechaCorta(a.fecha), a.fecha) : '') + '</div>' +
           '<div class="acciones-enlaces">' + enlaceExterno(a.fuente_url, 'Ver evidencia principal', 'enlace-accion', 'Ver fuente: ' + (a.fuente_titulo || a.entidad)) + '</div>' : '') +
         renderCitasRegistro(a, 'Anuncio de campaña, vigencia o punto de recepción') +
-        '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') + '</div>' +
+        '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') +
+        enlaceActualizarEntidad(a.entidad + ' — ' + a.ciudad, 'Puntos de acopio') + '</div>' +
         '</article>';
     }).join('') || '<div class="estado-datos">No hay puntos de acopio que coincidan con estos filtros.</div>';
   }
@@ -647,12 +753,14 @@
           ? '<span class="chip chip-verificado">✓ Fuente oficial</span>'
           : '<span class="chip chip-verificado-prensa">◉ Confirmación secundaria</span>') + '</div>' +
         '<div class="simple-sub">' + esc(s.entidad) + '</div>' +
+        etiquetaOperacion(s) +
         '<p>' + esc(s.donde || '') + '</p>' +
         (s.tipos_urgentes && s.tipos_urgentes.length ? '<p style="margin-top:8px"><strong>Se necesita con urgencia:</strong> ' + esc(s.tipos_urgentes.join(', ')) + '</p>' : '') +
         (s.fuente_url ? '<div class="acciones-enlaces">' + enlaceExterno(s.fuente_url, 'Ver evidencia principal', 'enlace-accion', 'Ver evidencia de ' + s.entidad + ' en ' + s.ciudad) + '</div>' : '') +
         renderCitasRegistro(s, 'Anuncio de jornada, banco o necesidad de sangre') +
         (s.fecha_revision ? '<div class="simple-pie">Revisado: ' + selloFecha(String(s.fecha_revision_iso || '').slice(0, 10), s.fecha_revision) + '</div>' : '') +
-        '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') + '</div>' +
+        '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') +
+        enlaceActualizarEntidad(s.entidad + ' — ' + s.ciudad, 'Donación de sangre') + '</div>' +
         '</article>';
     }).join('') || '<div class="estado-datos">No hay puntos de donación de sangre que coincidan con estos filtros.</div>';
   }
@@ -872,7 +980,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260813g'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260813i'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1036,9 +1144,11 @@
         chip('punto', 'sangre', COLOR_SANGRE, 'Sangre', filtrosMapa.puntos.sangre, puntosFiltro.filter(function (p) { return p.tipo === 'sangre'; }).length) + '</fieldset>' +
         '<label class="control-filtro"><span>Ciudad</span><select id="filtro-ciudad-mapa"><option value="todas">Todas</option>' +
         ciudades.map(function (c) { return '<option value="' + esc(c) + '"' + (filtrosMapa.ciudad === c ? ' selected' : '') + '>' + esc(c) + '</option>'; }).join('') + '</select></label>' +
-        '<label class="control-filtro"><span>Antes de ir</span><select id="filtro-operacion-mapa"><option value="todas">Todos</option>' +
-        '<option value="informacion_publicada"' + (filtrosMapa.operacion === 'informacion_publicada' ? ' selected' : '') + '>Información publicada</option>' +
-        '<option value="confirmar"' + (filtrosMapa.operacion === 'confirmar' ? ' selected' : '') + '>Confirmar antes de ir</option></select></label>'
+        '<label class="control-filtro"><span>Estado operativo</span><select id="filtro-operacion-mapa"><option value="todas">Todos</option>' +
+        '<option value="recibiendo"' + (filtrosMapa.operacion === 'recibiendo' ? ' selected' : '') + '>Recepción confirmada</option>' +
+        '<option value="programado"' + (filtrosMapa.operacion === 'programado' ? ' selected' : '') + '>Jornada programada</option>' +
+        '<option value="por_confirmar"' + (filtrosMapa.operacion === 'por_confirmar' ? ' selected' : '') + '>Confirmar vigencia</option>' +
+        '<option value="finalizado"' + (filtrosMapa.operacion === 'finalizado' ? ' selected' : '') + '>Recepción finalizada</option></select></label>'
       : '<fieldset class="grupo-filtros"><legend>Nivel de afectación</legend>' +
         chip('gravedad', 'critica', COLORES_GRAVEDAD.critica, 'Crítica', filtrosMapa.gravedades.critica, municipiosFiltro.filter(function (m) { return m.gravedad === 'critica'; }).length) +
         chip('gravedad', 'alta', COLORES_GRAVEDAD.alta, 'Alta', filtrosMapa.gravedades.alta, municipiosFiltro.filter(function (m) { return m.gravedad === 'alta'; }).length) +
@@ -1128,11 +1238,6 @@
     var geo = ((datosMapa.geo && datosMapa.geo.puntos) || []).filter(function (p) {
       return Number.isFinite(+p.lat) && Number.isFinite(+p.lon) && (p.tipo === 'acopio' || p.tipo === 'sangre');
     });
-    function operacionDesdeDetalle(detalle) {
-      var texto = normalizar(detalle);
-      if (!texto || /(confirmar|consultar|contradictori|llama antes)/.test(texto)) return 'confirmar';
-      return 'informacion_publicada';
-    }
     function metadatosPunto(p) {
       var lista = p.tipo === 'acopio' ? ((datosMapa.ayuda && datosMapa.ayuda.acopios) || []) : ((datosMapa.ayuda && datosMapa.ayuda.sangre) || []);
       var coincidencia = lista.filter(function (x) {
@@ -1157,7 +1262,8 @@
         fecha_iso: fechaFuente ? isoDesdeFechaCorta(fechaFuente) : String(fechaRevisionIso).slice(0, 10),
         etiqueta_fecha: fechaFuente ? 'Fecha de la fuente' : 'Revisado',
         detalle_operativo: detalle,
-        operacion: operacionDesdeDetalle(detalle),
+        operacion: estadoOperacion(subpunto, coincidencia).codigo,
+        estado_actualizado_iso: subpunto && subpunto.estado_actualizado_iso || coincidencia && coincidencia.estado_actualizado_iso || '',
         precision_ubicacion: p.coordenadas_fuente ? 'ubicacion_contrastada' : 'direccion_geocodificada'
       };
     }
@@ -1355,13 +1461,13 @@
   function htmlDetallePunto(p, incluirLista) {
     var esSangre = p.tipo === 'sangre';
     var fuenteOficial = p.nivel_fuente === 'fuente_oficial';
-    var operacionTexto = p.operacion === 'informacion_publicada' ? 'Información publicada' : 'Confirmar antes de ir';
+    var operacion = estadoOperacion({ estado_operacion: p.operacion, estado_actualizado_iso: p.estado_actualizado_iso });
     var ubicacionTexto = p.precision_ubicacion === 'ubicacion_contrastada' ? 'Pin contrastado' : 'Dirección georreferenciada';
     return '<div class="detalle-punto"><h4 id="mapa-ficha-titulo">' + (esSangre ? '🩸 ' : '📦 ') + esc(p.nombre) + '</h4>' +
       '<p>' + esc(p.ciudad) + (p.direccion && p.direccion !== 'null' ? ' — ' + esc(p.direccion) : '') + '</p>' +
       '<div class="certeza-punto" aria-label="Certeza de la información">' +
       '<span class="certeza certeza-' + (fuenteOficial ? 'oficial' : 'secundaria') + '">' + (fuenteOficial ? '✓ Publicado por responsable' : '◉ Confirmación secundaria') + '</span>' +
-      '<span class="certeza certeza-' + (p.operacion === 'informacion_publicada' ? 'operativa' : 'confirmar') + '">' + esc(operacionTexto) + '</span>' +
+      '<span class="certeza certeza-' + esc(operacion.clase) + '" title="' + esc(operacion.ayuda) + '">' + esc(operacion.texto) + '</span>' +
       '<span class="certeza certeza-ubicacion">' + esc(ubicacionTexto) + '</span></div>' +
       '<div class="pop-acciones">' + enlaceRuta(p.lat, p.lon, p.nombre, 'enlace-accion') +
       enlaceLlamarDesdeTexto(p.detalle_operativo, p.nombre, 'enlace-accion enlace-accion-secundaria') +
@@ -1484,7 +1590,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260813h', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260813i', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;
@@ -1497,6 +1603,7 @@
     citasCompartidas = ayuda && ayuda.citas_compartidas || {};
     if (ayuda && ayuda.acopios) { acopiosDatos = ayuda.acopios; pintarSelectorCiudades(); }
     pintarSangre(ayuda);
+    pintarCambiosDesdeVisita(ayuda, meta);
     pintarBusqueda(ayuda);
     inicializarFiltrosAyuda(ayuda);
     aplicarFiltrosAyuda();

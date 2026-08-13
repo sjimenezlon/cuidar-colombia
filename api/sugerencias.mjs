@@ -3,6 +3,7 @@ import { createHash, randomUUID } from 'node:crypto';
 const limites = new Map();
 const TIPOS = {
   dato: 'Dato desactualizado o incorrecto',
+  entidad: 'Solicitud de actualización de entidad',
   sugerencia: 'Sugerencia para mejorar',
   seguridad: 'Privacidad o seguridad',
   otro: 'Otro'
@@ -86,6 +87,9 @@ export default async function sugerencias(req, res) {
   const inicio = Number(cuerpo.inicio || 0);
 
   if (mensaje.length < 12) return respuesta(res, 400, { ok: false, mensaje: 'Cuéntanos un poco más para poder revisarlo.' });
+  if (tipo === 'entidad' && contacto.length < 5) {
+    return respuesta(res, 400, { ok: false, mensaje: 'Incluye un contacto institucional verificable para revisar esta solicitud.' });
+  }
   if (!inicio || Date.now() - inicio < 800 || Date.now() - inicio > 24 * 60 * 60 * 1000) {
     return respuesta(res, 400, { ok: false, mensaje: 'Actualiza el formulario e inténtalo de nuevo.' });
   }
@@ -99,7 +103,7 @@ export default async function sugerencias(req, res) {
 
   const detalle = [
     ['Tipo', TIPOS[tipo]], ['Registro', registro || 'No indicado'], ['Sección', seccion || 'No indicada'],
-    ['Página', pagina || 'No indicada'], ['Contacto opcional', contacto || 'No proporcionado'], ['Mensaje', mensaje]
+    ['Página', pagina || 'No indicada'], [tipo === 'entidad' ? 'Contacto institucional' : 'Contacto opcional', contacto || 'No proporcionado'], ['Mensaje', mensaje]
   ];
   const html = `<h2>Nuevo reporte de Cuidar a Colombia</h2>${detalle.map(([nombre, valor]) =>
     `<p><strong>${escaparHtml(nombre)}:</strong><br>${escaparHtml(valor).replace(/\n/g, '<br>')}</p>`).join('')}`;
@@ -127,7 +131,9 @@ export default async function sugerencias(req, res) {
       console.error('[sugerencias] Resend rechazó el envío:', envio.status);
       return respuesta(res, 502, { ok: false, mensaje: 'No pudimos enviar el reporte. Intenta nuevamente en unos minutos.' });
     }
-    return respuesta(res, 200, { ok: true, mensaje: 'Gracias. Recibimos tu reporte y lo revisaremos.' });
+    return respuesta(res, 200, { ok: true, mensaje: tipo === 'entidad'
+      ? 'Recibimos la solicitud. Nada se publicará automáticamente; la contrastaremos con el canal oficial.'
+      : 'Gracias. Recibimos tu reporte y lo revisaremos.' });
   } catch (error) {
     console.error('[sugerencias] Falló el proveedor de correo:', error?.message || 'error desconocido');
     return respuesta(res, 502, { ok: false, mensaje: 'No pudimos enviar el reporte. Intenta nuevamente en unos minutos.' });

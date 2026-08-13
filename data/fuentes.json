@@ -13,6 +13,7 @@
     {"nombre": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2", "descripcion": "Registro internacional del sismo (contraste técnico)."},
     {"nombre": "IDCBIS", "url": "https://idcbis.org.co", "descripcion": "Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud: donación de sangre en Bogotá."},
     {"nombre": "ONE Inversión Social", "url": "https://somosone.com.co/una-noche-por-choco", "descripcion": "Campaña «Una noche por Chocó»: destino declarado, aliados y canales oficiales nacionales e internacionales."},
-    {"nombre": "Alcaldía de Rionegro", "url": "https://rionegro.gov.co/publicaciones/1389/rionegro-se-suma-a-colombiaselevanta-para-apoyar-a-las-familias-afectadas-por-el-sismo/", "descripcion": "Tres puntos oficiales de #ColombiaSeLevanta en Rionegro, con horario y artículos recibidos."}
+    {"nombre": "Alcaldía de Rionegro", "url": "https://rionegro.gov.co/publicaciones/1389/rionegro-se-suma-a-colombiaselevanta-para-apoyar-a-las-familias-afectadas-por-el-sismo/", "descripcion": "Tres puntos oficiales de #ColombiaSeLevanta en Rionegro, con horario y artículos recibidos."},
+    {"nombre": "Corporación El Minuto de Dios", "url": "https://www.instagram.com/reel/Db4A78XsMUB/", "descripcion": "Publicación institucional de la campaña «Un Minuto por Colombia»: siete puntos físicos, artículos recibidos y horario de Bogotá."}
   ]
 }

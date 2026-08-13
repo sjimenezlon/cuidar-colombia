@@ -21,8 +21,8 @@
 .fab-donar-movil{display:none}.fab-whatsapp{position:fixed;right:22px;bottom:22px;z-index:500;display:flex;align-items:center;gap:8px;background:#008938;color:#fff;text-decoration:none;padding:12px 20px;border-radius:100px;font-weight:700;font-size:.92rem;box-shadow:0 4px 18px rgba(0,137,56,.35)}
 @media(max-width:900px){body{padding-bottom:78px}.fab-donar-movil{position:fixed;left:12px;right:76px;bottom:12px;z-index:600;display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--azul);color:#fff;border-radius:100px;text-decoration:none;font-size:.94rem;font-weight:800;box-shadow:0 4px 18px rgba(29,90,138,.35)}.fab-whatsapp{right:12px;bottom:12px;width:52px;height:52px;padding:13px;justify-content:center;z-index:600}.fab-whatsapp span{display:none}}
 </style>
-<link rel="stylesheet" href="assets/styles.css?v=20260813h">
-<script src="assets/loader.js?v=20260813h"></script>
+<link rel="stylesheet" href="assets/styles.css?v=20260813i">
+<script src="assets/loader.js?v=20260813i"></script>
 </head>
 <body>
 
@@ -103,6 +103,18 @@
     <div class="contenedor">🛑 ¿Te llegó una cadena de WhatsApp sobre el terremoto?
     <a href="#verifica">Verifícala aquí antes de reenviarla →</a></div>
   </div>
+
+  <section class="panel-cambios" id="cambios-desde-visita" aria-live="polite" hidden>
+    <div class="contenedor panel-cambios-contenido">
+      <div>
+        <p class="antetitulo">Seguimiento en este dispositivo</p>
+        <h2 id="cambios-titulo">Qué cambió desde tu última visita</h2>
+        <p id="cambios-resumen"></p>
+        <p class="panel-cambios-privacidad">La comparación usa únicamente huellas técnicas de información pública. No guarda identidad, ubicación ni datos bancarios y no se envía al servidor.</p>
+      </div>
+      <button class="boton-enlace panel-cambios-borrar" id="borrar-referencia-local" type="button">Borrar referencia local</button>
+    </div>
+  </section>
 
   <!-- ============ MAPA ============ -->
   <section class="seccion seccion-mapa" id="mapa-seccion">
@@ -221,6 +233,7 @@
       <div class="bloque-ayuda" id="acopios">
         <h3><span class="numeral">2</span> Llevar ayuda a un punto de acopio</h3>
         <p class="bloque-intro">Elige tu ciudad para ver los puntos publicados y su nivel de evidencia. La lista incluye lugares aunque aún no tengan coordenadas verificadas; solo los ubicados con precisión aparecen en el mapa.</p>
+        <p class="nota-estado-operativo"><strong>Estado operativo:</strong> solo mostramos «Recepción confirmada» o «Jornada programada» cuando una fuente lo publica de forma explícita y con fecha. Un horario escrito no significa que el lugar esté abierto ahora.</p>
         <div class="selector-ciudades" id="selector-ciudades"><!-- JS --></div>
         <div id="acopios-detalle"><!-- JS --></div>
       </div>
@@ -229,7 +242,7 @@
       <div class="bloque-ayuda" id="sangre">
         <h3><span class="numeral">3</span> Donar sangre</h3>
         <p class="bloque-intro">Los bancos de sangre necesitan reservas sostenidas durante semanas, no solo el primer día.
-        Si no puedes donar hoy, agenda para los próximos días: la necesidad continúa.</p>
+        Si no puedes donar hoy, agenda para los próximos días: la necesidad continúa. Confirma la atención directamente con el banco antes de desplazarte.</p>
         <div class="tarjetas-sangre" id="sangre-lista"><!-- JS --></div>
         <div class="requisitos" id="sangre-requisitos"><!-- JS --></div>
       </div>
@@ -346,14 +359,17 @@
       <p id="privacidad"><strong>Privacidad:</strong> no usamos analítica propia, cookies de la aplicación,
       identificadores publicitarios ni perfiles de usuario. El navegador puede guardar temporalmente archivos
       públicos para que el portal cargue más rápido. «Cerca de mí» calcula distancias dentro de tu dispositivo y
-      no guarda ni envía tu coordenada. Vercel, como proveedor de alojamiento y firewall, procesa metadatos técnicos
+      no guarda ni envía tu coordenada. Para mostrar «qué cambió desde tu última visita», el navegador puede conservar
+      en <em>localStorage</em> una fecha y huellas técnicas de registros públicos; no contienen identidad, coordenadas ni
+      datos bancarios y nunca se envían al servidor. Vercel, como proveedor de alojamiento y firewall, procesa metadatos técnicos
       de las solicitudes —como IP, navegador y ruta— para prestar y proteger el servicio; consulta su
       <a class="pie-enlace" href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">política de privacidad</a>.
       Al abrir el mapa, OpenFreeMap recibe las solicitudes técnicas necesarias para entregar las teselas; no enviamos
       cookies ni la página de origen. Según su <a class="pie-enlace" href="https://openfreemap.org/privacy/" target="_blank"
       rel="noopener noreferrer">política de privacidad</a>, no registra IP por defecto y solo puede hacerlo temporalmente
       ante incidentes de seguridad. Los enlaces externos pertenecen a terceros. Si usas el formulario, enviaremos únicamente
-      el tipo de reporte, el mensaje, el registro relacionado y el contacto opcional mediante Resend;
+      el tipo de reporte, el mensaje, el registro relacionado y el contacto mediante Resend; el contacto es obligatorio
+      únicamente cuando alguien solicita actualizar un registro en representación de una entidad;
       consulta su <a class="pie-enlace" href="https://resend.com/legal/privacy-policy" target="_blank"
       rel="noopener noreferrer">política de privacidad</a>. No conservamos una copia en una base de datos de la plataforma,
       no usamos estos datos para publicidad ni creamos perfiles.</p>
@@ -380,6 +396,7 @@
     <label class="campo-sugerencia"><span>Tipo de mensaje</span>
       <select id="sugerencia-tipo" name="tipo" required>
         <option value="dato">Dato desactualizado o incorrecto</option>
+        <option value="entidad">Represento a una entidad y quiero actualizar un registro</option>
         <option value="sugerencia">Sugerencia para mejorar</option>
         <option value="seguridad">Privacidad o seguridad</option>
         <option value="otro">Otro</option>
@@ -392,14 +409,14 @@
       <textarea id="sugerencia-mensaje" name="mensaje" required minlength="12" maxlength="2000" rows="5"
         placeholder="Describe el cambio y, si puedes, pega el enlace de la fuente."></textarea>
     </label>
-    <label class="campo-sugerencia"><span>Contacto para responder <small>(opcional)</small></span>
+    <label class="campo-sugerencia"><span id="sugerencia-contacto-etiqueta">Contacto para responder <small>(opcional)</small></span>
       <input id="sugerencia-contacto" name="contacto" type="text" maxlength="160" autocomplete="email"
         placeholder="Correo o teléfono; puedes dejarlo vacío">
     </label>
     <label class="campo-trampa" aria-hidden="true">Empresa <input name="empresa" type="text" tabindex="-1" autocomplete="off"></label>
     <input id="sugerencia-inicio" name="inicio" type="hidden">
     <input id="sugerencia-seccion" name="seccion" type="hidden">
-    <p class="nota-formulario">El contacto es opcional. El mensaje se usa exclusivamente para revisar y mejorar esta plataforma.</p>
+    <p class="nota-formulario" id="sugerencia-nota">El contacto es opcional. El mensaje se usa exclusivamente para revisar y mejorar esta plataforma.</p>
     <div class="formulario-acciones">
       <button class="boton boton-primario" id="enviar-sugerencia" type="submit">Enviar reporte</button>
       <button class="boton boton-cancelar" id="cancelar-sugerencia" type="button">Cancelar</button>

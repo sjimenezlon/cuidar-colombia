@@ -410,6 +410,160 @@
   "acopios": [
     {
       "ciudad": "Bogotá",
+      "entidad": "Corporación El Minuto de Dios — campaña «Un Minuto por Colombia»",
+      "puntos": [
+        {
+          "nombre": "Minuto de Dios — Banco de Ropas",
+          "direccion": "Transversal 73A #82-61, barrio Minuto de Dios",
+          "horario": "lunes a viernes, 8:00 a. m.–4:00 p. m.; sábados, 9:00 a. m.–1:00 p. m. Confirma vigencia antes de ir."
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "kits de aseo",
+        "colchonetas y frazadas",
+        "herramientas"
+      ],
+      "que_no_donar": [],
+      "fuente_titulo": "Corporación El Minuto de Dios — publicación oficial de campaña",
+      "fuente_url": "https://www.instagram.com/reel/Db4A78XsMUB/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Medellín",
+      "entidad": "Corporación El Minuto de Dios — campaña «Un Minuto por Colombia»",
+      "puntos": [
+        {
+          "nombre": "Minuto de Dios — Edificio Bancoquia, oficina 403",
+          "direccion": "Carrera 49 #53-19, oficina 403, Edificio Bancoquia",
+          "horario": "horario no publicado; confirma vigencia antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "kits de aseo",
+        "colchonetas y frazadas",
+        "herramientas"
+      ],
+      "que_no_donar": [],
+      "fuente_titulo": "Corporación El Minuto de Dios — publicación oficial de campaña",
+      "fuente_url": "https://www.instagram.com/reel/Db4A78XsMUB/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Cúcuta",
+      "entidad": "Corporación El Minuto de Dios — campaña «Un Minuto por Colombia»",
+      "puntos": [
+        {
+          "nombre": "Minuto de Dios — barrio Blanco–Caobos",
+          "direccion": "Avenida 1E #20-56, barrio Blanco–Caobos",
+          "horario": "horario no publicado; confirma vigencia antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "kits de aseo",
+        "colchonetas y frazadas",
+        "herramientas"
+      ],
+      "que_no_donar": [],
+      "fuente_titulo": "Corporación El Minuto de Dios — publicación oficial de campaña",
+      "fuente_url": "https://www.instagram.com/reel/Db4A78XsMUB/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Cartagena",
+      "entidad": "Corporación El Minuto de Dios — campaña «Un Minuto por Colombia»",
+      "puntos": [
+        {
+          "nombre": "Minuto de Dios — Centro Comercial San Lázaro, local 19",
+          "direccion": "Carrera 15 #31-110, barrio El Espinal, Centro Comercial San Lázaro, local 19",
+          "horario": "horario no publicado; confirma vigencia antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "kits de aseo",
+        "colchonetas y frazadas",
+        "herramientas"
+      ],
+      "que_no_donar": [],
+      "fuente_titulo": "Corporación El Minuto de Dios — publicación oficial de campaña",
+      "fuente_url": "https://www.instagram.com/reel/Db4A78XsMUB/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Barranquilla",
+      "entidad": "Corporación El Minuto de Dios — campaña «Un Minuto por Colombia»",
+      "puntos": [
+        {
+          "nombre": "Minuto de Dios — barrio El Bosque",
+          "direccion": "Calle 73 con Carrera 7E, esquina, barrio El Bosque",
+          "horario": "horario no publicado; confirma vigencia antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "kits de aseo",
+        "colchonetas y frazadas",
+        "herramientas"
+      ],
+      "que_no_donar": [],
+      "fuente_titulo": "Corporación El Minuto de Dios — publicación oficial de campaña",
+      "fuente_url": "https://www.instagram.com/reel/Db4A78XsMUB/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Cali",
+      "entidad": "Corporación El Minuto de Dios — campaña «Un Minuto por Colombia»",
+      "puntos": [
+        {
+          "nombre": "Minuto de Dios — San Fernando",
+          "direccion": "Calle 5B #37-120, San Fernando",
+          "horario": "horario no publicado; confirma vigencia antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "kits de aseo",
+        "colchonetas y frazadas",
+        "herramientas"
+      ],
+      "que_no_donar": [],
+      "fuente_titulo": "Corporación El Minuto de Dios — publicación oficial de campaña",
+      "fuente_url": "https://www.instagram.com/reel/Db4A78XsMUB/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Villavicencio",
+      "entidad": "Corporación El Minuto de Dios — campaña «Un Minuto por Colombia»",
+      "puntos": [
+        {
+          "nombre": "UNIMINUTO — campus San Juan Eudes",
+          "direccion": "Carrera 36 #5A-21 Sur, Hacienda Rosablanca",
+          "horario": "horario no publicado; confirma vigencia antes de ir"
+        }
+      ],
+      "que_donar": [
+        "alimentos no perecederos",
+        "kits de aseo",
+        "colchonetas y frazadas",
+        "herramientas"
+      ],
+      "que_no_donar": [],
+      "fuente_titulo": "Corporación El Minuto de Dios — publicación oficial de campaña",
+      "fuente_url": "https://www.instagram.com/reel/Db4A78XsMUB/",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Bogotá",
       "entidad": "Alcaldía de Bogotá y Cruz Roja",
       "puntos": [
         {
@@ -1881,7 +2035,9 @@
       "fuente_titulo": "Centro Comercial Centro Chía — publicación directa",
       "fuente_url": "https://www.instagram.com/p/Db5_99Exr4f/",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "11 ago 2026"
+      "fecha": "11 ago 2026",
+      "estado_operacion": "programado",
+      "estado_actualizado_iso": "2026-08-13T08:18:00-05:00"
     },
     {
       "ciudad": "Bogotá",
