@@ -89,6 +89,33 @@
       "url": null,
       "estado": "histórica",
       "leccion": "La confianza sin gobernanza ni auditoría es frágil. Una plataforma que agrega información sin tocar dinero evita ese riesgo por diseño — por eso Cuidar a Colombia no recauda."
+    },
+    {
+      "nombre": "PetaBencana",
+      "pais_desastre": "Indonesia · inundaciones urbanas",
+      "ano": "desde 2013",
+      "que_hacia": "Combina reportes ciudadanos con datos oficiales y los convierte en información de riesgo confirmada, a escala de calle y en tiempo real. La plataforma es abierta, gratuita y expone una API pública.",
+      "url": "https://info.petabencana.id/",
+      "estado": "activa",
+      "leccion": "Un mapa de emergencia debe ayudar a tomar una decisión inmediata y mostrar con claridad qué está confirmado y qué proviene de la comunidad."
+    },
+    {
+      "nombre": "IFRC GO",
+      "pais_desastre": "Global · Cruz Roja y Media Luna Roja",
+      "ano": "desde 2018",
+      "que_hacia": "Reúne información operacional de emergencias para equipos humanitarios y diseña su núcleo para celulares, conectividad deficiente y uso fuera de línea. Solo integra fuentes externas cuando pueden mantenerse.",
+      "url": "https://go.ifrc.org/",
+      "estado": "activa",
+      "leccion": "En una crisis, velocidad también significa poco peso, tolerancia a mala señal y no depender de integraciones que mañana puedan romperse."
+    },
+    {
+      "nombre": "Sahana EDEN",
+      "pais_desastre": "Global · gestión humanitaria",
+      "ano": "desde 2004",
+      "que_hacia": "Software abierto para organizar directorios de organizaciones, recursos, logística y el esquema «quién hace qué y dónde» durante una respuesta humanitaria.",
+      "url": "https://sahanafoundation.org/",
+      "estado": "activa",
+      "leccion": "Separar entidades, lugares, necesidades y responsables hace que la información sea reutilizable, verificable y más fácil de mantener."
     }
   ]
 }

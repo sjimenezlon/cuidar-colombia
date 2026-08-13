@@ -13,7 +13,8 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .navegacion a:hover { background: var(--crema); color: var(--tinta); }
 .boton:hover { transform: translateY(-1px); box-shadow: var(--sombra); }
 .boton-secundario { background: var(--blanco); color: var(--azul); border: 1.5px solid var(--azul); }
-.accion:hover { transform: translateY(-2px); box-shadow: var(--sombra); border-color: var(--azul); }
+.accion { transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.accion:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(31,41,51,.11); }
 .banner-contenido a { color: #fff; font-weight: 700; text-decoration: none; }
 .banner-contenido a:hover { text-decoration: underline; }
 
@@ -47,6 +48,20 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 
 /* ---------- Mapa ---------- */
 .seccion-mapa { padding-bottom: 40px; }
+.criterios-mapa {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;
+  max-width: 760px; margin: -14px 0 24px;
+}
+.criterios-mapa > span {
+  display: flex; align-items: center; gap: 10px; min-height: 62px; padding: 10px 13px;
+  border: 1px solid var(--borde); border-radius: 12px; background: rgba(255,255,255,.72);
+  color: var(--tinta-suave); font-size: .74rem; line-height: 1.3;
+}
+.criterios-mapa i {
+  display: grid; place-items: center; width: 30px; height: 30px; flex: 0 0 30px;
+  border-radius: 50%; background: var(--azul-oscuro); color: #fff; font-style: normal; font-weight: 800;
+}
+.criterios-mapa strong { display: block; color: var(--tinta); font-size: .8rem; }
 .mapa-envoltura {
   position: relative; height: 580px; margin: 8px 0 18px;
   background: #E9EFF3;
@@ -396,6 +411,17 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 
 /* ---------- Benchmarks ---------- */
 .tarjetas-mundo { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.practicas-adoptadas {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: -8px 0 28px;
+}
+.practicas-adoptadas > span {
+  min-height: 106px; padding: 15px; border: 1px solid #D9CCB7; border-radius: 12px;
+  background: rgba(255,255,255,.68); color: var(--tinta-suave); font-size: .79rem; line-height: 1.4;
+}
+.practicas-adoptadas strong {
+  display: block; margin-bottom: 5px; color: var(--azul-oscuro); font-family: Georgia, 'Times New Roman', serif;
+  font-size: .98rem;
+}
 .tarjeta-mundo {
   background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio);
   padding: 24px; display: flex; flex-direction: column; gap: 8px;
@@ -522,7 +548,10 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
   background: #FBF3E4; border-bottom: 1px solid #EBD9B4; padding: 11px 0;
   text-align: center; font-size: 0.92rem;
 }
-.franja-verifica a { color: var(--azul); font-weight: 700; }
+.franja-verifica a {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+  color: var(--azul); font-weight: 700;
+}
 
 /* ---------- Antes de reenviar, verifica ---------- */
 .tarjeta-cadena {
@@ -625,7 +654,10 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 }
 
 @media (max-width: 700px) {
-  .aviso-vigencia { min-height: 70px; }
+  .criterios-mapa { grid-template-columns: 1fr; gap: 7px; margin-top: -10px; }
+  .criterios-mapa > span { min-height: 54px; }
+  .practicas-adoptadas { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .practicas-adoptadas > span { min-height: 118px; padding: 13px; }
   .mapa-filtros-contenido { align-items: stretch; }
   .grupo-filtros, .control-filtro, .control-busqueda { width: 100%; }
   .grupo-filtros .chip-capa { flex: 1; justify-content: center; }
@@ -686,19 +718,23 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 }
 .fab-whatsapp:hover { transform: translateY(-2px) scale(1.03); }
 .fab-donar-movil { display: none; }
+.fab-donar-movil[hidden] { display: none !important; }
 @media (max-width: 900px) {
-  body { padding-bottom: 78px; }
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
   .fab-donar-movil {
-    position: fixed; left: 12px; right: 76px; bottom: 12px; z-index: 600;
+    position: fixed; left: 12px; right: 76px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 600;
     display: flex; align-items: center; justify-content: center; min-height: 52px;
     background: var(--azul); color: #fff; border-radius: 100px; text-decoration: none;
     font-size: .94rem; font-weight: 800; box-shadow: 0 4px 18px rgba(29,90,138,.35);
   }
-  .fab-whatsapp { right: 12px; bottom: 12px; width: 52px; height: 52px; padding: 13px; justify-content: center; z-index: 600; }
+  .fab-whatsapp { right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); width: 52px; height: 52px; padding: 13px; justify-content: center; z-index: 600; }
   .fab-whatsapp span { display: none; }
+  .acciones-principales-visibles .fab-whatsapp { display: none; }
 }
 
 @media (max-width: 700px) {
+  .contador-verificacion { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; align-items: start; }
+  .contador-item { display: flex; min-width: 0; flex-direction: column; align-items: center; line-height: 1.25; }
   .tarjetas-canales, .tarjetas-sangre, .tarjetas-busqueda, .tarjetas-municipios, .tarjetas-mundo {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -722,4 +758,9 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
     margin-right: -24px; padding: 0 24px 10px 0; scroll-snap-type: x proximity;
   }
   .pastilla-ciudad { flex: 0 0 auto; scroll-snap-align: start; }
+}
+
+@media (max-width: 420px) {
+  .practicas-adoptadas { grid-template-columns: 1fr; }
+  .practicas-adoptadas > span { min-height: 0; }
 }

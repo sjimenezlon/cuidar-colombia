@@ -63,7 +63,7 @@ let html = readFileSync(htmlPublico, 'utf8');
 const reemplazos = [
   [/(<strong id="fecha-actualizacion">)[^<]*(<\/strong>)/, `$1${aplicacion.meta.ultima_actualizacion}$2`],
   [/(<div class="aviso-vigencia[^>]*" id="aviso-vigencia"[^>]*>)[\s\S]*?(<\/div>)/,
-    `$1<strong>Datos dentro de la ventana de revisión.</strong> Próxima revisión prevista: ${aplicacion.meta.proxima_revision}$2`],
+    `$1<strong>Información vigente</strong><span>Próxima: ${aplicacion.meta.proxima_revision}</span>$2`],
   [/(<strong id="contx-0">)[^<]*(<\/strong>)/, `$1${aplicacion.resumen.registros}$2`],
   [/(<strong id="contx-1">)[^<]*(<\/strong>)/, `$1${aplicacion.resumen.fuentes}$2`],
   [/(<strong id="contx-2">)[^<]*(<\/strong>)/, `$1${aplicacion.resumen.municipios}$2`],

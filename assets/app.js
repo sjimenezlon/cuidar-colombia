@@ -270,11 +270,11 @@
     var clase, contenido;
     if (horas > limite) {
       clase = 'aviso-vigencia aviso-vigencia-alerta';
-      contenido = '<strong>Esta información necesita una nueva revisión.</strong> Confirma siempre en la fuente antes de actuar.';
+      contenido = '<strong>Revisión pendiente</strong><span>Confirma en la fuente antes de actuar</span>';
     } else {
       clase = 'aviso-vigencia aviso-vigencia-ok';
-      contenido = '<strong>Datos dentro de la ventana de revisión.</strong>' +
-        (meta.proxima_revision ? ' Próxima revisión prevista: ' + esc(meta.proxima_revision) : '');
+      contenido = '<strong>Información vigente</strong>' +
+        (meta.proxima_revision ? '<span>Próxima: ' + esc(meta.proxima_revision) + '</span>' : '');
     }
     if (aviso.className !== clase) aviso.className = clase;
     if (aviso.innerHTML !== contenido) aviso.innerHTML = contenido;
@@ -858,7 +858,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260813e'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260813g'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1470,7 +1470,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260813e', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260813g', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;
