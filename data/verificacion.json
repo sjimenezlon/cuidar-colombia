@@ -124,13 +124,13 @@
     {
       "afirmacion": "«El volcán Puracé entró en erupción por el terremoto»",
       "veredicto": "Engañoso",
-      "realidad": "El SGC aclaró que el sismo no tiene relación con la actividad del Puracé: el volcán está en alerta naranja desde el 1 de agosto, y varios videos virales son de días anteriores al terremoto.",
-      "nivel_fuente": "fuente_secundaria",
-      "fuente_nombre": "SGC (vía La Silla Vacía)",
-      "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/enganoso/volcan-purace-en-cauca-no-entro-en-actividad-luego-del-terremoto-del-10-de-agosto/",
+      "realidad": "El SGC aclaró que el sismo no tiene relación con la actividad del Puracé y confirmó el 12 de agosto que el volcán continúa en alerta naranja, no roja. Reportó emisiones de ceniza y recomendó no acercarse a los cráteres Puracé, Piocollo y Curiquinga.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "Servicio Geológico Colombiano",
+      "fuente_url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-extraordinario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-12-de-agosto.aspx",
       "remitir_nombre": "SGC en X (@sgcol)",
       "remitir_url": "https://x.com/sgcol",
-      "verificado_iso": "2026-08-11"
+      "verificado_iso": "2026-08-13"
     }
   ],
   "fuentes_para_verificar": [

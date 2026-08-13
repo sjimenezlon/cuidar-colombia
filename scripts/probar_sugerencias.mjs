@@ -20,10 +20,16 @@ assert.equal((await ejecutar({ method: 'GET' })).estado, 405);
 assert.equal((await ejecutar({ headers: {
   origin: 'https://sitio-malicioso.example', 'sec-fetch-site': 'cross-site', 'content-type': 'application/json'
 } })).estado, 403);
+assert.equal((await ejecutar({ headers: {
+  origin: 'https://cuidarcolombia-atacante.vercel.app', 'content-type': 'application/json'
+} })).estado, 403);
 assert.equal((await ejecutar({ headers: {} })).estado, 415);
 assert.equal((await ejecutar({ headers: { 'content-type': 'application/json' }, body: {
   mensaje: 'muy corto', inicio: Date.now() - 1000
 } })).estado, 400);
+assert.equal((await ejecutar({ headers: { 'content-type': 'application/json' }, body: {
+  mensaje: 'x'.repeat(13_000), inicio: Date.now() - 1000
+} })).estado, 413);
 
 let llamado = false;
 const fetchReal = globalThis.fetch;

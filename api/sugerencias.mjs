@@ -32,8 +32,9 @@ function origenPermitido(req) {
   if (!origen) return true;
   try {
     const host = new URL(origen).hostname;
+    const despliegue = String(process.env.VERCEL_URL || '').toLowerCase().split(':')[0];
     return host === 'cuidarcolombia.vercel.app' || host === 'localhost' || host === '127.0.0.1' ||
-      (host.endsWith('.vercel.app') && host.includes('cuidarcolombia'));
+      (!!despliegue && host === despliegue);
   } catch { return false; }
 }
 
@@ -70,6 +71,9 @@ export default async function sugerencias(req, res) {
   }
   if (!cuerpo || Array.isArray(cuerpo) || typeof cuerpo !== 'object') {
     return respuesta(res, 400, { ok: false, mensaje: 'No pudimos leer el formulario.' });
+  }
+  if (JSON.stringify(cuerpo).length > 12_000) {
+    return respuesta(res, 413, { ok: false, mensaje: 'El mensaje es demasiado grande.' });
   }
   if (texto(cuerpo.empresa, 80)) return respuesta(res, 200, { ok: true });
 

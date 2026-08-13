@@ -102,7 +102,7 @@
     if (cargado) return;
     cargado = true;
     var app = document.createElement('script');
-    app.src = 'assets/app.js?v=20260813d';
+    app.src = 'assets/app.js?v=20260813e';
     app.onload = function () {
       var extras = document.createElement('script');
       extras.src = 'assets/extras.js?v=20260812h';
@@ -118,6 +118,10 @@
     ['pointerover', 'pointerdown', 'touchstart', 'keydown', 'wheel', 'focusin'].forEach(function (tipo) {
       window.addEventListener(tipo, cargar, { once: true, passive: true });
     });
+    // Mantener el primer render liviano sin dejar datos o mapa congelados si
+    // la persona no mueve el cursor ni toca la pantalla al abrir la página.
+    if ('requestIdleCallback' in window) requestIdleCallback(cargar, { timeout: 1500 });
+    else setTimeout(cargar, 1200);
   }
   document.addEventListener('DOMContentLoaded', preparar);
 })();

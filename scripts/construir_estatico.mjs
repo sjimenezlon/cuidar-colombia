@@ -56,6 +56,23 @@ aplicacion.resumen = {
   municipios: (aplicacion.zonas.municipios || []).length
 };
 
+// El HTML es un respaldo funcional mientras carga JavaScript o si este falla.
+// Sincronizarlo en cada build evita publicar cifras y cortes antiguos.
+const htmlPublico = join(salida, 'index.html');
+let html = readFileSync(htmlPublico, 'utf8');
+const reemplazos = [
+  [/(<strong id="fecha-actualizacion">)[^<]*(<\/strong>)/, `$1${aplicacion.meta.ultima_actualizacion}$2`],
+  [/(<div class="aviso-vigencia[^>]*" id="aviso-vigencia"[^>]*>)[\s\S]*?(<\/div>)/,
+    `$1<strong>Datos dentro de la ventana de revisión.</strong> Próxima revisión prevista: ${aplicacion.meta.proxima_revision}$2`],
+  [/(<strong id="contx-0">)[^<]*(<\/strong>)/, `$1${aplicacion.resumen.registros}$2`],
+  [/(<strong id="contx-1">)[^<]*(<\/strong>)/, `$1${aplicacion.resumen.fuentes}$2`],
+  [/(<strong id="contx-2">)[^<]*(<\/strong>)/, `$1${aplicacion.resumen.municipios}$2`],
+  [/(<p class="pie-fecha" id="pie-actualizacion">)[^<]*(<\/p>)/,
+    `$1Última actualización: ${aplicacion.meta.ultima_actualizacion}$2`]
+];
+reemplazos.forEach(([patron, valor]) => { html = html.replace(patron, valor); });
+writeFileSync(htmlPublico, html);
+
 mkdirSync(join(salida, 'data'), { recursive: true });
 writeFileSync(join(salida, 'data/app.json'), JSON.stringify(aplicacion));
 writeFileSync(join(salida, 'data/mapa.json'), JSON.stringify(mapa));

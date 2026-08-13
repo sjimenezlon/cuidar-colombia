@@ -1,9 +1,9 @@
 {
   "evento_id": "co-sismo-2026-08-10",
-  "ultima_actualizacion": "13 de agosto de 2026, 7:44 a. m.",
-  "iso": "2026-08-13T07:44:00-05:00",
+  "ultima_actualizacion": "13 de agosto de 2026, 8:18 a. m.",
+  "iso": "2026-08-13T08:18:00-05:00",
   "vigencia_horas": 24,
-  "proxima_revision": "14 de agosto de 2026, 7:44 a. m.",
-  "proxima_revision_iso": "2026-08-14T07:44:00-05:00",
-  "proceso": "Revisión humana asistida por IA con corte al 13 de agosto de 2026, 7:44 a. m. COT: se contrastan publicaciones, identidad institucional, destino, titular de los canales, evento y vigencia; las solicitudes recibidas y los listados comunitarios solo alimentan una cola de verificación y no se publican automáticamente."
+  "proxima_revision": "14 de agosto de 2026, 8:18 a. m.",
+  "proxima_revision_iso": "2026-08-14T08:18:00-05:00",
+  "proceso": "Revisión humana asistida por IA con corte al 13 de agosto de 2026, 8:18 a. m. COT: se contrastan publicaciones, identidad institucional, destino, titular de los canales, evento y vigencia; las solicitudes recibidas y los listados comunitarios solo alimentan una cola de verificación y no se publican automáticamente."
 }

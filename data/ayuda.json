@@ -438,34 +438,9 @@
           "horario": "24 horas"
         },
         {
-          "nombre": "Cruz Roja — SAMU Sur",
-          "direccion": "Avenida Carrera 68 #31-41 Sur",
-          "horario": null
-        },
-        {
-          "nombre": "Cruz Roja — SAMU Norte",
-          "direccion": "Carrera 7B Bis #132-31, acceso por calle 134",
-          "horario": "confirmar antes de ir; hay reportes comunitarios contradictorios"
-        },
-        {
-          "nombre": "Cruz Roja — Centro de Salvamento Acuático",
-          "direccion": "Avenida La Esmeralda #63-81",
-          "horario": null
-        },
-        {
-          "nombre": "Cruz Roja — bodega",
-          "direccion": "Diagonal 79B #62-53",
-          "horario": null
-        },
-        {
           "nombre": "Palacio de los Deportes",
           "direccion": "Calle 63 #59A-06",
-          "horario": null
-        },
-        {
-          "nombre": "Pabellón Vive Claro — acopio nacional del Gobierno",
-          "direccion": null,
-          "horario": "hasta el 31 de agosto"
+          "horario": "8:00 a. m.–8:00 p. m."
         }
       ],
       "que_donar": [
@@ -483,7 +458,7 @@
       "fuente_titulo": "bogota.gov.co",
       "fuente_url": "https://bogota.gov.co/mi-ciudad/seguridad/puntos-de-donacion-en-bogota-para-damnificados-terremoto-en-colombia",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "10 ago 2026"
+      "fecha": "13 ago 2026"
     },
     {
       "ciudad": "Medellín",
@@ -687,6 +662,15 @@
           "fuente_url": "https://valledelcauca.gov.co/publicaciones/90177/todos-somos-valle-activado-centro-de-acopio-de-ayudas-en-la-licorera-para-los-damnificados-de-terremoto/",
           "nivel_fuente": "fuente_oficial",
           "fecha": "11 ago 2026"
+        },
+        {
+          "nombre": "Centro Comercial Único — ayudas para Buenaventura",
+          "direccion": "Segundo piso, plazoleta de comidas (confirma el acceso exacto antes de ir)",
+          "horario": "sin horario publicado; confirmar antes de desplazarse",
+          "fuente_titulo": "Gobernación del Valle del Cauca",
+          "fuente_url": "https://valledelcauca.gov.co/publicaciones/90177/todos-somos-valle-activado-centro-de-acopio-de-ayudas-en-la-licorera-para-los-damnificados-de-terremoto/",
+          "nivel_fuente": "fuente_oficial",
+          "fecha": "13 ago 2026"
         }
       ],
       "que_donar": [
@@ -1792,33 +1776,6 @@
     },
     {
       "ciudad": "Valledupar",
-      "entidad": "Gobernación del Cesar",
-      "puntos": [
-        {
-          "nombre": "Plazoleta de Banderas — Gobernación del Cesar",
-          "direccion": "Calle 16 #12-120, Edificio Alfonso López Michelsen",
-          "horario": "jornada anunciada para 11 y 12 de agosto, desde las 8:00 a. m.; confirmar antes de ir"
-        }
-      ],
-      "que_donar": [
-        "alimentos no perecederos",
-        "agua",
-        "elementos de aseo",
-        "suministros básicos"
-      ],
-      "que_no_donar": [
-        "productos vencidos",
-        "perecederos"
-      ],
-      "fuente_titulo": "Radio Guatapurí — anuncio institucional",
-      "fuente_url": "https://radioguatapuri.com/noticias/gobernacion-cesar-lidera-centro-acopio",
-      "fuente_adicional_titulo": "Dirección oficial de la Gobernación",
-      "fuente_adicional_url": "https://cesar.gov.co/d/es/atencion-ciudadano/contactenos",
-      "nivel_fuente": "fuente_secundaria",
-      "fecha": "11 ago 2026"
-    },
-    {
-      "ciudad": "Valledupar",
       "entidad": "Pastoral Social y Banco de Alimentos de Valledupar",
       "puntos": [
         {
@@ -2368,7 +2325,7 @@
     {
       "ciudad": "Bogotá",
       "entidad": "IDCBIS y Red Distrital de Sangre",
-      "donde": "Sede IDCBIS (Carrera 32 #12-81) y unos 100 puntos de los 16 bancos de la Red Distrital, de 8:00 a. m. a 4:00 p. m. Información por WhatsApp: 324 502 7640. Bogotá ya envió 219 unidades a Chocó y Valle.",
+      "donde": "Sede IDCBIS (Carrera 32 #12-81) y unos 100 puntos de los 16 bancos de la Red Distrital. Sede IDCBIS: lunes a viernes, 8:00 a. m.–4:30 p. m.; sábados y domingos, 7:00 a. m.–12:00 m. Confirma por WhatsApp: 324 502 7640. Bogotá ya envió 219 unidades a Chocó y Valle.",
       "tipos_urgentes": [
         "O+",
         "O−"
@@ -2398,16 +2355,16 @@
     {
       "ciudad": "Medellín",
       "entidad": "Cruz Roja Colombiana",
-      "donde": "Carrera 52 #25-310 (sede Guayabal) — jornada ampliada 11 y 12 de agosto, 7:00 a. m.–7:00 p. m. Tel. 301 701 6237; agenda tu cita en donarsangre.crantioquia.org.co",
+      "donde": "Carrera 52 #25-310 (sede Guayabal). Horario ordinario: lunes a viernes, 7:00 a. m.–6:00 p. m.; sábados, 7:00 a. m.–4:00 p. m. Tel. 301 701 6237; agenda tu cita en donarsangre.crantioquia.org.co. La jornada ampliada del 11 y 12 de agosto ya finalizó.",
       "tipos_urgentes": [],
-      "fuente_titulo": "El Espectador",
-      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
-      "fuente_adicional_titulo": "Cruz Roja Antioquia — puntos fijos y contacto",
-      "fuente_adicional_url": "https://donarsangre.crantioquia.org.co/visitanos/",
-      "fuente_adicional_alcance": "Corrobora la sede de Guayabal, el horario ordinario y los teléfonos; la ampliación especial se atribuye al reporte de prensa.",
-      "nivel_fuente": "fuente_secundaria",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
+      "fuente_titulo": "Cruz Roja Antioquia — puntos fijos y contacto",
+      "fuente_url": "https://donarsangre.crantioquia.org.co/visitanos/",
+      "fuente_adicional_titulo": "El Espectador — activación tras el terremoto",
+      "fuente_adicional_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
+      "fuente_adicional_alcance": "Documenta la activación y la ampliación especial ya finalizada; la fuente principal confirma el servicio permanente y su horario ordinario.",
+      "nivel_fuente": "fuente_oficial",
+      "fecha_revision": "13 ago 2026",
+      "fecha_revision_iso": "2026-08-13T08:12:00-05:00"
     },
     {
       "ciudad": "Cali",
@@ -2416,20 +2373,6 @@
       "tipos_urgentes": [],
       "fuente_titulo": "El Tiempo",
       "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/ayudas-tras-terremoto-en-colombia-centros-de-acopio-bancos-de-sangre-bancos-de-alimentos-canales-oficiales-y-puntos-de-donaciones-en-el-pais-3577631",
-      "nivel_fuente": "fuente_secundaria",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
-    },
-    {
-      "ciudad": "Manizales",
-      "entidad": "Cruz Roja y Hemocentro del Café",
-      "donde": "Cancha auxiliar de Palogrande (junto a Bomberos), tel. 310 456 0822, y Hemocentro del Café.",
-      "tipos_urgentes": [
-        "O+",
-        "O−"
-      ],
-      "fuente_titulo": "Infobae",
-      "fuente_url": "https://www.infobae.com/colombia/2026/08/10/centros-de-acopio-habilitados-en-colombia-tras-el-terremoto-guia-por-ciudad-para-donar-y-ayudar-a-las-victimas/",
       "nivel_fuente": "fuente_secundaria",
       "fecha_revision": "12 ago 2026",
       "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
@@ -2485,17 +2428,6 @@
       "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },
     {
-      "ciudad": "La Estrella",
-      "entidad": "Cruz Roja Antioquia — jornada móvil",
-      "donde": "HOY miércoles 12 de agosto: estación La Estrella del Metro, 10:00 a. m.–4:30 p. m. Llama antes: 301 701 6237.",
-      "tipos_urgentes": [],
-      "fuente_titulo": "El Espectador",
-      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
-      "nivel_fuente": "fuente_secundaria",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
-    },
-    {
       "ciudad": "Medellín",
       "entidad": "Cruz Roja Antioquia — jornadas móviles",
       "donde": "Parque Explora: viernes 14 de agosto, 10:00 a. m.–4:00 p. m. · San Antonio de Prado: sábado 15, 9:00 a. m.–7:00 p. m.",
@@ -2503,17 +2435,6 @@
       "fuente_titulo": "El Espectador",
       "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
       "nivel_fuente": "fuente_secundaria",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
-    },
-    {
-      "ciudad": "Itagüí",
-      "entidad": "Cruz Roja — Banco Regional permanente",
-      "donde": "Centro Comercial Itagüí Plaza, Carrera 52 #52-63, local 131. Lunes a sábado, 9:30 a. m.–12:00 m. y 1:00–4:30 p. m. Es un servicio permanente: confirma antes de salir.",
-      "tipos_urgentes": [],
-      "fuente_titulo": "Cruz Roja Colombiana — directorio oficial",
-      "fuente_url": "https://www.cruzrojacolombiana.org/banco-de-sangre/",
-      "nivel_fuente": "fuente_oficial",
       "fecha_revision": "12 ago 2026",
       "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
     },

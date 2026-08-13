@@ -84,6 +84,16 @@ if (!directivasCsp.every((directiva) => csp.includes(directiva)) || referrer !==
   process.exitCode = 1;
 }
 
+const reglaInicio = configuracion.headers?.find((regla) => regla.source === '/')?.headers || [];
+const reglaDatos = configuracion.headers?.find((regla) => regla.source === '/data/(.*)')?.headers || [];
+const cacheInicio = reglaInicio.find((encabezado) => encabezado.key === 'Cache-Control')?.value || '';
+const cacheDatos = reglaDatos.find((encabezado) => encabezado.key === 'Cache-Control')?.value || '';
+if (!cacheInicio.includes('max-age=0') || !cacheInicio.includes('must-revalidate') ||
+    !cacheDatos.includes('max-age=0') || !cacheDatos.includes('must-revalidate')) {
+  console.error('El HTML y los datos de emergencia deben revalidarse antes de reutilizar una copia local.');
+  process.exitCode = 1;
+}
+
 if (!process.exitCode) {
   console.log(`Seguridad estática verificada: ${publicados.length} archivos permitidos, sin secretos detectados.`);
 }

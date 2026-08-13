@@ -183,42 +183,6 @@
   {
    "tipo": "acopio",
    "ciudad": "Bogotá",
-   "nombre": "Cruz Roja — SAMU Sur",
-   "direccion": "Avenida Carrera 68 #31-41 Sur",
-   "lat": 4.6072495,
-   "lon": -74.1312629,
-   "coordenadas_fuente": "https://terremoto.com.co/collection-points/5fafc448-c3ed-4943-9631-9c589a6ff05c"
-  },
-  {
-   "tipo": "acopio",
-   "ciudad": "Bogotá",
-   "nombre": "Cruz Roja — SAMU Norte",
-   "direccion": "Carrera 7B Bis #132-31, acceso por calle 134",
-   "lat": 4.7109011,
-   "lon": -74.0302357,
-   "coordenadas_fuente": "https://terremoto.com.co/collection-points/ac3f0763-277a-477d-af15-38d55a171d28"
-  },
-  {
-   "tipo": "acopio",
-   "ciudad": "Bogotá",
-   "nombre": "Cruz Roja — Centro de Salvamento Acuático",
-   "direccion": "Avenida La Esmeralda #63-81",
-   "lat": 4.66615,
-   "lon": -74.0860427,
-   "coordenadas_fuente": "https://terremoto.com.co/collection-points/2c6b13d3-acc9-42c2-aee7-b442d7b4ccc0"
-  },
-  {
-   "tipo": "acopio",
-   "ciudad": "Bogotá",
-   "nombre": "Cruz Roja — bodega",
-   "direccion": "Diagonal 79B #62-53",
-   "lat": 4.6796948,
-   "lon": -74.0773444,
-   "coordenadas_fuente": "https://terremoto.com.co/collection-points/8a26ca98-8ca2-41ee-b8cd-6d16d355b26e"
-  },
-  {
-   "tipo": "acopio",
-   "ciudad": "Bogotá",
    "nombre": "Palacio de los Deportes",
    "direccion": "Calle 63 #59A-06",
    "lat": 4.6554178,
@@ -258,8 +222,9 @@
    "registro_entidad": "IDCBIS y Red Distrital de Sangre",
    "nombre": "IDCBIS — Banco Distrital de Sangre",
    "direccion": "Carrera 32 #12-81",
-   "lat": 4.62925,
-   "lon": -74.0812
+   "lat": 4.6155543,
+   "lon": -74.0947723,
+   "coordenadas_fuente": "https://idcbis.org.co/banco-distrital-de-sangre/"
   },
   {
   "tipo": "sangre",
@@ -267,8 +232,9 @@
    "registro_entidad": "Cruz Roja Colombiana",
    "nombre": "Cruz Roja — donación de sangre",
    "direccion": "Carrera 52 #25-310",
-   "lat": 6.25015,
-   "lon": -75.56962
+   "lat": 6.2283366,
+   "lon": -75.5769793,
+   "coordenadas_fuente": "https://donarsangre.crantioquia.org.co/visitanos/"
   },
   {
    "tipo": "sangre",
@@ -289,31 +255,14 @@
    "lon": -76.54544
   },
   {
-   "tipo": "sangre",
-   "ciudad": "Cali",
-   "registro_entidad": "Secretaría de Salud, Cruz Roja Valle y bancos de sangre",
-   "nombre": "Fundación Valle del Lili",
-   "direccion": "Torre 2, piso 4",
-   "lat": 3.35024,
-   "lon": -76.51512
-  },
-  {
-   "tipo": "sangre",
-   "ciudad": "Manizales",
-   "registro_entidad": "Cruz Roja y Hemocentro del Café",
-   "nombre": "Jornada Palogrande (Cruz Roja)",
-   "direccion": "Cancha auxiliar de Palogrande",
-   "lat": 5.05701,
-   "lon": -75.49069
-  },
-  {
   "tipo": "sangre",
   "ciudad": "Villavicencio",
    "registro_entidad": "Cruz Roja — Banco Regional permanente",
    "nombre": "Cruz Roja — donación de sangre",
    "direccion": "Carrera 30 #39-30",
-   "lat": 4.11775,
-   "lon": -73.62637
+   "lat": 4.1535685,
+   "lon": -73.6362682,
+   "coordenadas_fuente": "https://www.cruzrojacolombiana.org/banco-de-sangre/"
   },
   {
    "tipo": "sangre",
@@ -820,16 +769,6 @@
       "direccion": "Carrera 21 #70A-06, Edificio Hemocentro",
       "lat": 5.0515655,
       "lon": -75.4822996,
-      "coordenadas_fuente": "https://www.cruzrojacolombiana.org/banco-de-sangre/"
-    },
-    {
-      "tipo": "sangre",
-      "ciudad": "Itagüí",
-      "registro_entidad": "Cruz Roja — Banco Regional permanente",
-      "nombre": "Cruz Roja — punto fijo Itagüí Plaza",
-      "direccion": "Carrera 52 #52-63, local 131",
-      "lat": 6.1735403,
-      "lon": -75.608265,
       "coordenadas_fuente": "https://www.cruzrojacolombiana.org/banco-de-sangre/"
     }
  ]

@@ -34,8 +34,8 @@
     el.innerHTML = '<div class="estado-datos estado-error" role="alert"><strong>No pudimos cargar esta información.</strong><span>' + esc(mensaje) + '</span></div>';
   }
 
-  function fetchJSON(ruta) {
-    return fetch(ruta, { cache: 'default', credentials: 'omit', referrerPolicy: 'no-referrer' }).then(function (r) {
+  function fetchJSON(ruta, politicaCache) {
+    return fetch(ruta, { cache: politicaCache || 'default', credentials: 'omit', referrerPolicy: 'no-referrer' }).then(function (r) {
       if (!r.ok) throw new Error(ruta + ' → ' + r.status);
       return r.json();
     }).catch(function (e) { console.warn('[cuidar]', e.message); return null; });
@@ -858,7 +858,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260813d'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260813e'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1290,12 +1290,14 @@
     var items = municipios.map(function (m) {
       return '<li><span class="resultado-tipo resultado-' + esc(m.gravedad) + '">Afectación ' + esc(NOMBRES_GRAVEDAD[m.gravedad]) + '</span>' +
         '<div class="resultado-info"><strong>' + esc(m.municipio) + ', ' + esc(m.departamento) + '</strong></div>' +
-        '<div class="resultado-acciones"><button type="button" data-enfocar data-mpio="' + esc(m._mpio || '') + '" data-lat="' + m.lat + '" data-lon="' + m.lon + '">Ubicar en mapa</button></div></li>';
+        '<div class="resultado-acciones"><button type="button" data-enfocar data-mpio="' + esc(m._mpio || '') + '" data-lat="' + m.lat + '" data-lon="' + m.lon + '"' +
+        (mapaListo ? '' : ' disabled') + '>' + (mapaListo ? 'Ubicar en mapa' : 'Mapa cargando…') + '</button></div></li>';
     }).concat(puntos.map(function (p) {
       var seleccionado = p._id === puntoMapaActivoId;
       return '<li data-resultado-id="' + esc(p._id) + '"' + (seleccionado ? ' class="seleccionado" aria-current="true"' : '') + '><span class="resultado-tipo resultado-' + esc(p.tipo) + '">' + (p.tipo === 'acopio' ? 'Punto de acopio' : 'Donación de sangre') + '</span>' +
         '<div class="resultado-info"><strong>' + esc(p.nombre) + '</strong><small>' + esc(p.ciudad) + (p.direccion ? ' · ' + esc(p.direccion) : '') + '</small></div>' +
-        '<div class="resultado-acciones"><button type="button" data-enfocar data-id="' + esc(p._id) + '" data-lat="' + p.lat + '" data-lon="' + p.lon + '">Ubicar en mapa</button>' +
+        '<div class="resultado-acciones"><button type="button" data-enfocar data-id="' + esc(p._id) + '" data-lat="' + p.lat + '" data-lon="' + p.lon + '"' +
+        (mapaListo ? '' : ' disabled') + '>' + (mapaListo ? 'Ubicar en mapa' : 'Mapa cargando…') + '</button>' +
         enlaceRuta(p.lat, p.lon, p.nombre, 'enlace-ruta') + '</div></li>';
     }));
     var detalleResumen = filtrosMapa.modo === 'ayuda'
@@ -1404,7 +1406,7 @@
     } else {
       if (ficha) ficha.hidden = true;
       if (envoltura) envoltura.classList.remove('ficha-punto-abierta');
-      var popup = new maplibregl.Popup({ offset: 12, maxWidth: '360px' }).setLngLat([+p.lon, +p.lat]).setHTML(htmlDetallePunto(p, false)).addTo(mapa);
+      var popup = new maplibregl.Popup({ offset: 12, maxWidth: '360px' }).setLngLat([+p.lon, +p.lat]).setHTML(htmlDetallePunto(p, true)).addTo(mapa);
       popupPuntoActivo = popup;
       popup.on('close', function () {
         if (popupPuntoActivo !== popup) return;
@@ -1421,7 +1423,7 @@
     if (!ficha || !cerrar) return;
     fichaPuntoConectada = true;
     cerrar.addEventListener('click', cerrarFichaPunto);
-    ficha.addEventListener('click', function (e) {
+    document.addEventListener('click', function (e) {
       var b = e.target.closest('[data-ver-lista]');
       if (!b) return;
       var resultado = document.querySelector('[data-resultado-id="' + CSS.escape(b.dataset.verLista) + '"]');
@@ -1468,7 +1470,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260813d').then(function (r) {
+  fetchJSON('data/app.json?v=20260813e', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;
