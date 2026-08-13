@@ -2144,6 +2144,62 @@
       "fuente_url": "https://www.instagram.com/p/Db3ZsFjEV_0/",
       "nivel_fuente": "fuente_oficial",
       "fecha": "10 ago 2026"
+    },
+    {
+      "ciudad": "Rionegro",
+      "entidad": "Alcaldía de Rionegro — campaña #ColombiaSeLevanta",
+      "puntos": [
+        {
+          "nombre": "Coliseo Iván Ramiro Córdoba",
+          "direccion": "Carrera 52 #41-61 (campaña oficial y ficha cartográfica del lugar); directorios del IMER y la Registraduría usan Calle 43A #50-200 para el complejo deportivo",
+          "direccion_mapa": "Carrera 52 #41-61",
+          "horario": "7:30 a. m.–4:30 p. m.; guíate por el nombre del Coliseo: las dos nomenclaturas públicas corresponden al mismo complejo deportivo"
+        },
+        {
+          "nombre": "Casa CincoPasitos",
+          "direccion": "Carrera 50 #51-19",
+          "horario": "7:30 a. m.–4:30 p. m."
+        },
+        {
+          "nombre": "Antiguo Colegio San Antonio — Oficina de Desarrollo Económico",
+          "direccion": null,
+          "horario": "7:30 a. m.–4:30 p. m.; la Alcaldía no publicó una nomenclatura más precisa, por eso se lista sin pin"
+        }
+      ],
+      "que_donar": [
+        "agua, bebidas de hidratación y alimentos no perecederos",
+        "elementos de aseo y primera necesidad, cobijas, colchonetas y ropa limpia organizada por tallas",
+        "linternas, baterías, guantes, tapabocas y elementos básicos para mascotas",
+        "insumos médicos y de primeros auxilios nuevos, analgésicos de venta libre y termómetros"
+      ],
+      "que_no_donar": [
+        "medicamentos que requieran prescripción médica"
+      ],
+      "fuente_titulo": "Alcaldía de Rionegro — anuncio oficial #ColombiaSeLevanta",
+      "fuente_url": "https://rionegro.gov.co/publicaciones/1389/rionegro-se-suma-a-colombiaselevanta-para-apoyar-a-las-familias-afectadas-por-el-sismo/",
+      "fuente_alcance": "Prueba la activación de los tres puntos para esta emergencia, el horario, la lista de artículos recibidos y la restricción sobre medicamentos de prescripción.",
+      "fuentes_adicionales": [
+        {
+          "titulo": "IMER Rionegro — informe institucional de sedes",
+          "url": "https://www.imer.gov.co/documentos/control-interno/2023/Informe_Final_ICONTEC_2023.pdf",
+          "alcance": "El informe institucional identifica el Coliseo Iván Ramiro Córdoba en Calle 43A #50-200; la campaña y la ficha cartográfica del lugar usan Carrera 52 #41-61 para el mismo complejo.",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "titulo": "Registraduría Nacional — directorio de puestos",
+          "url": "https://www.registraduria.gov.co/IMG/pdf/20230626_inscripcion-ciudadanos_puestos-votacion_5-13_julio.pdf",
+          "alcance": "Una segunda fuente pública independiente corrobora el nombre y la dirección Calle 43A #50-200 del complejo deportivo en Rionegro.",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "titulo": "Acopio Colombia — ficha de referencia",
+          "url": "https://emergency-rosy.vercel.app/centros/coliseo-ivan-ramiro-cordoba-rionegro",
+          "alcance": "Directorio ciudadano usado para descubrir el candidato; no determina el sello de verificación ni reemplaza las fuentes oficiales anteriores.",
+          "nivel_fuente": "fuente_secundaria"
+        }
+      ],
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "12 ago 2026"
     }
   ],
   "ciudades_acopio": [

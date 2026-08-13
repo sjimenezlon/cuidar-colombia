@@ -117,7 +117,8 @@
 
   function enlaceMapaDireccion(punto, ciudad) {
     if (!punto || !punto.direccion) return '';
-    var consulta = [punto.nombre, punto.direccion, ciudad, 'Colombia'].filter(Boolean).join(', ');
+    var direccionRuta = punto.direccion_mapa || punto.direccion;
+    var consulta = [punto.nombre, direccionRuta, ciudad, 'Colombia'].filter(Boolean).join(', ');
     var url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(consulta);
     return enlaceExterno(url, 'Cómo llegar', 'enlace-maps', 'Cómo llegar a ' + (punto.nombre || 'este punto') + ' con Google Maps');
   }
@@ -126,6 +127,23 @@
     if (!Number.isFinite(+lat) || !Number.isFinite(+lon)) return '';
     var url = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(String(lat) + ',' + String(lon));
     return enlaceExterno(url, 'Cómo llegar', clase || 'enlace-maps', 'Cómo llegar a ' + (nombre || 'este punto'));
+  }
+
+  function telefonoEnTexto(texto) {
+    var coincidencia = String(texto || '').match(/(?:contacto|tel[eé]fono|llama(?:r)?(?: antes)?(?: al)?|whatsapp)\s*:?\s*(?:\+?57\s*)?((?:\(?\d{3}\)?[\s.-]*)?\d{3}[\s.-]*\d{4})/i);
+    if (!coincidencia) return null;
+    var numero = coincidencia[1].replace(/\D/g, '');
+    if (numero.length !== 7 && numero.length !== 10) return null;
+    return { numero: numero, visible: coincidencia[1].replace(/\s+/g, ' ').trim() };
+  }
+
+  function enlaceLlamarDesdeTexto(texto, nombre, clase) {
+    var telefono = telefonoEnTexto(texto);
+    if (!telefono) return '';
+    var url = urlSegura('tel:' + telefono.numero, true);
+    if (!url) return '';
+    return '<a class="enlace-externo' + (clase ? ' ' + esc(clase) : '') + '" href="' + esc(url) +
+      '" aria-label="Llamar a ' + esc(nombre || 'este punto') + ' al ' + esc(telefono.visible) + '">Llamar</a>';
   }
 
   function duracionMapa() {
@@ -573,10 +591,11 @@
     conteosAyuda.especie = lista.length;
     document.getElementById('acopios-detalle').innerHTML = lista.map(function (a) {
       var puntos = (a.puntos || []).map(function (p) {
+        var accionesPunto = enlaceMapaDireccion(p, a.ciudad) + enlaceLlamarDesdeTexto(p.horario, p.nombre, 'enlace-llamar');
         return '<li><div class="punto-contenido"><strong>' + esc(p.nombre) + '</strong>' +
           (p.direccion ? '<span class="punto-direccion">' + esc(p.direccion) + '</span>' : '') +
           (p.horario ? '<small>' + esc(p.horario) + '</small>' : '') + '</div>' +
-          enlaceMapaDireccion(p, a.ciudad) + '</li>';
+          (accionesPunto ? '<div class="acciones-punto">' + accionesPunto + '</div>' : '') + '</li>';
       }).join('');
       var si = (a.que_donar || []).map(function (q) { return '<span class="etiqueta-si">' + esc(q) + '</span>'; }).join('');
       var no = (a.que_no_donar || []).map(function (q) { return '<span class="etiqueta-no">' + esc(q) + '</span>'; }).join('');
@@ -839,7 +858,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260813b'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260813c'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1329,6 +1348,7 @@
       '<span class="certeza certeza-' + (p.operacion === 'informacion_publicada' ? 'operativa' : 'confirmar') + '">' + esc(operacionTexto) + '</span>' +
       '<span class="certeza certeza-ubicacion">' + esc(ubicacionTexto) + '</span></div>' +
       '<div class="pop-acciones">' + enlaceRuta(p.lat, p.lon, p.nombre, 'enlace-accion') +
+      enlaceLlamarDesdeTexto(p.detalle_operativo, p.nombre, 'enlace-accion enlace-accion-secundaria') +
       enlaceFuente(p.fuente_url, p.fuente_titulo ? 'Ver ' + p.fuente_titulo : 'Ver evidencia') +
       (p.fuente_adicional_url ? enlaceFuente(p.fuente_adicional_url, 'Corroborar dirección y horarios') : '') +
       (incluirLista ? '<button type="button" class="enlace-lista-punto" data-ver-lista="' + esc(p._id) + '">Ver en la lista</button>' : '') + '</div>' +
@@ -1448,7 +1468,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260813b').then(function (r) {
+  fetchJSON('data/app.json?v=20260813c').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;

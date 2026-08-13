@@ -784,6 +784,15 @@
       "coordenadas_fuente": "https://laika.com.co/api/proxy/v1/warehouses/stores"
     },
     {
+      "tipo": "acopio",
+      "ciudad": "Rionegro",
+      "nombre": "Coliseo Iván Ramiro Córdoba",
+      "direccion": "Carrera 52 #41-61; los directorios públicos del complejo también usan Calle 43A #50-200",
+      "lat": 6.146674,
+      "lon": -75.37411,
+      "coordenadas_fuente": "https://www.google.com/maps/place/Coliseo+Iv%C3%A1n+Ramiro+C%C3%B3rdoba/@6.1466738,-75.37411,17z/"
+    },
+    {
       "tipo": "sangre",
       "ciudad": "Bogotá",
       "registro_entidad": "Cruz Roja — Banco Nacional permanente",

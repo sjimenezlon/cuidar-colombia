@@ -272,11 +272,12 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .lista-puntos li small { color: var(--tinta-tenue); }
 .punto-contenido { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
 .punto-direccion { color: var(--tinta-suave); font-size: .86rem; }
-.enlace-maps, .enlace-ruta {
+.acciones-punto { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 4px; }
+.enlace-maps, .enlace-ruta, .enlace-llamar {
   display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 7px 10px;
   border-radius: 8px; color: #164E78; font-size: .78rem; font-weight: 750; white-space: nowrap;
 }
-.enlace-maps:hover, .enlace-ruta:hover { background: #E1ECF5; }
+.enlace-maps:hover, .enlace-ruta:hover, .enlace-llamar:hover { background: #E1ECF5; }
 .etiquetas-donar { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .etiqueta-si { background: #E4F3EA; color: var(--verde-ok); font-size: 0.76rem; font-weight: 600; padding: 4px 11px; border-radius: 100px; }
 .etiqueta-no { background: #F9E5E3; color: var(--rojo-critico); font-size: 0.76rem; font-weight: 600; padding: 4px 11px; border-radius: 100px; text-decoration: line-through; }
@@ -649,7 +650,8 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
   .resultado-acciones { grid-column: 2 / 3; grid-row: 2; }
   .tarjeta-canal .canal-pie { align-items: flex-start; flex-direction: column; }
   .lista-puntos li { grid-template-columns: 1fr; }
-  .lista-puntos .enlace-maps { width: fit-content; }
+  .acciones-punto { justify-content: flex-start; }
+  .lista-puntos .enlace-maps, .lista-puntos .enlace-llamar { width: fit-content; }
 }
 
 @media (prefers-reduced-motion: reduce) {

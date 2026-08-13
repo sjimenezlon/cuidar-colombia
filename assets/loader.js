@@ -102,7 +102,7 @@
     if (cargado) return;
     cargado = true;
     var app = document.createElement('script');
-    app.src = 'assets/app.js?v=20260813b';
+    app.src = 'assets/app.js?v=20260813c';
     app.onload = function () {
       var extras = document.createElement('script');
       extras.src = 'assets/extras.js?v=20260812h';

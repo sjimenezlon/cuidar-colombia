@@ -110,6 +110,7 @@ if (ayuda) {
         for (const [j, punto] of (item.puntos || []).entries()) {
           exigir(punto.nombre && !nombresPunto.has(normalizar(punto.nombre)), `ayuda.${tipo}[${i}].puntos[${j}]: nombre ausente o duplicado`);
           nombresPunto.add(normalizar(punto.nombre));
+          exigir(!punto.direccion_mapa || Boolean(punto.direccion), `ayuda.${tipo}[${i}].puntos[${j}]: direccion_mapa exige una dirección visible`);
           if (punto.fuente_url) {
             revisarUrl(punto.fuente_url, `ayuda.${tipo}[${i}].puntos[${j}].fuente_url`);
             exigir(['fuente_oficial', 'fuente_secundaria'].includes(punto.nivel_fuente), `ayuda.${tipo}[${i}].puntos[${j}].nivel_fuente ausente o inválido`);
