@@ -797,15 +797,29 @@
   /* ---------- Benchmarks ---------- */
   function pintarBenchmarks(bm) {
     if (!bm || !bm.items) return;
-    document.getElementById('benchmarks-lista').innerHTML = bm.items.map(function (b) {
+    function tarjeta(b) {
       return '<div class="tarjeta-mundo">' +
         '<div class="mundo-cabecera"><h3>' + esc(b.nombre) + '</h3>' +
         '<span class="mundo-contexto">' + esc(b.pais_desastre || '') + (b.ano ? ' · ' + esc(b.ano) : '') + '</span></div>' +
+        (b.categoria ? '<span class="mundo-categoria">' + esc(b.categoria) + '</span>' : '') +
         '<p>' + esc(b.que_hacia) + '</p>' +
         '<div class="mundo-leccion"><strong>La lección</strong>' + esc(b.leccion) + '</div>' +
-        (b.url ? '<a href="' + esc(b.url) + '" target="_blank" rel="noopener">' + (b.estado === 'activa' ? 'Visitar →' : 'Ver registro →') + '</a>' : '') +
+        (b.url ? '<a href="' + esc(b.url) + '" target="_blank" rel="noopener">' +
+          (b.estado === 'activa' ? 'Visitar →' : b.estado === 'cautela' ? 'Examinar con cautela →' : 'Ver registro →') + '</a>' : '') +
         '</div>';
-    }).join('');
+    }
+    function grupo(titulo, descripcion, items, abierto) {
+      if (!items.length) return '';
+      return '<details class="grupo-referentes"' + (abierto ? ' open' : '') + '>' +
+        '<summary><span><strong>' + esc(titulo) + '</strong><small>' + esc(descripcion) + '</small></span>' +
+        '<b>' + items.length + '</b></summary>' +
+        '<div class="tarjetas-mundo">' + items.map(tarjeta).join('') + '</div></details>';
+    }
+    var colombia = bm.items.filter(function (b) { return b.ambito === 'colombia'; });
+    var internacionales = bm.items.filter(function (b) { return b.ambito !== 'colombia'; });
+    document.getElementById('benchmarks-lista').innerHTML =
+      grupo('Iniciativas en Colombia', 'Sistemas oficiales, humanitarios y ciudadanos comparables', colombia, true) +
+      grupo('Referentes internacionales', 'Experiencias que complementan el aprendizaje local', internacionales, false);
   }
 
   /* ---------- Fuentes ---------- */
@@ -1470,7 +1484,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260813g', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260813h', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;

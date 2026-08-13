@@ -1,6 +1,105 @@
 {
   "items": [
     {
+      "nombre": "Acopio Colombia",
+      "pais_desastre": "Colombia · terremoto de 2026",
+      "ano": "2026",
+      "ambito": "colombia",
+      "categoria": "Directorio ciudadano",
+      "que_hacia": "Directorio y mapa móvil de centros de acopio, con búsqueda por ubicación, filtros, rutas y una distinción visible entre puntos confirmados en el canal de la entidad y registros que todavía requieren cautela.",
+      "url": "https://emergency-rosy.vercel.app/",
+      "estado": "activa",
+      "leccion": "La lista y el mapa deben sentirse como una sola herramienta; el nivel de verificación tiene que aparecer antes de decidir ir al lugar."
+    },
+    {
+      "nombre": "Terremoto.com.co",
+      "pais_desastre": "Colombia · terremoto de 2026",
+      "ano": "2026",
+      "ambito": "colombia",
+      "categoria": "Reporte comunitario · cautela",
+      "que_hacia": "Permite publicar daños, personas extraviadas, refugios, centros de acopio y donación de sangre. Los registros comunitarios se identifican de forma explícita como no verificados.",
+      "url": "https://terremoto.com.co/",
+      "estado": "cautela",
+      "leccion": "La amplitud de categorías ayuda a descubrir necesidades, pero los reportes de daños o personas nunca deben mezclarse con datos verificados ni replicarse sin moderación y protección reforzada."
+    },
+    {
+      "nombre": "Ayuda Terremoto Colombia",
+      "pais_desastre": "Colombia · terremoto de 2026",
+      "ano": "2026",
+      "ambito": "colombia",
+      "categoria": "Reporte comunitario · cautela",
+      "que_hacia": "Tablero comunitario que pone la llamada al 123 y el reporte de necesidades en primer plano, y alterna mapa y lista para consultar agua, alimentos, refugios, daños y otras solicitudes.",
+      "url": "https://ayudaterremotocolombia.com/",
+      "estado": "cautela",
+      "leccion": "Una emergencia vital debe dirigir primero al 123. Los reportes comunitarios necesitan una cola de revisión antes de convertirse en instrucciones públicas."
+    },
+    {
+      "nombre": "SGC — Visor Sismos y Sismo Sentido",
+      "pais_desastre": "Colombia · monitoreo sísmico",
+      "ano": "servicio permanente",
+      "ambito": "colombia",
+      "categoria": "Sistema oficial",
+      "que_hacia": "Publica los eventos sísmicos en mapa y lista, diferencia estados automáticos y manuales, ofrece filtros y recoge reportes ciudadanos sobre intensidad percibida sin sustituir la medición científica.",
+      "url": "https://www.sgc.gov.co/sismos",
+      "estado": "activa",
+      "leccion": "El estado del dato es parte del dato: automático, revisado o confirmado deben verse sin obligar a abrir una explicación técnica."
+    },
+    {
+      "nombre": "UNGRD — Yo Reporto",
+      "pais_desastre": "Colombia · gestión del riesgo",
+      "ano": "desde 2014",
+      "ambito": "colombia",
+      "categoria": "Sistema oficial legado",
+      "que_hacia": "Canal ciudadano creado para enviar tipo de evento, gravedad, imagen y ubicación a la sala de crisis. La UNGRD describió un flujo en el que los consejos territoriales contrastaban el reporte antes de aceptarlo en el mapa público; el visor consultado conserva principalmente registros antiguos.",
+      "url": "https://www.gestiondelriesgo.gov.co/yoreporto/Mapa.aspx",
+      "estado": "histórica",
+      "leccion": "Conviene separar recepción, verificación y publicación. Una fecha visible también debe impedir que un sistema disponible, pero sin datos recientes, parezca operativo hoy."
+    },
+    {
+      "nombre": "SIATA",
+      "pais_desastre": "Valle de Aburrá · alertas tempranas",
+      "ano": "desde 2011",
+      "ambito": "colombia",
+      "categoria": "Sistema regional oficial",
+      "que_hacia": "Combina sensores, radar, pronóstico y comunicación pública para mostrar en tiempo real lluvia, cuencas, laderas, calidad del aire y otras variables del Valle de Aburrá.",
+      "url": "https://siata.gov.co/portalWeb",
+      "estado": "activa",
+      "leccion": "La confianza aumenta cuando cada alerta muestra territorio cubierto, instante de actualización y origen de la medición."
+    },
+    {
+      "nombre": "IDEAM en tu Mano",
+      "pais_desastre": "Colombia · alertas ambientales",
+      "ano": "2026",
+      "ambito": "colombia",
+      "categoria": "Aplicación oficial",
+      "que_hacia": "Aplicación gratuita del IDEAM para consultar pronósticos y alertas hidrometeorológicas oficiales en tiempo real desde el celular.",
+      "url": "https://ideam.gov.co/sala-de-prensa/noticia/ideam-lanza-una-nueva-aplicacion-para-consultar-pronosticos-y-alertas-ambientales-en-tiempo-real",
+      "estado": "activa",
+      "leccion": "Las alertas deben conservar la autoridad y el alcance geográfico de la fuente; agregarlas no autoriza a reinterpretarlas."
+    },
+    {
+      "nombre": "GIFMM Contigo",
+      "pais_desastre": "Colombia · servicios humanitarios",
+      "ano": "servicio permanente",
+      "ambito": "colombia",
+      "categoria": "Directorio humanitario",
+      "que_hacia": "Permite consultar puntos gratuitos de atención para población refugiada, migrante y comunidades de acogida, organizados por ubicación, servicio, horario y contacto. La aplicación instalada funciona sin conexión.",
+      "url": "https://help.unhcr.org/colombia/bienvenido-a/donde-encontrar-ayuda/servicios-gifmm/",
+      "estado": "activa",
+      "leccion": "Una lista descargable y disponible sin conexión puede ser más valiosa que un mapa sofisticado cuando la señal es limitada."
+    },
+    {
+      "nombre": "Colombia Cuida a Colombia",
+      "pais_desastre": "Colombia · respuesta a COVID-19",
+      "ano": "2020–2022",
+      "ambito": "colombia",
+      "categoria": "Alianza ciudadana histórica",
+      "que_hacia": "Articuló empresas, fundaciones y sociedad civil. En salud creó una herramienta para relacionar demanda y oferta de elementos de protección por producto, cantidad y ubicación.",
+      "url": null,
+      "estado": "histórica",
+      "leccion": "La siguiente evolución no es acumular más puntos, sino mostrar necesidades vigentes, capacidad disponible y cuándo una necesidad ya fue cubierta."
+    },
+    {
       "nombre": "Verificado19S",
       "pais_desastre": "México · sismo del 19S",
       "ano": "2017",

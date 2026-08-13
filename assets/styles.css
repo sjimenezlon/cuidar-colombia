@@ -410,6 +410,21 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .lista-simple li a { color: var(--azul); font-size: 0.8rem; }
 
 /* ---------- Benchmarks ---------- */
+.grupo-referentes { border-top: 1px solid #D9CCB7; }
+.grupo-referentes:last-child { border-bottom: 1px solid #D9CCB7; }
+.grupo-referentes > summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px;
+  padding: 12px 4px; cursor: pointer; color: var(--azul-oscuro);
+}
+.grupo-referentes > summary > span { display: flex; flex-direction: column; }
+.grupo-referentes > summary strong { font-family: Georgia, 'Times New Roman', serif; font-size: 1.12rem; }
+.grupo-referentes > summary small { color: var(--tinta-suave); font-size: .78rem; font-weight: 500; }
+.grupo-referentes > summary b {
+  display: grid; place-items: center; min-width: 34px; height: 34px; border-radius: 50%;
+  background: #E1ECF5; color: var(--azul-oscuro); font-size: .78rem;
+}
+.grupo-referentes[open] > summary { margin-bottom: 14px; }
+.grupo-referentes .tarjetas-mundo { margin-bottom: 28px; }
 .tarjetas-mundo { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
 .practicas-adoptadas {
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: -8px 0 28px;
@@ -429,6 +444,10 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .tarjeta-mundo .mundo-cabecera { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .tarjeta-mundo h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.08rem; }
 .tarjeta-mundo .mundo-contexto { font-size: 0.78rem; color: var(--tinta-tenue); }
+.mundo-categoria {
+  display: inline-flex; align-items: center; width: fit-content; min-height: 26px; padding: 3px 9px;
+  border-radius: 100px; background: #E1ECF5; color: var(--azul-oscuro); font-size: .66rem; font-weight: 800;
+}
 .tarjeta-mundo p { font-size: 0.87rem; color: var(--tinta-suave); flex: 1; }
 .tarjeta-mundo .mundo-leccion {
   font-size: 0.84rem; background: var(--papel); border-radius: 8px; padding: 10px 14px;
