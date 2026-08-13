@@ -21,8 +21,8 @@
 .fab-donar-movil{display:none}.fab-whatsapp{position:fixed;right:22px;bottom:22px;z-index:500;display:flex;align-items:center;gap:8px;background:#008938;color:#fff;text-decoration:none;padding:12px 20px;border-radius:100px;font-weight:700;font-size:.92rem;box-shadow:0 4px 18px rgba(0,137,56,.35)}
 @media(max-width:900px){body{padding-bottom:78px}.fab-donar-movil{position:fixed;left:12px;right:76px;bottom:12px;z-index:600;display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--azul);color:#fff;border-radius:100px;text-decoration:none;font-size:.94rem;font-weight:800;box-shadow:0 4px 18px rgba(29,90,138,.35)}.fab-whatsapp{right:12px;bottom:12px;width:52px;height:52px;padding:13px;justify-content:center;z-index:600}.fab-whatsapp span{display:none}}
 </style>
-<link rel="stylesheet" href="assets/styles.css?v=20260813j">
-<script src="assets/loader.js?v=20260813j"></script>
+<link rel="stylesheet" href="assets/styles.css?v=20260813k">
+<script src="assets/loader.js?v=20260813k"></script>
 </head>
 <body>
 
@@ -132,6 +132,33 @@
     </div>
   </section>
 
+  <section class="ruta-accion" id="ruta-accion" aria-labelledby="ruta-accion-titulo">
+    <div class="contenedor ruta-accion-contenido">
+      <div class="ruta-accion-intro">
+        <p class="antetitulo">Ruta rápida</p>
+        <h2 id="ruta-accion-titulo">Dinos qué puedes hacer; empezamos por lo más confiable</h2>
+        <p>En dos decisiones te llevamos a opciones con evidencia oficial. Para lugares físicos, priorizamos únicamente recepción confirmada en el último corte.</p>
+      </div>
+      <form class="ruta-accion-form" id="ruta-accion-form">
+        <fieldset class="ruta-tipos">
+          <legend class="solo-lectores">Elige cómo quieres ayudar</legend>
+          <label><input type="radio" name="ruta-tipo" value="dinero" checked><span><strong>Donar dinero</strong><small>Canales institucionales</small></span></label>
+          <label><input type="radio" name="ruta-tipo" value="especie"><span><strong>Llevar ayuda</strong><small>Acopios publicados</small></span></label>
+          <label><input type="radio" name="ruta-tipo" value="sangre"><span><strong>Donar sangre</strong><small>Bancos y jornadas</small></span></label>
+          <label><input type="radio" name="ruta-tipo" value="personas"><span><strong>Buscar a alguien</strong><small>Canales institucionales</small></span></label>
+        </fieldset>
+        <div class="ruta-accion-ajustes">
+          <label class="control-filtro ruta-ubicacion" id="ruta-ubicacion-control" hidden><span>¿En qué ciudad o departamento?</span>
+            <select id="ruta-ubicacion"><option value="todas">Cualquier ubicación</option></select>
+          </label>
+          <button class="boton ruta-accion-boton" type="submit">Ver opciones confiables</button>
+        </div>
+        <p class="ruta-accion-criterio"><span aria-hidden="true">✓</span> Empezamos por fuente oficial. Si no hay recepción confirmada en tu zona, lo diremos antes de mostrar lugares que debes confirmar.</p>
+        <p class="ruta-accion-resultado" id="ruta-accion-resultado" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
   <section class="panel-cambios" id="cambios-desde-visita" aria-live="polite" hidden>
     <div class="contenedor panel-cambios-contenido">
       <div>
@@ -229,6 +256,15 @@
           </label>
           <label class="control-filtro control-busqueda"><span>Buscar</span>
             <input id="filtro-ayuda-busqueda" type="search" placeholder="Ej. Pereira, Cruz Roja o alimentos">
+          </label>
+          <label class="control-filtro" id="control-filtro-operacion-ayuda" hidden><span>Estado del lugar</span>
+            <select id="filtro-ayuda-operacion">
+              <option value="todas">Todos los estados</option>
+              <option value="recibiendo">Recepción confirmada</option>
+              <option value="programado">Jornada programada</option>
+              <option value="por_confirmar">Confirmar vigencia</option>
+              <option value="finalizado">Recepción finalizada</option>
+            </select>
           </label>
           <label class="filtro-check"><input id="filtro-ayuda-oficial" type="checkbox"> Solo canales institucionales con fuente oficial</label>
           <button class="boton-limpiar" id="limpiar-filtros-ayuda" type="button">Restablecer</button>

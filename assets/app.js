@@ -503,7 +503,7 @@
     'riohacha': 'La Guajira', 'neiva': 'Huila', 'cucuta': 'Norte de Santander', 'floridablanca': 'Santander',
     'rionegro': 'Antioquia'
   };
-  var filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', busqueda: '', soloOficial: false };
+  var filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', operacion: 'todas', busqueda: '', soloOficial: false };
   var conteosAyuda = { dinero: 0, especie: 0, sangre: 0, personas: 0 };
 
   function departamentoCiudad(ciudad) { return CIUDAD_DEPARTAMENTO[normalizar(ciudad)] || ''; }
@@ -522,6 +522,27 @@
     return !q || normalizar(campos.join(' ')).indexOf(q) !== -1;
   }
 
+  function coincideOperacion(item, respaldo) {
+    return filtrosAyuda.operacion === 'todas' || estadoOperacion(item, respaldo).codigo === filtrosAyuda.operacion;
+  }
+
+  function tipoAyudaFisica(tipo) { return tipo === 'especie' || tipo === 'sangre'; }
+
+  function sincronizarControlesAyuda() {
+    var tipo = document.getElementById('filtro-ayuda-tipo');
+    var ubicacion = document.getElementById('filtro-ayuda-ubicacion');
+    var busqueda = document.getElementById('filtro-ayuda-busqueda');
+    var oficial = document.getElementById('filtro-ayuda-oficial');
+    var operacion = document.getElementById('filtro-ayuda-operacion');
+    var controlOperacion = document.getElementById('control-filtro-operacion-ayuda');
+    if (tipo) tipo.value = filtrosAyuda.tipo;
+    if (ubicacion) ubicacion.value = filtrosAyuda.ubicacion;
+    if (busqueda) busqueda.value = filtrosAyuda.busqueda;
+    if (oficial) oficial.checked = filtrosAyuda.soloOficial;
+    if (operacion) operacion.value = filtrosAyuda.operacion;
+    if (controlOperacion) controlOperacion.hidden = !tipoAyudaFisica(filtrosAyuda.tipo);
+  }
+
   function actualizarConteoAyuda() {
     var total = 0;
     Object.keys(conteosAyuda).forEach(function (k) {
@@ -530,13 +551,14 @@
     var el = document.getElementById('conteo-ayuda');
     if (el) el.textContent = total + ' opci' + (total === 1 ? 'ón' : 'ones') + ' para esta búsqueda';
     var activos = (filtrosAyuda.tipo !== 'todos' ? 1 : 0) + (filtrosAyuda.ubicacion !== 'todas' ? 1 : 0) +
-      (filtrosAyuda.busqueda.trim() ? 1 : 0) + (filtrosAyuda.soloOficial ? 1 : 0);
+      (filtrosAyuda.operacion !== 'todas' ? 1 : 0) + (filtrosAyuda.busqueda.trim() ? 1 : 0) + (filtrosAyuda.soloOficial ? 1 : 0);
     var alternar = document.getElementById('alternar-filtros-ayuda');
     if (alternar) {
       alternar.textContent = (document.getElementById('filtros-ayuda-global').classList.contains('abiertos') ? 'Ocultar filtros' : 'Mostrar filtros') +
         (activos ? ' (' + activos + ')' : '');
       alternar.classList.toggle('con-filtros', activos > 0);
     }
+    return total;
   }
 
   function aplicarFiltrosAyuda() {
@@ -548,7 +570,78 @@
     pintarAcopiosCiudad(ciudadAcopioActiva);
     pintarTarjetasSangre();
     pintarTarjetasBusqueda();
+    sincronizarControlesAyuda();
     actualizarConteoAyuda();
+  }
+
+  function actualizarRutaAccion() {
+    var tipoElegido = document.querySelector('input[name="ruta-tipo"]:checked');
+    var controlUbicacion = document.getElementById('ruta-ubicacion-control');
+    var ubicacion = document.getElementById('ruta-ubicacion');
+    var esFisica = tipoElegido && tipoAyudaFisica(tipoElegido.value);
+    if (controlUbicacion) controlUbicacion.hidden = !esFisica;
+    if (ubicacion) ubicacion.disabled = !esFisica;
+  }
+
+  function inicializarRutaAccion(selUbicacion) {
+    var formulario = document.getElementById('ruta-accion-form');
+    var selRuta = document.getElementById('ruta-ubicacion');
+    if (!formulario || !selRuta || formulario.dataset.preparado) return;
+    formulario.dataset.preparado = 'true';
+    selRuta.innerHTML = selUbicacion.innerHTML.replace('Todas las ubicaciones', 'Cualquier ubicación');
+    formulario.addEventListener('change', function (e) {
+      if (e.target && e.target.name === 'ruta-tipo') actualizarRutaAccion();
+    });
+    formulario.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var tipoElegido = formulario.querySelector('input[name="ruta-tipo"]:checked');
+      if (!tipoElegido) return;
+      var tipo = tipoElegido.value;
+      var esFisica = tipoAyudaFisica(tipo);
+      filtrosAyuda = {
+        tipo: tipo,
+        ubicacion: esFisica ? selRuta.value : 'todas',
+        operacion: esFisica ? 'recibiendo' : 'todas',
+        busqueda: '',
+        soloOficial: true
+      };
+      ciudadAcopioActiva = 'todas';
+      document.querySelectorAll('#selector-ciudades .pastilla-ciudad').forEach(function (b) {
+        b.classList.toggle('activa', b.dataset.ciudad === 'todas');
+      });
+      aplicarFiltrosAyuda();
+      var total = actualizarConteoAyuda();
+      var resultado = document.getElementById('ruta-accion-resultado');
+      if (esFisica && total === 0) {
+        filtrosAyuda.operacion = 'programado';
+        aplicarFiltrosAyuda();
+        total = actualizarConteoAyuda();
+        if (total) {
+          resultado.textContent = 'No encontramos recepción confirmada en esta zona. Mostramos ' + total +
+            (total === 1 ? ' jornada institucional programada' : ' jornadas institucionales programadas') + '; comprueba la fecha antes de salir.';
+        } else {
+          filtrosAyuda.operacion = 'por_confirmar';
+          aplicarFiltrosAyuda();
+          total = actualizarConteoAyuda();
+          resultado.textContent = total
+            ? 'No encontramos recepción confirmada en esta zona. Mostramos ' + total + (total === 1 ? ' opción institucional' : ' opciones institucionales') + ' que debes confirmar antes de salir.'
+            : 'No encontramos una opción institucional vigente para esta zona al corte actual. Puedes ampliar los filtros sin perder de vista el nivel de evidencia.';
+        }
+      } else {
+        resultado.textContent = 'Encontramos ' + total + (total === 1 ? ' opción' : ' opciones') +
+          (esFisica ? ' con fuente oficial y recepción confirmada en el último corte.' : ' con fuente oficial para empezar con mayor certeza.');
+      }
+      var destino = document.getElementById({ dinero: 'donar-dinero', especie: 'acopios', sangre: 'sangre', personas: 'buscar' }[tipo]);
+      if (destino) {
+        destino.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+        var tituloDestino = destino.querySelector('h3');
+        if (tituloDestino) {
+          tituloDestino.setAttribute('tabindex', '-1');
+          tituloDestino.focus({ preventScroll: true });
+        }
+      }
+    });
+    actualizarRutaAccion();
   }
 
   function inicializarFiltrosAyuda(ayuda) {
@@ -568,6 +661,7 @@
       '</optgroup><optgroup label="Ciudades">' + ciudades.map(function (c) {
         return '<option value="ciudad:' + esc(normalizar(c)) + '">' + esc(c) + '</option>';
       }).join('') + '</optgroup>';
+    inicializarRutaAccion(selUbicacion);
     var alternar = document.getElementById('alternar-filtros-ayuda');
     var panelFiltros = document.getElementById('filtros-ayuda-global');
     if (alternar && panelFiltros) alternar.addEventListener('click', function () {
@@ -576,16 +670,22 @@
       alternar.setAttribute('aria-expanded', String(abierto));
       actualizarConteoAyuda();
     });
-    document.getElementById('filtro-ayuda-tipo').addEventListener('change', function (e) { filtrosAyuda.tipo = e.target.value; aplicarFiltrosAyuda(); });
+    document.getElementById('filtro-ayuda-tipo').addEventListener('change', function (e) {
+      filtrosAyuda.tipo = e.target.value;
+      if (!tipoAyudaFisica(filtrosAyuda.tipo)) filtrosAyuda.operacion = 'todas';
+      aplicarFiltrosAyuda();
+    });
     selUbicacion.addEventListener('change', function (e) { filtrosAyuda.ubicacion = e.target.value; aplicarFiltrosAyuda(); });
     document.getElementById('filtro-ayuda-busqueda').addEventListener('input', function (e) { filtrosAyuda.busqueda = e.target.value; aplicarFiltrosAyuda(); });
     document.getElementById('filtro-ayuda-oficial').addEventListener('change', function (e) { filtrosAyuda.soloOficial = e.target.checked; aplicarFiltrosAyuda(); });
+    document.getElementById('filtro-ayuda-operacion').addEventListener('change', function (e) { filtrosAyuda.operacion = e.target.value; aplicarFiltrosAyuda(); });
     document.getElementById('limpiar-filtros-ayuda').addEventListener('click', function () {
-      filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', busqueda: '', soloOficial: false };
+      filtrosAyuda = { tipo: 'todos', ubicacion: 'todas', operacion: 'todas', busqueda: '', soloOficial: false };
       filtrosCanales = { cobertura: 'todas', evidencia: 'todas' };
       ciudadAcopioActiva = 'todas';
       document.getElementById('filtro-ayuda-tipo').value = 'todos'; selUbicacion.value = 'todas';
       document.getElementById('filtro-ayuda-busqueda').value = ''; document.getElementById('filtro-ayuda-oficial').checked = false;
+      document.getElementById('filtro-ayuda-operacion').value = 'todas';
       if (document.getElementById('filtro-cobertura')) document.getElementById('filtro-cobertura').value = 'todas';
       if (document.getElementById('filtro-evidencia')) document.getElementById('filtro-evidencia').value = 'todas';
       document.querySelectorAll('#selector-ciudades .pastilla-ciudad').forEach(function (b) { b.classList.toggle('activa', b.dataset.ciudad === 'todas'); });
@@ -744,6 +844,10 @@
       sel.querySelectorAll('.pastilla-ciudad').forEach(function (x) { x.classList.remove('activa'); });
       b.classList.add('activa');
       ciudadAcopioActiva = b.dataset.ciudad;
+      if (filtrosAyuda.ubicacion.indexOf('ciudad:') === 0) {
+        filtrosAyuda.ubicacion = 'todas';
+        sincronizarControlesAyuda();
+      }
       pintarAcopiosCiudad(ciudadAcopioActiva);
       actualizarConteoAyuda();
     });
@@ -752,14 +856,19 @@
 
   function pintarAcopiosCiudad(ciudad) {
     ciudad = ciudad || 'todas';
-    var lista = acopiosDatos.filter(function (a) {
+    var lista = acopiosDatos.map(function (a) {
+      return { registro: a, puntos: (a.puntos || []).filter(function (p) { return coincideOperacion(p, a); }) };
+    }).filter(function (fila) {
+      var a = fila.registro;
       return (ciudad === 'todas' || a.ciudad === ciudad) && coincideUbicacion(a.ciudad, '') &&
+        fila.puntos.length > 0 &&
         (!filtrosAyuda.soloOficial || nivelRegistroAyuda(a) === 'fuente_oficial') &&
-        coincideBusqueda([a.ciudad, departamentoCiudad(a.ciudad), a.entidad, a.que_donar, a.que_no_donar].concat((a.puntos || []).map(function (p) { return [p.nombre, p.direccion, p.horario].join(' '); })));
+        coincideBusqueda([a.ciudad, departamentoCiudad(a.ciudad), a.entidad, a.que_donar, a.que_no_donar].concat(fila.puntos.map(function (p) { return [p.nombre, p.direccion, p.horario].join(' '); })));
     });
-    conteosAyuda.especie = lista.length;
-    document.getElementById('acopios-detalle').innerHTML = lista.map(function (a) {
-      var puntos = (a.puntos || []).map(function (p) {
+    conteosAyuda.especie = lista.reduce(function (total, fila) { return total + fila.puntos.length; }, 0);
+    document.getElementById('acopios-detalle').innerHTML = lista.map(function (fila) {
+      var a = fila.registro;
+      var puntos = fila.puntos.map(function (p) {
         var accionesPunto = enlaceMapaDireccion(p, a.ciudad) + enlaceLlamarDesdeTexto(p.horario, p.nombre, 'enlace-llamar');
         return '<li><div class="punto-contenido"><strong>' + esc(p.nombre) + '</strong>' + etiquetaOperacion(p, a) +
           (p.direccion ? '<span class="punto-direccion">' + esc(p.direccion) + '</span>' : '') +
@@ -804,7 +913,7 @@
 
   function pintarTarjetasSangre() {
     var lista = sangreDatos.filter(function (s) {
-      return coincideUbicacion(s.ciudad, '') &&
+      return coincideUbicacion(s.ciudad, '') && coincideOperacion(s) &&
         (!filtrosAyuda.soloOficial || esInstitucionalConFuenteOficial(s)) &&
         coincideBusqueda([s.ciudad, departamentoCiudad(s.ciudad), s.entidad, s.donde, s.tipos_urgentes]);
     });
@@ -1044,7 +1153,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260813j'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260813k'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1654,7 +1763,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260813j', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260813k', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;
