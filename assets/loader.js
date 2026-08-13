@@ -120,8 +120,9 @@
     });
     // Mantener el primer render liviano sin dejar datos o mapa congelados si
     // la persona no mueve el cursor ni toca la pantalla al abrir la página.
-    if ('requestIdleCallback' in window) requestIdleCallback(cargar, { timeout: 1500 });
-    else setTimeout(cargar, 1200);
+    // Un temporizador real también corre en pestañas sin foco; algunos
+    // navegadores postergan requestIdleCallback indefinidamente en background.
+    setTimeout(cargar, 1200);
   }
   document.addEventListener('DOMContentLoaded', preparar);
 })();
