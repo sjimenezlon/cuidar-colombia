@@ -88,7 +88,7 @@ for tipo, ciudad, nombre, consulta, direccion in PUNTOS:
     try:
         salida = subprocess.run(
             ["curl", "-s", "--max-time", "15",
-             "-H", "User-Agent: CuidarColombia/1.0 (plataforma humanitaria; sjimenezlon@gmail.com)", url],
+             "-H", "User-Agent: CuidarColombia/1.0 (https://cuidarcolombia.vercel.app/.well-known/security.txt)", url],
             capture_output=True, text=True, check=True).stdout
         hits = json.loads(salida)
         if hits:

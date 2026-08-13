@@ -228,8 +228,9 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .vigencia-sin-fecha { color: var(--tinta-suave); background: var(--papel); border-color: var(--borde); }
 .tarjeta-acciones-secundarias { margin-top: 4px; padding-top: 9px; border-top: 1px solid var(--papel); }
 .enlace-reporte {
-  display: inline-flex; align-items: center; min-height: 44px; padding: 7px 4px;
+  display: inline-flex; align-items: center; min-height: 44px; padding: 7px 4px; border: 0; background: none;
   color: #6B4A16; font-size: .75rem; font-weight: 650; text-underline-offset: 3px;
+  text-decoration: underline; font-family: inherit; cursor: pointer;
 }
 .enlace-reporte:hover { color: #4F350E; }
 .nota-verificacion {
@@ -437,12 +438,52 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .pie-enlace { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 .pie-enlace:hover { color: var(--oro); }
 .pie-sugerencias { font-size: 0.85rem; margin-top: 6px; }
+.boton-enlace { padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
+
+/* ---------- Formulario de reportes ---------- */
+.dialogo-sugerencias {
+  width: min(620px, calc(100% - 28px)); max-height: min(90vh, 760px); margin: auto; padding: 0;
+  border: 0; border-radius: 18px; background: var(--blanco); color: var(--tinta); box-shadow: 0 20px 60px rgba(22,50,79,.28);
+}
+.dialogo-sugerencias::backdrop { background: rgba(22,50,79,.62); backdrop-filter: blur(2px); }
+.formulario-sugerencias { padding: 26px; overflow: auto; max-height: min(90vh, 760px); }
+.formulario-cabecera { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 8px; }
+.formulario-cabecera h2 { font-size: 1.65rem; }
+.cerrar-sugerencias {
+  flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid var(--borde); border-radius: 50%;
+  background: var(--papel); color: var(--tinta); font: 500 1.7rem/1 sans-serif; cursor: pointer;
+}
+#sugerencias-ayuda { margin-bottom: 18px; color: var(--tinta-suave); font-size: .86rem; }
+.campo-sugerencia { display: grid; gap: 6px; margin-top: 14px; color: var(--tinta); font-size: .84rem; font-weight: 750; }
+.campo-sugerencia small { color: var(--tinta-tenue); font-weight: 500; }
+.campo-sugerencia input, .campo-sugerencia select, .campo-sugerencia textarea {
+  width: 100%; min-height: 46px; padding: 10px 12px; border: 1.5px solid #C9D4DE; border-radius: 9px;
+  background: #fff; color: var(--tinta); font: 400 .92rem/1.45 Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.campo-sugerencia textarea { min-height: 128px; resize: vertical; }
+.campo-sugerencia input:focus, .campo-sugerencia select:focus, .campo-sugerencia textarea:focus { border-color: var(--azul); }
+.campo-registro[hidden] { display: none; }
+.campo-registro input { background: var(--papel); color: var(--tinta-suave); }
+.campo-trampa { position: fixed; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.nota-formulario { margin-top: 14px; color: var(--tinta-tenue); font-size: .75rem; }
+.formulario-acciones { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+.boton-cancelar { border: 1px solid var(--borde); background: #fff; color: var(--tinta-suave); cursor: pointer; }
+.formulario-acciones button:disabled { opacity: .6; cursor: wait; }
+.estado-formulario { min-height: 24px; margin-top: 10px; font-size: .82rem; font-weight: 700; }
+.estado-formulario.exito { color: var(--verde-ok); }
+.estado-formulario.error { color: var(--rojo-critico); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .dos-columnas { grid-template-columns: 1fr; }
   .mapa-envoltura { height: 460px; }
   .pie-credito { flex-direction: column; }
+}
+@media (max-width: 500px) {
+  .formulario-sugerencias { padding: 20px; }
+  .dialogo-sugerencias { max-height: calc(100vh - 20px); }
+  .formulario-sugerencias { max-height: calc(100vh - 20px); }
+  .formulario-acciones .boton { flex: 1 1 140px; }
 }
 
 /* ---------- Filtros del mapa ---------- */

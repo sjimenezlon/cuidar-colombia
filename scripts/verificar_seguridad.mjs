@@ -39,8 +39,9 @@ if (inesperados.length || faltantes.length) {
 const legibles = publicados.filter((ruta) => !/\.(?:png|jpg|jpeg|webp|woff2?)$/i.test(ruta));
 const patronesSecretos = [
   /-----BEGIN [A-Z ]*PRIVATE KEY-----/,
-  /(?:AWS_SECRET_ACCESS_KEY|GITHUB_TOKEN|OPENAI_API_KEY|VERCEL_TOKEN)\s*[:=]/i
+  /(?:AWS_SECRET_ACCESS_KEY|GITHUB_TOKEN|OPENAI_API_KEY|RESEND_API_KEY|VERCEL_TOKEN)\s*[:=]/i
 ];
+const patronesPrivados = [/sjimenezlon@gmail\.com/i, /mailto:/i];
 
 legibles.forEach((ruta) => {
   const contenido = readFileSync(join(salida, ruta), 'utf8');
@@ -50,7 +51,20 @@ legibles.forEach((ruta) => {
       process.exitCode = 1;
     }
   });
+  patronesPrivados.forEach((patron) => {
+    if (patron.test(contenido)) {
+      console.error(`Dato de contacto privado expuesto en ${ruta}: ${patron}`);
+      process.exitCode = 1;
+    }
+  });
 });
+
+const funcion = readFileSync(join(raiz, 'api/sugerencias.mjs'), 'utf8');
+if (!funcion.includes('process.env.SUGGESTIONS_TO_EMAIL') || !funcion.includes('process.env.RESEND_API_KEY') ||
+    /sjimenezlon@gmail\.com/i.test(funcion)) {
+  console.error('La función de sugerencias debe usar destinatario y credenciales privados del entorno.');
+  process.exitCode = 1;
+}
 
 const html = readFileSync(join(salida, 'index.html'), 'utf8');
 if (/<script[^>]+src=["']https?:\/\//i.test(html)) {

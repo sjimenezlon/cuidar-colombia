@@ -165,13 +165,9 @@
   }
 
   function enlaceReporte(nombre, seccion) {
-    var asunto = 'Dato desactualizado: ' + String(nombre || 'registro');
-    var cuerpo = 'Hola, quiero reportar un posible dato desactualizado.\n\n' +
-      'Registro: ' + String(nombre || '—') + '\nSección: ' + String(seccion || '—') + '\n' +
-      'Página: ' + window.location.origin + window.location.pathname + '\n\nDetalle del reporte:\n';
-    return '<a class="enlace-reporte" href="mailto:sjimenezlon@gmail.com?subject=' + encodeURIComponent(asunto) +
-      '&body=' + encodeURIComponent(cuerpo) + '" aria-label="Reportar dato desactualizado de ' + esc(nombre) + '">' +
-      '⚠ Reportar dato desactualizado</a>';
+    return '<button class="enlace-reporte abrir-sugerencias" type="button" data-tipo="dato" data-registro="' +
+      esc(nombre) + '" data-seccion="' + esc(seccion) + '" aria-label="Reportar dato desactualizado de ' + esc(nombre) + '">' +
+      '⚠ Reportar dato desactualizado</button>';
   }
 
   function estadoVigencia(iso) {

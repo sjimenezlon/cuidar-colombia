@@ -21,8 +21,8 @@
 .fab-donar-movil{display:none}.fab-whatsapp{position:fixed;right:22px;bottom:22px;z-index:500;display:flex;align-items:center;gap:8px;background:#008938;color:#fff;text-decoration:none;padding:12px 20px;border-radius:100px;font-weight:700;font-size:.92rem;box-shadow:0 4px 18px rgba(0,137,56,.35)}
 @media(max-width:900px){body{padding-bottom:78px}.fab-donar-movil{position:fixed;left:12px;right:76px;bottom:12px;z-index:600;display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--azul);color:#fff;border-radius:100px;text-decoration:none;font-size:.94rem;font-weight:800;box-shadow:0 4px 18px rgba(29,90,138,.35)}.fab-whatsapp{right:12px;bottom:12px;width:52px;height:52px;padding:13px;justify-content:center;z-index:600}.fab-whatsapp span{display:none}}
 </style>
-<link rel="stylesheet" href="assets/styles.css?v=20260812o">
-<script src="assets/loader.js?v=20260812b"></script>
+<link rel="stylesheet" href="assets/styles.css?v=20260813a">
+<script src="assets/loader.js?v=20260813a"></script>
 </head>
 <body>
 
@@ -339,19 +339,61 @@
       Al abrir el mapa, OpenFreeMap recibe las solicitudes técnicas necesarias para entregar las teselas; no enviamos
       cookies ni la página de origen. Según su <a class="pie-enlace" href="https://openfreemap.org/privacy/" target="_blank"
       rel="noopener noreferrer">política de privacidad</a>, no registra IP por defecto y solo puede hacerlo temporalmente
-      ante incidentes de seguridad. Los enlaces externos pertenecen a terceros. Si decides escribirnos, tu proveedor
-      de correo compartirá con el responsable del proyecto la dirección y el contenido que envíes.</p>
+      ante incidentes de seguridad. Los enlaces externos pertenecen a terceros. Si usas el formulario, enviaremos únicamente
+      el tipo de reporte, el mensaje, el registro relacionado y el contacto opcional mediante Resend;
+      consulta su <a class="pie-enlace" href="https://resend.com/legal/privacy-policy" target="_blank"
+      rel="noopener noreferrer">política de privacidad</a>. No conservamos una copia en una base de datos de la plataforma,
+      no usamos estos datos para publicidad ni creamos perfiles.</p>
     </div>
     <div class="pie-credito">
       <div>
         <p>Creado por el profesor <strong>Santiago Jiménez Londoño</strong> · <a class="pie-enlace" href="https://www.sjimenezlon.co" target="_blank" rel="noopener">sjimenezlon.co</a></p>
-        <p class="pie-sugerencias">¿Quieres mejorar la plataforma o tienes una sugerencia?
-        <a class="pie-enlace" href="mailto:sjimenezlon@gmail.com?subject=Sugerencia%20para%20Cuidar%20a%20Colombia">Escríbeme a sjimenezlon@gmail.com</a></p>
+        <p class="pie-sugerencias">¿Quieres mejorar la plataforma o reportar un dato?
+        <button class="pie-enlace boton-enlace abrir-sugerencias" type="button" data-tipo="sugerencia">Enviar una sugerencia</button></p>
       </div>
       <p class="pie-fecha" id="pie-actualizacion">Última actualización: 12 de agosto de 2026, 10:00 a. m.</p>
     </div>
   </div>
 </footer>
+
+<dialog class="dialogo-sugerencias" id="sugerencias" aria-labelledby="sugerencias-titulo" aria-describedby="sugerencias-ayuda">
+  <form class="formulario-sugerencias" id="formulario-sugerencias">
+    <div class="formulario-cabecera">
+      <div><p class="antetitulo">Ayúdanos a cuidar la información</p><h2 id="sugerencias-titulo">Enviar un reporte</h2></div>
+      <button class="cerrar-sugerencias" id="cerrar-sugerencias" type="button" aria-label="Cerrar formulario">×</button>
+    </div>
+    <p id="sugerencias-ayuda">Es breve y llega al equipo sin mostrar la dirección destinataria. No envíes cédulas,
+    historias clínicas, direcciones de vivienda, datos bancarios ni información sensible de víctimas.</p>
+    <label class="campo-sugerencia"><span>Tipo de mensaje</span>
+      <select id="sugerencia-tipo" name="tipo" required>
+        <option value="dato">Dato desactualizado o incorrecto</option>
+        <option value="sugerencia">Sugerencia para mejorar</option>
+        <option value="seguridad">Privacidad o seguridad</option>
+        <option value="otro">Otro</option>
+      </select>
+    </label>
+    <label class="campo-sugerencia campo-registro" id="campo-sugerencia-registro"><span>Registro relacionado</span>
+      <input id="sugerencia-registro" name="registro" type="text" maxlength="180" readonly>
+    </label>
+    <label class="campo-sugerencia"><span>¿Qué debemos revisar?</span>
+      <textarea id="sugerencia-mensaje" name="mensaje" required minlength="12" maxlength="2000" rows="5"
+        placeholder="Describe el cambio y, si puedes, pega el enlace de la fuente."></textarea>
+    </label>
+    <label class="campo-sugerencia"><span>Contacto para responder <small>(opcional)</small></span>
+      <input id="sugerencia-contacto" name="contacto" type="text" maxlength="160" autocomplete="email"
+        placeholder="Correo o teléfono; puedes dejarlo vacío">
+    </label>
+    <label class="campo-trampa" aria-hidden="true">Empresa <input name="empresa" type="text" tabindex="-1" autocomplete="off"></label>
+    <input id="sugerencia-inicio" name="inicio" type="hidden">
+    <input id="sugerencia-seccion" name="seccion" type="hidden">
+    <p class="nota-formulario">El contacto es opcional. El mensaje se usa exclusivamente para revisar y mejorar esta plataforma.</p>
+    <div class="formulario-acciones">
+      <button class="boton boton-primario" id="enviar-sugerencia" type="submit">Enviar reporte</button>
+      <button class="boton boton-cancelar" id="cancelar-sugerencia" type="button">Cancelar</button>
+    </div>
+    <p class="estado-formulario" id="estado-sugerencia" role="status" aria-live="polite"></p>
+  </form>
+</dialog>
 
 <a class="fab-donar-movil" href="#donar-dinero">Donar ahora</a>
 <a class="fab-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Comparte la plataforma por WhatsApp"

@@ -7,7 +7,8 @@
     "validate": "node scripts/validar_datos.mjs",
     "check:links": "node scripts/verificar_enlaces.mjs",
     "check:security": "node scripts/verificar_seguridad.mjs",
-    "test": "npm run build && npm run check:security"
+    "check:form": "node scripts/probar_sugerencias.mjs",
+    "test": "npm run build && npm run check:security && npm run check:form"
   },
   "dependencies": {
     "maplibre-gl": "4.7.1"
