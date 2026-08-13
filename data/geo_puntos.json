@@ -316,14 +316,6 @@
    "lon": -73.62637
   },
   {
-   "tipo": "acopio",
-   "ciudad": "Itagüí",
-   "nombre": "Parque Principal de Itagüí",
-   "direccion": "Centro de Itagüí",
-   "lat": 6.17239,
-   "lon": -75.60942
-  },
-  {
    "tipo": "sangre",
    "ciudad": "Medellín",
    "registro_entidad": "Cruz Roja Antioquia — jornadas móviles",

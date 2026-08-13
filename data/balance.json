@@ -10,40 +10,40 @@
     {
       "clave": "muertos",
       "etiqueta": "Personas fallecidas",
-      "valor": "182",
-      "fuente_titulo": "UNGRD, Reporte 011",
-      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+      "valor": "239",
+      "fuente_titulo": "UNGRD, balance del 12 de agosto (vía El Colombiano)",
+      "fuente_url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690"
     },
     {
       "clave": "heridos",
       "etiqueta": "Personas heridas",
-      "valor": "2.542",
-      "fuente_titulo": "UNGRD, Reporte 011",
-      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+      "valor": "3.755",
+      "fuente_titulo": "UNGRD, balance del 12 de agosto (vía El Colombiano)",
+      "fuente_url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690"
     },
     {
       "clave": "desaparecidos",
       "etiqueta": "Personas desaparecidas",
-      "valor": "189",
-      "fuente_titulo": "UNGRD, Reporte 011",
-      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+      "valor": "287",
+      "fuente_titulo": "UNGRD, balance del 12 de agosto (vía El Colombiano)",
+      "fuente_url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690"
     },
     {
       "clave": "viviendas",
       "etiqueta": "Viviendas afectadas",
-      "valor": "15.568",
-      "fuente_titulo": "UNGRD, Reporte 011",
-      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+      "valor": "54.672 (9.215 destruidas y 45.457 averiadas)",
+      "fuente_titulo": "UNGRD, cifra consolidada del 12 de agosto (vía Canal Trece)",
+      "fuente_url": "https://canaltrece.com.co/noticias/cifra-consolidada-tras-el-terremoto-en-colombia-reporte-del-12-de-agosto-de-2026/"
     },
     {
       "clave": "vias",
       "etiqueta": "Vías afectadas",
-      "valor": "77",
-      "fuente_titulo": "UNGRD, Reporte 011",
-      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+      "valor": "129",
+      "fuente_titulo": "UNGRD, cifra consolidada del 12 de agosto (vía Canal Trece)",
+      "fuente_url": "https://canaltrece.com.co/noticias/cifra-consolidada-tras-el-terremoto-en-colombia-reporte-del-12-de-agosto-de-2026/"
     }
   ],
-  "fecha_corte": "11 de agosto de 2026, 12:00 m. (Reporte Situacional No. 011 de la UNGRD)",
+  "fecha_corte": "12 de agosto de 2026, 7:30 a. m. (balance de la UNGRD sobre 403 municipios de 14 departamentos, citado por prensa nacional; sin reporte más reciente disponible al corte de esta revisión, 13 de agosto de 2026)",
   "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012.",
-  "nota": "Cortes posteriores de prensa ya reportan cifras mayores; esta plataforma publica el último reporte situacional oficial de la UNGRD y se actualiza con cada nuevo corte."
+  "nota": "Este corte del 12 de agosto está corroborado por varios medios nacionales (El Colombiano, ABC Economía, El Universal, Canal Trece, Pulzo, Noticias RCN) que citan a la UNGRD; no fue posible confirmarlo contra el PDF oficial de gestiondelriesgo.gov.co por restricciones de acceso al sitio en esta revisión. Esta plataforma publica el último balance verificable y se actualiza con cada nuevo corte confirmado."
 }

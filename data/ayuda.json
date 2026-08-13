@@ -1022,32 +1022,6 @@
       "fecha": "11 ago 2026"
     },
     {
-      "ciudad": "Itagüí",
-      "entidad": "Consejo Municipal de Juventudes de Itagüí",
-      "puntos": [
-        {
-          "nombre": "Parque Principal de Itagüí",
-          "direccion": "Centro de Itagüí",
-          "horario": "solo 11 y 12 de agosto, 10:00 a. m.–5:00 p. m."
-        }
-      ],
-      "que_donar": [
-        "agua",
-        "alimentos no perecederos",
-        "cobijas",
-        "primeros auxilios",
-        "artículos de higiene"
-      ],
-      "que_no_donar": [
-        "productos vencidos",
-        "perecederos"
-      ],
-      "fuente_titulo": "Colombia.com citando el anuncio",
-      "fuente_url": "https://www.colombia.com/actualidad/noticias/centros-de-acopio-y-ayudas-humanitarias-habilitadas-en-colombia-tras-temblor-10-de-agosto-595512",
-      "nivel_fuente": "fuente_secundaria",
-      "fecha": "12 ago 2026"
-    },
-    {
       "ciudad": "Envigado",
       "entidad": "Casa Eterna — listado por Compás Urbano",
       "puntos": [

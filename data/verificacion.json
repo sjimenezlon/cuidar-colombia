@@ -3,13 +3,46 @@
     {
       "afirmacion": "«El IDEAM alerta que hoy habrá una réplica a las 9:15 a. m.» (cadena de WhatsApp con hora exacta)",
       "veredicto": "Falso",
-      "realidad": "El IDEAM no emitió ninguna alerta y no existe método científico para predecir un sismo, su hora ni su magnitud. Toda cadena que anuncie réplicas con horario exacto es falsa por definición.",
+      "realidad": "El IDEAM no emitió ninguna alerta y no existe método científico para predecir un sismo, su hora ni su magnitud. El IDEAM no monitorea sismos —esa es competencia exclusiva del SGC— y toda cadena que anuncie réplicas con horario exacto es falsa por definición.",
       "nivel_fuente": "fuente_secundaria",
-      "fuente_nombre": "Aclaración del IDEAM (vía Semana)",
-      "fuente_url": "https://www.semana.com/tecnologia/articulo/mensaje-que-circula-por-whatsapp-genera-panico-tras-fuerte-terremoto-en-colombia-ideam-aclara-informacion-sobre-posibles-replicas/202628/",
+      "fuente_nombre": "Aclaración del IDEAM (vía Semana y El Espectador)",
+      "fuente_url": "https://www.elespectador.com/ciencia/falso-ideam-no-ha-alertado-replicas-del-sismo-de-este-10-de-agosto/",
       "remitir_nombre": "SGC — Sismos en tiempo real",
       "remitir_url": "https://www.sgc.gov.co/sismos",
-      "verificado_iso": "2026-08-12"
+      "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "«El ICBF está haciendo una colecta solidaria para los niños afectados por el terremoto»",
+      "veredicto": "Falso",
+      "realidad": "Es una modalidad de fraude que usa el nombre del ICBF: la entidad no solicita dinero ni usa intermediarios para recaudar donaciones. El ICBF reportó además 7 menores fallecidos por el sismo y advirtió directamente sobre esta suplantación.",
+      "nivel_fuente": "fuente_secundaria",
+      "fuente_nombre": "ICBF (vía Infobae)",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/13/icbf-reporto-7-menores-fallecidos-por-el-terremoto-en-colombia-y-advirtio-sobre-una-modalidad-de-robo-en-la-que-usan-el-nombre-de-la-entidad/",
+      "remitir_nombre": "ICBF — Línea de atención",
+      "remitir_url": "https://www.icbf.gov.co",
+      "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "«El fracking causó el terremoto de magnitud 7,4»",
+      "veredicto": "Falso",
+      "realidad": "En Colombia no se practica fracking: la técnica no está autorizada ni en operación en el país, por lo que no puede haber originado un sismo de esta magnitud. El SGC atribuye el terremoto a la subducción de la placa de Nazca bajo la Suramericana.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "La Silla Vacía — Detector de Mentiras",
+      "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/falso/detector-terremoto-en-colombia-no-fue-causado-por-el-fracking/",
+      "remitir_nombre": "SGC — Servicio Geológico Colombiano",
+      "remitir_url": "https://www.sgc.gov.co/sismos",
+      "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "«La falla geológica que causó el terremoto es la misma de Hidroituango»",
+      "veredicto": "Engañoso",
+      "realidad": "El sismo del 10 de agosto se originó por la subducción de la placa de Nazca, un mecanismo distinto al de las fallas locales asociadas al proyecto Hidroituango; no es la misma falla geológica.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "La Silla Vacía — Detector de Mentiras",
+      "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/enganoso/falla-geologica-que-provoco-el-terremoto-no-es-la-misma-de-hidroituango/",
+      "remitir_nombre": "SGC — Servicio Geológico Colombiano",
+      "remitir_url": "https://www.sgc.gov.co/sismos",
+      "verificado_iso": "2026-08-13"
     },
     {
       "afirmacion": "«Viene un segundo terremoto más fuerte: hay un patrón sísmico que lo anuncia»",
@@ -53,7 +86,7 @@
       "fuente_url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/",
       "remitir_nombre": "Cruz Roja — Donaciones oficiales",
       "remitir_url": "https://ayuda.cruzrojacolombiana.org/",
-      "verificado_iso": "2026-08-11"
+      "verificado_iso": "2026-08-13"
     },
     {
       "afirmacion": "Foto del Monumento a la Resistencia de Cali «destruido» por el temblor",
