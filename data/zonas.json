@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "13 ago 2026",
-  "fecha_revision_iso": "2026-08-13T19:15:00-05:00",
+  "fecha_revision": "14 ago 2026",
+  "fecha_revision_iso": "2026-08-14T19:15:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -11,13 +11,35 @@
       "autoridad": "Servicio Geológico Colombiano",
       "alcance": "Cráteres de los volcanes Puracé, Piocollo y Curiquinga",
       "recomendacion": "No acercarse a la zona de los cráteres. Pueden ocurrir emisiones repentinas de ceniza o gases.",
-      "nota_contexto": "Es una alerta por actividad volcánica monitoreada. Este boletín no atribuye esa actividad al terremoto.",
+      "nota_contexto": "Es una alerta por actividad volcánica monitoreada, vigente en nivel naranja desde el 1 de agosto de 2026 (antes del terremoto). El SGC desmintió el 13-14 de agosto rumores de que hubiera subido a alerta roja: este boletín no atribuye esa actividad al terremoto.",
       "fecha": "12 ago 2026, 2:30 p. m.",
       "fecha_iso": "2026-08-12T14:30:00-05:00",
       "lat": 2.3131,
       "lon": -76.3972,
       "fuente_url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-extraordinario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-12-de-agosto.aspx",
-      "fuente_titulo": "SGC — boletín extraordinario del 12 de agosto"
+      "fuente_titulo": "SGC — boletín extraordinario del 12 de agosto",
+      "fuentes_adicionales": [
+        {
+          "url": "https://cambiocolombia.com/pais/articulo/2026/8/servicio-geologico-desmiente-que-el-purace-este-en-alerta-roja-que-esta-pasando-con-el-volcan",
+          "titulo": "Cambio Colombia — SGC desmiente rumor de alerta roja (13-14 ago)"
+        }
+      ]
+    },
+    {
+      "id": "replicas-13-14-agosto",
+      "titulo": "Nuevas réplicas registradas el 13 y 14 de agosto en San José del Palmar",
+      "tipo": "Actividad sísmica",
+      "nivel": "informativo",
+      "autoridad": "Servicio Geológico Colombiano",
+      "alcance": "San José del Palmar, Chocó",
+      "recomendacion": "Las réplicas son esperables tras un sismo de esta magnitud y no implican un nuevo terremoto mayor: no existe forma de predecir su hora o magnitud.",
+      "nota_contexto": "El SGC reportó una réplica de magnitud 4,2 en la mañana del 13 de agosto y otra de magnitud 3,2 el 14 de agosto a las 5:01 a. m.; los medios contabilizan 281 sismos en la última semana.",
+      "fecha": "14 ago 2026, 5:01 a. m.",
+      "fecha_iso": "2026-08-14T05:01:00-05:00",
+      "lat": 4.897,
+      "lon": -76.234,
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/nuevo-temblor-de-magnitud-4-2-se-registro-en-san-jose-del-palmar-choco-en-la-manana-de-este-jueves-13-de-agosto-3578131",
+      "fuente_titulo": "El Tiempo — nuevas réplicas del 13 y 14 de agosto"
     }
   ],
   "municipios": [
@@ -44,10 +66,12 @@
       "seguimiento_prioritario": true,
       "lat": 3.452,
       "lon": -76.532,
-      "afectacion": "El balance preliminar del Puesto de Mando Unificado publicado por la Alcaldía reportó 28 personas fallecidas, 380 heridas y 26 edificaciones colapsadas. La ciudad declaró calamidad pública y alerta roja hospitalaria; siete IPS fueron evacuadas y cuatro grandes centros médicos quedaron fuera de servicio en ese corte.",
+      "afectacion": "El balance preliminar del Puesto de Mando Unificado publicado por la Alcaldía reportó 28 personas fallecidas, 380 heridas y 26 edificaciones colapsadas. La ciudad declaró calamidad pública y alerta roja hospitalaria; siete IPS fueron evacuadas y cuatro grandes centros médicos quedaron fuera de servicio en ese corte. El departamento del Valle del Cauca concentra la mayor cifra de fallecidos del país (148, según el balance nacional del 13 de agosto). Una nueva réplica el 13 de agosto obligó a evacuar edificaciones adicionales en la ciudad.",
       "fuentes": [
         {"url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/", "titulo": "Alcaldía de Cali", "alcance": "Balance preliminar del PMU, medidas y alerta roja hospitalaria", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Seguimiento periodístico posterior de afectaciones en la ciudad", "nivel_fuente": "fuente_secundaria"}
+        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Seguimiento periodístico posterior de afectaciones en la ciudad", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://www.semana.com/nacion/cali/articulo/ungrd-emite-nuevo-balance-sobre-el-terremoto-del-10-de-agosto-valle-y-risaralda-con-la-mayor-cifra-de-personas-fallecidas/202632/", "titulo": "Semana", "alcance": "Balance de la UNGRD del 13 de agosto: Valle del Cauca con la mayor cifra de fallecidos del país", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://www.infobae.com/colombia/2026/08/13/por-nuevo-temblor-ordenaron-evacuar-edificaciones-en-cali-y-manizales-son-varios-los-sismos-este-jueves-13-de-agosto-en-colombia/", "titulo": "Infobae", "alcance": "Reporta la evacuación de edificaciones en Cali por una nueva réplica el 13 de agosto", "nivel_fuente": "fuente_secundaria"}
       ]
     },
     {
@@ -72,11 +96,13 @@
       "seguimiento_prioritario": true,
       "lat": 3.88,
       "lon": -77.031,
-      "afectacion": "Incomunicada por tierra: unos 20 derrumbes en la vía a Cali y 3 fallecidos en los túneles del corredor. La Gobernación del Valle anunció abastecimiento por vía aérea. Deslizamientos, cortes de energía y fallas de comunicación; el aeropuerto opera solo vuelos humanitarios.",
+      "afectacion": "La vía a Cali (Buga–Buenaventura) fue reabierta el 12 de agosto con paso controlado tipo «pare y siga» tras unos 20 derrumbes que la dejaron cerrada, con 3 fallecidos en los túneles del corredor. El 14 de agosto el ministro del Interior, Rodrigo Lara, reveló que la red hospitalaria de la ciudad está desbordada y se gestiona un hospital de campaña; más de 800 viviendas del barrio Lleras resultaron destruidas o colapsadas. El aeropuerto Gerardo Tovar López reabrió como aeródromo no controlado, con restricciones.",
       "fuentes": [
         {"url": "https://valledelcauca.gov.co/publicaciones/90177/todos-somos-valle-activado-centro-de-acopio-de-ayudas-en-la-licorera-para-los-damnificados-de-terremoto/", "titulo": "Gobernación del Valle", "alcance": "Confirma necesidades básicas y recepción especial destinada a Buenaventura", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.elpais.com.co/cali/terremoto-en-colombia-gobernadora-del-valle-confirma-que-no-hay-paso-en-la-via-entre-cali-y-buenaventura-por-varios-derrumbes-1025.html", "titulo": "El País (Cali)", "alcance": "Reporta derrumbes, cierre vial y abastecimiento aéreo", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia", "alcance": "Corrobora fallas de comunicaciones, energía y accesos", "nivel_fuente": "fuente_secundaria"}
+        {"url": "https://www.elpais.com.co/cali/terremoto-en-colombia-gobernadora-del-valle-confirma-que-no-hay-paso-en-la-via-entre-cali-y-buenaventura-por-varios-derrumbes-1025.html", "titulo": "El País (Cali)", "alcance": "Reporta derrumbes, cierre vial y abastecimiento aéreo (11 ago)", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia", "alcance": "Corrobora fallas de comunicaciones, energía y accesos", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://www.elpais.com.co/valle/ministerio-de-transporte-confirmo-que-se-habilito-paso-controlado-en-la-via-buga-buenaventura-1203.html", "titulo": "El País (Cali)", "alcance": "Confirma la reapertura con paso controlado de la vía Buga–Buenaventura", "nivel_fuente": "fuente_oficial"},
+        {"url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-14-de-agosto-el-ministro-del-interior-rodrigo-lara-revelo-que-la-red-hospitalaria-en-buenaventura-esta-desbordada-3578338", "titulo": "El Tiempo", "alcance": "Red hospitalaria desbordada y daños en el barrio Lleras, 14 de agosto", "nivel_fuente": "fuente_secundaria"}
       ]
     },
     {
@@ -99,10 +125,11 @@
       "nivel_evidencia": "incluye_fuente_oficial",
       "lat": 5.07,
       "lon": -75.514,
-      "afectacion": "5 fallecidos y alrededor de un centenar de heridos; unas 4.000 viviendas averiadas, 17 edificaciones destruidas y 19 con colapso parcial. Torre de la Catedral Basílica afectada y daños en la Universidad Nacional sede Manizales y en fachadas del centro histórico. El aeropuerto La Nubia opera con restricciones.",
+      "afectacion": "5 fallecidos y alrededor de un centenar de heridos; unas 4.000 viviendas averiadas, 17 edificaciones destruidas y 19 con colapso parcial. Torre de la Catedral Basílica afectada y daños en la Universidad Nacional sede Manizales y en fachadas del centro histórico. El aeropuerto La Nubia reabrió como aeródromo no controlado, con restricciones. Una nueva réplica el 13 de agosto obligó a evacuar edificaciones adicionales en la ciudad.",
       "fuentes": [
         {"url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/", "titulo": "Cruz Roja Colombiana", "alcance": "Confirma despliegue de búsqueda y rescate y apoyo en Manizales", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Respalda las cifras preliminares de víctimas, viviendas y edificios", "nivel_fuente": "fuente_secundaria"}
+        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Respalda las cifras preliminares de víctimas, viviendas y edificios", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://www.infobae.com/colombia/2026/08/13/por-nuevo-temblor-ordenaron-evacuar-edificaciones-en-cali-y-manizales-son-varios-los-sismos-este-jueves-13-de-agosto-en-colombia/", "titulo": "Infobae", "alcance": "Reporta la evacuación de edificaciones en Manizales por una nueva réplica el 13 de agosto", "nivel_fuente": "fuente_secundaria"}
       ]
     },
     {
@@ -194,8 +221,8 @@
   ],
   "vias": [
     {
-      "texto": "Vía Cali–Buenaventura: sin paso por cerca de 20 derrumbes, con cierre total del tramo Cali–Loboguerrero en el km 55. Buenaventura se abastece por aire mientras avanza la maquinaria.",
-      "fuente_url": "https://www.elpais.com.co/cali/terremoto-en-colombia-gobernadora-del-valle-confirma-que-no-hay-paso-en-la-via-entre-cali-y-buenaventura-por-varios-derrumbes-1025.html"
+      "texto": "Vía Cali–Buenaventura (tramo Buga–Buenaventura): reabierta el 12 de agosto con paso controlado tipo «pare y siga» para todo tipo de vehículos, incluida carga, tras cerca de 20 derrumbes que la tuvieron cerrada.",
+      "fuente_url": "https://www.elpais.com.co/valle/ministerio-de-transporte-confirmo-que-se-habilito-paso-controlado-en-la-via-buga-buenaventura-1203.html"
     },
     {
       "texto": "INVÍAS reporta 13 puntos de la red vial nacional afectados, concentrados en Quindío, Caldas, Valle del Cauca y Risaralda; la UNGRD contabiliza 77 vías afectadas en total.",
@@ -206,8 +233,8 @@
       "fuente_url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/"
     },
     {
-      "texto": "Aeropuertos: Cali, Quibdó y Armenia ya reabrieron; Pereira, Manizales, Cartago y Buenaventura operan solo vuelos médicos, humanitarios y de Estado. Hay puente aéreo humanitario desde CATAM (Bogotá).",
-      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/suspendidos-vuelos-aereos-en-colombia-por-el-terremoto-estos-son-los-aeropuertos-que-siguen-cerrados-este-martes-11-de-agosto/"
+      "texto": "Aeropuertos: Cali, Quibdó y Armenia ya reabrieron sin restricciones; Buenaventura y Manizales reabrieron como aeródromos no controlados; Cartago opera solo para aeronaves estatales y humanitarias. Pereira (Matecaña) sigue cerrado a vuelos comerciales por grietas en la pista y evaluación estructural de la torre de control; solo opera vuelos estatales, médicos y de búsqueda y rescate. Hay puente aéreo humanitario desde CATAM (Bogotá).",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/11/aeronautica-civil-anuncio-la-reapertura-gradual-con-restricciones-de-los-aeropuertos-en-colombia-tras-el-terremoto-de-magnitud-74/"
     }
   ],
   "respuesta": [
@@ -228,12 +255,12 @@
       "fuente_url": "https://es.wikipedia.org/wiki/Terremoto_de_Colombia_de_2026"
     },
     {
-      "texto": "35 personas han sido rescatadas con vida según el Reporte Situacional No. 011 de la UNGRD.",
-      "fuente_url": "https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35"
+      "texto": "354 personas han sido rescatadas con vida, según el balance del Gobierno Nacional del 13 de agosto (10:30 p. m.), que cita a la UNGRD, la Fiscalía y Medicina Legal.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
     },
     {
-      "texto": "Ayuda internacional: Estados Unidos anunció USD 15,5 millones; Ecuador ofreció un equipo de búsqueda de 47 personas, y más de una docena de países han ofrecido apoyo.",
-      "fuente_url": "https://en.wikipedia.org/wiki/2026_Colombia_earthquake"
+      "texto": "Ayuda internacional: Estados Unidos anunció USD 15,5 millones; Ecuador ofreció un equipo de búsqueda de 47 personas, y más de una docena de países han ofrecido apoyo. Colombia aceptó además equipos de búsqueda y rescate de El Salvador, Israel y México; la brigada mexicana Topos Azteca ya opera en Cali. México envió 58,5 toneladas de ayuda humanitaria y El Salvador 100 toneladas; India anunció el 14 de agosto el envío de 20 toneladas adicionales.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/13/tras-el-terremoto-de-74-en-colombia-llego-brigada-de-rescatistas-estadounidenses-salvar-vidas/"
     },
     {
       "texto": "El Gobierno decretó tres días de duelo nacional (Decreto 1172 del 11 de agosto) en honor a las víctimas: la bandera ondea a media asta en los edificios públicos del país y en las embajadas y consulados de Colombia en el exterior.",

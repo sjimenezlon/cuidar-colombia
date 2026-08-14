@@ -131,6 +131,61 @@
       "remitir_nombre": "SGC en X (@sgcol)",
       "remitir_url": "https://x.com/sgcol",
       "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "Video del presidente Abelardo de la Espriella «bailando en una fiesta» mientras el país sufre por el terremoto",
+      "veredicto": "Falso",
+      "realidad": "El video es de una celebración privada en el Club Santa Marta (Magdalena), grabada y publicada por un asistente el 26 de julio, semanas antes del terremoto del 10 de agosto.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "La Silla Vacía — Detector de Mentiras",
+      "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/falso/detector-este-video-de-abelardo-bailando-fue-tomado-dias-antes-del-terremoto/",
+      "remitir_nombre": "La Silla Vacía — Detector de Mentiras",
+      "remitir_url": "https://www.lasillavacia.com/detector-de-mentiras/",
+      "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "«Jerome Sanabria dijo que creyó que el sismo fue solo en zonas petristas», supuestamente publicado por Caracol Radio",
+      "veredicto": "Falso",
+      "realidad": "No existe esa declaración ni nota de Caracol Radio. Lo real —y por lo que sí se disculpó— fue un trino burlón publicado minutos después del sismo.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "La Silla Vacía — Detector de Mentiras",
+      "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/falso/detector-jerome-sanabria-no-dijo-que-creyo-el-sismo-fue-solo-en-zonas-petristas/",
+      "remitir_nombre": "La Silla Vacía — Detector de Mentiras",
+      "remitir_url": "https://www.lasillavacia.com/detector-de-mentiras/",
+      "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "El embajador de China envió condolencias por el terremoto «al expresidente Gustavo Petro», no al actual presidente",
+      "veredicto": "Falso",
+      "realidad": "El mensaje original del embajador chino iba dirigido a Abelardo de la Espriella; el error surgió de una traducción automática que insertó mal el nombre.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "La Silla Vacía — Detector de Mentiras",
+      "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/falso/embajador-de-china-envio-condolencias-por-el-terremoto-a-abelardo-no-a-petro/",
+      "remitir_nombre": "La Silla Vacía — Detector de Mentiras",
+      "remitir_url": "https://www.lasillavacia.com/detector-de-mentiras/",
+      "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "El edificio Los Álamos, en Pereira, «colapsó dos días después» del terremoto, el 12 de agosto",
+      "veredicto": "Engañoso",
+      "realidad": "El edificio colapsó el mismo día del sismo, el 10 de agosto; las imágenes virales mostraban escombros ya removidos y trasladados para facilitar la búsqueda de sobrevivientes, según confirmó la Alcaldía de Pereira.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "La Silla Vacía — Detector de Mentiras",
+      "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/enganoso/edificio-alamos-en-pereira-colapso-el-dia-del-terremoto-no-despues/",
+      "remitir_nombre": "La Silla Vacía — Detector de Mentiras",
+      "remitir_url": "https://www.lasillavacia.com/detector-de-mentiras/",
+      "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "Video de una vía completamente destruida, presentado como daño del terremoto del 10 de agosto en Colombia",
+      "veredicto": "Engañoso",
+      "realidad": "El video corresponde a una falla geológica ocurrida en Santander en octubre de 2025, un evento distinto y anterior al terremoto.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "Maldita.es",
+      "fuente_url": "https://maldita.es/desinfo/20260814/este-video-muestra-toda-la-tierra-que-se-arrimo-encima-de-la-otra-en-el-terremoto-de-colombiad/",
+      "remitir_nombre": "Maldita.es",
+      "remitir_url": "https://maldita.es/",
+      "verificado_iso": "2026-08-14"
     }
   ],
   "fuentes_para_verificar": [

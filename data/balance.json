@@ -10,40 +10,47 @@
     {
       "clave": "muertos",
       "etiqueta": "Personas fallecidas",
-      "valor": "239",
-      "fuente_titulo": "UNGRD, balance del 12 de agosto (vía El Colombiano)",
-      "fuente_url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690"
+      "valor": "284",
+      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
     },
     {
       "clave": "heridos",
       "etiqueta": "Personas heridas",
-      "valor": "3.755",
-      "fuente_titulo": "UNGRD, balance del 12 de agosto (vía El Colombiano)",
-      "fuente_url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690"
+      "valor": "3.977",
+      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
     },
     {
       "clave": "desaparecidos",
       "etiqueta": "Personas desaparecidas",
-      "valor": "287",
-      "fuente_titulo": "UNGRD, balance del 12 de agosto (vía El Colombiano)",
-      "fuente_url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690"
+      "valor": "379",
+      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
+    },
+    {
+      "clave": "rescatados",
+      "etiqueta": "Personas rescatadas con vida",
+      "valor": "354",
+      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
     },
     {
       "clave": "viviendas",
       "etiqueta": "Viviendas afectadas",
-      "valor": "54.672 (9.215 destruidas y 45.457 averiadas)",
-      "fuente_titulo": "UNGRD, cifra consolidada del 12 de agosto (vía Canal Trece)",
-      "fuente_url": "https://canaltrece.com.co/noticias/cifra-consolidada-tras-el-terremoto-en-colombia-reporte-del-12-de-agosto-de-2026/"
+      "valor": "84.360 (12.597 destruidas y 71.763 averiadas)",
+      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
     },
     {
       "clave": "vias",
       "etiqueta": "Vías afectadas",
       "valor": "129",
-      "fuente_titulo": "UNGRD, cifra consolidada del 12 de agosto (vía Canal Trece)",
+      "fuente_titulo": "UNGRD, cifra consolidada del 12 de agosto (vía Canal Trece); sin cifra de vías más reciente localizada al corte de esta revisión",
       "fuente_url": "https://canaltrece.com.co/noticias/cifra-consolidada-tras-el-terremoto-en-colombia-reporte-del-12-de-agosto-de-2026/"
     }
   ],
-  "fecha_corte": "12 de agosto de 2026, 7:30 a. m. (balance de la UNGRD sobre 403 municipios de 14 departamentos, citado por prensa nacional; sin reporte más reciente disponible al corte de esta revisión, 13 de agosto de 2026)",
+  "fecha_corte": "13 de agosto de 2026, 10:30 p. m. (balance presentado por el Gobierno Nacional citando a la UNGRD, la Fiscalía General y Medicina Legal, sobre 426 municipios de 15 departamentos; 45.523 familias y 102.263 personas afectadas, 121 edificaciones colapsadas)",
   "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012.",
-  "nota": "Este corte del 12 de agosto está corroborado por varios medios nacionales (El Colombiano, ABC Economía, El Universal, Canal Trece, Pulzo, Noticias RCN) que citan a la UNGRD; no fue posible confirmarlo contra el PDF oficial de gestiondelriesgo.gov.co por restricciones de acceso al sitio en esta revisión. Esta plataforma publica el último balance verificable y se actualiza con cada nuevo corte confirmado."
+  "nota": "Distintos medios nacionales que citan el mismo corte del 13 de agosto, 10:30 p. m. (Infobae, El Tiempo) reportan variaciones menores en las cifras (muertos entre 281 y 284; heridos entre 3.971 y 3.977; rescatados entre 348 y 354), reflejo típico de un balance que se sigue actualizando durante la emergencia. Esta plataforma publica el valor más alto y más reciente de cada cifra entre las fuentes corroboradas y se actualiza con cada nuevo corte confirmado. No fue posible confirmarlo contra el PDF oficial de gestiondelriesgo.gov.co por restricciones de acceso al sitio en esta revisión."
 }
