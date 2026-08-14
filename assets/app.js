@@ -13,11 +13,12 @@
     una_fuente_secundaria: 'Una fuente secundaria'
   };
   var COLOR_ACOPIO = '#1D5A8A', COLOR_SANGRE = '#C62828', COLOR_ALERTA = '#B85F18';
+  var cortePortalIso = '';
   var filtrosMapa = {
     modo: 'ayuda',
     gravedades: { critica: true, alta: true, media: true },
     puntos: { acopio: true, sangre: true },
-    departamento: 'todos', ciudad: 'todas', operacion: 'todas', evidenciaImpacto: 'todas', soloPrioritarias: false, busqueda: ''
+    departamento: 'todos', ciudad: 'todas', operacion: 'todas', fuente: 'todas', evidenciaImpacto: 'todas', soloPrioritarias: false, busqueda: ''
   };
   function esc(t) {
     if (t == null) return '';
@@ -203,8 +204,32 @@
 
   function estadoOperacion(item, respaldo) {
     var codigo = item && item.estado_operacion || respaldo && respaldo.estado_operacion || 'por_confirmar';
+    var desde = item && item.estado_desde_iso || respaldo && respaldo.estado_desde_iso || '';
+    var hasta = item && item.estado_hasta_iso || respaldo && respaldo.estado_hasta_iso || '';
+    var corte = Date.parse(cortePortalIso);
+    var inicio = Date.parse(desde);
+    var fin = Date.parse(hasta);
+    if (Number.isFinite(corte) && Number.isFinite(fin) && fin <= corte) codigo = 'finalizado';
+    else if (Number.isFinite(corte) && Number.isFinite(inicio) && inicio > corte) codigo = 'programado';
     if (!ESTADOS_OPERACION[codigo]) codigo = 'por_confirmar';
-    return Object.assign({ codigo: codigo }, ESTADOS_OPERACION[codigo]);
+    return Object.assign({ codigo: codigo, desde: desde, hasta: hasta }, ESTADOS_OPERACION[codigo]);
+  }
+
+  function momentoOperacion(iso) {
+    var fecha = new Date(iso);
+    if (Number.isNaN(fecha.getTime())) return '';
+    try {
+      return new Intl.DateTimeFormat('es-CO', {
+        timeZone: 'America/Bogota', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit'
+      }).format(fecha).replace(',', ' ·');
+    } catch (e) { return iso; }
+  }
+
+  function textoVentanaOperacion(item, respaldo) {
+    var estado = estadoOperacion(item, respaldo);
+    if (estado.codigo === 'programado' && estado.desde) return 'Comienza ' + momentoOperacion(estado.desde);
+    if (estado.hasta) return (estado.codigo === 'finalizado' ? 'Terminó ' : 'Publicada hasta ') + momentoOperacion(estado.hasta);
+    return '';
   }
 
   function etiquetaOperacion(item, respaldo) {
@@ -212,7 +237,8 @@
     var actualizado = item && item.estado_actualizado_iso || respaldo && respaldo.estado_actualizado_iso || '';
     var titulo = estado.ayuda + (actualizado ? ' Estado revisado: ' + actualizado + '.' : '');
     return '<span class="estado-operacion estado-operacion-' + esc(estado.clase) + '" title="' + esc(titulo) + '">' +
-      esc(estado.texto) + '</span>';
+      esc(estado.texto) + '</span>' + (textoVentanaOperacion(item, respaldo) ? '<small class="estado-ventana">&nbsp;— ' +
+        esc(textoVentanaOperacion(item, respaldo)) + '</small>' : '');
   }
 
   function renderPasaporteConfianza(registro, tipo) {
@@ -263,12 +289,14 @@
       (a.puntos || []).forEach(function (p) {
         guardar('acopio|' + normalizar(a.ciudad) + '|' + normalizar(a.entidad) + '|' + normalizar(p.nombre),
           [a.ciudad, a.entidad, p.nombre, p.direccion, p.horario, p.estado_operacion || a.estado_operacion,
-            p.estado_actualizado_iso || a.estado_actualizado_iso, p.fuente_url || a.fuente_url, p.fecha || a.fecha]);
+            p.estado_actualizado_iso || a.estado_actualizado_iso, p.estado_desde_iso || a.estado_desde_iso,
+            p.estado_hasta_iso || a.estado_hasta_iso, p.fuente_url || a.fuente_url, p.fecha || a.fecha]);
       });
     });
     ((ayuda && ayuda.sangre) || []).forEach(function (s) {
       guardar('sangre|' + normalizar(s.ciudad) + '|' + normalizar(s.entidad),
         [s.ciudad, s.entidad, s.donde, s.tipos_urgentes, s.estado_operacion, s.estado_actualizado_iso,
+          s.estado_desde_iso, s.estado_hasta_iso,
           s.fuente_url, s.fecha_revision_iso]);
     });
     return { version: 1, evento_id: meta && meta.evento_id || '', corte_iso: meta && meta.iso || '', guardado_iso: new Date().toISOString(), items: items };
@@ -1159,6 +1187,7 @@
      llegue o no el mapa base. */
   var mapa = null, mapaListo = false, mapaEventosConectados = false, marcadorEpicentro = null, marcadoresAyuda = [], marcadoresAlertas = [];
   var puntoMapaActivoId = '', popupPuntoActivo = null, fichaPuntoConectada = false;
+  var mapaResizeConectado = false, temporizadorResizeMapa = null, reubicarFichaResize = false, ultimoModoMapaMovil = null;
   var datosMapa = { municipios: null, zonas: null, ayuda: null, sismo: null, geo: null, meta: null, resumen: null };
   var cargaMapaIniciada = false;
 
@@ -1191,7 +1220,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260813l'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260814b'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1232,6 +1261,45 @@
       });
   }
 
+  function puntoActivoMapa() {
+    return (datosMapa._puntos || []).filter(function (p) { return p._id === puntoMapaActivoId; })[0] || null;
+  }
+
+  function redimensionarMapa(reubicarFicha) {
+    reubicarFichaResize = reubicarFichaResize || !!reubicarFicha;
+    if (temporizadorResizeMapa) clearTimeout(temporizadorResizeMapa);
+    temporizadorResizeMapa = setTimeout(function () {
+      temporizadorResizeMapa = null;
+      var debeReubicar = reubicarFichaResize;
+      reubicarFichaResize = false;
+      if (mapa) mapa.resize();
+      if (debeReubicar) {
+        var punto = puntoActivoMapa();
+        if (punto) seleccionarPunto(punto);
+      }
+    }, 120);
+  }
+
+  function conectarRedimensionMapa() {
+    if (mapaResizeConectado) return;
+    mapaResizeConectado = true;
+    ultimoModoMapaMovil = esMapaMovil();
+    window.addEventListener('resize', function () {
+      var modoActual = esMapaMovil();
+      var cambioModo = modoActual !== ultimoModoMapaMovil;
+      ultimoModoMapaMovil = modoActual;
+      redimensionarMapa(cambioModo);
+    }, { passive: true });
+    var nodo = document.getElementById('mapa');
+    if (nodo && 'ResizeObserver' in window) new ResizeObserver(function () { redimensionarMapa(false); }).observe(nodo);
+    if (window.matchMedia) {
+      var media = window.matchMedia('(max-width: 700px)');
+      var cambiarModo = function () { redimensionarMapa(true); };
+      if (media.addEventListener) media.addEventListener('change', cambiarModo);
+      else if (media.addListener) media.addListener(cambiarModo);
+    }
+  }
+
   function crearMapa(estilo, simplificado) {
     try {
       mapa = new maplibregl.Map({
@@ -1242,9 +1310,12 @@
         transformRequest: function (url) { return { url: url, referrerPolicy: 'no-referrer', cache: 'default' }; }
       });
       mapa.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+      conectarRedimensionMapa();
       conectarClicsMapa();
       mapa.once('load', function () {
         mapaListo = true;
+        mapa.resize();
+        setTimeout(function () { if (mapa) mapa.resize(); }, 280);
         reconstruirCapasPropias(simplificado ? 'Mapa base simplificado. Los puntos publicados siguen visibles.' : '');
         actualizarEpicentro();
         encuadrarMapa();
@@ -1367,7 +1438,10 @@
         '<option value="recibiendo"' + (filtrosMapa.operacion === 'recibiendo' ? ' selected' : '') + '>Recepción confirmada</option>' +
         '<option value="programado"' + (filtrosMapa.operacion === 'programado' ? ' selected' : '') + '>Jornada programada</option>' +
         '<option value="por_confirmar"' + (filtrosMapa.operacion === 'por_confirmar' ? ' selected' : '') + '>Confirmar vigencia</option>' +
-        '<option value="finalizado"' + (filtrosMapa.operacion === 'finalizado' ? ' selected' : '') + '>Recepción finalizada</option></select></label>';
+        '<option value="finalizado"' + (filtrosMapa.operacion === 'finalizado' ? ' selected' : '') + '>Recepción finalizada</option></select></label>' +
+        '<label class="control-filtro"><span>Origen de la evidencia</span><select id="filtro-fuente-mapa"><option value="todas">Todas las fuentes</option>' +
+        '<option value="fuente_oficial"' + (filtrosMapa.fuente === 'fuente_oficial' ? ' selected' : '') + '>Publicado por responsable</option>' +
+        '<option value="fuente_secundaria"' + (filtrosMapa.fuente === 'fuente_secundaria' ? ' selected' : '') + '>Confirmación secundaria</option></select></label>';
     } else if (filtrosMapa.modo === 'impacto') {
       controlesModo = '<fieldset class="grupo-filtros"><legend>Nivel de afectación</legend>' +
         chip('gravedad', 'critica', COLORES_GRAVEDAD.critica, 'Crítica', filtrosMapa.gravedades.critica, municipiosFiltro.filter(function (m) { return m.gravedad === 'critica'; }).length) +
@@ -1412,14 +1486,16 @@
     var filtroDepartamento = document.getElementById('filtro-departamento');
     var filtroCiudad = document.getElementById('filtro-ciudad-mapa');
     var filtroOperacion = document.getElementById('filtro-operacion-mapa');
+    var filtroFuente = document.getElementById('filtro-fuente-mapa');
     var filtroEvidencia = document.getElementById('filtro-evidencia-impacto');
     if (filtroDepartamento) filtroDepartamento.addEventListener('change', function (e) { filtrosMapa.departamento = e.target.value; aplicarFiltrosMapa(true); });
     if (filtroCiudad) filtroCiudad.addEventListener('change', function (e) { filtrosMapa.ciudad = e.target.value; aplicarFiltrosMapa(true); });
     if (filtroOperacion) filtroOperacion.addEventListener('change', function (e) { filtrosMapa.operacion = e.target.value; aplicarFiltrosMapa(true); });
+    if (filtroFuente) filtroFuente.addEventListener('change', function (e) { filtrosMapa.fuente = e.target.value; aplicarFiltrosMapa(true); });
     if (filtroEvidencia) filtroEvidencia.addEventListener('change', function (e) { filtrosMapa.evidenciaImpacto = e.target.value; aplicarFiltrosMapa(true); renderZonasFiltradas(); });
     document.getElementById('filtro-busqueda-mapa').addEventListener('input', function (e) { filtrosMapa.busqueda = e.target.value; aplicarFiltrosMapa(true); });
     document.getElementById('limpiar-filtros-mapa').addEventListener('click', function () {
-      filtrosMapa = { modo: filtrosMapa.modo, gravedades: { critica: true, alta: true, media: true }, puntos: { acopio: true, sangre: true }, departamento: 'todos', ciudad: 'todas', operacion: 'todas', evidenciaImpacto: 'todas', soloPrioritarias: false, busqueda: '' };
+      filtrosMapa = { modo: filtrosMapa.modo, gravedades: { critica: true, alta: true, media: true }, puntos: { acopio: true, sangre: true }, departamento: 'todos', ciudad: 'todas', operacion: 'todas', fuente: 'todas', evidenciaImpacto: 'todas', soloPrioritarias: false, busqueda: '' };
       cerrarFichaPunto(); pintarFiltrosMapa(); aplicarFiltrosMapa(true);
     });
     var resultados = document.getElementById('mapa-resultados');
@@ -1499,6 +1575,8 @@
         detalle_operativo: detalle,
         operacion: estadoOperacion(subpunto, coincidencia).codigo,
         estado_actualizado_iso: subpunto && subpunto.estado_actualizado_iso || coincidencia && coincidencia.estado_actualizado_iso || '',
+        estado_desde_iso: subpunto && subpunto.estado_desde_iso || coincidencia && coincidencia.estado_desde_iso || '',
+        estado_hasta_iso: subpunto && subpunto.estado_hasta_iso || coincidencia && coincidencia.estado_hasta_iso || '',
         precision_ubicacion: p.coordenadas_fuente ? 'ubicacion_contrastada' : 'direccion_geocodificada'
       };
     }
@@ -1609,6 +1687,7 @@
     return (datosMapa._puntos || []).filter(function (p) {
       return filtrosMapa.puntos[p.tipo] && (filtrosMapa.ciudad === 'todas' || p.ciudad === filtrosMapa.ciudad) &&
         (filtrosMapa.operacion === 'todas' || p.operacion === filtrosMapa.operacion) &&
+        (filtrosMapa.fuente === 'todas' || p.nivel_fuente === filtrosMapa.fuente) &&
         (!q || normalizar([p.nombre, p.ciudad, p.direccion, p.detalle_operativo, p.fuente_titulo].join(' ')).indexOf(q) !== -1);
     });
   }
@@ -1687,8 +1766,14 @@
         (mapaListo ? '' : ' disabled') + '>' + (mapaListo ? 'Ubicar en mapa' : 'Mapa cargando…') + '</button></div></li>';
     }).concat(puntos.map(function (p) {
       var seleccionado = p._id === puntoMapaActivoId;
+      var operacionPunto = estadoOperacion({ estado_operacion: p.operacion, estado_desde_iso: p.estado_desde_iso, estado_hasta_iso: p.estado_hasta_iso });
+      var ventanaPunto = textoVentanaOperacion({ estado_operacion: p.operacion, estado_desde_iso: p.estado_desde_iso, estado_hasta_iso: p.estado_hasta_iso });
+      var fuentePunto = p.nivel_fuente === 'fuente_oficial' ? 'Publicado por responsable' : 'Confirmación secundaria';
       return '<li data-resultado-id="' + esc(p._id) + '"' + (seleccionado ? ' class="seleccionado" aria-current="true"' : '') + '><span class="resultado-tipo resultado-' + esc(p.tipo) + '">' + (p.tipo === 'acopio' ? 'Punto de acopio' : 'Donación de sangre') + '</span>' +
-        '<div class="resultado-info"><strong>' + esc(p.nombre) + '</strong><small>' + esc(p.ciudad) + (p.direccion ? ' · ' + esc(p.direccion) : '') + '</small></div>' +
+        '<div class="resultado-info"><strong>' + esc(p.nombre) + '</strong><small>' + esc(p.ciudad) + (p.direccion ? ' · ' + esc(p.direccion) : '') + '</small>' +
+        '<span class="resultado-certeza"><span class="resultado-fuente ' + (p.nivel_fuente === 'fuente_oficial' ? 'oficial' : 'secundaria') + '">' + esc(fuentePunto) + '</span>' +
+        '<span class="resultado-estado ' + esc(operacionPunto.clase) + '">' + esc(operacionPunto.texto) + '</span>' +
+        (ventanaPunto ? '<span class="resultado-ventana">' + esc(ventanaPunto) + '</span>' : '') + '</span></div>' +
         '<div class="resultado-acciones"><button type="button" data-enfocar data-id="' + esc(p._id) + '" data-lat="' + p.lat + '" data-lon="' + p.lon + '"' +
         (mapaListo ? '' : ' disabled') + '>' + (mapaListo ? 'Ubicar en mapa' : 'Mapa cargando…') + '</button>' +
         enlaceRuta(p.lat, p.lon, p.nombre, 'enlace-ruta') + '</div></li>';
@@ -1698,8 +1783,11 @@
         '<div class="resultado-acciones"><button type="button" data-enfocar data-alerta="' + esc(a.id) + '" data-lat="' + a.lat + '" data-lon="' + a.lon + '"' +
         (mapaListo ? '' : ' disabled') + '>' + (mapaListo ? 'Ubicar alerta' : 'Mapa cargando…') + '</button></div></li>';
     }));
+    var oficialesMapa = puntos.filter(function (p) { return p.nivel_fuente === 'fuente_oficial'; }).length;
+    var confirmadosMapa = puntos.filter(function (p) { return p.operacion === 'recibiendo'; }).length;
     var detalleResumen = filtrosMapa.modo === 'ayuda'
-      ? puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda' + (filtrosMapa.ciudad !== 'todas' ? ' en ' + filtrosMapa.ciudad : '')
+      ? puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda' + (filtrosMapa.ciudad !== 'todas' ? ' en ' + filtrosMapa.ciudad : '') +
+        ' · ' + oficialesMapa + ' con fuente oficial · ' + confirmadosMapa + ' con recepción confirmada'
       : (filtrosMapa.modo === 'impacto' ? municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' con afectación reportada' : alertas.length + ' alerta' + (alertas.length === 1 ? '' : 's') + ' de autoridad competente');
     var resumen = total + ' resultado' + (total === 1 ? '' : 's') + ': ' + detalleResumen;
     cont.innerHTML = '<span class="solo-lectores" role="status">' + esc(resumen) + '</span><details' + (!mapaListo || !total ? ' open' : '') + '><summary><strong>' + total + ' resultado' + (total === 1 ? '' : 's') + '</strong> · ' +
@@ -1740,7 +1828,8 @@
   function htmlDetallePunto(p, incluirLista) {
     var esSangre = p.tipo === 'sangre';
     var fuenteOficial = p.nivel_fuente === 'fuente_oficial';
-    var operacion = estadoOperacion({ estado_operacion: p.operacion, estado_actualizado_iso: p.estado_actualizado_iso });
+    var operacion = estadoOperacion({ estado_operacion: p.operacion, estado_actualizado_iso: p.estado_actualizado_iso, estado_desde_iso: p.estado_desde_iso, estado_hasta_iso: p.estado_hasta_iso });
+    var ventana = textoVentanaOperacion({ estado_operacion: p.operacion, estado_desde_iso: p.estado_desde_iso, estado_hasta_iso: p.estado_hasta_iso });
     var ubicacionTexto = p.precision_ubicacion === 'ubicacion_contrastada' ? 'Pin contrastado' : 'Dirección georreferenciada';
     return '<div class="detalle-punto"><h4 id="mapa-ficha-titulo">' + (esSangre ? '🩸 ' : '📦 ') + esc(p.nombre) + '</h4>' +
       '<p>' + esc(p.ciudad) + (p.direccion && p.direccion !== 'null' ? ' — ' + esc(p.direccion) : '') + '</p>' +
@@ -1754,6 +1843,7 @@
       (p.fuente_adicional_url ? enlaceFuente(p.fuente_adicional_url, 'Corroborar dirección y horarios') : '') +
       (incluirLista ? '<button type="button" class="enlace-lista-punto" data-ver-lista="' + esc(p._id) + '">Ver en la lista</button>' : '') + '</div>' +
       '<dl class="detalle-punto-datos"><div><dt>Antes de ir</dt><dd>' + esc(p.detalle_operativo || 'No hay horario publicado en este registro; confirma directamente con la entidad.') + '</dd></div>' +
+      (ventana ? '<div><dt>Ventana publicada</dt><dd>' + esc(ventana) + '</dd></div>' : '') +
       (p.fecha ? '<div><dt>' + esc(p.etiqueta_fecha || 'Revisado') + '</dt><dd>' + selloFecha(p.fecha_iso, p.fecha) + '</dd></div>' : '') +
       (datosMapa.meta && datosMapa.meta.ultima_actualizacion ? '<div><dt>Corte del portal</dt><dd>' + esc(datosMapa.meta.ultima_actualizacion) + '</dd></div>' : '') + '</dl>' +
       '<p class="pop-aviso">La ubicación no prueba que el punto siga recibiendo. Revisa la evidencia y confirma antes de desplazarte.</p>' +
@@ -1872,11 +1962,12 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260813l', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260814b', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;
 
+    cortePortalIso = meta && meta.iso || '';
     pintarMeta(meta);
     pintarSismo(sismo);
     pintarBalance(balance);

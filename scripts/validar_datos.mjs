@@ -58,6 +58,18 @@ function revisarEstadoOperacion(item, ctx, corteIso) {
   exigir(!Number.isNaN(Date.parse(item.estado_actualizado_iso)), `${ctx}.estado_actualizado_iso requerido y debe ser ISO válido`);
   exigir(!corteIso || !item.estado_actualizado_iso || Date.parse(item.estado_actualizado_iso) <= Date.parse(corteIso),
     `${ctx}.estado_actualizado_iso no puede ser posterior al corte del portal`);
+  const desde = item.estado_desde_iso ? Date.parse(item.estado_desde_iso) : null;
+  const hasta = item.estado_hasta_iso ? Date.parse(item.estado_hasta_iso) : null;
+  if (item.estado_desde_iso) exigir(!Number.isNaN(desde), `${ctx}.estado_desde_iso debe ser ISO válido`);
+  if (item.estado_hasta_iso) exigir(!Number.isNaN(hasta), `${ctx}.estado_hasta_iso debe ser ISO válido`);
+  if (Number.isFinite(desde) && Number.isFinite(hasta)) exigir(desde < hasta, `${ctx}: la ventana operativa debe terminar después de comenzar`);
+  const corte = corteIso ? Date.parse(corteIso) : null;
+  if (item.estado_operacion === 'recibiendo' && Number.isFinite(hasta) && Number.isFinite(corte)) {
+    exigir(hasta > corte, `${ctx}: no puede figurar recibiendo después de terminar su ventana publicada`);
+  }
+  if (item.estado_operacion === 'programado' && Number.isFinite(desde) && Number.isFinite(corte)) {
+    exigir(desde > corte, `${ctx}: una jornada programada debe comenzar después del corte del portal`);
+  }
 }
 function revisarContactoMovilSecundario(texto, ctx, nivel) {
   const contieneMovil = /(?:\+?57[ .-]?)?3\d{2}[ .-]?\d{3}[ .-]?\d{4}/.test(String(texto || ''));

@@ -137,24 +137,6 @@
       "nivel": "oficial"
     },
     {
-      "entidad": "Fundación PLAN",
-      "campana": "Terremoto en Colombia",
-      "como_donar": "Albergue temporal, agua, saneamiento, seguridad alimentaria y protección de la niñez en las zonas afectadas. Donación en línea en su página oficial.",
-      "url_oficial": "https://plan.org.co/quiero-ayudar/terremoto-en-colombia/",
-      "detalle_cuenta": null,
-      "cobertura": "Nacional",
-      "verificado_en": "plan.org.co",
-      "fecha_verificacion": "11 ago 2026",
-      "verificacion": {
-        "estado": "verificado",
-        "nivel": "fuente_oficial",
-        "fecha_iso": "2026-08-11",
-        "evidencia_url": "https://plan.org.co/quiero-ayudar/terremoto-en-colombia/"
-      },
-      "grupo": "ONGs y fundaciones",
-      "nivel": "oficial"
-    },
-    {
       "entidad": "Corporación Presentes",
       "campana": "«Colombia se Levanta»",
       "como_donar": "La corporación que canalizó la solidaridad antioqueña durante tres décadas (antes Antioquia Presente), en alianza con ProAntioquia. Donación en su portal, por PayPal o Puntos Colombia.",
@@ -612,9 +594,9 @@
       "fuente_titulo": "bogota.gov.co",
       "fuente_url": "https://bogota.gov.co/mi-ciudad/seguridad/puntos-de-donacion-en-bogota-para-damnificados-terremoto-en-colombia",
       "nivel_fuente": "fuente_oficial",
-      "fecha": "13 ago 2026",
+      "fecha": "14 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:40:00-05:00"
+      "estado_actualizado_iso": "2026-08-14T10:20:00-05:00"
     },
     {
       "ciudad": "Medellín",
@@ -1264,7 +1246,7 @@
         {
           "nombre": "Carpa frente al Palacio de la Torre",
           "direccion": "Calle 20 #9-90, Plaza de Bolívar",
-          "horario": "hasta el 14 de agosto"
+          "horario": "último día publicado: 14 de agosto; la fuente no informa hora de cierre, confirma antes de desplazarte"
         }
       ],
       "que_donar": [
@@ -1280,7 +1262,9 @@
       "fuente_titulo": "EL PAÍS — contraste directo de fuentes",
       "fuente_url": "https://elpais.com/america-colombia/2026-08-12/la-columna-mas-aburrida-del-mundo.html",
       "nivel_fuente": "fuente_secundaria",
-      "fecha": "12 ago 2026"
+      "fecha": "12 ago 2026",
+      "estado_operacion": "por_confirmar",
+      "estado_actualizado_iso": "2026-08-14T10:20:00-05:00"
     },
     {
       "ciudad": "Pasto",
@@ -2070,8 +2054,10 @@
       "fuente_url": "https://www.instagram.com/p/Db5_99Exr4f/",
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
-      "estado_operacion": "programado",
-      "estado_actualizado_iso": "2026-08-13T08:18:00-05:00"
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-14T10:20:00-05:00",
+      "estado_desde_iso": "2026-08-11T09:00:00-05:00",
+      "estado_hasta_iso": "2026-08-21T18:00:00-05:00"
     },
     {
       "ciudad": "Bogotá",
@@ -2514,20 +2500,24 @@
   "sangre": [
     {
       "ciudad": "Bogotá",
-      "entidad": "IDCBIS y Red Distrital de Sangre",
-      "donde": "Sede IDCBIS (Carrera 32 #12-81) y unos 100 puntos de los 16 bancos de la Red Distrital. Sede IDCBIS: lunes a viernes, 8:00 a. m.–4:30 p. m.; sábados y domingos, 7:00 a. m.–12:00 m. Confirma en el canal oficial. Bogotá ya envió 219 unidades a Chocó y Valle.",
+      "entidad": "IDCBIS — jornada especial 11–14 de agosto",
+      "donde": "Sede IDCBIS, Carrera 32 #12-81. Jornada especial hasta hoy, viernes 14 de agosto, de 8:00 a. m. a 5:00 p. m. El banco mantiene su servicio ordinario después de esta jornada; consulta el horario institucional antes de ir.",
       "tipos_urgentes": [
         "O+",
         "O−"
       ],
-      "fuente_titulo": "Pulzo / El Tiempo",
-      "fuente_url": "https://www.pulzo.com/nacion/bogota/donacion-de-sangre-en-bogota-llamado-urgente-a-o-y-o-tras-sismo-como-ayudar-PP5270589A",
+      "fuente_titulo": "IDCBIS — programación oficial de la jornada",
+      "fuente_url": "https://x.com/IDCBIS/status/2086953126859362350",
       "fuente_adicional_titulo": "IDCBIS — Banco Distrital de Sangre",
       "fuente_adicional_url": "https://idcbis.org.co/banco-distrital-de-sangre/",
-      "fuente_adicional_alcance": "Corrobora la dirección, el horario ordinario y la entidad responsable; el llamado urgente se atribuye al reporte de prensa.",
-      "nivel_fuente": "fuente_secundaria",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
+      "fuente_adicional_alcance": "Corrobora la dirección, el horario ordinario y la entidad responsable.",
+      "nivel_fuente": "fuente_oficial",
+      "fecha_revision": "14 ago 2026",
+      "fecha_revision_iso": "2026-08-14T10:20:00-05:00",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-14T10:20:00-05:00",
+      "estado_desde_iso": "2026-08-11T08:00:00-05:00",
+      "estado_hasta_iso": "2026-08-14T17:00:00-05:00"
     },
     {
       "ciudad": "Bogotá",
@@ -2604,13 +2594,17 @@
     {
       "ciudad": "Barranquilla",
       "entidad": "Secretaría Distrital de Salud",
-      "donde": "Institución Universitaria de Barranquilla (Cra. 45 #40-22, 12–14 ago) y primer piso de la Alcaldía, Paseo de Bolívar (12–13 ago), de 8:00 a. m. a 5:00 p. m.",
+      "donde": "Institución Universitaria de Barranquilla, Carrera 45 #40-22. Último día publicado: hoy, 14 de agosto, de 8:00 a. m. a 5:00 p. m. El punto de la Alcaldía terminó el 13 de agosto y fue retirado de este registro.",
       "tipos_urgentes": [],
       "fuente_titulo": "El Heraldo",
       "fuente_url": "https://www.elheraldo.co/atlantico/barranquilla/2026/08/11/barranquilla-habilita-nuevo-punto-de-donacion-de-sangre-para-apoyar-a-afectados-por-el-terremoto/",
       "nivel_fuente": "fuente_secundaria",
-      "fecha_revision": "12 ago 2026",
-      "fecha_revision_iso": "2026-08-12T10:00:00-05:00"
+      "fecha_revision": "14 ago 2026",
+      "fecha_revision_iso": "2026-08-14T10:20:00-05:00",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-14T10:20:00-05:00",
+      "estado_desde_iso": "2026-08-12T08:00:00-05:00",
+      "estado_hasta_iso": "2026-08-14T17:00:00-05:00"
     },
     {
       "ciudad": "Villavicencio",
@@ -2629,16 +2623,33 @@
     },
     {
       "ciudad": "Medellín",
-      "entidad": "Cruz Roja Antioquia — jornadas móviles",
-      "donde": "Parque Explora: viernes 14 de agosto, 10:00 a. m.–4:00 p. m. · San Antonio de Prado: sábado 15, 9:00 a. m.–7:00 p. m.",
+      "entidad": "Cruz Roja Antioquia — jornada Parque Explora",
+      "donde": "Parque Explora, Carrera 52 #73-75. Hoy, viernes 14 de agosto, de 10:00 a. m. a 4:00 p. m.",
       "tipos_urgentes": [],
       "fuente_titulo": "El Espectador",
       "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
       "nivel_fuente": "fuente_secundaria",
-      "fecha_revision": "13 ago 2026",
-      "fecha_revision_iso": "2026-08-13T17:50:00-05:00",
+      "fecha_revision": "14 ago 2026",
+      "fecha_revision_iso": "2026-08-14T10:20:00-05:00",
+      "estado_operacion": "recibiendo",
+      "estado_actualizado_iso": "2026-08-14T10:20:00-05:00",
+      "estado_desde_iso": "2026-08-14T10:00:00-05:00",
+      "estado_hasta_iso": "2026-08-14T16:00:00-05:00"
+    },
+    {
+      "ciudad": "Medellín",
+      "entidad": "Cruz Roja Antioquia — jornada San Antonio de Prado",
+      "donde": "San Antonio de Prado. Sábado 15 de agosto, de 9:00 a. m. a 7:00 p. m. La fuente no publica una dirección suficientemente precisa: se lista sin inventar un pin.",
+      "tipos_urgentes": [],
+      "fuente_titulo": "El Espectador",
+      "fuente_url": "https://www.elespectador.com/salud/la-red-de-donacion-de-sangre-se-activa-tras-el-terremoto-donde-donar-en-bogota-y-medellin/",
+      "nivel_fuente": "fuente_secundaria",
+      "fecha_revision": "14 ago 2026",
+      "fecha_revision_iso": "2026-08-14T10:20:00-05:00",
       "estado_operacion": "programado",
-      "estado_actualizado_iso": "2026-08-13T17:50:00-05:00"
+      "estado_actualizado_iso": "2026-08-14T10:20:00-05:00",
+      "estado_desde_iso": "2026-08-15T09:00:00-05:00",
+      "estado_hasta_iso": "2026-08-15T19:00:00-05:00"
     },
     {
       "ciudad": "Manizales",
