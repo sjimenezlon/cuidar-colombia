@@ -1,6 +1,6 @@
 {
   "fecha_revision": "14 ago 2026",
-  "fecha_revision_iso": "2026-08-14T19:15:00-05:00",
+  "fecha_revision_iso": "2026-08-14T10:45:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -24,22 +24,6 @@
           "titulo": "Cambio Colombia — SGC desmiente rumor de alerta roja (13-14 ago)"
         }
       ]
-    },
-    {
-      "id": "replicas-13-14-agosto",
-      "titulo": "Nuevas réplicas registradas el 13 y 14 de agosto en San José del Palmar",
-      "tipo": "Actividad sísmica",
-      "nivel": "informativo",
-      "autoridad": "Servicio Geológico Colombiano",
-      "alcance": "San José del Palmar, Chocó",
-      "recomendacion": "Las réplicas son esperables tras un sismo de esta magnitud y no implican un nuevo terremoto mayor: no existe forma de predecir su hora o magnitud.",
-      "nota_contexto": "El SGC reportó una réplica de magnitud 4,2 en la mañana del 13 de agosto y otra de magnitud 3,2 el 14 de agosto a las 5:01 a. m.; los medios contabilizan 281 sismos en la última semana.",
-      "fecha": "14 ago 2026, 5:01 a. m.",
-      "fecha_iso": "2026-08-14T05:01:00-05:00",
-      "lat": 4.897,
-      "lon": -76.234,
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/nuevo-temblor-de-magnitud-4-2-se-registro-en-san-jose-del-palmar-choco-en-la-manana-de-este-jueves-13-de-agosto-3578131",
-      "fuente_titulo": "El Tiempo — nuevas réplicas del 13 y 14 de agosto"
     }
   ],
   "municipios": [
