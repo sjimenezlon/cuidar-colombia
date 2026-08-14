@@ -9,6 +9,8 @@
     {"nombre": "Aeronáutica Civil", "url": "https://www.aerocivil.gov.co", "descripcion": "Estado de los aeropuertos y restricciones de vuelos."},
     {"nombre": "Alcaldía de Bogotá", "url": "https://bogota.gov.co", "descripcion": "Puntos de donación oficiales en la capital."},
     {"nombre": "Gobernación del Valle del Cauca", "url": "https://www.valledelcauca.gov.co", "descripcion": "Campaña «Todos Somos Valle» y estado de la emergencia en el departamento."},
+    {"nombre": "Alcaldía de Cali", "url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/", "descripcion": "Balance preliminar local, medidas de emergencia y estado de la red hospitalaria en Cali."},
+    {"nombre": "SGC — boletín de Puracé", "url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-extraordinario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-12-de-agosto.aspx", "descripcion": "Autoridad para el estado de alerta volcánica, alcance geográfico y recomendaciones oficiales."},
     {"nombre": "ReliefWeb (OCHA)", "url": "https://reliefweb.int/country/col", "descripcion": "Reportes de situación humanitaria de la ONU sobre Colombia."},
     {"nombre": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2", "descripcion": "Registro internacional del sismo (contraste técnico)."},
     {"nombre": "IDCBIS", "url": "https://idcbis.org.co", "descripcion": "Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud: donación de sangre en Bogotá."},

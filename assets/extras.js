@@ -56,6 +56,8 @@
       (datosListos ? '' : ' disabled') + '>' + (datosListos ? '📍 Mostrar puntos cerca de mí' : 'Cargando ubicaciones…') + '</button>' +
       '<small class="nota-privacidad-ubicacion">Tu ubicación se procesa solo en este dispositivo; no la guardamos ni la enviamos.</small>';
     filtros.parentNode.insertBefore(fila, filtros.nextSibling);
+    var envoltura = document.querySelector('.mapa-envoltura');
+    fila.hidden = Boolean(envoltura && envoltura.dataset.modo && envoltura.dataset.modo !== 'ayuda');
 
     var boton = document.getElementById('boton-cerca');
     boton.addEventListener('click', cercaDeMi);
@@ -86,6 +88,7 @@
 
   function cercaDeMi() {
     var res = panelCercanos();
+    res.hidden = false;
     if (!navigator.geolocation) { res.textContent = 'Tu navegador no permite obtener la ubicación.'; return; }
     res.textContent = 'Buscando puntos de ayuda cerca de ti…';
     navigator.geolocation.getCurrentPosition(function (pos) {

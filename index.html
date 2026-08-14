@@ -21,8 +21,8 @@
 .fab-donar-movil{display:none}.fab-whatsapp{position:fixed;right:22px;bottom:22px;z-index:500;display:flex;align-items:center;gap:8px;background:#008938;color:#fff;text-decoration:none;padding:12px 20px;border-radius:100px;font-weight:700;font-size:.92rem;box-shadow:0 4px 18px rgba(0,137,56,.35)}
 @media(max-width:900px){body{padding-bottom:78px}.fab-donar-movil{position:fixed;left:12px;right:76px;bottom:12px;z-index:600;display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--azul);color:#fff;border-radius:100px;text-decoration:none;font-size:.94rem;font-weight:800;box-shadow:0 4px 18px rgba(29,90,138,.35)}.fab-whatsapp{right:12px;bottom:12px;width:52px;height:52px;padding:13px;justify-content:center;z-index:600}.fab-whatsapp span{display:none}}
 </style>
-<link rel="stylesheet" href="assets/styles.css?v=20260813k">
-<script src="assets/loader.js?v=20260813k"></script>
+<link rel="stylesheet" href="assets/styles.css?v=20260813l">
+<script src="assets/loader.js?v=20260813l"></script>
 </head>
 <body>
 
@@ -54,9 +54,9 @@
       <div class="estado-portal" aria-label="Estado de revisión de la información">
         <p class="sello" id="sello-actualizacion">
           <span class="punto-vivo" aria-hidden="true"></span>
-          Revisión: <strong id="fecha-actualizacion">13 de agosto de 2026, 6:00 p. m.</strong>
+          Revisión: <strong id="fecha-actualizacion">13 de agosto de 2026, 7:30 p. m.</strong>
         </p>
-        <div class="aviso-vigencia aviso-vigencia-ok" id="aviso-vigencia" role="status" aria-live="polite"><strong>Información vigente</strong><span>Próxima: 14 de agosto de 2026, 6:00 p. m.</span></div>
+        <div class="aviso-vigencia aviso-vigencia-ok" id="aviso-vigencia" role="status" aria-live="polite"><strong>Información vigente</strong><span>Próxima: 14 de agosto de 2026, 7:30 p. m.</span></div>
       </div>
       <h1>Ayuda con certeza.<br><span>Actúa donde hace falta.</span></h1>
       <p class="hero-sub">
@@ -175,8 +175,8 @@
   <section class="seccion seccion-mapa" id="mapa-seccion">
     <div class="contenedor">
       <p class="antetitulo">Mapa interactivo</p>
-      <h2>Encuentra dónde ayudar</h2>
-      <p class="seccion-intro">Empieza por una necesidad y una ciudad. Cada pin enlaza la evidencia que lo respalda; si una ubicación no se pudo contrastar con precisión, permanece en la lista sin pin.</p>
+      <h2>Ayuda, afectación y alertas sin mezclarlas</h2>
+      <p class="seccion-intro">Elige qué necesitas consultar. Los puntos de ayuda muestran vigencia y ubicación; la afectación declara la calidad de su evidencia; las alertas aparecen solo cuando las publica una autoridad competente.</p>
       <div class="criterios-mapa" aria-label="Criterios de confianza del mapa">
         <span><i aria-hidden="true">1</i><span><strong>Fuente</strong>Quién lo publicó</span></span>
         <span><i aria-hidden="true">2</i><span><strong>Vigencia</strong>Cuándo se revisó</span></span>
@@ -185,7 +185,7 @@
       <div class="mapa-filtros" id="mapa-filtros" role="group" aria-label="Filtros del mapa"><!-- JS --></div>
     </div>
     <div class="mapa-envoltura">
-      <div id="mapa" role="region" aria-label="Mapa de puntos de ayuda e impacto reportado"
+      <div id="mapa" role="region" aria-label="Mapa de puntos de ayuda, afectación reportada y alertas oficiales"
         style="position:absolute; inset:0;"></div>
       <aside id="mapa-ficha-punto" class="mapa-ficha-punto" hidden aria-live="polite" aria-labelledby="mapa-ficha-titulo">
         <button id="cerrar-ficha-punto" class="cerrar-ficha-punto" type="button" aria-label="Cerrar detalle del punto">×</button>
@@ -193,21 +193,23 @@
       </aside>
       <div class="mapa-estado" id="mapa-estado" role="status" aria-live="polite">Preparando el mapa…</div>
       <details class="mapa-leyenda" id="mapa-leyenda" open>
-        <summary>Gravedad y símbolos</summary>
+        <summary>Capas y símbolos</summary>
         <div class="mapa-leyenda-contenido">
           <span class="leyenda-item leyenda-impacto"><i style="background:#7A1815"></i> Crítica</span>
           <span class="leyenda-item leyenda-impacto"><i style="background:#D25B33"></i> Alta</span>
           <span class="leyenda-item leyenda-impacto"><i style="background:#F2B279; outline:1px solid #b98c5a"></i> Media</span>
           <span class="leyenda-item leyenda-impacto"><i class="leyenda-epicentro"></i> Epicentro</span>
+          <span class="leyenda-item leyenda-impacto"><i class="leyenda-prioridad"></i> Seguimiento prioritario</span>
           <span class="leyenda-item leyenda-ayuda"><i class="leyenda-grupo"></i> Grupo de puntos</span>
           <span class="leyenda-item leyenda-ayuda"><i class="leyenda-acopio"></i> Punto de acopio</span>
           <span class="leyenda-item leyenda-ayuda"><i style="background:#C62828; border-radius:50%; width:11px; height:11px;"></i> Donación de sangre</span>
+          <span class="leyenda-item leyenda-alertas"><i class="leyenda-alerta"></i> Alerta de autoridad competente</span>
         </div>
       </details>
     </div>
     <div class="contenedor">
       <p class="nota-corte" id="nota-cobertura-mapa">Solo mostramos un pin cuando la ubicación se puede georreferenciar con suficiente precisión; los demás lugares siguen disponibles en la lista.</p>
-      <p class="nota-corte">En «Impacto reportado», un municipio sin color no significa ausencia de daño, sino ausencia de reporte verificado al corte.</p>
+      <p class="nota-corte">En «Afectación reportada», un municipio sin color no significa ausencia de daño, sino ausencia de reporte verificado al corte. La afectación no predice riesgo futuro y el seguimiento prioritario no asigna recursos.</p>
       <div class="mapa-resultados" id="mapa-resultados"><!-- JS: alternativa accesible y resultados filtrados --></div>
     </div>
   </section>
@@ -217,7 +219,7 @@
     <div class="contenedor">
       <p class="antetitulo">El sismo</p>
       <h2>Qué pasó</h2>
-      <p class="seccion-intro" id="sismo-descripcion">El 10 de agosto de 2026, a las 7:34 de la mañana, un sismo de magnitud 7,4 con epicentro en San José del Palmar (Chocó) y 103 km de profundidad sacudió el occidente de Colombia: según el Servicio Geológico Colombiano, es el de mayor magnitud registrado en el país en lo que va del siglo. El Gobierno Nacional declaró la situación de desastre nacional ese mismo día. Desde entonces se han registrado decenas de réplicas — la mayor, de magnitud 4,8, localizada en Nóvita (Chocó). <span class="nota-corte">(<a class="enlace-externo enlace-fuente" href="https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx" target="_blank" rel="noopener noreferrer">Servicio Geológico Colombiano <span aria-hidden="true">↗</span><span class="solo-lectores aviso-pestana-nueva"> — Servicio Geológico Colombiano. Se abre en una pestaña nueva.</span></a> · <a class="enlace-externo enlace-fuente" href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2" target="_blank" rel="noopener noreferrer">USGS <span aria-hidden="true">↗</span><span class="solo-lectores aviso-pestana-nueva"> — USGS. Se abre en una pestaña nueva.</span></a>)</span></p>
+      <p class="seccion-intro" id="sismo-descripcion">El 10 de agosto de 2026, a las 7:34 de la mañana, un sismo de magnitud 7,4 con epicentro en San José del Palmar (Chocó) y 103 km de profundidad sacudió el occidente de Colombia: según el Servicio Geológico Colombiano, es el de mayor magnitud registrado en el país en lo que va del siglo. El Gobierno Nacional declaró la situación de desastre nacional ese mismo día. En el primer corte del SGC se localizaron 18 réplicas en San José del Palmar y Sipí; la mayor de ese corte fue de magnitud 4,8. <span class="nota-corte">(<a class="enlace-externo enlace-fuente" href="https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx" target="_blank" rel="noopener noreferrer">Servicio Geológico Colombiano <span aria-hidden="true">↗</span><span class="solo-lectores aviso-pestana-nueva"> — Servicio Geológico Colombiano. Se abre en una pestaña nueva.</span></a> · <a class="enlace-externo enlace-fuente" href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2" target="_blank" rel="noopener noreferrer">USGS <span aria-hidden="true">↗</span><span class="solo-lectores aviso-pestana-nueva"> — USGS. Se abre en una pestaña nueva.</span></a>)</span></p>
       <div class="fichas" id="fichas-balance">
         <div class="ficha"><div class="valor">7,4</div><div class="etiqueta">Magnitud del sismo</div><div class="fuente-mini"><a class="enlace-externo enlace-fuente" href="https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx" target="_blank" rel="noopener noreferrer">SGC <span aria-hidden="true">↗</span><span class="solo-lectores aviso-pestana-nueva"> — SGC. Se abre en una pestaña nueva.</span></a></div></div>
         <div class="ficha"><div class="valor">182</div><div class="etiqueta">Personas fallecidas</div><div class="fuente-mini"><a class="enlace-externo enlace-fuente" href="https://www.noticiascaracol.com/colombia/en-vivo-colombia-hoy-tras-terremoto-de-magnitud-7-4-continuan-las-labores-de-rescate-so35" target="_blank" rel="noopener noreferrer">UNGRD, Reporte 011 <span aria-hidden="true">↗</span><span class="solo-lectores aviso-pestana-nueva"> — UNGRD, Reporte 011. Se abre en una pestaña nueva.</span></a></div></div>
@@ -358,12 +360,14 @@
     </div>
   </section>
 
-  <!-- ============ ZONAS MÁS AFECTADAS ============ -->
+  <!-- ============ AFECTACIÓN Y EVIDENCIA ============ -->
   <section class="seccion" id="zonas">
     <div class="contenedor">
-      <p class="antetitulo">Capítulo especial</p>
-      <h2>Las zonas que más lo necesitan</h2>
+      <p class="antetitulo">Afectación y evidencia</p>
+      <h2>Territorios con afectación reportada</h2>
       <p class="seccion-intro" id="zonas-intro"><!-- JS --></p>
+      <div class="nota-mapa-responsable"><strong>Tres conceptos distintos:</strong> afectación es lo ya reportado; alerta es un peligro monitoreado por una autoridad; seguimiento prioritario solo significa revisar la información con mayor frecuencia.</div>
+      <div id="alertas-oficiales-lista" class="alertas-oficiales-lista" aria-label="Alertas oficiales vigentes"><!-- JS --></div>
       <div id="zonas-departamentos"><!-- JS --></div>
       <div class="subbloque" id="vias-bloque">
         <h3>🛣️ Vías y accesos</h3>
@@ -444,7 +448,7 @@
         <p class="pie-sugerencias">¿Quieres mejorar la plataforma o reportar un dato?
         <button class="pie-enlace boton-enlace abrir-sugerencias" type="button" data-tipo="sugerencia">Enviar una sugerencia</button></p>
       </div>
-      <p class="pie-fecha" id="pie-actualizacion">Última actualización: 13 de agosto de 2026, 6:00 p. m.</p>
+      <p class="pie-fecha" id="pie-actualizacion">Última actualización: 13 de agosto de 2026, 7:30 p. m.</p>
     </div>
   </div>
 </footer>

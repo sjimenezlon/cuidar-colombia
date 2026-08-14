@@ -97,6 +97,16 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
   transform: scale(1.3); box-shadow: 0 0 0 5px rgba(255,255,255,.95), 0 0 0 9px rgba(29,90,138,.6);
 }
 .marcador-sangre.seleccionado::before { box-shadow: 0 0 0 5px rgba(255,255,255,.95), 0 0 0 9px rgba(198,40,40,.55); }
+.marcador-alerta {
+  z-index: 6; width: 48px; height: 48px; border: 0; background: transparent; cursor: pointer;
+  display: grid; place-items: center;
+}
+.marcador-alerta::before {
+  content: 'âš '; display: grid; place-items: center; width: 31px; height: 31px; border-radius: 9px;
+  background: #B85F18; color: #fff; border: 3px solid #fff; box-shadow: 0 3px 10px rgba(93,49,13,.4);
+  font-size: 1rem; line-height: 1;
+}
+.marcador-alerta:hover::before, .marcador-alerta:focus-visible::before { transform: scale(1.08); }
 .marcador-grupo-ayuda {
   z-index: 4;
   border: 2px solid #fff; border-radius: 50%; background: #214B68; color: #fff;
@@ -125,8 +135,13 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
   box-shadow: 0 0 0 1px #214B68;
 }
 .leyenda-acopio { background: var(--azul) !important; border-radius: 50% !important; width: 11px !important; height: 11px !important; }
+.leyenda-prioridad { background: transparent !important; border: 3px dashed #16324F; }
+.leyenda-alerta { background: #B85F18 !important; border-radius: 5px !important; }
 .mapa-envoltura[data-modo="ayuda"] .leyenda-impacto { display: none; }
 .mapa-envoltura[data-modo="impacto"] .leyenda-ayuda { display: none; }
+.mapa-envoltura:not([data-modo="alertas"]) .leyenda-alertas { display: none; }
+.mapa-envoltura[data-modo="alertas"] .leyenda-ayuda,
+.mapa-envoltura[data-modo="alertas"] .leyenda-impacto { display: none; }
 .maplibregl-popup-content {
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.85rem; border-radius: 10px;
   padding: 14px 16px; box-shadow: 0 4px 20px rgba(31,41,51,0.18); max-width: 280px;
@@ -136,6 +151,10 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .maplibregl-popup-content .pop-gravedad { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
 .maplibregl-popup-content .pop-fuente { font-size: 0.72rem; margin-top: 6px; }
 .maplibregl-popup-content .pop-fuente a { color: var(--azul); }
+.alerta-mapa-nivel {
+  display: inline-flex; padding: 4px 8px; border-radius: 100px; background: #F8E3D2; color: #7C3D0D;
+  font-size: .68rem; font-weight: 900; text-transform: uppercase; letter-spacing: .04em;
+}
 .maplibregl-popup-content .pop-aviso { color: var(--tinta-suave); font-size: .78rem; margin-top: 8px; }
 .maplibregl-popup-content .pop-acciones { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
 .maplibregl-popup-content .pop-acciones a {
@@ -440,8 +459,30 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .chip-gravedad-alta { background: #F8E3D9; color: #A34524; }
 .chip-gravedad-media { background: #FAEEDD; color: #8A6420; }
 .tarjeta-municipio p { color: var(--tinta-suave); font-size: 0.85rem; }
-.tarjeta-municipio .muni-fuente { font-size: 0.7rem; color: var(--tinta-tenue); margin-top: 8px; }
-.tarjeta-municipio .muni-fuente a { color: var(--azul); }
+.muni-evidencia { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; }
+.evidencia-impacto, .seguimiento-prioritario {
+  display: inline-flex; align-items: center; min-height: 27px; padding: 4px 8px; border-radius: 100px;
+  font-size: .67rem; font-weight: 850;
+}
+.evidencia-oficial { background: #E4F3EA; color: #245F3D; }
+.evidencia-multiple { background: #E1ECF5; color: #164E78; }
+.evidencia-secundaria { background: #FBF3E4; color: #714A11; }
+.seguimiento-prioritario { background: #16324F; color: #fff; }
+.nota-mapa-responsable {
+  max-width: 900px; margin: -6px 0 20px; padding: 13px 16px; border-left: 4px solid var(--azul-oscuro);
+  background: #EDF4F8; color: var(--tinta-suave); border-radius: 0 10px 10px 0; font-size: .84rem;
+}
+.alertas-oficiales-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 28px; }
+.tarjeta-alerta-oficial {
+  padding: 17px 18px; border: 1px solid #E2B98F; border-left: 5px solid #B85F18; border-radius: 12px;
+  background: #FFF8EF; font-size: .85rem;
+}
+.alerta-oficial-cabecera { display: flex; justify-content: space-between; gap: 10px; color: #7C3D0D; font-size: .72rem; font-weight: 850; text-transform: uppercase; }
+.tarjeta-alerta-oficial h3 { margin: 9px 0 8px; font-size: 1.05rem; }
+.tarjeta-alerta-oficial p { color: var(--tinta-suave); margin: 5px 0; }
+.tarjeta-alerta-oficial .alerta-contexto { margin-top: 11px; padding-top: 9px; border-top: 1px solid #E9D2B8; font-size: .78rem; }
+.nota-filtro-alertas { max-width: 540px; padding: 10px 12px; border-radius: 9px; background: #FFF4E7; color: #714A11; font-size: .8rem; }
+.resultado-alerta { background: #F8E3D2; color: #7C3D0D; }
 .subbloque { margin-top: 44px; }
 .subbloque h3 { font-size: 1.2rem; margin-bottom: 14px; }
 .lista-simple { list-style: none; max-width: 780px; }
@@ -852,6 +893,7 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 }
 .contador-sep { display: none; }
 .mapa-extras { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+.mapa-extras[hidden] { display: none; }
 .nota-privacidad-ubicacion { flex-basis: 100%; max-width: 620px; color: var(--tinta-tenue); font-size: .74rem; }
 .chip-ubicacion { border-color: var(--oro); color: var(--oro); font-weight: 700; }
 .chip-ubicacion:hover { background: var(--oro); color: #fff; border-color: var(--oro); }

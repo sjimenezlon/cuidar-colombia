@@ -7,12 +7,17 @@
 
   var COLORES_GRAVEDAD = { critica: '#7A1815', alta: '#D25B33', media: '#F2B279' };
   var NOMBRES_GRAVEDAD = { critica: 'Crítica', alta: 'Alta', media: 'Media' };
-  var COLOR_ACOPIO = '#1D5A8A', COLOR_SANGRE = '#C62828';
+  var NOMBRES_EVIDENCIA = {
+    incluye_fuente_oficial: 'Incluye fuente oficial',
+    corroboracion_multiple: 'Corroboración múltiple',
+    una_fuente_secundaria: 'Una fuente secundaria'
+  };
+  var COLOR_ACOPIO = '#1D5A8A', COLOR_SANGRE = '#C62828', COLOR_ALERTA = '#B85F18';
   var filtrosMapa = {
     modo: 'ayuda',
     gravedades: { critica: true, alta: true, media: true },
     puntos: { acopio: true, sangre: true },
-    departamento: 'todos', ciudad: 'todas', operacion: 'todas', busqueda: ''
+    departamento: 'todos', ciudad: 'todas', operacion: 'todas', evidenciaImpacto: 'todas', soloPrioritarias: false, busqueda: ''
   };
   function esc(t) {
     if (t == null) return '';
@@ -1000,13 +1005,34 @@
   /* ---------- Zonas ---------- */
   var zonasDatos = null;
 
+  function citasZona(m) {
+    return (m.fuentes || []).map(function (f) {
+      return { url: f.url, titulo: f.titulo, alcance: f.alcance, nivel: f.nivel_fuente };
+    });
+  }
+
+  function insigniaEvidencia(m) {
+    var clase = m.nivel_evidencia === 'incluye_fuente_oficial' ? 'oficial' :
+      (m.nivel_evidencia === 'corroboracion_multiple' ? 'multiple' : 'secundaria');
+    return '<span class="evidencia-impacto evidencia-' + clase + '">' + esc(NOMBRES_EVIDENCIA[m.nivel_evidencia] || 'Evidencia por revisar') + '</span>';
+  }
+
   function municipiosFiltrados() {
     if (!zonasDatos) return [];
     var q = normalizar(filtrosMapa.busqueda);
     return (zonasDatos.municipios || []).filter(function (m) {
       var coincideTexto = !q || normalizar([m.municipio, m.departamento].join(' ')).indexOf(q) !== -1;
       return filtrosMapa.gravedades[m.gravedad] &&
-        (filtrosMapa.departamento === 'todos' || m.departamento === filtrosMapa.departamento) && coincideTexto;
+        (filtrosMapa.departamento === 'todos' || m.departamento === filtrosMapa.departamento) &&
+        (filtrosMapa.evidenciaImpacto === 'todas' || m.nivel_evidencia === filtrosMapa.evidenciaImpacto) &&
+        (!filtrosMapa.soloPrioritarias || m.seguimiento_prioritario === true) && coincideTexto;
+    });
+  }
+
+  function alertasFiltradas() {
+    var q = normalizar(filtrosMapa.busqueda);
+    return ((zonasDatos && zonasDatos.alertas_oficiales) || []).filter(function (a) {
+      return !q || normalizar([a.titulo, a.tipo, a.autoridad, a.alcance, a.recomendacion].join(' ')).indexOf(q) !== -1;
     });
   }
 
@@ -1036,8 +1062,10 @@
           return '<article class="tarjeta-municipio">' +
             '<div class="muni-cabecera"><h4>' + esc(m.municipio) + '</h4>' +
             '<span class="chip chip-gravedad-' + esc(m.gravedad || 'media') + '">' + esc(NOMBRES_GRAVEDAD[m.gravedad] || m.gravedad || '') + '</span></div>' +
+            '<div class="muni-evidencia">' + insigniaEvidencia(m) +
+            (m.seguimiento_prioritario ? '<span class="seguimiento-prioritario">Seguimiento prioritario</span>' : '') + '</div>' +
             '<p>' + esc(m.afectacion || '') + '</p>' +
-            (m.fuentes && m.fuentes.length ? '<div class="muni-fuente">' + m.fuentes.map(function (f) { return enlaceFuente(f.url, f.titulo || 'fuente'); }).join(' · ') + '</div>' : '') +
+            renderCitas(citasZona(m), m.municipio) +
             (m.lat && m.lon ? '<button class="ver-mapa" type="button" data-lat="' + m.lat + '" data-lon="' + m.lon + '">Ver en el mapa 📍</button>' : '') +
             '<div class="tarjeta-acciones-secundarias">' + enlaceReporte(m.municipio + ', ' + m.departamento, 'Zonas afectadas') + '</div>' +
             '</article>';
@@ -1051,6 +1079,16 @@
     if (zonas.intro) document.getElementById('zonas-intro').textContent = zonas.intro +
       (zonas.fecha_revision ? ' Revisión del capítulo: ' + zonas.fecha_revision + '.' : '');
     renderZonasFiltradas();
+    var alertas = document.getElementById('alertas-oficiales-lista');
+    if (alertas) {
+      alertas.innerHTML = (zonas.alertas_oficiales || []).map(function (a) {
+        return '<article class="tarjeta-alerta-oficial"><div class="alerta-oficial-cabecera"><span>Alerta oficial ' + esc(a.nivel) + '</span><small>' + esc(a.fecha) + '</small></div>' +
+          '<h3>' + esc(a.titulo) + '</h3><p><strong>Autoridad:</strong> ' + esc(a.autoridad) + '</p>' +
+          '<p><strong>Alcance:</strong> ' + esc(a.alcance) + '</p><p><strong>Recomendación:</strong> ' + esc(a.recomendacion) + '</p>' +
+          (a.nota_contexto ? '<p class="alerta-contexto">' + esc(a.nota_contexto) + '</p>' : '') +
+          enlaceFuente(a.fuente_url, a.fuente_titulo || 'Boletín oficial') + '</article>';
+      }).join('');
+    }
     var vias = document.getElementById('vias-lista');
     if (zonas.vias && zonas.vias.length) {
       vias.innerHTML = zonas.vias.map(function (v) {
@@ -1119,7 +1157,7 @@
      traer el mapa base después con reintentos, y reconstruir las capas propias
      en styledata porque setStyle las borra. Los datos propios se pintan SIEMPRE,
      llegue o no el mapa base. */
-  var mapa = null, mapaListo = false, mapaEventosConectados = false, marcadorEpicentro = null, marcadoresAyuda = [];
+  var mapa = null, mapaListo = false, mapaEventosConectados = false, marcadorEpicentro = null, marcadoresAyuda = [], marcadoresAlertas = [];
   var puntoMapaActivoId = '', popupPuntoActivo = null, fichaPuntoConectada = false;
   var datosMapa = { municipios: null, zonas: null, ayuda: null, sismo: null, geo: null, meta: null, resumen: null };
   var cargaMapaIniciada = false;
@@ -1153,7 +1191,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260813k'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260813l'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1252,7 +1290,7 @@
   function registrarDiagnosticoMapa() {
     var nodo = document.getElementById('mapa');
     if (!nodo || !mapa) return;
-    nodo.dataset.capasAyuda = ['afectados-relleno', 'afectados-borde'].filter(function (id) { return mapa.getLayer(id); }).join(',');
+    nodo.dataset.capasAyuda = ['afectados-relleno', 'afectados-borde', 'afectados-prioritarios'].filter(function (id) { return mapa.getLayer(id); }).join(',');
     nodo.dataset.puntosEsperados = String((datosMapa._puntos || []).length);
     nodo.dataset.marcadoresAyuda = String(marcadoresAyuda.length);
   }
@@ -1283,6 +1321,13 @@
             paint: { 'line-color': '#5A3A26', 'line-width': 0.8, 'line-opacity': 0.6 }
           });
         }
+        if (!mapa.getLayer('afectados-prioritarios')) {
+          mapa.addLayer({
+            id: 'afectados-prioritarios', type: 'line', source: 'municipios',
+            filter: ['in', ['get', 'mpio'], ['literal', datosMapa._prioritarios || []]],
+            paint: { 'line-color': '#16324F', 'line-width': 3.5, 'line-opacity': 0.95, 'line-dasharray': [2, 1] }
+          });
+        }
       }
       return !datosMapa.municipios || !!mapa.getLayer('afectados-relleno');
     } catch (e) {
@@ -1306,13 +1351,14 @@
     }
     var municipiosFiltro = (datosMapa.zonas && datosMapa.zonas.municipios) || [];
     var puntosFiltro = datosMapa._puntos || [];
+    var alertasFiltro = (datosMapa.zonas && datosMapa.zonas.alertas_oficiales) || [];
     var panelAnterior = cont.querySelector('.panel-filtros-mapa');
     var panelAbierto = panelAnterior ? panelAnterior.open : !(window.matchMedia && window.matchMedia('(max-width: 700px)').matches);
-    var resumenInicial = filtrosMapa.modo === 'ayuda'
-      ? puntosFiltro.length + ' puntos de ayuda'
-      : municipiosFiltro.length + ' municipios con reporte';
-    var controlesModo = filtrosMapa.modo === 'ayuda'
-      ? '<fieldset class="grupo-filtros"><legend>Tipo de ayuda</legend>' +
+    var resumenInicial = filtrosMapa.modo === 'ayuda' ? puntosFiltro.length + ' puntos de ayuda' :
+      (filtrosMapa.modo === 'impacto' ? municipiosFiltro.length + ' municipios con reporte' : alertasFiltro.length + ' alertas oficiales');
+    var controlesModo = '';
+    if (filtrosMapa.modo === 'ayuda') {
+      controlesModo = '<fieldset class="grupo-filtros"><legend>Tipo de ayuda</legend>' +
         chip('punto', 'acopio', COLOR_ACOPIO, 'Acopios', filtrosMapa.puntos.acopio, puntosFiltro.filter(function (p) { return p.tipo === 'acopio'; }).length) +
         chip('punto', 'sangre', COLOR_SANGRE, 'Sangre', filtrosMapa.puntos.sangre, puntosFiltro.filter(function (p) { return p.tipo === 'sangre'; }).length) + '</fieldset>' +
         '<label class="control-filtro"><span>Ciudad</span><select id="filtro-ciudad-mapa"><option value="todas">Todas</option>' +
@@ -1321,19 +1367,27 @@
         '<option value="recibiendo"' + (filtrosMapa.operacion === 'recibiendo' ? ' selected' : '') + '>Recepción confirmada</option>' +
         '<option value="programado"' + (filtrosMapa.operacion === 'programado' ? ' selected' : '') + '>Jornada programada</option>' +
         '<option value="por_confirmar"' + (filtrosMapa.operacion === 'por_confirmar' ? ' selected' : '') + '>Confirmar vigencia</option>' +
-        '<option value="finalizado"' + (filtrosMapa.operacion === 'finalizado' ? ' selected' : '') + '>Recepción finalizada</option></select></label>'
-      : '<fieldset class="grupo-filtros"><legend>Nivel de afectación</legend>' +
+        '<option value="finalizado"' + (filtrosMapa.operacion === 'finalizado' ? ' selected' : '') + '>Recepción finalizada</option></select></label>';
+    } else if (filtrosMapa.modo === 'impacto') {
+      controlesModo = '<fieldset class="grupo-filtros"><legend>Nivel de afectación</legend>' +
         chip('gravedad', 'critica', COLORES_GRAVEDAD.critica, 'Crítica', filtrosMapa.gravedades.critica, municipiosFiltro.filter(function (m) { return m.gravedad === 'critica'; }).length) +
         chip('gravedad', 'alta', COLORES_GRAVEDAD.alta, 'Alta', filtrosMapa.gravedades.alta, municipiosFiltro.filter(function (m) { return m.gravedad === 'alta'; }).length) +
-        chip('gravedad', 'media', COLORES_GRAVEDAD.media, 'Media', filtrosMapa.gravedades.media, municipiosFiltro.filter(function (m) { return m.gravedad === 'media'; }).length) + '</fieldset>' +
+        chip('gravedad', 'media', COLORES_GRAVEDAD.media, 'Media', filtrosMapa.gravedades.media, municipiosFiltro.filter(function (m) { return m.gravedad === 'media'; }).length) +
+        chip('prioridad', 'prioritaria', '#16324F', 'Seguimiento prioritario', filtrosMapa.soloPrioritarias, municipiosFiltro.filter(function (m) { return m.seguimiento_prioritario; }).length) + '</fieldset>' +
         '<label class="control-filtro"><span>Departamento afectado</span><select id="filtro-departamento"><option value="todos">Todos</option>' +
-        deptos.map(function (d) { return '<option value="' + esc(d) + '"' + (filtrosMapa.departamento === d ? ' selected' : '') + '>' + esc(d) + '</option>'; }).join('') + '</select></label>';
+        deptos.map(function (d) { return '<option value="' + esc(d) + '"' + (filtrosMapa.departamento === d ? ' selected' : '') + '>' + esc(d) + '</option>'; }).join('') + '</select></label>' +
+        '<label class="control-filtro"><span>Calidad de evidencia</span><select id="filtro-evidencia-impacto"><option value="todas">Todas</option>' +
+        Object.keys(NOMBRES_EVIDENCIA).map(function (k) { return '<option value="' + k + '"' + (filtrosMapa.evidenciaImpacto === k ? ' selected' : '') + '>' + esc(NOMBRES_EVIDENCIA[k]) + '</option>'; }).join('') + '</select></label>';
+    } else {
+      controlesModo = '<p class="nota-filtro-alertas"><strong>Solo boletines de autoridades competentes.</strong> Una alerta describe un peligro monitoreado; no equivale a afectación por el terremoto.</p>';
+    }
     cont.innerHTML = '<div class="selector-modo-mapa" role="group" aria-label="Qué quieres consultar">' +
       chip('modo', 'ayuda', COLOR_ACOPIO, 'Dónde ayudar', filtrosMapa.modo === 'ayuda', puntosFiltro.length) +
-      chip('modo', 'impacto', COLORES_GRAVEDAD.critica, 'Impacto reportado', filtrosMapa.modo === 'impacto', municipiosFiltro.length) + '</div>' +
+      chip('modo', 'impacto', COLORES_GRAVEDAD.critica, 'Afectación reportada', filtrosMapa.modo === 'impacto', municipiosFiltro.length) +
+      chip('modo', 'alertas', COLOR_ALERTA, 'Alertas oficiales', filtrosMapa.modo === 'alertas', alertasFiltro.length) + '</div>' +
       '<details class="panel-filtros-mapa"' + (panelAbierto ? ' open' : '') + '><summary>Filtrar esta vista <span id="resumen-filtros-mapa">' +
       resumenInicial + '</span></summary><div class="mapa-filtros-contenido">' + controlesModo +
-      '<label class="control-filtro control-busqueda"><span>Buscar</span><input id="filtro-busqueda-mapa" type="search" value="' + esc(filtrosMapa.busqueda) + '" placeholder="Ej. Quibdó o banco de sangre"></label>' +
+      '<label class="control-filtro control-busqueda"><span>Buscar</span><input id="filtro-busqueda-mapa" type="search" value="' + esc(filtrosMapa.busqueda) + '" placeholder="Ej. Quibdó, sangre o Puracé"></label>' +
       '<button class="boton-limpiar" id="limpiar-filtros-mapa" type="button">Restablecer</button></div></details>';
     if (!cont.dataset.conectado) {
       cont.dataset.conectado = 'true';
@@ -1341,29 +1395,32 @@
         var b = e.target.closest('.chip-capa');
         if (!b) return;
         if (b.dataset.tipo === 'modo') {
-          filtrosMapa.modo = b.dataset.clave;
-          cerrarFichaPunto();
-          pintarFiltrosMapa(); aplicarFiltrosMapa(true);
-          return;
+          filtrosMapa.modo = b.dataset.clave; filtrosMapa.busqueda = '';
+          cerrarFichaPunto(); pintarFiltrosMapa(); aplicarFiltrosMapa(true); return;
+        }
+        if (b.dataset.tipo === 'prioridad') {
+          filtrosMapa.soloPrioritarias = !filtrosMapa.soloPrioritarias;
+          b.classList.toggle('activa', filtrosMapa.soloPrioritarias);
+          b.setAttribute('aria-pressed', String(filtrosMapa.soloPrioritarias)); aplicarFiltrosMapa(true); return;
         }
         var grupo = b.dataset.tipo === 'gravedad' ? filtrosMapa.gravedades : filtrosMapa.puntos;
         grupo[b.dataset.clave] = !grupo[b.dataset.clave];
         b.classList.toggle('activa', grupo[b.dataset.clave]);
-        b.setAttribute('aria-pressed', String(grupo[b.dataset.clave]));
-        aplicarFiltrosMapa(true);
+        b.setAttribute('aria-pressed', String(grupo[b.dataset.clave])); aplicarFiltrosMapa(true);
       });
     }
     var filtroDepartamento = document.getElementById('filtro-departamento');
     var filtroCiudad = document.getElementById('filtro-ciudad-mapa');
     var filtroOperacion = document.getElementById('filtro-operacion-mapa');
+    var filtroEvidencia = document.getElementById('filtro-evidencia-impacto');
     if (filtroDepartamento) filtroDepartamento.addEventListener('change', function (e) { filtrosMapa.departamento = e.target.value; aplicarFiltrosMapa(true); });
     if (filtroCiudad) filtroCiudad.addEventListener('change', function (e) { filtrosMapa.ciudad = e.target.value; aplicarFiltrosMapa(true); });
     if (filtroOperacion) filtroOperacion.addEventListener('change', function (e) { filtrosMapa.operacion = e.target.value; aplicarFiltrosMapa(true); });
+    if (filtroEvidencia) filtroEvidencia.addEventListener('change', function (e) { filtrosMapa.evidenciaImpacto = e.target.value; aplicarFiltrosMapa(true); renderZonasFiltradas(); });
     document.getElementById('filtro-busqueda-mapa').addEventListener('input', function (e) { filtrosMapa.busqueda = e.target.value; aplicarFiltrosMapa(true); });
     document.getElementById('limpiar-filtros-mapa').addEventListener('click', function () {
-      filtrosMapa = { modo: filtrosMapa.modo, gravedades: { critica: true, alta: true, media: true }, puntos: { acopio: true, sangre: true }, departamento: 'todos', ciudad: 'todas', operacion: 'todas', busqueda: '' };
-      cerrarFichaPunto();
-      pintarFiltrosMapa(); aplicarFiltrosMapa(true);
+      filtrosMapa = { modo: filtrosMapa.modo, gravedades: { critica: true, alta: true, media: true }, puntos: { acopio: true, sangre: true }, departamento: 'todos', ciudad: 'todas', operacion: 'todas', evidenciaImpacto: 'todas', soloPrioritarias: false, busqueda: '' };
+      cerrarFichaPunto(); pintarFiltrosMapa(); aplicarFiltrosMapa(true);
     });
     var resultados = document.getElementById('mapa-resultados');
     if (!resultados.dataset.conectado) {
@@ -1377,6 +1434,8 @@
         if (punto) seleccionarPunto(punto);
         var municipio = b.dataset.mpio && datosMapa._porCodigo[b.dataset.mpio];
         if (municipio) new maplibregl.Popup({ offset: 8, maxWidth: '320px' }).setLngLat([+b.dataset.lon, +b.dataset.lat]).setHTML(popupMunicipio(municipio)).addTo(mapa);
+        var alerta = b.dataset.alerta && ((datosMapa.zonas && datosMapa.zonas.alertas_oficiales) || []).filter(function (a) { return a.id === b.dataset.alerta; })[0];
+        if (alerta) new maplibregl.Popup({ offset: 14, maxWidth: '360px' }).setLngLat([+b.dataset.lon, +b.dataset.lat]).setHTML(popupAlerta(alerta)).addTo(mapa);
       });
     }
   }
@@ -1393,6 +1452,7 @@
       (porNombre[normalizar(p.nombre)] = porNombre[normalizar(p.nombre)] || []).push(p.mpio);
     });
     var codigos = {};
+    var prioritarios = [];
     (datosMapa.zonas.municipios || []).forEach(function (m) {
       var clave = normalizar(m.municipio) + '|' + normalizar(m.departamento);
       var codigo = ALIAS_MPIO[clave] || indice[clave];
@@ -1402,8 +1462,10 @@
       }
       if (codigo) codigos[codigo] = m.gravedad || 'media';
       if (codigo) m._mpio = codigo;
+      if (codigo && m.seguimiento_prioritario) prioritarios.push(codigo);
     });
     datosMapa._codigos = codigos;
+    datosMapa._prioritarios = prioritarios;
     datosMapa._porCodigo = {};
     (datosMapa.zonas.municipios || []).forEach(function (m) { if (m._mpio) datosMapa._porCodigo[m._mpio] = m; });
 
@@ -1551,33 +1613,71 @@
     });
   }
 
+  function limpiarMarcadoresAlertas() {
+    marcadoresAlertas.forEach(function (marcador) { marcador.remove(); });
+    marcadoresAlertas = [];
+  }
+
+  function popupAlerta(a) {
+    return '<div class="detalle-alerta"><span class="alerta-mapa-nivel">Alerta oficial ' + esc(a.nivel) + '</span>' +
+      '<h4>' + esc(a.titulo) + '</h4><p><strong>Autoridad:</strong> ' + esc(a.autoridad) + '</p>' +
+      '<p><strong>Alcance:</strong> ' + esc(a.alcance) + '</p><p><strong>Recomendación:</strong> ' + esc(a.recomendacion) + '</p>' +
+      (a.nota_contexto ? '<p class="pop-aviso">' + esc(a.nota_contexto) + '</p>' : '') +
+      '<div class="pop-fuente">' + enlaceFuente(a.fuente_url, a.fuente_titulo || 'Boletín oficial') + ' · ' + esc(a.fecha) + '</div></div>';
+  }
+
+  function renderizarMarcadoresAlertas(alertas) {
+    limpiarMarcadoresAlertas();
+    if (!mapa || filtrosMapa.modo !== 'alertas') return;
+    (alertas || []).forEach(function (a) {
+      var el = document.createElement('button');
+      el.type = 'button'; el.className = 'marcador-alerta';
+      el.setAttribute('aria-label', a.titulo + '. ' + a.autoridad);
+      el.title = a.titulo;
+      var marcador = new maplibregl.Marker({ element: el }).setLngLat([+a.lon, +a.lat])
+        .setPopup(new maplibregl.Popup({ offset: 14, maxWidth: '360px' }).setHTML(popupAlerta(a))).addTo(mapa);
+      marcadoresAlertas.push(marcador);
+    });
+  }
+
   function aplicarFiltrosMapa(encuadrar) {
     var municipios = filtrosMapa.modo === 'impacto' ? municipiosFiltrados() : [];
     var puntos = filtrosMapa.modo === 'ayuda' ? puntosFiltrados() : [];
+    var alertas = filtrosMapa.modo === 'alertas' ? alertasFiltradas() : [];
     if (puntoMapaActivoId && !puntos.some(function (p) { return p._id === puntoMapaActivoId; })) cerrarFichaPunto();
     var codigos = municipios.map(function (m) { return m._mpio; }).filter(Boolean);
     if (mapa && mapaListo) {
       ['afectados-relleno', 'afectados-borde'].forEach(function (id) {
         if (mapa.getLayer(id)) mapa.setFilter(id, ['in', ['get', 'mpio'], ['literal', codigos]]);
       });
+      if (mapa.getLayer('afectados-prioritarios')) {
+        var codigosPrioritarios = municipios.filter(function (m) { return m.seguimiento_prioritario; }).map(function (m) { return m._mpio; }).filter(Boolean);
+        mapa.setFilter('afectados-prioritarios', ['in', ['get', 'mpio'], ['literal', codigosPrioritarios]]);
+      }
       renderizarMarcadoresAyuda(puntos);
+      renderizarMarcadoresAlertas(alertas);
       actualizarEpicentro();
-      if (encuadrar) encuadrarMapa(municipios, puntos);
+      if (encuadrar) encuadrarMapa(municipios, puntos, alertas);
     }
     var envoltura = document.querySelector('.mapa-envoltura');
     if (envoltura) envoltura.dataset.modo = filtrosMapa.modo;
+    var extrasMapa = document.querySelector('.mapa-extras');
+    if (extrasMapa) extrasMapa.hidden = filtrosMapa.modo !== 'ayuda';
+    var cercanos = document.getElementById('cerca-resultados');
+    if (cercanos && filtrosMapa.modo !== 'ayuda') cercanos.hidden = true;
     var resumenFiltros = document.getElementById('resumen-filtros-mapa');
     if (resumenFiltros) resumenFiltros.textContent = filtrosMapa.modo === 'ayuda'
       ? puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + (filtrosMapa.ciudad !== 'todas' ? ' · ' + filtrosMapa.ciudad : '')
-      : municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' con reporte';
-    renderResultadosMapa(municipios, puntos);
+      : (filtrosMapa.modo === 'impacto' ? municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' con reporte' : alertas.length + ' alerta' + (alertas.length === 1 ? '' : 's') + ' oficial' + (alertas.length === 1 ? '' : 'es'));
+    renderResultadosMapa(municipios, puntos, alertas);
     if (filtrosMapa.modo === 'impacto') renderZonasFiltradas();
   }
 
-  function renderResultadosMapa(municipios, puntos) {
+  function renderResultadosMapa(municipios, puntos, alertas) {
     municipios = municipios || (filtrosMapa.modo === 'impacto' ? municipiosFiltrados() : []);
     puntos = puntos || (filtrosMapa.modo === 'ayuda' ? puntosFiltrados() : []);
-    var total = municipios.length + puntos.length;
+    alertas = alertas || (filtrosMapa.modo === 'alertas' ? alertasFiltradas() : []);
+    var total = municipios.length + puntos.length + alertas.length;
     var cont = document.getElementById('mapa-resultados');
     if (!cont) return;
     var items = municipios.map(function (m) {
@@ -1592,10 +1692,15 @@
         '<div class="resultado-acciones"><button type="button" data-enfocar data-id="' + esc(p._id) + '" data-lat="' + p.lat + '" data-lon="' + p.lon + '"' +
         (mapaListo ? '' : ' disabled') + '>' + (mapaListo ? 'Ubicar en mapa' : 'Mapa cargando…') + '</button>' +
         enlaceRuta(p.lat, p.lon, p.nombre, 'enlace-ruta') + '</div></li>';
+    })).concat(alertas.map(function (a) {
+      return '<li><span class="resultado-tipo resultado-alerta">Alerta oficial ' + esc(a.nivel) + '</span>' +
+        '<div class="resultado-info"><strong>' + esc(a.titulo) + '</strong><small>' + esc(a.autoridad) + ' · ' + esc(a.fecha) + '</small></div>' +
+        '<div class="resultado-acciones"><button type="button" data-enfocar data-alerta="' + esc(a.id) + '" data-lat="' + a.lat + '" data-lon="' + a.lon + '"' +
+        (mapaListo ? '' : ' disabled') + '>' + (mapaListo ? 'Ubicar alerta' : 'Mapa cargando…') + '</button></div></li>';
     }));
     var detalleResumen = filtrosMapa.modo === 'ayuda'
       ? puntos.length + ' punto' + (puntos.length === 1 ? '' : 's') + ' de ayuda' + (filtrosMapa.ciudad !== 'todas' ? ' en ' + filtrosMapa.ciudad : '')
-      : municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' con afectación reportada';
+      : (filtrosMapa.modo === 'impacto' ? municipios.length + ' municipio' + (municipios.length === 1 ? '' : 's') + ' con afectación reportada' : alertas.length + ' alerta' + (alertas.length === 1 ? '' : 's') + ' de autoridad competente');
     var resumen = total + ' resultado' + (total === 1 ? '' : 's') + ': ' + detalleResumen;
     cont.innerHTML = '<span class="solo-lectores" role="status">' + esc(resumen) + '</span><details' + (!mapaListo || !total ? ' open' : '') + '><summary><strong>' + total + ' resultado' + (total === 1 ? '' : 's') + '</strong> · ' +
       esc(detalleResumen) + '</summary>' +
@@ -1626,9 +1731,10 @@
   function popupMunicipio(m) {
     var color = COLORES_GRAVEDAD[m.gravedad] || '#8A6420';
     return '<h4>' + esc(m.municipio) + ', ' + esc(m.departamento) + '</h4>' +
-      '<span class="pop-gravedad" style="color:' + color + '">Gravedad ' + esc(NOMBRES_GRAVEDAD[m.gravedad] || m.gravedad || '') + '</span>' +
+      '<span class="pop-gravedad" style="color:' + color + '">Afectación ' + esc(NOMBRES_GRAVEDAD[m.gravedad] || m.gravedad || '') + '</span>' +
+      '<div class="muni-evidencia">' + insigniaEvidencia(m) + (m.seguimiento_prioritario ? '<span class="seguimiento-prioritario">Seguimiento prioritario</span>' : '') + '</div>' +
       '<p>' + esc(m.afectacion || '') + '</p>' +
-      (m.fuentes && m.fuentes.length ? '<div class="pop-fuente">' + m.fuentes.map(function (f) { return enlaceFuente(f.url, f.titulo || 'fuente'); }).join(' · ') + '</div>' : '');
+      renderCitas(citasZona(m), m.municipio) + '<p class="pop-aviso">Afectación reportada no equivale a riesgo futuro ni a instrucción de enviar recursos.</p>';
   }
 
   function htmlDetallePunto(p, incluirLista) {
@@ -1750,12 +1856,15 @@
     });
   }
 
-  function encuadrarMapa(municipios, puntosAyuda) {
+  function encuadrarMapa(municipios, puntosAyuda, alertas) {
     if (!mapa) return;
-    municipios = municipios || municipiosFiltrados(); puntosAyuda = puntosAyuda || puntosFiltrados();
+    municipios = municipios || (filtrosMapa.modo === 'impacto' ? municipiosFiltrados() : []);
+    puntosAyuda = puntosAyuda || (filtrosMapa.modo === 'ayuda' ? puntosFiltrados() : []);
+    alertas = alertas || (filtrosMapa.modo === 'alertas' ? alertasFiltradas() : []);
     var puntos = [];
     municipios.forEach(function (m) { if (m.lat && m.lon) puntos.push([m.lon, m.lat]); });
     puntosAyuda.forEach(function (p) { puntos.push([p.lon, p.lat]); });
+    alertas.forEach(function (a) { if (a.lat && a.lon) puntos.push([a.lon, a.lat]); });
     if (!puntos.length) return;
     if (puntos.length === 1) { mapa.flyTo({ center: puntos[0], zoom: 11, duration: duracionMapa(), essential: false }); return; }
     var limites = puntos.reduce(function (b, p) { return b.extend(p); }, new maplibregl.LngLatBounds(puntos[0], puntos[0]));
@@ -1763,7 +1872,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260813k', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260813l', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;

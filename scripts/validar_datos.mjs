@@ -152,6 +152,25 @@ if (ayuda) {
 
 if (zonas) {
   revisarFechaRevision(zonas, 'zonas', fechaCorte);
+  exigir(!meta?.iso || !zonas.fecha_revision_iso || Date.parse(zonas.fecha_revision_iso) <= Date.parse(meta.iso), 'zonas.fecha_revision_iso no puede ser posterior a meta.iso');
+  const nivelesEvidencia = ['incluye_fuente_oficial', 'corroboracion_multiple', 'una_fuente_secundaria'];
+  const nivelesFuente = ['fuente_oficial', 'fuente_secundaria'];
+  const idsAlertas = new Set();
+  for (const [i, alerta] of (zonas.alertas_oficiales || []).entries()) {
+    const ctx = `zonas.alertas_oficiales[${i}] ${alerta.titulo || ''}`;
+    exigir(Boolean(alerta.id && !idsAlertas.has(alerta.id)), `${ctx}: id ausente o duplicado`);
+    idsAlertas.add(alerta.id);
+    exigir(Boolean(alerta.titulo && alerta.tipo && alerta.autoridad && alerta.alcance && alerta.recomendacion), `${ctx}: faltan título, tipo, autoridad, alcance o recomendación`);
+    exigir(['amarilla', 'naranja', 'roja'].includes(alerta.nivel), `${ctx}: nivel inválido`);
+    exigir(!Number.isNaN(Date.parse(alerta.fecha_iso)), `${ctx}: fecha_iso ausente o inválida`);
+    exigir(!meta?.iso || !alerta.fecha_iso || Date.parse(alerta.fecha_iso) <= Date.parse(meta.iso), `${ctx}: fecha posterior al corte del portal`);
+    exigir(Number.isFinite(alerta.lat) && Number.isFinite(alerta.lon), `${ctx}: coordenadas inválidas`);
+    revisarUrl(alerta.fuente_url, `${ctx}.fuente_url`);
+    exigir(Boolean(alerta.fuente_titulo), `${ctx}: fuente_titulo requerido`);
+    try {
+      exigir(new URL(alerta.fuente_url).hostname.endsWith('.gov.co'), `${ctx}: una alerta oficial debe enlazar un dominio .gov.co`);
+    } catch { /* revisarUrl ya registra la URL inválida */ }
+  }
   const claves = new Set();
   for (const [i, m] of (zonas.municipios || []).entries()) {
     const ctx = `zonas.municipios[${i}] ${m.municipio || ''}`;
@@ -159,9 +178,22 @@ if (zonas) {
     exigir(m.municipio && m.departamento && !claves.has(clave), `${ctx}: municipio ausente o duplicado`);
     claves.add(clave);
     exigir(['critica', 'alta', 'media'].includes(m.gravedad), `${ctx}: gravedad inválida`);
+    exigir(nivelesEvidencia.includes(m.nivel_evidencia), `${ctx}: nivel_evidencia ausente o inválido`);
+    exigir(m.seguimiento_prioritario == null || typeof m.seguimiento_prioritario === 'boolean', `${ctx}: seguimiento_prioritario debe ser booleano`);
+    exigir(!m.seguimiento_prioritario || m.gravedad === 'critica', `${ctx}: el seguimiento prioritario solo se permite para afectación crítica`);
     exigir(Number.isFinite(m.lat) && Number.isFinite(m.lon), `${ctx}: coordenadas inválidas`);
     exigir(Array.isArray(m.fuentes) && m.fuentes.length > 0, `${ctx}: debe tener al menos una fuente`);
-    for (const [j, fuente] of (m.fuentes || []).entries()) revisarUrl(fuente.url, `${ctx}.fuentes[${j}]`);
+    const urls = new Set();
+    for (const [j, fuente] of (m.fuentes || []).entries()) {
+      revisarUrl(fuente.url, `${ctx}.fuentes[${j}]`);
+      exigir(Boolean(fuente.titulo && fuente.alcance), `${ctx}.fuentes[${j}]: requiere título y alcance explícito`);
+      exigir(nivelesFuente.includes(fuente.nivel_fuente), `${ctx}.fuentes[${j}]: nivel_fuente inválido`);
+      urls.add(fuente.url);
+    }
+    const tieneOficial = (m.fuentes || []).some(f => f.nivel_fuente === 'fuente_oficial');
+    exigir(m.nivel_evidencia !== 'incluye_fuente_oficial' || tieneOficial, `${ctx}: declara fuente oficial pero ninguna cita es oficial`);
+    exigir(m.nivel_evidencia !== 'corroboracion_multiple' || urls.size >= 2, `${ctx}: corroboración múltiple requiere al menos dos URL distintas`);
+    exigir(m.nivel_evidencia !== 'una_fuente_secundaria' || (!tieneOficial && urls.size === 1), `${ctx}: una fuente secundaria debe tener exactamente una cita secundaria`);
   }
 }
 
