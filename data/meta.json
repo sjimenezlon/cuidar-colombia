@@ -1,10 +1,10 @@
 {
   "evento_id": "co-sismo-2026-08-10",
-  "ultima_actualizacion": "14 de agosto de 2026, 10:45 a. m.",
-  "iso": "2026-08-14T10:45:00-05:00",
+  "ultima_actualizacion": "15 de agosto de 2026, 10:45 a. m.",
+  "iso": "2026-08-15T10:45:00-05:00",
   "vigencia_horas": 24,
-  "proxima_revision": "15 de agosto de 2026, 10:45 a. m.",
-  "proxima_revision_iso": "2026-08-15T10:45:00-05:00",
-  "version_publica": "2026.08.14-1045",
-  "proceso": "Revisión humana asistida por IA con corte al 14 de agosto de 2026, 10:45 a. m. COT: se contrastan publicaciones, identidad institucional, destino, titular de los canales, evento y vigencia; las jornadas con inicio o cierre publicado se modelan con una ventana operativa y se separan de los servicios permanentes. En afectación se declara el alcance de cada cita y se distinguen fuentes oficiales, corroboración secundaria y alertas de autoridades competentes. Las solicitudes y listados comunitarios solo alimentan una cola de verificación y no se publican automáticamente. Un canal de donación se retira si su destino específico deja de responder y el formulario general no demuestra su relación con esta emergencia."
+  "proxima_revision": "16 de agosto de 2026, 10:45 a. m.",
+  "proxima_revision_iso": "2026-08-16T10:45:00-05:00",
+  "version_publica": "2026.08.15-1045",
+  "proceso": "Revisión humana asistida por IA con corte al 15 de agosto de 2026, 10:45 a. m. COT: se contrastan publicaciones, identidad institucional, destino, titular de los canales, evento y vigencia; las jornadas con inicio o cierre publicado se modelan con una ventana operativa y se separan de los servicios permanentes. En afectación se declara el alcance de cada cita y se distinguen fuentes oficiales, corroboración secundaria y alertas de autoridades competentes. Las solicitudes y listados comunitarios solo alimentan una cola de verificación y no se publican automáticamente. Un canal de donación se retira si su destino específico deja de responder y el formulario general no demuestra su relación con esta emergencia."
 }

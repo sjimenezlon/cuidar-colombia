@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "14 ago 2026",
-  "fecha_revision_iso": "2026-08-14T10:45:00-05:00",
+  "fecha_revision": "15 ago 2026",
+  "fecha_revision_iso": "2026-08-15T10:45:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -253,6 +253,18 @@
     {
       "texto": "Rescataron con vida a Daniela Largo Sánchez tras 36 horas atrapada bajo los escombros de un edificio colapsado en el centro de Pereira, al cabo de una operación de más de 10 horas: los socorristas abrieron un boquete rompiendo cuatro placas de concreto y excavaron un túnel de apoyo desde abajo.",
       "fuente_url": "https://www.semana.com/nacion/pereira/articulo/terremoto-en-pereira-rescatan-a-daniela-largos-mujer-que-estuvo-bajo-los-escombros-de-un-edificio-durante-36-horas/202635/"
+    },
+    {
+      "texto": "El Ministerio de Cultura presentó su primer balance de patrimonio: 40 bienes de interés cultural dañados en siete departamentos (Antioquia, Valle del Cauca, Risaralda, Caldas, Quindío, Chocó y Cauca), 22 con afectación alta. Incluye centros históricos de municipios como Jardín, Jericó y Santa Fe de Antioquia, Popayán, Manizales y Cali, además de infraestructura del Paisaje Cultural Cafetero (Patrimonio de la Humanidad, Unesco).",
+      "fuente_url": "https://www.elheraldo.co/colombia/2026/08/15/el-terremoto-en-colombia-causo-danos-a-40-bienes-de-interes-cultural/"
+    },
+    {
+      "texto": "Ayuda internacional adicional confirmada el 14 de agosto: Italia anunció un paquete de 4,5 millones de euros. Estados Unidos aumentó su asistencia humanitaria en 11 millones de dólares, hasta un total acumulado de 26,5 millones de dólares.",
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-14-de-agosto-el-ministro-del-interior-rodrigo-lara-revelo-que-la-red-hospitalaria-en-buenaventura-esta-desbordada-3578338"
+    },
+    {
+      "texto": "Artistas colombianos organizan el concierto solidario «Voces por la Vida» el 23 de agosto en el Vive Claro (Bogotá), con Karol G, Maluma, Miguel Bosé, Sebastián Yatra y más de 20 artistas; el 100% del recaudo de boletería se dona a fundaciones aliadas para la reconstrucción de las zonas afectadas.",
+      "fuente_url": "https://www.pulzo.com/entretenimiento/colombia-voces-por-vida-fecha-artistas-como-donar-terremoto-PP5275649"
     }
   ]
 }

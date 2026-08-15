@@ -10,47 +10,47 @@
     {
       "clave": "muertos",
       "etiqueta": "Personas fallecidas",
-      "valor": "284",
-      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
-      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
+      "valor": "288",
+      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 14 de agosto (vía Infobae, liveblog actualizado ese día); 287 en el mismo balance UNGRD del 14 de agosto citado por El Colombiano, La FM y Semana",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/temblor-de-74-en-colombia-el-10-de-agosto-se-actualizo-el-numero-de-fallecidos-en-todo-el-pais/"
     },
     {
       "clave": "heridos",
       "etiqueta": "Personas heridas",
-      "valor": "3.977",
-      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
-      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
+      "valor": "3.975",
+      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana)",
+      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
     },
     {
       "clave": "desaparecidos",
       "etiqueta": "Personas desaparecidas",
-      "valor": "379",
-      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
-      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
+      "valor": "378",
+      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana)",
+      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
     },
     {
       "clave": "rescatados",
       "etiqueta": "Personas rescatadas con vida",
       "valor": "354",
-      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
-      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
+      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana); cifra sin cambio frente al corte del 13 de agosto",
+      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
     },
     {
       "clave": "viviendas",
       "etiqueta": "Viviendas afectadas",
-      "valor": "84.360 (12.597 destruidas y 71.763 averiadas)",
-      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 13 de agosto (vía Infobae)",
-      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/terremoto-en-colombia-deja-284-muertos-379-desaparecidos-y-mas-de-102000-afectados/"
+      "valor": "92.185 (13.077 destruidas y 79.108 averiadas)",
+      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana)",
+      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
     },
     {
       "clave": "vias",
       "etiqueta": "Vías afectadas",
-      "valor": "129",
-      "fuente_titulo": "UNGRD, cifra consolidada del 12 de agosto (vía Canal Trece); sin cifra de vías más reciente localizada al corte de esta revisión",
-      "fuente_url": "https://canaltrece.com.co/noticias/cifra-consolidada-tras-el-terremoto-en-colombia-reporte-del-12-de-agosto-de-2026/"
+      "valor": "254",
+      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana); cifra reemplaza la consolidada del 12 de agosto vía Canal Trece",
+      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
     }
   ],
-  "fecha_corte": "13 de agosto de 2026, 10:30 p. m. (balance presentado por el Gobierno Nacional citando a la UNGRD, la Fiscalía General y Medicina Legal, sobre 426 municipios de 15 departamentos; 45.523 familias y 102.263 personas afectadas, 121 edificaciones colapsadas)",
+  "fecha_corte": "14 de agosto de 2026 (balance de la UNGRD sobre 437 municipios de 15 departamentos; 56.448 familias y 135.179 personas afectadas, 121 edificaciones colapsadas)",
   "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012.",
-  "nota": "Distintos medios nacionales que citan el mismo corte del 13 de agosto, 10:30 p. m. (Infobae, El Tiempo) reportan variaciones menores en las cifras (muertos entre 281 y 284; heridos entre 3.971 y 3.977; rescatados entre 348 y 354), reflejo típico de un balance que se sigue actualizando durante la emergencia. Esta plataforma publica el valor más alto y más reciente de cada cifra entre las fuentes corroboradas y se actualiza con cada nuevo corte confirmado. No fue posible confirmarlo contra el PDF oficial de gestiondelriesgo.gov.co por restricciones de acceso al sitio en esta revisión."
+  "nota": "Distintos medios nacionales que citan el mismo balance de la UNGRD del 14 de agosto (El Colombiano, La FM, Semana, teleSUR) coinciden en 287 fallecidos, 3.975 heridos, 378 desaparecidos y 354 rescatados; el liveblog de Infobae actualizó esa misma jornada la cifra de fallecidos a 288. Esta plataforma publica el valor más alto y más reciente de cada cifra entre las fuentes corroboradas y se actualiza con cada nuevo corte confirmado. No fue posible confirmarlo contra el PDF oficial de gestiondelriesgo.gov.co por restricciones de acceso al sitio en esta revisión."
 }
