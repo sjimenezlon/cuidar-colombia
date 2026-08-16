@@ -46,6 +46,13 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .ficha .fuente-mini { font-size: 0.72rem; color: var(--tinta-tenue); margin-top: 8px; }
 .ficha .fuente-mini a { color: var(--azul); text-decoration: none; }
 .nota-corte { font-size: 0.82rem; color: var(--tinta-tenue); max-width: 720px; }
+.balance-trazabilidad {
+  max-width: 720px; margin-top: 12px; padding: 12px 14px; border: 1px solid #B9D6CF;
+  border-radius: 14px; background: #F1F8F6; color: var(--tinta);
+}
+.balance-trazabilidad > strong { display: block; font-size: 0.88rem; }
+.balance-trazabilidad > span { display: block; margin-top: 3px; font-size: 0.78rem; color: var(--tinta-tenue); }
+.balance-trazabilidad .citas-registro { margin: 9px 0 0; background: #fff; }
 
 /* ---------- Mapa ---------- */
 .seccion-mapa { padding-bottom: 40px; }

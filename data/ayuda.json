@@ -157,7 +157,7 @@
     {
       "entidad": "Fundación Bancolombia",
       "campana": "Cuenta de donaciones por el terremoto",
-      "como_donar": "La campaña sigue reportada como habilitada hasta el 30 de agosto, con la cuenta de ahorros #24542391932 citada de forma consistente por varios medios (Portafolio, La República, Technocio) y un correo de verificación de comprobantes (fubancol@bancolombia.com.co). Al 16 de agosto seguimos sin localizarla en un dominio oficial de Bancolombia o de la Fundación (bancolombia.com), así que no transcribimos cuentas, llaves ni solicitudes de datos personales aquí: consulta la evidencia enlazada y confirma en un canal institucional antes de transferir.",
+      "como_donar": "La campaña sigue reportada como habilitada hasta el 30 de agosto por varios medios que atribuyen la información a la Fundación. Al 16 de agosto no localizamos la instrucción exacta en un dominio oficial de Bancolombia o de la Fundación, así que no transcribimos cuentas, llaves, correos para comprobantes ni solicitudes de datos personales: consulta las evidencias enlazadas y confirma directamente en un canal institucional antes de transferir.",
       "url_oficial": "https://www.portafolio.co/negocios/empresas/bancolombia-habilita-cuenta-para-canalizar-donaciones-dirigidas-a-afectados-por-terremoto-en-colombia-500114",
       "detalle_cuenta": null,
       "cobertura": "Nacional",
@@ -1482,7 +1482,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Barranquilla",
@@ -1510,7 +1510,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Bogotá",
@@ -1538,7 +1538,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Cartagena",
@@ -1566,7 +1566,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Tunja",
@@ -1594,7 +1594,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Popayán",
@@ -1622,7 +1622,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Valledupar",
@@ -1650,7 +1650,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Montería",
@@ -1678,7 +1678,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Riohacha",
@@ -1706,7 +1706,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Neiva",
@@ -1734,7 +1734,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Santa Marta",
@@ -1762,7 +1762,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Villavicencio",
@@ -1790,7 +1790,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Pasto",
@@ -1818,7 +1818,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Cúcuta",
@@ -1846,7 +1846,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Bucaramanga",
@@ -1874,7 +1874,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Sincelejo",
@@ -1902,7 +1902,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "11 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-13T17:43:00-05:00"
+      "estado_actualizado_iso": "2026-08-16T08:28:00-05:00"
     },
     {
       "ciudad": "Cúcuta",

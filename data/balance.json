@@ -11,7 +11,7 @@
       "clave": "muertos",
       "etiqueta": "Personas fallecidas",
       "valor": "289",
-      "fuente_titulo": "Balance de la UNGRD corregido la noche del 15 de agosto (vía La FM); corroborado por El Universal México y Publimetro, que explican la corrección publicada el 16 de agosto",
+      "fuente_titulo": "La FM — balance atribuido a la UNGRD, corroborado por AP / El Universal México",
       "fuente_url": "https://www.lafm.com.co/orden-publico/terremoto-en-colombia-deja-mas-victimas-y-rescate-de-desaparecidos-continua-tras-nuevo-balance-408034"
     },
     {
@@ -25,7 +25,7 @@
       "clave": "desaparecidos",
       "etiqueta": "Personas desaparecidas",
       "valor": "143",
-      "fuente_titulo": "Balance de la UNGRD corregido la noche del 15 de agosto (vía La FM); baja de 320 a 143 tras depurar duplicados con Fiscalía y Medicina Legal, según Publimetro y El Universal (México)",
+      "fuente_titulo": "El Universal México / AP — balance corregido a 143 tras depurar reportes duplicados",
       "fuente_url": "https://www.eluniversal.com.mx/mundo/gobierno-colombiano-ajusta-cifra-de-victimas-de-terremoto-reporta-289-muertos-y-143-desaparecidos/"
     },
     {
@@ -51,6 +51,23 @@
     }
   ],
   "fecha_corte": "15 de agosto de 2026, hacia las 6:30 p. m. (corrección de la UNGRD divulgada el 16 de agosto; balance sobre 450 municipios de 15 departamentos; 54.382 familias y 117.222 personas afectadas)",
+  "fecha_corte_iso": "2026-08-15T18:30:00-05:00",
+  "nivel_evidencia": "corroboracion_multiple",
+  "fuente_primaria_disponible": false,
+  "fuentes_adicionales": [
+    {
+      "titulo": "La FM — balance corregido atribuido a la UNGRD",
+      "url": "https://www.lafm.com.co/orden-publico/terremoto-en-colombia-deja-mas-victimas-y-rescate-de-desaparecidos-continua-tras-nuevo-balance-408034",
+      "alcance": "Publica el corte de 289 fallecidos, 3.937 heridos, 143 desaparecidos, 353 rescatados y 96.241 viviendas afectadas.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "El Universal México / AP — corroboración independiente",
+      "url": "https://www.eluniversal.com.mx/mundo/gobierno-colombiano-ajusta-cifra-de-victimas-de-terremoto-reporta-289-muertos-y-143-desaparecidos/",
+      "alcance": "Corrobora la corrección a 289 fallecidos y 143 desaparecidos y explica la depuración de reportes duplicados.",
+      "nivel_fuente": "fuente_secundaria"
+    }
+  ],
   "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012.",
-  "nota": "La UNGRD corrigió el balance la noche del 15 de agosto: a las 6:30 a. m. de ese día había reportado 294 fallecidos y 320 desaparecidos: hacia las 6:30 p. m. las cifras bajaron a 289 fallecidos y 143 desaparecidos. Según Publimetro y El Universal (México), la entidad explicó que los reportes iniciales —en buena parte verbales— se están cruzando con los registros de la Fiscalía, Medicina Legal y los organismos de socorro para eliminar duplicados; la baja no implica necesariamente que las personas retiradas del registro de desaparecidos hayan aparecido con vida. Esta plataforma publica el corte más reciente confirmado por al menos dos fuentes independientes (La FM, El Universal México, Publimetro) y se actualiza con cada nuevo corte oficial. No fue posible confirmarlo contra el PDF oficial de gestiondelriesgo.gov.co por restricciones de acceso al sitio en esta revisión."
+  "nota": "La UNGRD corrigió el balance la noche del 15 de agosto: a las 6:30 a. m. de ese día había reportado 294 fallecidos y 320 desaparecidos; hacia las 6:30 p. m. las cifras bajaron a 289 fallecidos y 143 desaparecidos. La FM y una nota de Associated Press publicada por El Universal (México) coinciden en el nuevo corte; AP explica que los reportes iniciales se están cruzando con Fiscalía, Medicina Legal y organismos de socorro para eliminar duplicados. La baja no implica necesariamente que todas las personas retiradas del registro hayan aparecido con vida. Este corte queda marcado como corroboración múltiple, no como fuente primaria: no fue posible consultar un boletín oficial descargable de la UNGRD durante esta revisión."
 }

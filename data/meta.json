@@ -1,10 +1,10 @@
 {
   "evento_id": "co-sismo-2026-08-10",
-  "ultima_actualizacion": "16 de agosto de 2026, 7:10 a. m.",
-  "iso": "2026-08-16T07:10:00-05:00",
+  "ultima_actualizacion": "16 de agosto de 2026, 8:28 a. m.",
+  "iso": "2026-08-16T08:28:00-05:00",
   "vigencia_horas": 24,
-  "proxima_revision": "17 de agosto de 2026, 7:10 a. m.",
-  "proxima_revision_iso": "2026-08-17T07:10:00-05:00",
-  "version_publica": "2026.08.16-0710",
-  "proceso": "Revisión humana asistida por IA con corte al 16 de agosto de 2026, 7:10 a. m. COT: se contrastan publicaciones, identidad institucional, destino, titular de los canales, evento y vigencia; las jornadas vencidas se conservan como trazabilidad, pero se excluyen de la vista inicial. Los servicios permanentes se separan de las jornadas especiales y un horario publicado nunca se presenta como ‘abierto ahora’. En afectación se declara el alcance de cada cita y se distinguen fuentes oficiales, corroboración secundaria y alertas de autoridades competentes. Las solicitudes y listados comunitarios solo alimentan una cola de verificación y no se publican automáticamente. Una cuenta bancaria no se transcribe si la evidencia disponible es únicamente secundaria."
+  "proxima_revision": "17 de agosto de 2026, 8:28 a. m.",
+  "proxima_revision_iso": "2026-08-17T08:28:00-05:00",
+  "version_publica": "2026.08.16-0828",
+  "proceso": "Revisión humana asistida por IA con corte al 16 de agosto de 2026, 8:28 a. m. COT: se contrastan publicaciones, identidad institucional, destino, titular de los canales, evento y vigencia; las jornadas vencidas se conservan como trazabilidad, pero se excluyen de la vista inicial. Los servicios permanentes se separan de las jornadas especiales y un horario publicado nunca se presenta como ‘abierto ahora’. En afectación se declara el alcance temporal de cada cita: un corte territorial anterior no se suma ni se compara directamente con un consolidado nacional depurado. Las solicitudes y listados comunitarios solo alimentan una cola de verificación y no se publican automáticamente. Una cuenta, llave, correo de comprobantes o solicitud de datos personales no se transcribe si la evidencia disponible es únicamente secundaria."
 }

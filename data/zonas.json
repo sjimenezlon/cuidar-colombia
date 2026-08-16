@@ -1,6 +1,6 @@
 {
   "fecha_revision": "16 ago 2026",
-  "fecha_revision_iso": "2026-08-16T06:40:00-05:00",
+  "fecha_revision_iso": "2026-08-16T08:28:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -50,7 +50,7 @@
       "seguimiento_prioritario": true,
       "lat": 3.452,
       "lon": -76.532,
-      "afectacion": "Balance actualizado de la Alcaldía y la Gobernación (14-15 de agosto): 110 personas fallecidas, 115 desaparecidas y 1.410 heridas. La ciudad declaró calamidad pública y alerta roja hospitalaria; siete IPS fueron evacuadas y varios centros médicos quedaron fuera de servicio en los primeros días. El departamento del Valle del Cauca concentra la mayor cifra de fallecidos del país. Nuevas réplicas obligaron a evacuar edificaciones adicionales en la ciudad.",
+      "afectacion": "Un corte territorial divulgado el 14-15 de agosto reportó 110 personas fallecidas, 115 desaparecidas y 1.410 heridas. Es una fotografía municipal anterior a la depuración nacional publicada el 16 de agosto y no debe sumarse ni compararse de forma directa con ese consolidado. La ciudad declaró calamidad pública y alerta roja hospitalaria; siete IPS fueron evacuadas y varios centros médicos quedaron fuera de servicio en los primeros días. Nuevas réplicas obligaron a evacuar edificaciones adicionales.",
       "fuentes": [
         {"url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/", "titulo": "Alcaldía de Cali", "alcance": "Balance preliminar del PMU, medidas y alerta roja hospitalaria", "nivel_fuente": "fuente_oficial"},
         {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Seguimiento periodístico posterior de afectaciones en la ciudad", "nivel_fuente": "fuente_secundaria"},
@@ -66,11 +66,12 @@
       "seguimiento_prioritario": true,
       "lat": 4.813,
       "lon": -75.696,
-      "afectacion": "Balance actualizado (14-15 de agosto): 93 personas fallecidas y 260 desaparecidas en la ciudad, según un reporte de la Alcaldía citado por City TV/El Tiempo, que reemplaza el conteo departamental preliminar de 70 fallecidos. Comunicaciones inoperantes en las primeras horas; el aeropuerto Matecaña opera solo vuelos humanitarios, médicos y de Estado. Toque de queda en los primeros días de la emergencia.",
+      "afectacion": "Los cortes territoriales disponibles no son consistentes entre sí: City TV/El Tiempo citó 93 personas fallecidas y 260 desaparecidas; una publicación posterior de EL PAÍS, del 16 de agosto, atribuyó a la Alcaldía 93 fallecidas y 270 desaparecidas. Ambos conteos locales son anteriores o metodológicamente distintos al consolidado nacional depurado de 143 personas desaparecidas, por lo que aquí se conservan como antecedentes y no como cifra vigente comparable. El aeropuerto Matecaña opera solo vuelos humanitarios, médicos y de Estado.",
       "fuentes": [
         {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Balance territorial de víctimas, daños y restricciones operativas", "nivel_fuente": "fuente_secundaria"},
         {"url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690", "titulo": "El Colombiano", "alcance": "Corrobora el balance nacional y la concentración de afectaciones en Risaralda", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://citytv.eltiempo.com/fotos-y-videos/video-y-multimedia/pereira-reporta-93-fallecidos-y-260-desaparecidos-tras-el-terremoto_94310", "titulo": "City TV / El Tiempo", "alcance": "Balance actualizado de Pereira: 93 fallecidos y 260 desaparecidos", "nivel_fuente": "fuente_secundaria"}
+        {"url": "https://citytv.eltiempo.com/fotos-y-videos/video-y-multimedia/pereira-reporta-93-fallecidos-y-260-desaparecidos-tras-el-terremoto_94310", "titulo": "City TV / El Tiempo", "alcance": "Corte territorial que reportó 93 fallecidos y 260 desaparecidos", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://elpais.com/america-colombia/2026-08-16/sobrevivir-a-un-terremoto-desde-la-incubadora.html", "titulo": "EL PAÍS", "alcance": "Publicación posterior que atribuye a la Alcaldía 93 fallecidos y 270 desaparecidos; evidencia la divergencia entre cortes territoriales", "nivel_fuente": "fuente_secundaria"}
       ]
     },
     {

@@ -505,6 +505,16 @@
     if (balance.declaratoria) nota.push(balance.declaratoria);
     if (balance.nota) nota.push(balance.nota);
     document.getElementById('nota-corte').textContent = nota.join(' ');
+    var trazabilidad = document.getElementById('citas-balance');
+    if (trazabilidad) {
+      var etiqueta = balance.nivel_evidencia === 'incluye_fuente_oficial' ? 'Incluye fuente oficial' :
+        (balance.nivel_evidencia === 'corroboracion_multiple' ? 'Corroboración múltiple' : 'Una fuente secundaria');
+      trazabilidad.innerHTML = '<div class="balance-trazabilidad"><strong>Cómo se verificó este corte</strong>' +
+        '<span>' + esc(etiqueta) + (balance.fuente_primaria_disponible === false ? ' · documento primario no disponible al revisar' : '') + '</span>' +
+        renderCitas((balance.fuentes_adicionales || []).map(function (cita) {
+          return { url: cita.url, titulo: cita.titulo, alcance: cita.alcance, nivel: cita.nivel_fuente };
+        }), 'balance nacional') + '</div>';
+    }
   }
 
   /* ---------- Líneas de emergencia ---------- */
@@ -1224,7 +1234,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260816a'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260816b'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1969,7 +1979,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260816a', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260816b', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;

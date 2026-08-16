@@ -75,6 +75,14 @@ function revisarContactoMovilSecundario(texto, ctx, nivel) {
   const contieneMovil = /(?:\+?57[ .-]?)?3\d{2}[ .-]?\d{3}[ .-]?\d{4}/.test(String(texto || ''));
   exigir(nivel === 'fuente_oficial' || !contieneMovil, `${ctx}: no publicar teléfonos móviles desde una fuente secundaria`);
 }
+function revisarCanalFinancieroSecundario(canal, ctx) {
+  if (canal?.verificacion?.nivel !== 'fuente_secundaria') return;
+  const textoVisible = [canal.como_donar, canal.detalle_cuenta].filter(Boolean).join(' ');
+  const transcribeIdentificador = /(?:cuenta(?:\s+de\s+(?:ahorros?|corriente))?|llave|daviplata|nequi|nit)[^\n.]{0,96}(?:\d[\s#.-]*){7,}/i.test(textoVisible);
+  const transcribeCorreo = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i.test(textoVisible);
+  exigir(!transcribeIdentificador, `${ctx}: una fuente secundaria no puede transcribir cuentas, llaves, NIT ni identificadores financieros en campos visibles`);
+  exigir(!transcribeCorreo, `${ctx}: una fuente secundaria no puede publicar correos para enviar comprobantes o datos personales`);
+}
 
 const [meta, ayuda, zonas, geo, verificacion, fuentes, sismo, balance] = await Promise.all([
   json('data/meta.json'), json('data/ayuda.json'), json('data/zonas.json'), json('data/geo_puntos.json'),
@@ -119,9 +127,7 @@ if (ayuda) {
     exigir(canal.fecha_verificacion === fechaCortaEs(canal.verificacion?.fecha_iso), `${ctx}: fecha_verificacion no coincide con fecha_iso`);
     revisarUrl(canal.verificacion?.evidencia_url, `${ctx}.evidencia_url`);
     revisarCitasAdicionales(canal, ctx);
-    if (canal.verificacion?.nivel === 'fuente_secundaria' && canal.detalle_cuenta) {
-      errores.push(`${ctx}: no se permite publicar una cuenta respaldada solo por fuente secundaria`);
-    }
+    revisarCanalFinancieroSecundario(canal, ctx);
   }
   for (const [tipo, lista] of [['acopios', ayuda.acopios], ['sangre', ayuda.sangre]]) {
     for (const [i, item] of (lista || []).entries()) {
@@ -258,7 +264,25 @@ if (verificacion) {
 
 for (const [i, f] of (fuentes?.items || []).entries()) revisarUrl(f.url, `fuentes.items[${i}].url`);
 for (const [i, f] of (sismo?.fuentes || []).entries()) revisarUrl(f.url, `sismo.fuentes[${i}].url`);
-for (const [i, c] of (balance?.cifras || []).entries()) revisarUrl(c.fuente_url, `balance.cifras[${i}].fuente_url`);
+if (balance) {
+  for (const [i, c] of (balance.cifras || []).entries()) revisarUrl(c.fuente_url, `balance.cifras[${i}].fuente_url`);
+  exigir(!Number.isNaN(Date.parse(balance.fecha_corte_iso)), 'balance.fecha_corte_iso debe ser una fecha ISO válida');
+  exigir(!meta?.iso || !balance.fecha_corte_iso || Date.parse(balance.fecha_corte_iso) <= Date.parse(meta.iso),
+    'balance.fecha_corte_iso no puede ser posterior al corte del portal');
+  exigir(['incluye_fuente_oficial', 'corroboracion_multiple', 'una_fuente_secundaria'].includes(balance.nivel_evidencia),
+    'balance.nivel_evidencia ausente o inválido');
+  exigir(typeof balance.fuente_primaria_disponible === 'boolean', 'balance.fuente_primaria_disponible debe ser booleano');
+  revisarCitasAdicionales(balance, 'balance');
+  const fuentesBalance = balance.fuentes_adicionales || [];
+  const urlsBalance = new Set(fuentesBalance.map((cita) => cita.url));
+  const tieneOficialBalance = fuentesBalance.some((cita) => cita.nivel_fuente === 'fuente_oficial');
+  exigir(balance.nivel_evidencia !== 'corroboracion_multiple' || urlsBalance.size >= 2,
+    'balance: corroboración múltiple requiere al menos dos fuentes distintas');
+  exigir(balance.nivel_evidencia !== 'incluye_fuente_oficial' || tieneOficialBalance,
+    'balance: declara fuente oficial, pero ninguna cita enlazada es oficial');
+  exigir(balance.fuente_primaria_disponible || !tieneOficialBalance,
+    'balance: fuente_primaria_disponible=false no puede acompañarse de una cita marcada oficial');
+}
 exigir(municipios?.type === 'FeatureCollection' && Array.isArray(municipios.features), 'municipios.geojson debe ser un FeatureCollection');
 
 if (avisos.length) console.warn(avisos.map(x => `AVISO: ${x}`).join('\n'));

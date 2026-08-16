@@ -32,6 +32,17 @@ function dominiosEn(valor, dominios) {
   else if (valor && typeof valor === 'object') Object.values(valor).forEach((item) => dominiosEn(item, dominios));
 }
 
+function escaparHtml(valor) {
+  return String(valor ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function enlaceFuenteHtml(url, titulo) {
+  return `<a class="enlace-externo enlace-fuente" href="${escaparHtml(url)}" target="_blank" rel="noopener noreferrer">` +
+    `${escaparHtml(titulo || 'fuente')} <span aria-hidden="true">↗</span>` +
+    `<span class="solo-lectores aviso-pestana-nueva"> — ${escaparHtml(titulo || 'fuente')}. Se abre en una pestaña nueva.</span></a>`;
+}
+
 rmSync(salida, { recursive: true, force: true });
 archivosPublicos.forEach((ruta) => {
   const destino = join(salida, ruta);
@@ -63,6 +74,17 @@ aplicacion.resumen = {
 // Sincronizarlo en cada build evita publicar cifras y cortes antiguos.
 const htmlPublico = join(salida, 'index.html');
 let html = readFileSync(htmlPublico, 'utf8');
+const balanceHtml = '<!-- STATIC_BALANCE_START -->\n      <div class="fichas" id="fichas-balance">' +
+  (aplicacion.balance.cifras || []).map((cifra) =>
+    `<div class="ficha"><div class="valor">${escaparHtml(cifra.valor)}</div>` +
+    `<div class="etiqueta">${escaparHtml(cifra.etiqueta)}</div>` +
+    `<div class="fuente-mini">${enlaceFuenteHtml(cifra.fuente_url, cifra.fuente_titulo)}</div></div>`
+  ).join('') + '</div>\n      <!-- STATIC_BALANCE_END -->';
+const notaBalance = [
+  aplicacion.balance.fecha_corte ? `Cifras con corte al ${aplicacion.balance.fecha_corte}; en una emergencia cambian varias veces al día.` : '',
+  aplicacion.balance.declaratoria || '',
+  aplicacion.balance.nota || ''
+].filter(Boolean).join(' ');
 const reemplazos = [
   [/(<strong id="fecha-actualizacion">)[^<]*(<\/strong>)/, `$1${aplicacion.meta.ultima_actualizacion}$2`],
   [/(<div class="aviso-vigencia[^>]*" id="aviso-vigencia"[^>]*>)[\s\S]*?(<\/div>)/,
@@ -71,7 +93,9 @@ const reemplazos = [
   [/(<strong id="contx-1">)[^<]*(<\/strong>)/, `$1${aplicacion.resumen.fuentes}$2`],
   [/(<strong id="contx-2">)[^<]*(<\/strong>)/, `$1${aplicacion.resumen.municipios}$2`],
   [/(<p class="pie-fecha" id="pie-actualizacion">)[^<]*(<\/p>)/,
-    `$1Última actualización: ${aplicacion.meta.ultima_actualizacion}$2`]
+    `$1Última actualización: ${aplicacion.meta.ultima_actualizacion}$2`],
+  [/<!-- STATIC_BALANCE_START -->[\s\S]*?<!-- STATIC_BALANCE_END -->/, balanceHtml],
+  [/(<p class="nota-corte" id="nota-corte">)[\s\S]*?(<\/p>)/, `$1${escaparHtml(notaBalance)}$2`]
 ];
 reemplazos.forEach(([patron, valor]) => { html = html.replace(patron, valor); });
 writeFileSync(htmlPublico, html);
