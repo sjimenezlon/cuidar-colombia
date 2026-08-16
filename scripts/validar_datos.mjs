@@ -86,6 +86,9 @@ const fechaCorte = typeof meta?.iso === 'string' ? meta.iso.slice(0, 10) : null;
 if (meta) {
   exigir(meta.evento_id === 'co-sismo-2026-08-10', 'meta.evento_id debe identificar este evento para evitar mezclar campañas');
   exigir(!Number.isNaN(Date.parse(meta.iso)), 'meta.iso debe ser una fecha ISO válida');
+  exigir(Date.parse(meta.iso) <= Date.now() + 5 * 60 * 1000, 'meta.iso no puede estar en el futuro');
+  exigir(!Number.isNaN(Date.parse(meta.proxima_revision_iso)), 'meta.proxima_revision_iso debe ser una fecha ISO válida');
+  exigir(Date.parse(meta.proxima_revision_iso) > Date.parse(meta.iso), 'meta.proxima_revision_iso debe ser posterior al corte');
   exigir(Number(meta.vigencia_horas) > 0, 'meta.vigencia_horas debe ser mayor que cero');
   exigir(/^\d{4}\.\d{2}\.\d{2}-\d{4}$/.test(meta.version_publica || ''), 'meta.version_publica debe identificar el corte publicado');
   exigir(Boolean(meta.proceso), 'meta.proceso debe explicar brevemente la revisión');
