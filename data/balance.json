@@ -10,47 +10,47 @@
     {
       "clave": "muertos",
       "etiqueta": "Personas fallecidas",
-      "valor": "288",
-      "fuente_titulo": "Balance del Gobierno Nacional citando UNGRD, Fiscalía y Medicina Legal, 14 de agosto (vía Infobae, liveblog actualizado ese día); 287 en el mismo balance UNGRD del 14 de agosto citado por El Colombiano, La FM y Semana",
-      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/temblor-de-74-en-colombia-el-10-de-agosto-se-actualizo-el-numero-de-fallecidos-en-todo-el-pais/"
+      "valor": "289",
+      "fuente_titulo": "Balance de la UNGRD corregido la noche del 15 de agosto (vía La FM); corroborado por El Universal México y Publimetro, que explican la corrección publicada el 16 de agosto",
+      "fuente_url": "https://www.lafm.com.co/orden-publico/terremoto-en-colombia-deja-mas-victimas-y-rescate-de-desaparecidos-continua-tras-nuevo-balance-408034"
     },
     {
       "clave": "heridos",
       "etiqueta": "Personas heridas",
-      "valor": "3.975",
-      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana)",
-      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
+      "valor": "3.937",
+      "fuente_titulo": "Balance de la UNGRD corregido la noche del 15 de agosto (vía La FM)",
+      "fuente_url": "https://www.lafm.com.co/orden-publico/terremoto-en-colombia-deja-mas-victimas-y-rescate-de-desaparecidos-continua-tras-nuevo-balance-408034"
     },
     {
       "clave": "desaparecidos",
       "etiqueta": "Personas desaparecidas",
-      "valor": "378",
-      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana)",
-      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
+      "valor": "143",
+      "fuente_titulo": "Balance de la UNGRD corregido la noche del 15 de agosto (vía La FM); baja de 320 a 143 tras depurar duplicados con Fiscalía y Medicina Legal, según Publimetro y El Universal (México)",
+      "fuente_url": "https://www.eluniversal.com.mx/mundo/gobierno-colombiano-ajusta-cifra-de-victimas-de-terremoto-reporta-289-muertos-y-143-desaparecidos/"
     },
     {
       "clave": "rescatados",
       "etiqueta": "Personas rescatadas con vida",
-      "valor": "354",
-      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana); cifra sin cambio frente al corte del 13 de agosto",
-      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
+      "valor": "353",
+      "fuente_titulo": "Balance de la UNGRD corregido la noche del 15 de agosto (vía La FM)",
+      "fuente_url": "https://www.lafm.com.co/orden-publico/terremoto-en-colombia-deja-mas-victimas-y-rescate-de-desaparecidos-continua-tras-nuevo-balance-408034"
     },
     {
       "clave": "viviendas",
       "etiqueta": "Viviendas afectadas",
-      "valor": "92.185 (13.077 destruidas y 79.108 averiadas)",
-      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana)",
-      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
+      "valor": "96.241 (14.705 destruidas y 81.536 averiadas)",
+      "fuente_titulo": "Balance de la UNGRD corregido la noche del 15 de agosto (vía La FM)",
+      "fuente_url": "https://www.lafm.com.co/orden-publico/terremoto-en-colombia-deja-mas-victimas-y-rescate-de-desaparecidos-continua-tras-nuevo-balance-408034"
     },
     {
       "clave": "vias",
       "etiqueta": "Vías afectadas",
       "valor": "254",
-      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana); cifra reemplaza la consolidada del 12 de agosto vía Canal Trece",
+      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana); no se localizó un nuevo consolidado de vías en el corte del 15-16 de agosto, por lo que se mantiene la última cifra confirmada",
       "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
     }
   ],
-  "fecha_corte": "14 de agosto de 2026 (balance de la UNGRD sobre 437 municipios de 15 departamentos; 56.448 familias y 135.179 personas afectadas, 121 edificaciones colapsadas)",
+  "fecha_corte": "15 de agosto de 2026, hacia las 6:30 p. m. (corrección de la UNGRD divulgada el 16 de agosto; balance sobre 450 municipios de 15 departamentos; 54.382 familias y 117.222 personas afectadas)",
   "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012.",
-  "nota": "Distintos medios nacionales que citan el mismo balance de la UNGRD del 14 de agosto (El Colombiano, La FM, Semana, teleSUR) coinciden en 287 fallecidos, 3.975 heridos, 378 desaparecidos y 354 rescatados; el liveblog de Infobae actualizó esa misma jornada la cifra de fallecidos a 288. Esta plataforma publica el valor más alto y más reciente de cada cifra entre las fuentes corroboradas y se actualiza con cada nuevo corte confirmado. No fue posible confirmarlo contra el PDF oficial de gestiondelriesgo.gov.co por restricciones de acceso al sitio en esta revisión."
+  "nota": "La UNGRD corrigió el balance la noche del 15 de agosto: a las 6:30 a. m. de ese día había reportado 294 fallecidos y 320 desaparecidos: hacia las 6:30 p. m. las cifras bajaron a 289 fallecidos y 143 desaparecidos. Según Publimetro y El Universal (México), la entidad explicó que los reportes iniciales —en buena parte verbales— se están cruzando con los registros de la Fiscalía, Medicina Legal y los organismos de socorro para eliminar duplicados; la baja no implica necesariamente que las personas retiradas del registro de desaparecidos hayan aparecido con vida. Esta plataforma publica el corte más reciente confirmado por al menos dos fuentes independientes (La FM, El Universal México, Publimetro) y se actualiza con cada nuevo corte oficial. No fue posible confirmarlo contra el PDF oficial de gestiondelriesgo.gov.co por restricciones de acceso al sitio en esta revisión."
 }

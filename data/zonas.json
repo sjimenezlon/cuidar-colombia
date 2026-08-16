@@ -50,11 +50,11 @@
       "seguimiento_prioritario": true,
       "lat": 3.452,
       "lon": -76.532,
-      "afectacion": "El balance preliminar del Puesto de Mando Unificado publicado por la Alcaldía reportó 28 personas fallecidas, 380 heridas y 26 edificaciones colapsadas. La ciudad declaró calamidad pública y alerta roja hospitalaria; siete IPS fueron evacuadas y cuatro grandes centros médicos quedaron fuera de servicio en ese corte. El departamento del Valle del Cauca concentra la mayor cifra de fallecidos del país (148, según el balance nacional del 13 de agosto). Una nueva réplica el 13 de agosto obligó a evacuar edificaciones adicionales en la ciudad.",
+      "afectacion": "Balance actualizado de la Alcaldía y la Gobernación (14-15 de agosto): 110 personas fallecidas, 115 desaparecidas y 1.410 heridas. La ciudad declaró calamidad pública y alerta roja hospitalaria; siete IPS fueron evacuadas y varios centros médicos quedaron fuera de servicio en los primeros días. El departamento del Valle del Cauca concentra la mayor cifra de fallecidos del país. Nuevas réplicas obligaron a evacuar edificaciones adicionales en la ciudad.",
       "fuentes": [
         {"url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/", "titulo": "Alcaldía de Cali", "alcance": "Balance preliminar del PMU, medidas y alerta roja hospitalaria", "nivel_fuente": "fuente_oficial"},
         {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Seguimiento periodístico posterior de afectaciones en la ciudad", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.semana.com/nacion/cali/articulo/ungrd-emite-nuevo-balance-sobre-el-terremoto-del-10-de-agosto-valle-y-risaralda-con-la-mayor-cifra-de-personas-fallecidas/202632/", "titulo": "Semana", "alcance": "Balance de la UNGRD del 13 de agosto: Valle del Cauca con la mayor cifra de fallecidos del país", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://www.semana.com/nacion/cali/articulo/cali-actualiza-balance-tras-el-terremoto-110-muertos-115-desaparecidos-y-1410-heridos/202637/", "titulo": "Semana", "alcance": "Balance actualizado de Cali: 110 muertos, 115 desaparecidos y 1.410 heridos", "nivel_fuente": "fuente_secundaria"},
         {"url": "https://www.infobae.com/colombia/2026/08/13/por-nuevo-temblor-ordenaron-evacuar-edificaciones-en-cali-y-manizales-son-varios-los-sismos-este-jueves-13-de-agosto-en-colombia/", "titulo": "Infobae", "alcance": "Reporta la evacuación de edificaciones en Cali por una nueva réplica el 13 de agosto", "nivel_fuente": "fuente_secundaria"}
       ]
     },
@@ -66,10 +66,11 @@
       "seguimiento_prioritario": true,
       "lat": 4.813,
       "lon": -75.696,
-      "afectacion": "Cerca de 70 fallecidos en el departamento, 278 heridos y 37 desaparecidos. 66 edificaciones destruidas y 26 con colapso parcial. Comunicaciones inoperantes en las primeras horas; el aeropuerto Matecaña opera solo vuelos humanitarios, médicos y de Estado. Toque de queda.",
+      "afectacion": "Balance actualizado (14-15 de agosto): 93 personas fallecidas y 260 desaparecidas en la ciudad, según un reporte de la Alcaldía citado por City TV/El Tiempo, que reemplaza el conteo departamental preliminar de 70 fallecidos. Comunicaciones inoperantes en las primeras horas; el aeropuerto Matecaña opera solo vuelos humanitarios, médicos y de Estado. Toque de queda en los primeros días de la emergencia.",
       "fuentes": [
         {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Balance territorial de víctimas, daños y restricciones operativas", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690", "titulo": "El Colombiano", "alcance": "Corrobora el balance nacional y la concentración de afectaciones en Risaralda", "nivel_fuente": "fuente_secundaria"}
+        {"url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690", "titulo": "El Colombiano", "alcance": "Corrobora el balance nacional y la concentración de afectaciones en Risaralda", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://citytv.eltiempo.com/fotos-y-videos/video-y-multimedia/pereira-reporta-93-fallecidos-y-260-desaparecidos-tras-el-terremoto_94310", "titulo": "City TV / El Tiempo", "alcance": "Balance actualizado de Pereira: 93 fallecidos y 260 desaparecidos", "nivel_fuente": "fuente_secundaria"}
       ]
     },
     {

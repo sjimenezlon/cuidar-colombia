@@ -1,6 +1,17 @@
 {
   "afirmaciones": [
     {
+      "afirmacion": "Cadena de WhatsApp asegura que los edificios afectados por el terremoto en Cali serán derribados con implosiones",
+      "veredicto": "Falso",
+      "realidad": "La Alcaldía de Cali desmintió esta cadena: no hay ningún plan de implosionar edificaciones afectadas. Las estructuras en riesgo se manejan con evaluaciones técnicas de ingenieros y, de ser necesario, demoliciones controladas y planificadas, no con implosiones anunciadas por cadenas de WhatsApp.",
+      "nivel_fuente": "fuente_secundaria",
+      "fuente_nombre": "Alcaldía de Cali (vía Infobae)",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/14/falsa-cadena-de-whatsapp-asegura-que-se-harian-implosiones-a-edificios-afectados-por-el-terremoto-esto-aclaro-la-alcaldia-de-cali/",
+      "remitir_nombre": "Alcaldía de Cali — Emergencia",
+      "remitir_url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/",
+      "verificado_iso": "2026-08-14"
+    },
+    {
       "afirmacion": "«El IDEAM alerta que hoy habrá una réplica a las 9:15 a. m.» (cadena de WhatsApp con hora exacta)",
       "veredicto": "Falso",
       "realidad": "El IDEAM no emitió ninguna alerta y no existe método científico para predecir un sismo, su hora ni su magnitud. El IDEAM no monitorea sismos —esa es competencia exclusiva del SGC— y toda cadena que anuncie réplicas con horario exacto es falsa por definición.",
@@ -31,7 +42,7 @@
       "fuente_url": "https://www.lasillavacia.com/detector-de-mentiras/falso/detector-terremoto-en-colombia-no-fue-causado-por-el-fracking/",
       "remitir_nombre": "SGC — Servicio Geológico Colombiano",
       "remitir_url": "https://www.sgc.gov.co/sismos",
-      "verificado_iso": "2026-08-13"
+      "verificado_iso": "2026-08-16"
     },
     {
       "afirmacion": "«La falla geológica que causó el terremoto es la misma de Hidroituango»",
@@ -119,7 +130,7 @@
       "fuente_url": "https://chequeado.com/ultimas-noticias/es-falso-que-haarp-haya-provocado-el-terremoto-de-magnitud-7-4-en-colombia/",
       "remitir_nombre": "SGC — Servicio Geológico Colombiano",
       "remitir_url": "https://www.sgc.gov.co/sismos",
-      "verificado_iso": "2026-08-12"
+      "verificado_iso": "2026-08-16"
     },
     {
       "afirmacion": "«El volcán Puracé entró en erupción por el terremoto»",
@@ -130,7 +141,7 @@
       "fuente_url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-extraordinario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-12-de-agosto.aspx",
       "remitir_nombre": "SGC en X (@sgcol)",
       "remitir_url": "https://x.com/sgcol",
-      "verificado_iso": "2026-08-13"
+      "verificado_iso": "2026-08-16"
     },
     {
       "afirmacion": "Video del presidente Abelardo de la Espriella «bailando en una fiesta» mientras el país sufre por el terremoto",
