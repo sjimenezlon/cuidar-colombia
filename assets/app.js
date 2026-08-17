@@ -207,10 +207,15 @@
     var desde = item && item.estado_desde_iso || respaldo && respaldo.estado_desde_iso || '';
     var hasta = item && item.estado_hasta_iso || respaldo && respaldo.estado_hasta_iso || '';
     var corte = Date.parse(cortePortalIso);
+    var ahora = Date.now();
+    // Una hora de cierre publicada puede vencer después del corte editorial.
+    // Usar la referencia más reciente evita mostrar como vigente una jornada
+    // que ya terminó, sin inferir aperturas a partir de horarios en texto libre.
+    var referencia = Number.isFinite(corte) ? Math.max(corte, ahora) : ahora;
     var inicio = Date.parse(desde);
     var fin = Date.parse(hasta);
-    if (Number.isFinite(corte) && Number.isFinite(fin) && fin <= corte) codigo = 'finalizado';
-    else if (Number.isFinite(corte) && Number.isFinite(inicio) && inicio > corte) codigo = 'programado';
+    if (Number.isFinite(fin) && fin <= referencia) codigo = 'finalizado';
+    else if (Number.isFinite(inicio) && inicio > referencia) codigo = 'programado';
     if (!ESTADOS_OPERACION[codigo]) codigo = 'por_confirmar';
     return Object.assign({ codigo: codigo, desde: desde, hasta: hasta }, ESTADOS_OPERACION[codigo]);
   }
@@ -1239,7 +1244,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260817a'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260817b'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1986,7 +1991,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260817a', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260817b', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;
