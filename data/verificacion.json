@@ -197,6 +197,39 @@
       "remitir_nombre": "Maldita.es",
       "remitir_url": "https://maldita.es/",
       "verificado_iso": "2026-08-14"
+    },
+    {
+      "afirmacion": "Video de un rescate presentado como ocurrido tras el terremoto de Colombia del 10 de agosto",
+      "veredicto": "Engañoso",
+      "realidad": "El video se grabó en junio de 2026 en el Club Residencial Caribe, en La Guaira (Venezuela), tras los sismos de magnitud 7,2 y 7,5 que sacudieron ese país el 24 de junio; circula desde entonces, semanas antes del terremoto colombiano.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "Maldita.es",
+      "fuente_url": "https://maldita.es/desinfo/20260813/este-video-muestra-un-rescate-tras-el-terremoto-de-colombia/",
+      "remitir_nombre": "Maldita.es",
+      "remitir_url": "https://maldita.es/",
+      "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "Video de una caravana de camiones y motos presentado como ayuda humanitaria enviada desde Venezuela a Colombia tras el terremoto",
+      "veredicto": "Falso",
+      "realidad": "El video muestra una caravana que salió de El Nula (estado Apure, Venezuela) el 27 de junio de 2026 para ayudar a damnificados venezolanos por los sismos de ese país, según un cartel visible en una de las tomas. No tiene relación con el terremoto colombiano del 10 de agosto, aunque Venezuela sí envió después ayuda humanitaria y la Brigada Internacional Simón Bolívar a Colombia.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "Maldita.es y ColombiaCheck",
+      "fuente_url": "https://maldita.es/desinfo/20260813/este-video-muestra-caravanas-llevando-ayuda-humanitaria-desde-venezuela-hasta-colombia-tras-el-terremoto/",
+      "remitir_nombre": "ColombiaCheck",
+      "remitir_url": "https://colombiacheck.com/chequeos/caravana-de-camiones-en-este-video-no-es-de-ayudas-humanitarias-para-damnificados-del",
+      "verificado_iso": "2026-08-13"
+    },
+    {
+      "afirmacion": "Video del rescate de un gato entre los escombros de un edificio colapsado en Pereira, presentado como parte del terremoto del 10 de agosto",
+      "veredicto": "Engañoso",
+      "realidad": "El video puntual que circula viral no fue grabado tras el terremoto de Colombia: circulaba desde antes. Es distinto de los rescates reales de mascotas confirmados por prensa en Pereira y Cali durante esta emergencia (por ejemplo, bomberos de Medellín sí rescataron con vida a un gatito en una vivienda destruida en Pereira).",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "Maldita.es",
+      "fuente_url": "https://maldita.es/desinfo/20260814/video-muestra-el-rescate-de-un-gato-entre-los-restos-de-un-edificio-colapsado-en-pereira-colombia-tras-el-terremoto-del-10-de-agosto/",
+      "remitir_nombre": "Maldita.es",
+      "remitir_url": "https://maldita.es/",
+      "verificado_iso": "2026-08-14"
     }
   ],
   "fuentes_para_verificar": [

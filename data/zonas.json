@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "16 ago 2026",
-  "fecha_revision_iso": "2026-08-16T08:28:00-05:00",
+  "fecha_revision": "17 ago 2026",
+  "fecha_revision_iso": "2026-08-17T07:20:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -11,14 +11,18 @@
       "autoridad": "Servicio Geológico Colombiano",
       "alcance": "Cráteres de los volcanes Puracé, Piocollo y Curiquinga",
       "recomendacion": "No acercarse a la zona de los cráteres. Pueden ocurrir emisiones repentinas de ceniza o gases.",
-      "nota_contexto": "Es una alerta por actividad volcánica monitoreada, vigente en nivel naranja desde el 1 de agosto de 2026 (antes del terremoto). El SGC desmintió el 13-14 de agosto rumores de que hubiera subido a alerta roja: este boletín no atribuye esa actividad al terremoto.",
-      "fecha": "12 ago 2026, 2:30 p. m.",
-      "fecha_iso": "2026-08-12T14:30:00-05:00",
+      "nota_contexto": "Es una alerta por actividad volcánica monitoreada, vigente en nivel naranja desde el 1 de agosto de 2026 (antes del terremoto), sin relación con el sismo del 10 de agosto. El SGC desmintió el 13-14 de agosto rumores de que hubiera subido a alerta roja. El 16 de agosto Infobae reportó, citando al SGC, siete emisiones de ceniza entre la tarde del 15 y ese boletín, con valores instrumentales en máximos históricos; la crisis volcánica mantiene cerrado el aeropuerto Guillermo León Valencia de Popayán y suspendidas las actividades en el PNN Puracé, incluido el ascenso a la cumbre — cierres por la actividad del volcán, no por el terremoto.",
+      "fecha": "16 ago 2026",
+      "fecha_iso": "2026-08-16T00:00:00-05:00",
       "lat": 2.3131,
       "lon": -76.3972,
       "fuente_url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-extraordinario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-12-de-agosto.aspx",
       "fuente_titulo": "SGC — boletín extraordinario del 12 de agosto",
       "fuentes_adicionales": [
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/16/el-servicio-geologico-colombiano-mantiene-la-alerta-naranja-en-el-volcan-purace-tras-siete-emisiones-de-ceniza-en-24-horas/",
+          "titulo": "Infobae, citando al SGC — se mantiene la alerta naranja tras siete emisiones de ceniza en 24 horas (16 ago)"
+        },
         {
           "url": "https://cambiocolombia.com/pais/articulo/2026/8/servicio-geologico-desmiente-que-el-purace-este-en-alerta-roja-que-esta-pasando-con-el-volcan",
           "titulo": "Cambio Colombia — SGC desmiente rumor de alerta roja (13-14 ago)"
@@ -66,12 +70,14 @@
       "seguimiento_prioritario": true,
       "lat": 4.813,
       "lon": -75.696,
-      "afectacion": "Los cortes territoriales disponibles no son consistentes entre sí: City TV/El Tiempo citó 93 personas fallecidas y 260 desaparecidas; una publicación posterior de EL PAÍS, del 16 de agosto, atribuyó a la Alcaldía 93 fallecidas y 270 desaparecidas. Ambos conteos locales son anteriores o metodológicamente distintos al consolidado nacional depurado de 143 personas desaparecidas, por lo que aquí se conservan como antecedentes y no como cifra vigente comparable. El aeropuerto Matecaña opera solo vuelos humanitarios, médicos y de Estado.",
+      "afectacion": "Los cortes territoriales disponibles no son consistentes entre sí: City TV/El Tiempo citó 93 personas fallecidas y 260 desaparecidas; una publicación posterior de EL PAÍS, del 16 de agosto, atribuyó a la Alcaldía 93 fallecidas y 270 desaparecidas. Ambos conteos locales son anteriores o metodológicamente distintos al consolidado nacional depurado de 143 personas desaparecidas, por lo que aquí se conservan como antecedentes y no como cifra vigente comparable. Portafolio reportó el 16 de agosto, citando a la UNGRD, que el salto del balance nacional (de 117.222 a 185.016 personas afectadas) se debe a incorporar el reporte territorial de Pereira al consolidado del país; no precisa si esto implica adoptar las cifras municipales de fallecidos/desaparecidos citadas arriba. El aeropuerto Matecaña sigue cerrado a vuelos comerciales — solo opera vuelos humanitarios, médicos y de Estado— y prensa regional (La FM, La Patria, Valora Analitik) proyecta su reapertura comercial hacia el 22 de agosto, sujeta a evaluación técnica y autorización de la Aeronáutica Civil.",
       "fuentes": [
         {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Balance territorial de víctimas, daños y restricciones operativas", "nivel_fuente": "fuente_secundaria"},
         {"url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690", "titulo": "El Colombiano", "alcance": "Corrobora el balance nacional y la concentración de afectaciones en Risaralda", "nivel_fuente": "fuente_secundaria"},
         {"url": "https://citytv.eltiempo.com/fotos-y-videos/video-y-multimedia/pereira-reporta-93-fallecidos-y-260-desaparecidos-tras-el-terremoto_94310", "titulo": "City TV / El Tiempo", "alcance": "Corte territorial que reportó 93 fallecidos y 260 desaparecidos", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://elpais.com/america-colombia/2026-08-16/sobrevivir-a-un-terremoto-desde-la-incubadora.html", "titulo": "EL PAÍS", "alcance": "Publicación posterior que atribuye a la Alcaldía 93 fallecidos y 270 desaparecidos; evidencia la divergencia entre cortes territoriales", "nivel_fuente": "fuente_secundaria"}
+        {"url": "https://elpais.com/america-colombia/2026-08-16/sobrevivir-a-un-terremoto-desde-la-incubadora.html", "titulo": "EL PAÍS", "alcance": "Publicación posterior que atribuye a la Alcaldía 93 fallecidos y 270 desaparecidos; evidencia la divergencia entre cortes territoriales", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://www.portafolio.co/economia/gobierno/terremoto-en-colombia-sube-a-185-000-la-cifra-de-damnificados-y-desaparecidos-bajan-a-500501", "titulo": "Portafolio", "alcance": "Atribuye a la UNGRD que el salto del balance nacional de afectados se explica por incorporar el reporte de Pereira (16 ago)", "nivel_fuente": "fuente_secundaria"},
+        {"url": "https://www.lapatria.com/eje-cafetero/fechan-en-10-dias-la-reapertura-del-aeropuerto-matecana-para-vuelos-comerciales-ya", "titulo": "La Patria", "alcance": "Proyecta la reapertura comercial del aeropuerto Matecaña hacia el 22 de agosto", "nivel_fuente": "fuente_secundaria"}
       ]
     },
     {
@@ -219,7 +225,7 @@
       "fuente_url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/"
     },
     {
-      "texto": "Aeropuertos: Cali, Quibdó y Armenia ya reabrieron sin restricciones; Buenaventura y Manizales reabrieron como aeródromos no controlados; Cartago opera solo para aeronaves estatales y humanitarias. Pereira (Matecaña) sigue cerrado a vuelos comerciales por grietas en la pista y evaluación estructural de la torre de control; solo opera vuelos estatales, médicos y de búsqueda y rescate. Hay puente aéreo humanitario desde CATAM (Bogotá).",
+      "texto": "Aeropuertos: Cali, Quibdó y Armenia ya reabrieron sin restricciones; Buenaventura y Manizales reabrieron como aeródromos no controlados; Cartago opera solo para aeronaves estatales y humanitarias. Pereira (Matecaña) sigue cerrado a vuelos comerciales; técnicos descartaron daños en pista y torre de control, y prensa regional proyecta reapertura comercial hacia el 22 de agosto, sujeta a evaluación técnica y autorización de la Aeronáutica Civil. Hay puente aéreo humanitario desde CATAM (Bogotá).",
       "fuente_url": "https://www.infobae.com/colombia/2026/08/11/aeronautica-civil-anuncio-la-reapertura-gradual-con-restricciones-de-los-aeropuertos-en-colombia-tras-el-terremoto-de-magnitud-74/"
     }
   ],
@@ -267,6 +273,14 @@
     {
       "texto": "Artistas colombianos organizan el concierto solidario «Voces por la Vida» el 23 de agosto en el Vive Claro (Bogotá), con Karol G, Maluma, Miguel Bosé, Sebastián Yatra y más de 20 artistas; el 100% del recaudo de boletería se dona a fundaciones aliadas para la reconstrucción de las zonas afectadas.",
       "fuente_url": "https://www.pulzo.com/entretenimiento/colombia-voces-por-vida-fecha-artistas-como-donar-terremoto-PP5275649"
+    },
+    {
+      "texto": "El presidente Abelardo De La Espriella anunció el 16 de agosto, desde Buenaventura, la reactivación del buque hospital «Benkos Biohó» de la Armada Nacional —que estaba detenido— para atender la crisis de salud en la ciudad; opera desde el 14 de agosto con quirófano, laboratorio y rayos X.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/16/de-la-espriella-anuncio-desde-buenaventura-la-reactivacion-del-buque-hospital-benkos-bioho/"
+    },
+    {
+      "texto": "El Gobierno anunció el 16 de agosto un plan especial de atención para Buenaventura (salud, créditos y más capacidad hospitalaria) tras confirmar que la red hospitalaria de la ciudad sigue desbordada.",
+      "fuente_url": "https://www.vanguardia.com/colombia/2026/08/16/anuncian-plan-de-atencion-para-buenaventura-tras-terremoto-salud-ayudas-y-mas-capacidad-hospitalaria/"
     }
   ]
 }

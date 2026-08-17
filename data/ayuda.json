@@ -559,32 +559,57 @@
         {
           "nombre": "Universidad Jorge Tadeo Lozano",
           "direccion": "Carrera 4 #22-61",
-          "horario": "8:00 a. m.–9:00 p. m."
+          "horario": "Suspendido temporalmente desde el 17 de agosto, 12:00 m. La Alcaldía y la Cruz Roja no han anunciado reapertura; confirma antes de ir."
         },
         {
           "nombre": "Punto Usaquén",
           "direccion": "Calle 161A #7F-55",
-          "horario": "8:00 a. m.–9:00 p. m."
+          "horario": "Suspendido temporalmente desde el 17 de agosto, 12:00 m. La Alcaldía y la Cruz Roja no han anunciado reapertura; confirma antes de ir."
         },
         {
           "nombre": "Centro Comercial Unicentro",
           "direccion": "Carrera 15 #124-30",
-          "horario": "8:00 a. m.–9:00 p. m."
-        },
-        {
-          "nombre": "Estadio El Campín",
-          "direccion": "Av. NQS entre calles 53B Bis y 57",
-          "horario": "8:00 a. m.–9:00 p. m."
+          "horario": "Suspendido temporalmente desde el 17 de agosto, 12:00 m. La Alcaldía y la Cruz Roja no han anunciado reapertura; confirma antes de ir."
         },
         {
           "nombre": "Cruz Roja — sede administrativa",
           "direccion": "Carrera 24 #73-38",
-          "horario": "24 horas"
+          "horario": "Suspendido temporalmente desde el 17 de agosto, 12:00 m. La Alcaldía y la Cruz Roja no han anunciado reapertura; confirma antes de ir."
         },
         {
           "nombre": "Palacio de los Deportes",
           "direccion": "Calle 63 #59A-06",
-          "horario": "8:00 a. m.–8:00 p. m."
+          "horario": "Suspendido temporalmente desde el 17 de agosto, 12:00 m. La Alcaldía y la Cruz Roja no han anunciado reapertura; confirma antes de ir."
+        }
+      ],
+      "que_donar": [
+        "agua embotellada",
+        "alimentos no perecederos",
+        "cobijas y colchonetas",
+        "kits de aseo",
+        "pañales",
+        "primeros auxilios"
+      ],
+      "que_no_donar": [
+        "productos vencidos",
+        "perecederos"
+      ],
+      "fuente_titulo": "bogota.gov.co — suspensión temporal de puntos de recepción de ayudas",
+      "fuente_url": "https://bogota.gov.co/mi-ciudad/gobierno/suspension-temporal-puntos-recepcion-de-ayudas-terremoto-en-bogota",
+      "nivel_fuente": "fuente_oficial",
+      "fecha": "17 ago 2026",
+      "estado_operacion": "finalizado",
+      "estado_actualizado_iso": "2026-08-17T07:20:00-05:00",
+      "estado_hasta_iso": "2026-08-17T12:00:00-05:00"
+    },
+    {
+      "ciudad": "Bogotá",
+      "entidad": "Alcaldía de Bogotá y Cruz Roja",
+      "puntos": [
+        {
+          "nombre": "Estadio El Campín",
+          "direccion": "Av. NQS entre calles 53B Bis y 57",
+          "horario": "8:00 a. m.–9:00 p. m. No aparece en el aviso de suspensión temporal del 17 de agosto, que sí cubre los otros cinco puntos de este operativo; confirma vigencia antes de ir."
         }
       ],
       "que_donar": [
@@ -604,7 +629,7 @@
       "nivel_fuente": "fuente_oficial",
       "fecha": "14 ago 2026",
       "estado_operacion": "recibiendo",
-      "estado_actualizado_iso": "2026-08-16T06:40:00-05:00"
+      "estado_actualizado_iso": "2026-08-17T07:20:00-05:00"
     },
     {
       "ciudad": "Medellín",
