@@ -335,6 +335,10 @@ a[target="_blank"]:not(.enlace-externo):not(.fab-whatsapp)::after { content: ' â
 .estado-ventana {
   display: inline-block; margin: 4px 0 0 7px; color: var(--tinta-suave); font-size: .74rem; font-weight: 650;
 }
+.estado-nota-punto {
+  display: block; margin: 5px 0 2px; padding: 8px 10px; border-left: 3px solid #B85C4B;
+  border-radius: 0 8px 8px 0; background: #FFF6F4; color: #65352D; font-size: .75rem; line-height: 1.45;
+}
 .nota-estado-operativo {
   max-width: 820px; margin: -7px 0 18px; padding: 10px 13px; border-left: 3px solid var(--oro);
   border-radius: 0 9px 9px 0; background: #FBF3E4; color: var(--tinta-suave); font-size: .8rem;

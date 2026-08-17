@@ -290,7 +290,8 @@
         guardar('acopio|' + normalizar(a.ciudad) + '|' + normalizar(a.entidad) + '|' + normalizar(p.nombre),
           [a.ciudad, a.entidad, p.nombre, p.direccion, p.horario, p.estado_operacion || a.estado_operacion,
             p.estado_actualizado_iso || a.estado_actualizado_iso, p.estado_desde_iso || a.estado_desde_iso,
-            p.estado_hasta_iso || a.estado_hasta_iso, p.fuente_url || a.fuente_url, p.fecha || a.fecha]);
+            p.estado_hasta_iso || a.estado_hasta_iso, p.estado_nota || a.estado_nota,
+            p.fuente_url || a.fuente_url, p.fecha || a.fecha]);
       });
     });
     ((ayuda && ayuda.sangre) || []).forEach(function (s) {
@@ -470,7 +471,9 @@
     });
     resumenEl.textContent = estados.recibiendo + ' lugares tienen recepción confirmada, ' + estados.programado +
       (estados.programado === 1 ? ' está programado y ' : ' están programados y ') + estados.confirmar +
-      ' exigen confirmar antes de desplazarse. Ningún punto se marca abierto por inferir un horario.';
+      ' exigen confirmar antes de desplazarse. ' + estados.finalizado +
+      (estados.finalizado === 1 ? ' cierre se conserva' : ' cierres se conservan') +
+      ' en el historial y no aparecen en la vista vigente. Ningún punto se marca abierto por inferir un horario.';
     if (corteEl) corteEl.textContent = 'Verificación actual: ' + (meta && meta.ultima_actualizacion || 'sin fecha de corte');
     indicadores.innerHTML =
       '<div><strong>' + lugares + '</strong><span>lugares revisados</span></div>' +
@@ -919,7 +922,8 @@
         var accionesPunto = enlaceMapaDireccion(p, a.ciudad) + enlaceLlamarDesdeTexto(p.horario, p.nombre, 'enlace-llamar');
         return '<li><div class="punto-contenido"><strong>' + esc(p.nombre) + '</strong>' + etiquetaOperacion(p, a) +
           (p.direccion ? '<span class="punto-direccion">' + esc(p.direccion) + '</span>' : '') +
-          (p.horario ? '<small>' + esc(p.horario) + '</small>' : '') + '</div>' +
+          (p.horario ? '<small>' + esc(p.horario) + '</small>' : '') +
+          (p.estado_nota ? '<small class="estado-nota-punto">' + esc(p.estado_nota) + '</small>' : '') + '</div>' +
           (accionesPunto ? '<div class="acciones-punto">' + accionesPunto + '</div>' : '') + '</li>';
       }).join('');
       var si = (a.que_donar || []).map(function (q) { return '<span class="etiqueta-si">' + esc(q) + '</span>'; }).join('');
@@ -933,6 +937,7 @@
         '<div class="canal-cabecera"><h4>' + esc(a.ciudad) + '</h4>' + chipFuente + '</div>' +
         '<div class="acopio-entidad">Habilitado por: ' + esc(a.entidad) + '</div>' +
         (puntos ? '<ul class="lista-puntos">' + puntos + '</ul>' : '') +
+        (a.estado_nota ? '<p class="estado-nota-punto">' + esc(a.estado_nota) + '</p>' : '') +
         (si ? '<div><strong style="font-size:.82rem">Qué llevar:</strong><div class="etiquetas-donar">' + si + '</div></div>' : '') +
         (no ? '<div style="margin-top:10px"><strong style="font-size:.82rem">Qué no llevar:</strong><div class="etiquetas-donar">' + no + '</div></div>' : '') +
         (a.fuente_url ? '<div class="acopio-fuente"><span>Evidencia: ' + esc(a.fuente_titulo || 'fuente consultada') + '</span>' +
@@ -1234,7 +1239,7 @@
     if (cargaMapaIniciada) return;
     cargaMapaIniciada = true;
     cambiarEstadoMapa('Cargando mapa y datos geográficos…', '');
-    Promise.all([fetchJSON('data/mapa.json?v=20260816b'), cargarMapLibre()])
+    Promise.all([fetchJSON('data/mapa.json?v=20260817a'), cargarMapLibre()])
       .then(function (r) {
         datosMapa.municipios = r[0] && r[0].municipios; datosMapa.geo = r[0] && r[0].geo;
         if (!datosMapa.municipios || !datosMapa.geo) throw new Error('Datos geográficos incompletos');
@@ -1593,6 +1598,7 @@
         estado_actualizado_iso: subpunto && subpunto.estado_actualizado_iso || coincidencia && coincidencia.estado_actualizado_iso || '',
         estado_desde_iso: subpunto && subpunto.estado_desde_iso || coincidencia && coincidencia.estado_desde_iso || '',
         estado_hasta_iso: subpunto && subpunto.estado_hasta_iso || coincidencia && coincidencia.estado_hasta_iso || '',
+        estado_nota: subpunto && subpunto.estado_nota || coincidencia && coincidencia.estado_nota || '',
         precision_ubicacion: p.coordenadas_fuente ? 'ubicacion_contrastada' : 'direccion_geocodificada'
       };
     }
@@ -1854,6 +1860,7 @@
       '<span class="certeza certeza-' + (fuenteOficial ? 'oficial' : 'secundaria') + '">' + (fuenteOficial ? '✓ Publicado por responsable' : '◉ Confirmación secundaria') + '</span>' +
       '<span class="certeza certeza-' + esc(operacion.clase) + '" title="' + esc(operacion.ayuda) + '">' + esc(operacion.texto) + '</span>' +
       '<span class="certeza certeza-ubicacion">' + esc(ubicacionTexto) + '</span></div>' +
+      (p.estado_nota ? '<p class="estado-nota-punto">' + esc(p.estado_nota) + '</p>' : '') +
       '<div class="pop-acciones">' + enlaceRuta(p.lat, p.lon, p.nombre, 'enlace-accion') +
       enlaceLlamarDesdeTexto(p.detalle_operativo, p.nombre, 'enlace-accion enlace-accion-secundaria') +
       enlaceFuente(p.fuente_url, p.fuente_titulo ? 'Ver ' + p.fuente_titulo : 'Ver evidencia') +
@@ -1979,7 +1986,7 @@
   }
 
   /* ============ Arranque ============ */
-  fetchJSON('data/app.json?v=20260816b', 'no-cache').then(function (r) {
+  fetchJSON('data/app.json?v=20260817a', 'no-cache').then(function (r) {
     r = r || {};
     var meta = r.meta, sismo = r.sismo, balance = r.balance, zonas = r.zonas, ayuda = r.ayuda,
         pedagogia = r.pedagogia, benchmarks = r.benchmarks, fuentes = r.fuentes, verificacion = r.verificacion;

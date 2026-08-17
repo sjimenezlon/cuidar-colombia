@@ -56,6 +56,11 @@ function revisarEstadoOperacion(item, ctx, corteIso) {
   if (!item || !item.estado_operacion) return;
   exigir(['recibiendo', 'programado', 'por_confirmar', 'finalizado'].includes(item.estado_operacion), `${ctx}.estado_operacion inválido`);
   exigir(!Number.isNaN(Date.parse(item.estado_actualizado_iso)), `${ctx}.estado_actualizado_iso requerido y debe ser ISO válido`);
+  if (item.estado_nota) {
+    exigir(typeof item.estado_nota === 'string' && item.estado_nota.length <= 500, `${ctx}.estado_nota debe ser texto de hasta 500 caracteres`);
+    exigir(!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i.test(item.estado_nota), `${ctx}.estado_nota no debe exponer correos personales`);
+    exigir(!/(?:\+?57[ .-]?)?3\d{2}[ .-]?\d{3}[ .-]?\d{4}/.test(item.estado_nota), `${ctx}.estado_nota no debe exponer teléfonos móviles`);
+  }
   exigir(!corteIso || !item.estado_actualizado_iso || Date.parse(item.estado_actualizado_iso) <= Date.parse(corteIso),
     `${ctx}.estado_actualizado_iso no puede ser posterior al corte del portal`);
   const desde = item.estado_desde_iso ? Date.parse(item.estado_desde_iso) : null;
