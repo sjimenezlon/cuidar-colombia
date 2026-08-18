@@ -99,7 +99,14 @@ const fechaCorte = typeof meta?.iso === 'string' ? meta.iso.slice(0, 10) : null;
 if (meta) {
   exigir(meta.evento_id === 'co-sismo-2026-08-10', 'meta.evento_id debe identificar este evento para evitar mezclar campañas');
   exigir(!Number.isNaN(Date.parse(meta.iso)), 'meta.iso debe ser una fecha ISO válida');
-  exigir(Date.parse(meta.iso) <= Date.now() + 5 * 60 * 1000, 'meta.iso no puede estar en el futuro');
+  // El corte se sella con la hora de la revisión, pero la publicación puede correr unos
+  // minutos antes de esa marca. Un adelanto de minutos se avisa; solo se bloquea el corte
+  // que de verdad viene del futuro, porque ese sí publicaría una verificación inexistente.
+  const holguraCorte = 45 * 60 * 1000;
+  exigir(Date.parse(meta.iso) <= Date.now() + holguraCorte, 'meta.iso no puede estar en el futuro');
+  if (Date.parse(meta.iso) > Date.now()) {
+    avisos.push('meta.iso está adelantado frente al reloj de la publicación: sella el corte con la hora real de la revisión');
+  }
   exigir(!Number.isNaN(Date.parse(meta.proxima_revision_iso)), 'meta.proxima_revision_iso debe ser una fecha ISO válida');
   exigir(Date.parse(meta.proxima_revision_iso) > Date.parse(meta.iso), 'meta.proxima_revision_iso debe ser posterior al corte');
   exigir(Number(meta.vigencia_horas) > 0, 'meta.vigencia_horas debe ser mayor que cero');
@@ -267,7 +274,35 @@ if (verificacion) {
   for (const [i, f] of (verificacion.fuentes_para_verificar || []).entries()) revisarUrl(f.url, `verificacion.fuentes_para_verificar[${i}].url`, true);
 }
 
-for (const [i, f] of (fuentes?.items || []).entries()) revisarUrl(f.url, `fuentes.items[${i}].url`);
+if (fuentes) {
+  // El capítulo de transparencia solo sirve si cada enlace declara para qué se usa,
+  // de qué tipo es y cuándo se comprobó: sin eso vuelve a ser una lista de logos.
+  const gruposFuentes = new Set((fuentes.grupos || []).map((g) => g.id));
+  exigir(gruposFuentes.size > 0, 'fuentes.grupos debe declarar al menos un grupo con id');
+  for (const [i, g] of (fuentes.grupos || []).entries()) {
+    exigir(Boolean(g.id && g.titulo && g.descripcion), `fuentes.grupos[${i}]: requiere id, título y descripción`);
+  }
+  for (const [i, f] of (fuentes.items || []).entries()) {
+    const ctx = `fuentes.items[${i}] ${f.nombre || ''}`;
+    revisarUrl(f.url, `${ctx}.url`);
+    exigir(Boolean(f.nombre && f.descripcion), `${ctx}: requiere nombre y descripción`);
+    exigir(Boolean(f.que_verifica), `${ctx}: debe declarar qué se verifica con esta fuente`);
+    exigir(gruposFuentes.has(f.grupo), `${ctx}: grupo inexistente (${f.grupo || 'vacío'})`);
+    exigir(Boolean(f.tipo), `${ctx}: requiere tipo de fuente`);
+    exigir(['fuente_oficial', 'fuente_secundaria'].includes(f.nivel), `${ctx}: nivel inválido`);
+    exigir(!Number.isNaN(Date.parse(f.ultima_consulta_iso)), `${ctx}: ultima_consulta_iso ausente o inválida`);
+    exigir(!meta?.iso || Date.parse(f.ultima_consulta_iso) <= Date.parse(meta.iso),
+      `${ctx}: la última consulta no puede ser posterior al corte del portal`);
+    try {
+      // Una entidad puede ser oficial en su propio dominio (.org, .com.co); lo que nunca
+      // es un dominio verificable es el perfil de una red social ajena a la entidad.
+      const enRedSocial = /(^|\.)(instagram\.com|facebook\.com|x\.com|twitter\.com|tiktok\.com|youtube\.com|t\.me|wa\.me)$/
+        .test(new URL(f.url).hostname);
+      exigir(!(f.nivel === 'fuente_oficial' && enRedSocial),
+        `${ctx}: una publicación en red social no puede figurar como fuente oficial; el dominio propio de la entidad sí`);
+    } catch { /* revisarUrl ya registra la URL inválida */ }
+  }
+}
 for (const [i, f] of (sismo?.fuentes || []).entries()) revisarUrl(f.url, `sismo.fuentes[${i}].url`);
 if (balance) {
   for (const [i, c] of (balance.cifras || []).entries()) revisarUrl(c.fuente_url, `balance.cifras[${i}].fuente_url`);

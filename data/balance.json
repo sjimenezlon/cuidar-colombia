@@ -10,88 +10,101 @@
     {
       "clave": "muertos",
       "etiqueta": "Personas fallecidas",
-      "valor": "289",
-      "fuente_titulo": "La FM — balance atribuido a la UNGRD, corroborado por AP / El Universal México",
-      "fuente_url": "https://www.lafm.com.co/orden-publico/terremoto-en-colombia-deja-mas-victimas-y-rescate-de-desaparecidos-continua-tras-nuevo-balance-408034"
+      "valor": "304",
+      "fuente_titulo": "OCHA, Flash Update 007 — documento oficial con corte al 17 de agosto, 8:00 p. m.; el balance de la UNGRD del 18 de agosto reporta la misma cifra",
+      "fuente_url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026"
     },
     {
       "clave": "heridos",
       "etiqueta": "Personas heridas",
-      "valor": "4.187",
-      "fuente_titulo": "El Tiempo — balance oficial de la UNGRD del 16 de agosto",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/balance-oficial-de-la-ungrd-este-16-de-agosto-tras-terremoto-de-7-4-en-colombia-289-fallecidos-4-187-heridos-y-143-desaparecidos-3578742"
+      "valor": "4.548",
+      "fuente_titulo": "Balance de la UNGRD del 18 de agosto, 6:30 a. m. (vía La FM); OCHA reportaba 4.400 en su corte del 17 de agosto",
+      "fuente_url": "https://www.lafm.com.co/actualidad/terremoto-colombia-van-304-muertos-426-desaparecidos-emergencia-rescate-408172"
     },
     {
       "clave": "desaparecidos",
       "etiqueta": "Personas desaparecidas",
-      "valor": "143",
-      "fuente_titulo": "El Universal México / AP — balance corregido a 143 tras depurar reportes duplicados",
-      "fuente_url": "https://www.eluniversal.com.mx/mundo/gobierno-colombiano-ajusta-cifra-de-victimas-de-terremoto-reporta-289-muertos-y-143-desaparecidos/"
+      "valor": "426",
+      "fuente_titulo": "OCHA, Flash Update 007 (corte del 17 de agosto) y balance de la UNGRD del 18 de agosto; la cifra subió desde 143 sin explicación oficial publicada",
+      "fuente_url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026"
     },
     {
       "clave": "rescatados",
       "etiqueta": "Personas rescatadas con vida",
-      "valor": "353",
-      "fuente_titulo": "Balance de la UNGRD corregido la noche del 15 de agosto (vía La FM)",
-      "fuente_url": "https://www.lafm.com.co/orden-publico/terremoto-en-colombia-deja-mas-victimas-y-rescate-de-desaparecidos-continua-tras-nuevo-balance-408034"
+      "valor": "356",
+      "fuente_titulo": "Balance de la UNGRD del 18 de agosto, 6:30 a. m. (vía La FM)",
+      "fuente_url": "https://www.lafm.com.co/actualidad/terremoto-colombia-van-304-muertos-426-desaparecidos-emergencia-rescate-408172"
+    },
+    {
+      "clave": "afectados",
+      "etiqueta": "Personas afectadas",
+      "valor": "292.043 (123.789 familias)",
+      "fuente_titulo": "Balance de la UNGRD del 18 de agosto, 6:30 a. m. (vía El Universal); OCHA registraba 186.182 personas en su corte del 17 de agosto",
+      "fuente_url": "https://www.eluniversal.com.co/colombia/2026/08/18/terremoto-en-colombia-desaparecidos-aumentan-drasticamente-segun-ultimo-balance/"
     },
     {
       "clave": "viviendas",
       "etiqueta": "Viviendas afectadas",
-      "valor": "154.502 (26.945 destruidas y 127.557 averiadas)",
-      "fuente_titulo": "Portafolio — balance de la UNGRD del 16 de agosto, damnificados suben a 185.000",
-      "fuente_url": "https://www.portafolio.co/economia/gobierno/terremoto-en-colombia-sube-a-185-000-la-cifra-de-damnificados-y-desaparecidos-bajan-a-500501"
+      "valor": "163.896 (29.554 destruidas y 134.342 averiadas)",
+      "fuente_titulo": "Balance de la UNGRD del 18 de agosto, 6:30 a. m. (vía Vanguardia); suma además 267 edificaciones colapsadas",
+      "fuente_url": "https://www.vanguardia.com/colombia/2026/08/18/nuevo-balance-del-terremoto-en-colombia-ya-van-304-muertos-y-426-desaparecidos/"
     },
     {
       "clave": "vias",
       "etiqueta": "Vías afectadas",
-      "valor": "254",
-      "fuente_titulo": "Balance de la UNGRD, 14 de agosto (vía El Colombiano, La FM y Semana); no se localizó un nuevo consolidado de vías en el corte del 15-16 de agosto, por lo que se mantiene la última cifra confirmada",
-      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-colombia-deja-287-muertos-3975-heridos-378-desaparecidos-IG39959742"
+      "valor": "413",
+      "fuente_titulo": "Balance de la UNGRD del 18 de agosto, 6:30 a. m. (vía La FM); el mismo corte reporta 86 acueductos, 49 puentes vehiculares, 13 peatonales y 5 aeropuertos afectados",
+      "fuente_url": "https://www.lafm.com.co/actualidad/terremoto-colombia-van-304-muertos-426-desaparecidos-emergencia-rescate-408172"
     }
   ],
-  "fecha_corte": "16 de agosto de 2026, hacia las 6:30 p. m. (balance de la UNGRD presentado ese domingo por el presidente Abelardo De La Espriella desde Buenaventura; balance sobre 450 municipios de 15 departamentos; 120.238 familias y 185.016 personas afectadas)",
-  "fecha_corte_iso": "2026-08-16T18:30:00-05:00",
-  "nivel_evidencia": "corroboracion_multiple",
-  "fuente_primaria_disponible": false,
+  "fecha_corte": "18 de agosto de 2026, 6:30 a. m. (balance de la UNGRD sobre 472 municipios de 15 departamentos, con 123.789 familias y 292.043 personas afectadas)",
+  "fecha_corte_iso": "2026-08-18T06:30:00-05:00",
+  "nivel_evidencia": "incluye_fuente_oficial",
+  "fuente_primaria_disponible": true,
   "fuentes_adicionales": [
     {
-      "titulo": "La FM — balance corregido atribuido a la UNGRD (15 ago)",
-      "url": "https://www.lafm.com.co/orden-publico/terremoto-en-colombia-deja-mas-victimas-y-rescate-de-desaparecidos-continua-tras-nuevo-balance-408034",
-      "alcance": "Publica el corte previo de 289 fallecidos, 3.937 heridos, 143 desaparecidos, 353 rescatados y 96.241 viviendas afectadas.",
+      "titulo": "OCHA — Flash Update 007, documento oficial con corte al 17 de agosto (8:00 p. m.)",
+      "url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026",
+      "alcance": "Documento publicado por OCHA Colombia con insumos de los socios humanitarios y de los reportes oficiales: 186.182 personas y 121.470 familias afectadas, 304 fallecidas, 426 desaparecidas, 4.400 heridas, 26.558 viviendas destruidas, 289 réplicas, 300 centros de salud y 3.074 centros educativos afectados en 15 departamentos y 472 municipios. Incluye tabla por departamento y un capítulo de vacíos de información.",
+      "nivel_fuente": "fuente_oficial"
+    },
+    {
+      "titulo": "OCHA — Flash Update 007 en PDF descargable (335 KB)",
+      "url": "https://reliefweb.int/attachments/ffa99ad9-357e-43aa-b46a-223418ad2c4f/Flash%20Update%20Colombia%20No007_%20Impacto%20por%20terremoto%2015%20departamentos_17082026_vf.pdf",
+      "alcance": "Archivo original del Flash Update 007: cifras destacadas, necesidades por departamento, tabla de afectación departamental y notas sobre acceso humanitario. Es el primer documento primario descargable que este portal logra citar para el balance nacional.",
+      "nivel_fuente": "fuente_oficial"
+    },
+    {
+      "titulo": "Naciones Unidas en Colombia — página oficial de actualizaciones del terremoto",
+      "url": "https://colombia.un.org/es/320793-informaci%C3%B3n-y-actualizaciones-sobre-el-terremoto-en-colombia",
+      "alcance": "Repositorio institucional que reúne los siete Flash Updates de OCHA y los cuatro informes de situación de la OPS/OMS, con su número y fecha. Sirve para comprobar si existe un corte más reciente que el citado aquí.",
+      "nivel_fuente": "fuente_oficial"
+    },
+    {
+      "titulo": "La FM — balance de la UNGRD con corte al 18 de agosto, 6:30 a. m.",
+      "url": "https://www.lafm.com.co/actualidad/terremoto-colombia-van-304-muertos-426-desaparecidos-emergencia-rescate-408172",
+      "alcance": "Publica el corte completo: 304 fallecidos, 4.548 heridos, 426 desaparecidos, 356 rescatados, 292.043 personas y 123.789 familias afectadas, 163.896 viviendas (29.554 destruidas y 134.342 averiadas), 5.808 edificaciones averiadas y 267 colapsadas, 413 vías, 86 acueductos, 49 puentes vehiculares, 13 peatonales, 5 aeropuertos, 303 centros de salud, 3.443 centros educativos y 3.905 centros comunitarios.",
       "nivel_fuente": "fuente_secundaria"
     },
     {
-      "titulo": "El Universal México / AP — corroboración independiente (15 ago)",
-      "url": "https://www.eluniversal.com.mx/mundo/gobierno-colombiano-ajusta-cifra-de-victimas-de-terremoto-reporta-289-muertos-y-143-desaparecidos/",
-      "alcance": "Corrobora la corrección a 289 fallecidos y 143 desaparecidos y explica la depuración de reportes duplicados.",
+      "titulo": "El Universal — corroboración independiente del corte del 18 de agosto",
+      "url": "https://www.eluniversal.com.co/colombia/2026/08/18/terremoto-en-colombia-desaparecidos-aumentan-drasticamente-segun-ultimo-balance/",
+      "alcance": "Reporta las mismas cifras del corte del 18 de agosto y titula el aumento de desaparecidos sin ofrecer explicación oficial de la variación.",
       "nivel_fuente": "fuente_secundaria"
     },
     {
-      "titulo": "Portafolio — cifra de damnificados sube a 185.000 y desaparecidos se mantienen en 143 (16 ago)",
-      "url": "https://www.portafolio.co/economia/gobierno/terremoto-en-colombia-sube-a-185-000-la-cifra-de-damnificados-y-desaparecidos-bajan-a-500501",
-      "alcance": "Balance atribuido a la UNGRD: 185.016 personas y 120.238 familias afectadas en 450 municipios de 15 departamentos; explica que el salto frente al corte anterior obedece a incorporar el reporte del municipio de Pereira al consolidado nacional.",
+      "titulo": "Vanguardia — corroboración independiente del corte del 18 de agosto",
+      "url": "https://www.vanguardia.com/colombia/2026/08/18/nuevo-balance-del-terremoto-en-colombia-ya-van-304-muertos-y-426-desaparecidos/",
+      "alcance": "Tercera corroboración del mismo corte, con el desglose de viviendas, edificaciones e infraestructura de servicios.",
       "nivel_fuente": "fuente_secundaria"
     },
     {
-      "titulo": "El Tiempo — balance oficial de la UNGRD del 16 de agosto",
-      "url": "https://www.eltiempo.com/colombia/otras-ciudades/balance-oficial-de-la-ungrd-este-16-de-agosto-tras-terremoto-de-7-4-en-colombia-289-fallecidos-4-187-heridos-y-143-desaparecidos-3578742",
-      "alcance": "Publica 289 fallecidos, 4.187 heridos y 143 desaparecidos.",
-      "nivel_fuente": "fuente_secundaria"
-    },
-    {
-      "titulo": "Infobae — la UNGRD explica la reducción en el registro de fallecidos y desaparecidos (17 ago)",
-      "url": "https://www.infobae.com/colombia/2026/08/17/terremoto-en-colombia-ungrd-explica-la-reduccion-en-el-registro-de-fallecidos-y-desaparecidos/",
-      "alcance": "Reconfirma que las cifras de fallecidos y desaparecidos se mantienen estables tras la depuración de duplicados.",
-      "nivel_fuente": "fuente_secundaria"
-    },
-    {
-      "titulo": "El Tiempo — terremoto en Colombia hoy 18 de agosto, balance citado por el presidente el 17 de agosto",
+      "titulo": "El Tiempo — cobertura del 18 de agosto y corte anterior del 17",
       "url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-18-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3578987",
-      "alcance": "Reconfirma, citando al presidente de la República el 17 de agosto, el mismo balance de 289 fallecidos, 4.187 heridos y 143 desaparecidos, con 120.328 familias y 154.502 viviendas afectadas en 450 municipios de 15 departamentos; el corte se mantiene estable frente al del 16 de agosto.",
+      "alcance": "Documenta el corte anterior (289 fallecidos, 4.187 heridos, 143 desaparecidos) citado por el presidente el 17 de agosto y el arranque de la reconstrucción en Pereira. Permite seguir el cambio entre un corte y el siguiente.",
       "nivel_fuente": "fuente_secundaria"
     }
   ],
   "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012.",
-  "nota": "La UNGRD corrigió el balance la noche del 15 de agosto: a las 6:30 a. m. de ese día había reportado 294 fallecidos y 320 desaparecidos; hacia las 6:30 p. m. las cifras bajaron a 289 fallecidos y 143 desaparecidos. La FM y una nota de Associated Press publicada por El Universal (México) coincidieron en ese corte. Un día después, el corte del 16 de agosto (6:30 p. m.) mantuvo estables las cifras de fallecidos (289) y desaparecidos (143) —Infobae reportó el 17 de agosto que la UNGRD reconfirmó esa reducción—, mientras que los heridos subieron a 4.187 (El Tiempo) y las personas afectadas casi se duplicaron a 185.016, con 154.502 viviendas afectadas (Portafolio, citando a la UNGRD). Portafolio explica que el salto en personas y viviendas afectadas se debe a que el consolidado nacional incorporó el reporte territorial del municipio de Pereira, antes contabilizado aparte (ver nota de Pereira en zonas.json). La baja de fallecidos y desaparecidos entre el 15 y 16 de agosto no implica necesariamente que todas las personas retiradas del registro hayan aparecido con vida. El presidente de la República citó el mismo balance (289 fallecidos, 4.187 heridos, 143 desaparecidos) el 17 de agosto, y El Tiempo lo recogió en su cobertura del 18 de agosto sin variaciones, por lo que el corte se mantiene sin cambios frente al del 16 de agosto. Este corte queda marcado como corroboración múltiple, no como fuente primaria: no fue posible consultar un boletín oficial descargable de la UNGRD durante esta revisión."
+  "nota": "Frente al corte del 16 de agosto, el del 18 de agosto (6:30 a. m.) sube fallecidos de 289 a 304, heridos de 4.187 a 4.548, desaparecidos de 143 a 426, personas afectadas de 185.016 a 292.043, viviendas afectadas de 154.502 a 163.896, vías de 254 a 413 y municipios de 450 a 472. Tres medios independientes (La FM, El Universal y Vanguardia) publican el mismo corte con las mismas cifras. Sobre los desaparecidos: el 15 de agosto la UNGRD había depurado el registro de 320 a 143 por reportes duplicados y ahora vuelve a 426, sin que se haya publicado una explicación oficial del cambio. No es un error de prensa: el Flash Update 007 de OCHA, con corte al 17 de agosto a las 8:00 p. m., ya reportaba 426. Ese mismo documento muestra que el registro sigue en movimiento: su tabla por departamento solo suma 193 personas desaparecidas y 290 fallecidas, menos que sus propias cifras destacadas. Un nombre que entra o sale de la lista de desaparecidos no significa por sí mismo que la persona haya aparecido con vida ni lo contrario. Sobre las personas afectadas, la diferencia entre las 186.182 del documento de OCHA (17 de agosto, 8:00 p. m.) y las 292.043 del consolidado de la UNGRD (18 de agosto, 6:30 a. m.) son unas 106.000 personas en diez horas: publicamos la cifra de la UNGRD porque es el registro nacional consolidado, y dejamos al lado la del documento primario para que la diferencia quede visible. Este corte queda marcado como «incluye fuente oficial» porque por primera vez existe un documento primario descargable —el Flash Update 007 de OCHA— que respalda las cifras de fallecidos y desaparecidos; la UNGRD sigue sin publicar un reporte situacional descargable, así que las cifras de heridos, rescatados, viviendas y vías se sostienen en corroboración múltiple de prensa."
 }

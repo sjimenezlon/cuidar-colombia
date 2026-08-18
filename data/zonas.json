@@ -1,6 +1,6 @@
 {
   "fecha_revision": "18 ago 2026",
-  "fecha_revision_iso": "2026-08-18T07:20:00-05:00",
+  "fecha_revision_iso": "2026-08-18T13:50:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -19,6 +19,10 @@
       "fuente_url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-extraordinario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-12-de-agosto.aspx",
       "fuente_titulo": "SGC — boletín extraordinario del 12 de agosto",
       "fuentes_adicionales": [
+        {
+          "url": "https://www2.sgc.gov.co/Noticias/Paginas/Estado-de-alerta-del-volcan-Purace-cambia-a-Naranja-01-agosto-2026.aspx",
+          "titulo": "SGC — boletín del 1 de agosto que cambió la alerta de Amarilla a Naranja (documento primario del nivel vigente)"
+        },
         {
           "url": "https://www.infobae.com/colombia/2026/08/16/el-servicio-geologico-colombiano-mantiene-la-alerta-naranja-en-el-volcan-purace-tras-siete-emisiones-de-ceniza-en-24-horas/",
           "titulo": "Infobae, citando al SGC — se mantiene la alerta naranja tras siete emisiones de ceniza en 24 horas (16 ago)"
@@ -39,11 +43,32 @@
       "seguimiento_prioritario": true,
       "lat": 4.897,
       "lon": -76.234,
-      "afectacion": "Epicentro del sismo. Alrededor de 400 viviendas afectadas y unas 20 estructuras colapsadas según reportes preliminares. Quedó incomunicado durante horas; su única vía de acceso está comprometida y el alcalde pidió apoyo aéreo para evacuar heridos.",
+      "afectacion": "Epicentro del sismo. Alrededor de 400 viviendas afectadas y unas 20 estructuras colapsadas según reportes preliminares. Quedó incomunicado durante horas; su única vía de acceso está comprometida y el alcalde pidió apoyo aéreo para evacuar heridos. El documento oficial de OCHA, con corte al 17 de agosto, precisa el alcance en el epicentro: al menos 2.600 personas afectadas, 40 viviendas de madera destruidas, grietas en las carreteras, 13 sedes educativas y 2 centros de salud afectados, y 22 mujeres gestantes identificadas que requieren seguimiento. El puesto de salud de La Italia espera evaluación técnica para determinar si puede operar.",
       "fuentes": [
-        {"url": "https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx", "titulo": "Servicio Geológico Colombiano", "alcance": "Confirma epicentro, magnitud, profundidad e intensidad máxima reportada", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.elcolombiano.com/colombia/san-jose-del-palmar-terremoto-7-4-colombia-AE39794554", "titulo": "El Colombiano", "alcance": "Reporta daños locales, acceso comprometido y solicitud del alcalde", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.lafm.com.co/actualidad/terremoto-colombia-74-san-jose-del-palmar-viviendas-destruidas-vias-bloqueadas-ayuda-humanitaria-alcalde-407360", "titulo": "La FM", "alcance": "Corrobora viviendas afectadas, colapsos y necesidad de apoyo aéreo", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx",
+          "titulo": "Servicio Geológico Colombiano",
+          "alcance": "Confirma epicentro, magnitud, profundidad e intensidad máxima reportada",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "url": "https://www.elcolombiano.com/colombia/san-jose-del-palmar-terremoto-7-4-colombia-AE39794554",
+          "titulo": "El Colombiano",
+          "alcance": "Reporta daños locales, acceso comprometido y solicitud del alcalde",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.lafm.com.co/actualidad/terremoto-colombia-74-san-jose-del-palmar-viviendas-destruidas-vias-bloqueadas-ayuda-humanitaria-alcalde-407360",
+          "titulo": "La FM",
+          "alcance": "Corrobora viviendas afectadas, colapsos y necesidad de apoyo aéreo",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026",
+          "titulo": "OCHA — Flash Update 007 (documento oficial, corte del 17 de agosto)",
+          "alcance": "Detalle municipal del epicentro: personas afectadas, viviendas destruidas, sedes educativas y centros de salud afectados, gestantes identificadas y estado del puesto de salud de La Italia.",
+          "nivel_fuente": "fuente_oficial"
+        }
       ]
     },
     {
@@ -54,30 +79,92 @@
       "seguimiento_prioritario": true,
       "lat": 3.452,
       "lon": -76.532,
-      "afectacion": "Un corte territorial divulgado el 14-15 de agosto reportó 110 personas fallecidas, 115 desaparecidas y 1.410 heridas. Es una fotografía municipal anterior a la depuración nacional publicada el 16 de agosto y no debe sumarse ni compararse de forma directa con ese consolidado. La ciudad declaró calamidad pública y alerta roja hospitalaria; siete IPS fueron evacuadas y varios centros médicos quedaron fuera de servicio en los primeros días. Nuevas réplicas obligaron a evacuar edificaciones adicionales.",
+      "afectacion": "Un corte territorial divulgado el 14-15 de agosto reportó 110 personas fallecidas, 115 desaparecidas y 1.410 heridas. Es una fotografía municipal anterior a la depuración nacional publicada el 16 de agosto y no debe sumarse ni compararse de forma directa con ese consolidado. La ciudad declaró calamidad pública y alerta roja hospitalaria; siete IPS fueron evacuadas y varios centros médicos quedaron fuera de servicio en los primeros días. Nuevas réplicas obligaron a evacuar edificaciones adicionales. Con alcance departamental —no municipal—, el Flash Update 007 de OCHA reporta para todo el Valle del Cauca 72.670 personas y 24.044 familias afectadas, 2.672 heridas, 78 centros de salud afectados en 18 municipios y 868 instituciones educativas con clases suspendidas; incluye a Cali entre las ciudades donde se pidió apoyo humanitario complementario. Esas cifras no reemplazan ni se suman al corte municipal de arriba.",
       "fuentes": [
-        {"url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/", "titulo": "Alcaldía de Cali", "alcance": "Balance preliminar del PMU, medidas y alerta roja hospitalaria", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Seguimiento periodístico posterior de afectaciones en la ciudad", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.semana.com/nacion/cali/articulo/cali-actualiza-balance-tras-el-terremoto-110-muertos-115-desaparecidos-y-1410-heridos/202637/", "titulo": "Semana", "alcance": "Balance actualizado de Cali: 110 muertos, 115 desaparecidos y 1.410 heridos", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.infobae.com/colombia/2026/08/13/por-nuevo-temblor-ordenaron-evacuar-edificaciones-en-cali-y-manizales-son-varios-los-sismos-este-jueves-13-de-agosto-en-colombia/", "titulo": "Infobae", "alcance": "Reporta la evacuación de edificaciones en Cali por una nueva réplica el 13 de agosto", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/",
+          "titulo": "Alcaldía de Cali",
+          "alcance": "Balance preliminar del PMU, medidas y alerta roja hospitalaria",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+          "titulo": "Infobae",
+          "alcance": "Seguimiento periodístico posterior de afectaciones en la ciudad",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.semana.com/nacion/cali/articulo/cali-actualiza-balance-tras-el-terremoto-110-muertos-115-desaparecidos-y-1410-heridos/202637/",
+          "titulo": "Semana",
+          "alcance": "Balance actualizado de Cali: 110 muertos, 115 desaparecidos y 1.410 heridos",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/13/por-nuevo-temblor-ordenaron-evacuar-edificaciones-en-cali-y-manizales-son-varios-los-sismos-este-jueves-13-de-agosto-en-colombia/",
+          "titulo": "Infobae",
+          "alcance": "Reporta la evacuación de edificaciones en Cali por una nueva réplica el 13 de agosto",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026",
+          "titulo": "OCHA — Flash Update 007 (documento oficial, corte del 17 de agosto)",
+          "alcance": "Cifras de alcance departamental para el Valle del Cauca al 17 de agosto y mención de Cali entre las ciudades priorizadas para apoyo complementario; no es un corte municipal.",
+          "nivel_fuente": "fuente_oficial"
+        }
       ]
     },
     {
       "municipio": "Pereira",
       "departamento": "Risaralda",
       "gravedad": "critica",
-      "nivel_evidencia": "corroboracion_multiple",
+      "nivel_evidencia": "incluye_fuente_oficial",
       "seguimiento_prioritario": true,
       "lat": 4.813,
       "lon": -75.696,
-      "afectacion": "Los cortes territoriales disponibles no son consistentes entre sí: City TV/El Tiempo citó 93 personas fallecidas y 260 desaparecidas; una publicación posterior de EL PAÍS, del 16 de agosto, atribuyó a la Alcaldía 93 fallecidas y 270 desaparecidas. Ambos conteos locales son anteriores o metodológicamente distintos al consolidado nacional depurado de 143 personas desaparecidas, por lo que aquí se conservan como antecedentes y no como cifra vigente comparable. Portafolio reportó el 16 de agosto, citando a la UNGRD, que el salto del balance nacional (de 117.222 a 185.016 personas afectadas) se debe a incorporar el reporte territorial de Pereira al consolidado del país; no precisa si esto implica adoptar las cifras municipales de fallecidos/desaparecidos citadas arriba. El aeropuerto Matecaña sigue cerrado a vuelos comerciales — solo opera vuelos humanitarios, médicos y de Estado— y prensa regional (La FM, La Patria, Valora Analitik) proyecta su reapertura comercial hacia el 22 de agosto, sujeta a evaluación técnica y autorización de la Aeronáutica Civil.",
+      "afectacion": "Los cortes territoriales disponibles no son consistentes entre sí: City TV/El Tiempo citó 93 personas fallecidas y 260 desaparecidas; una publicación posterior de EL PAÍS, del 16 de agosto, atribuyó a la Alcaldía 93 fallecidas y 270 desaparecidas. Ambos conteos locales son anteriores o metodológicamente distintos al consolidado nacional depurado de 143 personas desaparecidas, por lo que aquí se conservan como antecedentes y no como cifra vigente comparable. Portafolio reportó el 16 de agosto, citando a la UNGRD, que el salto del balance nacional (de 117.222 a 185.016 personas afectadas) se debe a incorporar el reporte territorial de Pereira al consolidado del país; no precisa si esto implica adoptar las cifras municipales de fallecidos/desaparecidos citadas arriba. El aeropuerto Matecaña sigue cerrado a vuelos comerciales — solo opera vuelos humanitarios, médicos y de Estado— y prensa regional (La FM, La Patria, Valora Analitik) proyecta su reapertura comercial hacia el 22 de agosto, sujeta a evaluación técnica y autorización de la Aeronáutica Civil. El Flash Update 007 de OCHA agrupa Risaralda, Caldas y Quindío en 120 personas fallecidas, con la letalidad concentrada en Risaralda, y reporta para Risaralda 11.712 viviendas destruidas y 47.863 averiadas. Pide habilitar un hospital de campaña en Pereira e identificar los alojamientos improvisados de la ciudad, sobre los que reconoce un vacío de información. Son cifras de tres departamentos juntos o del departamento: no un corte municipal de Pereira.",
       "fuentes": [
-        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Balance territorial de víctimas, daños y restricciones operativas", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690", "titulo": "El Colombiano", "alcance": "Corrobora el balance nacional y la concentración de afectaciones en Risaralda", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://citytv.eltiempo.com/fotos-y-videos/video-y-multimedia/pereira-reporta-93-fallecidos-y-260-desaparecidos-tras-el-terremoto_94310", "titulo": "City TV / El Tiempo", "alcance": "Corte territorial que reportó 93 fallecidos y 260 desaparecidos", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://elpais.com/america-colombia/2026-08-16/sobrevivir-a-un-terremoto-desde-la-incubadora.html", "titulo": "EL PAÍS", "alcance": "Publicación posterior que atribuye a la Alcaldía 93 fallecidos y 270 desaparecidos; evidencia la divergencia entre cortes territoriales", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.portafolio.co/economia/gobierno/terremoto-en-colombia-sube-a-185-000-la-cifra-de-damnificados-y-desaparecidos-bajan-a-500501", "titulo": "Portafolio", "alcance": "Atribuye a la UNGRD que el salto del balance nacional de afectados se explica por incorporar el reporte de Pereira (16 ago)", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.lapatria.com/eje-cafetero/fechan-en-10-dias-la-reapertura-del-aeropuerto-matecana-para-vuelos-comerciales-ya", "titulo": "La Patria", "alcance": "Proyecta la reapertura comercial del aeropuerto Matecaña hacia el 22 de agosto", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+          "titulo": "Infobae",
+          "alcance": "Balance territorial de víctimas, daños y restricciones operativas",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.elcolombiano.com/colombia/muertos-terremoto-en-colombia-heridos-replicas-choco-hoy-GC39809690",
+          "titulo": "El Colombiano",
+          "alcance": "Corrobora el balance nacional y la concentración de afectaciones en Risaralda",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://citytv.eltiempo.com/fotos-y-videos/video-y-multimedia/pereira-reporta-93-fallecidos-y-260-desaparecidos-tras-el-terremoto_94310",
+          "titulo": "City TV / El Tiempo",
+          "alcance": "Corte territorial que reportó 93 fallecidos y 260 desaparecidos",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://elpais.com/america-colombia/2026-08-16/sobrevivir-a-un-terremoto-desde-la-incubadora.html",
+          "titulo": "EL PAÍS",
+          "alcance": "Publicación posterior que atribuye a la Alcaldía 93 fallecidos y 270 desaparecidos; evidencia la divergencia entre cortes territoriales",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.portafolio.co/economia/gobierno/terremoto-en-colombia-sube-a-185-000-la-cifra-de-damnificados-y-desaparecidos-bajan-a-500501",
+          "titulo": "Portafolio",
+          "alcance": "Atribuye a la UNGRD que el salto del balance nacional de afectados se explica por incorporar el reporte de Pereira (16 ago)",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.lapatria.com/eje-cafetero/fechan-en-10-dias-la-reapertura-del-aeropuerto-matecana-para-vuelos-comerciales-ya",
+          "titulo": "La Patria",
+          "alcance": "Proyecta la reapertura comercial del aeropuerto Matecaña hacia el 22 de agosto",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026",
+          "titulo": "OCHA — Flash Update 007 (documento oficial, corte del 17 de agosto)",
+          "alcance": "Documento oficial con alcance departamental y subregional: fallecidos agrupados de Risaralda, Caldas y Quindío, viviendas destruidas y averiadas en Risaralda, necesidades de hospital de campaña y vacío de información sobre alojamientos improvisados en Pereira.",
+          "nivel_fuente": "fuente_oficial"
+        }
       ]
     },
     {
@@ -88,26 +175,73 @@
       "seguimiento_prioritario": true,
       "lat": 3.88,
       "lon": -77.031,
-      "afectacion": "La vía a Cali (Buga–Buenaventura) fue reabierta el 12 de agosto con paso controlado tipo «pare y siga» tras unos 20 derrumbes que la dejaron cerrada, con 3 fallecidos en los túneles del corredor. El 14 de agosto el ministro del Interior, Rodrigo Lara, reveló que la red hospitalaria de la ciudad está desbordada y se gestiona un hospital de campaña; más de 800 viviendas del barrio Lleras resultaron destruidas o colapsadas. El aeropuerto Gerardo Tovar López reabrió como aeródromo no controlado, con restricciones.",
+      "afectacion": "La vía a Cali (Buga–Buenaventura) fue reabierta el 12 de agosto con paso controlado tipo «pare y siga» tras unos 20 derrumbes que la dejaron cerrada, con 3 fallecidos en los túneles del corredor. El 14 de agosto el ministro del Interior, Rodrigo Lara, reveló que la red hospitalaria de la ciudad está desbordada y se gestiona un hospital de campaña; más de 800 viviendas del barrio Lleras resultaron destruidas o colapsadas. El aeropuerto Gerardo Tovar López reabrió como aeródromo no controlado, con restricciones. Al 17 de agosto, el Flash Update 007 de OCHA registra que el acceso humanitario sigue interrumpido en tres municipios del Valle del Cauca por cierres totales o parciales de vías —Dagua, Buenaventura y La Unión—, lo que condiciona la llegada de personal e insumos.",
       "fuentes": [
-        {"url": "https://valledelcauca.gov.co/publicaciones/90177/todos-somos-valle-activado-centro-de-acopio-de-ayudas-en-la-licorera-para-los-damnificados-de-terremoto/", "titulo": "Gobernación del Valle", "alcance": "Confirma necesidades básicas y recepción especial destinada a Buenaventura", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.elpais.com.co/cali/terremoto-en-colombia-gobernadora-del-valle-confirma-que-no-hay-paso-en-la-via-entre-cali-y-buenaventura-por-varios-derrumbes-1025.html", "titulo": "El País (Cali)", "alcance": "Reporta derrumbes, cierre vial y abastecimiento aéreo (11 ago)", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia", "alcance": "Corrobora fallas de comunicaciones, energía y accesos", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.elpais.com.co/valle/ministerio-de-transporte-confirmo-que-se-habilito-paso-controlado-en-la-via-buga-buenaventura-1203.html", "titulo": "El País (Cali)", "alcance": "Confirma la reapertura con paso controlado de la vía Buga–Buenaventura", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-14-de-agosto-el-ministro-del-interior-rodrigo-lara-revelo-que-la-red-hospitalaria-en-buenaventura-esta-desbordada-3578338", "titulo": "El Tiempo", "alcance": "Red hospitalaria desbordada y daños en el barrio Lleras, 14 de agosto", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://valledelcauca.gov.co/publicaciones/90177/todos-somos-valle-activado-centro-de-acopio-de-ayudas-en-la-licorera-para-los-damnificados-de-terremoto/",
+          "titulo": "Gobernación del Valle",
+          "alcance": "Confirma necesidades básicas y recepción especial destinada a Buenaventura",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "url": "https://www.elpais.com.co/cali/terremoto-en-colombia-gobernadora-del-valle-confirma-que-no-hay-paso-en-la-via-entre-cali-y-buenaventura-por-varios-derrumbes-1025.html",
+          "titulo": "El País (Cali)",
+          "alcance": "Reporta derrumbes, cierre vial y abastecimiento aéreo (11 ago)",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/",
+          "titulo": "Vanguardia",
+          "alcance": "Corrobora fallas de comunicaciones, energía y accesos",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.elpais.com.co/valle/ministerio-de-transporte-confirmo-que-se-habilito-paso-controlado-en-la-via-buga-buenaventura-1203.html",
+          "titulo": "El País (Cali)",
+          "alcance": "Confirma la reapertura con paso controlado de la vía Buga–Buenaventura",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-14-de-agosto-el-ministro-del-interior-rodrigo-lara-revelo-que-la-red-hospitalaria-en-buenaventura-esta-desbordada-3578338",
+          "titulo": "El Tiempo",
+          "alcance": "Red hospitalaria desbordada y daños en el barrio Lleras, 14 de agosto",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026",
+          "titulo": "OCHA — Flash Update 007 (documento oficial, corte del 17 de agosto)",
+          "alcance": "Estado del acceso humanitario al 17 de agosto: Buenaventura entre los tres municipios del Valle del Cauca con acceso interrumpido por cierres viales.",
+          "nivel_fuente": "fuente_oficial"
+        }
       ]
     },
     {
       "municipio": "Quibdó",
       "departamento": "Chocó",
       "gravedad": "alta",
-      "nivel_evidencia": "corroboracion_multiple",
+      "nivel_evidencia": "incluye_fuente_oficial",
       "lat": 5.695,
       "lon": -76.661,
-      "afectacion": "La Gobernación del Chocó reporta 14 fallecidos en el departamento, más de un centenar de heridos y 862 viviendas afectadas en la capital (23 colapsadas). Daños en edificios municipales, colegios, centros de salud y la universidad; cortes de energía y telecomunicaciones. El aeropuerto El Caraño ya fue reabierto.",
+      "afectacion": "La Gobernación del Chocó reporta 14 fallecidos en el departamento, más de un centenar de heridos y 862 viviendas afectadas en la capital (23 colapsadas). Daños en edificios municipales, colegios, centros de salud y la universidad; cortes de energía y telecomunicaciones. El aeropuerto El Caraño ya fue reabierto. El Flash Update 007 de OCHA sitúa a Quibdó entre las ciudades altamente afectadas donde se pidió apoyo complementario y solicita insumos médico-quirúrgicos y kits materno-infantiles para la atención en salud de la ciudad. Con alcance departamental estima cerca de 69.200 personas (20.952 familias) afectadas en 29 municipios del Chocó, con 3.128 viviendas destruidas, 19.137 averiadas y 65 centros de salud afectados.",
       "fuentes": [
-        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia", "alcance": "Reporta afectaciones de viviendas, servicios y comunicaciones en Chocó", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Corrobora el balance territorial y la reapertura del aeropuerto", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/",
+          "titulo": "Vanguardia",
+          "alcance": "Reporta afectaciones de viviendas, servicios y comunicaciones en Chocó",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+          "titulo": "Infobae",
+          "alcance": "Corrobora el balance territorial y la reapertura del aeropuerto",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026",
+          "titulo": "OCHA — Flash Update 007 (documento oficial, corte del 17 de agosto)",
+          "alcance": "Necesidades específicas de salud en Quibdó y cifras de alcance departamental del Chocó al 17 de agosto: personas y familias afectadas, viviendas destruidas y averiadas, centros de salud afectados.",
+          "nivel_fuente": "fuente_oficial"
+        }
       ]
     },
     {
@@ -117,11 +251,32 @@
       "nivel_evidencia": "incluye_fuente_oficial",
       "lat": 5.07,
       "lon": -75.514,
-      "afectacion": "5 fallecidos y alrededor de un centenar de heridos; unas 4.000 viviendas averiadas, 17 edificaciones destruidas y 19 con colapso parcial. Torre de la Catedral Basílica afectada y daños en la Universidad Nacional sede Manizales y en fachadas del centro histórico. El aeropuerto La Nubia reabrió como aeródromo no controlado, con restricciones. Una nueva réplica el 13 de agosto obligó a evacuar edificaciones adicionales en la ciudad.",
+      "afectacion": "5 fallecidos y alrededor de un centenar de heridos; unas 4.000 viviendas averiadas, 17 edificaciones destruidas y 19 con colapso parcial. Torre de la Catedral Basílica afectada y daños en la Universidad Nacional sede Manizales y en fachadas del centro histórico. El aeropuerto La Nubia reabrió como aeródromo no controlado, con restricciones. Una nueva réplica el 13 de agosto obligó a evacuar edificaciones adicionales en la ciudad. El Flash Update 007 de OCHA señala a Manizales, junto con Pereira, como foco que requiere intervención especial en albergues temporales, evaluaciones estructurales y rehabilitación hospitalaria y educativa; para Caldas reporta 2.023 viviendas destruidas y 7.819 averiadas, además del colapso total del hospital del municipio de San José.",
       "fuentes": [
-        {"url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/", "titulo": "Cruz Roja Colombiana", "alcance": "Confirma despliegue de búsqueda y rescate y apoyo en Manizales", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Respalda las cifras preliminares de víctimas, viviendas y edificios", "nivel_fuente": "fuente_secundaria"},
-        {"url": "https://www.infobae.com/colombia/2026/08/13/por-nuevo-temblor-ordenaron-evacuar-edificaciones-en-cali-y-manizales-son-varios-los-sismos-este-jueves-13-de-agosto-en-colombia/", "titulo": "Infobae", "alcance": "Reporta la evacuación de edificaciones en Manizales por una nueva réplica el 13 de agosto", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/",
+          "titulo": "Cruz Roja Colombiana",
+          "alcance": "Confirma despliegue de búsqueda y rescate y apoyo en Manizales",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+          "titulo": "Infobae",
+          "alcance": "Respalda las cifras preliminares de víctimas, viviendas y edificios",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/13/por-nuevo-temblor-ordenaron-evacuar-edificaciones-en-cali-y-manizales-son-varios-los-sismos-este-jueves-13-de-agosto-en-colombia/",
+          "titulo": "Infobae",
+          "alcance": "Reporta la evacuación de edificaciones en Manizales por una nueva réplica el 13 de agosto",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026",
+          "titulo": "OCHA — Flash Update 007 (documento oficial, corte del 17 de agosto)",
+          "alcance": "Prioridad de intervención en Manizales y cifras de alcance departamental de Caldas al 17 de agosto: viviendas destruidas y averiadas, y colapso del hospital de San José.",
+          "nivel_fuente": "fuente_oficial"
+        }
       ]
     },
     {
@@ -131,10 +286,26 @@
       "nivel_evidencia": "incluye_fuente_oficial",
       "lat": 4.534,
       "lon": -75.681,
-      "afectacion": "174 personas heridas y 5 edificios colapsados. La torre de control y la pista del aeropuerto El Edén resultaron dañadas; la ministra de Transporte confirmó luego su reapertura. Daños en el acueducto.",
+      "afectacion": "174 personas heridas y 5 edificios colapsados. La torre de control y la pista del aeropuerto El Edén resultaron dañadas; la ministra de Transporte confirmó luego su reapertura. Daños en el acueducto. El Flash Update 007 de OCHA pide habilitar un hospital de campaña en Armenia y dotar kits de albergue familiar; para el Quindío reporta 1.777 viviendas destruidas y 9.982 averiadas.",
       "fuentes": [
-        {"url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/", "titulo": "Cruz Roja Colombiana", "alcance": "Confirma evacuaciones y apoyo humanitario y hospitalario en Armenia", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Respalda cifras preliminares y afectaciones de aeropuerto y acueducto", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/",
+          "titulo": "Cruz Roja Colombiana",
+          "alcance": "Confirma evacuaciones y apoyo humanitario y hospitalario en Armenia",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+          "titulo": "Infobae",
+          "alcance": "Respalda cifras preliminares y afectaciones de aeropuerto y acueducto",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026",
+          "titulo": "OCHA — Flash Update 007 (documento oficial, corte del 17 de agosto)",
+          "alcance": "Necesidades específicas de Armenia y cifras de alcance departamental del Quindío al 17 de agosto: viviendas destruidas y averiadas.",
+          "nivel_fuente": "fuente_oficial"
+        }
       ]
     },
     {
@@ -146,7 +317,12 @@
       "lon": -76.605,
       "afectacion": "Colapso de las dos cúpulas de su catedral y afectaciones en comunicaciones y energía, según el reporte periodístico disponible. La ubicación de réplicas no se atribuye a Nóvita porque el boletín inicial del SGC solo nombra a San José del Palmar y Sipí.",
       "fuentes": [
-        {"url": "https://www.eltiempo.com/justicia/investigacion/el-terremoto-golpeo-con-fuerza-a-un-choco-incomunicado-entre-las-victimas-esta-el-hijo-del-alcalde-de-bahia-solano-3577455", "titulo": "El Tiempo", "alcance": "Única fuente localizada para daños en la catedral, comunicaciones y energía", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.eltiempo.com/justicia/investigacion/el-terremoto-golpeo-con-fuerza-a-un-choco-incomunicado-entre-las-victimas-esta-el-hijo-del-alcalde-de-bahia-solano-3577455",
+          "titulo": "El Tiempo",
+          "alcance": "Única fuente localizada para daños en la catedral, comunicaciones y energía",
+          "nivel_fuente": "fuente_secundaria"
+        }
       ]
     },
     {
@@ -158,8 +334,18 @@
       "lon": -76.684,
       "afectacion": "Grietas y daños en vías y estructuras; el corredor Quibdó–Istmina presenta tránsito dificultado y la vía Istmina–Condoto tiene grietas y deterioro de calzada.",
       "fuentes": [
-        {"url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/", "titulo": "Cruz Roja Colombiana", "alcance": "Confirma la preposición de una planta de agua en Istmina como parte de la respuesta", "nivel_fuente": "fuente_oficial"},
-        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia", "alcance": "Respalda los daños y dificultades de tránsito en los corredores viales", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.cruzrojacolombiana.org/cruz-roja-colombiana-despliega-capacidades-para-dar-respuesta-tras-las-afectaciones-por-sismo-en-colombia/",
+          "titulo": "Cruz Roja Colombiana",
+          "alcance": "Confirma la preposición de una planta de agua en Istmina como parte de la respuesta",
+          "nivel_fuente": "fuente_oficial"
+        },
+        {
+          "url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/",
+          "titulo": "Vanguardia",
+          "alcance": "Respalda los daños y dificultades de tránsito en los corredores viales",
+          "nivel_fuente": "fuente_secundaria"
+        }
       ]
     },
     {
@@ -171,7 +357,12 @@
       "lon": -76.65,
       "afectacion": "La vía Istmina–Condoto presenta grietas y deterioro de calzada tras el sismo.",
       "fuentes": [
-        {"url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/", "titulo": "Vanguardia", "alcance": "Única fuente localizada para grietas y deterioro de la vía Istmina–Condoto", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.vanguardia.com/colombia/2026/08/11/choco-y-buenaventura-con-fallas-de-comunicacion-y-vias-afectadas-complican-la-emergencia/",
+          "titulo": "Vanguardia",
+          "alcance": "Única fuente localizada para grietas y deterioro de la vía Istmina–Condoto",
+          "nivel_fuente": "fuente_secundaria"
+        }
       ]
     },
     {
@@ -183,7 +374,12 @@
       "lon": -76.644,
       "afectacion": "El SGC localizó en Sipí parte de las 18 réplicas iniciales registradas después del sismo. La fuente geológica no evalúa daños ni necesidades humanitarias.",
       "fuentes": [
-        {"url": "https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx", "titulo": "Servicio Geológico Colombiano", "alcance": "Confirma la localización de réplicas iniciales; no respalda cifras de daños", "nivel_fuente": "fuente_oficial"}
+        {
+          "url": "https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx",
+          "titulo": "Servicio Geológico Colombiano",
+          "alcance": "Confirma la localización de réplicas iniciales; no respalda cifras de daños",
+          "nivel_fuente": "fuente_oficial"
+        }
       ]
     },
     {
@@ -195,7 +391,12 @@
       "lon": -75.912,
       "afectacion": "El aeropuerto Santa Ana quedó suspendido para vuelos comerciales (solo operaciones médicas, humanitarias y de Estado). Daños en corredores viales del norte del Valle hacia el Eje Cafetero.",
       "fuentes": [
-        {"url": "https://www.infobae.com/colombia/2026/08/10/temblor-en-colombia-los-aeropuertos-de-pereira-manizales-quibdo-armenia-cartago-y-buenaventura-sufrieron-afectaciones-tras-el-sismo/", "titulo": "Infobae", "alcance": "Única fuente localizada para las restricciones del aeropuerto Santa Ana", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/10/temblor-en-colombia-los-aeropuertos-de-pereira-manizales-quibdo-armenia-cartago-y-buenaventura-sufrieron-afectaciones-tras-el-sismo/",
+          "titulo": "Infobae",
+          "alcance": "Única fuente localizada para las restricciones del aeropuerto Santa Ana",
+          "nivel_fuente": "fuente_secundaria"
+        }
       ]
     },
     {
@@ -207,7 +408,12 @@
       "lon": -76.615,
       "afectacion": "Suspensión de energía e interrupciones de servicios públicos; evaluación de daños en curso.",
       "fuentes": [
-        {"url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/", "titulo": "Infobae", "alcance": "Única fuente localizada para interrupciones de energía y servicios", "nivel_fuente": "fuente_secundaria"}
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+          "titulo": "Infobae",
+          "alcance": "Única fuente localizada para interrupciones de energía y servicios",
+          "nivel_fuente": "fuente_secundaria"
+        }
       ]
     }
   ],
@@ -217,8 +423,8 @@
       "fuente_url": "https://www.elpais.com.co/valle/ministerio-de-transporte-confirmo-que-se-habilito-paso-controlado-en-la-via-buga-buenaventura-1203.html"
     },
     {
-      "texto": "INVÍAS reporta 13 puntos de la red vial nacional afectados, concentrados en Quindío, Caldas, Valle del Cauca y Risaralda; la UNGRD contabiliza 77 vías afectadas en total.",
-      "fuente_url": "https://www.semana.com/nacion/articulo/trece-carreteras-en-colombia-permanecen-afectadas-por-el-terremoto-segun-invias/202640/"
+      "texto": "INVÍAS reportó 13 puntos de la red vial nacional afectados, concentrados en Quindío, Caldas, Valle del Cauca y Risaralda. El consolidado nacional creció desde entonces: el balance de la UNGRD del 18 de agosto (6:30 a. m.) cuenta 413 vías afectadas, 49 puentes vehiculares, 13 peatonales, 86 acueductos y 5 aeropuertos.",
+      "fuente_url": "https://www.lafm.com.co/actualidad/terremoto-colombia-van-304-muertos-426-desaparecidos-emergencia-rescate-408172"
     },
     {
       "texto": "Chocó: el corredor Quibdó–Istmina está con tránsito dificultado, la vía Istmina–Condoto agrietada y la vía única a San José del Palmar comprometida.",
@@ -227,6 +433,10 @@
     {
       "texto": "Aeropuertos: Cali, Quibdó y Armenia ya reabrieron sin restricciones; Buenaventura y Manizales reabrieron como aeródromos no controlados; Cartago opera solo para aeronaves estatales y humanitarias. Pereira (Matecaña) sigue cerrado a vuelos comerciales; técnicos descartaron daños en pista y torre de control, y prensa regional proyecta reapertura comercial hacia el 22 de agosto, sujeta a evaluación técnica y autorización de la Aeronáutica Civil. Hay puente aéreo humanitario desde CATAM (Bogotá).",
       "fuente_url": "https://www.infobae.com/colombia/2026/08/11/aeronautica-civil-anuncio-la-reapertura-gradual-con-restricciones-de-los-aeropuertos-en-colombia-tras-el-terremoto-de-magnitud-74/"
+    },
+    {
+      "texto": "Acceso humanitario al 17 de agosto, según el documento oficial de OCHA: al menos 16 vías y 10 puentes bloqueados dificultan la llegada a zonas rurales dispersas del Chocó, y en el Valle del Cauca el acceso sigue interrumpido en Dagua, Buenaventura y La Unión por cierres totales o parciales.",
+      "fuente_url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026"
     }
   ],
   "respuesta": [
@@ -285,6 +495,10 @@
     {
       "texto": "El SGC contabilizó 336 réplicas desde el sismo principal, con corte a las 6:30 p. m. del 17 de agosto: 21 de magnitud mayor a 3,0 y 2 mayores a 4,0. La mayoría se concentra en San José del Palmar (111 eventos), El Litoral del San Juan (75) y Sipí (62), todos en Chocó.",
       "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-17-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3578855"
+    },
+    {
+      "texto": "Los socios humanitarios del Equipo Humanitario País —agencias de la ONU y ONG internacionales, nacionales y locales— han atendido de forma complementaria a al menos 3.000 personas (771 familias) en 10 municipios de Chocó y Valle del Cauca, y empezaron intervenciones en Risaralda a solicitud de la UNGRD, con corte al 17 de agosto.",
+      "fuente_url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026"
     }
   ]
 }

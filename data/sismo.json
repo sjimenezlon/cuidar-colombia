@@ -8,15 +8,25 @@
     "departamento": "Chocó"
   },
   "fecha_hora_local": "10 de agosto de 2026, 7:34 a. m.",
-  "descripcion": "El 10 de agosto de 2026, a las 7:34 de la mañana, un sismo de magnitud 7,4 con epicentro en San José del Palmar (Chocó) y 103 km de profundidad sacudió el occidente de Colombia: según el Servicio Geológico Colombiano, es el de mayor magnitud registrado en el país en lo que va del siglo. El Gobierno Nacional declaró la situación de desastre nacional ese mismo día. En el primer corte del SGC se localizaron 18 réplicas en San José del Palmar y Sipí; la mayor de ese corte fue de magnitud 4,8.",
+  "descripcion": "El 10 de agosto de 2026, a las 7:34 de la mañana, un sismo de magnitud 7,4 con epicentro en San José del Palmar (Chocó) y 103 km de profundidad sacudió el occidente de Colombia: según el Servicio Geológico Colombiano, es el evento sísmico de mayor magnitud registrado en el país en el siglo XXI. El Gobierno Nacional declaró la situación de desastre nacional ese mismo día. Una semana después, el SGC contabilizaba 336 réplicas —21 de magnitud mayor a 3,0 y dos mayores a 4,0—, concentradas en San José del Palmar, El Litoral del San Juan y Sipí.",
   "replicas": [
     "SGC: 18 réplicas en las primeras horas, magnitudes entre 1,4 y 4,8, localizadas en San José del Palmar y Sipí (Chocó).",
-    "Al cierre del 11 de agosto los medios reportaban cerca de un centenar de réplicas registradas."
+    "SGC, corte del 12 de agosto a las 6:00 a. m.: 130 réplicas con magnitudes entre 0,6 y 4,8 y profundidad promedio de 100 km.",
+    "SGC, corte del 17 de agosto a las 6:30 p. m.: 336 réplicas, 21 de magnitud mayor a 3,0 y 2 mayores a 4,0, concentradas en San José del Palmar (111), El Litoral del San Juan (75) y Sipí (62), todos en Chocó.",
+    "El Flash Update 007 de OCHA, con corte dos horas después (17 de agosto, 8:00 p. m.), cuenta 289 réplicas: un documento humanitario que agrupa reportes oficiales con otro umbral. Para réplicas la autoridad es el SGC."
   ],
   "fuentes": [
     {
       "url": "https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx",
       "titulo": "Servicio Geológico Colombiano"
+    },
+    {
+      "url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-17-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3578855",
+      "titulo": "El Tiempo, citando el conteo del SGC (17 ago)"
+    },
+    {
+      "url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026",
+      "titulo": "OCHA, Flash Update 007 (17 ago)"
     },
     {
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2",

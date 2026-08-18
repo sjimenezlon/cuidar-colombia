@@ -1194,14 +1194,55 @@
   }
 
   /* ---------- Fuentes ---------- */
+  /* Una lista plana de enlaces no dice nada: cada fuente declara para qué se usa,
+     de qué tipo es, si es oficial y cuándo se consultó. Si el JSON llega sin grupos,
+     se pinta un solo bloque para no dejar la sección vacía. */
   function pintarFuentes(fu) {
     if (!fu || !fu.items) return;
-    document.getElementById('fuentes-lista').innerHTML = fu.items.map(function (f) {
-      return '<a class="fuente-item" href="' + esc(f.url) + '" target="_blank" rel="noopener">' +
-        '<strong>' + esc(f.nombre) + '</strong>' +
-        (f.descripcion ? '<span style="font-size:.8rem;color:var(--tinta-suave)">' + esc(f.descripcion) + '</span><br>' : '') +
-        '<small>' + esc(f.url.replace(/^https?:\/\//, '').replace(/\/$/, '')) + '</small></a>';
-    }).join('');
+    var contenedor = document.getElementById('fuentes-lista');
+    if (!contenedor) return;
+
+    function tarjeta(f) {
+      var segura = urlSegura(f.url, false);
+      if (!segura) return '';
+      var oficial = f.nivel !== 'fuente_secundaria';
+      var dominio = segura;
+      try { dominio = new URL(segura).hostname; } catch (e) { dominio = segura.replace(/^https?:\/\//, ''); }
+      return '<a class="fuente-item" href="' + esc(segura) + '" target="_blank" rel="noopener noreferrer">' +
+        '<span class="fuente-cabecera"><strong>' + esc(f.nombre) + ' <span aria-hidden="true">↗</span></strong>' +
+        '<span class="chip ' + (oficial ? 'chip-verificado' : 'chip-verificado-prensa') + '">' +
+        (oficial ? 'Fuente oficial' : 'Evidencia secundaria') + '</span></span>' +
+        (f.tipo ? '<span class="fuente-tipo">' + esc(f.tipo) + '</span>' : '') +
+        (f.descripcion ? '<span class="fuente-desc">' + esc(f.descripcion) + '</span>' : '') +
+        (f.que_verifica ? '<span class="fuente-verifica"><strong>Se usa para verificar</strong>' + esc(f.que_verifica) + '</span>' : '') +
+        '<small>' + esc(dominio) + (f.ultima_consulta ? ' · consultada el ' + esc(f.ultima_consulta) : '') + '</small>' +
+        '<span class="solo-lectores aviso-pestana-nueva"> — ' + esc(f.nombre) + '. Se abre en una pestaña nueva.</span></a>';
+    }
+
+    function bloque(titulo, descripcion, items) {
+      var tarjetas = items.map(tarjeta).join('');
+      if (!tarjetas) return '';
+      return '<section class="fuentes-grupo">' +
+        '<div class="fuentes-grupo-cabecera"><h3>' + esc(titulo) + '</h3>' +
+        (descripcion ? '<p>' + esc(descripcion) + '</p>' : '') +
+        '<b>' + items.length + '</b></div>' +
+        '<div class="lista-fuentes">' + tarjetas + '</div></section>';
+    }
+
+    var grupos = fu.grupos && fu.grupos.length ? fu.grupos : null;
+    var html = fu.nota ? '<p class="fuentes-nota">' + esc(fu.nota) + '</p>' : '';
+    if (grupos) {
+      html += grupos.map(function (g) {
+        return bloque(g.titulo, g.descripcion, fu.items.filter(function (f) { return f.grupo === g.id; }));
+      }).join('');
+      var sinGrupo = fu.items.filter(function (f) {
+        return !grupos.some(function (g) { return g.id === f.grupo; });
+      });
+      html += bloque('Otras fuentes consultadas', '', sinGrupo);
+    } else {
+      html += bloque('Fuentes consultadas', '', fu.items);
+    }
+    contenedor.innerHTML = html;
   }
 
   /* ============ MAPA ============ */

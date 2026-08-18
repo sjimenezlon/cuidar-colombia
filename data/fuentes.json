@@ -1,21 +1,330 @@
 {
+  "revision": "18 ago 2026",
+  "revision_iso": "2026-08-18T14:00:00-05:00",
+  "nota": "Cada fuente dice para qué se usa, de qué tipo es y cuándo se consultó por última vez. Todos estos enlaces se revisaron el 18 de agosto de 2026 y respondieron. Un dato que solo aparece en una fuente secundaria se publica marcado como tal: cuentas, llaves y datos de contacto solo se transcriben desde un dominio oficial.",
+  "grupos": [
+    {
+      "id": "autoridad",
+      "titulo": "Autoridad del evento",
+      "descripcion": "Definen magnitud, réplicas y alertas. Ninguna cifra sísmica se publica aquí si no sale de estas fuentes."
+    },
+    {
+      "id": "coordinacion",
+      "titulo": "Coordinación y balance oficial",
+      "descripcion": "De aquí sale el balance nacional y los documentos con corte y hora. Cuando existe un PDF descargable, se cita el documento, no la noticia."
+    },
+    {
+      "id": "respuesta",
+      "titulo": "Salud, sangre y rescate",
+      "descripcion": "Entidades que operan la respuesta y publican sus propios canales de donación, sangre y voluntariado."
+    },
+    {
+      "id": "infraestructura",
+      "titulo": "Vías, aeropuertos y servicios",
+      "descripcion": "Antes de viajar o mover carga, el estado de la vía o del aeropuerto se confirma aquí."
+    },
+    {
+      "id": "territorio",
+      "titulo": "Gobiernos locales",
+      "descripcion": "Publican los puntos de acopio, horarios y medidas de cada ciudad o departamento. Un punto sin publicación local queda como «por confirmar»."
+    },
+    {
+      "id": "campanas",
+      "titulo": "Campañas verificadas",
+      "descripcion": "Campañas cuyo destino, aliados y canales pudimos comprobar en su propia publicación institucional."
+    },
+    {
+      "id": "contraste",
+      "titulo": "Contraste y desmentidos",
+      "descripcion": "Verificadores establecidos con los que se contrasta cada cadena antes de publicarla como falsa en «Antes de reenviar»."
+    }
+  ],
   "items": [
-    {"nombre": "Servicio Geológico Colombiano", "url": "https://www.sgc.gov.co/sismos", "descripcion": "La autoridad sísmica del país: magnitudes, réplicas y reportes oficiales."},
-    {"nombre": "UNGRD", "url": "https://gestiondelriesgo.gov.co", "descripcion": "Unidad Nacional para la Gestión del Riesgo de Desastres: reportes situacionales y coordinación de la respuesta."},
-    {"nombre": "Cruz Roja Colombiana", "url": "https://www.cruzrojacolombiana.org", "descripcion": "Donaciones, sangre y restablecimiento de contactos familiares."},
-    {"nombre": "Defensa Civil Colombiana", "url": "https://www.defensacivil.gov.co", "descripcion": "Operativos de búsqueda y rescate, y voluntariado."},
-    {"nombre": "Bomberos de Colombia", "url": "https://dnbc.gov.co", "descripcion": "Dirección Nacional de Bomberos: respuesta en campo."},
-    {"nombre": "INVÍAS", "url": "https://www.invias.gov.co", "descripcion": "Estado de las vías nacionales afectadas."},
-    {"nombre": "Aeronáutica Civil", "url": "https://www.aerocivil.gov.co", "descripcion": "Estado de los aeropuertos y restricciones de vuelos."},
-    {"nombre": "Alcaldía de Bogotá", "url": "https://bogota.gov.co", "descripcion": "Puntos de donación oficiales en la capital."},
-    {"nombre": "Gobernación del Valle del Cauca", "url": "https://www.valledelcauca.gov.co", "descripcion": "Campaña «Todos Somos Valle» y estado de la emergencia en el departamento."},
-    {"nombre": "Alcaldía de Cali", "url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/", "descripcion": "Balance preliminar local, medidas de emergencia y estado de la red hospitalaria en Cali."},
-    {"nombre": "SGC — boletín de Puracé", "url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-extraordinario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-12-de-agosto.aspx", "descripcion": "Autoridad para el estado de alerta volcánica, alcance geográfico y recomendaciones oficiales."},
-    {"nombre": "ReliefWeb (OCHA)", "url": "https://reliefweb.int/country/col", "descripcion": "Reportes de situación humanitaria de la ONU sobre Colombia."},
-    {"nombre": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2", "descripcion": "Registro internacional del sismo (contraste técnico)."},
-    {"nombre": "IDCBIS", "url": "https://idcbis.org.co", "descripcion": "Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud: donación de sangre en Bogotá."},
-    {"nombre": "ONE Inversión Social", "url": "https://somosone.com.co/una-noche-por-choco", "descripcion": "Campaña «Una noche por Chocó»: destino declarado, aliados y canales oficiales nacionales e internacionales."},
-    {"nombre": "Alcaldía de Rionegro", "url": "https://rionegro.gov.co/publicaciones/1389/rionegro-se-suma-a-colombiaselevanta-para-apoyar-a-las-familias-afectadas-por-el-sismo/", "descripcion": "Tres puntos oficiales de #ColombiaSeLevanta en Rionegro, con horario y artículos recibidos."},
-    {"nombre": "Corporación El Minuto de Dios", "url": "https://www.instagram.com/reel/Db4A78XsMUB/", "descripcion": "Publicación institucional de la campaña «Un Minuto por Colombia»: siete puntos físicos, artículos recibidos y horario de Bogotá."}
+    {
+      "nombre": "Servicio Geológico Colombiano — Sismos",
+      "url": "https://www.sgc.gov.co/sismos",
+      "grupo": "autoridad",
+      "tipo": "Autoridad nacional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Magnitud, profundidad, epicentro y conteo de réplicas.",
+      "descripcion": "La única autoridad sísmica del país: sismos localizados, réplicas y reporte de sismo sentido.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "SGC — boletín del sismo del 10 de agosto",
+      "url": "https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx",
+      "grupo": "autoridad",
+      "tipo": "Documento con corte",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Los datos base del evento: 7,4 de magnitud, 103 km de profundidad y epicentro en San José del Palmar.",
+      "descripcion": "Boletín en el que el SGC afirma que es el evento sísmico de mayor magnitud registrado en Colombia en el siglo XXI.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "SGC — la alerta del volcán Puracé pasó a Naranja",
+      "url": "https://www2.sgc.gov.co/Noticias/Paginas/Estado-de-alerta-del-volcan-Purace-cambia-a-Naranja-01-agosto-2026.aspx",
+      "grupo": "autoridad",
+      "tipo": "Documento con corte",
+      "nivel": "fuente_oficial",
+      "que_verifica": "El nivel de alerta volcánica vigente y desde cuándo: cambió el 1 de agosto, nueve días antes del terremoto.",
+      "descripcion": "Documento primario del nivel de alerta que sigue vigente; sirve para desmentir que el volcán se activó por el sismo.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "SGC — boletín extraordinario de Puracé (12 de agosto)",
+      "url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-extraordinario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-12-de-agosto.aspx",
+      "grupo": "autoridad",
+      "tipo": "Documento con corte",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Alcance geográfico de la alerta, emisiones de ceniza y recomendaciones oficiales.",
+      "descripcion": "Boletín sobre la cadena volcánica Los Coconucos: qué cráteres cubre la alerta y qué se recomienda a la población.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "USGS — ficha internacional del sismo",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2",
+      "grupo": "autoridad",
+      "tipo": "Contraste técnico",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Contraste independiente de magnitud, profundidad y mecanismo focal.",
+      "descripcion": "Registro del Servicio Geológico de Estados Unidos para el mismo evento; se usa como segunda lectura técnica, no como autoridad local.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "UNGRD",
+      "url": "https://portal.gestiondelriesgo.gov.co/",
+      "grupo": "coordinacion",
+      "tipo": "Autoridad nacional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Balance nacional consolidado, declaratorias y ayudas legítimas del Gobierno.",
+      "descripcion": "Unidad Nacional para la Gestión del Riesgo de Desastres: coordina la respuesta y consolida el registro de afectación. Al 18 de agosto no publica un reporte situacional descargable de esta emergencia.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "OCHA — Flash Update 007 (PDF, corte del 17 de agosto)",
+      "url": "https://reliefweb.int/attachments/ffa99ad9-357e-43aa-b46a-223418ad2c4f/Flash%20Update%20Colombia%20No007_%20Impacto%20por%20terremoto%2015%20departamentos_17082026_vf.pdf",
+      "grupo": "coordinacion",
+      "tipo": "Documento con corte",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Fallecidos, desaparecidos, afectación por departamento, necesidades y vacíos de información, con hora de corte.",
+      "descripcion": "El documento primario descargable que hoy respalda el balance: producido por OCHA Colombia con insumos de los socios humanitarios y de los reportes oficiales.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Naciones Unidas en Colombia — actualizaciones del terremoto",
+      "url": "https://colombia.un.org/es/320793-informaci%C3%B3n-y-actualizaciones-sobre-el-terremoto-en-colombia",
+      "grupo": "coordinacion",
+      "tipo": "Portal institucional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Si existe un corte más reciente que el publicado aquí.",
+      "descripcion": "Repositorio oficial de todos los Flash Updates de OCHA y de los informes de situación de la OPS/OMS, con número y fecha.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "ReliefWeb — emergencia «Colombia: Earthquake, Aug 2026»",
+      "url": "https://reliefweb.int/disaster/eq-2026-000146-col",
+      "grupo": "coordinacion",
+      "tipo": "Portal institucional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "El expediente completo de la emergencia: informes de todas las organizaciones humanitarias, ordenados por fecha.",
+      "descripcion": "Plataforma de OCHA que agrupa los reportes de la ONU y de las ONG internacionales sobre este terremoto.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "OPS/OMS — informes de situación en salud",
+      "url": "https://www.paho.org/es/documentos/informe-situacion-4-colombia-terremoto-agosto-2026-13-agosto-2026",
+      "grupo": "coordinacion",
+      "tipo": "Documento con corte",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Afectación de hospitales y centros de salud, y necesidades sanitarias por departamento.",
+      "descripcion": "Cuarto y último informe de situación de la Organización Panamericana de la Salud disponible al 18 de agosto (corte del 13 de agosto).",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Cruz Roja Colombiana",
+      "url": "https://www.cruzrojacolombiana.org",
+      "grupo": "respuesta",
+      "tipo": "Canal institucional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Cuentas y llaves reales de donación, jornadas de sangre y restablecimiento de contactos familiares.",
+      "descripcion": "Cualquier cuenta «de la Cruz Roja» que circule por cadena se compara contra la publicada en este dominio.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Defensa Civil Colombiana",
+      "url": "https://www.defensacivil.gov.co",
+      "grupo": "respuesta",
+      "tipo": "Canal institucional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Operativos de búsqueda y rescate y rutas oficiales de voluntariado.",
+      "descripcion": "Entidad operativa del sistema de gestión del riesgo; publica sus despliegues y cómo sumarse como voluntario.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Dirección Nacional de Bomberos",
+      "url": "https://dnbc.gov.co",
+      "grupo": "respuesta",
+      "tipo": "Canal institucional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Respuesta en campo de los cuerpos de bomberos y equipos USAR.",
+      "descripcion": "Coordina a los bomberos del país; su vocería sirve para confirmar despliegues atribuidos a cuerpos locales.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "IDCBIS — donación de sangre en Bogotá",
+      "url": "https://idcbis.org.co",
+      "grupo": "respuesta",
+      "tipo": "Canal institucional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Sedes, horarios y requisitos reales para donar sangre en Bogotá.",
+      "descripcion": "Instituto Distrital de Ciencia, Biotecnología e Innovación en Salud: banco público de sangre de la capital.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "INVÍAS",
+      "url": "https://www.invias.gov.co",
+      "grupo": "infraestructura",
+      "tipo": "Autoridad nacional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Puntos cerrados, pasos controlados y estado de la red vial nacional.",
+      "descripcion": "Antes de mover una donación por carretera, el estado del corredor se confirma aquí, no en cadenas de WhatsApp.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Aeronáutica Civil",
+      "url": "https://www.aerocivil.gov.co",
+      "grupo": "infraestructura",
+      "tipo": "Autoridad nacional",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Aeropuertos abiertos, cerrados o con restricciones y autorizaciones de reapertura.",
+      "descripcion": "Autoridad aeronáutica: define si un aeropuerto opera con normalidad, como aeródromo no controlado o solo para vuelos humanitarios.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Alcaldía de Bogotá",
+      "url": "https://bogota.gov.co",
+      "grupo": "territorio",
+      "tipo": "Canal territorial",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Puntos de acopio oficiales de la ciudad, con dirección y horario.",
+      "descripcion": "Publica la operación distrital de acopio y envío de ayudas.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Gobernación del Valle del Cauca",
+      "url": "https://www.valledelcauca.gov.co",
+      "grupo": "territorio",
+      "tipo": "Canal territorial",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Campaña «Todos Somos Valle», albergues y estado de la emergencia en el departamento.",
+      "descripcion": "Fuente departamental para el Valle del Cauca, uno de los territorios priorizados por la magnitud del impacto.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Alcaldía de Cali — emergencia por el terremoto",
+      "url": "https://www.cali.gov.co/boletines/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/",
+      "grupo": "territorio",
+      "tipo": "Canal territorial",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Balance municipal, medidas de emergencia, red hospitalaria y líneas de atención de Cali.",
+      "descripcion": "Boletín municipal que sostiene el corte territorial de Cali; su alcance es la ciudad, no el país.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Alcaldía de Rionegro",
+      "url": "https://rionegro.gov.co/publicaciones/1389/rionegro-se-suma-a-colombiaselevanta-para-apoyar-a-las-familias-afectadas-por-el-sismo/",
+      "grupo": "territorio",
+      "tipo": "Canal territorial",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Los tres puntos oficiales de #ColombiaSeLevanta en Rionegro, con horario y artículos que reciben.",
+      "descripcion": "Ejemplo del estándar que pedimos a un punto de acopio: publicación municipal con dirección, horario y qué se recibe.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "ONE Inversión Social — «Una noche por Chocó»",
+      "url": "https://somosone.com.co/una-noche-por-choco",
+      "grupo": "campanas",
+      "tipo": "Campaña verificada",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Destino declarado de los fondos, aliados y canales oficiales nacionales e internacionales.",
+      "descripcion": "Campaña con página propia donde se puede comprobar quién recibe y para qué; así se verifica antes de publicar un canal.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Corporación El Minuto de Dios — «Un Minuto por Colombia»",
+      "url": "https://www.instagram.com/reel/Db4A78XsMUB/",
+      "grupo": "campanas",
+      "tipo": "Publicación en red social",
+      "nivel": "fuente_secundaria",
+      "que_verifica": "Puntos físicos, artículos recibidos y horario de la campaña en Bogotá.",
+      "descripcion": "Publicación en la cuenta institucional de la corporación. Se cita como canal propio de la entidad, pero no es un dominio verificable: por eso queda como evidencia secundaria y no se transcriben cuentas ni llaves desde aquí.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Colombiacheck",
+      "url": "https://colombiacheck.com/tags/terremotos",
+      "grupo": "contraste",
+      "tipo": "Verificador",
+      "nivel": "fuente_secundaria",
+      "que_verifica": "Imágenes hechas con IA, videos reciclados y cifras infladas que circulan por el terremoto.",
+      "descripcion": "Verificador colombiano; sus chequeos sostienen varias de las fichas de «Antes de reenviar, verifica».",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "La Silla Vacía — Detector de Mentiras",
+      "url": "https://www.lasillavacia.com/detector-de-mentiras/",
+      "grupo": "contraste",
+      "tipo": "Verificador",
+      "nivel": "fuente_secundaria",
+      "que_verifica": "Réplicas «programadas», teorías sobre HAARP o fracking y videos de otros países o años.",
+      "descripcion": "Es el verificador más citado en este portal: doce de las cadenas desmentidas aquí se apoyan en sus chequeos.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Maldita.es",
+      "url": "https://maldita.es",
+      "grupo": "contraste",
+      "tipo": "Verificador",
+      "nivel": "fuente_secundaria",
+      "que_verifica": "Virales internacionales sobre el terremoto y contenidos generados con inteligencia artificial.",
+      "descripcion": "Verificador español de la red internacional de fact-checking; aporta el contraste de virales que circulan fuera de Colombia.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "Chequeado",
+      "url": "https://chequeado.com",
+      "grupo": "contraste",
+      "tipo": "Verificador",
+      "nivel": "fuente_secundaria",
+      "que_verifica": "Videos y fotos de sismos anteriores en la región presentados como del terremoto de Colombia.",
+      "descripcion": "Verificador argentino; útil cuando la pieza viral viene de otro país de la región.",
+      "ultima_consulta": "18 ago 2026",
+      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    }
   ]
 }

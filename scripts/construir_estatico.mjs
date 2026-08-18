@@ -85,6 +85,42 @@ const notaBalance = [
   aplicacion.balance.declaratoria || '',
   aplicacion.balance.nota || ''
 ].filter(Boolean).join(' ');
+const sismoHtml = '<!-- STATIC_SISMO_START -->' + escaparHtml(aplicacion.sismo.descripcion || '') +
+  ((aplicacion.sismo.fuentes || []).length
+    ? ' <span class="nota-corte">(' + (aplicacion.sismo.fuentes || [])
+        .map((f) => enlaceFuenteHtml(f.url, f.titulo)).join(' · ') + ')</span>'
+    : '') + '<!-- STATIC_SISMO_END -->';
+
+// El capítulo de fuentes también se pinta sin JavaScript: es el que sostiene la promesa
+// de trazabilidad, así que no puede quedar vacío si el script falla.
+function tarjetaFuenteHtml(fuente) {
+  const oficial = fuente.nivel !== 'fuente_secundaria';
+  const dominio = (() => { try { return new URL(fuente.url).hostname; } catch { return String(fuente.url || ''); } })();
+  return `<a class="fuente-item" href="${escaparHtml(fuente.url)}" target="_blank" rel="noopener noreferrer">` +
+    `<span class="fuente-cabecera"><strong>${escaparHtml(fuente.nombre)} <span aria-hidden="true">↗</span></strong>` +
+    `<span class="chip ${oficial ? 'chip-verificado' : 'chip-verificado-prensa'}">` +
+    `${oficial ? 'Fuente oficial' : 'Evidencia secundaria'}</span></span>` +
+    (fuente.tipo ? `<span class="fuente-tipo">${escaparHtml(fuente.tipo)}</span>` : '') +
+    (fuente.descripcion ? `<span class="fuente-desc">${escaparHtml(fuente.descripcion)}</span>` : '') +
+    (fuente.que_verifica
+      ? `<span class="fuente-verifica"><strong>Se usa para verificar</strong>${escaparHtml(fuente.que_verifica)}</span>`
+      : '') +
+    `<small>${escaparHtml(dominio)}` +
+    (fuente.ultima_consulta ? ` · consultada el ${escaparHtml(fuente.ultima_consulta)}` : '') + '</small>' +
+    `<span class="solo-lectores aviso-pestana-nueva"> — ${escaparHtml(fuente.nombre)}. Se abre en una pestaña nueva.</span></a>`;
+}
+const fuentesHtml = '<!-- STATIC_FUENTES_START -->' +
+  (aplicacion.fuentes.nota ? `<p class="fuentes-nota">${escaparHtml(aplicacion.fuentes.nota)}</p>` : '') +
+  (aplicacion.fuentes.grupos || []).map((grupo) => {
+    const items = (aplicacion.fuentes.items || []).filter((f) => f.grupo === grupo.id);
+    if (!items.length) return '';
+    return '<section class="fuentes-grupo"><div class="fuentes-grupo-cabecera">' +
+      `<h3>${escaparHtml(grupo.titulo)}</h3>` +
+      (grupo.descripcion ? `<p>${escaparHtml(grupo.descripcion)}</p>` : '') +
+      `<b>${items.length}</b></div>` +
+      `<div class="lista-fuentes">${items.map(tarjetaFuenteHtml).join('')}</div></section>`;
+  }).join('') + '<!-- STATIC_FUENTES_END -->';
+
 const reemplazos = [
   [/(<strong id="fecha-actualizacion">)[^<]*(<\/strong>)/, `$1${aplicacion.meta.ultima_actualizacion}$2`],
   [/(<div class="aviso-vigencia[^>]*" id="aviso-vigencia"[^>]*>)[\s\S]*?(<\/div>)/,
@@ -95,6 +131,8 @@ const reemplazos = [
   [/(<p class="pie-fecha" id="pie-actualizacion">)[^<]*(<\/p>)/,
     `$1Última actualización: ${aplicacion.meta.ultima_actualizacion}$2`],
   [/<!-- STATIC_BALANCE_START -->[\s\S]*?<!-- STATIC_BALANCE_END -->/, balanceHtml],
+  [/<!-- STATIC_SISMO_START -->[\s\S]*?<!-- STATIC_SISMO_END -->/, sismoHtml],
+  [/<!-- STATIC_FUENTES_START -->[\s\S]*?<!-- STATIC_FUENTES_END -->/, fuentesHtml],
   [/(<p class="nota-corte" id="nota-corte">)[\s\S]*?(<\/p>)/, `$1${escaparHtml(notaBalance)}$2`]
 ];
 reemplazos.forEach(([patron, valor]) => { html = html.replace(patron, valor); });
