@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "17 ago 2026",
-  "fecha_revision_iso": "2026-08-17T07:20:00-05:00",
+  "fecha_revision": "18 ago 2026",
+  "fecha_revision_iso": "2026-08-18T07:20:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -281,6 +281,10 @@
     {
       "texto": "El Gobierno anunció el 16 de agosto un plan especial de atención para Buenaventura (salud, créditos y más capacidad hospitalaria) tras confirmar que la red hospitalaria de la ciudad sigue desbordada.",
       "fuente_url": "https://www.vanguardia.com/colombia/2026/08/16/anuncian-plan-de-atencion-para-buenaventura-tras-terremoto-salud-ayudas-y-mas-capacidad-hospitalaria/"
+    },
+    {
+      "texto": "El SGC contabilizó 336 réplicas desde el sismo principal, con corte a las 6:30 p. m. del 17 de agosto: 21 de magnitud mayor a 3,0 y 2 mayores a 4,0. La mayoría se concentra en San José del Palmar (111 eventos), El Litoral del San Juan (75) y Sipí (62), todos en Chocó.",
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-17-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3578855"
     }
   ]
 }

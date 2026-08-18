@@ -230,6 +230,17 @@
       "remitir_nombre": "Maldita.es",
       "remitir_url": "https://maldita.es/",
       "verificado_iso": "2026-08-14"
+    },
+    {
+      "afirmacion": "Video de un rabino que asegura que el terremoto de Colombia fue «un ataque calculado» de Estados Unidos y del nuevo presidente para dejar al país en deuda con Washington y usarlo como base para una operación contra Venezuela y su petróleo",
+      "veredicto": "Falso",
+      "realidad": "El video fue generado con inteligencia artificial —la propia herramienta de verificación de OpenAI confirmó que el contenido se creó con sus modelos— y no aporta ninguna prueba de su afirmación. El SGC explica el sismo por la subducción de la placa de Nazca bajo la Suramericana en el Pacífico colombiano, sin relación con ningún evento político.",
+      "nivel_fuente": "guia_publica",
+      "fuente_nombre": "Maldita.es",
+      "fuente_url": "https://maldita.es/desinfo/20260817/el-terremoto-de-colombia-fue-un-ataque-calculado-por-trump-y-el-nuevo-presidente-de-colombia-para-dejarlo-en-deuda-con-washington-y-usar-al-pais-como-base-para-el-asalto-a-venezuela-y-su-petroleo/",
+      "remitir_nombre": "SGC — Servicio Geológico Colombiano",
+      "remitir_url": "https://www.sgc.gov.co/sismos",
+      "verificado_iso": "2026-08-17"
     }
   ],
   "fuentes_para_verificar": [

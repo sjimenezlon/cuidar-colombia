@@ -116,6 +116,11 @@
       "alerta": "Bancolombia hizo un llamado público a extremar precauciones frente a estafas digitales en donaciones: circulan cuentas bancarias falsas de Bancolombia y Davivienda, llaves Bre-B inventadas y códigos QR fraudulentos que simulan canales oficiales de donación. Ninguna donación legítima pide claves ni códigos de seguridad; verifica siempre el nombre del destinatario en la app del banco antes de transferir.",
       "fuente_url": "https://www.infobae.com/tecno/2026/08/16/cuentas-falsas-de-bancolombia-davivienda-llaves-de-bre-b-y-codigos-qr-para-donar-son-inventados-para-robar-tras-terremoto-en-colombia/",
       "fecha": "16 de agosto de 2026"
+    },
+    {
+      "alerta": "La Cruz Roja Colombiana alertó sobre la suplantación de su emblema en vehículos que no pertenecen a la institución, usados para simular labores de respuesta y transporte de ayuda humanitaria en el marco de la emergencia por el terremoto. Verifica siempre la identidad del vehículo y del personal con los canales oficiales de la Cruz Roja antes de entregar donaciones o información.",
+      "fuente_url": "https://www.cruzrojacolombiana.org/la-cruz-roja-colombiana-alerta-sobre-suplantacion-del-emblema-en-vehiculos-y-posibles-estafas-en-el-marco-de-la-emergencia-por-el-terremoto/",
+      "fecha": "17 de agosto de 2026"
     }
   ]
 }
