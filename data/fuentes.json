@@ -1,6 +1,6 @@
 {
-  "revision": "18 ago 2026",
-  "revision_iso": "2026-08-18T14:00:00-05:00",
+  "revision": "20 ago 2026",
+  "revision_iso": "2026-08-20T09:42:00-05:00",
   "nota": "Cada fuente dice para qué se usa, de qué tipo es y cuándo se consultó por última vez. Todos estos enlaces se revisaron el 18 de agosto de 2026 y respondieron. Un dato que solo aparece en una fuente secundaria se publica marcado como tal: cuentas, llaves y datos de contacto solo se transcriben desde un dominio oficial.",
   "grupos": [
     {
@@ -102,9 +102,9 @@
       "tipo": "Autoridad nacional",
       "nivel": "fuente_oficial",
       "que_verifica": "Balance nacional consolidado, declaratorias y ayudas legítimas del Gobierno.",
-      "descripcion": "Unidad Nacional para la Gestión del Riesgo de Desastres: coordina la respuesta y consolida el registro de afectación. Al 18 de agosto no publica un reporte situacional descargable de esta emergencia.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "descripcion": "Unidad Nacional para la Gestión del Riesgo de Desastres: coordina la respuesta y consolida el registro de afectación. Al 20 de agosto sigue sin publicar un reporte situacional descargable de esta emergencia: su balance se conoce por rueda de prensa y por el Puesto de Mando Unificado, no por documento.",
+      "ultima_consulta": "20 ago 2026",
+      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
     },
     {
       "nombre": "OCHA — Flash Update 007 (PDF, corte del 17 de agosto)",
@@ -114,8 +114,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "Fallecidos, desaparecidos, afectación por departamento, necesidades y vacíos de información, con hora de corte.",
       "descripcion": "El documento primario descargable que hoy respalda el balance: producido por OCHA Colombia con insumos de los socios humanitarios y de los reportes oficiales.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "20 ago 2026",
+      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
     },
     {
       "nombre": "Naciones Unidas en Colombia — actualizaciones del terremoto",
@@ -125,8 +125,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "Si existe un corte más reciente que el publicado aquí.",
       "descripcion": "Repositorio oficial de todos los Flash Updates de OCHA y de los informes de situación de la OPS/OMS, con número y fecha.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "20 ago 2026",
+      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
     },
     {
       "nombre": "ReliefWeb — emergencia «Colombia: Earthquake, Aug 2026»",
@@ -136,8 +136,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "El expediente completo de la emergencia: informes de todas las organizaciones humanitarias, ordenados por fecha.",
       "descripcion": "Plataforma de OCHA que agrupa los reportes de la ONU y de las ONG internacionales sobre este terremoto.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "20 ago 2026",
+      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
     },
     {
       "nombre": "OPS/OMS — informes de situación en salud",
@@ -147,8 +147,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "Afectación de hospitales y centros de salud, y necesidades sanitarias por departamento.",
       "descripcion": "Cuarto y último informe de situación de la Organización Panamericana de la Salud disponible al 18 de agosto (corte del 13 de agosto).",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "20 ago 2026",
+      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
     },
     {
       "nombre": "Cruz Roja Colombiana",
@@ -325,6 +325,28 @@
       "descripcion": "Verificador argentino; útil cuando la pieza viral viene de otro país de la región.",
       "ultima_consulta": "18 ago 2026",
       "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+    },
+    {
+      "nombre": "OCHA — Adenda al Plan de Respuesta Humanitaria por el terremoto",
+      "url": "https://reliefweb.int/report/colombia/colombia-adenda-al-plan-de-respuesta-humanitaria-terremoto-agosto-2026",
+      "grupo": "coordinacion",
+      "tipo": "Documento primario del sistema humanitario",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Consolidado oficial de afectación con corte y hora, clústeres activados y recursos comprometidos para la respuesta.",
+      "descripcion": "Adenda que OCHA publicó el 19 de agosto y ReliefWeb difundió el 20. Es el documento descargable más reciente del sistema humanitario: fija el universo de afectación al 18 de agosto en 15 departamentos y 472 municipios y registra la asignación de 5 millones de dólares del CERF.",
+      "ultima_consulta": "20 ago 2026",
+      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
+    },
+    {
+      "nombre": "UNOSAT — evaluación preliminar por satélite de San José del Palmar",
+      "url": "https://reliefweb.int/map/colombia/colombia-preliminary-satellite-derived-damage-assessment-san-jose-del-palmar-municipality-choco-department-18-aug-2026",
+      "grupo": "contraste",
+      "tipo": "Análisis técnico por sensores remotos",
+      "nivel": "fuente_oficial",
+      "que_verifica": "Qué daño estructural es visible desde satélite en el municipio del epicentro, y hasta dónde alcanza a ver ese método.",
+      "descripcion": "Mapa del Centro Satelital de la ONU sobre el municipio del epicentro, con imágenes del 11 de agosto. Sirve para dimensionar el método más que el desastre: la nubosidad tapó buena parte del territorio y solo pudo confirmar daño en una edificación y un deslizamiento en la vía a Ansermanuevo, de modo que no mide el impacto regional ni contradice los consolidados nacionales.",
+      "ultima_consulta": "20 ago 2026",
+      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
     }
   ]
 }
