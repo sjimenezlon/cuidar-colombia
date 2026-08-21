@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "20 ago 2026",
-  "fecha_revision_iso": "2026-08-20T09:42:00-05:00",
+  "fecha_revision": "21 ago 2026",
+  "fecha_revision_iso": "2026-08-21T07:00:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -539,6 +539,14 @@
     {
       "texto": "El presidente Abelardo de la Espriella firmó, la noche del 19 de agosto, el Decreto 1261 de 2026, que declara el estado de emergencia económica, social y ecológica por 30 días en 15 departamentos para agilizar recursos, contratación y crédito público destinados a la reconstrucción de zonas como Pereira, Cali y Manizales. El anuncio se formalizó el 20 de agosto; no se localizó el texto del decreto en un dominio .gov.co, así que esta descripción se apoya en la corroboración de tres medios nacionales.",
       "fuente_url": "https://www.eltiempo.com/politica/abelardo-de-la-espriella/gobierno-de-abelardo-de-la-espriella-firma-decreto-que-declara-la-emergencia-economica-para-hacerle-frente-a-crisis-tras-terremoto-3579549"
+    },
+    {
+      "texto": "La UNGRD actualizó el 20 de agosto (6:30 a. m.) el balance nacional a 319 fallecidos, 4.506 heridos, 260 desaparecidos y 364 rescatados, con 282.709 personas y 153.336 familias afectadas en 476 municipios de 15 departamentos; ver el balance completo en el capítulo de cifras.",
+      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/terremoto-ha-dejado-319-muertos-4-506-heridos-y-31-416-viviendas-danadas-4462815"
+    },
+    {
+      "texto": "El Decreto 1261 de 2026 entró el 21 de agosto a control automático de constitucionalidad ante la Corte Constitucional, trámite obligatorio para todo decreto de estado de excepción; el expediente fue repartido por sorteo al magistrado Juan Carlos Cortés González como ponente.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/21/corte-constitucional-revisara-decreto-de-emergencia-por-terremoto-juan-carlos-cortes-sera-ponente/"
     }
   ]
 }

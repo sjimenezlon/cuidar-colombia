@@ -10,58 +10,100 @@
     {
       "clave": "muertos",
       "etiqueta": "Personas fallecidas",
-      "valor": "314",
-      "fuente_titulo": "Balance presidencial del 19 de agosto, retomado en el Decreto 1261 de 2026 (emergencia económica); coincide con los 314 fallecidos que Medicina Legal había identificado ese mismo día a las 12:30 p. m., de 319 cuerpos recibidos",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/balance-oficial-del-presidente-abelardo-de-la-espriella-tras-terremoto-de-magnitud-7-4-en-colombia-cifras-de-fallecidos-heridos-y-desaparecidos-3579511"
+      "valor": "319",
+      "fuente_titulo": "Corte técnico de la UNGRD, 20 de agosto, 6:30 a. m. (vía La República, Vanguardia, El Heraldo y Semana)",
+      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/terremoto-ha-dejado-319-muertos-4-506-heridos-y-31-416-viviendas-danadas-4462815"
     },
     {
       "clave": "heridos",
       "etiqueta": "Personas heridas",
-      "valor": "4.437",
-      "fuente_titulo": "Balance presidencial del 19 de agosto (vía El Tiempo); el corte técnico de la UNGRD de las 6:30 a. m. del mismo día reportaba 4.380",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/balance-oficial-del-presidente-abelardo-de-la-espriella-tras-terremoto-de-magnitud-7-4-en-colombia-cifras-de-fallecidos-heridos-y-desaparecidos-3579511"
+      "valor": "4.506",
+      "fuente_titulo": "Corte técnico de la UNGRD, 20 de agosto, 6:30 a. m. (vía La República); El Heraldo, citando la misma fuente, publicó 4.469 el mismo día, sin que se haya explicado la diferencia entre despachos",
+      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/terremoto-ha-dejado-319-muertos-4-506-heridos-y-31-416-viviendas-danadas-4462815"
     },
     {
       "clave": "desaparecidos",
       "etiqueta": "Personas desaparecidas",
-      "valor": "262",
-      "fuente_titulo": "Balance presidencial del 19 de agosto (vía El Tiempo); baja desde 426 a medida que Medicina Legal identifica cuerpos, sin que se haya publicado una explicación oficial detallada del ajuste. El corte técnico de la UNGRD de esa misma mañana reportaba 290",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/balance-oficial-del-presidente-abelardo-de-la-espriella-tras-terremoto-de-magnitud-7-4-en-colombia-cifras-de-fallecidos-heridos-y-desaparecidos-3579511"
+      "valor": "260",
+      "fuente_titulo": "Corte técnico de la UNGRD, 20 de agosto, 6:30 a. m. (vía La República y Colombia.com); baja levemente desde los 262 del balance presidencial del 19 de agosto",
+      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/terremoto-ha-dejado-319-muertos-4-506-heridos-y-31-416-viviendas-danadas-4462815"
     },
     {
       "clave": "rescatados",
       "etiqueta": "Personas rescatadas con vida",
-      "valor": "358",
-      "fuente_titulo": "Corte técnico de la UNGRD, 19 de agosto, 6:30 a. m. (vía La FM); el balance presidencial de esa tarde no publicó una cifra nueva de rescatados",
-      "fuente_url": "https://www.lafm.com.co/actualidad/terremoto-colombia-van-312-muertos-290-desaparecidos-emergencia-rescate-408294"
+      "valor": "364",
+      "fuente_titulo": "Corte técnico de la UNGRD, 20 de agosto, 6:30 a. m. (vía La República)",
+      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/terremoto-ha-dejado-319-muertos-4-506-heridos-y-31-416-viviendas-danadas-4462815"
     },
     {
       "clave": "afectados",
       "etiqueta": "Personas afectadas",
-      "valor": "262.154 (147.464 familias)",
-      "fuente_titulo": "Balance presidencial del 19 de agosto, retomado en el Decreto 1261 de 2026; el corte técnico de la UNGRD de esa misma mañana reportaba 294.503 personas (143.533 familias)",
-      "fuente_url": "https://www.chicanoticias.com/2026/08/19/de-la-espriella-88/"
+      "valor": "282.709 (153.336 familias)",
+      "fuente_titulo": "Corte técnico de la UNGRD, 20 de agosto, 6:30 a. m. (vía La República y RTVC Noticias)",
+      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/terremoto-ha-dejado-319-muertos-4-506-heridos-y-31-416-viviendas-danadas-4462815"
     },
     {
       "clave": "viviendas",
       "etiqueta": "Viviendas afectadas",
-      "valor": "163.962 (29.680 destruidas y 134.282 averiadas)",
-      "fuente_titulo": "Corte técnico de la UNGRD, 19 de agosto, 6:30 a. m. (vía La FM y Forbes Colombia); suma además 277 edificaciones colapsadas. Medios de prensa citaron cifras de vivienda distintas para el balance presidencial de esa tarde sin coincidir entre sí, así que aquí se conserva la del corte técnico",
-      "fuente_url": "https://www.lafm.com.co/actualidad/terremoto-colombia-van-312-muertos-290-desaparecidos-emergencia-rescate-408294"
+      "valor": "194.953 (31.461 destruidas y 163.492 averiadas)",
+      "fuente_titulo": "Corte técnico de la UNGRD, 20 de agosto, 6:30 a. m. (vía La República y Vanguardia); suma además 302 edificaciones colapsadas y 5.809 edificaciones averiadas. La República redondeó las viviendas destruidas a 31.416 en su titular, pero el cuerpo de la nota y Vanguardia coinciden en 31.461",
+      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/terremoto-ha-dejado-319-muertos-4-506-heridos-y-31-416-viviendas-danadas-4462815"
     },
     {
       "clave": "vias",
       "etiqueta": "Vías afectadas",
-      "valor": "421",
-      "fuente_titulo": "Corte técnico de la UNGRD, 19 de agosto, 6:30 a. m. (vía La FM y Forbes Colombia); el mismo corte reporta 56 puentes vehiculares, 334 centros de salud, 3.423 centros educativos y 4.054 centros comunitarios afectados",
-      "fuente_url": "https://www.lafm.com.co/actualidad/terremoto-colombia-van-312-muertos-290-desaparecidos-emergencia-rescate-408294"
+      "valor": "449",
+      "fuente_titulo": "Corte técnico de la UNGRD, 20 de agosto, 6:30 a. m. (vía La República); el mismo corte reporta 112 acueductos, 68 puentes vehiculares, 14 peatonales, 5 aeropuertos, 348 centros de salud, 3.483 centros educativos y 4.996 centros comunitarios afectados",
+      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/terremoto-ha-dejado-319-muertos-4-506-heridos-y-31-416-viviendas-danadas-4462815"
     }
   ],
-  "fecha_corte": "19 de agosto de 2026: corte técnico de la UNGRD a las 6:30 a. m. (vivienda, vías e infraestructura) y balance presidencial de esa tarde, retomado por el Decreto 1261 de 2026 (fallecidos, heridos, desaparecidos y afectados), sobre 471 municipios de 15 departamentos",
-  "fecha_corte_iso": "2026-08-19T06:30:00-05:00",
+  "fecha_corte": "20 de agosto de 2026, 6:30 a. m.: corte técnico de la UNGRD, sobre 476 municipios de 15 departamentos",
+  "fecha_corte_iso": "2026-08-20T06:30:00-05:00",
   "nivel_evidencia": "corroboracion_multiple",
   "fuente_primaria_disponible": true,
   "fuentes_adicionales": [
+    {
+      "titulo": "La República — corte técnico de la UNGRD, 20 de agosto, 6:30 a. m.",
+      "url": "https://www.larepublica.co/especiales/catastrofe-nacional/terremoto-ha-dejado-319-muertos-4-506-heridos-y-31-416-viviendas-danadas-4462815",
+      "alcance": "Publica el corte técnico completo: 319 fallecidos, 4.506 heridos, 260 desaparecidos, 364 rescatados, 282.709 personas y 153.336 familias afectadas, 163.492 viviendas averiadas y 31.461 destruidas, 302 edificaciones colapsadas, 449 vías, 112 acueductos, 68 puentes vehiculares, 14 peatonales, 5 aeropuertos, 348 centros de salud, 3.483 centros educativos y 4.996 centros comunitarios, en 476 municipios de 15 departamentos.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "Vanguardia — UNGRD actualiza cifras del terremoto, 20 de agosto",
+      "url": "https://www.vanguardia.com/colombia/2026/08/20/ungrd-actualiza-cifras-del-terremoto-en-colombia-319-fallecidos-y-31461-viviendas-destruidas/",
+      "alcance": "Segunda corroboración del corte técnico del 20 de agosto: 319 fallecidos y 31.461 viviendas destruidas.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "El Heraldo — sube a 319 la cifra de muertos y a 4.469 la de heridos, 20 de agosto",
+      "url": "https://www.elheraldo.co/colombia/2026/08/20/aumenta-a-319-la-cifra-de-muertos-y-a-4469-la-de-heridos-por-terremoto-en-colombia-segun-reporte-de-la-ungrd/",
+      "alcance": "Tercera corroboración del corte técnico del 20 de agosto; cita 4.469 heridos, cifra que no coincide con los 4.506 de La República.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "Semana — último balance de la UNGRD, 319 muertos, 20 de agosto",
+      "url": "https://www.semana.com/nacion/articulo/ultimo-balance-de-la-ungrd-sube-a-319-la-cifra-de-muertos-por-el-terremoto-de-74-en-colombia/202613/",
+      "alcance": "Cuarta corroboración del corte técnico del 20 de agosto.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "El Espectador — el Decreto 1261 llega a la Corte Constitucional, 21 de agosto",
+      "url": "https://www.elespectador.com/judicial/estado-de-emergencia-por-terremoto-en-colombia-decreto-de-abelardo-de-la-espriella-ya-llego-a-la-corte-constitucional/",
+      "alcance": "Confirma que el Decreto 1261 de 2026 entró a control automático de constitucionalidad ante la Corte Constitucional, como exige la Ley 137 de 1994 para todo decreto de estado de excepción.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "Infobae — magistrado Juan Carlos Cortés González, ponente del Decreto 1261, 21 de agosto",
+      "url": "https://www.infobae.com/colombia/2026/08/21/corte-constitucional-revisara-decreto-de-emergencia-por-terremoto-juan-carlos-cortes-sera-ponente/",
+      "alcance": "Corrobora el reparto por sorteo del expediente al magistrado Juan Carlos Cortés González para revisar la constitucionalidad del decreto de emergencia económica.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "Semana — la emergencia económica de De la Espriella llega a la Corte Constitucional, ya tiene magistrado",
+      "url": "https://www.semana.com/nacion/articulo/emergencia-economica-de-de-la-espriella-por-el-terremoto-llega-a-la-corte-constitucional-ya-tiene-magistrado/202614/",
+      "alcance": "Tercera corroboración del reparto del expediente en la Corte Constitucional.",
+      "nivel_fuente": "fuente_secundaria"
+    },
     {
       "titulo": "OCHA — Adenda al Plan de Respuesta Humanitaria por el terremoto (documento oficial, publicado el 19 de agosto)",
       "url": "https://reliefweb.int/report/colombia/colombia-adenda-al-plan-de-respuesta-humanitaria-terremoto-agosto-2026",
@@ -129,6 +171,6 @@
       "nivel_fuente": "fuente_oficial"
     }
   ],
-  "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012. El 19 de agosto de 2026 el presidente Abelardo de la Espriella firmó además el Decreto 1261 de 2026, que declara el estado de emergencia económica, social y ecológica por 30 días en 15 departamentos (Antioquia, Caldas, Cauca, Chocó, Quindío, Cundinamarca, Risaralda, Huila, Valle del Cauca, Tolima, Putumayo, Norte de Santander, Bolívar, Nariño y Sucre) para agilizar recursos, contratación y crédito público destinados a la reconstrucción; el texto oficial del decreto no se localizó en un dominio .gov.co y esta descripción se apoya en tres medios nacionales que coinciden en su alcance.",
-  "nota": "El 19 de agosto circularon dos balances distintos el mismo día: el corte técnico de la UNGRD a las 6:30 a. m. (312 fallecidos, 4.380 heridos, 290 desaparecidos, 358 rescatados, 294.503 personas y 143.533 familias afectadas, 470 municipios) y el balance que el presidente Abelardo de la Espriella dio esa tarde desde el PMU (314 fallecidos, 4.437 heridos, 262 desaparecidos, 262.154 personas y 147.464 familias afectadas, 471 municipios), retomado luego por el Decreto 1261 de 2026. Publicamos aquí el balance presidencial para fallecidos, heridos, desaparecidos y afectados —por ser el más reciente y el que quedó recogido en un acto de gobierno formal— y el corte técnico de la UNGRD para rescatados, vivienda y vías, porque no se publicó una actualización de esas cifras en el balance de la tarde. Sobre los desaparecidos: la cifra baja de 426 (corte del 18 de agosto) a 262, coincidiendo con que Medicina Legal identificó 314 cuerpos y entregó 309 a sus familias entre el 18 y el 19 de agosto; es razonable que la identificación de fallecidos reduzca la lista de desaparecidos, pero no hay un comunicado oficial que lo explique paso a paso, así que esta lectura queda como hipótesis, no como hecho confirmado. Sobre las viviendas: la prensa citó para el balance presidencial cifras de viviendas destruidas y averiadas que no coinciden entre un medio y otro (por ejemplo, entre 26.945 y 30.803 viviendas destruidas según el artículo), por lo que preferimos mantener la cifra del corte técnico de la UNGRD, internamente consistente en dos fuentes. El evento más relevante del día es el Decreto 1261 de 2026: formaliza jurídicamente el paso de la emergencia a una fase de reconstrucción con facultades extraordinarias de gasto por 30 días. El 20 de agosto apareció además un documento primario nuevo y descargable: la Adenda al Plan de Respuesta Humanitaria que OCHA publicó el 19 de agosto. Sus cifras tienen corte del 18 de agosto, un día antes que las que encabezan este balance, así que no las reemplazan: se publican al lado. Donde difieren, la diferencia es la que hay que mirar. OCHA cuenta 292.043 personas afectadas frente a las 262.154 del balance presidencial y 123.789 familias frente a 147.464 —dos consolidaciones distintas del mismo universo—, y reporta 4.548 heridos, más que los 4.437 del corte presidencial del día siguiente, porque la lista de atenciones en salud se sigue depurando hacia arriba mientras la de fallecidos y desaparecidos se depura hacia abajo. La Adenda aporta también un dato que ningún corte nacional traía: 86 sistemas de abastecimiento de agua dañados. Al 20 de agosto no se localizó un Reporte Situacional nuevo de la UNGRD, ni un Flash Update posterior al 007 del 17 de agosto, ni el texto del Decreto 1261 publicado en un dominio .gov.co: se probó directamente el repositorio normativo de la Presidencia y la ruta del decreto no existe todavía."
+  "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012. El 19 de agosto de 2026 el presidente Abelardo de la Espriella firmó además el Decreto 1261 de 2026, que declara el estado de emergencia económica, social y ecológica por 30 días en 15 departamentos (Antioquia, Caldas, Cauca, Chocó, Quindío, Cundinamarca, Risaralda, Huila, Valle del Cauca, Tolima, Putumayo, Norte de Santander, Bolívar, Nariño y Sucre) para agilizar recursos, contratación y crédito público destinados a la reconstrucción; el texto oficial del decreto no se localizó en un dominio .gov.co y esta descripción se apoya en tres medios nacionales que coinciden en su alcance. El 21 de agosto el decreto entró a control automático de constitucionalidad ante la Corte Constitucional —trámite obligatorio para todo decreto de estado de excepción, según la Ley 137 de 1994— y el expediente fue repartido por sorteo al magistrado Juan Carlos Cortés González como ponente, según El Espectador, Infobae y Semana.",
+  "nota": "El 20 de agosto la UNGRD publicó un nuevo corte técnico a las 6:30 a. m.: 319 fallecidos, 4.506 heridos (El Heraldo cita 4.469 el mismo día, sin que la diferencia entre despachos esté explicada), 260 desaparecidos, 364 rescatados, 282.709 personas y 153.336 familias afectadas, 194.953 viviendas (31.461 destruidas y 163.492 averiadas), 302 edificaciones colapsadas, en 476 municipios de 15 departamentos. Es el primer corte técnico completo desde el del 19 de agosto (312 fallecidos) y sustituye, para todas las cifras de esta tabla, tanto ese corte técnico como el balance presidencial de la tarde del 19 de agosto (314 fallecidos, 4.437 heridos, 262 desaparecidos), que se conservan como antecedente en el historial de este documento. Sobre los desaparecidos: la cifra sigue bajando de forma gradual (426 el 18 de agosto, 262 el 19, 260 el 20) a medida que Medicina Legal identifica cuerpos, sin que exista todavía un comunicado oficial que explique el ajuste paso a paso. El 19 de agosto apareció además un documento primario descargable: la Adenda al Plan de Respuesta Humanitaria que OCHA publicó ese día, con corte del 18 de agosto —un día antes que el balance presidencial de esa misma tarde y dos antes que el corte técnico que ahora encabeza esta tabla—, por lo que sus cifras (292.043 personas y 123.789 familias afectadas, 304 fallecidos, 4.548 heridos, 86 sistemas de agua dañados) se publican al lado, no en reemplazo. El otro hecho relevante de este corte es institucional, no numérico: el Decreto 1261 de 2026 entró el 21 de agosto a revisión de constitucionalidad en la Corte Constitucional, con el magistrado Juan Carlos Cortés González como ponente por sorteo. Es un trámite de control automático —no una demanda ciudadana— y su resultado puede tardar semanas; se seguirá el expediente en cortes futuros. Al 21 de agosto no se localizó un Reporte Situacional propio de la UNGRD en su portal, ni un Flash Update de OCHA posterior al 007 del 17 de agosto, ni el texto del Decreto 1261 publicado en un dominio .gov.co: se probó directamente el repositorio normativo de la Presidencia y la ruta del decreto no existe todavía. Tampoco se hallaron cambios verificables en los canales de donación (ni «Colombia, un solo corazón» ni la Fundación Bancolombia publicaron cuentas en un dominio oficial nuevo) ni bulos nuevos fechados en las últimas 48 horas."
 }
