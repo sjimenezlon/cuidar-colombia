@@ -10,92 +10,92 @@
     {
       "clave": "muertos",
       "etiqueta": "Personas fallecidas",
-      "valor": "321",
-      "fuente_titulo": "Corte técnico de la UNGRD, 21 de agosto, 6:30 a. m. (vía La República, El Heraldo, Semana y NTN24)",
-      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/cuantas-personas-murieron-en-el-terremoto-de-colombia-4463688"
+      "valor": "329",
+      "fuente_titulo": "Corte técnico de la UNGRD, 22 de agosto, 6:30 p. m. (vía El Colombiano, Infobae, La Tercera, El Financiero y MercoPress)",
+      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-cifra-muertos-heridos-desaparecidos-colombia-JM40195158"
     },
     {
       "clave": "heridos",
       "etiqueta": "Personas heridas",
-      "valor": "4.595",
-      "fuente_titulo": "Corte técnico de la UNGRD, 21 de agosto, 6:30 a. m. (vía La República, El Heraldo y NTN24)",
-      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/cuantas-personas-murieron-en-el-terremoto-de-colombia-4463688"
+      "valor": "4.600",
+      "fuente_titulo": "Corte técnico de la UNGRD, 22 de agosto, 6:30 p. m. (vía El Colombiano, Infobae y El Financiero)",
+      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-cifra-muertos-heridos-desaparecidos-colombia-JM40195158"
     },
     {
       "clave": "desaparecidos",
       "etiqueta": "Personas desaparecidas",
-      "valor": "257",
-      "fuente_titulo": "Corte técnico de la UNGRD, 21 de agosto, 6:30 a. m. (vía El Colombiano y El Tiempo); baja levemente desde los 260 del corte del 20 de agosto. La Silla Vacía publicó el mismo día 275 desaparecidos citando a la UNGRD, cifra que no coincide con la del resto de medios consultados",
-      "fuente_url": "https://www.elcolombiano.com/colombia/nuevo-balance-terremoto-cifra-fallecidos-desaparecidos-colombia-CA40156307"
+      "valor": "247",
+      "fuente_titulo": "Corte técnico de la UNGRD, 22 de agosto, 6:30 p. m. (vía Infobae, La Tercera, El Financiero y El Diario); baja desde los 257 del corte del 21 de agosto. Radio Santa Fe publicó el mismo día 234 desaparecidos citando a la UNGRD, cifra que no coincide con la del resto de medios consultados",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/08/22/al-menos-329-personas-han-fallecido-en-el-terremoto-de-colombia-y-247-siguen-desaparecidas/"
     },
     {
       "clave": "rescatados",
       "etiqueta": "Personas rescatadas con vida",
       "valor": "364",
-      "fuente_titulo": "Corte técnico de la UNGRD, 21 de agosto, 6:30 a. m. (vía La República); se mantiene igual que en el corte del 20 de agosto",
-      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/cuantas-personas-murieron-en-el-terremoto-de-colombia-4463688"
+      "fuente_titulo": "Corte técnico de la UNGRD, 22 de agosto, 6:30 p. m. (vía El Colombiano e Infobae); se mantiene igual desde el corte del 20 de agosto",
+      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-cifra-muertos-heridos-desaparecidos-colombia-JM40195158"
     },
     {
       "clave": "afectados",
       "etiqueta": "Personas afectadas",
-      "valor": "284.185 (146.188 familias)",
-      "fuente_titulo": "Corte técnico de la UNGRD, 21 de agosto, 6:30 a. m. (vía La República y El Heraldo); las familias afectadas bajan desde las 153.336 del corte del 20 de agosto sin que exista un comunicado que explique el ajuste",
-      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/cuantas-personas-murieron-en-el-terremoto-de-colombia-4463688"
+      "valor": "314.751 (154.014 familias)",
+      "fuente_titulo": "Corte técnico de la UNGRD, 22 de agosto, 6:30 p. m. (vía valoraanalitik y La Tercera); Radio Santa Fe y El Tiempo publicaron el mismo día 317.130 personas y 154.789 familias, cifra que no coincide con la del resto de medios consultados",
+      "fuente_url": "https://www.valoraanalitik.com/terremoto-en-colombia-balance-de-departamentos-y-ciudades-mas-afectadas/"
     },
     {
       "clave": "viviendas",
       "etiqueta": "Viviendas afectadas",
-      "valor": "195.329 (31.445 destruidas y 163.884 averiadas)",
-      "fuente_titulo": "Corte técnico de la UNGRD, 21 de agosto, 6:30 a. m. (vía La República, El Heraldo y NTN24); suma además 467 edificaciones colapsadas",
-      "fuente_url": "https://www.larepublica.co/especiales/catastrofe-nacional/cuantas-personas-murieron-en-el-terremoto-de-colombia-4463688"
+      "valor": "202.456 (31.183 destruidas y 171.273 averiadas)",
+      "fuente_titulo": "Corte técnico de la UNGRD, 22 de agosto, 6:30 p. m. (vía valoraanalitik y El Colombiano); suma además 553 edificaciones colapsadas y 5.755 dañadas",
+      "fuente_url": "https://www.valoraanalitik.com/terremoto-en-colombia-balance-de-departamentos-y-ciudades-mas-afectadas/"
     },
     {
       "clave": "vias",
       "etiqueta": "Vías afectadas",
-      "valor": "435",
-      "fuente_titulo": "Corte técnico de la UNGRD, 21 de agosto, 6:30 a. m. (vía El Tiempo y El Universal México); el mismo corte reporta 111 acueductos, 69 puentes vehiculares, 14 peatonales, 5 aeropuertos, 351 centros de salud, 3.579 centros educativos y 4.611 centros comunitarios afectados",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-viernes-21-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3579889"
+      "valor": "427",
+      "fuente_titulo": "Corte técnico de la UNGRD, 22 de agosto, 6:30 p. m.; distintos medios reprodujeron cifras cercanas (entre 423 y 428) para la misma rueda de prensa. El mismo corte reporta 367 centros de salud, 3.710 centros educativos y 5.584 centros comunitarios afectados",
+      "fuente_url": "https://www.eldiario.com.co/noticias/colombia/terremoto-en-colombia-cifra-de-muertos-sube-a-329-y-247-personas-siguen-desaparecidas/"
     }
   ],
-  "fecha_corte": "21 de agosto de 2026, 6:30 a. m.: corte técnico de la UNGRD, sobre 476 municipios de 15 departamentos",
-  "fecha_corte_iso": "2026-08-21T06:30:00-05:00",
+  "fecha_corte": "22 de agosto de 2026, 6:30 p. m.: corte técnico de la UNGRD, sobre 481 municipios de 16 departamentos",
+  "fecha_corte_iso": "2026-08-22T18:30:00-05:00",
   "nivel_evidencia": "corroboracion_multiple",
   "fuente_primaria_disponible": true,
   "fuentes_adicionales": [
     {
-      "titulo": "La República — corte técnico de la UNGRD, 21 de agosto, 6:30 a. m.",
-      "url": "https://www.larepublica.co/especiales/catastrofe-nacional/cuantas-personas-murieron-en-el-terremoto-de-colombia-4463688",
-      "alcance": "Publica el corte técnico completo: 321 fallecidos, 4.595 heridos, 257 desaparecidos, 364 rescatados, 284.185 personas y 146.188 familias afectadas, 163.884 viviendas averiadas y 31.445 destruidas, 467 edificaciones colapsadas, 435 vías, 111 acueductos, 69 puentes vehiculares, 14 peatonales, 5 aeropuertos, 351 centros de salud, 3.579 centros educativos y 4.611 centros comunitarios, en 476 municipios de 15 departamentos.",
+      "titulo": "El Colombiano — sube a 329 la cifra de muertos y 4.600 heridos por el terremoto, 22 de agosto",
+      "url": "https://www.elcolombiano.com/colombia/terremoto-cifra-muertos-heridos-desaparecidos-colombia-JM40195158",
+      "alcance": "Publica el corte técnico completo: 329 fallecidos, 4.600 heridos, 247 desaparecidos, 364 rescatados, 314.751 personas y 154.014 familias afectadas, 171.273 viviendas averiadas y 31.183 destruidas, 553 edificaciones colapsadas, 5.755 dañadas, 367 centros de salud, 3.710 centros educativos y 5.584 centros comunitarios, en 481 municipios de 16 departamentos.",
       "nivel_fuente": "fuente_secundaria"
     },
     {
-      "titulo": "El Heraldo — la UNGRD eleva a 321 los fallecidos y a 4.595 los heridos, 21 de agosto",
-      "url": "https://www.elheraldo.co/colombia/2026/08/21/la-ungrd-eleva-a-321-las-personas-fallecidos-y-a-4595-las-heridas-por-terremoto-de-magnitud-74/",
-      "alcance": "Segunda corroboración del corte técnico del 21 de agosto.",
+      "titulo": "Infobae (agencia) — al menos 329 fallecidos y 247 desaparecidos, 22 de agosto",
+      "url": "https://www.infobae.com/america/agencias/2026/08/22/al-menos-329-personas-han-fallecido-en-el-terremoto-de-colombia-y-247-siguen-desaparecidas/",
+      "alcance": "Segunda corroboración del corte técnico del 22 de agosto.",
       "nivel_fuente": "fuente_secundaria"
     },
     {
-      "titulo": "Semana — sube a 321 la cifra de muertos por el sismo, según datos de la UNGRD, 21 de agosto",
-      "url": "https://www.semana.com/nacion/articulo/terremoto-en-colombia-sube-a-321-la-cifra-de-muertos-por-el-sismo-segun-datos-de-la-ungrd/202633/",
-      "alcance": "Tercera corroboración del corte técnico del 21 de agosto.",
+      "titulo": "La Tercera — Colombia eleva a 329 los muertos y reporta 247 desaparecidos, 22 de agosto",
+      "url": "https://www.latercera.com/mundo/noticia/colombia-eleva-a-329-los-muertos-por-terremoto-y-reporta-247-desaparecidos/",
+      "alcance": "Tercera corroboración del corte técnico del 22 de agosto.",
       "nivel_fuente": "fuente_secundaria"
     },
     {
-      "titulo": "NTN24 — nuevo balance de la UNGRD: 321 fallecidos y 4.595 heridos, 21 de agosto",
-      "url": "https://www.ntn24.com/noticias-actualidad/nuevo-balance-de-la-ungrd-tras-el-terremoto-en-colombia-321-personas-fallecidas-y-4-595-personas-heridas-643620",
-      "alcance": "Cuarta corroboración del corte técnico del 21 de agosto.",
+      "titulo": "El Financiero (México) — 329 muertos y 247 desaparecidos, 22 de agosto",
+      "url": "https://www.elfinanciero.com.mx/mundo/2026/08/22/la-tragedia-no-termina-en-colombia-329-personas-han-muerto-tras-el-terremoto-y-247-siguen-desaparecidas/",
+      "alcance": "Cuarta corroboración del corte técnico del 22 de agosto.",
       "nivel_fuente": "fuente_secundaria"
     },
     {
-      "titulo": "La Silla Vacía — «Terremoto deja 321 muertos y 275 desaparecidos, reporta la Ungrd», 21 de agosto",
-      "url": "https://www.lasillavacia.com/en-vivo/terremoto-deja-321-muertos-y-275-desaparecidos-reporta-la-ungrd/",
-      "alcance": "Corrobora los 321 fallecidos, pero cita 275 desaparecidos: se deja registrada la discrepancia frente a los 257 reportados por el resto de medios consultados para el mismo corte.",
+      "titulo": "Radio Santa Fe — «UNGRD actualiza cifras del terremoto: 329 fallecidos, 234 desaparecidos y 154.789 familias damnificadas», 22 de agosto",
+      "url": "https://www.radiosantafe.com/2026/08/22/ungrd-actualiza-cifras-del-terremoto-329-fallecidos-234-desaparecidos-y-154-789-familias-damnificadas/",
+      "alcance": "Corrobora los 329 fallecidos, pero cita 234 desaparecidos y 154.789 familias (317.130 personas): se deja registrada la discrepancia frente a los 247 desaparecidos y las 154.014 familias reportadas por el resto de medios consultados para el mismo corte.",
       "nivel_fuente": "fuente_secundaria"
     },
     {
-      "titulo": "Semana — último balance de la UNGRD, 319 muertos, 20 de agosto",
-      "url": "https://www.semana.com/nacion/articulo/ultimo-balance-de-la-ungrd-sube-a-319-la-cifra-de-muertos-por-el-terremoto-de-74-en-colombia/202613/",
-      "alcance": "Cuarta corroboración del corte técnico del 20 de agosto.",
+      "titulo": "El Colombiano — sube a 321 la cifra de muertos, 21 de agosto",
+      "url": "https://www.elcolombiano.com/colombia/nuevo-balance-terremoto-cifra-fallecidos-desaparecidos-colombia-CA40156307",
+      "alcance": "Corte técnico anterior del 21 de agosto, conservado como antecedente.",
       "nivel_fuente": "fuente_secundaria"
     },
     {
@@ -181,8 +181,20 @@
       "url": "https://colombia.un.org/es/320793-informaci%C3%B3n-y-actualizaciones-sobre-el-terremoto-en-colombia",
       "alcance": "Repositorio institucional que reúne los Flash Updates de OCHA y los informes de situación de la OPS/OMS, con su número y fecha. Sirve para comprobar si existe un Flash Update más reciente que el del 17 de agosto.",
       "nivel_fuente": "fuente_oficial"
+    },
+    {
+      "titulo": "Infobae — bancos reducen la tasa de crédito de vivienda para damnificados, 22 de agosto",
+      "url": "https://www.infobae.com/colombia/2026/08/22/abelardo-de-la-espriella-celebro-reduccion-de-tasas-de-interes-para-vivienda-en-zonas-afectadas-y-pidio-extender-la-medida-a-todo-el-sector/",
+      "alcance": "Confirma que el presidente Abelardo de la Espriella acordó con Grupo Aval, Banco GNB Sudameris y Grupo Bolívar fijar una tasa de interés del 8 % efectivo anual para créditos de vivienda de damnificados, tras la reducción ya anunciada por Bancolombia el 20 de agosto.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "El Tiempo — presidente concretó con banqueros reducción de tasas de vivienda, 22 de agosto",
+      "url": "https://www.eltiempo.com/politica/gobierno/presidente-abelardo-de-la-espriella-concreto-con-banqueros-reduccion-de-tasas-de-vivienda-para-damnificados-por-el-terremoto-3580341",
+      "alcance": "Segunda corroboración del acuerdo de tasas de vivienda al 8 % efectivo anual, vigente para desembolsos desde el 25 de agosto y dirigido a cerca de 7.000 familias en Chocó, Risaralda, Caldas, Quindío, Valle del Cauca, suroeste de Antioquia, Cauca y Tolima.",
+      "nivel_fuente": "fuente_secundaria"
     }
   ],
-  "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012. El 19 de agosto de 2026 el presidente Abelardo de la Espriella firmó además el Decreto 1261 de 2026, que declara el estado de emergencia económica, social y ecológica por 30 días en 15 departamentos (Antioquia, Caldas, Cauca, Chocó, Quindío, Cundinamarca, Risaralda, Huila, Valle del Cauca, Tolima, Putumayo, Norte de Santander, Bolívar, Nariño y Sucre) para agilizar recursos, contratación y crédito público destinados a la reconstrucción; el texto oficial del decreto no se localizó en un dominio .gov.co y esta descripción se apoya en tres medios nacionales que coinciden en su alcance. El 21 de agosto el decreto entró a control automático de constitucionalidad ante la Corte Constitucional —trámite obligatorio para todo decreto de estado de excepción, según la Ley 137 de 1994— y el expediente fue repartido por sorteo al magistrado Juan Carlos Cortés González como ponente, según El Espectador, Infobae y Semana.",
-  "nota": "El 21 de agosto la UNGRD publicó un nuevo corte técnico a las 6:30 a. m.: 321 fallecidos, 4.595 heridos, 257 desaparecidos (La Silla Vacía citó 275 el mismo día, cifra que no coincide con el resto de medios consultados), 364 rescatados, 284.185 personas y 146.188 familias afectadas, 195.329 viviendas (31.445 destruidas y 163.884 averiadas), 467 edificaciones colapsadas, en 476 municipios de 15 departamentos. Sustituye, para todas las cifras de esta tabla, al corte técnico del 20 de agosto (319 fallecidos, 4.506 heridos, 260 desaparecidos, 282.709 personas y 153.336 familias afectadas), que se conserva como antecedente en el historial de este documento. Sobre los desaparecidos, la cifra sigue bajando de forma gradual (262 el 19 de agosto, 260 el 20, 257 el 21) a medida que Medicina Legal identifica cuerpos, sin que exista todavía un comunicado oficial que explique el ajuste paso a paso; sobre las familias afectadas, en cambio, la baja de 153.336 a 146.188 entre el 20 y el 21 de agosto no tiene explicación publicada. El 19 de agosto apareció además un documento primario descargable: la Adenda al Plan de Respuesta Humanitaria que OCHA publicó ese día, con corte del 18 de agosto, por lo que sus cifras (292.043 personas y 123.789 familias afectadas, 304 fallecidos, 4.548 heridos, 86 sistemas de agua dañados) se publican al lado, no en reemplazo. El Decreto 1261 de 2026 sigue en revisión de constitucionalidad ante la Corte Constitucional, con el magistrado Juan Carlos Cortés González como ponente por sorteo desde el 21 de agosto; es un trámite de control automático —no una demanda ciudadana— y su resultado puede tardar semanas, así que se seguirá el expediente en cortes futuros. Al 22 de agosto no se localizó un Reporte Situacional propio de la UNGRD en su portal, ni un Flash Update de OCHA posterior al 007 del 17 de agosto, ni el texto del Decreto 1261 publicado en un dominio .gov.co. Tampoco se hallaron cambios verificables en los canales de donación (ni «Colombia, un solo corazón» ni la Fundación Bancolombia publicaron cuentas en un dominio oficial nuevo), en los acopios de Bogotá (el Palacio de los Deportes sigue siendo el único punto activo) ni bulos nuevos fechados en las últimas 48 horas, así que esos bloques se conservan sin cambios respecto al corte anterior. En la madrugada del 21 de agosto el SGC registró cuatro sismos menores en Chocó y Antioquia (magnitudes entre 2,8 y 3,3, en Dabeiba e Istmina) sin afectados ni daños reportados."
+  "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012. El 19 de agosto de 2026 el presidente Abelardo de la Espriella firmó además el Decreto 1261 de 2026, que declara el estado de emergencia económica, social y ecológica por 30 días en 15 departamentos (Antioquia, Caldas, Cauca, Chocó, Quindío, Cundinamarca, Risaralda, Huila, Valle del Cauca, Tolima, Putumayo, Norte de Santander, Bolívar, Nariño y Sucre) para agilizar recursos, contratación y crédito público destinados a la reconstrucción; el texto oficial del decreto no se localizó en un dominio .gov.co y esta descripción se apoya en tres medios nacionales que coinciden en su alcance. El 21 de agosto el decreto entró a control automático de constitucionalidad ante la Corte Constitucional —trámite obligatorio para todo decreto de estado de excepción, según la Ley 137 de 1994— y el expediente fue repartido por sorteo al magistrado Juan Carlos Cortés González como ponente, según El Espectador, Infobae y Semana; al 22 de agosto no se hallaron novedades públicas adicionales sobre ese trámite.",
+  "nota": "El 22 de agosto la UNGRD entregó un nuevo corte técnico a las 6:30 p. m.: 329 fallecidos, 4.600 heridos, 247 desaparecidos (Radio Santa Fe citó 234 el mismo día, cifra que no coincide con el resto de medios consultados), 364 rescatados, 314.751 personas y 154.014 familias afectadas (Radio Santa Fe citó 317.130 personas y 154.789 familias, discrepancia igualmente registrada), 202.456 viviendas (31.183 destruidas y 171.273 averiadas), 553 edificaciones colapsadas, en 481 municipios de 16 departamentos —sube uno frente a los 15 departamentos del corte del 21 de agosto—. Sustituye, para todas las cifras de esta tabla, al corte técnico del 21 de agosto (321 fallecidos, 4.595 heridos, 257 desaparecidos, 284.185 personas y 146.188 familias afectadas), que se conserva como antecedente en el historial de este documento. La cifra de vías afectadas (427) también varió levemente entre medios (423 a 428) al reproducir la misma rueda de prensa; no hay un documento descargable que zanje la diferencia. El 22 de agosto el presidente Abelardo de la Espriella acordó con Grupo Aval, Banco GNB Sudameris y Grupo Bolívar fijar una tasa fija del 8 % efectivo anual para créditos de vivienda de damnificados —tras la reducción ya anunciada por Bancolombia el 20 de agosto—, vigente para desembolsos desde el 25 de agosto y dirigida a cerca de 7.000 familias en Chocó, Risaralda, Caldas, Quindío, Valle del Cauca, suroeste de Antioquia, Cauca y Tolima; ver el detalle en el capítulo de zonas y respuesta. El Decreto 1261 de 2026 sigue en revisión de constitucionalidad ante la Corte Constitucional, con el magistrado Juan Carlos Cortés González como ponente por sorteo desde el 21 de agosto, sin novedades públicas adicionales sobre el trámite al 22 de agosto. Al 22 de agosto no se localizó un Reporte Situacional propio de la UNGRD en su portal, ni un Flash Update de OCHA posterior al 007 del 17 de agosto, ni el texto del Decreto 1261 publicado en un dominio .gov.co. Tampoco se hallaron cambios verificables en los canales de donación (ni «Colombia, un solo corazón» ni la Fundación Bancolombia publicaron cuentas en un dominio oficial nuevo), en los acopios de Bogotá (el Palacio de los Deportes sigue siendo el único punto activo, confirmado en bogota.gov.co) ni bulos nuevos fechados en las últimas 48 horas, así que esos bloques se conservan sin cambios respecto al corte anterior. En la madrugada del 22 de agosto el SGC registró nuevas réplicas menores en Chocó y Antioquia (magnitudes entre 2,4 y 3,0, en Istmina, Sipí y Frontino) sin afectados ni daños reportados."
 }

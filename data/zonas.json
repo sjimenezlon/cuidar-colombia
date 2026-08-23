@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "22 ago 2026",
-  "fecha_revision_iso": "2026-08-22T07:00:00-05:00",
+  "fecha_revision": "23 ago 2026",
+  "fecha_revision_iso": "2026-08-23T07:00:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -567,6 +567,18 @@
     {
       "texto": "En la madrugada del 21 de agosto el SGC registró cuatro sismos menores adicionales en el occidente del país: 3,0 en Dabeiba (Antioquia, 3:13 a. m.) y tres en Istmina (Chocó, entre 2,8 y 3,3, a las 3:28, 3:37 y 5:46 a. m.); hasta el momento no se han reportado personas afectadas ni daños materiales por estos movimientos.",
       "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/tres-nuevos-temblores-consecutivos-en-choco-y-antioquia-en-la-madrugada-de-este-21-de-agosto-conozca-la-magnitud-la-profundidad-y-mas-detalles-3579899"
+    },
+    {
+      "texto": "La UNGRD actualizó el 22 de agosto (6:30 p. m.) el balance nacional a 329 fallecidos, 4.600 heridos, 247 desaparecidos y 364 rescatados, con 314.751 personas y 154.014 familias afectadas en 481 municipios de 16 departamentos; ver el balance completo en el capítulo de cifras.",
+      "fuente_url": "https://www.elcolombiano.com/colombia/terremoto-cifra-muertos-heridos-desaparecidos-colombia-JM40195158"
+    },
+    {
+      "texto": "En la madrugada del 22 de agosto el SGC registró nuevas réplicas menores en el occidente del país: 3,0 en Istmina (Chocó, 5:32 a. m.), 2,8 en Sipí (Chocó, 6:03 a. m.) y 2,4 en Frontino (Antioquia, 12:52 p. m.); hasta el momento no se han reportado personas afectadas ni daños materiales por estos movimientos.",
+      "fuente_url": "https://www.eltiempo.com/amp/colombia/otras-ciudades/continua-temblando-en-choco-sismo-de-magnitud-3-0-sacudio-a-istmina-en-la-madrugada-de-este-sabado-22-de-agosto-3580225"
+    },
+    {
+      "texto": "El presidente Abelardo de la Espriella acordó el 22 de agosto con Grupo Aval, Banco GNB Sudameris y Grupo Bolívar fijar una tasa fija del 8 % efectivo anual para créditos de vivienda de los damnificados durante toda la vida del préstamo —tras la reducción ya anunciada por Bancolombia el 20 de agosto—; la medida rige para desembolsos desde el 25 de agosto y beneficiaría a cerca de 7.000 familias en Chocó, Risaralda, Caldas, Quindío, Valle del Cauca, suroeste de Antioquia, Cauca y Tolima.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/22/abelardo-de-la-espriella-celebro-reduccion-de-tasas-de-interes-para-vivienda-en-zonas-afectadas-y-pidio-extender-la-medida-a-todo-el-sector/"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "revision": "20 ago 2026",
-  "revision_iso": "2026-08-20T09:42:00-05:00",
+  "revision": "23 ago 2026",
+  "revision_iso": "2026-08-23T07:00:00-05:00",
   "nota": "Cada fuente dice para qué se usa, de qué tipo es y cuándo se consultó por última vez. Todos estos enlaces se revisaron el 18 de agosto de 2026 y respondieron. Un dato que solo aparece en una fuente secundaria se publica marcado como tal: cuentas, llaves y datos de contacto solo se transcriben desde un dominio oficial.",
   "grupos": [
     {
@@ -48,8 +48,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "Magnitud, profundidad, epicentro y conteo de réplicas.",
       "descripcion": "La única autoridad sísmica del país: sismos localizados, réplicas y reporte de sismo sentido.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "SGC — boletín del sismo del 10 de agosto",
@@ -59,8 +59,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "Los datos base del evento: 7,4 de magnitud, 103 km de profundidad y epicentro en San José del Palmar.",
       "descripcion": "Boletín en el que el SGC afirma que es el evento sísmico de mayor magnitud registrado en Colombia en el siglo XXI.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "SGC — la alerta del volcán Puracé pasó a Naranja",
@@ -102,9 +102,9 @@
       "tipo": "Autoridad nacional",
       "nivel": "fuente_oficial",
       "que_verifica": "Balance nacional consolidado, declaratorias y ayudas legítimas del Gobierno.",
-      "descripcion": "Unidad Nacional para la Gestión del Riesgo de Desastres: coordina la respuesta y consolida el registro de afectación. Al 20 de agosto sigue sin publicar un reporte situacional descargable de esta emergencia: su balance se conoce por rueda de prensa y por el Puesto de Mando Unificado, no por documento.",
-      "ultima_consulta": "20 ago 2026",
-      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
+      "descripcion": "Unidad Nacional para la Gestión del Riesgo de Desastres: coordina la respuesta y consolida el registro de afectación. Al 23 de agosto sigue sin publicar un reporte situacional descargable de esta emergencia: su balance se conoce por rueda de prensa y por el Puesto de Mando Unificado, no por documento.",
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "OCHA — Flash Update 007 (PDF, corte del 17 de agosto)",
@@ -114,8 +114,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "Fallecidos, desaparecidos, afectación por departamento, necesidades y vacíos de información, con hora de corte.",
       "descripcion": "El documento primario descargable que hoy respalda el balance: producido por OCHA Colombia con insumos de los socios humanitarios y de los reportes oficiales.",
-      "ultima_consulta": "20 ago 2026",
-      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "Naciones Unidas en Colombia — actualizaciones del terremoto",
@@ -125,8 +125,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "Si existe un corte más reciente que el publicado aquí.",
       "descripcion": "Repositorio oficial de todos los Flash Updates de OCHA y de los informes de situación de la OPS/OMS, con número y fecha.",
-      "ultima_consulta": "20 ago 2026",
-      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "ReliefWeb — emergencia «Colombia: Earthquake, Aug 2026»",
@@ -136,8 +136,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "El expediente completo de la emergencia: informes de todas las organizaciones humanitarias, ordenados por fecha.",
       "descripcion": "Plataforma de OCHA que agrupa los reportes de la ONU y de las ONG internacionales sobre este terremoto.",
-      "ultima_consulta": "20 ago 2026",
-      "ultima_consulta_iso": "2026-08-20T09:42:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "OPS/OMS — informes de situación en salud",
@@ -213,8 +213,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "Aeropuertos abiertos, cerrados o con restricciones y autorizaciones de reapertura.",
       "descripcion": "Autoridad aeronáutica: define si un aeropuerto opera con normalidad, como aeródromo no controlado o solo para vuelos humanitarios.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "Alcaldía de Bogotá",
@@ -224,8 +224,8 @@
       "nivel": "fuente_oficial",
       "que_verifica": "Puntos de acopio oficiales de la ciudad, con dirección y horario.",
       "descripcion": "Publica la operación distrital de acopio y envío de ayudas.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "Gobernación del Valle del Cauca",
@@ -290,8 +290,8 @@
       "nivel": "fuente_secundaria",
       "que_verifica": "Imágenes hechas con IA, videos reciclados y cifras infladas que circulan por el terremoto.",
       "descripcion": "Verificador colombiano; sus chequeos sostienen varias de las fichas de «Antes de reenviar, verifica».",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "La Silla Vacía — Detector de Mentiras",
@@ -301,8 +301,8 @@
       "nivel": "fuente_secundaria",
       "que_verifica": "Réplicas «programadas», teorías sobre HAARP o fracking y videos de otros países o años.",
       "descripcion": "Es el verificador más citado en este portal: doce de las cadenas desmentidas aquí se apoyan en sus chequeos.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "Maldita.es",
@@ -312,8 +312,8 @@
       "nivel": "fuente_secundaria",
       "que_verifica": "Virales internacionales sobre el terremoto y contenidos generados con inteligencia artificial.",
       "descripcion": "Verificador español de la red internacional de fact-checking; aporta el contraste de virales que circulan fuera de Colombia.",
-      "ultima_consulta": "18 ago 2026",
-      "ultima_consulta_iso": "2026-08-18T14:00:00-05:00"
+      "ultima_consulta": "23 ago 2026",
+      "ultima_consulta_iso": "2026-08-23T07:00:00-05:00"
     },
     {
       "nombre": "Chequeado",
