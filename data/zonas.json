@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "23 ago 2026",
-  "fecha_revision_iso": "2026-08-23T07:00:00-05:00",
+  "fecha_revision": "24 ago 2026",
+  "fecha_revision_iso": "2026-08-24T07:00:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -459,8 +459,8 @@
       "fuente_url": "https://www.elpais.com.co/valle/ministerio-de-transporte-confirmo-que-se-habilito-paso-controlado-en-la-via-buga-buenaventura-1203.html"
     },
     {
-      "texto": "INVÍAS reportó 13 puntos de la red vial nacional afectados, concentrados en Quindío, Caldas, Valle del Cauca y Risaralda. El consolidado nacional creció desde entonces: el balance de la UNGRD del 18 de agosto (6:30 a. m.) cuenta 413 vías afectadas, 49 puentes vehiculares, 13 peatonales, 86 acueductos y 5 aeropuertos.",
-      "fuente_url": "https://www.lafm.com.co/actualidad/terremoto-colombia-van-304-muertos-426-desaparecidos-emergencia-rescate-408172"
+      "texto": "INVÍAS reportó 13 puntos de la red vial nacional afectados, concentrados en Quindío, Caldas, Valle del Cauca y Risaralda. El consolidado nacional creció desde entonces: el balance de la UNGRD del 23 de agosto (6:30 p. m.) cuenta 435 vías afectadas, 70 puentes vehiculares, 15 peatonales, 115 acueductos y 5 aeropuertos.",
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-23-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3580375"
     },
     {
       "texto": "Chocó: el corredor Quibdó–Istmina está con tránsito dificultado, la vía Istmina–Condoto agrietada y la vía única a San José del Palmar comprometida.",
@@ -579,6 +579,18 @@
     {
       "texto": "El presidente Abelardo de la Espriella acordó el 22 de agosto con Grupo Aval, Banco GNB Sudameris y Grupo Bolívar fijar una tasa fija del 8 % efectivo anual para créditos de vivienda de los damnificados durante toda la vida del préstamo —tras la reducción ya anunciada por Bancolombia el 20 de agosto—; la medida rige para desembolsos desde el 25 de agosto y beneficiaría a cerca de 7.000 familias en Chocó, Risaralda, Caldas, Quindío, Valle del Cauca, suroeste de Antioquia, Cauca y Tolima.",
       "fuente_url": "https://www.infobae.com/colombia/2026/08/22/abelardo-de-la-espriella-celebro-reduccion-de-tasas-de-interes-para-vivienda-en-zonas-afectadas-y-pidio-extender-la-medida-a-todo-el-sector/"
+    },
+    {
+      "texto": "La UNGRD actualizó el 23 de agosto (6:30 p. m.) el balance nacional a 329 fallecidos, 4.592 heridos, 234 desaparecidos y 364 rescatados, con 324.157 personas y 159.924 familias afectadas en 494 municipios de 16 departamentos; ver el balance completo en el capítulo de cifras.",
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-23-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3580375"
+    },
+    {
+      "texto": "El 23 de agosto el SGC registró varios sismos menores en Istmina (Chocó): entre las 2:00 a. m. y las 7:48 a. m. eventos de magnitud 2,0 a 2,8, y en la noche dos movimientos consecutivos de 3,9 (9:28 p. m.) y 3,7 (9:40 p. m., superficial), ambos con epicentro cerca de Istmina y Sipí como población más próxima; en la mañana se sintió además un sismo de magnitud 3,3 con epicentro en Cundinamarca. Ninguno reportó afectados ni daños materiales.",
+      "fuente_url": "https://www.eltiempo.com/amp/colombia/otras-ciudades/temblor-hoy-en-colombia-reportan-dos-sismos-de-3-9-y-3-7-de-magnitud-la-noche-de-este-23-de-agosto-alertan-sentirlos-en-varias-ciudades-detalles-3580493"
+    },
+    {
+      "texto": "La Gobernación del Chocó reportó, con corte al 23-24 de agosto, la culminación de la primera fase de entrega de ayuda humanitaria de emergencia en todos los municipios afectados del departamento, distribuida por las administraciones municipales y juntas de acción comunal a las familias registradas según su priorización; la gobernadora Nubia Carolina Córdoba señaló que el despliegue enfrentó las limitaciones de acceso fluvial y aéreo de la región, con vías terrestres aún restringidas en varias zonas.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/24/choco-culmino-la-primera-fase-de-entrega-de-ayuda-humanitaria-a-los-damnificados-por-el-terremoto/"
     }
   ]
 }
