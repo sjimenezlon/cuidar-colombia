@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "24 ago 2026",
-  "fecha_revision_iso": "2026-08-24T07:00:00-05:00",
+  "fecha_revision": "25 ago 2026",
+  "fecha_revision_iso": "2026-08-25T07:00:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -127,7 +127,7 @@
       "seguimiento_prioritario": true,
       "lat": 4.813,
       "lon": -75.696,
-      "afectacion": "Los cortes territoriales disponibles no son consistentes entre sí: City TV/El Tiempo citó 93 personas fallecidas y 260 desaparecidas; una publicación posterior de EL PAÍS, del 16 de agosto, atribuyó a la Alcaldía 93 fallecidas y 270 desaparecidas. Ambos conteos locales son anteriores o metodológicamente distintos al consolidado nacional depurado de 143 personas desaparecidas, por lo que aquí se conservan como antecedentes y no como cifra vigente comparable. Portafolio reportó el 16 de agosto, citando a la UNGRD, que el salto del balance nacional (de 117.222 a 185.016 personas afectadas) se debe a incorporar el reporte territorial de Pereira al consolidado del país; no precisa si esto implica adoptar las cifras municipales de fallecidos/desaparecidos citadas arriba. El aeropuerto Matecaña sigue cerrado a vuelos comerciales — solo opera vuelos humanitarios, médicos y de Estado— y prensa regional (La FM, La Patria, Valora Analitik) había proyectado su reapertura comercial hacia el 22 de agosto, sujeta a evaluación técnica y autorización de la Aeronáutica Civil. El Flash Update 007 de OCHA agrupa Risaralda, Caldas y Quindío en 120 personas fallecidas, con la letalidad concentrada en Risaralda, y reporta para Risaralda 11.712 viviendas destruidas y 47.863 averiadas. Pide habilitar un hospital de campaña en Pereira e identificar los alojamientos improvisados de la ciudad, sobre los que reconoce un vacío de información. Son cifras de tres departamentos juntos o del departamento: no un corte municipal de Pereira. El 18 de agosto, El Tiempo reportó que Pereira inició formalmente su proceso de reconstrucción: la Alcaldía calcula 120.000 personas afectadas, 35.263 viviendas dañadas, daños por más de $10 billones de pesos y un plan que tomaría alrededor de cinco años. Sobre el aeropuerto Matecaña, prensa regional (La Patria, Pulzo) precisó el 19 de agosto que la pista y la torre de control no sufrieron daños —el daño se concentra en la terminal de pasajeros—, pero La FM y El Espectador reportaron el 21 de agosto que una nueva mesa técnica aplazó la reapertura prevista para ese fin de semana: no hay fecha definitiva y la eventual reactivación sería una versión de emergencia limitada al primer nivel de la terminal, con los niveles 2 y 3 cerrados por seguridad mientras se completan las adecuaciones.",
+      "afectacion": "Los cortes territoriales disponibles no son consistentes entre sí: City TV/El Tiempo citó 93 personas fallecidas y 260 desaparecidas; una publicación posterior de EL PAÍS, del 16 de agosto, atribuyó a la Alcaldía 93 fallecidas y 270 desaparecidas. Ambos conteos locales son anteriores o metodológicamente distintos al consolidado nacional depurado de 143 personas desaparecidas, por lo que aquí se conservan como antecedentes y no como cifra vigente comparable. Portafolio reportó el 16 de agosto, citando a la UNGRD, que el salto del balance nacional (de 117.222 a 185.016 personas afectadas) se debe a incorporar el reporte territorial de Pereira al consolidado del país; no precisa si esto implica adoptar las cifras municipales de fallecidos/desaparecidos citadas arriba. El aeropuerto Matecaña sigue cerrado a vuelos comerciales — solo opera vuelos humanitarios, médicos y de Estado— y prensa regional (La FM, La Patria, Valora Analitik) había proyectado su reapertura comercial hacia el 22 de agosto, sujeta a evaluación técnica y autorización de la Aeronáutica Civil. El Flash Update 007 de OCHA agrupa Risaralda, Caldas y Quindío en 120 personas fallecidas, con la letalidad concentrada en Risaralda, y reporta para Risaralda 11.712 viviendas destruidas y 47.863 averiadas. Pide habilitar un hospital de campaña en Pereira e identificar los alojamientos improvisados de la ciudad, sobre los que reconoce un vacío de información. Son cifras de tres departamentos juntos o del departamento: no un corte municipal de Pereira. El 18 de agosto, El Tiempo reportó que Pereira inició formalmente su proceso de reconstrucción: la Alcaldía calcula 120.000 personas afectadas, 35.263 viviendas dañadas, daños por más de $10 billones de pesos y un plan que tomaría alrededor de cinco años. Sobre el aeropuerto Matecaña, prensa regional (La Patria, Pulzo) precisó el 19 de agosto que la pista y la torre de control no sufrieron daños —el daño se concentra en la terminal de pasajeros—, pero La FM y El Espectador reportaron el 21 de agosto que una nueva mesa técnica aplazó la reapertura prevista para ese fin de semana: no hay fecha definitiva y la eventual reactivación sería una versión de emergencia limitada al primer nivel de la terminal, con los niveles 2 y 3 cerrados por seguridad mientras se completan las adecuaciones. El 24 de agosto El Espectador, El Tiempo e Infobae reportaron que, tras el aval de la Aeronáutica Civil, el Matecaña reabrirá a vuelos comerciales el miércoles 26 de agosto, con unos 20 vuelos diarios y los niveles 2 y 3 de la terminal aún cerrados; Latam confirmó la reanudación de sus rutas Bogotá–Pereira y Medellín–Pereira, con 21 frecuencias semanales. No se localizó el anuncio en un dominio oficial (aerocivil.gov.co), por lo que la fecha se apoya en la corroboración de tres medios nacionales.",
       "fuentes": [
         {
           "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
@@ -199,6 +199,18 @@
           "url": "https://www.elespectador.com/colombia/mas-regiones/se-aplaza-la-reapertura-de-operaciones-en-el-aeropuerto-matecana-de-pereira/",
           "titulo": "El Espectador — se aplaza la reapertura del Matecaña, sin fecha (21 ago)",
           "alcance": "Corrobora el aplazamiento y detalla que la eventual reactivación sería una operación de emergencia limitada al primer nivel de la terminal.",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.elespectador.com/colombia/mas-regiones/aeropuerto-matecana-de-pereira-volvera-a-operar-desde-el-proximo-26-de-agosto/",
+          "titulo": "El Espectador — el Matecaña volverá a operar desde el 26 de agosto (24 ago)",
+          "alcance": "Confirma el aval de la Aeronáutica Civil para la reapertura comercial del 26 de agosto, con restricciones en los niveles 2 y 3 de la terminal.",
+          "nivel_fuente": "fuente_secundaria"
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/24/latam-anuncio-reanudacion-de-vuelos-a-pereira-desde-bogota-y-medellin-tras-reapertura-del-aeropuerto-internacional-matecana-por-terremoto-de-74/",
+          "titulo": "Infobae — Latam anuncia reanudación de vuelos a Pereira (24 ago)",
+          "alcance": "Segunda corroboración de la reapertura del 26 de agosto y detalle de las 21 frecuencias semanales de Latam entre Bogotá, Medellín y Pereira.",
           "nivel_fuente": "fuente_secundaria"
         }
       ]
@@ -471,6 +483,10 @@
       "fuente_url": "https://www.infobae.com/colombia/2026/08/11/aeronautica-civil-anuncio-la-reapertura-gradual-con-restricciones-de-los-aeropuertos-en-colombia-tras-el-terremoto-de-magnitud-74/"
     },
     {
+      "texto": "Actualización del 24 de agosto: el aeropuerto Matecaña de Pereira anunció su reapertura comercial para el 26 de agosto, con el aval de la Aeronáutica Civil, unos 20 vuelos diarios y los niveles 2 y 3 de la terminal aún cerrados; Latam confirmó la reanudación de sus rutas Bogotá–Pereira y Medellín–Pereira (21 frecuencias semanales).",
+      "fuente_url": "https://www.elespectador.com/colombia/mas-regiones/aeropuerto-matecana-de-pereira-volvera-a-operar-desde-el-proximo-26-de-agosto/"
+    },
+    {
       "texto": "Acceso humanitario al 17 de agosto, según el documento oficial de OCHA: al menos 16 vías y 10 puentes bloqueados dificultan la llegada a zonas rurales dispersas del Chocó, y en el Valle del Cauca el acceso sigue interrumpido en Dagua, Buenaventura y La Unión por cierres totales o parciales.",
       "fuente_url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026"
     }
@@ -591,6 +607,14 @@
     {
       "texto": "La Gobernación del Chocó reportó, con corte al 23-24 de agosto, la culminación de la primera fase de entrega de ayuda humanitaria de emergencia en todos los municipios afectados del departamento, distribuida por las administraciones municipales y juntas de acción comunal a las familias registradas según su priorización; la gobernadora Nubia Carolina Córdoba señaló que el despliegue enfrentó las limitaciones de acceso fluvial y aéreo de la región, con vías terrestres aún restringidas en varias zonas.",
       "fuente_url": "https://www.infobae.com/colombia/2026/08/24/choco-culmino-la-primera-fase-de-entrega-de-ayuda-humanitaria-a-los-damnificados-por-el-terremoto/"
+    },
+    {
+      "texto": "La UNGRD actualizó el 24 de agosto (6:30 p. m.) el balance nacional a 331 fallecidos, 4.439 heridos, 240 desaparecidos y 364 rescatados, con 361.353 personas y 185.226 familias afectadas en 494 municipios de 16 departamentos; ver el balance completo en el capítulo de cifras. El mismo día, en una intervención previa desde el Chocó, el presidente citó las cifras del corte anterior (329 fallecidos, 234 desaparecidos), discrepantes frente a este corte técnico posterior.",
+      "fuente_url": "https://www.vanguardia.com/colombia/2026/08/24/terremoto-en-colombia-ya-deja-331-muertos-y-240-desaparecidos-nuevo-balance-de-la-ungrd/"
+    },
+    {
+      "texto": "El 24 de agosto y la madrugada del 25 el SGC registró una nueva secuencia sísmica en Chocó: 13 movimientos menores en la madrugada del 24, la mayoría con epicentro en Sipí, Medio San Juan e Istmina; un sismo de magnitud 4,1 a la 1:55 p. m. en Istmina (profundidad 43 km); y dos sismos de magnitud 3,1 cerca de Sipí, hacia las 11:00 p. m. del 24 y las 12:49 a. m. del 25 de agosto. Ninguno reportó afectados ni daños materiales.",
+      "fuente_url": "https://www.semana.com/nacion/articulo/se-reporta-fuerte-temblor-en-la-tarde-del-24-de-agosto-sgc-revelo-epicentro-y-magnitud/202620/"
     }
   ]
 }

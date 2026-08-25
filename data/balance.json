@@ -10,58 +10,88 @@
     {
       "clave": "muertos",
       "etiqueta": "Personas fallecidas",
-      "valor": "329",
-      "fuente_titulo": "Corte técnico de la UNGRD, 23 de agosto, 6:30 p. m. (vía El Tiempo y Semana); se mantiene igual desde el corte del 22 de agosto",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-23-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3580375"
+      "valor": "331",
+      "fuente_titulo": "Corte técnico de la UNGRD, 24 de agosto, 6:30 p. m. (vía Vanguardia, El Nuevo Siglo e Infobae); sube desde los 329 del corte del 23 de agosto",
+      "fuente_url": "https://www.vanguardia.com/colombia/2026/08/24/terremoto-en-colombia-ya-deja-331-muertos-y-240-desaparecidos-nuevo-balance-de-la-ungrd/"
     },
     {
       "clave": "heridos",
       "etiqueta": "Personas heridas",
-      "valor": "4.592",
-      "fuente_titulo": "Corte técnico de la UNGRD, 23 de agosto, 6:30 p. m. (vía El Tiempo y Semana); baja levemente desde los 4.600 del corte del 22 de agosto",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-23-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3580375"
+      "valor": "4.439",
+      "fuente_titulo": "Corte técnico de la UNGRD, 24 de agosto, 6:30 p. m. (vía Infobae); baja desde los 4.592 del corte del 23 de agosto",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/25/terremoto-en-colombia-ya-deja-331-personas-fallecidas-y-4439-personas-heridas-segun-confirmo-la-ungrd/"
     },
     {
       "clave": "desaparecidos",
       "etiqueta": "Personas desaparecidas",
-      "valor": "234",
-      "fuente_titulo": "Corte técnico de la UNGRD, 23 de agosto, 6:30 p. m. (vía El Tiempo y Semana); baja desde los 247 del corte del 22 de agosto. La cifra coincide ahora con la que Radio Santa Fe había publicado en solitario el 22 de agosto, entonces discrepante frente al resto de medios",
-      "fuente_url": "https://www.semana.com/nacion/articulo/tragedia-por-terremoto-en-colombia-sube-a-329-la-cifra-de-muertos-y-hay-234-desaparecidos/202658/"
+      "valor": "240",
+      "fuente_titulo": "Corte técnico de la UNGRD, 24 de agosto, 6:30 p. m. (vía Vanguardia y El Nuevo Siglo); sube desde los 234 del corte del 23 de agosto",
+      "fuente_url": "https://www.elnuevosiglo.com.co/nacion/terremoto-en-colombia-234-personas-siguen-desaparecidas"
     },
     {
       "clave": "rescatados",
       "etiqueta": "Personas rescatadas con vida",
       "valor": "364",
-      "fuente_titulo": "Corte técnico de la UNGRD, 23 de agosto, 6:30 p. m. (vía El Tiempo y Semana); se mantiene igual desde el corte del 20 de agosto",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-23-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3580375"
+      "fuente_titulo": "Corte técnico de la UNGRD, 24 de agosto, 6:30 p. m.; se mantiene igual desde el corte del 20 de agosto",
+      "fuente_url": "https://www.vanguardia.com/colombia/2026/08/24/terremoto-en-colombia-ya-deja-331-muertos-y-240-desaparecidos-nuevo-balance-de-la-ungrd/"
     },
     {
       "clave": "afectados",
       "etiqueta": "Personas afectadas",
-      "valor": "324.157 (159.924 familias)",
-      "fuente_titulo": "Corte técnico de la UNGRD, 23 de agosto, 6:30 p. m. (vía El Tiempo y Semana)",
-      "fuente_url": "https://www.semana.com/nacion/articulo/tragedia-por-terremoto-en-colombia-sube-a-329-la-cifra-de-muertos-y-hay-234-desaparecidos/202658/"
+      "valor": "361.353 (185.226 familias)",
+      "fuente_titulo": "Corte técnico de la UNGRD, 24 de agosto, 6:30 p. m.; sube desde 324.157 personas y 159.924 familias del corte del 23 de agosto",
+      "fuente_url": "https://www.vanguardia.com/colombia/2026/08/24/terremoto-en-colombia-ya-deja-331-muertos-y-240-desaparecidos-nuevo-balance-de-la-ungrd/"
     },
     {
       "clave": "viviendas",
       "etiqueta": "Viviendas afectadas",
-      "valor": "209.755 (31.519 destruidas y 178.236 averiadas)",
-      "fuente_titulo": "Corte técnico de la UNGRD, 23 de agosto, 6:30 p. m. (vía El Tiempo y Semana); suma además 574 edificaciones colapsadas y 5.884 dañadas",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-23-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3580375"
+      "valor": "210.095 (31.540 destruidas y 178.555 averiadas)",
+      "fuente_titulo": "Corte técnico de la UNGRD, 24 de agosto, 6:30 p. m.; suma además 603 edificaciones colapsadas y 5.884 dañadas, frente a 574 y 5.884 del corte del 23 de agosto",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/25/terremoto-en-colombia-ya-deja-331-personas-fallecidas-y-4439-personas-heridas-segun-confirmo-la-ungrd/"
     },
     {
       "clave": "vias",
       "etiqueta": "Vías afectadas",
-      "valor": "435",
-      "fuente_titulo": "Corte técnico de la UNGRD, 23 de agosto, 6:30 p. m.; suma además 70 puentes vehiculares, 15 peatonales, 115 acueductos y 5 aeropuertos. El mismo corte reporta 378 centros de salud y 3.726 centros educativos afectados; los centros comunitarios bajan a 4.140 desde los 5.584 del corte del 22 de agosto, sin explicación pública de la variación",
-      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-23-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3580375"
+      "valor": "427",
+      "fuente_titulo": "Corte técnico de la UNGRD, 24 de agosto, 6:30 p. m.; suma además 75 puentes vehiculares, 15 peatonales, 112 acueductos y 5 aeropuertos. El mismo corte reporta 378 centros de salud (igual) y 3.731 centros educativos afectados; no se localizó cifra actualizada de centros comunitarios en la prensa consultada, por lo que se conserva sin publicar en este corte",
+      "fuente_url": "https://www.eluniversal.com.co/colombia/2026/08/21/terremoto-en-colombia-ungrd-revela-el-nuevo-balance-de-la-tragedia/"
     }
   ],
-  "fecha_corte": "23 de agosto de 2026, 6:30 p. m.: corte técnico de la UNGRD, sobre 494 municipios de 16 departamentos",
-  "fecha_corte_iso": "2026-08-23T18:30:00-05:00",
+  "fecha_corte": "24 de agosto de 2026, 6:30 p. m.: corte técnico de la UNGRD, sobre 494 municipios de 16 departamentos",
+  "fecha_corte_iso": "2026-08-24T18:30:00-05:00",
   "nivel_evidencia": "corroboracion_multiple",
   "fuente_primaria_disponible": true,
   "fuentes_adicionales": [
+    {
+      "titulo": "Vanguardia — terremoto en Colombia ya deja 331 muertos y 240 desaparecidos, 24 de agosto",
+      "url": "https://www.vanguardia.com/colombia/2026/08/24/terremoto-en-colombia-ya-deja-331-muertos-y-240-desaparecidos-nuevo-balance-de-la-ungrd/",
+      "alcance": "Publica el corte técnico completo del 24 de agosto (6:30 p. m.): 331 fallecidos, 4.439 heridos, 240 desaparecidos, 364 rescatados, 361.353 personas y 185.226 familias afectadas, en 494 municipios de 16 departamentos.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "Infobae — terremoto en Colombia ya deja 331 personas fallecidas y 4.439 heridas, según la UNGRD, 25 de agosto",
+      "url": "https://www.infobae.com/colombia/2026/08/25/terremoto-en-colombia-ya-deja-331-personas-fallecidas-y-4439-personas-heridas-segun-confirmo-la-ungrd/",
+      "alcance": "Segunda corroboración del corte técnico del 24 de agosto, con el detalle de viviendas (31.540 destruidas, 178.555 averiadas) y edificaciones (603 colapsadas, 5.884 dañadas).",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "El Nuevo Siglo — balance terremoto agosto 24: suben a 331 los muertos y a 240 los desaparecidos",
+      "url": "https://www.elnuevosiglo.com.co/nacion/terremoto-en-colombia-234-personas-siguen-desaparecidas",
+      "alcance": "Tercera corroboración del corte técnico del 24 de agosto.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "LaPatilla — autoridades elevaron a 331 la cifra de muertos en Colombia tras cumplirse dos semanas del terremoto, 24 de agosto",
+      "url": "https://lapatilla.com/2026/08/24/autoridades-elevaron-a-331-la-cifra-de-muertos-en-colombia-tras-cumplirse-dos-semanas-del-terremoto/",
+      "alcance": "Cuarta corroboración del corte técnico del 24 de agosto.",
+      "nivel_fuente": "fuente_secundaria"
+    },
+    {
+      "titulo": "Infobae — Abelardo de la Espriella reveló desde el Chocó nuevo balance oficial del terremoto: 329 muertos y 234 desaparecidos, 24 de agosto",
+      "url": "https://www.infobae.com/colombia/2026/08/24/abelardo-de-la-espriella-revelo-desde-el-choco-nuevo-balance-oficial-del-terremoto-en-colombia-329-muertos-y-234-desaparecidos/",
+      "alcance": "El mismo 24 de agosto, en una intervención desde el Chocó, el presidente citó las cifras del corte anterior (329 fallecidos, 234 desaparecidos), discrepantes frente al corte técnico de la UNGRD de esa misma tarde (331/240); se deja registrada la discrepancia.",
+      "nivel_fuente": "fuente_secundaria"
+    },
     {
       "titulo": "El Tiempo — UNGRD entregó nuevo balance de muertos, heridos y desaparecidos, 23 de agosto",
       "url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-23-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3580375",
@@ -208,5 +238,5 @@
     }
   ],
   "declaratoria": "El Gobierno Nacional declaró la situación de desastre nacional el 10 de agosto de 2026, al amparo de la Ley 1523 de 2012. El 19 de agosto de 2026 el presidente Abelardo de la Espriella firmó además el Decreto 1261 de 2026, que declara el estado de emergencia económica, social y ecológica por 30 días en 15 departamentos (Antioquia, Caldas, Cauca, Chocó, Quindío, Cundinamarca, Risaralda, Huila, Valle del Cauca, Tolima, Putumayo, Norte de Santander, Bolívar, Nariño y Sucre) para agilizar recursos, contratación y crédito público destinados a la reconstrucción; el texto oficial del decreto no se localizó en un dominio .gov.co y esta descripción se apoya en tres medios nacionales que coinciden en su alcance. El 21 de agosto el decreto entró a control automático de constitucionalidad ante la Corte Constitucional —trámite obligatorio para todo decreto de estado de excepción, según la Ley 137 de 1994— y el expediente fue repartido por sorteo al magistrado Juan Carlos Cortés González como ponente, según El Espectador, Infobae y Semana; al 22 de agosto no se hallaron novedades públicas adicionales sobre ese trámite.",
-  "nota": "El 23 de agosto la UNGRD entregó un nuevo corte técnico a las 6:30 p. m.: 329 fallecidos (igual que el corte anterior), 4.592 heridos, 234 desaparecidos (baja desde 247; la cifra coincide ahora con la que Radio Santa Fe había publicado en solitario el 22 de agosto, entonces discrepante), 364 rescatados, 324.157 personas y 159.924 familias afectadas, 209.755 viviendas (31.519 destruidas y 178.236 averiadas), 574 edificaciones colapsadas y 5.884 dañadas, 378 centros de salud, 3.726 centros educativos, 4.140 centros comunitarios (baja desde 5.584, sin explicación pública), 435 vías, 70 puentes vehiculares, 15 peatonales, 115 acueductos y 5 aeropuertos, en 494 municipios de 16 departamentos —sube frente a los 481 municipios del corte del 22 de agosto—. Sustituye, para todas las cifras de esta tabla, al corte técnico del 22 de agosto (329 fallecidos, 4.600 heridos, 247 desaparecidos, 314.751 personas y 154.014 familias afectadas), que se conserva como antecedente en el historial de este documento. El mismo corte del 23 de agosto sumó 1.259 animales rescatados y 3.182 atendidos por lesiones, según Semana. El Decreto 1261 de 2026 sigue en revisión de constitucionalidad ante la Corte Constitucional, con el magistrado Juan Carlos Cortés González como ponente por sorteo desde el 21 de agosto, sin novedades públicas adicionales sobre el trámite. La reapertura comercial del aeropuerto Matecaña de Pereira sigue sin fecha definitiva; no se hallaron novedades públicas nuevas al respecto desde el aplazamiento reportado el 21 de agosto. El 23 y la madrugada del 24 de agosto el SGC registró varios sismos menores adicionales en Chocó y Cundinamarca (entre 2,0 y 3,9, concentrados en Istmina y Sipí, más uno de 3,3 en Cundinamarca), sin afectados ni daños reportados; ver el detalle en el capítulo de zonas. La Gobernación del Chocó reportó el 23-24 de agosto la culminación de la primera fase de entrega de ayuda humanitaria de emergencia a todos los municipios afectados del departamento. No se hallaron cambios verificables en los canales de donación (ni «Colombia, un solo corazón» ni la Fundación Bancolombia publicaron cuentas en un dominio oficial nuevo), en los acopios de Bogotá (el Palacio de los Deportes sigue siendo el único punto activo, confirmado en bogota.gov.co) ni bulos nuevos fechados en las últimas 48 horas, así que esos bloques se conservan sin cambios respecto al corte anterior. Se comprobó directamente que la UNGRD sigue sin publicar un reporte situacional descargable en su portal, que no hay Flash Update posterior al 007 del 17 de agosto en el repositorio de Naciones Unidas en Colombia y que el texto del Decreto 1261 aún no está en el repositorio normativo de la Presidencia."
+  "nota": "El 24 de agosto la UNGRD entregó un nuevo corte técnico a las 6:30 p. m.: 331 fallecidos (sube desde 329), 4.439 heridos (baja desde 4.592), 240 desaparecidos (sube desde 234), 364 rescatados (igual), 361.353 personas y 185.226 familias afectadas, 210.095 viviendas (31.540 destruidas y 178.555 averiadas), 603 edificaciones colapsadas y 5.884 dañadas, 378 centros de salud, 3.731 centros educativos, 427 vías, 75 puentes vehiculares, 15 peatonales, 112 acueductos y 5 aeropuertos, en 494 municipios de 16 departamentos (igual). No se localizó en la prensa consultada una cifra actualizada de centros comunitarios para este corte (el anterior era 4.140). Sustituye, para todas las cifras de esta tabla, al corte técnico del 23 de agosto (329 fallecidos, 4.592 heridos, 234 desaparecidos, 324.157 personas y 159.924 familias afectadas), que se conserva como antecedente en el historial de este documento. El mismo 24 de agosto, en una intervención desde el Chocó anterior a ese corte técnico, el presidente citó las cifras del corte del 23 de agosto (329 fallecidos, 234 desaparecidos), discrepantes frente al balance técnico posterior de la UNGRD esa misma tarde; se deja registrada la discrepancia, corroborada por seis medios independientes que coinciden en 331/240 como el corte técnico vigente de las 6:30 p. m. El aeropuerto Matecaña de Pereira anunció su reapertura comercial para el miércoles 26 de agosto, tras el aval de la Aeronáutica Civil: operará con restricciones (los niveles 2 y 3 de la terminal permanecen cerrados) y unos 20 vuelos diarios; Latam confirmó la reanudación de sus rutas Bogotá–Pereira y Medellín–Pereira, con 21 frecuencias semanales, según El Tiempo, Infobae y El Espectador —hasta ahora prensa regional y nacional, sin texto oficial localizado en aerocivil.gov.co—. El 24 y la madrugada del 25 de agosto el SGC registró una nueva secuencia de sismos menores en Chocó: 13 movimientos en la madrugada del 24, la mayoría con epicentro en Sipí, Medio San Juan e Istmina; uno de magnitud 4,1 a la 1:55 p. m. en Istmina; y dos de magnitud 3,1 cerca de Sipí, hacia las 11:00 p. m. del 24 y las 12:49 a. m. del 25, sin afectados ni daños reportados. El Decreto 1261 de 2026 sigue en revisión de constitucionalidad ante la Corte Constitucional, con el magistrado Juan Carlos Cortés González como ponente por sorteo desde el 21 de agosto, sin novedades públicas adicionales sobre el trámite. No se hallaron cambios verificables en los canales de donación: se rechequeó directamente que ni «Colombia, un solo corazón» ni la Fundación Bancolombia han publicado cuentas en un dominio oficial (aerocivil.gov.co, bancolombia.com o presidencia.gov.co); ambas cuentas —#24542391932 de la Fundación Bancolombia y las de las tres entidades designadas por la campaña presidencial— siguen circulando solo en prensa nacional seria, por lo que se mantienen en nivel «fuente_secundaria» sin transcribir números adicionales. Tampoco se hallaron cambios verificables en los acopios de Bogotá (el Palacio de los Deportes sigue siendo el único punto activo, confirmado en bogota.gov.co) ni bulos nuevos fechados en las últimas 48 horas, así que esos bloques se conservan sin cambios respecto al corte anterior. Se comprobó directamente que la UNGRD sigue sin publicar un reporte situacional descargable en su portal, que no hay Flash Update posterior al 007 del 17 de agosto en el repositorio de Naciones Unidas en Colombia y que el texto del Decreto 1261 aún no está en el repositorio normativo de la Presidencia."
 }
