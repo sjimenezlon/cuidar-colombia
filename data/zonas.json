@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "25 ago 2026",
-  "fecha_revision_iso": "2026-08-25T07:00:00-05:00",
+  "fecha_revision": "26 ago 2026",
+  "fecha_revision_iso": "2026-08-26T07:00:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -487,6 +487,10 @@
       "fuente_url": "https://www.elespectador.com/colombia/mas-regiones/aeropuerto-matecana-de-pereira-volvera-a-operar-desde-el-proximo-26-de-agosto/"
     },
     {
+      "texto": "Confirmado: el aeropuerto Matecaña de Pereira reabrió a vuelos comerciales el 26 de agosto tras 15 días cerrado, con los niveles 2 y 3 de la terminal aún fuera de servicio. Avianca reanudó 3 frecuencias diarias desde Bogotá y una desde Medellín (esta última desde el 27 de agosto); Latam reanudó 2 frecuencias diarias desde Bogotá y 1 desde Medellín.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/25/avianca-anuncio-que-reanudara-sus-vuelos-a-pereira-estas-son-las-facilidades-para-pasajeros-afectados-tras-el-terremoto/"
+    },
+    {
       "texto": "Acceso humanitario al 17 de agosto, según el documento oficial de OCHA: al menos 16 vías y 10 puentes bloqueados dificultan la llegada a zonas rurales dispersas del Chocó, y en el Valle del Cauca el acceso sigue interrumpido en Dagua, Buenaventura y La Unión por cierres totales o parciales.",
       "fuente_url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026"
     }
@@ -615,6 +619,14 @@
     {
       "texto": "El 24 de agosto y la madrugada del 25 el SGC registró una nueva secuencia sísmica en Chocó: 13 movimientos menores en la madrugada del 24, la mayoría con epicentro en Sipí, Medio San Juan e Istmina; un sismo de magnitud 4,1 a la 1:55 p. m. en Istmina (profundidad 43 km); y dos sismos de magnitud 3,1 cerca de Sipí, hacia las 11:00 p. m. del 24 y las 12:49 a. m. del 25 de agosto. Ninguno reportó afectados ni daños materiales.",
       "fuente_url": "https://www.semana.com/nacion/articulo/se-reporta-fuerte-temblor-en-la-tarde-del-24-de-agosto-sgc-revelo-epicentro-y-magnitud/202620/"
+    },
+    {
+      "texto": "El director de la UNGRD, David Santiago Tamayo Roldán, anunció el 25 de agosto una segunda fase de carga de información en el Registro Único de Damnificados, dirigida a los municipios que no alcanzaron a reportar a tiempo para el primer corte (cerrado el 24 de agosto a las 11:59 p. m.).",
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-martes-25-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3580782"
+    },
+    {
+      "texto": "El SGC registró cuatro sismos menores adicionales con epicentro en Istmina (Chocó) entre las 10:22 p. m. del 25 de agosto y las 2:14 a. m. del 26 de agosto, de magnitud 3,0 a 3,3 y profundidad superficial; se suman a la secuencia de réplicas activa desde el sismo principal. Ninguno reportó afectados ni daños materiales.",
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/reportan-cuatro-sismos-en-istmina-choco-durante-la-noche-del-25-y-la-madrugada-del-26-de-agosto-epicentro-magnitud-y-profundidad-3581091"
     }
   ]
 }
