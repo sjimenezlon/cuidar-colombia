@@ -90,11 +90,11 @@
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "prensa nacional citando el anuncio oficial",
-      "fecha_verificacion": "28 ago 2026",
+      "fecha_verificacion": "29 ago 2026",
       "verificacion": {
         "estado": "confirmacion_secundaria",
         "nivel": "fuente_secundaria",
-        "fecha_iso": "2026-08-28",
+        "fecha_iso": "2026-08-29",
         "evidencia_url": "https://www.semana.com/confidenciales/articulo/asi-puede-donar-a-la-campana-colombia-un-solo-corazon-para-colaborar-con-las-victimas-del-terremoto-en-colombia/202627/"
       },
       "fuentes_adicionales": [
@@ -176,11 +176,11 @@
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "portafolio.co y La República citando el comunicado oficial",
-      "fecha_verificacion": "28 ago 2026",
+      "fecha_verificacion": "29 ago 2026",
       "verificacion": {
         "estado": "confirmacion_secundaria",
         "nivel": "fuente_secundaria",
-        "fecha_iso": "2026-08-28",
+        "fecha_iso": "2026-08-29",
         "evidencia_url": "https://www.portafolio.co/negocios/empresas/bancolombia-habilita-cuenta-para-canalizar-donaciones-dirigidas-a-afectados-por-terremoto-en-colombia-500114"
       },
       "fuentes_adicionales": [

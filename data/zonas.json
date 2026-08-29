@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "28 ago 2026",
-  "fecha_revision_iso": "2026-08-28T07:00:00-05:00",
+  "fecha_revision": "29 ago 2026",
+  "fecha_revision_iso": "2026-08-29T07:00:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -639,6 +639,10 @@
     {
       "texto": "El SGC registró dos nuevos sismos con epicentro en Istmina (Chocó) la mañana del 27 de agosto: uno de magnitud 4,4 a las 10:25 a. m. (profundidad 43 km) y una réplica de magnitud 4,0 a las 11:21 a. m., menos de una hora después; ambos se sintieron en Cali, el Eje Cafetero y otras zonas del occidente del país. Las autoridades de gestión del riesgo no reportaron víctimas, heridos ni daños materiales de consideración en Chocó ni en el norte del Valle del Cauca; la Alcaldía de Cali habilitó un canal de WhatsApp para recibir reportes ciudadanos de daños tras el sismo.",
       "fuente_url": "https://www.pulzo.com/nacion/sismo-de-magnitud-4-4-en-istmina-choco-epicentro-y-reaccion-en-cali-colombia-PP5286383A"
+    },
+    {
+      "texto": "El SGC registró tres nuevos sismos menores el 28 de agosto en la secuencia activa de Chocó: magnitud 3,8 a las 3:24 a. m. (epicentro a 25 km de Sipí), magnitud 2,8 a la 1:08 p. m. (epicentro en Istmina, profundidad 43 km) y magnitud 3,6 hacia las 11:30 p. m. (epicentro a 24 km de Sipí, sentido en Sipí, Trujillo y El Dovio, en el Valle del Cauca). Ninguno reportó afectados ni daños materiales.",
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/temblor-de-3-6-de-magnitud-en-colombia-sismo-durante-la-noche-de-este-viernes-28-de-agosto-epicentro-profundidad-y-caracteristicas-3582043"
     }
   ]
 }
