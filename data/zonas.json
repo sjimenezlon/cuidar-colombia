@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "29 ago 2026",
-  "fecha_revision_iso": "2026-08-29T07:00:00-05:00",
+  "fecha_revision": "30 ago 2026",
+  "fecha_revision_iso": "2026-08-30T07:00:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -643,6 +643,10 @@
     {
       "texto": "El SGC registró tres nuevos sismos menores el 28 de agosto en la secuencia activa de Chocó: magnitud 3,8 a las 3:24 a. m. (epicentro a 25 km de Sipí), magnitud 2,8 a la 1:08 p. m. (epicentro en Istmina, profundidad 43 km) y magnitud 3,6 hacia las 11:30 p. m. (epicentro a 24 km de Sipí, sentido en Sipí, Trujillo y El Dovio, en el Valle del Cauca). Ninguno reportó afectados ni daños materiales.",
       "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/temblor-de-3-6-de-magnitud-en-colombia-sismo-durante-la-noche-de-este-viernes-28-de-agosto-epicentro-profundidad-y-caracteristicas-3582043"
+    },
+    {
+      "texto": "El 29 de agosto la actividad sísmica se intensificó y se extendió más allá de la secuencia habitual de Chocó. En la madrugada y mañana el SGC registró al menos 8 sismos, 6 de ellos en Chocó (magnitud 2,0 a 3,9, el mayor cerca de Medio San Juan/Andagoya, a 9 km de Sipí). Durante la tarde y la noche se registró una nueva serie con epicentro en el municipio de Totoró (Cauca), en el área de influencia del volcán Puracé: sismos de magnitud 3,1 (4:21 p. m.), 3,9 (4:56 p. m.), 4,1 (6:18 p. m.) y un máximo de 4,3 a las 11:37 p. m. (profundidad superficial de 12 km). También se sintió un sismo de magnitud 2,7 en el área de influencia del volcán Galeras (Nariño), cerca de Pasto. Ninguno de estos eventos reportó afectados ni daños estructurales, y no hay indicación de que estén relacionados con la alerta naranja ya vigente del volcán Puracé.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/29/van-8-sismos-en-la-madrugada-y-manana-del-sabado-29-de-agosto-segun-el-servicio-geologico-colombia-6-fueron-en-choco/"
     }
   ]
 }
