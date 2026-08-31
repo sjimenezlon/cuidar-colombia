@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "30 ago 2026",
-  "fecha_revision_iso": "2026-08-30T07:00:00-05:00",
+  "fecha_revision": "31 ago 2026",
+  "fecha_revision_iso": "2026-08-31T07:00:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -11,13 +11,13 @@
       "autoridad": "Servicio Geológico Colombiano",
       "alcance": "Cráteres de los volcanes Puracé, Piocollo y Curiquinga",
       "recomendacion": "No acercarse a la zona de los cráteres. Pueden ocurrir emisiones repentinas de ceniza o gases.",
-      "nota_contexto": "Es una alerta por actividad volcánica monitoreada, vigente en nivel naranja desde el 1 de agosto de 2026 (antes del terremoto), sin relación con el sismo del 10 de agosto. El SGC desmintió el 13-14 de agosto rumores de que hubiera subido a alerta roja. El 16 de agosto Infobae reportó, citando al SGC, siete emisiones de ceniza entre la tarde del 15 y ese boletín, con valores instrumentales en máximos históricos; la crisis volcánica mantiene cerrado el aeropuerto Guillermo León Valencia de Popayán y suspendidas las actividades en el PNN Puracé, incluido el ascenso a la cumbre — cierres por la actividad del volcán, no por el terremoto.",
-      "fecha": "16 ago 2026",
-      "fecha_iso": "2026-08-16T00:00:00-05:00",
+      "nota_contexto": "Es una alerta por actividad volcánica monitoreada, vigente en nivel naranja desde el 1 de agosto de 2026 (antes del terremoto), sin relación con el sismo del 10 de agosto. El SGC desmintió el 13-14 de agosto rumores de que hubiera subido a alerta roja. El 16 de agosto Infobae reportó, citando al SGC, siete emisiones de ceniza entre la tarde del 15 y ese boletín, con valores instrumentales en máximos históricos; la crisis volcánica mantiene cerrado el aeropuerto Guillermo León Valencia de Popayán y suspendidas las actividades en el PNN Puracé, incluido el ascenso a la cumbre — cierres por la actividad del volcán, no por el terremoto. Entre el 29 y el 30 de agosto el SGC emitió un boletín extraordinario por un enjambre sísmico de tipo volcanotectónico (fracturamiento de roca): cerca de 472 sismos entre las 4:20 p. m. del 29 de agosto y la tarde del 30, ubicados entre 10 y 15 km al noreste del cráter principal, a 8-12 km de profundidad; 18 eventos de magnitud igual o mayor a 2, con máximos de 3,9 (4:21 p. m.), 4,1 (6:18 p. m.) y 4,3 (11:37 p. m.) el 29 de agosto, sentidos en Puracé, Totoró, Sotará y Popayán. El SGC mantuvo la alerta en naranja, indicó que los demás parámetros de monitoreo no muestran alteraciones y no recomendó evacuación. El 31 de agosto continuaron sismos menores en la misma zona (magnitud 3,2 hacia las 3:21 a. m. cerca de Totoró), sin daños ni afectados reportados.",
+      "fecha": "30 ago 2026",
+      "fecha_iso": "2026-08-30T00:00:00-05:00",
       "lat": 2.3131,
       "lon": -76.3972,
-      "fuente_url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-extraordinario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-12-de-agosto.aspx",
-      "fuente_titulo": "SGC — boletín extraordinario del 12 de agosto",
+      "fuente_url": "https://www2.sgc.gov.co/Noticias/Paginas/Boletin-diario-Volcan-Purace-cadena-volcanica-Los-Coconucos-del-30-de-agosto.aspx",
+      "fuente_titulo": "SGC — boletín diario del volcán Puracé, 30 de agosto de 2026",
       "fuentes_adicionales": [
         {
           "url": "https://www2.sgc.gov.co/Noticias/Paginas/Estado-de-alerta-del-volcan-Purace-cambia-a-Naranja-01-agosto-2026.aspx",
@@ -30,6 +30,18 @@
         {
           "url": "https://cambiocolombia.com/pais/articulo/2026/8/servicio-geologico-desmiente-que-el-purace-este-en-alerta-roja-que-esta-pasando-con-el-volcan",
           "titulo": "Cambio Colombia — SGC desmiente rumor de alerta roja (13-14 ago)"
+        },
+        {
+          "url": "https://www.eltiempo.com/colombia/otras-ciudades/servicio-geologico-colombiano-emite-boletin-extraordinario-por-enjambre-de-temblores-en-volcan-purace-hay-fracturamiento-de-roca-3582178",
+          "titulo": "El Tiempo — SGC emite boletín extraordinario por enjambre de temblores en el Puracé, fracturamiento de roca (29 ago)"
+        },
+        {
+          "url": "https://www.elheraldo.co/colombia/2026/08/30/sgc-mantiene-en-alerta-naranja-en-el-volcan-purace-mas-de-470-sismos-emisiones-de-ceniza-y-flujos-de-lodo/",
+          "titulo": "El Heraldo — SGC mantiene alerta naranja en el Puracé: más de 470 sismos, emisiones de ceniza y flujos de lodo (30 ago)"
+        },
+        {
+          "url": "https://www.infobae.com/colombia/2026/08/30/preocupacion-en-totoro-por-un-enjambre-sismico-en-el-area-del-volcan-purace/",
+          "titulo": "Infobae — preocupación en Totoró por el enjambre sísmico en el área del Puracé (30 ago)"
         }
       ]
     }
@@ -491,6 +503,10 @@
       "fuente_url": "https://www.infobae.com/colombia/2026/08/25/avianca-anuncio-que-reanudara-sus-vuelos-a-pereira-estas-son-las-facilidades-para-pasajeros-afectados-tras-el-terremoto/"
     },
     {
+      "texto": "Actualización del 29 de agosto: el Gobierno Nacional reportó que la terminal opera desde el primer piso con un promedio de 18 vuelos diarios, mientras continúan las obras de adecuación de los niveles 2 y 3, con un plazo estimado de dos meses para recuperar la capacidad total. JetSMART, que había trasladado sus vuelos a Armenia tras el terremoto, se sumó a las operaciones en el Matecaña el 31 de agosto, junto a Copa Airlines, Clic, Avianca y Latam.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/08/29/gobierno-anuncia-reapertura-del-aeropuerto-de-pereira-clave-para-la-recuperacion-del-eje-cafetero/"
+    },
+    {
       "texto": "Acceso humanitario al 17 de agosto, según el documento oficial de OCHA: al menos 16 vías y 10 puentes bloqueados dificultan la llegada a zonas rurales dispersas del Chocó, y en el Valle del Cauca el acceso sigue interrumpido en Dagua, Buenaventura y La Unión por cierres totales o parciales.",
       "fuente_url": "https://reliefweb.int/report/colombia/colombia-flash-update-007-actualizacion-afectaciones-por-terremoto-en-colombia-17-de-agosto-de-2026"
     }
@@ -647,6 +663,10 @@
     {
       "texto": "El 29 de agosto la actividad sísmica se intensificó y se extendió más allá de la secuencia habitual de Chocó. En la madrugada y mañana el SGC registró al menos 8 sismos, 6 de ellos en Chocó (magnitud 2,0 a 3,9, el mayor cerca de Medio San Juan/Andagoya, a 9 km de Sipí). Durante la tarde y la noche se registró una nueva serie con epicentro en el municipio de Totoró (Cauca), en el área de influencia del volcán Puracé: sismos de magnitud 3,1 (4:21 p. m.), 3,9 (4:56 p. m.), 4,1 (6:18 p. m.) y un máximo de 4,3 a las 11:37 p. m. (profundidad superficial de 12 km). También se sintió un sismo de magnitud 2,7 en el área de influencia del volcán Galeras (Nariño), cerca de Pasto. Ninguno de estos eventos reportó afectados ni daños estructurales, y no hay indicación de que estén relacionados con la alerta naranja ya vigente del volcán Puracé.",
       "fuente_url": "https://www.infobae.com/colombia/2026/08/29/van-8-sismos-en-la-madrugada-y-manana-del-sabado-29-de-agosto-segun-el-servicio-geologico-colombia-6-fueron-en-choco/"
+    },
+    {
+      "texto": "Entre el 29 y el 30 de agosto el SGC emitió un boletín extraordinario por un enjambre sísmico volcanotectónico (fracturamiento de roca) en el área de influencia del volcán Puracé: cerca de 472 sismos entre las 4:20 p. m. del 29 y la tarde del 30 de agosto, ubicados 10-15 km al noreste del cráter principal, a 8-12 km de profundidad, con 18 eventos de magnitud igual o mayor a 2 y al menos 7 sentidos en Puracé, Totoró, Sotará y Popayán. El SGC mantuvo la alerta en naranja, sin evacuaciones recomendadas. El 30 de agosto la actividad se extendió también a Chocó, con al menos 6 sismos concentrados en Istmina, Medio San Juan y Sipí (magnitud 2,0 a 3,9). El 31 de agosto continuaron sismos menores: magnitud 3,2 hacia las 3:21 a. m. cerca de Totoró (Cauca) y magnitud 2,4 a las 5:30 a. m. en El Litoral del San Juan (Docordó, Chocó), ambos de profundidad superficial y sin daños ni afectados reportados.",
+      "fuente_url": "https://www.elheraldo.co/colombia/2026/08/30/sgc-mantiene-en-alerta-naranja-en-el-volcan-purace-mas-de-470-sismos-emisiones-de-ceniza-y-flujos-de-lodo/"
     }
   ]
 }
