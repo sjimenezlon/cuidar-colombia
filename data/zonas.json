@@ -1,6 +1,6 @@
 {
-  "fecha_revision": "31 ago 2026",
-  "fecha_revision_iso": "2026-08-31T07:00:00-05:00",
+  "fecha_revision": "1 sep 2026",
+  "fecha_revision_iso": "2026-09-01T07:00:00-05:00",
   "intro": "Este capítulo muestra afectación reportada, no un mapa predictivo de riesgo ni una orden para enviar recursos. La prioridad de seguimiento identifica los territorios cuyos reportes requieren revisión más frecuente; la decisión humanitaria corresponde a las autoridades y organizaciones que evalúan necesidades en terreno.",
   "alertas_oficiales": [
     {
@@ -667,6 +667,10 @@
     {
       "texto": "Entre el 29 y el 30 de agosto el SGC emitió un boletín extraordinario por un enjambre sísmico volcanotectónico (fracturamiento de roca) en el área de influencia del volcán Puracé: cerca de 472 sismos entre las 4:20 p. m. del 29 y la tarde del 30 de agosto, ubicados 10-15 km al noreste del cráter principal, a 8-12 km de profundidad, con 18 eventos de magnitud igual o mayor a 2 y al menos 7 sentidos en Puracé, Totoró, Sotará y Popayán. El SGC mantuvo la alerta en naranja, sin evacuaciones recomendadas. El 30 de agosto la actividad se extendió también a Chocó, con al menos 6 sismos concentrados en Istmina, Medio San Juan y Sipí (magnitud 2,0 a 3,9). El 31 de agosto continuaron sismos menores: magnitud 3,2 hacia las 3:21 a. m. cerca de Totoró (Cauca) y magnitud 2,4 a las 5:30 a. m. en El Litoral del San Juan (Docordó, Chocó), ambos de profundidad superficial y sin daños ni afectados reportados.",
       "fuente_url": "https://www.elheraldo.co/colombia/2026/08/30/sgc-mantiene-en-alerta-naranja-en-el-volcan-purace-mas-de-470-sismos-emisiones-de-ceniza-y-flujos-de-lodo/"
+    },
+    {
+      "texto": "El SGC entregó el 1 de septiembre un balance técnico agregado de la secuencia sísmica del Chocó, con corte al 31 de agosto: la Red Sismológica Nacional registró 1.340 sismos en el departamento desde el terremoto del 10 de agosto, con magnitudes locales entre 0,6 y 4,8 y profundidades de hasta 120 km (80 eventos a menos de 30 km, 992 entre 30 y 70 km y 268 a más de 70 km). El SGC diferenció dos comportamientos: uno compatible con una secuencia de réplicas, concentrado alrededor de San José del Palmar entre 70 y 105 km de profundidad y con frecuencia decreciente; y otro compatible con un enjambre sísmico —sin un evento principal claramente dominante—, concentrado en Sipí, Istmina, Medio San Juan y El Litoral del San Juan, entre 30 y 60 km de profundidad. En la madrugada del 1 de septiembre se registró un sismo adicional de magnitud 3,1 en El Litoral del San Juan (Docordó, Chocó) a las 3:48 a. m., profundidad de 48 km, sin daños ni afectados reportados.",
+      "fuente_url": "https://www.infobae.com/colombia/2026/09/01/mas-de-1300-sismos-tras-el-terremoto-de-74-en-choco-el-servicio-geologico-explica-que-esta-pasando/"
     }
   ]
 }
