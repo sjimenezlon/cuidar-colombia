@@ -85,16 +85,16 @@
     {
       "entidad": "«Colombia, un solo corazón» — Gobierno Nacional",
       "campana": "Campaña oficial de la Presidencia",
-      "como_donar": "Campaña anunciada por la Presidencia desde el PMU de la UNGRD. Recibe aportes por tres entidades designadas (Fundación Colombia Luz y Sonrisas, Minuto de Dios y ABACO) — las cuentas están en el anuncio oficial enlazado, cotejado dígito a dígito en dos medios nacionales; aún no aparecen en ningún dominio .gov.co, por eso aquí no las transcribimos. Las ayudas físicas se reciben en el acopio nacional del pabellón Vive Claro (Bogotá) hasta el 31 de agosto. El acopio físico anunciado hasta el 31 de agosto se cumplió sin que se localizara un anuncio oficial de cierre ni de extensión en prensa; se marca con precaución hasta poder confirmar su estado actual. Rechequeado el 2 de septiembre: la campaña sigue activa en prensa y las cuentas continúan sin aparecer en un dominio .gov.co; se localizó además el sitio propio de la campaña (colombiaunsolocorazon.com), que sí publica las tres cuentas, pero está administrado por personal de la campaña —no por una entidad estatal en dominio oficial— por lo que se mantiene en nivel «fuente_secundaria» sin transcribir los dígitos. Sobre el acopio físico del pabellón Vive Claro, los resultados de búsqueda de hoy repiten sin fecha ni artículo propio verificable una mención de una posible extensión de un mes más allá del 31 de agosto; al no poder confirmarlo con una fuente datada, se mantiene la misma nota de precaución hasta poder verificar su estado actual. Además, varios medios (Cuestión Pública, La Silla Vacía, Publimetro) y la periodista María Jimena Duzán cuestionaron desde el 21 de agosto la falta de transparencia de la Fundación Colombia Luz y Sonrisas —una de las tres entidades designadas, cuya representante legal es la propia primera dama Ana Lucía Pineda y que se constituyó formalmente el 7 de julio de 2026, antes de la posesión presidencial— por canalizar recursos del exterior sin rendición de cuentas públicas; las notas aclaran que esos cuestionamientos no prueban por sí solos que haya recursos desviados. Con este antecedente, se refuerza la recomendación de preferir canales con cuentas ya publicadas en dominio oficial (como ABACO o Minuto de Dios) mientras esta campaña no publique las suyas en un dominio .gov.co.",
+      "como_donar": "Campaña anunciada por la Presidencia desde el PMU de la UNGRD. Recibe aportes por tres entidades designadas (Fundación Colombia Luz y Sonrisas, Minuto de Dios y ABACO) — las cuentas están en el anuncio oficial enlazado, cotejado dígito a dígito en dos medios nacionales; aún no aparecen en ningún dominio .gov.co, por eso aquí no las transcribimos. Las ayudas físicas se reciben en el acopio nacional del pabellón Vive Claro (Bogotá) hasta el 31 de agosto. El acopio físico anunciado hasta el 31 de agosto se cumplió sin que se localizara un anuncio oficial de cierre ni de extensión en prensa; se marca con precaución hasta poder confirmar su estado actual. Rechequeado el 2 de septiembre: la campaña sigue activa en prensa y las cuentas continúan sin aparecer en un dominio .gov.co; se localizó además el sitio propio de la campaña (colombiaunsolocorazon.com), que sí publica las tres cuentas, pero está administrado por personal de la campaña —no por una entidad estatal en dominio oficial— por lo que se mantiene en nivel «fuente_secundaria» sin transcribir los dígitos. Sobre el acopio físico del pabellón Vive Claro, los resultados de búsqueda de hoy repiten sin fecha ni artículo propio verificable una mención de una posible extensión de un mes más allá del 31 de agosto; al no poder confirmarlo con una fuente datada, se mantiene la misma nota de precaución hasta poder verificar su estado actual. Rechequeado el 3 de septiembre: no se localizó ningún anuncio institucional, ni de cierre ni de extensión, del acopio físico de Vive Claro; han pasado ya tres días del límite anunciado (31 de agosto) sin confirmación de continuidad, así que se recomienda no desplazarse a ese punto sin confirmar antes por un canal oficial. Las cuentas de las tres entidades designadas siguen sin aparecer en un dominio .gov.co o en el dominio propio de cada entidad (ABACO es la excepción y ya está verificada por separado). Además, varios medios (Cuestión Pública, La Silla Vacía, Publimetro) y la periodista María Jimena Duzán cuestionaron desde el 21 de agosto la falta de transparencia de la Fundación Colombia Luz y Sonrisas —una de las tres entidades designadas, cuya representante legal es la propia primera dama Ana Lucía Pineda y que se constituyó formalmente el 7 de julio de 2026, antes de la posesión presidencial— por canalizar recursos del exterior sin rendición de cuentas públicas; las notas aclaran que esos cuestionamientos no prueban por sí solos que haya recursos desviados. Con este antecedente, se refuerza la recomendación de preferir canales con cuentas ya publicadas en dominio oficial (como ABACO o Minuto de Dios) mientras esta campaña no publique las suyas en un dominio .gov.co.",
       "url_oficial": "https://www.semana.com/confidenciales/articulo/asi-puede-donar-a-la-campana-colombia-un-solo-corazon-para-colaborar-con-las-victimas-del-terremoto-en-colombia/202627/",
       "detalle_cuenta": null,
       "cobertura": "Nacional",
       "verificado_en": "prensa nacional citando el anuncio oficial",
-      "fecha_verificacion": "2 sep 2026",
+      "fecha_verificacion": "3 sep 2026",
       "verificacion": {
         "estado": "confirmacion_secundaria",
         "nivel": "fuente_secundaria",
-        "fecha_iso": "2026-09-02",
+        "fecha_iso": "2026-09-03",
         "evidencia_url": "https://www.semana.com/confidenciales/articulo/asi-puede-donar-a-la-campana-colombia-un-solo-corazon-para-colaborar-con-las-victimas-del-terremoto-en-colombia/202627/"
       },
       "fuentes_adicionales": [
@@ -170,30 +170,30 @@
     },
     {
       "entidad": "Fundación Bancolombia",
-      "campana": "Cuenta de donaciones por el terremoto",
-      "como_donar": "La campaña #UnidosPorColombia sigue reportada como habilitada hasta el 30 de agosto por varios medios que atribuyen la información a la Fundación; La República reportó el 16 de agosto una recaudación superior a $6.600 millones. Rechequeado el 2 de septiembre —tres días después de la fecha límite reportada—: varias notas de prensa recientes confirman que la cuenta de ahorros sigue activa y recibiendo donaciones, pero seguimos sin localizar la instrucción exacta en un dominio oficial de Bancolombia o de la Fundación (una búsqueda dirigida al dominio bancolombia.com solo devuelve campañas de emergencias anteriores, no de este sismo), ni un anuncio de cierre o extensión de la campaña en un canal institucional, así que no transcribimos cuentas, llaves, correos para comprobantes ni solicitudes de datos personales: consulta las evidencias enlazadas y confirma directamente en un canal institucional antes de transferir.",
-      "url_oficial": "https://www.portafolio.co/negocios/empresas/bancolombia-habilita-cuenta-para-canalizar-donaciones-dirigidas-a-afectados-por-terremoto-en-colombia-500114",
+      "campana": "Cuenta de donaciones por el terremoto (cerrada) — ahora «Hechos de Colombia»",
+      "como_donar": "Actualizado el 3 de septiembre: varios medios (El Tiempo, La República, Forbes Colombia) reportan que la Fundación Bancolombia CERRÓ la recolección de donaciones el 30 de agosto, tras 20 días de recaudo, con más de $9.300 millones aportados por más de 50.000 personas, empresas y organizaciones (destinados a medicamentos, insumos médicos, dotación hospitalaria, materiales de vivienda y apoyo logístico en los departamentos más afectados). Con ese cierre, Bancolombia anunció una segunda fase —campaña «Hechos de Colombia»— centrada en recuperación territorial y reconstrucción del tejido productivo, financiada con $30.000 millones de recursos propios de la entidad, no con donaciones de terceros. No se transcribe ya ningún número de cuenta: no dones a esta campaña pensando que sigue recibiendo aportes del público, y desconfía de cualquier mensaje que pida transferencias a nombre de la Fundación Bancolombia por el terremoto después de esta fecha. Ninguna de estas notas proviene de un dominio oficial de Bancolombia (una búsqueda dirigida a bancolombia.com y fundacion.bancolombia.com no devolvió el anuncio de cierre), por lo que el hallazgo se mantiene en nivel «fuente_secundaria» pese a la corroboración múltiple.",
+      "url_oficial": "https://www.eltiempo.com/economia/sectores/a-un-mes-del-terremoto-comienza-segunda-ola-de-ayudas-para-atender-victimas-y-reconstruir-zonas-golpeadas-3582625",
       "detalle_cuenta": null,
       "cobertura": "Nacional",
-      "verificado_en": "portafolio.co y La República citando el comunicado oficial",
-      "fecha_verificacion": "2 sep 2026",
+      "verificado_en": "El Tiempo, La República y Forbes Colombia",
+      "fecha_verificacion": "3 sep 2026",
       "verificacion": {
         "estado": "confirmacion_secundaria",
         "nivel": "fuente_secundaria",
-        "fecha_iso": "2026-09-02",
-        "evidencia_url": "https://www.portafolio.co/negocios/empresas/bancolombia-habilita-cuenta-para-canalizar-donaciones-dirigidas-a-afectados-por-terremoto-en-colombia-500114"
+        "fecha_iso": "2026-09-03",
+        "evidencia_url": "https://www.eltiempo.com/economia/sectores/a-un-mes-del-terremoto-comienza-segunda-ola-de-ayudas-para-atender-victimas-y-reconstruir-zonas-golpeadas-3582625"
       },
       "fuentes_adicionales": [
         {
-          "titulo": "La República — Fundación Bancolombia habilita cuenta para donaciones a damnificados",
-          "url": "https://www.larepublica.co/especiales/catastrofe-nacional/fundacion-bancolombia-habilita-cuenta-para-recibir-donaciones-para-damnificados-por-el-terremoto-4455559",
-          "alcance": "Corrobora el número de cuenta y el correo de verificación de comprobantes citados por Portafolio",
+          "titulo": "La República — Fundación Bancolombia cierra recaudo tras 20 días con más de $9.300 millones y anuncia «Hechos de Colombia»",
+          "url": "https://www.larepublica.co/especiales/catastrofe-nacional/fundacion-bancolombia-suma-6-600-millones-en-ayudas-por-el-terremoto-4460238",
+          "alcance": "Reporta el cierre del recaudo el 30 de agosto y el arranque de la segunda fase financiada con recursos propios de la entidad.",
           "nivel_fuente": "fuente_secundaria"
         },
         {
-          "titulo": "La República — Fundación Bancolombia suma $6.600 millones en ayudas por el terremoto (16 ago)",
-          "url": "https://www.larepublica.co/especiales/catastrofe-nacional/fundacion-bancolombia-suma-6-600-millones-en-ayudas-por-el-terremoto-4460238",
-          "alcance": "Reporta el avance de la recaudación al 16 de agosto; sigue sin publicar la cuenta en un dominio oficial de Bancolombia.",
+          "titulo": "Forbes Colombia — donaciones a Fundación Bancolombia superan los $6.600 millones y ya llegan a cinco departamentos",
+          "url": "https://forbes.co/actualidad/donaciones-a-fundacion-bancolombia-superan-los-6-600-millones-y-ya-llegan-a-cinco-departamentos",
+          "alcance": "Corrobora el avance de la recaudación antes del cierre.",
           "nivel_fuente": "fuente_secundaria"
         }
       ],
