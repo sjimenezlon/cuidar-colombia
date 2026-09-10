@@ -126,6 +126,16 @@
       "alerta": "El Banco de Alimentos de Bogotá alertó sobre una página falsa (bancoalimentos.top) que copió el diseño, los colores y los contenidos de su sitio oficial para solicitar donaciones no autorizadas a nombre de la entidad. Su único canal legítimo es bancodealimentos.org.co; no transfieras dinero ni entregues datos personales o bancarios en otro sitio que use su nombre.",
       "fuente_url": "https://www.infobae.com/colombia/2026/09/03/banco-de-alimentos-de-bogota-alerta-por-pagina-falsa-que-pide-donaciones-no-autorizadas/",
       "fecha": "3 de septiembre de 2026"
+    },
+    {
+      "alerta": "La Alcaldía de Cali desmintió que se fuera a realizar un simulacro oficial de evacuación por terremoto el 8 de septiembre: la cadena que circuló se originó en un simulacro no relacionado en República Dominicana. El próximo simulacro nacional de la UNGRD está programado para el 21 de octubre de 2026.",
+      "fuente_url": "https://www.cali.gov.co/boletines/publicaciones/194191/alcaldia-de-cali-desmiente-informacion-sobre-supuesto-simulacro-de-evacuacion-el-8-de-septiembre/",
+      "fecha": "8 de septiembre de 2026"
+    },
+    {
+      "alerta": "El Servicio Geológico Colombiano desmintió audios y cadenas de WhatsApp que aseguran conocer la fecha, hora y magnitud exactas de un nuevo terremoto en Colombia: no existe ningún método científico capaz de predecir un sismo con esa precisión.",
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/servicio-geologico-colombiano-desmiente-predicciones-de-terremotos-en-colombia-que-circulan-en-redes-estas-son-las-zonas-con-mayor-amenaza-sismica-3584685",
+      "fecha": "9 de septiembre de 2026"
     }
   ]
 }

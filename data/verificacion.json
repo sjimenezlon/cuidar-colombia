@@ -241,6 +241,28 @@
       "remitir_nombre": "SGC — Servicio Geológico Colombiano",
       "remitir_url": "https://www.sgc.gov.co/sismos",
       "verificado_iso": "2026-08-17"
+    },
+    {
+      "afirmacion": "Circula que el 8 de septiembre a las 10:00 a. m. habrá un simulacro oficial de evacuación por terremoto en Cali",
+      "veredicto": "Falso",
+      "realidad": "La Alcaldía de Cali desmintió la convocatoria: no programó ningún simulacro para esa fecha. La confusión partió de un simulacro nacional realizado ese mismo día en República Dominicana, sacado de contexto como si aplicara a Colombia. El Simulacro Nacional de Respuesta a Emergencias de la UNGRD (Circular 0079 del 31 de agosto de 2026) está programado para el 21 de octubre de 2026, no para septiembre.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "Alcaldía de Cali",
+      "fuente_url": "https://www.cali.gov.co/boletines/publicaciones/194191/alcaldia-de-cali-desmiente-informacion-sobre-supuesto-simulacro-de-evacuacion-el-8-de-septiembre/",
+      "remitir_nombre": "Alcaldía de Cali — Emergencia",
+      "remitir_url": "https://www.cali.gov.co/publicaciones/193598/emergencias-y-medidas-por-terremoto-en-cali/",
+      "verificado_iso": "2026-09-08"
+    },
+    {
+      "afirmacion": "Audios y cadenas de WhatsApp aseguran conocer la fecha, hora y magnitud exactas de un nuevo gran terremoto en Colombia",
+      "veredicto": "Falso",
+      "realidad": "El Servicio Geológico Colombiano declaró que no existe ningún método científico capaz de predecir con exactitud cuándo, dónde y con qué magnitud ocurrirá un sismo, y advirtió que cualquier mensaje con fecha y hora exacta de un próximo sismo miente. El SGC solo puede publicar mapas de amenaza sísmica a largo plazo (a 50 años), que no son predicciones puntuales.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "Servicio Geológico Colombiano (vía El Tiempo)",
+      "fuente_url": "https://www.eltiempo.com/colombia/otras-ciudades/servicio-geologico-colombiano-desmiente-predicciones-de-terremotos-en-colombia-que-circulan-en-redes-estas-son-las-zonas-con-mayor-amenaza-sismica-3584685",
+      "remitir_nombre": "SGC — Sismos en tiempo real",
+      "remitir_url": "https://www.sgc.gov.co/sismos",
+      "verificado_iso": "2026-09-09"
     }
   ],
   "fuentes_para_verificar": [
