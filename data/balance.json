@@ -55,6 +55,13 @@
       "valor": "521",
       "fuente_titulo": "Corte técnico de la UNGRD, 7 de septiembre, 6:30 a. m.; sube desde 468 del corte del 3 de septiembre. El mismo corte reporta 400 centros de salud, 4.313 centros educativos y 6.033 centros comunitarios afectados, además de 141 acueductos, 102 puentes vehiculares, 13 peatonales y 5 aeropuertos con daños",
       "fuente_url": "https://www.semana.com/nacion/articulo/terremoto-en-colombia-331-personas-fallecidas-y-111-desaparecidas-este-es-el-nuevo-balance-de-la-ungrd/202613/"
+    },
+    {
+      "clave": "albergues",
+      "etiqueta": "Personas en albergues temporales",
+      "valor": "4.720 (35 albergues en Caldas, Quindío, Chocó y Valle del Cauca)",
+      "fuente_titulo": "UNGRD, citada por Semana en su balance «a un mes del terremoto», 10 de septiembre (sin hora de corte publicada); dato nuevo, sin corroboración independiente adicional localizada hoy",
+      "fuente_url": "https://www.semana.com/nacion/articulo/un-mes-despues-del-terremoto-356-vidas-rescatadas-y-una-emergencia-que-aun-no-termina-la-respuesta-de-la-ungrd-continua/202616/"
     }
   ],
   "fecha_corte": "7 de septiembre de 2026, 6:30 a. m.: corte técnico de la UNGRD, sobre 498 municipios de 16 departamentos",
@@ -62,6 +69,12 @@
   "nivel_evidencia": "corroboracion_multiple",
   "fuente_primaria_disponible": true,
   "fuentes_adicionales": [
+    {
+      "titulo": "Semana — «Un mes después del terremoto: 356 vidas rescatadas y una emergencia que aún no termina», 10 de septiembre",
+      "url": "https://www.semana.com/nacion/articulo/un-mes-despues-del-terremoto-356-vidas-rescatadas-y-una-emergencia-que-aun-no-termina-la-respuesta-de-la-ungrd-continua/202616/",
+      "alcance": "Balance retrospectivo «a un mes» de la UNGRD, sin hora de corte publicada, corroborado por Radio Santa Fe, Colombia.com, Pulzo y El Colombiano el mismo 10 de septiembre: coincide en 331 fallecidos, 4.505 heridos y 111 desaparecidos con el corte técnico del 7 de septiembre (tabla principal), pero cita cifras distintas y no explicadas en otros rubros — 356 personas rescatadas con vida (vs. 364 del corte técnico) y 259 cuerpos recuperados, 466.345 personas afectadas en 497 municipios (vs. 466.709 en 498), 36.327 viviendas destruidas y 201.939 averiadas, 759 edificaciones colapsadas — además del detalle operativo de la respuesta (54 grupos y 1.849 socorristas de Colombia, Argentina, Chile, México, Venezuela, España y EE. UU., más de 288 horas de operaciones) y $42.754 millones asignados en el primer mes de apoyo económico a vivienda, dentro de un programa de tres meses. Ante la falta de una hora de corte precisa y la falta de explicación de las variaciones a la baja, se documenta la discrepancia sin reemplazar las cifras ya tabuladas del corte técnico del 7 de septiembre.",
+      "nivel_fuente": "fuente_secundaria"
+    },
     {
       "titulo": "Vanguardia — terremoto en Colombia ya deja 331 muertos y 240 desaparecidos, 24 de agosto",
       "url": "https://www.vanguardia.com/colombia/2026/08/24/terremoto-en-colombia-ya-deja-331-muertos-y-240-desaparecidos-nuevo-balance-de-la-ungrd/",
