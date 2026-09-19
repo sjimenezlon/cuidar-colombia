@@ -263,6 +263,17 @@
       "remitir_nombre": "SGC — Sismos en tiempo real",
       "remitir_url": "https://www.sgc.gov.co/sismos",
       "verificado_iso": "2026-09-09"
+    },
+    {
+      "afirmacion": "Circula en redes que la UNGRD emitió una alerta oficial anunciando la ocurrencia de un próximo terremoto en Colombia",
+      "veredicto": "Falso",
+      "realidad": "La Secretaría de Gestión del Riesgo de la Alcaldía de Cali desmintió el 18 de septiembre esta información, que atribuye falsamente a la UNGRD una alerta sobre un próximo sismo: la entidad nacional no emitió ningún comunicado en ese sentido. Las autoridades reiteraron que los terremotos no se pueden predecir y que la actividad sísmica actual en Chocó corresponde a un enjambre sísmico relacionado con el sismo del 10 de agosto.",
+      "nivel_fuente": "fuente_oficial",
+      "fuente_nombre": "Secretaría de Gestión del Riesgo de Cali (vía El País Cali y Semana)",
+      "fuente_url": "https://www.elpais.com.co/colombia/alcaldia-de-cali-desmiente-alerta-falsa-de-una-prediccion-de-terremoto-en-colombia-que-circula-en-redes-1836.html",
+      "remitir_nombre": "SGC — Sismos en tiempo real",
+      "remitir_url": "https://www.sgc.gov.co/sismos",
+      "verificado_iso": "2026-09-18"
     }
   ],
   "fuentes_para_verificar": [
