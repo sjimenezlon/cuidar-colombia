@@ -265,15 +265,15 @@
       "verificado_iso": "2026-09-09"
     },
     {
-      "afirmacion": "Circula en redes que la UNGRD emitió una alerta oficial anunciando la ocurrencia de un próximo terremoto en Colombia",
+      "afirmacion": "Circula en redes y cadenas de WhatsApp que viene un «gran terremoto» inminente en Cali, presentado como alerta oficial de la UNGRD o basado en la seguidilla de sismos en Chocó",
       "veredicto": "Falso",
-      "realidad": "La Secretaría de Gestión del Riesgo de la Alcaldía de Cali desmintió el 18 de septiembre esta información, que atribuye falsamente a la UNGRD una alerta sobre un próximo sismo: la entidad nacional no emitió ningún comunicado en ese sentido. Las autoridades reiteraron que los terremotos no se pueden predecir y que la actividad sísmica actual en Chocó corresponde a un enjambre sísmico relacionado con el sismo del 10 de agosto.",
+      "realidad": "La Secretaría de Gestión del Riesgo de la Alcaldía de Cali desmintió el 18 de septiembre la versión que atribuye falsamente a la UNGRD una alerta sobre un próximo sismo: la entidad nacional no emitió ningún comunicado en ese sentido. El rumor escaló el 19 de septiembre con una nueva alerta viral sobre un supuesto «gran terremoto» inminente en Cali, que interpreta la secuencia sísmica activa de Chocó (incluido el sismo de magnitud 4,6 del 19 de septiembre en Istmina) como señal de un macrosismo próximo. El Servicio Geológico Colombiano y, de nuevo, la Secretaría de Gestión del Riesgo de Cali (su titular, Ricardo Peñuela) la desmintieron: explicaron que se trata de un enjambre sísmico —liberación de energía residual asociada al sismo principal del 10 de agosto, que puede durar entre 1 y 3 meses— y reiteraron que no existe ningún método científico capaz de predecir la fecha, hora o magnitud de un sismo.",
       "nivel_fuente": "fuente_oficial",
-      "fuente_nombre": "Secretaría de Gestión del Riesgo de Cali (vía El País Cali y Semana)",
-      "fuente_url": "https://www.elpais.com.co/colombia/alcaldia-de-cali-desmiente-alerta-falsa-de-una-prediccion-de-terremoto-en-colombia-que-circula-en-redes-1836.html",
+      "fuente_nombre": "Servicio Geológico Colombiano y Secretaría de Gestión del Riesgo de Cali (vía Infobae, El Tiempo, Semana y El País Cali)",
+      "fuente_url": "https://www.infobae.com/colombia/2026/09/19/el-servicio-geologico-colombiano-desmintio-alerta-viral-sobre-supuesto-gran-terremoto-en-cali/",
       "remitir_nombre": "SGC — Sismos en tiempo real",
       "remitir_url": "https://www.sgc.gov.co/sismos",
-      "verificado_iso": "2026-09-18"
+      "verificado_iso": "2026-09-20"
     }
   ],
   "fuentes_para_verificar": [
